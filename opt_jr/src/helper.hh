@@ -1,7 +1,7 @@
 #ifndef HELPER_HH
 #define HELPER_HH
 
-//A few helper function
+//A few optjrparameters helper function
 
 #include "common.hh"
 
