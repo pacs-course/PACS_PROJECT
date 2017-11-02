@@ -1,9 +1,10 @@
 #ifndef HELPER_HH
 #define HELPER_HH
 
-//A few optjrparameters helper function
+/*************************************************************
+    A FEW OPTJRPARAMETERS HELPER FUNCTION
+*************************************************************/
 
-#include "common.hh"
 
 #include <stdio.h>
 #include <stdlib.h>

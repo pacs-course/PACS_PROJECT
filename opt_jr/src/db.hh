@@ -15,9 +15,8 @@
 void DBerror(MYSQL *conn, char * msg);
 //MYSQL_ROW executeSQL(MYSQL *conn, char *statement, struct optJrParameters par);
 MYSQL * DBopen(char * host, char * login, char * passw, char *dbName);
-//MYSQL * DBopen(char * host, char * login, char * passw, char *dbName);
 
-//void DBclose(MYSQL *conn);
+void DBclose(MYSQL *conn);
 
 
 

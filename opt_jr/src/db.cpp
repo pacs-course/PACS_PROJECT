@@ -22,8 +22,8 @@ void DBerror(MYSQL *conn, char * msg)
 	mysql_close(conn);
 	exit(-1);
 }
-/*
 
+/*
 MYSQL_ROW executeSQL(MYSQL *conn, char *statement, struct optJrParameters par)
 {
 	MYSQL_RES *result;
@@ -47,11 +47,9 @@ MYSQL_ROW executeSQL(MYSQL *conn, char *statement, struct optJrParameters par)
 	else
 		return(mysql_fetch_row(result));
 
-
-
-
 }
 */
+
 /*
  * Open a DB connection
  */
@@ -80,9 +78,8 @@ MYSQL *con = mysql_init(NULL);
 /*
  * Close the Db connection
  */
- /*
+
 void DBclose(MYSQL *conn)
 {
 	mysql_close(conn);
 }
-*/

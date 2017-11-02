@@ -6,6 +6,17 @@
 #include <vector>
 #include "application.hh"
 
+/* SAREBBE MEGLIO FARE UNA COSA DEL TIPO:
+void debugMessage(char * string, struct optJrParameters par)
+{
+
+	if (par.debug == YES)
+	printf("<debug message>: %s\n", string);
+
+}
+
+*/
+
 void debugMessage1(optJrParameters &par)
 {
   std::cout<<"\n\n\n*******************************************************************\n";

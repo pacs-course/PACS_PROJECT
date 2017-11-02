@@ -2,8 +2,6 @@
 #define OPTJRPARAMETERS_HH
 
 #include <string>
-#include "common.hh"
-#include "helper.hh"
 
 /*
 optJrParameters: classe che memorizza parametri inviati da command line al programma
