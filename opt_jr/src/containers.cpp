@@ -1,5 +1,6 @@
 #include "containers.hh"
 #include <fstream>
+#include <string>
 #include <string.h>
 
 
@@ -45,6 +46,7 @@ sConfiguration  readConfigurationFile()
 	    		strcpy(var, extractItem(line, "\"", "\""));
 	    		strcpy(val, extractItem(line, ">", "<"));
 					config.push_back(std::make_pair(var,val));
+					//printf("%s",var);
 	    		//addConfiguration(&first, &current, var, val);
 	    	}
 	    }
@@ -90,4 +92,28 @@ char * extractItem( char *const string, char *const left, const char *const righ
 	    result[length] = '\0';
 	    memcpy(result, head, length);
 	    return result;
+}
+
+
+/*
+	-Restituisce valore variabile di configurazione desiderata
+*/
+std::string getConfigurationValue(sConfiguration &conf, std::string s)
+//char* getConfigurationValue(sConfiguration &conf, char* s)
+{
+	int found = 0;
+	auto it = conf.begin();
+
+	while (!found && it != conf.end())
+	{
+		if (it->first==s) found = 1;
+		else ++it;
+	}
+	if (!found)
+	{
+		printf("variable %s not found!\n", s);
+		exit(-1);
+
+	}
+	else return it->second;
 }
