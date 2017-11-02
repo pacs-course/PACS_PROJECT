@@ -8,6 +8,7 @@
 -This is an helper function used by readConfigurationFile
 -it's used to parse input from configuration file
 -defined at the end of this file
+- not changed from original C version
 */
 char * extractItem( char *const string, char *const left, const char *const right);
 
@@ -21,8 +22,6 @@ sConfiguration  readConfigurationFile()
 	    size_t len = 0;
 	    ssize_t read;
 	    char var[256], val[256],* configurationFile;
-	 //   sConfiguration *first = NULL;
-	 // sConfiguration *current = NULL;
 
 	sConfiguration config;
 

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "application.hh"
 
 void debugMessage1(optJrParameters &par)
 {
@@ -29,6 +30,16 @@ void debugMessage2(sConfiguration &conf)
   {
     std::cout<< i->first <<": "<<i->second<<std::endl;
   }
+  std::cout<<"*******************************************************************\n\n\n";
+
+}
+
+void debugmessage3(std::vector<Application> &loaded_app){
+  std::cout<<"\n\n\n*******************************************************************\n";
+
+  std::cout<<"<debug message>: App_ID of loaded applications"<<std::endl;
+  for (auto it= loaded_app.begin(); it!=loaded_app.end();++it)
+    std::cout<< "App_ID: "<<it->app_id<<std::endl;
   std::cout<<"*******************************************************************\n\n\n";
 
 }
