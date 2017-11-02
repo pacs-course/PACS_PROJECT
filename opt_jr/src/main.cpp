@@ -32,17 +32,13 @@ int main(int argc, char **argv)
   /* Connect to the db */
 
   MYSQL *conn = DBopen(
-                const_cast<char*>( getConfigurationValue(configuration, "OptDB_IP").c_str()),
-            const_cast<char*>(getConfigurationValue(configuration, "OptDB_user").c_str()),
-            const_cast<char*>(getConfigurationValue(configuration, "OptDB_pass").c_str()),
-            const_cast<char*>(getConfigurationValue(configuration, "OptDB_dbName").c_str())
+                const_cast<char*>(configuration["OptDB_IP"].c_str()),
+            const_cast<char*>(configuration["OptDB_user"].c_str()),
+            const_cast<char*>(configuration["OptDB_pass"].c_str()),
+            const_cast<char*>(configuration["OptDB_dbName"].c_str())
             );
-
-
+            
   if (conn == NULL) DBerror(conn, "open_db: Opening the database");
-
-
-
 
 
   //TODO: leggere file .csv  (C++)

@@ -4,25 +4,21 @@
 #include <vector>
 #include <utility>
 #include <string>
+#include <unordered_map>
 
 /*
 sConfiguration: - container che memorizza dati file di configurazione
-                 - è un vettore di coppie di char*
+                - è una (unordered) map
 */
-using sConfiguration=std::vector<std::pair<std::string,std::string>> ;
-// maybe better to replace it with a unordered_map key-value?
-//using sConfiguration=std::vector<std::pair<char*,char*>> ;
+using sConfiguration=std::unordered_map<std::string,std::string> ;
 
-// funzione per inizializzare sConfiguration:
+
+/*
+  -funzione per inizializzare sConfiguration
+  -legge il file di configurazione wsi definito nella env. var. WSI_CONFIG_FILE
+*/
+
 sConfiguration  readConfigurationFile();
-
-// Restitisce valore variabile di configurazione desiserata
-std::string getConfigurationValue(sConfiguration &conf, std::string s);
-//char* getConfigurationValue(sConfiguration &conf, char* s);
-
-//NB: con un' unordered_map posso accedervi per chiave-> non serve getConfigurationValue! 
-
-
 
 
 
