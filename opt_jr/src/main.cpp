@@ -9,10 +9,11 @@
 #include "db.hh"
 #include "application.hh"
 #include "read_app_file.hh"
+#include "batch.hh"
 
 int main(int argc, char **argv)
 {
-
+  std::string debugMsg;
   /*********************************************************
     READ FROM COMMAND LINE (AND SAVE IT)
   *********************************************************/
@@ -20,7 +21,18 @@ int main(int argc, char **argv)
   //TODO: capire come calcola cache?
 
   optJrParameters par(argv,argc); //memorizzo in oggetto "par" i parametri di esecuzione del programma
-  debugMessage1(par);
+  std::cout<<"\n\n\n*******************************************************************\n";
+    std::cout<<"<check message>: i parametri memorizzati per l'esecuzione di OPT_JR_CPP sono:\n\n";
+    std::cout<<"filename: "<<par.get_filename()<<std::endl;
+    std::cout<<"debug: "<<par.get_debug()<<std::endl;
+    std::cout<<"cache: "<<par.get_cache()<<std::endl;
+    std::cout<<"globalFOcalculation: "<<par.get_globalFOcalculation()<<std::endl;
+    std::cout<<"K: "<<par.get_K()<<std::endl;
+    std::cout<<"simulator: "<<par.get_simulator()<<std::endl;
+    std::cout<<"number: "<<par.get_number()<<std::endl;
+    std::cout<<"maxIteration: "<<par.get_maxIteration()<<std::endl;
+    std::cout<<"*******************************************************************\n\n\n";
+
 
   /*********************************************************
     READ FROM CONFIGURATION FILE (WSI) (AND SAVE IT)
@@ -29,7 +41,13 @@ int main(int argc, char **argv)
   *********************************************************/
 
   sConfiguration configuration = readConfigurationFile();
-  debugMessage2(configuration);
+  std::cout<<"\n\n\n*******************************************************************\n";
+  std::cout<<"<check message>: i dati nel file di configurazione sono:\n\n";
+  for(auto i = configuration.begin(); i !=configuration.end();++i)
+  {
+    std::cout<< i->first <<": "<<i->second<<std::endl;
+  }
+  std::cout<<"*******************************************************************\n\n\n";
 
   /*********************************************************
    CONNECT TO THE DATABASE
@@ -63,9 +81,22 @@ int main(int argc, char **argv)
   }
 
   std::vector<Application> loaded_app=readAppFile(stream);
-  debugmessage3(loaded_app);
 
-  
+  std::cout<<"\n\n\n*******************************************************************\n";
+  std::cout<<"<check message>: App_ID of loaded applications"<<std::endl;
+  for (auto it= loaded_app.begin(); it!=loaded_app.end();++it)
+    std::cout<< "App_ID: "<<it->app_id<<std::endl;
+  std::cout<<"*******************************************************************\n\n\n";
+
+
+  /* CREATE A BUTCH OBJECT */ //NB: dopo rifaccio e evito creazione di loaded_app e copia
+  Batch App_manager(loaded_app);
+  App_manager.calculate_nu(par);
+
+
+
+
+
 
   //TODO: chiamare calculate_NU (C++) (and NU_1)
 
