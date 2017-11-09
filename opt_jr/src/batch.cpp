@@ -5,16 +5,21 @@
 #include <cmath>
 
 
+/*
+ * 		Name:					calculate_nu
+ * 		Description: - it computes the nu indice for the first application
+ * 								 - it computes the nu indices for all the other applications
+ */
 
 void
 Batch::calculate_nu(optJrParameters &par)
 {
 
   std::string debugMsg;
-  int w1;
+  double w1;
   double chi_c_1;
   double csi_1;
-  int N = par.get_number();
+  int N = par.get_number(); // N is the number of cores
   double csi;
 
   int minCapacity= 0;
@@ -26,12 +31,13 @@ Batch::calculate_nu(optJrParameters &par)
     exit(-1);
   }
 
-  // compute the minimum capacity to execute the applications
+  /*
+   * COMPUTE THE MINIMUM CAPACITY TO EXECUTE THE APPLICATIONS
+   */
   for (auto it=APPs.begin(); it!=APPs.end(); it++)
   {
     minCapacity+= it->V;
   }
-
 
   if(N<minCapacity)
   {
@@ -41,10 +47,12 @@ Batch::calculate_nu(optJrParameters &par)
     exit(-1);
   }
   N = N - minCapacity; // N now is the number of cores available to exchange
-  debugMsg="available cores ="+ std::to_string(N); debugMessage(debugMsg, par);
+  debugMsg="available cores to exchange ="+ std::to_string(N); debugMessage(debugMsg, par);
 
 
-  // COMPUTE NU_1
+  /*
+   *  COMPUTE NU_1
+   */
   double tot = 0;
   for (auto it=APPs.begin(); it!=APPs.end(); it++)
   {
@@ -58,7 +66,7 @@ Batch::calculate_nu(optJrParameters &par)
     else //Any other row (compute tot)
     {
       csi = std::max(it->M/it->m, it->V/it->v);
-      it->term_i = sqrt( ((double)it->w/w1)*(it->chi_C/chi_c_1)*(csi_1/csi));
+      it->term_i = sqrt( (it->w/w1)*(it->chi_C/chi_c_1)*(csi_1/csi));
       tot = tot + it->term_i;
       // printf("Calculate_nu  Other rows: %s w %d csi %lf tot %lf\n", it->app_id, it->w, csi, tot);
     }
@@ -71,7 +79,7 @@ Batch::calculate_nu(optJrParameters &par)
 
 
 
-  /* NB: perchè ricalcola tot??? (uguale?)
+  /* NB: perchè ricalcola tot??? (uguale?) Penso sia superfluo
   for (auto it=APPs.begin(); it!=APPs.end(); it++)
   {
     if (it!=APPs.begin())
@@ -83,7 +91,11 @@ Batch::calculate_nu(optJrParameters &par)
   }
   */
 
-  // Calculate nu_i (!=nu_1) and assign values
+
+  /*
+   * COMPUTE NU_i (!=NU_1) AND ASSIGN VALUES
+   */
+
   for (auto it=APPs.begin(); it!=APPs.end(); it++)
   {
     if (it==APPs.begin()) it->nu_d = nu_1;
@@ -93,20 +105,18 @@ Batch::calculate_nu(optJrParameters &par)
       //printf("\nTERM app %s %lf tot %lf\n", it->app_id, it->term_i, (1 + tot) );
     }
     //printf("NU_i%lf nu1 %lf\n", it->nu_d, nu_1);
-    it->currentCores_d = it->nu_d;
+    /*it->currentCores_d = it->nu_d;*///NB:  currentCores_d ?? che roba è?? a che serve???
     std::cout<<"App ID: "<<it->app_id<<", NU: "<<it->nu_d<<std::endl;
-    //NB:  currentCores_d ?? che roba è?? a che serve???
 
+
+
+      /*
+       *  COMPUTE ALPHA AND BETA
+       */
 
     //TODO: Sistema queste due (erano computeAlpha, computeBeta)
     it->beta = ((double) it->sAB.vec[1].nCores) / (it->sAB.vec[0].nCores - it->sAB.vec[1].nCores) * (((double) it->sAB.vec[0].nCores)/it->sAB.vec[1].nCores * it->sAB.vec[0].R - it->sAB.vec[1].R);
     it->alpha =it->sAB.vec[1].nCores * (it->sAB.vec[1].R - it->beta);
-
-    //printf("App %s alpha = %lf beta = %lf\n", it->app_id, it->alpha, it->beta);
-    //printf(" R %lf nCores %d\n", it->sAB.vec[0].R, it->sAB.vec[0].nCores);
-    //printf(" R %lf nCores %d\n", it->sAB.vec[1].R, it->sAB.vec[1].nCores);
-
-    //current->currentCores_d = current->bound_d;
 
     //TODO: implementare come metodo classe application printRow(it, par)?;
 

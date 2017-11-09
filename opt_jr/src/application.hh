@@ -29,7 +29,7 @@ public:
   std::string session_app_id;
   //char * app_id;
   std::string app_id;
-  int w;					/* Weight application  */
+  double w;					/* Weight application  */
   double term_i;
   double chi_0;
   double chi_C;
@@ -60,7 +60,7 @@ public:
 
   int vm;						/* Read from OPTIMIZER_CONFIGURATION_TABLE */
 
-  Application(std::string session_app_id, std::string app_id, int w,
+  Application(std::string session_app_id, std::string app_id, double w,
               double chi_0, double chi_C, double m, double M, double V,
               double v, double D, double csi, std::string St, int DatasetSize);
 };

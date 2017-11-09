@@ -15,23 +15,30 @@ int main(int argc, char **argv)
 {
   std::string debugMsg;
   /*********************************************************
-    READ FROM COMMAND LINE (AND SAVE IT)
+  READ FROM COMMAND LINE (AND SAVE IT)
   *********************************************************/
+
   //TODO: capire warnings
   //TODO: capire come calcola cache?
 
+  std::cout<<"\n\n*******************************************************************\n";
+  std::cout<<"**************** READING COMMAND-LINE PARAMETERS ******************\n";
+  std::cout<<"*******************************************************************\n";
+
+
   optJrParameters par(argv,argc); //memorizzo in oggetto "par" i parametri di esecuzione del programma
-  std::cout<<"\n\n\n*******************************************************************\n";
-    std::cout<<"<check message>: i parametri memorizzati per l'esecuzione di OPT_JR_CPP sono:\n\n";
-    std::cout<<"filename: "<<par.get_filename()<<std::endl;
-    std::cout<<"debug: "<<par.get_debug()<<std::endl;
-    std::cout<<"cache: "<<par.get_cache()<<std::endl;
-    std::cout<<"globalFOcalculation: "<<par.get_globalFOcalculation()<<std::endl;
-    std::cout<<"K: "<<par.get_K()<<std::endl;
-    std::cout<<"simulator: "<<par.get_simulator()<<std::endl;
-    std::cout<<"number: "<<par.get_number()<<std::endl;
-    std::cout<<"maxIteration: "<<par.get_maxIteration()<<std::endl;
-    std::cout<<"*******************************************************************\n\n\n";
+
+
+  std::cout<<"<check message>: i parametri memorizzati per l'esecuzione di OPT_JR_CPP sono:\n\n";
+  std::cout<<"filename: "<<par.get_filename()<<std::endl;
+  std::cout<<"debug: "<<par.get_debug()<<std::endl;
+  std::cout<<"cache: "<<par.get_cache()<<std::endl;
+  std::cout<<"globalFOcalculation: "<<par.get_globalFOcalculation()<<std::endl;
+  std::cout<<"K: "<<par.get_K()<<std::endl;
+  std::cout<<"simulator: "<<par.get_simulator()<<std::endl;
+  std::cout<<"number: "<<par.get_number()<<std::endl;
+  std::cout<<"maxIteration: "<<par.get_maxIteration()<<std::endl;
+  std::cout<<"*******************************************************************\n\n\n";
 
 
   /*********************************************************
@@ -39,9 +46,12 @@ int main(int argc, char **argv)
       -memorizzo in configuration (sConfiguration è unordered_map(string,string),
         definita con "using" in readConfigurationFile)
   *********************************************************/
+  std::cout<<"\n\n*******************************************************************\n";
+  std::cout<<"************     READING CONFIGURATION FILE     *******************\n";
+  std::cout<<"*******************************************************************\n";
+
 
   sConfiguration configuration = readConfigurationFile();
-  std::cout<<"\n\n\n*******************************************************************\n";
   std::cout<<"<check message>: i dati nel file di configurazione sono:\n\n";
   for(auto i = configuration.begin(); i !=configuration.end();++i)
   {
@@ -53,6 +63,10 @@ int main(int argc, char **argv)
    CONNECT TO THE DATABASE
   *********************************************************/
   // NB: executeSQL è ancora commentata
+  std::cout<<"\n\n*******************************************************************\n";
+  std::cout<<"************     CONNECTING TO THE DATABASE       *****************\n";
+  std::cout<<"*******************************************************************\n";
+
   MYSQL *conn = DBopen(
                 const_cast<char*>(configuration["OptDB_IP"].c_str()),
             const_cast<char*>(configuration["OptDB_user"].c_str()),
@@ -62,12 +76,16 @@ int main(int argc, char **argv)
 
   if (conn == NULL) DBerror(conn, "open_db: Opening the database");
 
+  std::cout<<"*******************************************************************\n\n\n";
 
 
 
   /********************************************************
     OPEN .CSV FILE WITH APPLICATIONS, READ IT (AND SAVE IT)
   *********************************************************/
+  std::cout<<"\n\n*******************************************************************\n";
+  std::cout<<"************     READ .CSV FILE WITH APPS       *******************\n";
+  std::cout<<"*******************************************************************\n";
 
   std::string folder = configuration["UPLOAD_HOME"];
   std::string filename = folder+ "/"+ par.get_filename();
@@ -82,16 +100,26 @@ int main(int argc, char **argv)
 
   std::vector<Application> loaded_app=readAppFile(stream);
 
-  std::cout<<"\n\n\n*******************************************************************\n";
   std::cout<<"<check message>: App_ID of loaded applications"<<std::endl;
   for (auto it= loaded_app.begin(); it!=loaded_app.end();++it)
     std::cout<< "App_ID: "<<it->app_id<<std::endl;
   std::cout<<"*******************************************************************\n\n\n";
 
 
-  /* CREATE A BUTCH OBJECT */ //NB: dopo rifaccio e evito creazione di loaded_app e copia
+  /* CREATE A BUTCH OBJECT */ //NB: rifare evitando creazione di loaded_app e copia
   Batch App_manager(loaded_app);
+
+  /********************************************************
+    CALCULATE NU INDICES
+  *********************************************************/
+  std::cout<<"\n\n*******************************************************************\n";
+  std::cout<<"************       CALCULATE NU INDICES         *******************\n";
+  std::cout<<"*******************************************************************\n";
+
   App_manager.calculate_nu(par);
+
+  std::cout<<"*******************************************************************\n\n\n";
+
 
 
 
