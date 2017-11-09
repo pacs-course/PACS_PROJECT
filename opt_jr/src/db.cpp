@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
+#include <string>
 #include "db.hh"
+#include "debugmessage.hh"
 
 
 /*
@@ -23,12 +25,14 @@ void DBerror(MYSQL *conn, char * msg)
 	exit(-1);
 }
 
-/*
-MYSQL_ROW executeSQL(MYSQL *conn, char *statement, struct optJrParameters par)
+
+MYSQL_ROW executeSQL(MYSQL *conn, char *statement, optJrParameters par)
 {
 	MYSQL_RES *result;
 	char error[256];
-	char debugMsg[1024];
+	//char debugMsg[1024];
+	std::string debugMsg;
+	//debugMsg=" Running executeSQL "; debugMessage(debugMsg, par);
 	if (mysql_query(conn, statement))
 	{
 		char error[512];
@@ -37,7 +41,8 @@ MYSQL_ROW executeSQL(MYSQL *conn, char *statement, struct optJrParameters par)
 	}
 
 	result = mysql_store_result(conn);
-	sprintf(debugMsg, "statement %s\n", statement);debugMessage(debugMsg, par);
+	//sprintf(debugMsg, "statement %s\n", statement);debugMessage(debugMsg, par);
+	debugMsg="statement :"+ std::string(statement) + "\n"; debugMessage(debugMsg, par);
 	if (result == NULL)
 	{
 		sprintf(error, "Failure: ExecuteSQL: statement was %s\n", statement);
@@ -48,7 +53,7 @@ MYSQL_ROW executeSQL(MYSQL *conn, char *statement, struct optJrParameters par)
 		return(mysql_fetch_row(result));
 
 }
-*/
+
 
 /*
  * Open a DB connection

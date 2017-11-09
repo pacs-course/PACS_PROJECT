@@ -2,7 +2,7 @@
 #define SRC_DB_H_
 #include <my_global.h>
 #include <mysql.h>
-//#include "common.hh"
+#include "optjrParameters.hh"
 
 
 /*
@@ -13,7 +13,7 @@
 
 
 void DBerror(MYSQL *conn, char * msg);
-//MYSQL_ROW executeSQL(MYSQL *conn, char *statement, struct optJrParameters par);
+MYSQL_ROW executeSQL(MYSQL *conn, char *statement, optJrParameters par);
 MYSQL * DBopen(char * host, char * login, char * passw, char *dbName);
 
 void DBclose(MYSQL *conn);
