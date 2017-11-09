@@ -2,14 +2,14 @@ CXXFLAGS  += -Wall -std=c++11 -I/usr/include/mysql
 
 EXE= OPT_JR_CPP
 
-OBJS  = main.o optjrparameters.o optjrParam_helper.o readConfigurationFile.o db.o application.o read_app_file.o batch.o debugmessage.o
+OBJS  = main.o optjrparameters.o optjrParam_helper.o readConfigurationFile.o db.o application.o read_app_file.o batch.o debugmessage.o bounds.o
 
 .DEFAULT_GOAL  = all
 
 all: $(EXE)
 
-$(EXE) : main.o optjrparameters.o helper.o readConfigurationFile.o db.o application.o read_app_file.o batch.o debugmessage.o
-	$(CXX) $(CXXFLAGS) -o $(EXE) main.o optjrparameters.o helper.o readConfigurationFile.o db.o application.o read_app_file.o batch.o debugmessage.o  -lmysqlclient
+$(EXE) : main.o optjrparameters.o helper.o readConfigurationFile.o db.o application.o read_app_file.o batch.o debugmessage.o bounds.o
+	$(CXX) $(CXXFLAGS) -fopenmp -o $(EXE) main.o optjrparameters.o helper.o readConfigurationFile.o db.o application.o read_app_file.o batch.o debugmessage.o bounds.o -lmysqlclient
 
 main.o : src/main.cpp
 	$(CXX) $(CXXFLAGS) -c src/main.cpp
@@ -37,6 +37,9 @@ batch.o : src/batch.cpp
 
 debugmessage.o : src/debugmessage.cpp
 	$(CXX) $(CXXFLAGS) -c src/debugmessage.cpp
+
+bounds.o : src/bounds.cpp
+	$(CXX) $(CXXFLAGS) -fopenmp -c src/bounds.cpp
 
 
 

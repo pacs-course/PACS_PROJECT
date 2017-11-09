@@ -10,6 +10,7 @@
 #include "application.hh"
 #include "read_app_file.hh"
 #include "batch.hh"
+#include "bounds.hh"
 
 int main(int argc, char **argv)
 {
@@ -98,16 +99,15 @@ int main(int argc, char **argv)
     exit(-1);
   }
 
-  std::vector<Application> loaded_app=readAppFile(stream);
+  /* CREATE A BUTCH OBJECT */
+
+  Batch App_manager(readAppFile(stream));//NB: si può rifare evitando creazione temporanea? (universal ref)
 
   std::cout<<"<check message>: App_ID of loaded applications"<<std::endl;
-  for (auto it= loaded_app.begin(); it!=loaded_app.end();++it)
+  for (auto it= App_manager.APPs.begin(); it!=App_manager.APPs.end();++it)
     std::cout<< "App_ID: "<<it->app_id<<std::endl;
   std::cout<<"*******************************************************************\n\n\n";
 
-
-  /* CREATE A BUTCH OBJECT */ //NB: rifare evitando creazione di loaded_app e copia
-  Batch App_manager(loaded_app);
 
   /********************************************************
     CALCULATE NU INDICES
@@ -121,8 +121,18 @@ int main(int argc, char **argv)
   std::cout<<"*******************************************************************\n\n\n";
 
 
+  /********************************************************
+    CALCULATE BOUNDS
+  *********************************************************/
 
+  std::cout<<"\n\n*******************************************************************\n";
+  std::cout<<"****************       CALCULATE BOUNDS         *******************\n";
+  std::cout<<"*******************************************************************\n";
 
+  Bounds myBound;
+  myBound.calculateBounds(App_manager,2, configuration, conn, par );
+
+  std::cout<<"*******************************************************************\n\n\n";
 
 
 

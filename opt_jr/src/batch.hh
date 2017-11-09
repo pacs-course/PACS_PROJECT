@@ -6,12 +6,12 @@
 #include "application.hh"
 
 class Batch{
-std::vector<Application> APPs;
 
 public:
-Batch(std::vector<Application> apps): APPs(apps){};
+  std::vector<Application> APPs;
+  Batch(std::vector<Application> apps): APPs(apps){};
 
-void calculate_nu(optJrParameters &par);
+  void calculate_nu(optJrParameters &par);
 
 };
 
