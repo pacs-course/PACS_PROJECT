@@ -1,6 +1,9 @@
 #ifndef OPTJRPARAMETERS_HH
 #define OPTJRPARAMETERS_HH
 
+#define DAGSIM 0
+#define LUNDSTROM 1
+
 #include <string>
 
 /*

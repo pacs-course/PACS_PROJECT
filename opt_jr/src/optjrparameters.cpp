@@ -12,10 +12,6 @@ OPTJRPARAMETER, CHE MEMORIZZA PARAMETRI PASSATI DA COMMAND_LINE
 ************************************************************/
 
 
-#define DAGSIM 0
-#define LUNDSTROM 1
-
-
 
 #define ARGS 8 //number of arguments from command line
 

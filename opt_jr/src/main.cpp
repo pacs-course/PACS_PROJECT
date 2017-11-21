@@ -129,7 +129,7 @@ int main(int argc, char **argv)
   std::cout<<"*******************************************************************\n";
 
   Bounds myBound;
-  myBound.calculateBounds(App_manager,2, configuration, conn, par );
+  myBound.calculateBounds(App_manager,1, configuration, conn, par );//TODO: passare i thread come parametro da command line 
 
   std::cout<<"*******************************************************************\n\n\n";
 

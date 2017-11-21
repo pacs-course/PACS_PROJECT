@@ -1,12 +1,13 @@
 #include "bounds.hh"
+
 #include "debugmessage.hh"
 #include "db.hh"
+#include "invokePredictor.hh"
 #include <omp.h>
 #include <string>
 #include <math.h>
 
 
-#define WHOLE_DAGSIM 0
 
 
 
@@ -22,7 +23,7 @@
 
 void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app, optJrParameters &par, int flagDagsim)
 {
-
+	std::cout<< "<debug message>: BOUND IS INVOKED"<<std::endl;
 	double predictorOutput;
 	//char debugMsg[DEBUG_MSG];
   std::string debugMsg;
@@ -33,32 +34,29 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 	int nNodes = 1; // Temporary fix
 
 	app.currentCores_d = app.nCores_DB_d;
-/*
-	int a=app.currentCores_d ;
-	int b= app.V;
-*/
 
 
-	//To Do Call X0 this expression -> DONE
-	// To Do max (X0, app.V)  ->DONE
-	//pointer->currentCores_d = ( (int) ( pointer->currentCores_d / pointer->V) ) * pointer->V;
 	int X0 = ((int) ( app.currentCores_d / app.V) ) * app.V;
-	//app.currentCores_d = std::max( X0, app.V);// NB: NON VA!
+	std::cout<< app.V<<std::endl;
+	app.currentCores_d = std::max( X0, ((int) app.V));
+	std::cout<< "<debug message>: CURRENT CORES:  "<< app.currentCores_d<<std::endl;
 
-	//if (pointer->currentCores_d > 0 && pointer->currentCores_d != pointer->V)//Togliere condizione
-//	{
-		nCores = app.currentCores_d;
 
-/*
-		predictorOutput = atoi(invokePredictor(configuration, conn, nNodes, nCores, "*", pointer->datasetSize, pointer->session_app_id,
-							pointer->app_id, pointer->stage, par, flagDagsim));
-		sprintf(debugMsg,"Bound evaluation for %s predictorOutput = %lf (deadline is %lf) cores %d\n",  pointer->session_app_id, predictorOutput, pointer->Deadline_d, nCores);debugMessage(debugMsg, par);
-		// Danilo 27/7/2017
-		pointer->sAB.index = 0;
-		pointer->sAB.vec[pointer->sAB.index].nCores = nCores;
-		pointer->sAB.vec[pointer->sAB.index].R = predictorOutput;
-		pointer->sAB.index++;
-		// End Danilo
+	nCores = app.currentCores_d;
+
+	//TODO: implementare un metodo di app che chiama invoke predictor;
+	predictorOutput = atoi(invokePredictor(configuration, conn, nNodes, nCores, "*", app.datasetSize, const_cast<char*>((app.session_app_id).c_str()),
+													const_cast<char*>((app.app_id).c_str()), const_cast<char*>((app.stage).c_str()), par, flagDagsim));
+	debugMsg= "Predictor Output: "+ std::to_string(predictorOutput); debugMessage(debugMsg,par);
+
+	debugMsg="Bound evaluation for" + app.session_app_id +
+					 " predictorOutput = " + std::to_string(predictorOutput) +
+					 "(deadline is " +std::to_string(app.Deadline_d)+ ") cores "
+					 + std::to_string(nCores); debugMessage(debugMsg, par);
+		app.sAB.index = 0;
+		app.sAB.vec[app.sAB.index].nCores = nCores;
+		app.sAB.vec[app.sAB.index].R = predictorOutput;
+		app.sAB.index++;
 
 
 		BTime = predictorOutput;
