@@ -23,7 +23,6 @@
 
 void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app, optJrParameters &par, int flagDagsim)
 {
-	std::cout<< "<debug message>: BOUND IS INVOKED"<<std::endl;
 	double predictorOutput;
 	//char debugMsg[DEBUG_MSG];
   std::string debugMsg;
@@ -37,9 +36,7 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 
 
 	int X0 = ((int) ( app.currentCores_d / app.V) ) * app.V;
-	std::cout<< app.V<<std::endl;
 	app.currentCores_d = std::max( X0, ((int) app.V));
-	std::cout<< "<debug message>: CURRENT CORES:  "<< app.currentCores_d<<std::endl;
 
 
 	nCores = app.currentCores_d;
@@ -47,7 +44,8 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 	//TODO: implementare un metodo di app che chiama invoke predictor;
 	predictorOutput = atoi(invokePredictor(configuration, conn, nNodes, nCores, "*", app.datasetSize, const_cast<char*>((app.session_app_id).c_str()),
 													const_cast<char*>((app.app_id).c_str()), const_cast<char*>((app.stage).c_str()), par, flagDagsim));
-	debugMsg= "Predictor Output: "+ std::to_string(predictorOutput); debugMessage(debugMsg,par);
+
+	//debugMsg= "Predictor Output: "+ std::to_string(predictorOutput); debugMessage(debugMsg,par);
 
 	debugMsg="Bound evaluation for" + app.session_app_id +
 					 " predictorOutput = " + std::to_string(predictorOutput) +
@@ -60,42 +58,46 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 
 
 		BTime = predictorOutput;
-		//To do nCores = ceil(nCores / pointer->V ) * pointer->V;
 
-		//printf("Calculate Bound for %s: R %d D %d\n", appId, predictorOutput, deadline);
-		if (doubleCompare(predictorOutput, pointer->Deadline_d) == 1)
-			while (predictorOutput > pointer->Deadline_d)
+
+		if (doubleCompare(predictorOutput, app.Deadline_d) == 1)
+			while (predictorOutput > app.Deadline_d)
 			{
 				if (nCores ==0)
 				{
 					printf("Warning Bound (| if case): nCores is currently 0 for app. Cannot invoke Predictor\n");
-					nCores= pointer->V;
+					nCores= app.V;
 					//leave the while loop
 					break;
 				}
-				//printf("(up) time = %d Rnew =%d\n", time, BTime);
 
 				nCores = nCores + STEP;
-				predictorOutput = atof(invokePredictor(configuration, conn, nNodes, nCores, "8G", pointer->datasetSize, pointer->session_app_id, pointer->app_id, pointer->stage,par, WHOLE_DAGSIM));
-				sprintf(debugMsg,"Bound evaluation for %s predictorOutput = %lf (deadline is %lf) cores %d\n",  pointer->session_app_id, predictorOutput,pointer->Deadline_d, nCores);debugMessage(debugMsg, par);
+				predictorOutput = atof(invokePredictor(configuration, conn, nNodes, nCores, "8G", app.datasetSize, const_cast<char*>((app.session_app_id).c_str()),
+																const_cast<char*>((app.app_id).c_str()), const_cast<char*>((app.stage).c_str()), par, WHOLE_DAGSIM));
+
+				debugMsg="Bound evaluation for" + app.session_app_id +
+								 " predictorOutput = " + std::to_string(predictorOutput) +
+								 "(deadline is " +std::to_string(app.Deadline_d)+ ") cores "
+								 + std::to_string(nCores); debugMessage(debugMsg, par);
 
 				BCores = nCores;
 				BTime = predictorOutput;
 
-				// Danilo 27/7/2017
-				pointer->sAB.vec[pointer->sAB.index].nCores = nCores;
-				pointer->sAB.vec[pointer->sAB.index].R = predictorOutput;
-				pointer->sAB.index = (pointer->sAB.index +1) % HYP_INTERPOLATION_POINTS;
+
+				app.sAB.vec[app.sAB.index].nCores = nCores;
+				app.sAB.vec[app.sAB.index].R = predictorOutput;
+				app.sAB.index = (app.sAB.index +1) % HYP_INTERPOLATION_POINTS;
 
 
 
-				// End Danilo
 
-				pointer->boundIterations++;
+
+				app.boundIterations++;
 
 			}
+
 		else
-			while (doubleCompare(predictorOutput, pointer->Deadline_d) == -1)
+			while (doubleCompare(predictorOutput, app.Deadline_d) == -1)
 			{
 				BCores = nCores;
 				BTime = predictorOutput;
@@ -112,29 +114,37 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 				if (nCores ==0)
 				{
 					//printf("Warning Bound (< if case): nCores is currently 0 for app. Cannot invoke Predictor\n");
-					nCores= pointer->V;
+					nCores= app.V;
 					//leave the while loop
 					break;
 				}
-				predictorOutput = atof(invokePredictor(configuration, conn, nNodes, nCores, "8G", pointer->datasetSize, pointer->session_app_id, pointer->app_id, pointer->stage, par, WHOLE_DAGSIM));
-				sprintf(debugMsg,"Bound evaluation for %s predictorOutput = %lf (deadline is %lf) cores %d\n",  pointer->session_app_id, predictorOutput, pointer->Deadline_d, nCores);debugMessage(debugMsg, par);
 
-				pointer->sAB.vec[pointer->sAB.index].nCores = nCores;
-				pointer->sAB.vec[pointer->sAB.index].R = predictorOutput;
-				pointer->sAB.index = pointer->sAB.index % HYP_INTERPOLATION_POINTS;
+				predictorOutput = atof(invokePredictor(configuration, conn, nNodes, nCores, "8G", app.datasetSize, const_cast<char*>((app.session_app_id).c_str()),
+				const_cast<char*>((app.app_id).c_str()), const_cast<char*>((app.stage).c_str()), par, WHOLE_DAGSIM));
+
+				debugMsg="Bound evaluation for" + app.session_app_id +
+								 " predictorOutput = " + std::to_string(predictorOutput) +
+								 "(deadline is " +std::to_string(app.Deadline_d)+ ") cores "
+								 + std::to_string(nCores); debugMessage(debugMsg, par);
+
+				app.sAB.vec[app.sAB.index].nCores = nCores;
+				app.sAB.vec[app.sAB.index].R = predictorOutput;
+				app.sAB.index = app.sAB.index % HYP_INTERPOLATION_POINTS;
 
 				//printf("(down) time = %d Rnew =%d\n", time, BTime);
-				pointer->boundIterations++;
+				app.boundIterations++;
 			}
 	//}
 	/* Update the record with bound values */
-/*
-	pointer->currentCores_d = BCores;
-	pointer->R_d = BTime;
-	pointer->bound = BCores;
-	sprintf(debugMsg,"\n\nSession_app_id %s APP_ID %s D = %lf R = %lf  bound = %d\n\n", pointer->session_app_id, pointer->session_app_id, pointer->Deadline_d, pointer->R_d, pointer->bound);debugMessage(debugMsg, par);
 
-*/
+	app.currentCores_d = BCores;
+	app.R_d = BTime;
+	app.bound = BCores;
+	debugMsg="\n\nSession_app_id : " + app.session_app_id + " , APP_ID: " + app.app_id +
+					 ", D = "+ std::to_string(app.Deadline_d) + ", R =" + std::to_string(app.R_d)+
+					 ", bound = "+ std::to_string(app.bound) + "\n\n"; debugMessage(debugMsg, par);
+
+
 }
 
 
@@ -152,14 +162,14 @@ void Bounds::findBound(sConfiguration &configuration, MYSQL *conn, char* db,  Ap
   std::string debugMsg;
   char statement[256];
 
-  debugMsg= "findBound "+ app.session_app_id + " " + app.app_id; debugMessage(debugMsg, par);
+  //debugMsg= "findBound "+ app.session_app_id + " " + app.app_id; debugMessage(debugMsg, par);
 
   ///Retrieve nCores from the DB
 
     sprintf(statement,
                         "select num_cores_opt, num_vm_opt from %s.OPTIMIZER_CONFIGURATION_TABLE where application_id='%s' and dataset_size=%d and deadline=%lf;"
                         , db, const_cast<char*>(app.app_id.c_str()), app.datasetSize, app.Deadline_d);
-
+		debugMsg= "From findbound executing statement below for app "+app.app_id; debugMessage(debugMsg, par);
     MYSQL_ROW row = executeSQL(conn, statement, par);
 
     if (row == NULL)
@@ -170,9 +180,13 @@ void Bounds::findBound(sConfiguration &configuration, MYSQL *conn, char* db,  Ap
 
     app.nCores_DB_d = atoi(row[0]);
     app.vm = atoi(row[1]);
+		debugMsg=" From findbound a first estimate on ncores:"+  std::to_string(app.nCores_DB_d)
+							+" and VM: "+ std::to_string(app.vm) + " for application "+app.app_id ;debugMessage(debugMsg, par);
+
+
 
     Bound(configuration, conn, app, par, WHOLE_DAGSIM);
-    debugMsg="A bound for " +app.session_app_id+ " has been calculated";debugMessage(debugMsg, par);
+    debugMsg="A bound for " + app.session_app_id + "  (app_id: " + app.app_id + ") has been calculated";debugMessage(debugMsg, par);
 
 
 }
@@ -188,13 +202,11 @@ void Bounds::calculateBounds(Batch  & app_manager, int n_threads,
                              optJrParameters &par)
   {
     std::string debugMsg;
-    debugMsg=" Calculate bounds for each application in parallel\n ";debugMessage(debugMsg,par);
+    debugMsg=" Calculate bounds for each application in parallel with "+ std::to_string(n_threads)+" threads (using openMP) \n" ;debugMessage(debugMsg,par);
 
-    //sList* t_pointer[n_threads];
     MYSQL *conn2[n_threads];
     for (int i =0; i< n_threads;++i)
     {
-      //t_pointer[i]=pointer;
       conn2[i]=DBopen(
         const_cast<char*>(configuration["OptDB_IP"].c_str()),
         const_cast<char*>(configuration["OptDB_user"].c_str()),
@@ -202,6 +214,7 @@ void Bounds::calculateBounds(Batch  & app_manager, int n_threads,
         const_cast<char*>(configuration["OptDB_dbName"].c_str())
       );
     }
+
     /*call findbound in parallel;*/
     #pragma omp parallel num_threads(n_threads)
     {
@@ -217,14 +230,24 @@ void Bounds::calculateBounds(Batch  & app_manager, int n_threads,
 
         if(pos==ID)
         {
-          debugMsg= "Call findBound of app number " + std::to_string(j)
-                  + " - called from thread" + std::to_string(ID);debugMessage(debugMsg,par);
+          debugMsg= "\n\n\n\n\n\n\n\n\nCall findBound of app " + app_manager.APPs[j].app_id
+                    + " from thread " + std::to_string(ID); debugMessage(debugMsg,par);
 
           findBound(configuration, conn2[ID], const_cast<char*>(configuration["OptDB_dbName"].c_str()), app_manager.APPs[j], par);
         }
         ++j;
       }
     }
+
+		debugMsg="\n\n************* FINAL BOUNDS RESULTS: **************";
+		for (auto it= app_manager.APPs.begin(); it!= app_manager.APPs.end();it++)
+		{
+			debugMsg+="\nBound evaluated for " + it->session_app_id +
+			" predictorOutput = " + std::to_string(it->sAB.vec[it->sAB.index].R) +
+			"(deadline is " +std::to_string(it->Deadline_d)+ ") cores "
+			+ std::to_string(it->sAB.vec[it->sAB.index].nCores);
+		}debugMessage(debugMsg, par);
+
     debugMsg= " End calculate bounds ";debugMessage(debugMsg,par);
 
 

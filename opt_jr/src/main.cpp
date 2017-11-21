@@ -126,11 +126,11 @@ int main(int argc, char **argv)
 
   std::cout<<"\n\n*******************************************************************\n";
   std::cout<<"****************       CALCULATE BOUNDS         *******************\n";
-  std::cout<<"*******************************************************************\n";
+  std::cout<<"*******************************************************************\n\n";
 
-  Bounds myBound;
-  myBound.calculateBounds(App_manager,1, configuration, conn, par );//TODO: passare i thread come parametro da command line 
-
+  Bounds myBound; // si può usare metodo classe senza crearne un oggetto?
+  myBound.calculateBounds(App_manager,1, configuration, conn, par ); //TODO: passare il numero di thread come parametro da command line
+  //TODO: improve debugging message in bound e findbound (e invokePredictor) e capire bene cosa fanno !
   std::cout<<"*******************************************************************\n\n\n";
 
 
