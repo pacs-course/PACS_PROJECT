@@ -122,7 +122,38 @@ Batch::calculate_nu(optJrParameters &par)
 
 
   }
-  debugMsg="end calculate nu";debugMessage(debugMsg, par);
+  debugMsg="end calculate nu"; debugMessage(debugMsg, par);
+
+
+};
+
+
+/*
+ * Name:				initialize
+ * Description			For each application, a base value for the objective function is calculated.
+ */
+
+void Batch::initialize(sConfiguration  &configuration, MYSQL *conn, optJrParameters &par)
+{
+	std::string debugMsg;
+
+  debugMsg =  "Information: INITIALIZE baseFo for all the applications" ;debugMessage(debugMsg, par);
+	for (auto it =APPs.begin(); it!= APPs.end(); it++)
+	{
+			it->mode = R_ALGORITHM;
+			it->baseFO = it->ObjFunctionComponent(configuration, conn, par);
+			it->initialBaseFO = it->baseFO;
+			debugMsg = "INITIALIZE BASE FO for APP "+ it->session_app_id
+                + " baseFO = " + std::to_string(it->baseFO)+"\n"; debugMessage(debugMsg, par);
+	}
+
+  debugMsg = "\n************ INITIALIZATION OBJECTIVE FUNCTION RESULTS ***************";
+  for (auto it =APPs.begin(); it!= APPs.end(); it++)
+	{
+
+			debugMsg += "\nINITIALIZE BASE FO for APP "+ it->session_app_id
+                + " baseFO = " + std::to_string(it->baseFO);
+	}debugMessage(debugMsg, par);
 
 
 };

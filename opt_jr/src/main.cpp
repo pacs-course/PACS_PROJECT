@@ -94,7 +94,7 @@ int main(int argc, char **argv)
 
   if (stream == NULL)
   {
-    printf("FATAL ERROR: could not find or open %s\n", filename);
+    std::cout << "FATAL ERROR: could not find or open " << filename <<std::endl;
     exit(-1);
   }
 
@@ -128,17 +128,32 @@ int main(int argc, char **argv)
   std::cout<<"****************       CALCULATE BOUNDS         *******************\n";
   std::cout<<"*******************************************************************\n\n";
 
-  Bounds myBound; // si può usare metodo classe senza crearne un oggetto?
-  myBound.calculateBounds(App_manager,1, configuration, conn, par ); //TODO: passare il numero di thread come parametro da command line
+  int n_threads=1;
+  Bounds::calculateBounds(App_manager,n_threads, configuration, conn, par ); //TODO: passare il numero di thread come parametro da command line
   //TODO: improve debugging message in bound e findbound (e invokePredictor) e capire bene cosa fanno !
+  //TODO: improve bound class
+  std::cout<<"*******************************************************************\n\n\n";
+
+
+  /********************************************************
+    INITIALIZE BASE OBJECTIVE FUNCTION
+  *********************************************************/
+
+  std::cout<<"\n\n*******************************************************************\n";
+  std::cout<<"************    INITIALIZE BASE OBJECTIVE FUNCTION   **************\n";
+  std::cout<<"*******************************************************************\n\n";
+
+  App_manager.initialize(configuration, conn, par);
+
+
+  debugMsg= "end calculate base objective function";
   std::cout<<"*******************************************************************\n\n\n";
 
 
 
-  //TODO: chiamare calculate_NU (C++) (and NU_1)
 
 
-  //TODO: chiamare calculate_bounds (C++, openMP)
+
 
 
   //TODO: fixInitialSolution

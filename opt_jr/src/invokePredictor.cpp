@@ -14,7 +14,6 @@ char* invokePredictor(sConfiguration  &configuration, MYSQL *conn, int nNodes, i
 											char * memory, int datasize,  char *sessionId, char *appId, char *stage,
 											optJrParameters &par, int flagDagsim)
 {
-	std::string debugMsg=" invoking predictor "; debugMessage(debugMsg, par);
 
 	char parameters[1024];
 	char cmd[1024];
@@ -22,7 +21,6 @@ char* invokePredictor(sConfiguration  &configuration, MYSQL *conn, int nNodes, i
 	char lua[1024];
 	char subfolder[1024];
 	char *output1 = (char *)malloc(64);
-	sprintf(output1, "ciao");
 
 	char statement[1024];/*
 	char debugMsg[DEBUG_MSG];*/
@@ -37,6 +35,7 @@ char* invokePredictor(sConfiguration  &configuration, MYSQL *conn, int nNodes, i
 		exit(-1);
 	}
 
+	std::string debugMsg=" Invoking predictor "; debugMessage(debugMsg, par);
 
 
 	//sprintf(debugMsg, "invokePredictor\n");debugInformational(debugMsg, par);
@@ -45,13 +44,12 @@ char* invokePredictor(sConfiguration  &configuration, MYSQL *conn, int nNodes, i
 	// This is possible because the variance between the log folders is small
 
 	strcpy(path, const_cast<char*>(configuration["RESULTS_HOME"].c_str()));
-	std::cout << "PATH: "<<path<<std::endl;
 
 	strcpy(dir, readFolder(path));
 
 	switch(par.get_simulator())
 	{
-		case LUNDSTROM:
+		case LUNDSTROM: //NB: funziona?
 			sprintf(parameters, "%d %d %s %d %s", nNodes, currentCores, memory, datasize, appId);
 			sprintf(cmd, "cd %s;python run.py %s", const_cast<char*>(configuration["LUNDSTROM_HOME"].c_str()), parameters);
 			break;
@@ -79,7 +77,7 @@ char* invokePredictor(sConfiguration  &configuration, MYSQL *conn, int nNodes, i
 					dbName,appId, dbName,datasize, dbName,currentCores);
 
 
-
+		  debugMsg= "From invokePredictor executing SQL STATEMENT below "; debugMessage(debugMsg, par);
 			MYSQL_ROW row = executeSQL(conn, statement, par);
 
 
