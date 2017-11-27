@@ -26,12 +26,13 @@
 	double DELTA_fo_App_i, DELTA_fo_App_j;
 	//sCandidates * minCandidate;
 	//sStatistics *firstS = NULL, *currentS = NULL;
-  /*
+
 
 	for (int iteration = 1; iteration <= par.get_maxIterations(); iteration++)
 	{
 		debugMsg= "ITERATION " + std::to_string(iteration); debugMessage(debugMsg, par);
 
+    /*
 		// Estimate the candidates for the predictor
 		sfirstCandidateApproximated = approximatedLoop(first, &how_many, par );
 		if (sfirstCandidateApproximated ==NULL)
@@ -133,9 +134,9 @@
 
 	// TODO Modify to recalculate only FO for apps i,j (use the above copies without invoke dagSim)
 	initialize(configuration, conn, first, par);
-
+*/
 }
-
+/*
 if (par.globalFOcalculation)
 {
 	readStatistics(firstS, par);

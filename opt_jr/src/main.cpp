@@ -12,6 +12,7 @@
 #include "batch.hh"
 #include "bounds.hh"
 #include "search.hh"
+#include "objectiveFunction.hh"
 
 int main(int argc, char **argv)
 {
@@ -171,6 +172,8 @@ int main(int argc, char **argv)
   Search::localSearch(configuration, conn, App_manager,  par );
   std::cout<<"*******************************************************************\n\n\n";
 
+  //PROVA:
+  double tmp=ObjFun::ObjFunctionComponentApprox(App_manager.APPs[0],par);
 
 
 
@@ -178,6 +181,6 @@ int main(int argc, char **argv)
 
 
 
-  //TODO: scrivere su database
+
 
 }
