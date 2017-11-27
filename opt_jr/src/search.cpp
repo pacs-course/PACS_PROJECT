@@ -1,6 +1,13 @@
 #include "search.hh"
 
+#include "debugmessage.hh"
+#include "utility.hh"
+
 #include <string>
+
+
+
+
 
 
 /*
@@ -13,7 +20,7 @@
   std::cout <<"               hello from localsearch :) "<<std::endl;
 
 	//sApplication * application_i, *application_j;
-	//sCandidates *sfirstCandidateApproximated = NULL;
+	sCandidates sCandidateApproximated ;
 	//char debugMsg[DEBUG_MSG];
 
   std::string debugMsg;
@@ -32,30 +39,32 @@
 	{
 		debugMsg= "ITERATION " + std::to_string(iteration); debugMessage(debugMsg, par);
 
-    /*
 		// Estimate the candidates for the predictor
-		sfirstCandidateApproximated = approximatedLoop(first, &how_many, par );
-		if (sfirstCandidateApproximated ==NULL)
+		sCandidateApproximated = App_manager.approximatedLoop( how_many, par );
+		if (sCandidateApproximated.empty())
 		{
 			// The Candidate Application is empty. No further solution enhancements possible
-			debugInformational("LocalSearch: empty Candidate Application", par);
-
+      debugMsg = "LocalSearch: empty Candidate Application "; debugMessage(debugMsg, par);
 			break;
-	}
+	  }
 
 	// Copy the pointer to couple of application with smallest deltafo
-	minCandidate = sfirstCandidateApproximated;
-	sprintf(debugMsg, " Ex-iteration loop");debugBanner(debugMsg, par);
+	//minCandidate = sfirstCandidateApproximated;
+	debugMsg = " Ex-iteration loop";debugMessage(debugMsg, par);
 
+/*//TODO: decommentare questa parte!
 	if (par.numberOfThreads > 0)
 	{
 		// Calculate in advance and in parallel the results of the predictor for each candidate
 		invokePredictorOpenMP(sfirstCandidateApproximated, par, configuration);
 	}
-
+*/
 		// To Do: consider only the first MAX_PROMISING_CONFIGURATIONS of the Application -> DONE
-		while (sfirstCandidateApproximated != NULL)
+		//for (auto it = sCandidateApproximated.begin(); it != sCandidateApproximated.end(); it++)
+    for (int k=0;k< how_many; ++k )
 		{
+      std::cout<<"\n\n\n\n\n\n\n\n\n\nhkh\n\n\n\n\n\n\n";
+      /*
 			checkTotalNodes(par.number, first);
 
 			sprintf(debugMsg, "Browsing CandidateApproximated Application");debugBanner(debugMsg, par);
@@ -112,6 +121,8 @@
 
 			sfirstCandidateApproximated = sfirstCandidateApproximated->next;
 		}
+
+
 		if (par.globalFOcalculation)
 		{
 			TotalFO = ObjFunctionGlobal(configuration, conn, first, par);
@@ -143,4 +154,5 @@ if (par.globalFOcalculation)
 	if (firstS) freeStatistics(firstS);
 }
 */
+}
 }

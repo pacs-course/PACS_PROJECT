@@ -21,3 +21,30 @@ int doubleCompare(double a, double b)
 	    if (a > b) return 1; else return -1;
 	   }
 }
+
+
+
+/*
+ * 		Name:					checkTotalNodes
+ * 		Input parameters:		int N, sApplication * pointer
+ * 		Output parameters:		TBD
+ * 		Description:			It checks that the total allocated nodes is still less or equal than the total number of cores available N
+ *
+
+
+void checkTotalNodes(int N, Batch &app_manager)
+{
+	int total = 0;
+
+	for (auto it= app_manager.APPs.begin(),  it != app_manager.APPs.begin(), ++it)
+	{
+		total+= it->currentCores_d;
+		if (total > N)
+		{
+			printf("Fatal Error: checkTotalNodes: Total current nodes (%d) exceeds maximum nodes number (%d)\n", total, N);
+			exit(-1);
+		}
+
+	}
+}
+*/
