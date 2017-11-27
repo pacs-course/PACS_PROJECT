@@ -28,7 +28,7 @@
 	//sStatistics *firstS = NULL, *currentS = NULL;
 
 
-	for (int iteration = 1; iteration <= par.get_maxIterations(); iteration++)
+	for (int iteration = 1; iteration <= par.get_maxIteration(); iteration++)
 	{
 		debugMsg= "ITERATION " + std::to_string(iteration); debugMessage(debugMsg, par);
 

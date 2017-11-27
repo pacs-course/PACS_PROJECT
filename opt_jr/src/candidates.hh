@@ -7,7 +7,7 @@
 class Candidate{
   /* First application */
 	//sApplication * app_i; 		/* Application */
-  Application * app_i; //NB: WARNING! PUNTATORI!   TODO: find a more safe solution?
+  Application  app_i; //NB: PER IL MOMENTO é UNA COPIA TODO: trovare soluzione piu efficiente
 
 	int newCoreAssignment_i;	/* Application cores after the move */
 	int delta_i;				/* Delta cores following the move */
@@ -15,7 +15,7 @@ class Candidate{
 
 	/* Second application */
 	//sApplication * app_j;
-  Application * app_j;
+  Application  app_j;
 	int newCoreAssignment_j;
 	int delta_j;
 	double real_j;

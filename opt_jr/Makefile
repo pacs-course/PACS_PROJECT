@@ -2,14 +2,14 @@ CXXFLAGS  += -Wall -std=c++11 -I/usr/include/mysql
 
 EXE= OPT_JR_CPP
 
-OBJS  = main.o optjrparameters.o optjrParam_helper.o readConfigurationFile.o db.o application.o read_app_file.o batch.o debugmessage.o bounds.o invokePredictor.o invokePredictor_helper.o search.o objectiveFunction.o
+OBJS  = main.o optjrparameters.o optjrParam_helper.o readConfigurationFile.o db.o application.o read_app_file.o batch.o debugmessage.o bounds.o invokePredictor.o invokePredictor_helper.o search.o objectiveFunction.o utility.o
 
 .DEFAULT_GOAL  = all
 
 all: $(EXE)
 
-$(EXE) : main.o optjrparameters.o helper.o readConfigurationFile.o db.o application.o read_app_file.o batch.o debugmessage.o bounds.o invokePredictor.o invokePredictor_helper.o search.o objectiveFunction.o
-	$(CXX) $(CXXFLAGS) -fopenmp -o $(EXE) main.o optjrparameters.o helper.o readConfigurationFile.o db.o application.o read_app_file.o batch.o debugmessage.o bounds.o invokePredictor.o invokePredictor_helper.o search.o objectiveFunction.o -lmysqlclient
+$(EXE) : main.o optjrparameters.o helper.o readConfigurationFile.o db.o application.o read_app_file.o batch.o debugmessage.o bounds.o invokePredictor.o invokePredictor_helper.o search.o objectiveFunction.o utility.o
+	$(CXX) $(CXXFLAGS) -fopenmp -o $(EXE) main.o optjrparameters.o helper.o readConfigurationFile.o db.o application.o read_app_file.o batch.o debugmessage.o bounds.o invokePredictor.o invokePredictor_helper.o search.o objectiveFunction.o utility.o -lmysqlclient
 
 main.o : src/main.cpp
 	$(CXX) $(CXXFLAGS) -c src/main.cpp
@@ -52,6 +52,16 @@ search.o : src/search.cpp
 
 objectiveFunction.o : src/objectiveFunction.cpp
 	$(CXX) $(CXXFLAGS) -c src/objectiveFunction.cpp
+
+utility.o : src/utility.cpp
+	$(CXX) $(CXXFLAGS) -c src/utility.cpp
+
+candidates.o : src/candidates.cpp
+	$(CXX) $(CXXFLAGS) -c src/candidates.cpp
+
+
+
+
 
 
 

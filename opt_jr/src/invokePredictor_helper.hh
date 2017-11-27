@@ -2,10 +2,10 @@
 #define INVOKEPREDICTOR_HELPER_HH
 
 #include "optJrParameters.hh"
+#include "utility.hh"
 
 #include <string.h>
 #include <stdio.h>
-const double epsilon = 0.001; // precisione in doubleCompare
 
 
 
@@ -21,7 +21,7 @@ char * readFile(char * filename);
 char * _run(char * cmd, optJrParameters &par);
 char * extractWord(char * line, int pos);
 char * extractRowMatchingPattern(char *text, char *pattern);
-int doubleCompare(double a, double b);
+
 
 
 #endif
