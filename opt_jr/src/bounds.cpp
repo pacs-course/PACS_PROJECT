@@ -29,7 +29,7 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 	int nCores;
 	int nNodes = 1; // Temporary fix ----> NB: che significa??
 
-	app.currentCores_d = app.nCores_DB_d;
+	app.currentCores_d = app.nCores_DB_d; // NB: CREDO CHE QUESTA COSA SIA SBAGLIATA, sto dando piu cores di quelli che ho
 
 
 	int X0 = ((int) ( app.currentCores_d / app.V) ) * app.V;
@@ -136,10 +136,10 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 				//printf("(down) time = %d Rnew =%d\n", time, BTime);
 				app.boundIterations++;
 			}
-	
+
 	/* Update the record with bound values */
 
-	app.currentCores_d = BCores;
+	app.currentCores_d = BCores; //PERCHè???
 	app.R_d = BTime;
 	app.bound = BCores;
 	debugMsg="\n\nSession_app_id : " + app.session_app_id + " , APP_ID: " + app.app_id +

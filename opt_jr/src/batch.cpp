@@ -110,7 +110,7 @@ Batch::calculate_nu(optJrParameters &par)
       //printf("\nTERM app %s %lf tot %lf\n", it->app_id, it->term_i, (1 + tot) );
     }
     //printf("NU_i%lf nu1 %lf\n", it->nu_d, nu_1);
-    /*it->currentCores_d = it->nu_d;*///NB:  currentCores_d ?? che roba è?? a che serve???
+    it->currentCores_d = it->nu_d;  //NB:  currentCores_d ?? che roba è?? a che serve???
     std::cout<<"App ID: "<<it->app_id<<", NU: "<<it->nu_d<<std::endl;
 
 
@@ -202,7 +202,7 @@ void Batch::fixInitialSolution(optJrParameters &par)
 		// Danilo Application (suffering) insert in the new Application
 		// TODO Handle insert in such a way the Application is sorted by weight -> DONE
 		allocatedCores+= it->currentCores_d;
-		debugMsg =  "fixInitialSolution FIXING CORES"+  it->session_app_id
+		debugMsg =  "fixInitialSolution FIXING CORES "+  it->session_app_id
                 + " cores: " + std::to_string(it->currentCores_d); debugMessage(debugMsg, par);
 	}
 	//readApplicationPointers(first_LP);
@@ -215,9 +215,11 @@ void Batch::fixInitialSolution(optJrParameters &par)
 
 
   //Scorro l'elenco delle app "sofferenti " in ordine di peso, finchè ho cores disponibili
-  /*
-	while (!loopExit&& (residualCores>0))
+
+	/*while (!loopExit&& (residualCores>0))
 	{
+    std::cout << "  \n\n\n\n IN LOOP  \n\n\n\n    ";
+    /*
 		if (CandidatePointer == NULL) loopExit = 1; // NB: USO CandidatePointer!
 		else
 		{
@@ -258,6 +260,8 @@ void Batch::fixInitialSolution(optJrParameters &par)
 	}
 
 	return first_LP;
+  
+  }
   */
 }
 
