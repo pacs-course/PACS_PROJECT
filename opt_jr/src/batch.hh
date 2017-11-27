@@ -13,7 +13,7 @@ public:
   Batch(std::vector<Application> apps): APPs(apps){};
   void calculate_nu(optJrParameters &par);
   void initialize(sConfiguration  &configuration, MYSQL *conn, optJrParameters &par);
-  //void fixInitialSolution(sApplication &applications,   optJrParameters &par)
+  void fixInitialSolution(optJrParameters &par);
   sCandidates approximatedLoop( int &iteration, optJrParameters &par );
 
 };

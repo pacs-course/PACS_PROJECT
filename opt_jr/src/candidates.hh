@@ -36,7 +36,7 @@ class Candidate{
 
 
 //usata in sCandidates
-class Compare
+class Compare1
 {
 public:
     bool operator() (const Candidate& a, const Candidate& b);
@@ -45,7 +45,7 @@ public:
 
 
 /*coppie di app ordinate per deltaFO crescente!*/
-using sCandidates=std::priority_queue<Candidate,std::vector<Candidate>,Compare>;
+using sCandidates=std::priority_queue<Candidate,std::vector<Candidate>,Compare1>;
 //NB: è giusto usare vector come underlying container?
 
 

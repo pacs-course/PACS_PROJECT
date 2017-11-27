@@ -4,6 +4,7 @@
 
 #include "debugmessage.hh"
 #include "objectiveFunction.hh"
+#include "appByWeight.hh"
 
 #include <string>
 #include <cmath>
@@ -166,32 +167,27 @@ void Batch::initialize(sConfiguration  &configuration, MYSQL *conn, optJrParamet
 
 /*
  * Name: fixInitialSolution
- * Input parameters: sApplication *applications,  struct optJrParameters par
- * Output parameters: sApplicationPointers *
  * Description: It fixes the initial solution by reallocating the residual cores to the applications that may need more resources
  */
 
 //sApplicationPointers * fixInitialSolution(sApplication *applications,  struct optJrParameters par)
-/*void Batch::fixInitialSolution(sApplication &applications,   optJrParameters &par)
+void Batch::fixInitialSolution(optJrParameters &par)
 {
-
 	//sApplication * first;
 	int allocatedCores;
 	//sApplicationPointers * first_LP = NULL;
-  std::list<Application> first_LP;
-
 	int loopExit = 0;
 	//sApplicationPointers *CandidatePointer;
 	int residualCores;
-	char debugMsg[DEBUG_MSG];
-	int N = par.number;
+	//char debugMsg[DEBUG_MSG];
+  std::string debugMsg;
+	int N = par.get_number();
 
 	allocatedCores = 0;
 
-	first = applications;
+	//first = applications;
 
-	//while (first != NULL)
-  for (auto it= APPs.begin(); it!=APPs.end();it++)
+	for(auto it = APPs.begin(); it!=APPs.end(); ++it)
 	{
 
 		it->currentCores_d = std::max(((int)(it->currentCores_d / it->V)) * it->V,it->V);
@@ -199,27 +195,31 @@ void Batch::initialize(sConfiguration  &configuration, MYSQL *conn, optJrParamet
 			it->currentCores_d = it->bound;
 		else
 			{
-				debugMsg= "adding " + it->session_app_id + " to ApplicationPointers "; debugMessage(debugMsg, par);
-				//addApplicationPointer(&first_LP, first);
-
+				debugMsg= "adding " + it->session_app_id + " to ApplicationPointers"; debugMessage(debugMsg, par);
+				//addApplicationPointer(&first_LP, first); //TODO: COSA FA QUESTA??
+        // credo che inserisca in una lista (se l'applicazione ha meno cores del bound)
+        // ordinata per pesi!
 			}
 
 		// Danilo Application (suffering) insert in the new Application
 		// TODO Handle insert in such a way the Application is sorted by weight -> DONE
-		allocatedCores+= first->currentCores_d;
-		sprintf(debugMsg, "fixInitialSolution FIXING CORES %s %d\n", first->session_app_id, first->currentCores_d);debugMessage(debugMsg, par);
-		first = first->next;
+		allocatedCores+= it->currentCores_d;
+		debugMsg =  "fixInitialSolution FIXING CORES"+  it->session_app_id
+                + " cores: " + std::to_string(it->currentCores_d); debugMessage(debugMsg, par);
 	}
 	//readApplicationPointers(first_LP);
-	sprintf(debugMsg,"fixInitialSolution: allocatedCores %d\n", allocatedCores);debugMessage(debugMsg, par);
+	debugMsg= "fixInitialSolution: allocatedCores "+ std::to_string(allocatedCores); debugMessage(debugMsg, par);
 
-	CandidatePointer = first_LP;
+	//NB: (commentato  io)  CandidatePointer = first_LP;
 	residualCores = N - allocatedCores;
 	int addedCores;
 
+
+  //Scorro l'elenco delle app "sofferenti " in ordine di peso, finchè ho cores disponibili
+  /*
 	while (!loopExit&& (residualCores>0))
 	{
-		if (CandidatePointer == NULL) loopExit = 1;
+		if (CandidatePointer == NULL) loopExit = 1; // NB: USO CandidatePointer!
 		else
 		{
 			// cores assignment
@@ -259,8 +259,9 @@ void Batch::initialize(sConfiguration  &configuration, MYSQL *conn, optJrParamet
 	}
 
 	return first_LP;
-};
-*/
+  */
+}
+
 
 
 

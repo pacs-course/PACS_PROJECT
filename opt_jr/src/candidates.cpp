@@ -3,7 +3,7 @@
 
 
 
-bool Compare::operator()(const Candidate& a, const Candidate& b){
+bool Compare1::operator()(const Candidate& a, const Candidate& b){
   return a.deltaFO > b.deltaFO; //NB: siccome voglio ordine crescente e di default priority queue è decrescente, uso il maggiore !
 }
 
