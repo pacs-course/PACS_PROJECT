@@ -175,7 +175,7 @@ void Batch::fixInitialSolution(optJrParameters &par)
 {
 	//sApplication * first;
 	int allocatedCores;
-	//sApplicationPointers * first_LP = NULL;
+	appByWeight  LP ;
 	int loopExit = 0;
 	//sApplicationPointers *CandidatePointer;
 	int residualCores;
@@ -196,9 +196,7 @@ void Batch::fixInitialSolution(optJrParameters &par)
 		else
 			{
 				debugMsg= "adding " + it->session_app_id + " to ApplicationPointers"; debugMessage(debugMsg, par);
-				//addApplicationPointer(&first_LP, first); //TODO: COSA FA QUESTA??
-        // credo che inserisca in una lista (se l'applicazione ha meno cores del bound)
-        // ordinata per pesi!
+				LP.push(*it);
 			}
 
 		// Danilo Application (suffering) insert in the new Application
@@ -212,6 +210,7 @@ void Batch::fixInitialSolution(optJrParameters &par)
 
 	//NB: (commentato  io)  CandidatePointer = first_LP;
 	residualCores = N - allocatedCores;
+  std::cout << "RESIDUAL CORES: "<<residualCores<<std::endl;
 	int addedCores;
 
 
