@@ -13,7 +13,7 @@
 #include "bounds.hh"
 #include "search.hh"
 #include "objectiveFunction.hh"
-#include "candidates.hh" //solo per prova
+#include "candidates.hh"
 
 int main(int argc, char **argv)
 {
@@ -174,8 +174,10 @@ int main(int argc, char **argv)
   std::cout<<"*******************************************************************\n\n\n";
 
   //PROVA:
-  double tmp=ObjFun::ObjFunctionComponentApprox(App_manager.APPs[0],par);
-  
+  //double tmp=ObjFun::ObjFunctionComponentApprox(App_manager.APPs[0],par);
+  //int tmpp=1;
+  //sCandidates tmp2 =App_manager.approximatedLoop(tmpp,par);
+
 
 
 
