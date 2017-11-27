@@ -3,7 +3,7 @@
 
 #include <string>
 #include <cmath>
-
+#include <list>
 
 /*
  * 		Name:					calculate_nu
@@ -157,3 +157,101 @@ void Batch::initialize(sConfiguration  &configuration, MYSQL *conn, optJrParamet
 
 
 };
+
+/*
+ * Name: fixInitialSolution
+ * Input parameters: sApplication *applications,  struct optJrParameters par
+ * Output parameters: sApplicationPointers *
+ * Description: It fixes the initial solution by reallocating the residual cores to the applications that may need more resources
+ */
+
+//sApplicationPointers * fixInitialSolution(sApplication *applications,  struct optJrParameters par)
+/*void Batch::fixInitialSolution(sApplication &applications,   optJrParameters &par)
+{
+
+	//sApplication * first;
+	int allocatedCores;
+	//sApplicationPointers * first_LP = NULL;
+  std::list<Application> first_LP;
+
+	int loopExit = 0;
+	//sApplicationPointers *CandidatePointer;
+	int residualCores;
+	char debugMsg[DEBUG_MSG];
+	int N = par.number;
+
+	allocatedCores = 0;
+
+	first = applications;
+
+	//while (first != NULL)
+  for (auto it= APPs.begin(); it!=APPs.end();it++)
+	{
+
+		it->currentCores_d = std::max(((int)(it->currentCores_d / it->V)) * it->V,it->V);
+		if (it->currentCores_d > it->bound)
+			it->currentCores_d = it->bound;
+		else
+			{
+				debugMsg= "adding " + it->session_app_id + " to ApplicationPointers "; debugMessage(debugMsg, par);
+				//addApplicationPointer(&first_LP, first);
+
+			}
+
+		// Danilo Application (suffering) insert in the new Application
+		// TODO Handle insert in such a way the Application is sorted by weight -> DONE
+		allocatedCores+= first->currentCores_d;
+		sprintf(debugMsg, "fixInitialSolution FIXING CORES %s %d\n", first->session_app_id, first->currentCores_d);debugMessage(debugMsg, par);
+		first = first->next;
+	}
+	//readApplicationPointers(first_LP);
+	sprintf(debugMsg,"fixInitialSolution: allocatedCores %d\n", allocatedCores);debugMessage(debugMsg, par);
+
+	CandidatePointer = first_LP;
+	residualCores = N - allocatedCores;
+	int addedCores;
+
+	while (!loopExit&& (residualCores>0))
+	{
+		if (CandidatePointer == NULL) loopExit = 1;
+		else
+		{
+			// cores assignment
+
+			int potentialDeltaCores=((int)(residualCores / CandidatePointer->app->V) )* CandidatePointer->app->V;
+
+			//addedCores = MIN(, CandidatePointer->app->bound_d);
+
+			if ((CandidatePointer->app->currentCores_d + potentialDeltaCores) > CandidatePointer->app->bound){
+				addedCores = CandidatePointer->app->bound - CandidatePointer->app->currentCores_d ;
+				CandidatePointer->app->currentCores_d = CandidatePointer->app->bound;
+
+
+			}
+			else{
+				CandidatePointer->app->currentCores_d = CandidatePointer->app->currentCores_d + potentialDeltaCores;
+				addedCores=potentialDeltaCores;
+			}
+
+			if (CandidatePointer->app->currentCores_d == 0)
+			{
+				printf("\nFatal Error: FixInitialSolution: app %s has %d cores after fix\n", CandidatePointer->app->session_app_id, CandidatePointer->app->currentCores_d);
+				exit(-1);
+			}
+			if (addedCores > 0)
+			{
+				//CandidatePointer->app->currentCores_d+= addedCores;
+
+				sprintf(debugMsg,"adding cores to App %s, %d \n", CandidatePointer->app->session_app_id, addedCores);debugMessage(debugMsg, par);
+				sprintf(debugMsg," application_id %s new cores %d moved cores %d\n", CandidatePointer->app->session_app_id, (int)CandidatePointer->app->currentCores_d, addedCores);debugMessage(debugMsg, par);
+				residualCores = residualCores - addedCores;
+			}
+			CandidatePointer = CandidatePointer->next;
+		}
+
+		if (residualCores == 0) loopExit = 1;
+	}
+
+	return first_LP;
+};
+*/

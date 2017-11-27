@@ -11,6 +11,7 @@
 #include "read_app_file.hh"
 #include "batch.hh"
 #include "bounds.hh"
+#include "search.hh"
 
 int main(int argc, char **argv)
 {
@@ -152,13 +153,30 @@ int main(int argc, char **argv)
 
 
 
+  std::cout<<"\n\n*******************************************************************\n";
+  std::cout<<"********************    FIX INITIAL SOLUTION   ********************\n";
+  std::cout<<"*******************************************************************\n\n";
+
+  //TODO:  fixInitialSolution
+
+  //-> messo in stop , non capisco che fa
+  std::cout<<"*******************************************************************\n\n\n";
+
+
+  std::cout<<"\n\n*******************************************************************\n";
+  std::cout<<"******************       LOCAL SEARCH         *********************\n";
+  std::cout<<"*******************************************************************\n\n";
+
+
+  Search::localSearch(configuration, conn, App_manager,  par );
+  std::cout<<"*******************************************************************\n\n\n";
 
 
 
 
-  //TODO: fixInitialSolution
 
-  //TODO: localSearch (cuore del programma, C++, MPI)
+
+
 
   //TODO: scrivere su database
 
