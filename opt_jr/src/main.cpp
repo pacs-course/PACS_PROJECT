@@ -13,6 +13,7 @@
 #include "bounds.hh"
 #include "search.hh"
 #include "objectiveFunction.hh"
+#include "candidates.hh" //solo per prova
 
 int main(int argc, char **argv)
 {
@@ -174,6 +175,9 @@ int main(int argc, char **argv)
 
   //PROVA:
   double tmp=ObjFun::ObjFunctionComponentApprox(App_manager.APPs[0],par);
+  
+
+
 
 
 
