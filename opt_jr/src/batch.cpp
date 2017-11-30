@@ -167,25 +167,21 @@ void Batch::initialize(sConfiguration  &configuration, MYSQL *conn, optJrParamet
 
 /*
  * Name: fixInitialSolution
- * Description: It fixes the initial solution by reallocating the residual cores to the applications that may need more resources
+ * Description: It fixes the initial solution by reallocating the residual
+ *              cores to the applications that may need more resources
  */
 
-//sApplicationPointers * fixInitialSolution(sApplication *applications,  struct optJrParameters par)
 void Batch::fixInitialSolution(optJrParameters &par)
 {
-	//sApplication * first;
+
 	int allocatedCores;
 	appByWeight  LP ;
 	int loopExit = 0;
-	//sApplicationPointers *CandidatePointer;
 	int residualCores;
-	//char debugMsg[DEBUG_MSG];
   std::string debugMsg;
 	int N = par.get_number();
 
 	allocatedCores = 0;
-
-	//first = applications;
 
 	for(auto it = APPs.begin(); it!=APPs.end(); ++it)
 	{
@@ -196,19 +192,18 @@ void Batch::fixInitialSolution(optJrParameters &par)
 		else
 			{
 				debugMsg= "adding " + it->session_app_id + " to ApplicationPointers"; debugMessage(debugMsg, par);
-				LP.push(*it);
+        addApplicationPointer(LP, *it);
 			}
 
-		// Danilo Application (suffering) insert in the new Application
-		// TODO Handle insert in such a way the Application is sorted by weight -> DONE
 		allocatedCores+= it->currentCores_d;
 		debugMsg =  "fixInitialSolution FIXING CORES "+  it->session_app_id
                 + " cores: " + std::to_string(it->currentCores_d); debugMessage(debugMsg, par);
 	}
-	//readApplicationPointers(first_LP);
+
 	debugMsg= "fixInitialSolution: allocatedCores "+ std::to_string(allocatedCores); debugMessage(debugMsg, par);
 
-	//NB: (commentato  io)  CandidatePointer = first_LP;
+
+
 	residualCores = N - allocatedCores;
   std::cout << "RESIDUAL CORES: "<<residualCores<<std::endl;
 	int addedCores;
@@ -216,54 +211,54 @@ void Batch::fixInitialSolution(optJrParameters &par)
 
   //Scorro l'elenco delle app "sofferenti " in ordine di peso, finchè ho cores disponibili
 
-	/*while (!loopExit&& (residualCores>0))
+  auto it=LP.begin();
+	while (!loopExit&& (residualCores>0))
 	{
-    std::cout << "  \n\n\n\n IN LOOP  \n\n\n\n    ";
-    /*
-		if (CandidatePointer == NULL) loopExit = 1; // NB: USO CandidatePointer!
+		if (it==LP.end() ) loopExit = 1;
 		else
 		{
-			// cores assignment
 
-			int potentialDeltaCores=((int)(residualCores / CandidatePointer->app->V) )* CandidatePointer->app->V;
+			int potentialDeltaCores=((int)(residualCores / (*it)->V ) )* (*it)->V;
 
-			//addedCores = MIN(, CandidatePointer->app->bound_d);
-
-			if ((CandidatePointer->app->currentCores_d + potentialDeltaCores) > CandidatePointer->app->bound){
-				addedCores = CandidatePointer->app->bound - CandidatePointer->app->currentCores_d ;
-				CandidatePointer->app->currentCores_d = CandidatePointer->app->bound;
-
+			if (((*it)->currentCores_d + potentialDeltaCores) > (*it)->bound){
+				addedCores = (*it)->bound - (*it)->currentCores_d ;
+			  (*it)->currentCores_d = (*it)->bound;
 
 			}
 			else{
-				CandidatePointer->app->currentCores_d = CandidatePointer->app->currentCores_d + potentialDeltaCores;
+				(*it)->currentCores_d = (*it)->currentCores_d + potentialDeltaCores;
 				addedCores=potentialDeltaCores;
 			}
 
-			if (CandidatePointer->app->currentCores_d == 0)
+			if ((*it)->currentCores_d == 0)
 			{
-				printf("\nFatal Error: FixInitialSolution: app %s has %d cores after fix\n", CandidatePointer->app->session_app_id, CandidatePointer->app->currentCores_d);
+				printf("\nFatal Error: FixInitialSolution: app %s has %d cores after fix\n", (*it)->session_app_id, (*it)->currentCores_d);
 				exit(-1);
 			}
 			if (addedCores > 0)
 			{
-				//CandidatePointer->app->currentCores_d+= addedCores;
 
-				sprintf(debugMsg,"adding cores to App %s, %d \n", CandidatePointer->app->session_app_id, addedCores);debugMessage(debugMsg, par);
-				sprintf(debugMsg," application_id %s new cores %d moved cores %d\n", CandidatePointer->app->session_app_id, (int)CandidatePointer->app->currentCores_d, addedCores);debugMessage(debugMsg, par);
+				debugMsg="adding cores to App " + (*it)->session_app_id + " added Cores: " +  std::to_string(addedCores) ;debugMessage(debugMsg, par);
+				debugMsg," application_id " + (*it)->session_app_id + " new cores " + std::to_string((int)(*it)->currentCores_d) + " moved cores "+ std::to_string(addedCores) ;debugMessage(debugMsg, par);
 				residualCores = residualCores - addedCores;
 			}
-			CandidatePointer = CandidatePointer->next;
+			it++;
 		}
 
 		if (residualCores == 0) loopExit = 1;
 	}
 
-	return first_LP;
-  
+
+  debugMsg= " \n\n   ********************  FIXED INITIAL SOLUTION ***********************";debugMessage(debugMsg, par);
+	for (auto it = APPs.begin(); it!=APPs.end(); ++it)
+  {
+    debugMsg = " Application " + it->app_id + ",  w = " + std::to_string(it->w)
+             + " ncores = " + std::to_string(it->currentCores_d); debugMessage(debugMsg, par);
   }
-  */
+
 }
+
+
 
 
 
