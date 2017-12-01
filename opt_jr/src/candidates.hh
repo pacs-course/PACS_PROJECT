@@ -1,7 +1,7 @@
 #ifndef CANDIDATES_HH
 #define CANDIDATES_HH
 
-#include <queue>
+#include <list>
 #include <vector>
 #include "application.hh"
 
@@ -12,7 +12,7 @@ class Candidate{
 
   /* First application */
 
-  Application  app_i;    //NB: PER IL MOMENTO é UNA COPIA TODO: trovare soluzione piu efficiente
+  Application  *app_i;
 
 	int newCoreAssignment_i;	/* Application cores after the move */
 	int delta_i;				/* Delta cores following the move */
@@ -20,7 +20,7 @@ class Candidate{
 
 	/* Second application */
 
-  Application  app_j;
+  Application  *app_j;
 	int newCoreAssignment_j;
 	int delta_j;
 	double real_j;
@@ -28,7 +28,7 @@ class Candidate{
 
 	double deltaFO;				/* Delta Objective Function following the move */
 
-  Candidate(Application i, Application j, int NCi, int NCj, double D_FO, int d_i, int d_j ): app_i(i), app_j(j), newCoreAssignment_i(NCi), newCoreAssignment_j(NCj),deltaFO(D_FO), delta_i(d_i), delta_j(d_j) {};
+  Candidate(Application *i, Application *j, int NCi, int NCj, double D_FO, int d_i, int d_j ): app_i(i), app_j(j), newCoreAssignment_i(NCi), newCoreAssignment_j(NCj),deltaFO(D_FO), delta_i(d_i), delta_j(d_j) {};
 
 
 
@@ -36,17 +36,18 @@ class Candidate{
 
 
 //usata in sCandidates
+/*
 class Compare1
 {
 public:
     bool operator() (const Candidate& a, const Candidate& b);
        //NB: siccome voglio ordine crescente e di default priority queue è decrescente, uso il maggiore !
 };
+*/
 
 
 /*coppie di app ordinate per deltaFO crescente!*/
-using sCandidates=std::priority_queue<Candidate,std::vector<Candidate>,Compare1>;
-//NB: è giusto usare vector come underlying container?
+using sCandidates = std::list<Candidate>;
 
 
 void addCandidate(sCandidates  &cand,  Application &app_i, Application &app_j,

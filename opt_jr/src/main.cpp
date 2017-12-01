@@ -146,10 +146,10 @@ int main(int argc, char **argv)
   std::cout<<"********************    FIX INITIAL SOLUTION   ********************\n";
   std::cout<<"*******************************************************************\n\n";
 
-  //TODO:  fixInitialSolution
+
   App_manager.fixInitialSolution(par);
 
-  //-> messo in stop , non capisco che fa
+
   std::cout<<"*******************************************************************\n\n\n";
 
 
@@ -171,7 +171,9 @@ int main(int argc, char **argv)
 
 
 
-
+  /********************************************************
+                        LOCAL SEARCH
+  *********************************************************/
 
   std::cout<<"\n\n*******************************************************************\n";
   std::cout<<"******************       LOCAL SEARCH         *********************\n";
@@ -181,11 +183,7 @@ int main(int argc, char **argv)
   Search::localSearch(configuration, conn, App_manager,  par );
   std::cout<<"*******************************************************************\n\n\n";
 
-  //PROVA:
-  //double tmp=ObjFun::ObjFunctionComponentApprox(App_manager.APPs[0],par);
-  //int tmpp=1;
-  //sCandidates tmp2 =App_manager.approximatedLoop(tmpp,par);
-
+  
 
 
 

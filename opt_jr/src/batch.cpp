@@ -323,8 +323,13 @@ sCandidates Batch::approximatedLoop( int &iteration, optJrParameters &par ) //NB
 					DELTA_fo_App_j = ObjFun::ObjFunctionComponentApprox(*application_j, par) - application_j->baseFO;
           debugMsg = "app " + application_j->session_app_id + "DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j);debugMessage(debugMsg, par);
 
+
+          std::cout << "\n\n\n\n   TOT DELTA FO: "+ std::to_string(DELTA_fo_App_i + DELTA_fo_App_j)+ "   \n\n\n ";
+
+
 					if ((DELTA_fo_App_i + DELTA_fo_App_j < 0))
 					{
+            std::cout << "\n\n\n\n      adding candidate :D       \n\n\n ";
 						addCandidate(sCandidateApproximated,
 									*application_i ,
 									*application_j ,
@@ -332,8 +337,7 @@ sCandidates Batch::approximatedLoop( int &iteration, optJrParameters &par ) //NB
 									application_j->currentCores_d,
 									DELTA_fo_App_i + DELTA_fo_App_j,
 									DELTAVM_i,
-									DELTAVM_j
-									);
+									DELTAVM_j) ;
 
 					}
 

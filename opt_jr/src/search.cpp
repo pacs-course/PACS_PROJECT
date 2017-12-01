@@ -15,6 +15,7 @@
  * 		Description:			Localsearch algorithm as per functional analysis
  *
  */
+
  void Search::localSearch(sConfiguration &configuration, MYSQL *conn, Batch &App_manager , optJrParameters &par)
 {
   std::cout <<"               hello from localsearch :) "<<std::endl;
@@ -41,6 +42,8 @@
 
 		// Estimate the candidates for the predictor
 		sCandidateApproximated = App_manager.approximatedLoop( how_many, par );
+    std::cout<< "\n\n\n\n       finished approximatedLoop   \n\n\n\n"<<std::endl;
+
 		if (sCandidateApproximated.empty())
 		{
 			// The Candidate Application is empty. No further solution enhancements possible
@@ -52,13 +55,14 @@
 	//minCandidate = sfirstCandidateApproximated;
 	debugMsg = " Ex-iteration loop";debugMessage(debugMsg, par);
 
-/*//TODO: decommentare questa parte!
+//TODO: decommentare questa parte!
+/*
 	if (par.numberOfThreads > 0)
 	{
 		// Calculate in advance and in parallel the results of the predictor for each candidate
 		invokePredictorOpenMP(sfirstCandidateApproximated, par, configuration);
-	}
-*/
+	}*/
+
 		// To Do: consider only the first MAX_PROMISING_CONFIGURATIONS of the Application -> DONE
 		//for (auto it = sCandidateApproximated.begin(); it != sCandidateApproximated.end(); it++)
     for (int k=0;k< how_many; ++k )
