@@ -28,7 +28,7 @@ double ObjFun::ObjFunctionComponent(sConfiguration &configuration, MYSQL *conn, 
 	switch(app.mode)
 	{
 		case R_ALGORITHM:
-				debugMsg = "ObjFunctionComponent W " + std::to_string(app.w) + "R_d" + std::to_string(app.R_d) + "D" + std::to_string(app.Deadline_d); debugMessage(debugMsg, par);
+				debugMsg = "ObjFunctionComponent W " + std::to_string(app.w) + "   R_d " + std::to_string(app.R_d) + "  D " + std::to_string(app.Deadline_d); debugMessage(debugMsg, par);
 				if (app.R_d > app.Deadline_d)
 					output = app.w * (app.R_d - app.Deadline_d);
 				else output = 0;
@@ -86,4 +86,30 @@ double ObjFun::ObjFunctionComponentApprox(Application &App, optJrParameters &par
                 + " FO=" + std::to_string(output); debugMessage(debugMsg, par);
 
 	return output;
+}
+
+
+/*
+ * Name: ObjFunctionGlobal
+ * Output parameters: double, the total value of objective function
+ * Description:It calculates the value of the total objective function
+ */
+double ObjFun::ObjFunctionGlobal(sConfiguration &configuration, MYSQL *conn, Batch & App_manager, optJrParameters &par)
+{
+
+	double sum = 0;
+
+
+	for (auto it = App_manager.APPs.begin(); it!=App_manager.APPs.end(); ++it)
+	{
+		sum = sum + ObjFunctionComponent(configuration, conn, *it, par);
+	}
+
+	if (doubleCompare(sum, 0) == 0)
+	{
+		std::string debugMsg="ObjFunctionGlobal: sum equal to zero"; debugMessage(debugMsg, par);
+		//exit(-1);
+	}
+
+	return sum;
 }

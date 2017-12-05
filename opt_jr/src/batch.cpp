@@ -252,7 +252,7 @@ void Batch::fixInitialSolution(optJrParameters &par)
   debugMsg= " \n\n   ********************  FIXED INITIAL SOLUTION ***********************";debugMessage(debugMsg, par);
 	for (auto it = APPs.begin(); it!=APPs.end(); ++it)
   {
-    debugMsg = " Application " + it->app_id + ",  w = " + std::to_string(it->w)
+    debugMsg = " Application " + it->session_app_id + ",  w = " + std::to_string(it->w)
              + " ncores = " + std::to_string(it->currentCores_d); debugMessage(debugMsg, par);
   }
 

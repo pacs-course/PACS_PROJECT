@@ -53,7 +53,7 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
 	int MAX_PROMISING_CONFIGURATIONS = par.get_K();
 	int DELTAVM_i, DELTAVM_j;
 	double DELTA_fo_App_i, DELTA_fo_App_j;
-	//sCandidates * minCandidate;
+	//sCandidates  minCandidate;
 	//sStatistics *firstS = NULL, *currentS = NULL;
 
   std::cout<< "\n***** Estimate the candidates for the predictor ******\n"<<std::endl;
@@ -73,7 +73,7 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
 	  }
 
 	// Copy the pointer to couple of application with smallest deltafo
-	//minCandidate = sfirstCandidateApproximated;
+	//minCandidate = sCandidateApproximated;
 	debugMsg = " \n\n\n\n\n*****  Ex-iteration loop ******\n\n\n\n\n";debugMessage(debugMsg, par);
 
 //TODO: decommentare questa parte!
@@ -100,7 +100,7 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
 
 			checkTotalNodes(par.get_number(), App_manager);
 
-			debugMsg=  "Browsing CandidateApproximated Application";debugMessage(debugMsg, par);
+			debugMsg=  "Browsing CandidateApproximated Application \n\n";debugMessage(debugMsg, par);
 
 			// Consider only the first MAX_PROMISING_CONFIGURATIONS (0 value means browse the entire Application) Application members
 			if (index > 0 && index == MAX_PROMISING_CONFIGURATIONS)
@@ -169,30 +169,43 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
 
 		}
 
-/*
-		if (par.globalFOcalculation)
+
+		if (par.get_globalFOcalculation())
 		{
-			TotalFO = ObjFunctionGlobal(configuration, conn, first, par);
+      std::cout << " \n\n\n\n\n\n\n\n\n\n globalFO=1 "<<std::endl;
+
+			TotalFO = ObjFun::ObjFunctionGlobal(configuration, conn, App_manager, par);
+
+      std::cout << " \n\n\n\n\TOTAL FO: "<< TotalFO <<"\n\n\n\n\n"<<std::endl;
+
+      /*
 			sprintf(debugMsg,"\n\nGlobal obj function %lf", TotalFO);debugMessage(debugMsg, par);
 			// Update Statistics
 			addStatistics(&firstS, &currentS, iteration, how_many, TotalFO);
+      */
 		}
+    
+
 		index++;
 
 		// Commit the results on the Application Application and continue with another iteration
 		//commitAssignment(first, minCandidate->app_i->session_app_id, minCandidate->delta_i, par); // application i
 		//commitAssignment(first, minCandidate->app_j->session_app_id, minCandidate->delta_j, par); // application j
-		minCandidate->app_i->currentCores_d = minCandidate->app_i->currentCores_d + minCandidate->delta_i * minCandidate->app_i->V;
+/*
+
+NB: a cosa serve minCandidate??
+
+    minCandidate->app_i->currentCores_d = minCandidate->app_i->currentCores_d + minCandidate->delta_i * minCandidate->app_i->V;
 		minCandidate->app_j->currentCores_d = minCandidate->app_j->currentCores_d - minCandidate->delta_j * minCandidate->app_j->V;
 
 	sprintf(debugMsg, "Information: LocalSearch: Destroy Candidate Application");debugInformational(debugMsg, par);
 
 	// DESTROY Candidates list and prepare it for a new run
 	freeCandidates(sfirstCandidateApproximated);
-
-	// TODO Modify to recalculate only FO for apps i,j (use the above copies without invoke dagSim)
-	initialize(configuration, conn, first, par);
 */
+	// TODO Modify to recalculate only FO for apps i,j (use the above copies without invoke dagSim)
+	//App_manager.initialize(configuration, conn, par);
+
 }
 /*
 if (par.globalFOcalculation)
