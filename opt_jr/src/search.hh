@@ -9,6 +9,8 @@
 
 class Search{
 
+  static void checkTotalNodes(int N, Batch &App_manager);
+
 public:
   static void localSearch(sConfiguration &configuration, MYSQL *conn, Batch &App_manager , optJrParameters &par);
 

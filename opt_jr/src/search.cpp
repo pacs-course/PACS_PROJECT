@@ -2,11 +2,32 @@
 
 #include "debugmessage.hh"
 #include "utility.hh"
+#include "objectiveFunction.hh"
 
 #include <string>
 
 
+/*
+ * 		Name:					checkTotalNodes
+ * 		Output parameters:		TBD
+ * 		Description:			It checks that the total allocated nodes is still less or equal than the total number of cores available N
+ *
+ */
 
+void Search::checkTotalNodes(int N, Batch &App_manager)
+{
+	int total = 0;
+
+	for (auto it= App_manager.APPs.begin(); it!=App_manager.APPs.end();++it)
+	{
+		total+= it->currentCores_d;
+		if (total > N)
+		{
+			printf("Fatal Error: checkTotalNodes: Total current nodes (%d) exceeds maximum nodes number (%d)\n", total, N);
+			exit(-1);
+		}
+	}
+}
 
 
 
@@ -20,7 +41,7 @@
 {
   std::cout <<"               hello from localsearch :) "<<std::endl;
 
-	//sApplication * application_i, *application_j;
+	Application * application_i, *application_j;
 	sCandidates sCandidateApproximated ;
 	//char debugMsg[DEBUG_MSG];
 
@@ -35,7 +56,7 @@
 	//sCandidates * minCandidate;
 	//sStatistics *firstS = NULL, *currentS = NULL;
 
-
+  std::cout<< "\n***** Estimate the candidates for the predictor ******\n"<<std::endl;
 	for (int iteration = 1; iteration <= par.get_maxIteration(); iteration++)
 	{
 		debugMsg= "ITERATION " + std::to_string(iteration); debugMessage(debugMsg, par);
@@ -53,7 +74,7 @@
 
 	// Copy the pointer to couple of application with smallest deltafo
 	//minCandidate = sfirstCandidateApproximated;
-	debugMsg = " Ex-iteration loop";debugMessage(debugMsg, par);
+	debugMsg = " \n\n\n\n\n*****  Ex-iteration loop ******\n\n\n\n\n";debugMessage(debugMsg, par);
 
 //TODO: decommentare questa parte!
 /*
@@ -65,68 +86,90 @@
 
 		// To Do: consider only the first MAX_PROMISING_CONFIGURATIONS of the Application -> DONE
 		//for (auto it = sCandidateApproximated.begin(); it != sCandidateApproximated.end(); it++)
-    for (int k=0;k< how_many; ++k )
-		{
-      std::cout<<"\n\n\n\n\n\n\n\n\n\nhkh\n\n\n\n\n\n\n";
-      /*
-			checkTotalNodes(par.number, first);
 
-			sprintf(debugMsg, "Browsing CandidateApproximated Application");debugBanner(debugMsg, par);
+    std::cout<<"\n\n*************************************************************************\n";
+    std::cout<<"*** Consider the first MAX_PROMISING_CONFIGURATIONS of the Application ****\n";
+    std::cout<<"*************************************************************************\n\n\n\n";
+
+    std::cout << " There are "<< how_many <<" promising configurations in iteration "<< iteration <<"\n\n"<<std::endl;
+
+
+    //for (int k=0;k< how_many; ++k )
+    for (auto it = sCandidateApproximated.begin(); it != sCandidateApproximated.end(); it++)
+		{
+
+			checkTotalNodes(par.get_number(), App_manager);
+
+			debugMsg=  "Browsing CandidateApproximated Application";debugMessage(debugMsg, par);
+
 			// Consider only the first MAX_PROMISING_CONFIGURATIONS (0 value means browse the entire Application) Application members
 			if (index > 0 && index == MAX_PROMISING_CONFIGURATIONS)
 			{
-				sprintf(debugMsg,"LocalSearch: MAX_PROMISING_CONFIGURATIONS was reached, leaving sfirstCandidateApproximated loop");debugMessage(debugMsg, par);
+				debugMsg="LocalSearch: MAX_PROMISING_CONFIGURATIONS was reached, leaving sfirstCandidateApproximated loop";debugMessage(debugMsg, par);
 				break;
 			}
 
-			application_i = sfirstCandidateApproximated->app_i;
-			application_j = sfirstCandidateApproximated->app_j;
+			application_i = it->app_i;
+			application_j = it->app_j;
 
-			sprintf(debugMsg, "\n\nComparing %s with %s", application_i->session_app_id, application_j->session_app_id);
 
-			nCoreMov = max(application_i->V, application_j->V);
+			debugMsg= "Comparing " + application_i->session_app_id + " with " + application_j->session_app_id; debugMessage(debugMsg, par);
 
-			DELTAVM_i = nCoreMov/application_i->V;sprintf(debugMsg, "app %s DELTAVM_i %d", application_i->session_app_id, DELTAVM_i);debugMessage(debugMsg, par);
-			DELTAVM_j = nCoreMov/application_j->V;sprintf(debugMsg, "app %s DELTAVM_j %d", application_j->session_app_id, DELTAVM_j);debugMessage(debugMsg, par);
+			nCoreMov = std::max(application_i->V, application_j->V);
+
+			DELTAVM_i = nCoreMov/application_i->V;
+      debugMsg= "app " + application_i->session_app_id + "   DELTAVM_i: " + std::to_string(DELTAVM_i); debugMessage(debugMsg, par);
+			DELTAVM_j = nCoreMov/application_j->V;
+      debugMsg= "app " + application_j->session_app_id + "    DELTAVM_j: " + std::to_string(DELTAVM_j); debugMessage(debugMsg, par);
+
 
 			// Change the currentCores, but rollback later
-			sprintf(debugMsg,"app %s currentCores %d", application_i->session_app_id, (int)application_i->currentCores_d);debugMessage(debugMsg, par);
-			sprintf(debugMsg,"app %s currentCores %d", application_j->session_app_id, (int)application_j->currentCores_d);debugMessage(debugMsg, par);
+			debugMsg = "app " + application_i->session_app_id + "     currentCores: " + std::to_string((int)application_i->currentCores_d); debugMessage(debugMsg, par);
+      debugMsg = "app " + application_j->session_app_id + "     currentCores: " + std::to_string((int)application_j->currentCores_d); debugMessage(debugMsg, par);
 
 			application_i->currentCores_d = application_i->currentCores_d + DELTAVM_i*application_i->V;
 			application_j->currentCores_d = application_j->currentCores_d - DELTAVM_j*application_j->V;
 
-			sprintf(debugMsg,"After cores exchange: app %s currentCores %d", application_i->session_app_id, (int)application_i->currentCores_d);debugMessage(debugMsg, par);
-			sprintf(debugMsg,"After cores exchange: app %s currentCores %d", application_j->session_app_id, (int)application_j->currentCores_d);debugMessage(debugMsg, par);
+			debugMsg = "After cores exchange: app " + application_i->session_app_id + " currentCores " + std::to_string( (int)application_i->currentCores_d); debugMessage(debugMsg, par);
+      debugMsg = "After cores exchange: app " + application_j->session_app_id + " currentCores " + std::to_string( (int)application_j->currentCores_d); debugMessage(debugMsg, par);
 
 			if (application_i->currentCores_d > 0 && application_j->currentCores_d > 0)
 			{
 				// Call object function evaluation calculated earlier
 				application_i->mode= R_ALGORITHM;application_j->mode= R_ALGORITHM;
-
-				if (par.numberOfThreads == 0)
-				{
+        /*
+				if (par.numberOfThreads == 0) //TODO: includere openMP version
+				{*/
 					// No openmp
-					DELTA_fo_App_i = ObjFunctionComponent(configuration, conn, application_i, par) - application_i->baseFO;
-					DELTA_fo_App_j = ObjFunctionComponent(configuration, conn, application_j, par) - application_j->baseFO;
-				}
+          std::cout << "\n\n\n    CALLING OBJ_FUNCTION_COMPONENT \n\n";
+					DELTA_fo_App_i = ObjFun::ObjFunctionComponent(configuration, conn, *application_i, par) - application_i->baseFO;
+					DELTA_fo_App_j = ObjFun::ObjFunctionComponent(configuration, conn, *application_j, par) - application_j->baseFO;
+          /*
+        }
 				else
 				{
 					// OpenMP
 					DELTA_fo_App_i = sfirstCandidateApproximated->real_i - application_i->baseFO;
 					DELTA_fo_App_j = sfirstCandidateApproximated->real_j - application_j->baseFO;
 				}
-				 sprintf(debugMsg, "app %s DELTA_fo_App_i %lf",application_i->session_app_id, DELTA_fo_App_i);debugMessage(debugMsg, par);
-				 sprintf(debugMsg, "app %s DELTA_fo_App_j %lf",application_j->session_app_id, DELTA_fo_App_j);debugMessage(debugMsg, par);
+        */
+        std::cout <<"\n\n\n\n";
+				 debugMsg = "app " + application_i->session_app_id + " DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i); debugMessage(debugMsg, par);
+         debugMsg = "app " + application_j->session_app_id + " DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j); debugMessage(debugMsg, par);
+
+
 			}
 			// Restore previous number of cores
+
 			application_i->currentCores_d = application_i->currentCores_d - DELTAVM_i * application_i->V;
 			application_j->currentCores_d = application_j->currentCores_d + DELTAVM_j * application_j->V;
 
-			sfirstCandidateApproximated = sfirstCandidateApproximated->next;
+
+
+
 		}
 
-
+/*
 		if (par.globalFOcalculation)
 		{
 			TotalFO = ObjFunctionGlobal(configuration, conn, first, par);
@@ -158,5 +201,4 @@ if (par.globalFOcalculation)
 	if (firstS) freeStatistics(firstS);
 }
 */
-}
 }
