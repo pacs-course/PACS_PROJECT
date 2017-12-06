@@ -95,6 +95,11 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
 
 
     //for (int k=0;k< how_many; ++k )
+		int index_pair=-1, tmp=0;
+		int cores_i, cores_j;
+		double DELTA_pair=0, DELTA_tmp;
+		double DELTA_fo_App_i_tmp, DELTA_fo_App_j_tmp;
+
     for (auto it = sCandidateApproximated.begin(); it != sCandidateApproximated.end(); it++)
 		{
 
@@ -144,7 +149,19 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
           std::cout << "\n\n\n    CALLING OBJ_FUNCTION_COMPONENT \n\n";
 					DELTA_fo_App_i = ObjFun::ObjFunctionComponent(configuration, conn, *application_i, par) - application_i->baseFO;
 					DELTA_fo_App_j = ObjFun::ObjFunctionComponent(configuration, conn, *application_j, par) - application_j->baseFO;
-          /*
+					DELTA_tmp=DELTA_fo_App_i+DELTA_fo_App_j;
+					if (DELTA_tmp<DELTA_pair)
+					{
+						DELTA_pair=DELTA_tmp;
+						index_pair=tmp;
+						cores_i=application_i->currentCores_d;
+						cores_j=application_j->currentCores_d;
+						DELTA_fo_App_i_tmp = DELTA_fo_App_i;
+						DELTA_fo_App_j_tmp = DELTA_fo_App_j;
+
+					}
+
+				  /*
         }
 				else
 				{
@@ -156,35 +173,52 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
         std::cout <<"\n\n\n\n";
 				 debugMsg = "app " + application_i->session_app_id + " DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i); debugMessage(debugMsg, par);
          debugMsg = "app " + application_j->session_app_id + " DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j); debugMessage(debugMsg, par);
-
+				 std::cout << " TOTAL DELTA FO : "<< DELTA_tmp<<"\n\n\n\n";
 
 			}
 			// Restore previous number of cores
 
 			application_i->currentCores_d = application_i->currentCores_d - DELTAVM_i * application_i->V;
 			application_j->currentCores_d = application_j->currentCores_d + DELTAVM_j * application_j->V;
-
+			tmp++;
 
 
 
 		}
 
+		//TODO: migliorare questa parte
 
+		if(index_pair!=-1)
+		{
+			auto it = sCandidateApproximated.begin();
+			for (int j=0; j< index_pair; j++)
+			{
+				it++;
+			}
+			it->app_i->currentCores_d = cores_i;
+			it->app_i->baseFO=it->app_i->baseFO +  DELTA_fo_App_i_tmp;
+			it->app_j->currentCores_d = cores_j;
+			it->app_j->baseFO=it->app_j->baseFO +  DELTA_fo_App_j_tmp;
+		}
+
+/*
 		if (par.get_globalFOcalculation())
 		{
-      std::cout << " \n\n\n\n\n\n\n\n\n\n globalFO=1 "<<std::endl;
+      std::cout << " \n\n\n\n\n\n\n\n\n\n Evaluating global F.O. "<<std::endl;
 
 			TotalFO = ObjFun::ObjFunctionGlobal(configuration, conn, App_manager, par);
 
-      std::cout << " \n\n\n\n\TOTAL FO: "<< TotalFO <<"\n\n\n\n\n"<<std::endl;
+      std::cout << " \n\n\n\n GLOBAL FO: "<< TotalFO <<"\n\n\n\n\n"<<std::endl;
 
       /*
 			sprintf(debugMsg,"\n\nGlobal obj function %lf", TotalFO);debugMessage(debugMsg, par);
 			// Update Statistics
 			addStatistics(&firstS, &currentS, iteration, how_many, TotalFO);
-      */
+			
 		}
-    
+		*/
+
+
 
 		index++;
 

@@ -68,7 +68,7 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 		 *   START THE HILL CLIMBING
 		 */
 		if (doubleCompare(predictorOutput, app.Deadline_d) == 1)
-			while (predictorOutput > app.Deadline_d) // (forward -> add cores)
+			while (predictorOutput > app.Deadline_d)
 			{
 				if (nCores ==0)
 				{
@@ -100,7 +100,7 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 			}
 
 		else
-			while (doubleCompare(predictorOutput, app.Deadline_d) == -1) //backward
+			while (doubleCompare(predictorOutput, app.Deadline_d) == -1) 
 			{
 				BCores = nCores;  //salvo passaggio precedente in BCores e BTime
 				BTime = predictorOutput;
@@ -130,7 +130,7 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 
 				app.sAB.vec[app.sAB.index].nCores = nCores;
 				app.sAB.vec[app.sAB.index].R = predictorOutput;
-				app.sAB.index = app.sAB.index % HYP_INTERPOLATION_POINTS;
+				app.sAB.index = app.sAB.index % HYP_INTERPOLATION_POINTS; //NB: MA sAB.index è sempre uguale così!
 				std::cout<< " \n\n\n\n eiiii\n\n\n\n"<<app.sAB.index << "\n\n\n\n eiiii\n\n\n\n";
 
 				//printf("(down) time = %d Rnew =%d\n", time, BTime);

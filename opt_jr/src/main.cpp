@@ -189,15 +189,15 @@ int main(int argc, char **argv)
   std::cout<<"*******************************************************************\n\n";
 
 
-  double tot_fo=0.;
+
   for (auto it = App_manager.APPs.begin(); it!=App_manager.APPs.end(); ++it)
   {
-    tot_fo+= it->baseFO;
-    debugMsg = " Application   " + it->session_app_id + "      w = " + std::to_string(it->w)
+
+    debugMsg = " Application   " + it->session_app_id + "      w = " + std::to_string(it->w)//NB FO non viene aggiornato in localsearch?
              + "     ncores = " + std::to_string(it->currentCores_d) +  "      FO = " + std::to_string(it->baseFO); debugMessage(debugMsg, par);
   }
 
-  std::cout<< "\n\n              TOTAL FO: "<< tot_fo<<"\n\n";
+  //std::cout<< "\n\n              TOTAL FO: "<< tot_fo<<"\n\n";
   std::cout<<"*******************************************************************\n\n";
 
 

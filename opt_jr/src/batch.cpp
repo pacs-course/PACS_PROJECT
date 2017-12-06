@@ -292,7 +292,7 @@ sCandidates Batch::approximatedLoop( int &iteration, optJrParameters &par ) //NB
   while (application_i!=APPs.end())
   {
 
-		auto application_j = application_i;
+		auto application_j = APPs.begin();
 		while (application_j != APPs.end())
 		{
 			if (application_i->session_app_id!=application_j->session_app_id)
