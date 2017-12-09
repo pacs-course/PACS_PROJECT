@@ -1,16 +1,16 @@
 <map id="Search::localSearch" name="Search::localSearch">
-<area shape="rect" id="node2" href="$classoptJrParameters.html#a8274b4a95698ce1681147fdddbced0d8" title="optJrParameters::get_K" alt="" coords="217,5,377,32"/>
-<area shape="rect" id="node3" href="$classoptJrParameters.html#a73340961e894748c6c143284e0b278fa" title="optJrParameters::get\l_maxIteration" alt="" coords="225,57,369,98"/>
+<area shape="rect" id="node2" href="$classoptJrParameters.html#a8274b4a95698ce1681147fdddbced0d8" title="Returns K. " alt="" coords="217,5,377,32"/>
+<area shape="rect" id="node3" href="$classoptJrParameters.html#a73340961e894748c6c143284e0b278fa" title="Returns the maximum number of iteration for localSearch. " alt="" coords="225,57,369,98"/>
 <area shape="rect" id="node4" href="$debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="929,367,1039,393"/>
 <area shape="rect" id="node6" href="$classBatch.html#acf54e153a40b4720b1f7bebf000b1600" title="Batch::approximatedLoop" alt="" coords="451,219,621,245"/>
-<area shape="rect" id="node9" href="$classoptJrParameters.html#a9bb0e783bd6bf555e86cea874f13cb4f" title="optJrParameters::get\l_number" alt="" coords="225,323,369,365"/>
+<area shape="rect" id="node9" href="$classoptJrParameters.html#a9bb0e783bd6bf555e86cea874f13cb4f" title="Returns the available number of cores. " alt="" coords="225,323,369,365"/>
 <area shape="rect" id="node10" href="$classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7" title="ObjFun::ObjFunctionComponent" alt="" coords="193,272,402,299"/>
-<area shape="rect" id="node5" href="$classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="optJrParameters::get\l_debug" alt="" coords="1088,359,1232,401"/>
+<area shape="rect" id="node5" href="$classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="Returns the debug option (1==YES, 0==NO) " alt="" coords="1088,359,1232,401"/>
 <area shape="rect" id="node7" href="$classObjFun.html#abb89a994d34b44ec4cb6e0e2562c0107" title="ObjFun::ObjFunctionComponent\lApprox" alt="" coords="670,225,879,266"/>
 <area shape="rect" id="node8" href="$candidates_8cpp.html#a0dead9d126fdc270fa4692dc0e4671e2" title="addCandidate" alt="" coords="723,291,826,317"/>
 <area shape="rect" id="node11" href="$invokePredictor_8cpp.html#a342ccdfe7923368e52a4894d69c7455a" title="invokePredictor" alt="" coords="480,712,592,739"/>
 <area shape="rect" id="node12" href="$invokePredictor__helper_8cpp.html#a28d1d79b02f44f349115bf4c9e754770" title="readFolder" alt="" coords="733,595,816,621"/>
-<area shape="rect" id="node13" href="$classoptJrParameters.html#a199e3fc83f3efb82fc63796a540d6589" title="optJrParameters::get\l_simulator" alt="" coords="703,646,847,687"/>
+<area shape="rect" id="node13" href="$classoptJrParameters.html#a199e3fc83f3efb82fc63796a540d6589" title="Returns which simulator is used. " alt="" coords="703,646,847,687"/>
 <area shape="rect" id="node14" href="$db_8cpp.html#a2491baf1bdfde4dc81303042399a6278" title="executeSQL" alt="" coords="727,544,822,571"/>
 <area shape="rect" id="node16" href="$invokePredictor__helper_8cpp.html#ab01a14d4a3e7b93f83060c8664c3bc42" title="ls" alt="" coords="755,443,794,469"/>
 <area shape="rect" id="node17" href="$invokePredictor__helper_8cpp.html#a7eb7b34e9ea84bfbed4afbf5f63dd024" title="writeFile" alt="" coords="739,763,810,789"/>

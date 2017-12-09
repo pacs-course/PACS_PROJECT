@@ -1,12 +1,12 @@
 <map id="main" name="main">
-<area shape="rect" id="node2" href="$classoptJrParameters.html#a8dcc738e721b3df88c2622712ed83414" title="optJrParameters::get\l_filename" alt="" coords="117,5,261,46"/>
-<area shape="rect" id="node3" href="$classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="optJrParameters::get\l_debug" alt="" coords="1219,219,1363,261"/>
-<area shape="rect" id="node4" href="$classoptJrParameters.html#ac698812fa1177c71eb46dc61d2e5af77" title="optJrParameters::get\l_cache" alt="" coords="117,1405,261,1446"/>
-<area shape="rect" id="node5" href="$classoptJrParameters.html#a7eec5151603fd03276b6fcf6213f9f90" title="optJrParameters::get\l_globalFOcalculation" alt="" coords="117,1470,261,1511"/>
-<area shape="rect" id="node6" href="$classoptJrParameters.html#a8274b4a95698ce1681147fdddbced0d8" title="optJrParameters::get_K" alt="" coords="348,593,508,620"/>
-<area shape="rect" id="node7" href="$classoptJrParameters.html#a199e3fc83f3efb82fc63796a540d6589" title="optJrParameters::get\l_simulator" alt="" coords="833,1253,977,1294"/>
-<area shape="rect" id="node8" href="$classoptJrParameters.html#a9bb0e783bd6bf555e86cea874f13cb4f" title="optJrParameters::get\l_number" alt="" coords="356,325,500,366"/>
-<area shape="rect" id="node9" href="$classoptJrParameters.html#a73340961e894748c6c143284e0b278fa" title="optJrParameters::get\l_maxIteration" alt="" coords="356,645,500,686"/>
+<area shape="rect" id="node2" href="$classoptJrParameters.html#a8dcc738e721b3df88c2622712ed83414" title="Returns the name of the file with applications. " alt="" coords="117,5,261,46"/>
+<area shape="rect" id="node3" href="$classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="Returns the debug option (1==YES, 0==NO) " alt="" coords="1219,219,1363,261"/>
+<area shape="rect" id="node4" href="$classoptJrParameters.html#ac698812fa1177c71eb46dc61d2e5af77" title="Returns the cache. " alt="" coords="117,1405,261,1446"/>
+<area shape="rect" id="node5" href="$classoptJrParameters.html#a7eec5151603fd03276b6fcf6213f9f90" title="Returns the option globalFOcalculation (1==YES, 0==NO) " alt="" coords="117,1470,261,1511"/>
+<area shape="rect" id="node6" href="$classoptJrParameters.html#a8274b4a95698ce1681147fdddbced0d8" title="Returns K. " alt="" coords="348,593,508,620"/>
+<area shape="rect" id="node7" href="$classoptJrParameters.html#a199e3fc83f3efb82fc63796a540d6589" title="Returns which simulator is used. " alt="" coords="833,1253,977,1294"/>
+<area shape="rect" id="node8" href="$classoptJrParameters.html#a9bb0e783bd6bf555e86cea874f13cb4f" title="Returns the available number of cores. " alt="" coords="356,325,500,366"/>
+<area shape="rect" id="node9" href="$classoptJrParameters.html#a73340961e894748c6c143284e0b278fa" title="Returns the maximum number of iteration for localSearch. " alt="" coords="356,645,500,686"/>
 <area shape="rect" id="node10" href="$readConfigurationFile_8cpp.html#a4e3ab429a1d72d0d31c7290c97731e1e" title="readConfigurationFile" alt="" coords="117,1536,262,1563"/>
 <area shape="rect" id="node12" href="$db_8cpp.html#a8707daf0868830f96c88a43b3d9ece50" title="DBopen" alt="" coords="393,1369,463,1396"/>
 <area shape="rect" id="node13" href="$db_8cpp.html#ab33dd75bdc4f92249542a2bb81b343fd" title="DBerror" alt="" coords="1081,1285,1148,1312"/>

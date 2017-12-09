@@ -1,6 +1,6 @@
 <map id="Bounds::calculateBounds" name="Bounds::calculateBounds">
 <area shape="rect" id="node2" href="$debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="225,15,335,41"/>
 <area shape="rect" id="node4" href="$db_8cpp.html#a8707daf0868830f96c88a43b3d9ece50" title="DBopen" alt="" coords="245,67,315,93"/>
-<area shape="rect" id="node3" href="$classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="optJrParameters::get\l_debug" alt="" coords="384,5,528,46"/>
+<area shape="rect" id="node3" href="$classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="Returns the debug option (1==YES, 0==NO) " alt="" coords="384,5,528,46"/>
 <area shape="rect" id="node5" href="$db_8cpp.html#ab33dd75bdc4f92249542a2bb81b343fd" title="DBerror" alt="" coords="423,71,489,97"/>
 </map>

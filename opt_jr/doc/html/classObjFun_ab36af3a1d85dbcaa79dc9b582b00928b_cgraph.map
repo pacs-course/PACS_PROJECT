@@ -4,7 +4,7 @@
 <area shape="rect" id="node4" href="$debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="883,66,994,93"/>
 <area shape="rect" id="node3" href="$invokePredictor_8cpp.html#a342ccdfe7923368e52a4894d69c7455a" title="invokePredictor" alt="" coords="491,353,603,380"/>
 <area shape="rect" id="node6" href="$invokePredictor__helper_8cpp.html#a28d1d79b02f44f349115bf4c9e754770" title="readFolder" alt="" coords="701,294,784,321"/>
-<area shape="rect" id="node7" href="$classoptJrParameters.html#a199e3fc83f3efb82fc63796a540d6589" title="optJrParameters::get\l_simulator" alt="" coords="671,346,815,387"/>
+<area shape="rect" id="node7" href="$classoptJrParameters.html#a199e3fc83f3efb82fc63796a540d6589" title="Returns which simulator is used. " alt="" coords="671,346,815,387"/>
 <area shape="rect" id="node8" href="$db_8cpp.html#a2491baf1bdfde4dc81303042399a6278" title="executeSQL" alt="" coords="695,193,790,220"/>
 <area shape="rect" id="node10" href="$invokePredictor__helper_8cpp.html#ab01a14d4a3e7b93f83060c8664c3bc42" title="ls" alt="" coords="723,92,762,118"/>
 <area shape="rect" id="node11" href="$invokePredictor__helper_8cpp.html#a7eb7b34e9ea84bfbed4afbf5f63dd024" title="writeFile" alt="" coords="707,412,778,438"/>
@@ -15,5 +15,5 @@
 <area shape="rect" id="node13" href="$invokePredictor__helper_8cpp.html#af8e06c5020e70e2f740101fc7bed6fea" title="extractRowN" alt="" coords="889,488,988,514"/>
 <area shape="rect" id="node17" href="$invokePredictor__helper_8cpp.html#abf4e66cc6aa015a35688c049d4f72ade" title="extractRowMatchingPattern" alt="" coords="651,665,835,692"/>
 <area shape="rect" id="node9" href="$db_8cpp.html#ab33dd75bdc4f92249542a2bb81b343fd" title="DBerror" alt="" coords="905,218,972,245"/>
-<area shape="rect" id="node5" href="$classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="optJrParameters::get\l_debug" alt="" coords="1043,59,1187,100"/>
+<area shape="rect" id="node5" href="$classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="Returns the debug option (1==YES, 0==NO) " alt="" coords="1043,59,1187,100"/>
 </map>

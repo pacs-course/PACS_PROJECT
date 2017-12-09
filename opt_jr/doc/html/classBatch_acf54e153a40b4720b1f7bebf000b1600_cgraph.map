@@ -2,5 +2,5 @@
 <area shape="rect" id="node2" href="$debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="483,12,594,39"/>
 <area shape="rect" id="node4" href="$classObjFun.html#abb89a994d34b44ec4cb6e0e2562c0107" title="ObjFun::ObjFunctionComponent\lApprox" alt="" coords="225,34,434,75"/>
 <area shape="rect" id="node5" href="$candidates_8cpp.html#a0dead9d126fdc270fa4692dc0e4671e2" title="addCandidate" alt="" coords="278,100,381,127"/>
-<area shape="rect" id="node3" href="$classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="optJrParameters::get\l_debug" alt="" coords="643,5,787,46"/>
+<area shape="rect" id="node3" href="$classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="Returns the debug option (1==YES, 0==NO) " alt="" coords="643,5,787,46"/>
 </map>

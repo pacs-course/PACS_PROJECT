@@ -1,6 +1,6 @@
 <map id="Batch::fixInitialSolution" name="Batch::fixInitialSolution">
-<area shape="rect" id="node2" href="$classoptJrParameters.html#a9bb0e783bd6bf555e86cea874f13cb4f" title="optJrParameters::get\l_number" alt="" coords="213,5,357,46"/>
+<area shape="rect" id="node2" href="$classoptJrParameters.html#a9bb0e783bd6bf555e86cea874f13cb4f" title="Returns the available number of cores. " alt="" coords="213,5,357,46"/>
 <area shape="rect" id="node3" href="$debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="230,71,341,97"/>
 <area shape="rect" id="node5" href="$appByWeight_8cpp.html#aade8f908ef9c582df27a535457f29b00" title="addApplicationPointer" alt="" coords="211,121,359,148"/>
-<area shape="rect" id="node4" href="$classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="optJrParameters::get\l_debug" alt="" coords="408,63,552,105"/>
+<area shape="rect" id="node4" href="$classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="Returns the debug option (1==YES, 0==NO) " alt="" coords="408,63,552,105"/>
 </map>

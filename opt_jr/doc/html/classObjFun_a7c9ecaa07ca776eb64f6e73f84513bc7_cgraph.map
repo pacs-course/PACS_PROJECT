@@ -2,7 +2,7 @@
 <area shape="rect" id="node2" href="$invokePredictor_8cpp.html#a342ccdfe7923368e52a4894d69c7455a" title="invokePredictor" alt="" coords="264,325,376,352"/>
 <area shape="rect" id="node3" href="$debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="657,64,767,90"/>
 <area shape="rect" id="node5" href="$invokePredictor__helper_8cpp.html#a28d1d79b02f44f349115bf4c9e754770" title="readFolder" alt="" coords="475,266,557,293"/>
-<area shape="rect" id="node6" href="$classoptJrParameters.html#a199e3fc83f3efb82fc63796a540d6589" title="optJrParameters::get\l_simulator" alt="" coords="444,318,588,359"/>
+<area shape="rect" id="node6" href="$classoptJrParameters.html#a199e3fc83f3efb82fc63796a540d6589" title="Returns which simulator is used. " alt="" coords="444,318,588,359"/>
 <area shape="rect" id="node7" href="$db_8cpp.html#a2491baf1bdfde4dc81303042399a6278" title="executeSQL" alt="" coords="469,165,563,192"/>
 <area shape="rect" id="node9" href="$invokePredictor__helper_8cpp.html#ab01a14d4a3e7b93f83060c8664c3bc42" title="ls" alt="" coords="497,64,535,90"/>
 <area shape="rect" id="node10" href="$invokePredictor__helper_8cpp.html#a7eb7b34e9ea84bfbed4afbf5f63dd024" title="writeFile" alt="" coords="481,384,551,410"/>
@@ -14,5 +14,5 @@
 <area shape="rect" id="node16" href="$invokePredictor__helper_8cpp.html#abf4e66cc6aa015a35688c049d4f72ade" title="extractRowMatchingPattern" alt="" coords="424,637,608,664"/>
 <area shape="rect" id="node17" href="$utility_8cpp.html#a9d47b6f031f040e12b256b8aaca54671" title="doubleCompare" alt="" coords="459,688,573,714"/>
 <area shape="rect" id="node8" href="$db_8cpp.html#ab33dd75bdc4f92249542a2bb81b343fd" title="DBerror" alt="" coords="679,190,745,217"/>
-<area shape="rect" id="node4" href="$classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="optJrParameters::get\l_debug" alt="" coords="816,56,960,98"/>
+<area shape="rect" id="node4" href="$classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="Returns the debug option (1==YES, 0==NO) " alt="" coords="816,56,960,98"/>
 </map>

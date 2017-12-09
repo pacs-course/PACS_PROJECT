@@ -1,3 +1,6 @@
+/*! \file */
+
+
 #include <iostream>
 #include <string>
 #include <mysql.h>
@@ -17,20 +20,18 @@
 
 int main(int argc, char **argv)
 {
-  std::string debugMsg;
-  /*********************************************************
-  READ FROM COMMAND LINE (AND SAVE IT)
-  *********************************************************/
+  std::string debugMsg; // string to store debug messages
 
-  //TODO: capire warnings
-  //TODO: capire come calcola cache?
+  /**
+     1)  Read parameters from command line and save them in an "optJrParameters" object
+  */
 
   std::cout<<"\n\n*******************************************************************\n";
   std::cout<<"**************** READING COMMAND-LINE PARAMETERS ******************\n";
   std::cout<<"*******************************************************************\n";
 
 
-  optJrParameters par(argv,argc); //memorizzo in oggetto "par" i parametri di esecuzione del programma
+  optJrParameters par(argv,argc); // object "par" has execution parameters
 
 
   std::cout<<"<check message>: i parametri memorizzati per l'esecuzione di OPT_JR_CPP sono:\n\n";
@@ -45,11 +46,9 @@ int main(int argc, char **argv)
   std::cout<<"*******************************************************************\n\n\n";
 
 
-  /*********************************************************
-    READ FROM CONFIGURATION FILE (WSI) (AND SAVE IT)
-      -memorizzo in configuration (sConfiguration è unordered_map(string,string),
-        definita con "using" in readConfigurationFile)
-  *********************************************************/
+  /**
+    2) read informations from "wsi_config.xml" file and save it in a "sConfiguration" object (which is unordered_map(string,string))
+  */
   std::cout<<"\n\n*******************************************************************\n";
   std::cout<<"************     READING CONFIGURATION FILE     *******************\n";
   std::cout<<"*******************************************************************\n";
@@ -63,9 +62,10 @@ int main(int argc, char **argv)
   }
   std::cout<<"*******************************************************************\n\n\n";
 
-  /*********************************************************
-   CONNECT TO THE DATABASE
-  *********************************************************/
+  /**
+     3) Connect to the Database
+  */
+
   std::cout<<"\n\n*******************************************************************\n";
   std::cout<<"************     CONNECTING TO THE DATABASE       *****************\n";
   std::cout<<"*******************************************************************\n";
@@ -83,9 +83,9 @@ int main(int argc, char **argv)
 
 
 
-  /********************************************************
-    OPEN .CSV FILE WITH APPLICATIONS, READ IT (AND SAVE IT)
-  *********************************************************/
+  /**
+    4) Open  *.csv  file with Applications data, and save it in a "Batch" object
+  */
   std::cout<<"\n\n*******************************************************************\n";
   std::cout<<"************     READ .CSV FILE WITH APPS       *******************\n";
   std::cout<<"*******************************************************************\n";
@@ -103,32 +103,31 @@ int main(int argc, char **argv)
 
   /* CREATE A BUTCH OBJECT */
 
-  Batch App_manager(readAppFile(stream));//NB: si può rifare evitando creazione temporanea? (universal ref)
+  Batch App_manager(readAppFile(stream));
 
-  std::cout<<"<check message>: App_ID of loaded applications"<<std::endl;
+  std::cout<<"<check message>: session_app_id of loaded applications"<<std::endl;
   for (auto it= App_manager.APPs.begin(); it!=App_manager.APPs.end();++it)
-    std::cout<< "App_ID: "<<it->app_id<<std::endl;
+    std::cout<< "App_ID: "<<it->session_app_id<<std::endl;
   std::cout<<"*******************************************************************\n\n\n";
 
 
-  /********************************************************
-    CALCULATE BOUNDS
-  *********************************************************/
+  /**
+    5) Calculate bounds for each application loaded (with the calculateBounds method of Bounds class)
+  */
 
   std::cout<<"\n\n*******************************************************************\n";
   std::cout<<"****************       CALCULATE BOUNDS         *******************\n";
   std::cout<<"*******************************************************************\n\n";
 
   int n_threads=1;
-  Bounds::calculateBounds(App_manager,n_threads, configuration, conn, par ); //TODO: passare il numero di thread come parametro da command line
-  //TODO: improve debugging message in bound e findbound (e invokePredictor) e capire bene cosa fanno !
-  //TODO: improve bound class
+  Bounds::calculateBounds(App_manager,n_threads, configuration, conn, par );
+
   std::cout<<"*******************************************************************\n\n\n";
 
 
-  /********************************************************
-    CALCULATE NU INDICES
-  *********************************************************/
+  /**
+    6) Calculate nu indices for each application (with the calculate_nu method of Batch class)
+  */
   std::cout<<"\n\n*******************************************************************\n";
   std::cout<<"************       CALCULATE NU INDICES         *******************\n";
   std::cout<<"*******************************************************************\n";
@@ -138,9 +137,9 @@ int main(int argc, char **argv)
   std::cout<<"*******************************************************************\n\n\n";
 
 
-  /********************************************************
-                  FIX INITIAL SOLUTION
-  *********************************************************/
+  /**
+      7) Fix initial solution (with the fixInitialSolution method of Batch class)
+  */
 
   std::cout<<"\n\n*******************************************************************\n";
   std::cout<<"********************    FIX INITIAL SOLUTION   ********************\n";
@@ -154,9 +153,9 @@ int main(int argc, char **argv)
 
 
 
-  /********************************************************
-    INITIALIZE BASE OBJECTIVE FUNCTION
-  *********************************************************/
+  /**
+      8) Initialize Objective Function evaluation for each application (with the initalize method of Batch class)
+  */
 
   std::cout<<"\n\n*******************************************************************\n";
   std::cout<<"************    INITIALIZE BASE OBJECTIVE FUNCTION   **************\n";
@@ -171,9 +170,9 @@ int main(int argc, char **argv)
 
 
 
-  /********************************************************
-                        LOCAL SEARCH
-  *********************************************************/
+  /**
+      9) Find an "optimal" solution invoking "localSearch" method (of "Search" class)
+  */
 
   std::cout<<"\n\n*******************************************************************\n";
   std::cout<<"******************       LOCAL SEARCH         *********************\n";
@@ -197,7 +196,6 @@ int main(int argc, char **argv)
              + "     ncores = " + std::to_string(it->currentCores_d) +  "      FO = " + std::to_string(it->baseFO); debugMessage(debugMsg, par);
   }
 
-  //std::cout<< "\n\n              TOTAL FO: "<< tot_fo<<"\n\n";
   std::cout<<"*******************************************************************\n\n";
 
 

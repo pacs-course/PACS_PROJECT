@@ -39,7 +39,23 @@ int \hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, cha
 \item[{char $\ast$$\ast$}]{argv}
 \end{DoxyParamCaption}
 )}}\label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+1) Read parameters from command line and save them in an \char`\"{}opt\-Jr\-Parameters\char`\"{} object
 
+2) read informations from \char`\"{}wsi\-\_\-config.\-xml\char`\"{} file and save it in a \char`\"{}s\-Configuration\char`\"{} object (which is unordered\-\_\-map(string,string))
+
+3) Connect to the Database
+
+4) Open $\ast$.csv file with Applications data, and save it in a \char`\"{}\-Batch\char`\"{} object
+
+5) Calculate bounds for each application loaded (with the calculate\-Bounds method of \hyperlink{classBounds}{Bounds} class)
+
+6) Calculate nu indices for each application (with the calculate\-\_\-nu method of \hyperlink{classBatch}{Batch} class)
+
+7) Fix initial solution (with the fix\-Initial\-Solution method of \hyperlink{classBatch}{Batch} class)
+
+8) Initialize Objective Function evaluation for each application (with the initalize method of \hyperlink{classBatch}{Batch} class)
+
+9) Find an \char`\"{}optimal\char`\"{} solution invoking \char`\"{}local\-Search\char`\"{} method (of \char`\"{}\-Search\char`\"{} class)
 
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
