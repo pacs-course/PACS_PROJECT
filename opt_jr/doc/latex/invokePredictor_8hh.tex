@@ -1,0 +1,86 @@
+\hypertarget{invokePredictor_8hh}{\section{/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/invoke\-Predictor.hh File Reference}
+\label{invokePredictor_8hh}\index{/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/invoke\-Predictor.\-hh@{/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/invoke\-Predictor.\-hh}}
+}
+{\ttfamily \#include \char`\"{}invoke\-Predictor\-\_\-helper.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}read\-Configuration\-File.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}optjr\-Parameters.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}debugmessage.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}db.\-hh\char`\"{}}\\*
+{\ttfamily \#include $<$mysql.\-h$>$}\\*
+Include dependency graph for invoke\-Predictor.\-hh\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{invokePredictor_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{invokePredictor_8hh__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{invokePredictor_8hh_a3806de5f70b6971cfe8be82520f4bf2a}{W\-H\-O\-L\-E\-\_\-\-D\-A\-G\-S\-I\-M}~0
+\item 
+\#define \hyperlink{invokePredictor_8hh_a016c9fba38e790ceafd4d9843f2dc564}{R\-E\-S\-I\-D\-U\-A\-L\-\_\-\-D\-A\-G\-S\-I\-M}~1
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{invokePredictor_8hh_a342ccdfe7923368e52a4894d69c7455a}{invoke\-Predictor} (\hyperlink{readConfigurationFile_8hh_ab8f35b1da3261263c5e9c0e7c8921f5c}{s\-Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, int n\-Nodes, int current\-Cores, char $\ast$memory, int datasize, char $\ast$session\-Id, char $\ast$app\-Id, char $\ast$stage, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par, int flag\-Dagsim)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{invokePredictor_8hh_a016c9fba38e790ceafd4d9843f2dc564}{\index{invoke\-Predictor.\-hh@{invoke\-Predictor.\-hh}!R\-E\-S\-I\-D\-U\-A\-L\-\_\-\-D\-A\-G\-S\-I\-M@{R\-E\-S\-I\-D\-U\-A\-L\-\_\-\-D\-A\-G\-S\-I\-M}}
+\index{R\-E\-S\-I\-D\-U\-A\-L\-\_\-\-D\-A\-G\-S\-I\-M@{R\-E\-S\-I\-D\-U\-A\-L\-\_\-\-D\-A\-G\-S\-I\-M}!invokePredictor.hh@{invoke\-Predictor.\-hh}}
+\subsubsection[{R\-E\-S\-I\-D\-U\-A\-L\-\_\-\-D\-A\-G\-S\-I\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-S\-I\-D\-U\-A\-L\-\_\-\-D\-A\-G\-S\-I\-M~1}}\label{invokePredictor_8hh_a016c9fba38e790ceafd4d9843f2dc564}
+\hypertarget{invokePredictor_8hh_a3806de5f70b6971cfe8be82520f4bf2a}{\index{invoke\-Predictor.\-hh@{invoke\-Predictor.\-hh}!W\-H\-O\-L\-E\-\_\-\-D\-A\-G\-S\-I\-M@{W\-H\-O\-L\-E\-\_\-\-D\-A\-G\-S\-I\-M}}
+\index{W\-H\-O\-L\-E\-\_\-\-D\-A\-G\-S\-I\-M@{W\-H\-O\-L\-E\-\_\-\-D\-A\-G\-S\-I\-M}!invokePredictor.hh@{invoke\-Predictor.\-hh}}
+\subsubsection[{W\-H\-O\-L\-E\-\_\-\-D\-A\-G\-S\-I\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-H\-O\-L\-E\-\_\-\-D\-A\-G\-S\-I\-M~0}}\label{invokePredictor_8hh_a3806de5f70b6971cfe8be82520f4bf2a}
+
+
+\subsection{Function Documentation}
+\hypertarget{invokePredictor_8hh_a342ccdfe7923368e52a4894d69c7455a}{\index{invoke\-Predictor.\-hh@{invoke\-Predictor.\-hh}!invoke\-Predictor@{invoke\-Predictor}}
+\index{invoke\-Predictor@{invoke\-Predictor}!invokePredictor.hh@{invoke\-Predictor.\-hh}}
+\subsubsection[{invoke\-Predictor}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ invoke\-Predictor (
+\begin{DoxyParamCaption}
+\item[{{\bf s\-Configuration} \&}]{configuration, }
+\item[{M\-Y\-S\-Q\-L $\ast$}]{conn, }
+\item[{int}]{n\-Nodes, }
+\item[{int}]{current\-Cores, }
+\item[{char $\ast$}]{memory, }
+\item[{int}]{datasize, }
+\item[{char $\ast$}]{session\-Id, }
+\item[{char $\ast$}]{app\-Id, }
+\item[{char $\ast$}]{stage, }
+\item[{{\bf opt\-Jr\-Parameters} \&}]{par, }
+\item[{int}]{flag\-Dagsim}
+\end{DoxyParamCaption}
+)}}\label{invokePredictor_8hh_a342ccdfe7923368e52a4894d69c7455a}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{invokePredictor_8hh_a342ccdfe7923368e52a4894d69c7455a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{invokePredictor_8hh_a342ccdfe7923368e52a4894d69c7455a_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,118 @@
+\hypertarget{db_8cpp}{\section{/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/db.cpp File Reference}
+\label{db_8cpp}\index{/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/db.\-cpp@{/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/db.\-cpp}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include \char`\"{}db.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}debugmessage.\-hh\char`\"{}}\\*
+Include dependency graph for db.\-cpp\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{db_8cpp_ab33dd75bdc4f92249542a2bb81b343fd}{D\-Berror} (M\-Y\-S\-Q\-L $\ast$conn, char $\ast$msg)
+\item 
+M\-Y\-S\-Q\-L\-\_\-\-R\-O\-W \hyperlink{db_8cpp_a2491baf1bdfde4dc81303042399a6278}{execute\-S\-Q\-L} (M\-Y\-S\-Q\-L $\ast$conn, char $\ast$statement, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} par)
+\item 
+M\-Y\-S\-Q\-L $\ast$ \hyperlink{db_8cpp_a8707daf0868830f96c88a43b3d9ece50}{D\-Bopen} (char $\ast$host, char $\ast$login, char $\ast$passw, char $\ast$db\-Name)
+\item 
+void \hyperlink{db_8cpp_a54af21d55b55bae7b63cb28d3cd05758}{D\-Bclose} (M\-Y\-S\-Q\-L $\ast$conn)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{db_8cpp_a54af21d55b55bae7b63cb28d3cd05758}{\index{db.\-cpp@{db.\-cpp}!D\-Bclose@{D\-Bclose}}
+\index{D\-Bclose@{D\-Bclose}!db.cpp@{db.\-cpp}}
+\subsubsection[{D\-Bclose}]{\setlength{\rightskip}{0pt plus 5cm}void D\-Bclose (
+\begin{DoxyParamCaption}
+\item[{M\-Y\-S\-Q\-L $\ast$}]{conn}
+\end{DoxyParamCaption}
+)}}\label{db_8cpp_a54af21d55b55bae7b63cb28d3cd05758}
+\hypertarget{db_8cpp_ab33dd75bdc4f92249542a2bb81b343fd}{\index{db.\-cpp@{db.\-cpp}!D\-Berror@{D\-Berror}}
+\index{D\-Berror@{D\-Berror}!db.cpp@{db.\-cpp}}
+\subsubsection[{D\-Berror}]{\setlength{\rightskip}{0pt plus 5cm}void D\-Berror (
+\begin{DoxyParamCaption}
+\item[{M\-Y\-S\-Q\-L $\ast$}]{conn, }
+\item[{char $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}}\label{db_8cpp_ab33dd75bdc4f92249542a2bb81b343fd}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db_8cpp_ab33dd75bdc4f92249542a2bb81b343fd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{db_8cpp_a8707daf0868830f96c88a43b3d9ece50}{\index{db.\-cpp@{db.\-cpp}!D\-Bopen@{D\-Bopen}}
+\index{D\-Bopen@{D\-Bopen}!db.cpp@{db.\-cpp}}
+\subsubsection[{D\-Bopen}]{\setlength{\rightskip}{0pt plus 5cm}M\-Y\-S\-Q\-L$\ast$ D\-Bopen (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{host, }
+\item[{char $\ast$}]{login, }
+\item[{char $\ast$}]{passw, }
+\item[{char $\ast$}]{db\-Name}
+\end{DoxyParamCaption}
+)}}\label{db_8cpp_a8707daf0868830f96c88a43b3d9ece50}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{db_8cpp_a8707daf0868830f96c88a43b3d9ece50_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db_8cpp_a8707daf0868830f96c88a43b3d9ece50_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{db_8cpp_a2491baf1bdfde4dc81303042399a6278}{\index{db.\-cpp@{db.\-cpp}!execute\-S\-Q\-L@{execute\-S\-Q\-L}}
+\index{execute\-S\-Q\-L@{execute\-S\-Q\-L}!db.cpp@{db.\-cpp}}
+\subsubsection[{execute\-S\-Q\-L}]{\setlength{\rightskip}{0pt plus 5cm}M\-Y\-S\-Q\-L\-\_\-\-R\-O\-W execute\-S\-Q\-L (
+\begin{DoxyParamCaption}
+\item[{M\-Y\-S\-Q\-L $\ast$}]{conn, }
+\item[{char $\ast$}]{statement, }
+\item[{{\bf opt\-Jr\-Parameters}}]{par}
+\end{DoxyParamCaption}
+)}}\label{db_8cpp_a2491baf1bdfde4dc81303042399a6278}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db_8cpp_a2491baf1bdfde4dc81303042399a6278_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db_8cpp_a2491baf1bdfde4dc81303042399a6278_icgraph}
+\end{center}
+\end{figure}
+
+

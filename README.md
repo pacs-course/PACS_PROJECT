@@ -4,3 +4,9 @@ Program that manage soft deadline application when heavy load occurs. The progra
 The project is already build in C and the goal is to re-write it in C++ with some parallelization (using MPI and openMP).
  
 The original project is available at: https://github.com/eubr-bigsea/opt_jr
+
+
+BUILD DOCUMENTATION:
+
+run in the doc directory: doxygen opt_jr_doxy
+

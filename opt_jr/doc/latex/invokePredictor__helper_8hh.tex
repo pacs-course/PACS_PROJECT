@@ -1,0 +1,247 @@
+\hypertarget{invokePredictor__helper_8hh}{\section{/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/invoke\-Predictor\-\_\-helper.hh File Reference}
+\label{invokePredictor__helper_8hh}\index{/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/invoke\-Predictor\-\_\-helper.\-hh@{/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/invoke\-Predictor\-\_\-helper.\-hh}}
+}
+{\ttfamily \#include \char`\"{}opt\-Jr\-Parameters.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utility.\-hh\char`\"{}}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+Include dependency graph for invoke\-Predictor\-\_\-helper.\-hh\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{invokePredictor__helper_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{invokePredictor__helper_8hh__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{invokePredictor__helper_8hh_a28d1d79b02f44f349115bf4c9e754770}{read\-Folder} (char $\ast$path)
+\item 
+void \hyperlink{invokePredictor__helper_8hh_a7eb7b34e9ea84bfbed4afbf5f63dd024}{write\-File} (const char $\ast$filepath, const char $\ast$data)
+\item 
+char $\ast$ \hyperlink{invokePredictor__helper_8hh_ab01a14d4a3e7b93f83060c8664c3bc42}{ls} (char $\ast$pattern, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
+\item 
+char $\ast$ \hyperlink{invokePredictor__helper_8hh_af8e06c5020e70e2f740101fc7bed6fea}{extract\-Row\-N} (char $\ast$text, int row)
+\item 
+char $\ast$ \hyperlink{invokePredictor__helper_8hh_a66e21ca5b85d790af9025eb13f4beca5}{replace} (char $\ast$text, char $\ast$new\-Line)
+\item 
+char $\ast$ \hyperlink{invokePredictor__helper_8hh_aec83b878d49ef5976f2175867cdc2d82}{read\-File} (char $\ast$filename)
+\item 
+char $\ast$ \hyperlink{invokePredictor__helper_8hh_a0f49de720b1b8bcb143e37e9e8a5ab39}{\-\_\-run} (char $\ast$cmd, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
+\item 
+char $\ast$ \hyperlink{invokePredictor__helper_8hh_af6244416f7b414764278d2f5cdfe262c}{extract\-Word} (char $\ast$line, int pos)
+\item 
+char $\ast$ \hyperlink{invokePredictor__helper_8hh_abf4e66cc6aa015a35688c049d4f72ade}{extract\-Row\-Matching\-Pattern} (char $\ast$text, char $\ast$pattern)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{invokePredictor__helper_8hh_a0f49de720b1b8bcb143e37e9e8a5ab39}{\index{invoke\-Predictor\-\_\-helper.\-hh@{invoke\-Predictor\-\_\-helper.\-hh}!\-\_\-run@{\-\_\-run}}
+\index{\-\_\-run@{\-\_\-run}!invokePredictor_helper.hh@{invoke\-Predictor\-\_\-helper.\-hh}}
+\subsubsection[{\-\_\-run}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ \-\_\-run (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{cmd, }
+\item[{{\bf opt\-Jr\-Parameters} \&}]{par}
+\end{DoxyParamCaption}
+)}}\label{invokePredictor__helper_8hh_a0f49de720b1b8bcb143e37e9e8a5ab39}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{invokePredictor__helper_8hh_a0f49de720b1b8bcb143e37e9e8a5ab39_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{invokePredictor__helper_8hh_a0f49de720b1b8bcb143e37e9e8a5ab39_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{invokePredictor__helper_8hh_abf4e66cc6aa015a35688c049d4f72ade}{\index{invoke\-Predictor\-\_\-helper.\-hh@{invoke\-Predictor\-\_\-helper.\-hh}!extract\-Row\-Matching\-Pattern@{extract\-Row\-Matching\-Pattern}}
+\index{extract\-Row\-Matching\-Pattern@{extract\-Row\-Matching\-Pattern}!invokePredictor_helper.hh@{invoke\-Predictor\-\_\-helper.\-hh}}
+\subsubsection[{extract\-Row\-Matching\-Pattern}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ extract\-Row\-Matching\-Pattern (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{text, }
+\item[{char $\ast$}]{pattern}
+\end{DoxyParamCaption}
+)}}\label{invokePredictor__helper_8hh_abf4e66cc6aa015a35688c049d4f72ade}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{invokePredictor__helper_8hh_abf4e66cc6aa015a35688c049d4f72ade_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{invokePredictor__helper_8hh_af8e06c5020e70e2f740101fc7bed6fea}{\index{invoke\-Predictor\-\_\-helper.\-hh@{invoke\-Predictor\-\_\-helper.\-hh}!extract\-Row\-N@{extract\-Row\-N}}
+\index{extract\-Row\-N@{extract\-Row\-N}!invokePredictor_helper.hh@{invoke\-Predictor\-\_\-helper.\-hh}}
+\subsubsection[{extract\-Row\-N}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ extract\-Row\-N (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{text, }
+\item[{int}]{row}
+\end{DoxyParamCaption}
+)}}\label{invokePredictor__helper_8hh_af8e06c5020e70e2f740101fc7bed6fea}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{invokePredictor__helper_8hh_af8e06c5020e70e2f740101fc7bed6fea_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{invokePredictor__helper_8hh_af6244416f7b414764278d2f5cdfe262c}{\index{invoke\-Predictor\-\_\-helper.\-hh@{invoke\-Predictor\-\_\-helper.\-hh}!extract\-Word@{extract\-Word}}
+\index{extract\-Word@{extract\-Word}!invokePredictor_helper.hh@{invoke\-Predictor\-\_\-helper.\-hh}}
+\subsubsection[{extract\-Word}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ extract\-Word (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{line, }
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}}\label{invokePredictor__helper_8hh_af6244416f7b414764278d2f5cdfe262c}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{invokePredictor__helper_8hh_af6244416f7b414764278d2f5cdfe262c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{invokePredictor__helper_8hh_ab01a14d4a3e7b93f83060c8664c3bc42}{\index{invoke\-Predictor\-\_\-helper.\-hh@{invoke\-Predictor\-\_\-helper.\-hh}!ls@{ls}}
+\index{ls@{ls}!invokePredictor_helper.hh@{invoke\-Predictor\-\_\-helper.\-hh}}
+\subsubsection[{ls}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ ls (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{pattern, }
+\item[{{\bf opt\-Jr\-Parameters} \&}]{par}
+\end{DoxyParamCaption}
+)}}\label{invokePredictor__helper_8hh_ab01a14d4a3e7b93f83060c8664c3bc42}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{invokePredictor__helper_8hh_ab01a14d4a3e7b93f83060c8664c3bc42_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{invokePredictor__helper_8hh_ab01a14d4a3e7b93f83060c8664c3bc42_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{invokePredictor__helper_8hh_aec83b878d49ef5976f2175867cdc2d82}{\index{invoke\-Predictor\-\_\-helper.\-hh@{invoke\-Predictor\-\_\-helper.\-hh}!read\-File@{read\-File}}
+\index{read\-File@{read\-File}!invokePredictor_helper.hh@{invoke\-Predictor\-\_\-helper.\-hh}}
+\subsubsection[{read\-File}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ read\-File (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}}\label{invokePredictor__helper_8hh_aec83b878d49ef5976f2175867cdc2d82}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{invokePredictor__helper_8hh_aec83b878d49ef5976f2175867cdc2d82_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{invokePredictor__helper_8hh_a28d1d79b02f44f349115bf4c9e754770}{\index{invoke\-Predictor\-\_\-helper.\-hh@{invoke\-Predictor\-\_\-helper.\-hh}!read\-Folder@{read\-Folder}}
+\index{read\-Folder@{read\-Folder}!invokePredictor_helper.hh@{invoke\-Predictor\-\_\-helper.\-hh}}
+\subsubsection[{read\-Folder}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ read\-Folder (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{path}
+\end{DoxyParamCaption}
+)}}\label{invokePredictor__helper_8hh_a28d1d79b02f44f349115bf4c9e754770}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{invokePredictor__helper_8hh_a28d1d79b02f44f349115bf4c9e754770_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{invokePredictor__helper_8hh_a66e21ca5b85d790af9025eb13f4beca5}{\index{invoke\-Predictor\-\_\-helper.\-hh@{invoke\-Predictor\-\_\-helper.\-hh}!replace@{replace}}
+\index{replace@{replace}!invokePredictor_helper.hh@{invoke\-Predictor\-\_\-helper.\-hh}}
+\subsubsection[{replace}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ replace (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{text, }
+\item[{char $\ast$}]{new\-Line}
+\end{DoxyParamCaption}
+)}}\label{invokePredictor__helper_8hh_a66e21ca5b85d790af9025eb13f4beca5}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{invokePredictor__helper_8hh_a66e21ca5b85d790af9025eb13f4beca5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{invokePredictor__helper_8hh_a66e21ca5b85d790af9025eb13f4beca5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{invokePredictor__helper_8hh_a7eb7b34e9ea84bfbed4afbf5f63dd024}{\index{invoke\-Predictor\-\_\-helper.\-hh@{invoke\-Predictor\-\_\-helper.\-hh}!write\-File@{write\-File}}
+\index{write\-File@{write\-File}!invokePredictor_helper.hh@{invoke\-Predictor\-\_\-helper.\-hh}}
+\subsubsection[{write\-File}]{\setlength{\rightskip}{0pt plus 5cm}void write\-File (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{filepath, }
+\item[{const char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{invokePredictor__helper_8hh_a7eb7b34e9ea84bfbed4afbf5f63dd024}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{invokePredictor__helper_8hh_a7eb7b34e9ea84bfbed4afbf5f63dd024_icgraph}
+\end{center}
+\end{figure}
+
+
