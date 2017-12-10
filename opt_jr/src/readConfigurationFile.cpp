@@ -4,13 +4,6 @@
 #include <string.h>
 
 
-/*
--This is an helper function used by readConfigurationFile
--it's used to parse input from configuration file
--defined at the end of this file
-- not changed from original C version
-*/
-char * extractItem( char *const string, char *const left, const char *const right);
 
 
 
@@ -54,7 +47,6 @@ sConfiguration  readConfigurationFile()
 }
 
 
-// (declaration upstairs)
 char * extractItem( char *const string, char *const left, const char *const right)
 {
     char  *head;

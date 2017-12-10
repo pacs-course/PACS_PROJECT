@@ -10,6 +10,10 @@
 #include <cmath>
 #include <list>
 
+
+
+
+
 /*
  * 		Name:					calculate_nu
  * 		Description: - it computes the nu indice for the first application
@@ -66,36 +70,16 @@ Batch::calculate_nu(optJrParameters &par)
       w1 = it->w;
       chi_c_1 = it->chi_C;
       csi_1 = std::max(it->M/it->m, it->V/it->v);
-      //printf("Calculate_nu first app: %s w1 %d chi_c %lf chi_c_1%lf\n", it->app_id, w1, chi_c_1, csi_1);
     }
     else //Any other row (compute tot)
     {
       csi = std::max(it->M/it->m, it->V/it->v);
       it->term_i = sqrt( (it->w/w1)*(it->chi_C/chi_c_1)*(csi_1/csi));
       tot = tot + it->term_i;
-      // printf("Calculate_nu  Other rows: %s w %d csi %lf tot %lf\n", it->app_id, it->w, csi, tot);
     }
   }
 
   double nu_1 = N/(1 + tot);
-  //printf("nu_1=%lf\n", nu_1);
-  //tot = 0;
-  //double term_j;
-
-
-
-  /* NB: perchè ricalcola tot??? (uguale?) Penso sia superfluo
-  for (auto it=APPs.begin(); it!=APPs.end(); it++)
-  {
-    if (it!=APPs.begin())
-    {
-      csi = std::max(current->M/current->m, current->V/current->v);
-      term_j = sqrt((current->w/w1)*(current->chi_C/chi_c_1)*(csi_1/csi));
-      tot = tot+ term_j;
-    }
-  }
-  */
-
 
   /*
    * COMPUTE NU_i (!=NU_1) AND ASSIGN VALUES
@@ -106,25 +90,18 @@ Batch::calculate_nu(optJrParameters &par)
     if (it==APPs.begin()) it->nu_d = nu_1;
     else
     {
-      it->nu_d = (it->term_i/(1 + tot))*N; //NB: potrei fare semplicemente nu_1*term_i, no?
-      //printf("\nTERM app %s %lf tot %lf\n", it->app_id, it->term_i, (1 + tot) );
+      it->nu_d = (it->term_i/(1 + tot))*N;
     }
-    //printf("NU_i%lf nu1 %lf\n", it->nu_d, nu_1);
-    it->currentCores_d = it->nu_d;  //NB:  currentCores_d ?? che roba è?? a che serve???
+    it->currentCores_d = it->nu_d;
     std::cout<<"App ID: "<<it->app_id<<", NU: "<<it->nu_d<<std::endl;
 
 
 
-      /*
-       *  COMPUTE ALPHA AND BETA
-       */
-
-    //TODO: Sistema queste due (erano computeAlpha, computeBeta)
+    /*
+    *  COMPUTE ALPHA AND BETA
+    */
     it->beta = ((double) it->sAB.vec[1].nCores) / (it->sAB.vec[0].nCores - it->sAB.vec[1].nCores) * (((double) it->sAB.vec[0].nCores)/it->sAB.vec[1].nCores * it->sAB.vec[0].R - it->sAB.vec[1].R);
     it->alpha =it->sAB.vec[1].nCores * (it->sAB.vec[1].R - it->beta);
-
-    //TODO: implementare come metodo classe application printRow(it, par)?;
-
 
   }
   debugMsg="end calculate nu"; debugMessage(debugMsg, par);
@@ -209,7 +186,7 @@ void Batch::fixInitialSolution(optJrParameters &par)
 	int addedCores;
 
 
-  //Scorro l'elenco delle app "sofferenti " in ordine di peso, finchè ho cores disponibili
+  //I browse the list of "suffering" apps in order of weight, as long as I have available cores
 
   auto it=LP.begin();
 	while (!loopExit&& (residualCores>0))
@@ -255,107 +232,5 @@ void Batch::fixInitialSolution(optJrParameters &par)
     debugMsg = " Application " + it->session_app_id + ",  w = " + std::to_string(it->w)
              + " ncores = " + std::to_string(it->currentCores_d); debugMessage(debugMsg, par);
   }
-
-}
-
-
-
-
-
-
-/*
- * Name: approximatedLoop
- * Description: It estimates the objective function for each move. The candidate applications for which the move is profitable is stored in a sCandidate object
- */
-
-sCandidates Batch::approximatedLoop( int &iteration, optJrParameters &par ) //NB: restituisce per copia! pesante??
-{
-
-  std::string debugMsg;
-
-
-	if (APPs.empty())
-	{
-		printf("Error: approximatedLoop: NO Applications\n");
-		exit(-1);
-	}
-
-	int nCoreMov;
-	double DELTAVM_i;
-	double DELTAVM_j;
-	double DELTA_fo_App_i, DELTA_fo_App_j;
-  sCandidates  sCandidateApproximated ;
-
-
-	debugMsg= "Approximated iterated loop"; debugMessage(debugMsg, par);
-  auto application_i=APPs.begin();
-  while (application_i!=APPs.end())
-  {
-
-		auto application_j = APPs.begin();
-		while (application_j != APPs.end())
-		{
-			if (application_i->session_app_id!=application_j->session_app_id)
-			{
-				debugMsg="Comparing " + application_i->session_app_id + " with " + application_j->session_app_id;debugMessage(debugMsg, par);
-
-				nCoreMov = std::max(application_i->V, application_j->V);
-
-				DELTAVM_i = nCoreMov/application_i->V; debugMsg = "app " + application_i->session_app_id + " DELTAVM_i " +  std::to_string(DELTAVM_i); debugMessage(debugMsg, par);
-				DELTAVM_j = nCoreMov/application_j->V; debugMsg = "app " + application_j->session_app_id + " DELTAVM_j " +  std::to_string(DELTAVM_j); debugMessage(debugMsg, par);
-
-				// Change the currentCores, but rollback later
-				int deltaNCores_i = DELTAVM_i * application_i->V;
-				int deltaNCores_j = DELTAVM_j * application_j->V;
-				application_i->currentCores_d = application_i->currentCores_d + deltaNCores_i;
-				application_j->currentCores_d = application_j->currentCores_d - deltaNCores_j;
-
-
-				debugMsg= "After cores exchange: app " + application_i->session_app_id + " currentCores " + std::to_string((int)application_i->currentCores_d);debugMessage(debugMsg, par);
-        debugMsg= "After cores exchange: app " + application_j->session_app_id + " currentCores " + std::to_string((int)application_j->currentCores_d);debugMessage(debugMsg, par);
-
-
-				if (application_i->currentCores_d > 0 && application_j->currentCores_d > 0)
-				{
-					DELTA_fo_App_i = ObjFun::ObjFunctionComponentApprox(*application_i, par) - application_i->baseFO;
-					debugMsg = "app " + application_i->session_app_id + "DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i);debugMessage(debugMsg, par);
-
-					DELTA_fo_App_j = ObjFun::ObjFunctionComponentApprox(*application_j, par) - application_j->baseFO;
-          debugMsg = "app " + application_j->session_app_id + "DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j);debugMessage(debugMsg, par);
-
-
-          std::cout << "\n\n\n\n   TOT DELTA FO: "+ std::to_string(DELTA_fo_App_i + DELTA_fo_App_j)+ "   \n\n\n ";
-
-
-					if ((DELTA_fo_App_i + DELTA_fo_App_j < 0))
-					{
-            std::cout << "\n\n\n\n      adding candidate :D       \n\n\n ";
-						addCandidate(sCandidateApproximated,
-									*application_i ,
-									*application_j ,
-									application_i->currentCores_d,
-									application_j->currentCores_d,
-									DELTA_fo_App_i + DELTA_fo_App_j,
-									DELTAVM_i,
-									DELTAVM_j) ;
-
-					}
-
-
-				}
-
-				application_i->currentCores_d = application_i->currentCores_d - DELTAVM_i*application_i->V;
-				application_j->currentCores_d = application_j->currentCores_d + DELTAVM_j*application_j->V;
-			}
-		application_j++;
-		}
-  application_i++;
-	}
-
-
-
-  iteration= sCandidateApproximated.size();
-
-	return sCandidateApproximated;
 
 }

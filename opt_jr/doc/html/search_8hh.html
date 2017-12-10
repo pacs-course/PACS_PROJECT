@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -68,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -92,13 +93,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><code>#include &quot;<a class="el" href="readConfigurationFile_8hh_source.html">readConfigurationFile.hh</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="batch_8hh_source.html">batch.hh</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="optjrParameters_8hh_source.html">optjrParameters.hh</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="candidates_8hh_source.html">candidates.hh</a>&quot;</code><br/>
 <code>#include &lt;mysql.h&gt;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for search.hh:</div>
 <div class="dyncontent">
 <div class="center"><img src="search_8hh__incl.png" border="0" usemap="#_2vagrant_2PROJECT__SPARK_2PACS__PROJECT_2opt__jr_2src_2search_8hh" alt=""/></div>
 <map name="_2vagrant_2PROJECT__SPARK_2PACS__PROJECT_2opt__jr_2src_2search_8hh" id="_2vagrant_2PROJECT__SPARK_2PACS__PROJECT_2opt__jr_2src_2search_8hh">
-<area shape="rect" id="node2" href="readConfigurationFile_8hh.html" title="readConfigurationFile.hh" alt="" coords="149,408,312,435"/><area shape="rect" id="node7" href="batch_8hh.html" title="batch.hh" alt="" coords="951,109,1023,136"/><area shape="rect" id="node16" href="optjrParameters_8hh.html" title="optjrParameters.hh" alt="" coords="929,483,1060,509"/><area shape="rect" id="node9" href="application_8hh.html" title="application.hh" alt="" coords="935,259,1037,285"/><area shape="rect" id="node21" href="candidates_8hh.html" title="candidates.hh" alt="" coords="339,184,441,211"/><area shape="rect" id="node11" href="invokePredictor_8hh.html" title="invokePredictor.hh" alt="" coords="839,333,969,360"/><area shape="rect" id="node12" href="invokePredictor__helper_8hh.html" title="invokePredictor_helper.hh" alt="" coords="670,408,841,435"/><area shape="rect" id="node17" href="debugmessage_8hh.html" title="debugmessage.hh" alt="" coords="517,408,645,435"/><area shape="rect" id="node19" href="db_8hh.html" title="db.hh" alt="" coords="942,408,996,435"/><area shape="rect" id="node13" href="utility_8hh.html" title="utility.hh" alt="" coords="498,483,568,509"/></map>
+<area shape="rect" id="node2" href="readConfigurationFile_8hh.html" title="readConfigurationFile.hh" alt="" coords="112,333,275,360"/><area shape="rect" id="node7" href="batch_8hh.html" title="batch.hh" alt="" coords="517,109,589,136"/><area shape="rect" id="node16" href="optjrParameters_8hh.html" title="optjrParameters.hh" alt="" coords="1187,408,1319,435"/><area shape="rect" id="node21" href="candidates_8hh.html" title="candidates.hh" alt="" coords="690,109,792,136"/><area shape="rect" id="node9" href="application_8hh.html" title="application.hh" alt="" coords="715,184,817,211"/><area shape="rect" id="node11" href="invokePredictor_8hh.html" title="invokePredictor.hh" alt="" coords="715,259,845,285"/><area shape="rect" id="node12" href="invokePredictor__helper_8hh.html" title="invokePredictor_helper.hh" alt="" coords="654,333,825,360"/><area shape="rect" id="node17" href="debugmessage_8hh.html" title="debugmessage.hh" alt="" coords="451,333,579,360"/><area shape="rect" id="node19" href="db_8hh.html" title="db.hh" alt="" coords="1065,333,1119,360"/><area shape="rect" id="node13" href="utility_8hh.html" title="utility.hh" alt="" coords="885,408,955,435"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>

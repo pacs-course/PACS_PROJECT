@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -68,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -103,18 +104,18 @@ Include dependency graph for readConfigurationFile.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad3dd25d4ff0e2bea02fed4bfdc1b137f"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="readConfigurationFile_8cpp.html#ad3dd25d4ff0e2bea02fed4bfdc1b137f">extractItem</a> (char *const string, char *const left, const char *const right)</td></tr>
-<tr class="separator:ad3dd25d4ff0e2bea02fed4bfdc1b137f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e3ab429a1d72d0d31c7290c97731e1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="readConfigurationFile_8cpp.html#a4e3ab429a1d72d0d31c7290c97731e1e">readConfigurationFile</a> ()</td></tr>
 <tr class="separator:a4e3ab429a1d72d0d31c7290c97731e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae898d525eda0e47a85dcef4e60aa46ab"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="readConfigurationFile_8cpp.html#ae898d525eda0e47a85dcef4e60aa46ab">extractItem</a> (char *const string, char *const left, const char *const right)</td></tr>
+<tr class="separator:ae898d525eda0e47a85dcef4e60aa46ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ad3dd25d4ff0e2bea02fed4bfdc1b137f"></a>
+<a class="anchor" id="ae898d525eda0e47a85dcef4e60aa46ab"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char * extractItem </td>
+          <td class="memname">char* extractItem </td>
           <td>(</td>
           <td class="paramtype">char *const&#160;</td>
           <td class="paramname"><em>string</em>, </td>
@@ -138,12 +139,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>This is an helper function used by readConfigurationFile; it's used to parse input from configuration file. (not changed from original C version) </p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="readConfigurationFile_8cpp_ad3dd25d4ff0e2bea02fed4bfdc1b137f_icgraph.png" border="0" usemap="#readConfigurationFile_8cpp_ad3dd25d4ff0e2bea02fed4bfdc1b137f_icgraph" alt=""/></div>
-<map name="readConfigurationFile_8cpp_ad3dd25d4ff0e2bea02fed4bfdc1b137f_icgraph" id="readConfigurationFile_8cpp_ad3dd25d4ff0e2bea02fed4bfdc1b137f_icgraph">
+<div class="center"><img src="readConfigurationFile_8cpp_ae898d525eda0e47a85dcef4e60aa46ab_icgraph.png" border="0" usemap="#readConfigurationFile_8cpp_ae898d525eda0e47a85dcef4e60aa46ab_icgraph" alt=""/></div>
+<map name="readConfigurationFile_8cpp_ae898d525eda0e47a85dcef4e60aa46ab_icgraph" id="readConfigurationFile_8cpp_ae898d525eda0e47a85dcef4e60aa46ab_icgraph">
 <area shape="rect" id="node2" href="readConfigurationFile_8hh.html#a4e3ab429a1d72d0d31c7290c97731e1e" title="readConfigurationFile" alt="" coords="142,5,287,32"/><area shape="rect" id="node3" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="336,5,387,32"/></map>
 </div>
 </p>
@@ -162,13 +164,14 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>This function inizializes the sConfiguration container; it reads the file defined in the environmental variable WSI_CONFIG_FILE </p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="readConfigurationFile_8cpp_a4e3ab429a1d72d0d31c7290c97731e1e_cgraph.png" border="0" usemap="#readConfigurationFile_8cpp_a4e3ab429a1d72d0d31c7290c97731e1e_cgraph" alt=""/></div>
 <map name="readConfigurationFile_8cpp_a4e3ab429a1d72d0d31c7290c97731e1e_cgraph" id="readConfigurationFile_8cpp_a4e3ab429a1d72d0d31c7290c97731e1e_cgraph">
-<area shape="rect" id="node2" href="readConfigurationFile_8cpp.html#ad3dd25d4ff0e2bea02fed4bfdc1b137f" title="extractItem" alt="" coords="200,5,288,32"/></map>
+<area shape="rect" id="node2" href="readConfigurationFile_8cpp.html#ae898d525eda0e47a85dcef4e60aa46ab" title="extractItem" alt="" coords="200,5,288,32"/></map>
 </div>
 </p>
 

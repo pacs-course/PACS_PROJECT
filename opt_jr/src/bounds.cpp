@@ -10,7 +10,6 @@
 
 
 
-
 /*
  * 		Name:				Bound
  * 		Description:		This function calculates the bound given a certain deadline and number of nodes, cores. Predictor method is invoked until an upper bound,
@@ -27,9 +26,9 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 	int BCores = 0;
 	int STEP = app.V;
 	int nCores;
-	int nNodes = 1; // Temporary fix ----> NB: che significa??
+	int nNodes = 1;
 
-	app.currentCores_d = app.nCores_DB_d; // NB: CREDO CHE QUESTA COSA SIA SBAGLIATA, sto dando piu cores di quelli che ho
+	app.currentCores_d = app.nCores_DB_d;
 
 
 	int X0 = ((int) ( app.currentCores_d / app.V) ) * app.V;
@@ -43,7 +42,6 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 	 *   First evaluation, with data guessed by findbound
 	 */
 
-		//TODO: implementare un metodo di app che chiama invoke predictor;
 	predictorOutput = atoi(invokePredictor(configuration, conn, nNodes, nCores, "*", app.datasetSize, const_cast<char*>((app.session_app_id).c_str()),
 													const_cast<char*>((app.app_id).c_str()), const_cast<char*>((app.stage).c_str()), par, flagDagsim));
 
@@ -78,7 +76,7 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 					break;
 				}
 
-				nCores = nCores + STEP; //add the cores NB: ma non dovrebbe aggiungere un tot in funzione di a e b?
+				nCores = nCores + STEP; //add the cores NB: possible improvement: add more than one VM at a time
 				predictorOutput = atof(invokePredictor(configuration, conn, nNodes, nCores, "8G", app.datasetSize, const_cast<char*>((app.session_app_id).c_str()),
 																const_cast<char*>((app.app_id).c_str()), const_cast<char*>((app.stage).c_str()), par, WHOLE_DAGSIM));
 
@@ -100,9 +98,9 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 			}
 
 		else
-			while (doubleCompare(predictorOutput, app.Deadline_d) == -1) 
+			while (doubleCompare(predictorOutput, app.Deadline_d) == -1)
 			{
-				BCores = nCores;  //salvo passaggio precedente in BCores e BTime
+				BCores = nCores;
 				BTime = predictorOutput;
 				nCores = nCores - STEP;
 
@@ -114,7 +112,6 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 
 				if (nCores ==0)
 				{
-					//printf("Warning Bound (< if case): nCores is currently 0 for app. Cannot invoke Predictor\n");
 					nCores= app.V;
 					//leave the while loop
 					break;
@@ -130,16 +127,15 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 
 				app.sAB.vec[app.sAB.index].nCores = nCores;
 				app.sAB.vec[app.sAB.index].R = predictorOutput;
-				app.sAB.index = app.sAB.index % HYP_INTERPOLATION_POINTS; //NB: MA sAB.index è sempre uguale così!
-				std::cout<< " \n\n\n\n eiiii\n\n\n\n"<<app.sAB.index << "\n\n\n\n eiiii\n\n\n\n";
+				app.sAB.index = app.sAB.index % HYP_INTERPOLATION_POINTS; //NB:  sAB.index it's always the same!
+				std::cout<< " \n\n\n\n eiiii\n\n\n\n"<<app.sAB.index << "\n\n\n\n eiiii\n\n\n\n"; //NB: remove this when fixed
 
-				//printf("(down) time = %d Rnew =%d\n", time, BTime);
 				app.boundIterations++;
 			}
 
 	/* Update the record with bound values */
 
-	app.currentCores_d = BCores; //PERCHè???
+	app.currentCores_d = BCores;
 	app.R_d = BTime;
 	app.bound = BCores;
 	debugMsg="\n\nSession_app_id : " + app.session_app_id + " , APP_ID: " + app.app_id +
@@ -164,9 +160,7 @@ void Bounds::findBound(sConfiguration &configuration, MYSQL *conn, char* db,  Ap
   std::string debugMsg;
   char statement[256];
 
-  //debugMsg= "findBound "+ app.session_app_id + " " + app.app_id; debugMessage(debugMsg, par);
 
-  ///Retrieve nCores from the DB
 
     sprintf(statement,
                         "select num_cores_opt, num_vm_opt from %s.OPTIMIZER_CONFIGURATION_TABLE where application_id='%s' and dataset_size=%d and deadline=%lf;"
@@ -226,10 +220,6 @@ void Bounds::calculateBounds(Batch  & app_manager, int n_threads,
       for (auto it=app_manager.APPs.begin(); it !=app_manager.APPs.end(); it++)
       {
         int pos=j%n_threads;
-      //  debugMsg= "pos= " + std::to_string(pos)
-        //         +", j= " + std::to_string(j)
-          //       + ", ID= " + std::to_string(ID);debugMessage(debugMsg,par);
-
         if(pos==ID)
         {
           debugMsg= "Call findBound of app " + app_manager.APPs[j].app_id

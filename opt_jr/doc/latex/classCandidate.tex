@@ -18,33 +18,36 @@ Collaboration diagram for Candidate\-:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classCandidate_a2d1453a6b8c1a39561e67a2c67b79ed1}{Candidate} (\hyperlink{classApplication}{Application} $\ast$i, \hyperlink{classApplication}{Application} $\ast$j, int N\-Ci, int N\-Cj, double D\-\_\-\-F\-O, int d\-\_\-i, int d\-\_\-j)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classApplication}{Application} $\ast$ \hyperlink{classCandidate_a1bfed0429bba41f57dce0fbd37225c2c}{app\-\_\-i}
-\item 
+\begin{DoxyCompactList}\small\item\em Pointer to the first \hyperlink{classApplication}{Application}. \end{DoxyCompactList}\item 
 int \hyperlink{classCandidate_a859313416296683b7c0496d842dab48a}{new\-Core\-Assignment\-\_\-i}
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classApplication}{Application} cores after the move (first application) \end{DoxyCompactList}\item 
 int \hyperlink{classCandidate_ab1033e1f3e0060f0773c7d9268c2ce0b}{delta\-\_\-i}
-\item 
+\begin{DoxyCompactList}\small\item\em Delta cores following the move. \end{DoxyCompactList}\item 
 double \hyperlink{classCandidate_a93a050a3128d98f446176d9411535eea}{real\-\_\-i}
-\item 
+\begin{DoxyCompactList}\small\item\em Real predictor value calculated (M\-P\-I) after the interpolation. \end{DoxyCompactList}\item 
 \hyperlink{classApplication}{Application} $\ast$ \hyperlink{classCandidate_a8b0f26e8b45e9a3331be8a9694d3be5e}{app\-\_\-j}
-\item 
+\begin{DoxyCompactList}\small\item\em Pointer to the first \hyperlink{classApplication}{Application}. \end{DoxyCompactList}\item 
 int \hyperlink{classCandidate_a1203966358bd849169b5f967de3c2bf7}{new\-Core\-Assignment\-\_\-j}
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classApplication}{Application} cores after the move (first application) \end{DoxyCompactList}\item 
 int \hyperlink{classCandidate_a02528143e2448bfcad797aae2fe1ac90}{delta\-\_\-j}
-\item 
+\begin{DoxyCompactList}\small\item\em Delta cores following the move. \end{DoxyCompactList}\item 
 double \hyperlink{classCandidate_ad7e4bca76815c11f378f005baa93bffb}{real\-\_\-j}
-\item 
+\begin{DoxyCompactList}\small\item\em Real predictor value calculated (M\-P\-I) after the interpolation. \end{DoxyCompactList}\item 
 int \hyperlink{classCandidate_a7136b28b9f4ef84a661ba4132f59eaa3}{nodes\-\_\-i}
 \item 
 int \hyperlink{classCandidate_affe483f905741a62769d1fbebae48b4e}{nodes\-\_\-j}
 \item 
 double \hyperlink{classCandidate_a1bfc07aae3b3914bba57e057936399e7}{delta\-F\-O}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Delta Objective Function following the move. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+\char`\"{}\-Candidate\char`\"{} class is an auxiliary class used by local\-Search; it stores data about pairs of application and the consequent changes on the objective function after cores exchange 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classCandidate_a2d1453a6b8c1a39561e67a2c67b79ed1}{\index{Candidate@{Candidate}!Candidate@{Candidate}}
@@ -62,28 +65,60 @@ double \hyperlink{classCandidate_a1bfc07aae3b3914bba57e057936399e7}{delta\-F\-O}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCandidate_a2d1453a6b8c1a39561e67a2c67b79ed1}
 
 
+Constructor. 
+
+
+
 \subsection{Member Data Documentation}
 \hypertarget{classCandidate_a1bfed0429bba41f57dce0fbd37225c2c}{\index{Candidate@{Candidate}!app\-\_\-i@{app\-\_\-i}}
 \index{app\-\_\-i@{app\-\_\-i}!Candidate@{Candidate}}
 \subsubsection[{app\-\_\-i}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Application}$\ast$ Candidate\-::app\-\_\-i}}\label{classCandidate_a1bfed0429bba41f57dce0fbd37225c2c}
+
+
+Pointer to the first \hyperlink{classApplication}{Application}. 
+
 \hypertarget{classCandidate_a8b0f26e8b45e9a3331be8a9694d3be5e}{\index{Candidate@{Candidate}!app\-\_\-j@{app\-\_\-j}}
 \index{app\-\_\-j@{app\-\_\-j}!Candidate@{Candidate}}
 \subsubsection[{app\-\_\-j}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Application}$\ast$ Candidate\-::app\-\_\-j}}\label{classCandidate_a8b0f26e8b45e9a3331be8a9694d3be5e}
+
+
+Pointer to the first \hyperlink{classApplication}{Application}. 
+
 \hypertarget{classCandidate_ab1033e1f3e0060f0773c7d9268c2ce0b}{\index{Candidate@{Candidate}!delta\-\_\-i@{delta\-\_\-i}}
 \index{delta\-\_\-i@{delta\-\_\-i}!Candidate@{Candidate}}
 \subsubsection[{delta\-\_\-i}]{\setlength{\rightskip}{0pt plus 5cm}int Candidate\-::delta\-\_\-i}}\label{classCandidate_ab1033e1f3e0060f0773c7d9268c2ce0b}
+
+
+Delta cores following the move. 
+
 \hypertarget{classCandidate_a02528143e2448bfcad797aae2fe1ac90}{\index{Candidate@{Candidate}!delta\-\_\-j@{delta\-\_\-j}}
 \index{delta\-\_\-j@{delta\-\_\-j}!Candidate@{Candidate}}
 \subsubsection[{delta\-\_\-j}]{\setlength{\rightskip}{0pt plus 5cm}int Candidate\-::delta\-\_\-j}}\label{classCandidate_a02528143e2448bfcad797aae2fe1ac90}
+
+
+Delta cores following the move. 
+
 \hypertarget{classCandidate_a1bfc07aae3b3914bba57e057936399e7}{\index{Candidate@{Candidate}!delta\-F\-O@{delta\-F\-O}}
 \index{delta\-F\-O@{delta\-F\-O}!Candidate@{Candidate}}
 \subsubsection[{delta\-F\-O}]{\setlength{\rightskip}{0pt plus 5cm}double Candidate\-::delta\-F\-O}}\label{classCandidate_a1bfc07aae3b3914bba57e057936399e7}
+
+
+Delta Objective Function following the move. 
+
 \hypertarget{classCandidate_a859313416296683b7c0496d842dab48a}{\index{Candidate@{Candidate}!new\-Core\-Assignment\-\_\-i@{new\-Core\-Assignment\-\_\-i}}
 \index{new\-Core\-Assignment\-\_\-i@{new\-Core\-Assignment\-\_\-i}!Candidate@{Candidate}}
 \subsubsection[{new\-Core\-Assignment\-\_\-i}]{\setlength{\rightskip}{0pt plus 5cm}int Candidate\-::new\-Core\-Assignment\-\_\-i}}\label{classCandidate_a859313416296683b7c0496d842dab48a}
+
+
+\hyperlink{classApplication}{Application} cores after the move (first application) 
+
 \hypertarget{classCandidate_a1203966358bd849169b5f967de3c2bf7}{\index{Candidate@{Candidate}!new\-Core\-Assignment\-\_\-j@{new\-Core\-Assignment\-\_\-j}}
 \index{new\-Core\-Assignment\-\_\-j@{new\-Core\-Assignment\-\_\-j}!Candidate@{Candidate}}
 \subsubsection[{new\-Core\-Assignment\-\_\-j}]{\setlength{\rightskip}{0pt plus 5cm}int Candidate\-::new\-Core\-Assignment\-\_\-j}}\label{classCandidate_a1203966358bd849169b5f967de3c2bf7}
+
+
+\hyperlink{classApplication}{Application} cores after the move (first application) 
+
 \hypertarget{classCandidate_a7136b28b9f4ef84a661ba4132f59eaa3}{\index{Candidate@{Candidate}!nodes\-\_\-i@{nodes\-\_\-i}}
 \index{nodes\-\_\-i@{nodes\-\_\-i}!Candidate@{Candidate}}
 \subsubsection[{nodes\-\_\-i}]{\setlength{\rightskip}{0pt plus 5cm}int Candidate\-::nodes\-\_\-i}}\label{classCandidate_a7136b28b9f4ef84a661ba4132f59eaa3}
@@ -93,9 +128,17 @@ double \hyperlink{classCandidate_a1bfc07aae3b3914bba57e057936399e7}{delta\-F\-O}
 \hypertarget{classCandidate_a93a050a3128d98f446176d9411535eea}{\index{Candidate@{Candidate}!real\-\_\-i@{real\-\_\-i}}
 \index{real\-\_\-i@{real\-\_\-i}!Candidate@{Candidate}}
 \subsubsection[{real\-\_\-i}]{\setlength{\rightskip}{0pt plus 5cm}double Candidate\-::real\-\_\-i}}\label{classCandidate_a93a050a3128d98f446176d9411535eea}
+
+
+Real predictor value calculated (M\-P\-I) after the interpolation. 
+
 \hypertarget{classCandidate_ad7e4bca76815c11f378f005baa93bffb}{\index{Candidate@{Candidate}!real\-\_\-j@{real\-\_\-j}}
 \index{real\-\_\-j@{real\-\_\-j}!Candidate@{Candidate}}
 \subsubsection[{real\-\_\-j}]{\setlength{\rightskip}{0pt plus 5cm}double Candidate\-::real\-\_\-j}}\label{classCandidate_ad7e4bca76815c11f378f005baa93bffb}
+
+
+Real predictor value calculated (M\-P\-I) after the interpolation. 
+
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

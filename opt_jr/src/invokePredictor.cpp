@@ -4,10 +4,21 @@
 #include <string>
 #include <string.h>
 
+
 /*
- * Name: invokePredictor
- * Description: It invokes a predictor (dagSim/Lundstrom). First it checks if an estimate of the execution time is already stored in the DB; if not, it invokes the actual predictor
- * 				and stores the result on DB cache table.
+	-This file is not substantially changed from original C version
+	-Here is defined the function to invoke a predictor
+ */
+
+
+
+
+/*
+  Name: invokePredictor
+  Description: It invokes a predictor (dagSim/Lundstrom).
+ 								First it checks if an estimate of the execution time is already stored in the DB;
+ 								if not, it invokes the actual predictor
+ 								and stores the result on DB cache table.
  */
 
 char* invokePredictor(sConfiguration  &configuration, MYSQL *conn, int nNodes, int currentCores,
@@ -22,8 +33,7 @@ char* invokePredictor(sConfiguration  &configuration, MYSQL *conn, int nNodes, i
 	char subfolder[1024];
 	char *output1 = (char *)malloc(64);
 
-	char statement[1024];/*
-	char debugMsg[DEBUG_MSG];*/
+	char statement[1024];
 	char dbName[64];
 	char dir[1024];
 
@@ -38,7 +48,6 @@ char* invokePredictor(sConfiguration  &configuration, MYSQL *conn, int nNodes, i
 	std::string debugMsg=" Invoking predictor "; debugMessage(debugMsg, par);
 
 
-	//sprintf(debugMsg, "invokePredictor\n");debugInformational(debugMsg, par);
 
 	// Consider always the same folder and lua file (replacing the number of nodes)
 	// This is possible because the variance between the log folders is small
@@ -49,7 +58,7 @@ char* invokePredictor(sConfiguration  &configuration, MYSQL *conn, int nNodes, i
 
 	switch(par.get_simulator())
 	{
-		case LUNDSTROM: //NB: funziona?
+		case LUNDSTROM:
 			sprintf(parameters, "%d %d %s %d %s", nNodes, currentCores, memory, datasize, appId);
 			sprintf(cmd, "cd %s;python run.py %s", const_cast<char*>(configuration["LUNDSTROM_HOME"].c_str()), parameters);
 			break;
@@ -87,7 +96,6 @@ char* invokePredictor(sConfiguration  &configuration, MYSQL *conn, int nNodes, i
 				debugMsg= "Last SQL statement returned 0 rows. Invoking predictor..."; debugMessage(debugMsg, par);
 
 				// Replaced FAKE variable with RESULTS_HOME
-				//sprintf(path, "%s/%s/logs", getConfigurationValue(configuration, "RESULTS_HOME"), appId);
 				sprintf(path, "%s/%s/%s/logs", const_cast<char*>(configuration["RESULTS_HOME"].c_str()), readFolder(path), appId);
 
 
@@ -100,7 +108,6 @@ char* invokePredictor(sConfiguration  &configuration, MYSQL *conn, int nNodes, i
 				char pattern[64];
 
 				sprintf(pattern, "Nodes = %d",(nNodes*currentCores));
-				//writeFile(lua, replace(readFile(lua), pattern));
 
 				writeFile("/tmp/temp.lua", replace(readFile(lua), pattern));
 

@@ -22,7 +22,6 @@ double ObjFun::ObjFunctionComponent(sConfiguration &configuration, MYSQL *conn, 
 	app.R_d = atof(invokePredictor( configuration, conn, 1, app.currentCores_d, "*", app.datasetSize,  const_cast<char*>((app.session_app_id).c_str()),
 													const_cast<char*>((app.app_id).c_str()), const_cast<char*>((app.stage).c_str()), par,RESIDUAL_EXECUTION_TIME));
 
-	//printf("ObjFunctionComponent: App_id %s w %f R %d D %d nCores %d newCores %d\n",app.app_id, app.w, app.R, app.D, app.cores, app.newCores);
 
 	/* Determine how the obj function needs to be calculated */
 	switch(app.mode)
@@ -58,10 +57,10 @@ double ObjFun::ObjFunctionComponent(sConfiguration &configuration, MYSQL *conn, 
 
 
 
-/*
- * Name: ObjFunctionComponentApprox
- * Output parameters: a double The value of the the approximated objective function
- * Description It computes an approximation of the objective function (and update R_d)
+/**
+  Name: ObjFunctionComponentApprox
+  Output parameters: a double The value of the approximated objective function
+  Description It computes an approximation of the objective function (and update R_d)
  */
 
 double ObjFun::ObjFunctionComponentApprox(Application &App, optJrParameters &par)//sApplication * pointer, struct optJrParameters par)
@@ -69,7 +68,6 @@ double ObjFun::ObjFunctionComponentApprox(Application &App, optJrParameters &par
 
   std::cout << "  hello from ObjFunctionComponentApprox "<<std::endl;
   std::string debugMsg;
-	//char debugMsg[DEBUG_MSG];
 	double output;
 
 

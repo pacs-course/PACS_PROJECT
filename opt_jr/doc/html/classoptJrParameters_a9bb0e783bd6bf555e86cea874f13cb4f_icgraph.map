@@ -1,6 +1,6 @@
 <map id="optJrParameters::get_number" name="optJrParameters::get_number">
-<area shape="rect" id="node2" href="$classBatch.html#a14f132321413b45d6446200807451414" title="Batch::calculate_nu" alt="" coords="207,5,345,32"/>
-<area shape="rect" id="node4" href="$classBatch.html#ac50dad870490ca7c60e0e15d86c02614" title="Batch::fixInitialSolution" alt="" coords="198,56,354,83"/>
+<area shape="rect" id="node2" href="$classBatch.html#a14f132321413b45d6446200807451414" title="It calculates nu indices for each application and stores it in the &quot;Application&quot; object. " alt="" coords="207,5,345,32"/>
+<area shape="rect" id="node4" href="$classBatch.html#ac50dad870490ca7c60e0e15d86c02614" title="It fixes the initial solution by reallocating the residual cores to the applications that may need mo..." alt="" coords="198,56,354,83"/>
 <area shape="rect" id="node3" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="403,81,453,108"/>
 <area shape="rect" id="node5" href="$classSearch.html#af95c649fd7dba70b7bd3c124ec501046" title="Search::localSearch" alt="" coords="207,157,345,184"/>
 </map>

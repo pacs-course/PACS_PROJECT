@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -68,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -95,25 +96,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">sConfiguration: - container che memorizza dati file di configurazione</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">                - è una (unordered) map</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">   13</a></span>&#160;<span class="keyword">using</span> <a class="code" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a>=std::unordered_map&lt;std::string,std::string&gt; ;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">   12</a></span>&#160;<span class="keyword">using</span> <a class="code" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a>=std::unordered_map&lt;std::string,std::string&gt; ;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">  -funzione per inizializzare sConfiguration</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">  -legge il file di configurazione wsi definito nella env. var. WSI_CONFIG_FILE</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<a class="code" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a>  <a class="code" href="readConfigurationFile_8cpp.html#a4e3ab429a1d72d0d31c7290c97731e1e">readConfigurationFile</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="readConfigurationFile_8cpp_html_a4e3ab429a1d72d0d31c7290c97731e1e"><div class="ttname"><a href="readConfigurationFile_8cpp.html#a4e3ab429a1d72d0d31c7290c97731e1e">readConfigurationFile</a></div><div class="ttdeci">sConfiguration readConfigurationFile()</div><div class="ttdef"><b>Definition:</b> readConfigurationFile.cpp:17</div></div>
-<div class="ttc" id="readConfigurationFile_8hh_html_ab8f35b1da3261263c5e9c0e7c8921f5c"><div class="ttname"><a href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a></div><div class="ttdeci">std::unordered_map&lt; std::string, std::string &gt; sConfiguration</div><div class="ttdef"><b>Definition:</b> readConfigurationFile.hh:13</div></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<a class="code" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a>  <a class="code" href="readConfigurationFile_8cpp.html#a4e3ab429a1d72d0d31c7290c97731e1e">readConfigurationFile</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">char</span> * <a class="code" href="readConfigurationFile_8cpp.html#ae898d525eda0e47a85dcef4e60aa46ab">extractItem</a>( <span class="keywordtype">char</span> *<span class="keyword">const</span> <span class="keywordtype">string</span>, <span class="keywordtype">char</span> *<span class="keyword">const</span> left, <span class="keyword">const</span> <span class="keywordtype">char</span> *<span class="keyword">const</span> right);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="readConfigurationFile_8cpp_html_a4e3ab429a1d72d0d31c7290c97731e1e"><div class="ttname"><a href="readConfigurationFile_8cpp.html#a4e3ab429a1d72d0d31c7290c97731e1e">readConfigurationFile</a></div><div class="ttdeci">sConfiguration readConfigurationFile()</div><div class="ttdef"><b>Definition:</b> readConfigurationFile.cpp:10</div></div>
+<div class="ttc" id="readConfigurationFile_8hh_html_ab8f35b1da3261263c5e9c0e7c8921f5c"><div class="ttname"><a href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a></div><div class="ttdeci">std::unordered_map&lt; std::string, std::string &gt; sConfiguration</div><div class="ttdef"><b>Definition:</b> readConfigurationFile.hh:12</div></div>
+<div class="ttc" id="readConfigurationFile_8cpp_html_ae898d525eda0e47a85dcef4e60aa46ab"><div class="ttname"><a href="readConfigurationFile_8cpp.html#ae898d525eda0e47a85dcef4e60aa46ab">extractItem</a></div><div class="ttdeci">char * extractItem(char *const string, char *const left, const char *const right)</div><div class="ttdef"><b>Definition:</b> readConfigurationFile.cpp:50</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

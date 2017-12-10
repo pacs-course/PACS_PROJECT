@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -99,7 +100,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ab36af3a1d85dbcaa79dc9b582b00928b"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b">ObjFunctionGlobal</a> (<a class="el" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;configuration, MYSQL *conn, <a class="el" href="classBatch.html">Batch</a> &amp;App_manager, <a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
 <tr class="separator:ab36af3a1d85dbcaa79dc9b582b00928b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class provides methods to evaluate the objective function in different ways </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a7c9ecaa07ca776eb64f6e73f84513bc7"></a>
 <div class="memitem">
 <div class="memproto">
@@ -143,6 +146,7 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>It evaluates the contribution to the calculation of the objective function of one application. Currently, only one method is supported. Note that the algorithm's choice is stored in the "mode" field of the application structure. </p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -195,6 +199,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>It computes an approximation of the objective function (and update R_d)</p>
+<p>Name: ObjFunctionComponentApprox Output parameters: a double The value of the approximated objective function Description It computes an approximation of the objective function (and update R_d) </p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -202,15 +208,6 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classObjFun_abb89a994d34b44ec4cb6e0e2562c0107_cgraph.png" border="0" usemap="#classObjFun_abb89a994d34b44ec4cb6e0e2562c0107_cgraph" alt=""/></div>
 <map name="classObjFun_abb89a994d34b44ec4cb6e0e2562c0107_cgraph" id="classObjFun_abb89a994d34b44ec4cb6e0e2562c0107_cgraph">
 <area shape="rect" id="node2" href="debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="265,12,375,39"/><area shape="rect" id="node3" href="classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="Returns the debug option (1==YES, 0==NO) " alt="" coords="424,5,568,46"/></map>
-</div>
-</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classObjFun_abb89a994d34b44ec4cb6e0e2562c0107_icgraph.png" border="0" usemap="#classObjFun_abb89a994d34b44ec4cb6e0e2562c0107_icgraph" alt=""/></div>
-<map name="classObjFun_abb89a994d34b44ec4cb6e0e2562c0107_icgraph" id="classObjFun_abb89a994d34b44ec4cb6e0e2562c0107_icgraph">
-<area shape="rect" id="node2" href="classBatch.html#acf54e153a40b4720b1f7bebf000b1600" title="Batch::approximatedLoop" alt="" coords="264,12,435,39"/><area shape="rect" id="node3" href="classSearch.html#af95c649fd7dba70b7bd3c124ec501046" title="Search::localSearch" alt="" coords="483,12,621,39"/><area shape="rect" id="node4" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="669,12,720,39"/></map>
 </div>
 </p>
 
@@ -259,6 +256,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>It calculates the value of the total objective function </p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>

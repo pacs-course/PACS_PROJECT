@@ -12,6 +12,7 @@ var searchData=
   ['readconfigurationfile_2ehh',['readConfigurationFile.hh',['../readConfigurationFile_8hh.html',1,'']]],
   ['readfile',['readFile',['../invokePredictor__helper_8cpp.html#aec83b878d49ef5976f2175867cdc2d82',1,'readFile(char *filename):&#160;invokePredictor_helper.cpp'],['../invokePredictor__helper_8hh.html#aec83b878d49ef5976f2175867cdc2d82',1,'readFile(char *filename):&#160;invokePredictor_helper.cpp']]],
   ['readfolder',['readFolder',['../invokePredictor__helper_8cpp.html#a28d1d79b02f44f349115bf4c9e754770',1,'readFolder(char *path):&#160;invokePredictor_helper.cpp'],['../invokePredictor__helper_8hh.html#a28d1d79b02f44f349115bf4c9e754770',1,'readFolder(char *path):&#160;invokePredictor_helper.cpp']]],
+  ['readme_2emd',['README.MD',['../README_8MD.html',1,'']]],
   ['real_5fi',['real_i',['../classCandidate.html#a93a050a3128d98f446176d9411535eea',1,'Candidate']]],
   ['real_5fj',['real_j',['../classCandidate.html#ad7e4bca76815c11f378f005baa93bffb',1,'Candidate']]],
   ['replace',['replace',['../invokePredictor__helper_8cpp.html#a66e21ca5b85d790af9025eb13f4beca5',1,'replace(char *text, char *newLine):&#160;invokePredictor_helper.cpp'],['../invokePredictor__helper_8hh.html#a66e21ca5b85d790af9025eb13f4beca5',1,'replace(char *text, char *newLine):&#160;invokePredictor_helper.cpp']]],

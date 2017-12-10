@@ -4,7 +4,6 @@
 
 #include <string>
 #include <sys/types.h>
-//#include <fcntl.h>
 #include <sys/stat.h>
 #include <dirent.h>
 #include <glob.h>
@@ -12,6 +11,10 @@
 #define BIG_LINE 4000
 #define BIG_TEXT 20000
 
+/*
+	-This file is not substantially changed from original C version
+	-Here are defined helper functions to invoke a predictor
+ */
 
 
 /*
@@ -62,7 +65,7 @@ void writeFile(const char *filepath, const char *data)
 
 char * ls(char * pattern, optJrParameters &par)
 {
-	//char debugMsg[DEBUG_MSG];
+
 	std::string debugMsg;
 	glob_t pglob;
 	char *filename = (char *)malloc(1024);
@@ -96,6 +99,7 @@ char * ls(char * pattern, optJrParameters &par)
 	 	  }
 	  return NULL;
 }
+
 
 // extractRowN:  used by replace
 char * extractRowN(char *text, int row)
@@ -194,24 +198,18 @@ char * readFile(char * filename)
 }
 
 /*
-
  * 		Name:					_run
-
  * 		Input parameters:		char * cmd
-
  * 		Output parameters:		The output provided by the executed command
-
  * 		Description:			This function executes a command ("cmd")
-
  *
-
  */
 
 char *_run(char * cmd, optJrParameters &par)
 
 {
 	int BUFSIZE = 10240;
-	//char debugMsg[DEBUG_MSG];
+	
 	std::string debugMsg;
 	int outcome;
 	char *buf = (char *)malloc(BUFSIZE);

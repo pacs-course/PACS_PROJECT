@@ -18,21 +18,22 @@ Collaboration diagram for Batch\-:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classBatch_aea459d16c99c2f02af53b3ad5b0ff12d}{Batch} (std\-::vector$<$ \hyperlink{classApplication}{Application} $>$ apps)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor expects a vector of application which should be given by the \char`\"{}read\-App\-File\char`\"{} function. \end{DoxyCompactList}\item 
 void \hyperlink{classBatch_a14f132321413b45d6446200807451414}{calculate\-\_\-nu} (\hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
-\item 
+\begin{DoxyCompactList}\small\item\em It calculates nu indices for each application and stores it in the \char`\"{}\-Application\char`\"{} object. \end{DoxyCompactList}\item 
 void \hyperlink{classBatch_ae212d22fa812b51160f57507242152c1}{initialize} (\hyperlink{readConfigurationFile_8hh_ab8f35b1da3261263c5e9c0e7c8921f5c}{s\-Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
-\item 
+\begin{DoxyCompactList}\small\item\em For each application, a base value for the objective function is calculated. \end{DoxyCompactList}\item 
 void \hyperlink{classBatch_ac50dad870490ca7c60e0e15d86c02614}{fix\-Initial\-Solution} (\hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
-\item 
-\hyperlink{candidates_8hh_af1ec7d668b0f7361dc7e1e1da5c4ce7d}{s\-Candidates} \hyperlink{classBatch_acf54e153a40b4720b1f7bebf000b1600}{approximated\-Loop} (int \&iteration, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em It fixes the initial solution by reallocating the residual cores to the applications that may need more resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\-::vector$<$ \hyperlink{classApplication}{Application} $>$ \hyperlink{classBatch_a757bf1a36fee46b1b47263ab4a59c560}{A\-P\-Ps}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The vector stores application data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+This class manage the applications; it stores application data in a vector and provide methods useful to apply before executing the local\-Search 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classBatch_aea459d16c99c2f02af53b3ad5b0ff12d}{\index{Batch@{Batch}!Batch@{Batch}}
@@ -44,37 +45,11 @@ std\-::vector$<$ \hyperlink{classApplication}{Application} $>$ \hyperlink{classB
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classBatch_aea459d16c99c2f02af53b3ad5b0ff12d}
 
 
+Constructor expects a vector of application which should be given by the \char`\"{}read\-App\-File\char`\"{} function. 
+
+
+
 \subsection{Member Function Documentation}
-\hypertarget{classBatch_acf54e153a40b4720b1f7bebf000b1600}{\index{Batch@{Batch}!approximated\-Loop@{approximated\-Loop}}
-\index{approximated\-Loop@{approximated\-Loop}!Batch@{Batch}}
-\subsubsection[{approximated\-Loop}]{\setlength{\rightskip}{0pt plus 5cm}{\bf s\-Candidates} Batch\-::approximated\-Loop (
-\begin{DoxyParamCaption}
-\item[{int \&}]{iteration, }
-\item[{{\bf opt\-Jr\-Parameters} \&}]{par}
-\end{DoxyParamCaption}
-)}}\label{classBatch_acf54e153a40b4720b1f7bebf000b1600}
-
-
-Here is the call graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classBatch_acf54e153a40b4720b1f7bebf000b1600_cgraph}
-\end{center}
-\end{figure}
-
-
-
-
-Here is the caller graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classBatch_acf54e153a40b4720b1f7bebf000b1600_icgraph}
-\end{center}
-\end{figure}
-
-
 \hypertarget{classBatch_a14f132321413b45d6446200807451414}{\index{Batch@{Batch}!calculate\-\_\-nu@{calculate\-\_\-nu}}
 \index{calculate\-\_\-nu@{calculate\-\_\-nu}!Batch@{Batch}}
 \subsubsection[{calculate\-\_\-nu}]{\setlength{\rightskip}{0pt plus 5cm}void Batch\-::calculate\-\_\-nu (
@@ -82,6 +57,10 @@ Here is the caller graph for this function\-:\nopagebreak
 \item[{{\bf opt\-Jr\-Parameters} \&}]{par}
 \end{DoxyParamCaption}
 )}}\label{classBatch_a14f132321413b45d6446200807451414}
+
+
+It calculates nu indices for each application and stores it in the \char`\"{}\-Application\char`\"{} object. 
+
 
 
 Here is the call graph for this function\-:\nopagebreak
@@ -111,6 +90,10 @@ Here is the caller graph for this function\-:\nopagebreak
 \item[{{\bf opt\-Jr\-Parameters} \&}]{par}
 \end{DoxyParamCaption}
 )}}\label{classBatch_ac50dad870490ca7c60e0e15d86c02614}
+
+
+It fixes the initial solution by reallocating the residual cores to the applications that may need more resources. 
+
 
 
 Here is the call graph for this function\-:\nopagebreak
@@ -144,6 +127,10 @@ Here is the caller graph for this function\-:\nopagebreak
 )}}\label{classBatch_ae212d22fa812b51160f57507242152c1}
 
 
+For each application, a base value for the objective function is calculated. 
+
+
+
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -170,6 +157,10 @@ Here is the caller graph for this function\-:\nopagebreak
 \hypertarget{classBatch_a757bf1a36fee46b1b47263ab4a59c560}{\index{Batch@{Batch}!A\-P\-Ps@{A\-P\-Ps}}
 \index{A\-P\-Ps@{A\-P\-Ps}!Batch@{Batch}}
 \subsubsection[{A\-P\-Ps}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Application}$>$ Batch\-::\-A\-P\-Ps}}\label{classBatch_a757bf1a36fee46b1b47263ab4a59c560}
+
+
+The vector stores application data. 
+
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}

@@ -14,10 +14,20 @@
 #define WHOLE_DAGSIM 0
 #define RESIDUAL_DAGSIM 1
 
+
 /*
- * Name: invokePredictor
- * Description: It invokes a predictor (dagSim/Lundstrom). First it checks if an estimate of the execution time is already stored in the DB; if not, it invokes the actual predictor
- * 				and stores the result on DB cache table.
+	-This file is not substantially changed from original C version
+	-Here is declared the function to invoke a predictor
+ */
+
+
+
+
+
+/**
+ "invokePredictor" invokes a predictor (dagSim/Lundstrom).
+ First it checks if an estimate of the execution time is already stored in the DB;
+  if not, it invokes the actual predictor and stores the result on DB cache table.
  */
 
 char* invokePredictor(sConfiguration  &configuration, MYSQL *conn, int nNodes, int currentCores,

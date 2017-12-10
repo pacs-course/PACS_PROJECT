@@ -22,19 +22,22 @@ const int _St = 11;
 const int _Dsz = 12;
 
 
-/* Number of values in the csv file */
+/** Number of values in the csv file */
 const int PARAMETERS = 12;
 
 
-/*
+/**
  * 		Name:					getfield
  * 		Input parameters:		char * source, int num
  * 		Output parameters:		A word
  * 		Description:			it extracts values from the csv file
  *
  */
-
 char * getfield(char* line, int num);
+
+/**
+  This function given a file* with data of application returns the vector of "Application" objects 
+*/
 std::vector<Application> readAppFile(FILE* stream);
 
 #endif

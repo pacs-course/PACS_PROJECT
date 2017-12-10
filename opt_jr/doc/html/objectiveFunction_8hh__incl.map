@@ -1,12 +1,11 @@
 <map id="/vagrant/PROJECT_SPARK/PACS_PROJECT/opt_jr/src/objectiveFunction.hh" name="/vagrant/PROJECT_SPARK/PACS_PROJECT/opt_jr/src/objectiveFunction.hh">
-<area shape="rect" id="node2" href="$application_8hh.html" title="application.hh" alt="" coords="778,259,880,285"/>
-<area shape="rect" id="node15" href="$optjrParameters_8hh.html" title="optjrParameters.hh" alt="" coords="1137,483,1268,509"/>
-<area shape="rect" id="node20" href="$batch_8hh.html" title="batch.hh" alt="" coords="633,109,705,136"/>
-<area shape="rect" id="node5" href="$invokePredictor_8hh.html" title="invokePredictor.hh" alt="" coords="764,333,895,360"/>
-<area shape="rect" id="node6" href="$invokePredictor__helper_8hh.html" title="invokePredictor_helper.hh" alt="" coords="694,408,865,435"/>
-<area shape="rect" id="node11" href="$readConfigurationFile_8hh.html" title="readConfigurationFile.hh" alt="" coords="201,408,364,435"/>
-<area shape="rect" id="node16" href="$debugmessage_8hh.html" title="debugmessage.hh" alt="" coords="388,408,516,435"/>
-<area shape="rect" id="node18" href="$db_8hh.html" title="db.hh" alt="" coords="1018,408,1072,435"/>
-<area shape="rect" id="node8" href="$utility_8hh.html" title="utility.hh" alt="" coords="745,483,815,509"/>
-<area shape="rect" id="node21" href="$candidates_8hh.html" title="candidates.hh" alt="" coords="618,184,720,211"/>
+<area shape="rect" id="node2" href="$application_8hh.html" title="application.hh" alt="" coords="643,184,745,211"/>
+<area shape="rect" id="node15" href="$optjrParameters_8hh.html" title="optjrParameters.hh" alt="" coords="947,408,1079,435"/>
+<area shape="rect" id="node20" href="$batch_8hh.html" title="batch.hh" alt="" coords="553,109,625,136"/>
+<area shape="rect" id="node5" href="$invokePredictor_8hh.html" title="invokePredictor.hh" alt="" coords="677,259,808,285"/>
+<area shape="rect" id="node6" href="$invokePredictor__helper_8hh.html" title="invokePredictor_helper.hh" alt="" coords="657,333,828,360"/>
+<area shape="rect" id="node11" href="$readConfigurationFile_8hh.html" title="readConfigurationFile.hh" alt="" coords="155,333,317,360"/>
+<area shape="rect" id="node16" href="$debugmessage_8hh.html" title="debugmessage.hh" alt="" coords="392,333,520,360"/>
+<area shape="rect" id="node18" href="$db_8hh.html" title="db.hh" alt="" coords="1018,333,1072,360"/>
+<area shape="rect" id="node8" href="$utility_8hh.html" title="utility.hh" alt="" coords="853,408,923,435"/>
 </map>

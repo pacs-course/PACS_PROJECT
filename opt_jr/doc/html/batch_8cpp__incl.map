@@ -1,14 +1,13 @@
 <map id="/vagrant/PROJECT_SPARK/PACS_PROJECT/opt_jr/src/batch.cpp" name="/vagrant/PROJECT_SPARK/PACS_PROJECT/opt_jr/src/batch.cpp">
-<area shape="rect" id="node2" href="$batch_8hh.html" title="batch.hh" alt="" coords="908,184,980,211"/>
-<area shape="rect" id="node17" href="$debugmessage_8hh.html" title="debugmessage.hh" alt="" coords="117,483,245,509"/>
-<area shape="rect" id="node23" href="$objectiveFunction_8hh.html" title="objectiveFunction.hh" alt="" coords="1001,109,1143,136"/>
-<area shape="rect" id="node24" href="$appByWeight_8hh.html" title="appByWeight.hh" alt="" coords="1139,259,1257,285"/>
-<area shape="rect" id="node5" href="$application_8hh.html" title="application.hh" alt="" coords="986,333,1088,360"/>
-<area shape="rect" id="node21" href="$candidates_8hh.html" title="candidates.hh" alt="" coords="859,259,961,285"/>
-<area shape="rect" id="node8" href="$invokePredictor_8hh.html" title="invokePredictor.hh" alt="" coords="836,408,967,435"/>
-<area shape="rect" id="node9" href="$invokePredictor__helper_8hh.html" title="invokePredictor_helper.hh" alt="" coords="691,483,863,509"/>
-<area shape="rect" id="node13" href="$readConfigurationFile_8hh.html" title="readConfigurationFile.hh" alt="" coords="421,483,584,509"/>
-<area shape="rect" id="node16" href="$optjrParameters_8hh.html" title="optjrParameters.hh" alt="" coords="1138,557,1269,584"/>
-<area shape="rect" id="node19" href="$db_8hh.html" title="db.hh" alt="" coords="939,483,993,509"/>
-<area shape="rect" id="node10" href="$utility_8hh.html" title="utility.hh" alt="" coords="835,557,905,584"/>
+<area shape="rect" id="node2" href="$batch_8hh.html" title="batch.hh" alt="" coords="827,184,899,211"/>
+<area shape="rect" id="node17" href="$debugmessage_8hh.html" title="debugmessage.hh" alt="" coords="127,408,255,435"/>
+<area shape="rect" id="node21" href="$objectiveFunction_8hh.html" title="objectiveFunction.hh" alt="" coords="901,109,1043,136"/>
+<area shape="rect" id="node22" href="$appByWeight_8hh.html" title="appByWeight.hh" alt="" coords="1067,109,1185,136"/>
+<area shape="rect" id="node5" href="$application_8hh.html" title="application.hh" alt="" coords="921,259,1023,285"/>
+<area shape="rect" id="node8" href="$invokePredictor_8hh.html" title="invokePredictor.hh" alt="" coords="803,333,933,360"/>
+<area shape="rect" id="node9" href="$invokePredictor__helper_8hh.html" title="invokePredictor_helper.hh" alt="" coords="694,408,865,435"/>
+<area shape="rect" id="node13" href="$readConfigurationFile_8hh.html" title="readConfigurationFile.hh" alt="" coords="476,408,639,435"/>
+<area shape="rect" id="node16" href="$optjrParameters_8hh.html" title="optjrParameters.hh" alt="" coords="1137,483,1268,509"/>
+<area shape="rect" id="node19" href="$db_8hh.html" title="db.hh" alt="" coords="1009,408,1063,435"/>
+<area shape="rect" id="node10" href="$utility_8hh.html" title="utility.hh" alt="" coords="745,483,815,509"/>
 </map>

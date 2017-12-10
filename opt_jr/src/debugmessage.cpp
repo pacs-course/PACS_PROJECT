@@ -1,5 +1,6 @@
 #include "debugmessage.hh"
 
+
 void debugMessage(std::string &string, optJrParameters &par)
 {
 	if (par.get_debug() == 1)

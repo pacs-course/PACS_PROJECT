@@ -4,11 +4,9 @@
 #include "db.hh"
 #include "debugmessage.hh"
 
-
 /*
-	-Questo file è mantenuto sostanzialmente inalterato rispetto alla versione in C
-	-Qui sono dichiarate le funzioni  per gestire database;
-
+	-This file is not substantially changed from original C version
+	-Here are defined the functions to manage databases
  */
 
 
@@ -30,9 +28,7 @@ MYSQL_ROW executeSQL(MYSQL *conn, char *statement, optJrParameters par)
 {
 	MYSQL_RES *result;
 	char error[256];
-	//char debugMsg[1024];
 	std::string debugMsg;
-	//debugMsg=" Running executeSQL "; debugMessage(debugMsg, par);
 	if (mysql_query(conn, statement))
 	{
 		char error[512];
@@ -41,7 +37,6 @@ MYSQL_ROW executeSQL(MYSQL *conn, char *statement, optJrParameters par)
 	}
 
 	result = mysql_store_result(conn);
-	//sprintf(debugMsg, "statement %s\n", statement);debugMessage(debugMsg, par);
 	debugMsg="statement :"+ std::string(statement) + "\n"; debugMessage(debugMsg, par);
 	if (result == NULL)
 	{

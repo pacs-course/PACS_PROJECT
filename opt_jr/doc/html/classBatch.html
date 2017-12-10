@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -101,22 +102,27 @@ Collaboration diagram for Batch:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aea459d16c99c2f02af53b3ad5b0ff12d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#aea459d16c99c2f02af53b3ad5b0ff12d">Batch</a> (std::vector&lt; <a class="el" href="classApplication.html">Application</a> &gt; apps)</td></tr>
+<tr class="memdesc:aea459d16c99c2f02af53b3ad5b0ff12d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor expects a vector of application which should be given by the "readAppFile" function.  <a href="#aea459d16c99c2f02af53b3ad5b0ff12d">More...</a><br/></td></tr>
 <tr class="separator:aea459d16c99c2f02af53b3ad5b0ff12d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14f132321413b45d6446200807451414"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a14f132321413b45d6446200807451414">calculate_nu</a> (<a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
+<tr class="memdesc:a14f132321413b45d6446200807451414"><td class="mdescLeft">&#160;</td><td class="mdescRight">It calculates nu indices for each application and stores it in the "Application" object.  <a href="#a14f132321413b45d6446200807451414">More...</a><br/></td></tr>
 <tr class="separator:a14f132321413b45d6446200807451414"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae212d22fa812b51160f57507242152c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#ae212d22fa812b51160f57507242152c1">initialize</a> (<a class="el" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;configuration, MYSQL *conn, <a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
+<tr class="memdesc:ae212d22fa812b51160f57507242152c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">For each application, a base value for the objective function is calculated.  <a href="#ae212d22fa812b51160f57507242152c1">More...</a><br/></td></tr>
 <tr class="separator:ae212d22fa812b51160f57507242152c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac50dad870490ca7c60e0e15d86c02614"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#ac50dad870490ca7c60e0e15d86c02614">fixInitialSolution</a> (<a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
+<tr class="memdesc:ac50dad870490ca7c60e0e15d86c02614"><td class="mdescLeft">&#160;</td><td class="mdescRight">It fixes the initial solution by reallocating the residual cores to the applications that may need more resources.  <a href="#ac50dad870490ca7c60e0e15d86c02614">More...</a><br/></td></tr>
 <tr class="separator:ac50dad870490ca7c60e0e15d86c02614"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf54e153a40b4720b1f7bebf000b1600"><td class="memItemLeft" align="right" valign="top"><a class="el" href="candidates_8hh.html#af1ec7d668b0f7361dc7e1e1da5c4ce7d">sCandidates</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#acf54e153a40b4720b1f7bebf000b1600">approximatedLoop</a> (int &amp;iteration, <a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
-<tr class="separator:acf54e153a40b4720b1f7bebf000b1600"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a757bf1a36fee46b1b47263ab4a59c560"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classApplication.html">Application</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a757bf1a36fee46b1b47263ab4a59c560">APPs</a></td></tr>
+<tr class="memdesc:a757bf1a36fee46b1b47263ab4a59c560"><td class="mdescLeft">&#160;</td><td class="mdescRight">The vector stores application data.  <a href="#a757bf1a36fee46b1b47263ab4a59c560">More...</a><br/></td></tr>
 <tr class="separator:a757bf1a36fee46b1b47263ab4a59c560"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class manage the applications; it stores application data in a vector and provide methods useful to apply before executing the localSearch </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aea459d16c99c2f02af53b3ad5b0ff12d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -139,53 +145,11 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Constructor expects a vector of application which should be given by the "readAppFile" function. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="acf54e153a40b4720b1f7bebf000b1600"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="candidates_8hh.html#af1ec7d668b0f7361dc7e1e1da5c4ce7d">sCandidates</a> Batch::approximatedLoop </td>
-          <td>(</td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>iteration</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;&#160;</td>
-          <td class="paramname"><em>par</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classBatch_acf54e153a40b4720b1f7bebf000b1600_cgraph.png" border="0" usemap="#classBatch_acf54e153a40b4720b1f7bebf000b1600_cgraph" alt=""/></div>
-<map name="classBatch_acf54e153a40b4720b1f7bebf000b1600_cgraph" id="classBatch_acf54e153a40b4720b1f7bebf000b1600_cgraph">
-<area shape="rect" id="node2" href="debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="483,12,594,39"/><area shape="rect" id="node4" href="classObjFun.html#abb89a994d34b44ec4cb6e0e2562c0107" title="ObjFun::ObjFunctionComponent\lApprox" alt="" coords="225,34,434,75"/><area shape="rect" id="node5" href="candidates_8cpp.html#a0dead9d126fdc270fa4692dc0e4671e2" title="addCandidate" alt="" coords="278,100,381,127"/><area shape="rect" id="node3" href="classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="Returns the debug option (1==YES, 0==NO) " alt="" coords="643,5,787,46"/></map>
-</div>
-</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classBatch_acf54e153a40b4720b1f7bebf000b1600_icgraph.png" border="0" usemap="#classBatch_acf54e153a40b4720b1f7bebf000b1600_icgraph" alt=""/></div>
-<map name="classBatch_acf54e153a40b4720b1f7bebf000b1600_icgraph" id="classBatch_acf54e153a40b4720b1f7bebf000b1600_icgraph">
-<area shape="rect" id="node2" href="classSearch.html#af95c649fd7dba70b7bd3c124ec501046" title="Search::localSearch" alt="" coords="224,5,363,32"/><area shape="rect" id="node3" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="411,5,461,32"/></map>
-</div>
-</p>
-
-</div>
-</div>
 <a class="anchor" id="a14f132321413b45d6446200807451414"></a>
 <div class="memitem">
 <div class="memproto">
@@ -199,6 +163,8 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>It calculates nu indices for each application and stores it in the "Application" object. </p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -233,6 +199,8 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>It fixes the initial solution by reallocating the residual cores to the applications that may need more resources. </p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -284,6 +252,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>For each application, a base value for the objective function is calculated. </p>
+
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -314,6 +284,8 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The vector stores application data. </p>
 
 </div>
 </div>

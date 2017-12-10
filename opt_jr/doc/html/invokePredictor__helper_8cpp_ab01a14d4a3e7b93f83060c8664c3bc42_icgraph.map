@@ -1,6 +1,6 @@
 <map id="ls" name="ls">
 <area shape="rect" id="node2" href="$invokePredictor_8hh.html#a342ccdfe7923368e52a4894d69c7455a" title="invokePredictor" alt="" coords="93,41,205,68"/>
-<area shape="rect" id="node3" href="$classApplication.html#a97054cee52b315da040098c3927c909e" title="Application::ObjFunction\lComponent" alt="" coords="277,5,441,46"/>
+<area shape="rect" id="node3" href="$classApplication.html#a97054cee52b315da040098c3927c909e" title="Evaluates objective function for the application. " alt="" coords="277,5,441,46"/>
 <area shape="rect" id="node4" href="$classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7" title="ObjFun::ObjFunctionComponent" alt="" coords="254,71,463,97"/>
 <area shape="rect" id="node5" href="$classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b" title="ObjFun::ObjFunctionGlobal" alt="" coords="512,45,691,72"/>
 <area shape="rect" id="node6" href="$classSearch.html#af95c649fd7dba70b7bd3c124ec501046" title="Search::localSearch" alt="" coords="532,96,671,123"/>

@@ -2,14 +2,13 @@
 #define HELPER_HH
 
 
-/************************************************************
-VARIABILI GLOBALI UTILI PER CREARE OGGETTO DI CLASSE
-OPTJRPARAMETER, CHE MEMORIZZA PARAMETRI PASSATI DA COMMAND_LINE
-************************************************************/
+/*
+GLOBAL VARIABLES USEFUL TO CREATE OBJECT OF CLASS OPTJRPARAMETER
+*/
 
 
 
-#define ARGS 8 //number of arguments from command line
+#define ARGS 8 ///< number of arguments from command line
 
 #define FILENAME "-f="
 #define NUM_N "-n="
@@ -28,9 +27,9 @@ OPTJRPARAMETER, CHE MEMORIZZA PARAMETRI PASSATI DA COMMAND_LINE
 
 
 
-/*************************************************************
+/*
     A FEW OPTJRPARAMETERS HELPER FUNCTION
-*************************************************************/
+*/
 
 
 #include <stdio.h>
@@ -38,8 +37,16 @@ OPTJRPARAMETER, CHE MEMORIZZA PARAMETRI PASSATI DA COMMAND_LINE
 #include <string.h>
 
 
+/**
+Explain usage of the OPT_JR_CPP program
+Invoked if the number of parameters send at command line is incorrect
+*/
+void Usage();
 
-void Usage(); //used by optJrParameters constructor if the number of parameters is incorrect
-char* parseArg(char * string, char * gap, int type); //used by optJrParameters constructor
+/**
+Function to parse argument from command line;
+Invoked by optJrParameters constructor
+*/
+char* parseArg(char * string, char * gap, int type);
 
 #endif

@@ -32,7 +32,7 @@ HEADERS=$(wildcard $(SRCDIR)*.hh)
 _OBJ = $(SRCS:.cpp=.o)
 OBJS = $(patsubst $(SRCDIR)%, $(ODIR)%, $(_OBJ))
 
-.PHONY= all clean distclean
+.PHONY= all clean distclean doc
 
 .DEFAULT_GOAL  = all
 

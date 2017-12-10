@@ -16,6 +16,9 @@ static double \hyperlink{classObjFun_ab36af3a1d85dbcaa79dc9b582b00928b}{Obj\-Fun
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+This class provides methods to evaluate the objective function in different ways 
+
 \subsection{Member Function Documentation}
 \hypertarget{classObjFun_a7c9ecaa07ca776eb64f6e73f84513bc7}{\index{Obj\-Fun@{Obj\-Fun}!Obj\-Function\-Component@{Obj\-Function\-Component}}
 \index{Obj\-Function\-Component@{Obj\-Function\-Component}!ObjFun@{Obj\-Fun}}
@@ -27,7 +30,7 @@ static double \hyperlink{classObjFun_ab36af3a1d85dbcaa79dc9b582b00928b}{Obj\-Fun
 \item[{{\bf opt\-Jr\-Parameters} \&}]{par}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classObjFun_a7c9ecaa07ca776eb64f6e73f84513bc7}
-
+It evaluates the contribution to the calculation of the objective function of one application. Currently, only one method is supported. Note that the algorithm's choice is stored in the \char`\"{}mode\char`\"{} field of the application structure. 
 
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
@@ -57,24 +60,15 @@ Here is the caller graph for this function\-:\nopagebreak
 \item[{{\bf opt\-Jr\-Parameters} \&}]{par}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classObjFun_abb89a994d34b44ec4cb6e0e2562c0107}
+It computes an approximation of the objective function (and update R\-\_\-d)
 
+Name\-: Obj\-Function\-Component\-Approx Output parameters\-: a double The value of the approximated objective function Description It computes an approximation of the objective function (and update R\-\_\-d) 
 
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classObjFun_abb89a994d34b44ec4cb6e0e2562c0107_cgraph}
-\end{center}
-\end{figure}
-
-
-
-
-Here is the caller graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classObjFun_abb89a994d34b44ec4cb6e0e2562c0107_icgraph}
 \end{center}
 \end{figure}
 
@@ -89,7 +83,7 @@ Here is the caller graph for this function\-:\nopagebreak
 \item[{{\bf opt\-Jr\-Parameters} \&}]{par}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classObjFun_ab36af3a1d85dbcaa79dc9b582b00928b}
-
+It calculates the value of the total objective function 
 
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]

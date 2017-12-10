@@ -12,7 +12,6 @@ var searchData=
   ['application',['Application',['../classApplication.html',1,'Application'],['../classApplication.html#aa660e2135b162cfddaca0918be8599e8',1,'Application::Application()']]],
   ['application_2ecpp',['application.cpp',['../application_8cpp.html',1,'']]],
   ['application_2ehh',['application.hh',['../application_8hh.html',1,'']]],
-  ['approximatedloop',['approximatedLoop',['../classBatch.html#acf54e153a40b4720b1f7bebf000b1600',1,'Batch']]],
   ['apps',['APPs',['../classBatch.html#a757bf1a36fee46b1b47263ab4a59c560',1,'Batch']]],
   ['args',['ARGS',['../optjrParam__helper_8hh.html#aff1b09d6630c6c0942f78171e74c1b9d',1,'optjrParam_helper.hh']]]
 ];

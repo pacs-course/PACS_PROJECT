@@ -5,13 +5,6 @@
 #define MAX_APP_LENGTH 1024
 
 
-/*
-* 		Name:					getfield
-* 		Input parameters:		char * source, int num
-* 		Output parameters:		A word
-* 		Description:			it extracts values from the csv file
-*
-*/
 
 char * getfield(char* line, int num)
 {
@@ -89,7 +82,6 @@ std::vector<Application>  readAppFile(FILE* stream)
       DatasetSize = 	atoi(getfield(tmp, _Dsz));
       csi=std::max(M/m,V/v);
       /* Add application parameters to the List */
-      //addParameters(&first, &current, session_app_id, app_id, w, chi_0, chi_C, m, M, V, v, D, csi, St, DatasetSize);
       Application app(session_app_id,app_id, w, chi_0, chi_C, m, M, V, v, D, csi, St, DatasetSize);
       APPs.push_back(app);
 

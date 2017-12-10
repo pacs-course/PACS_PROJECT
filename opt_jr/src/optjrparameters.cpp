@@ -7,7 +7,6 @@
 #include <string.h>
 
 
-
 // Constructor
 
 optJrParameters::optJrParameters (char **args, int argc)

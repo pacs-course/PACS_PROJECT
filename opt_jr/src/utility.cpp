@@ -1,5 +1,6 @@
 #include "utility.hh"
 
+
 /*
  * 		Name:					doubleCompare
  * 		Input parameters:		double a, double b

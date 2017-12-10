@@ -1,4 +1,3 @@
-/*! \file */
 
 
 #include <iostream>
@@ -17,6 +16,8 @@
 #include "search.hh"
 #include "objectiveFunction.hh"
 #include "candidates.hh"
+
+
 
 int main(int argc, char **argv)
 {

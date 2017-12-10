@@ -7,14 +7,16 @@
 #include "application.hh"
 
 
-/*
- *  appByWeight è un container di app* che ordina le app per peso
+/**
+  appByWeight is an auxiliary list of Application* used by fixInitialSolution; through the
+  addApplicationPointer it stores Application* ordered by weight "w"
  */
-
-
 using appByWeight=std::list< Application* >;
 
 
+/**
+ *  It saves Application* in decreasing weight "w" order
+ */
 void addApplicationPointer( appByWeight &LP, Application &App);
 
 

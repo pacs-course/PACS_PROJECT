@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -68,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -111,33 +112,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="read__app__file_8hh.html#a93952cfaa3c3a86172f423e065dc3a3c">   22</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="read__app__file_8hh.html#a93952cfaa3c3a86172f423e065dc3a3c">_Dsz</a> = 12;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/* Number of values in the csv file */</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="read__app__file_8hh.html#a4ebe0e540828a47ec24697bf0be11fe8">   26</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="read__app__file_8hh.html#a4ebe0e540828a47ec24697bf0be11fe8">PARAMETERS</a> = 12;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> *      Name:                   getfield</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> *      Input parameters:       char * source, int num</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *      Output parameters:      A word</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> *      Description:            it extracts values from the csv file</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">char</span> * <a class="code" href="read__app__file_8cpp.html#a28f2319f14673125b080c828eac27d7a">getfield</a>(<span class="keywordtype">char</span>* line, <span class="keywordtype">int</span> num);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;std::vector&lt;Application&gt; <a class="code" href="read__app__file_8cpp.html#aa73d7abbbef707bf918fbef4c1942cae">readAppFile</a>(FILE* stream);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">char</span> * <a class="code" href="read__app__file_8cpp.html#a28f2319f14673125b080c828eac27d7a">getfield</a>(<span class="keywordtype">char</span>* line, <span class="keywordtype">int</span> num);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;std::vector&lt;Application&gt; <a class="code" href="read__app__file_8cpp.html#aa73d7abbbef707bf918fbef4c1942cae">readAppFile</a>(FILE* stream);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="read__app__file_8hh_html_a4ebe0e540828a47ec24697bf0be11fe8"><div class="ttname"><a href="read__app__file_8hh.html#a4ebe0e540828a47ec24697bf0be11fe8">PARAMETERS</a></div><div class="ttdeci">const int PARAMETERS</div><div class="ttdef"><b>Definition:</b> read_app_file.hh:26</div></div>
 <div class="ttc" id="read__app__file_8hh_html_a2bed00245e126b4eff6914757499fa03"><div class="ttname"><a href="read__app__file_8hh.html#a2bed00245e126b4eff6914757499fa03">MAX_LINE_LENGTH</a></div><div class="ttdeci">const int MAX_LINE_LENGTH</div><div class="ttdef"><b>Definition:</b> read_app_file.hh:10</div></div>
 <div class="ttc" id="read__app__file_8hh_html_a59a9ce5ac71fc3cf0cc8212f0b504ae6"><div class="ttname"><a href="read__app__file_8hh.html#a59a9ce5ac71fc3cf0cc8212f0b504ae6">_SESSION_APP_ID</a></div><div class="ttdeci">const int _SESSION_APP_ID</div><div class="ttdef"><b>Definition:</b> read_app_file.hh:11</div></div>
 <div class="ttc" id="read__app__file_8hh_html_a4de4eab3d42e1216f709ece03e79b89e"><div class="ttname"><a href="read__app__file_8hh.html#a4de4eab3d42e1216f709ece03e79b89e">_M</a></div><div class="ttdeci">const int _M</div><div class="ttdef"><b>Definition:</b> read_app_file.hh:16</div></div>
 <div class="ttc" id="read__app__file_8hh_html_a93952cfaa3c3a86172f423e065dc3a3c"><div class="ttname"><a href="read__app__file_8hh.html#a93952cfaa3c3a86172f423e065dc3a3c">_Dsz</a></div><div class="ttdeci">const int _Dsz</div><div class="ttdef"><b>Definition:</b> read_app_file.hh:22</div></div>
-<div class="ttc" id="read__app__file_8cpp_html_a28f2319f14673125b080c828eac27d7a"><div class="ttname"><a href="read__app__file_8cpp.html#a28f2319f14673125b080c828eac27d7a">getfield</a></div><div class="ttdeci">char * getfield(char *line, int num)</div><div class="ttdef"><b>Definition:</b> read_app_file.cpp:16</div></div>
+<div class="ttc" id="read__app__file_8cpp_html_a28f2319f14673125b080c828eac27d7a"><div class="ttname"><a href="read__app__file_8cpp.html#a28f2319f14673125b080c828eac27d7a">getfield</a></div><div class="ttdeci">char * getfield(char *line, int num)</div><div class="ttdef"><b>Definition:</b> read_app_file.cpp:9</div></div>
 <div class="ttc" id="read__app__file_8hh_html_ae51a28367bc6544652422f59006f3b6b"><div class="ttname"><a href="read__app__file_8hh.html#ae51a28367bc6544652422f59006f3b6b">_APP_ID</a></div><div class="ttdeci">const int _APP_ID</div><div class="ttdef"><b>Definition:</b> read_app_file.hh:12</div></div>
 <div class="ttc" id="read__app__file_8hh_html_acfba94652d778a11a425f12218456d94"><div class="ttname"><a href="read__app__file_8hh.html#acfba94652d778a11a425f12218456d94">_CHI_0</a></div><div class="ttdeci">const int _CHI_0</div><div class="ttdef"><b>Definition:</b> read_app_file.hh:14</div></div>
 <div class="ttc" id="read__app__file_8hh_html_a4aa1b73d64e16b578c6136709b6eb029"><div class="ttname"><a href="read__app__file_8hh.html#a4aa1b73d64e16b578c6136709b6eb029">_W</a></div><div class="ttdeci">const int _W</div><div class="ttdef"><b>Definition:</b> read_app_file.hh:13</div></div>
 <div class="ttc" id="read__app__file_8hh_html_a6205ea88780b1fb687eb5edfef6e1663"><div class="ttname"><a href="read__app__file_8hh.html#a6205ea88780b1fb687eb5edfef6e1663">_m</a></div><div class="ttdeci">const int _m</div><div class="ttdef"><b>Definition:</b> read_app_file.hh:17</div></div>
-<div class="ttc" id="read__app__file_8cpp_html_aa73d7abbbef707bf918fbef4c1942cae"><div class="ttname"><a href="read__app__file_8cpp.html#aa73d7abbbef707bf918fbef4c1942cae">readAppFile</a></div><div class="ttdeci">std::vector&lt; Application &gt; readAppFile(FILE *stream)</div><div class="ttdef"><b>Definition:</b> read_app_file.cpp:28</div></div>
+<div class="ttc" id="read__app__file_8cpp_html_aa73d7abbbef707bf918fbef4c1942cae"><div class="ttname"><a href="read__app__file_8cpp.html#aa73d7abbbef707bf918fbef4c1942cae">readAppFile</a></div><div class="ttdeci">std::vector&lt; Application &gt; readAppFile(FILE *stream)</div><div class="ttdef"><b>Definition:</b> read_app_file.cpp:21</div></div>
 <div class="ttc" id="read__app__file_8hh_html_a74e35f00d77d6fce2a39b0a0d5dbab08"><div class="ttname"><a href="read__app__file_8hh.html#a74e35f00d77d6fce2a39b0a0d5dbab08">_D</a></div><div class="ttdeci">const int _D</div><div class="ttdef"><b>Definition:</b> read_app_file.hh:20</div></div>
 <div class="ttc" id="application_8hh_html"><div class="ttname"><a href="application_8hh.html">application.hh</a></div></div>
 <div class="ttc" id="read__app__file_8hh_html_aa2bb9d7b455dc30a636a24b582d6a95b"><div class="ttname"><a href="read__app__file_8hh.html#aa2bb9d7b455dc30a636a24b582d6a95b">_v</a></div><div class="ttdeci">const int _v</div><div class="ttdef"><b>Definition:</b> read_app_file.hh:19</div></div>

@@ -18,26 +18,26 @@ Collaboration diagram for Application\-:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classApplication_aa660e2135b162cfddaca0918be8599e8}{Application} (std\-::string \hyperlink{classApplication_a5e28ffadb86925ecae57ab18c0085d90}{session\-\_\-app\-\_\-id}, std\-::string \hyperlink{classApplication_a05377e6cdcb9d48f29e0f1972a4a16fe}{app\-\_\-id}, double \hyperlink{classApplication_aead1b7b0150c2a3ebd6c36b1db8c4732}{w}, double \hyperlink{classApplication_a3b9dab40d189989c836b8d328946bbb6}{chi\-\_\-0}, double \hyperlink{classApplication_a46e29a6bfc74de610feec809a77dfb62}{chi\-\_\-\-C}, double \hyperlink{classApplication_ab903d83d3cde51569a27f97752c9f158}{m}, double \hyperlink{classApplication_a14904a2abf46cc0a50eb82043fa0912e}{M}, double \hyperlink{classApplication_aa92ad37e6701931176e0dc9b260fd7ee}{V}, double \hyperlink{classApplication_a9efc167094a42382504dd28a7ac402e0}{v}, double D, double \hyperlink{classApplication_a20adc533c6b6147342b3f60dc0fbd9bc}{csi}, std\-::string St, int Dataset\-Size)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor expects all static values. \end{DoxyCompactList}\item 
 double \hyperlink{classApplication_a97054cee52b315da040098c3927c909e}{Obj\-Function\-Component} (\hyperlink{readConfigurationFile_8hh_ab8f35b1da3261263c5e9c0e7c8921f5c}{s\-Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Evaluates objective function for the application. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 int \hyperlink{classApplication_abc7e87e8cbe2e64fa4e2ff2afdf7a4fc}{mode}
-\item 
+\begin{DoxyCompactList}\small\item\em How the objective function is calculated (currently redundant) \end{DoxyCompactList}\item 
 std\-::string \hyperlink{classApplication_a5e28ffadb86925ecae57ab18c0085d90}{session\-\_\-app\-\_\-id}
-\item 
+\begin{DoxyCompactList}\small\item\em Session identifier. \end{DoxyCompactList}\item 
 std\-::string \hyperlink{classApplication_a05377e6cdcb9d48f29e0f1972a4a16fe}{app\-\_\-id}
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classApplication}{Application} identifier. \end{DoxyCompactList}\item 
 double \hyperlink{classApplication_aead1b7b0150c2a3ebd6c36b1db8c4732}{w}
-\item 
+\begin{DoxyCompactList}\small\item\em Weight application. \end{DoxyCompactList}\item 
 double \hyperlink{classApplication_ad5486702327ad61e56ed04fb54d58c20}{term\-\_\-i}
-\item 
+\begin{DoxyCompactList}\small\item\em Used to calculate nu index. \end{DoxyCompactList}\item 
 double \hyperlink{classApplication_a3b9dab40d189989c836b8d328946bbb6}{chi\-\_\-0}
-\item 
+\begin{DoxyCompactList}\small\item\em Machine learning parameter. \end{DoxyCompactList}\item 
 double \hyperlink{classApplication_a46e29a6bfc74de610feec809a77dfb62}{chi\-\_\-\-C}
-\item 
+\begin{DoxyCompactList}\small\item\em Machine learning parameter. \end{DoxyCompactList}\item 
 double \hyperlink{classApplication_ab903d83d3cde51569a27f97752c9f158}{m}
 \item 
 double \hyperlink{classApplication_a14904a2abf46cc0a50eb82043fa0912e}{M}
@@ -47,40 +47,43 @@ double \hyperlink{classApplication_aa92ad37e6701931176e0dc9b260fd7ee}{V}
 double \hyperlink{classApplication_a9efc167094a42382504dd28a7ac402e0}{v}
 \item 
 double \hyperlink{classApplication_a2a989ae288a74ee5250b5acf449c864a}{Deadline\-\_\-d}
-\item 
+\begin{DoxyCompactList}\small\item\em Deadline for the application. \end{DoxyCompactList}\item 
 double \hyperlink{classApplication_a20adc533c6b6147342b3f60dc0fbd9bc}{csi}
 \item 
 std\-::string \hyperlink{classApplication_adb1cba2c06695bfdf81482dfba449d5b}{stage}
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classApplication}{Application}'s stage (used in case of residual time) \end{DoxyCompactList}\item 
 int \hyperlink{classApplication_aaa155e818d807f585d83ecacf4abfe42}{dataset\-Size}
-\item 
+\begin{DoxyCompactList}\small\item\em Size of the dataset. \end{DoxyCompactList}\item 
 double \hyperlink{classApplication_a42c22b9a3130cf1f2722ce222f2e5bae}{nu\-\_\-d}
-\item 
+\begin{DoxyCompactList}\small\item\em nu value \end{DoxyCompactList}\item 
 int \hyperlink{classApplication_adee341a84a5389dfd4d16e7f8e697190}{current\-Cores\-\_\-d}
-\item 
+\begin{DoxyCompactList}\small\item\em Initialized to nu\-\_\-i. \end{DoxyCompactList}\item 
 int \hyperlink{classApplication_a95104d330c9c7ed2c1017b4938a39a9a}{n\-Cores\-\_\-\-D\-B\-\_\-d}
-\item 
+\begin{DoxyCompactList}\small\item\em Initialized to the value from look-\/up table. \end{DoxyCompactList}\item 
 int \hyperlink{classApplication_a6e91bef9d503af0e8ba38c8f445c8cb0}{bound}
-\item 
+\begin{DoxyCompactList}\small\item\em Bound (number of cores) \end{DoxyCompactList}\item 
 double \hyperlink{classApplication_a374d43f68ae27aaed98278e8152a434c}{R\-\_\-d}
-\item 
+\begin{DoxyCompactList}\small\item\em Value of R as per the predictor. \end{DoxyCompactList}\item 
 double \hyperlink{classApplication_a32da2e06513ef910601d75eb89bb528b}{R\-\_\-bound\-\_\-d}
-\item 
+\begin{DoxyCompactList}\small\item\em Bound (R) \end{DoxyCompactList}\item 
 double \hyperlink{classApplication_aa703e7525d446d98b5cd51c959d35998}{base\-F\-O}
-\item 
+\begin{DoxyCompactList}\small\item\em base F\-O value (used to calculate the delta) \end{DoxyCompactList}\item 
 double \hyperlink{classApplication_a95fd54cbed658fb23ce27939666c91d2}{initial\-Base\-F\-O}
-\item 
+\begin{DoxyCompactList}\small\item\em copy of base F\-O value (used to reset the value) \end{DoxyCompactList}\item 
 float \hyperlink{classApplication_a087ef34a09792f2954940324dcea20d6}{alpha}
-\item 
+\begin{DoxyCompactList}\small\item\em First parameter for Hyperbolic interpolation. \end{DoxyCompactList}\item 
 float \hyperlink{classApplication_a7c74ef816a425a4115005d15d01ac9c6}{beta}
-\item 
+\begin{DoxyCompactList}\small\item\em Second parameter for Hyperbolic interpolation. \end{DoxyCompactList}\item 
 \hyperlink{classsAlphaBetaManagement}{s\-Alpha\-Beta\-Management} \hyperlink{classApplication_a6bbd698f2df7c4cedb9fb46fce23dbfe}{s\-A\-B}
 \item 
 int \hyperlink{classApplication_a6a3692743eccba602a58fdfc3f23950b}{bound\-Iterations}
-\item 
+\begin{DoxyCompactList}\small\item\em Metrics. \end{DoxyCompactList}\item 
 int \hyperlink{classApplication_a0a3fe386eb8244e536bc5297709d1269}{vm}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Read from O\-P\-T\-I\-M\-I\-Z\-E\-R\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N\-\_\-\-T\-A\-B\-L\-E. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+In the \hyperlink{classApplication}{Application} class are stored all the data of one application; it's provided also a method to evaluate the objective function of the application 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classApplication_aa660e2135b162cfddaca0918be8599e8}{\index{Application@{Application}!Application@{Application}}
@@ -104,6 +107,10 @@ int \hyperlink{classApplication_a0a3fe386eb8244e536bc5297709d1269}{vm}
 )}}\label{classApplication_aa660e2135b162cfddaca0918be8599e8}
 
 
+Constructor expects all static values. 
+
+
+
 \subsection{Member Function Documentation}
 \hypertarget{classApplication_a97054cee52b315da040098c3927c909e}{\index{Application@{Application}!Obj\-Function\-Component@{Obj\-Function\-Component}}
 \index{Obj\-Function\-Component@{Obj\-Function\-Component}!Application@{Application}}
@@ -114,6 +121,10 @@ int \hyperlink{classApplication_a0a3fe386eb8244e536bc5297709d1269}{vm}
 \item[{{\bf opt\-Jr\-Parameters} \&}]{par}
 \end{DoxyParamCaption}
 )}}\label{classApplication_a97054cee52b315da040098c3927c909e}
+
+
+Evaluates objective function for the application. 
+
 
 
 Here is the call graph for this function\-:\nopagebreak
@@ -131,42 +142,90 @@ Here is the call graph for this function\-:\nopagebreak
 \hypertarget{classApplication_a087ef34a09792f2954940324dcea20d6}{\index{Application@{Application}!alpha@{alpha}}
 \index{alpha@{alpha}!Application@{Application}}
 \subsubsection[{alpha}]{\setlength{\rightskip}{0pt plus 5cm}float Application\-::alpha}}\label{classApplication_a087ef34a09792f2954940324dcea20d6}
+
+
+First parameter for Hyperbolic interpolation. 
+
 \hypertarget{classApplication_a05377e6cdcb9d48f29e0f1972a4a16fe}{\index{Application@{Application}!app\-\_\-id@{app\-\_\-id}}
 \index{app\-\_\-id@{app\-\_\-id}!Application@{Application}}
 \subsubsection[{app\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Application\-::app\-\_\-id}}\label{classApplication_a05377e6cdcb9d48f29e0f1972a4a16fe}
+
+
+\hyperlink{classApplication}{Application} identifier. 
+
 \hypertarget{classApplication_aa703e7525d446d98b5cd51c959d35998}{\index{Application@{Application}!base\-F\-O@{base\-F\-O}}
 \index{base\-F\-O@{base\-F\-O}!Application@{Application}}
 \subsubsection[{base\-F\-O}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::base\-F\-O}}\label{classApplication_aa703e7525d446d98b5cd51c959d35998}
+
+
+base F\-O value (used to calculate the delta) 
+
 \hypertarget{classApplication_a7c74ef816a425a4115005d15d01ac9c6}{\index{Application@{Application}!beta@{beta}}
 \index{beta@{beta}!Application@{Application}}
 \subsubsection[{beta}]{\setlength{\rightskip}{0pt plus 5cm}float Application\-::beta}}\label{classApplication_a7c74ef816a425a4115005d15d01ac9c6}
+
+
+Second parameter for Hyperbolic interpolation. 
+
 \hypertarget{classApplication_a6e91bef9d503af0e8ba38c8f445c8cb0}{\index{Application@{Application}!bound@{bound}}
 \index{bound@{bound}!Application@{Application}}
 \subsubsection[{bound}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::bound}}\label{classApplication_a6e91bef9d503af0e8ba38c8f445c8cb0}
+
+
+Bound (number of cores) 
+
 \hypertarget{classApplication_a6a3692743eccba602a58fdfc3f23950b}{\index{Application@{Application}!bound\-Iterations@{bound\-Iterations}}
 \index{bound\-Iterations@{bound\-Iterations}!Application@{Application}}
 \subsubsection[{bound\-Iterations}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::bound\-Iterations}}\label{classApplication_a6a3692743eccba602a58fdfc3f23950b}
+
+
+Metrics. 
+
 \hypertarget{classApplication_a3b9dab40d189989c836b8d328946bbb6}{\index{Application@{Application}!chi\-\_\-0@{chi\-\_\-0}}
 \index{chi\-\_\-0@{chi\-\_\-0}!Application@{Application}}
 \subsubsection[{chi\-\_\-0}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::chi\-\_\-0}}\label{classApplication_a3b9dab40d189989c836b8d328946bbb6}
+
+
+Machine learning parameter. 
+
 \hypertarget{classApplication_a46e29a6bfc74de610feec809a77dfb62}{\index{Application@{Application}!chi\-\_\-\-C@{chi\-\_\-\-C}}
 \index{chi\-\_\-\-C@{chi\-\_\-\-C}!Application@{Application}}
 \subsubsection[{chi\-\_\-\-C}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::chi\-\_\-\-C}}\label{classApplication_a46e29a6bfc74de610feec809a77dfb62}
+
+
+Machine learning parameter. 
+
 \hypertarget{classApplication_a20adc533c6b6147342b3f60dc0fbd9bc}{\index{Application@{Application}!csi@{csi}}
 \index{csi@{csi}!Application@{Application}}
 \subsubsection[{csi}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::csi}}\label{classApplication_a20adc533c6b6147342b3f60dc0fbd9bc}
 \hypertarget{classApplication_adee341a84a5389dfd4d16e7f8e697190}{\index{Application@{Application}!current\-Cores\-\_\-d@{current\-Cores\-\_\-d}}
 \index{current\-Cores\-\_\-d@{current\-Cores\-\_\-d}!Application@{Application}}
 \subsubsection[{current\-Cores\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::current\-Cores\-\_\-d}}\label{classApplication_adee341a84a5389dfd4d16e7f8e697190}
+
+
+Initialized to nu\-\_\-i. 
+
 \hypertarget{classApplication_aaa155e818d807f585d83ecacf4abfe42}{\index{Application@{Application}!dataset\-Size@{dataset\-Size}}
 \index{dataset\-Size@{dataset\-Size}!Application@{Application}}
 \subsubsection[{dataset\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::dataset\-Size}}\label{classApplication_aaa155e818d807f585d83ecacf4abfe42}
+
+
+Size of the dataset. 
+
 \hypertarget{classApplication_a2a989ae288a74ee5250b5acf449c864a}{\index{Application@{Application}!Deadline\-\_\-d@{Deadline\-\_\-d}}
 \index{Deadline\-\_\-d@{Deadline\-\_\-d}!Application@{Application}}
 \subsubsection[{Deadline\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::\-Deadline\-\_\-d}}\label{classApplication_a2a989ae288a74ee5250b5acf449c864a}
+
+
+Deadline for the application. 
+
 \hypertarget{classApplication_a95fd54cbed658fb23ce27939666c91d2}{\index{Application@{Application}!initial\-Base\-F\-O@{initial\-Base\-F\-O}}
 \index{initial\-Base\-F\-O@{initial\-Base\-F\-O}!Application@{Application}}
 \subsubsection[{initial\-Base\-F\-O}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::initial\-Base\-F\-O}}\label{classApplication_a95fd54cbed658fb23ce27939666c91d2}
+
+
+copy of base F\-O value (used to reset the value) 
+
 \hypertarget{classApplication_ab903d83d3cde51569a27f97752c9f158}{\index{Application@{Application}!m@{m}}
 \index{m@{m}!Application@{Application}}
 \subsubsection[{m}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::m}}\label{classApplication_ab903d83d3cde51569a27f97752c9f158}
@@ -176,30 +235,62 @@ Here is the call graph for this function\-:\nopagebreak
 \hypertarget{classApplication_abc7e87e8cbe2e64fa4e2ff2afdf7a4fc}{\index{Application@{Application}!mode@{mode}}
 \index{mode@{mode}!Application@{Application}}
 \subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::mode}}\label{classApplication_abc7e87e8cbe2e64fa4e2ff2afdf7a4fc}
+
+
+How the objective function is calculated (currently redundant) 
+
 \hypertarget{classApplication_a95104d330c9c7ed2c1017b4938a39a9a}{\index{Application@{Application}!n\-Cores\-\_\-\-D\-B\-\_\-d@{n\-Cores\-\_\-\-D\-B\-\_\-d}}
 \index{n\-Cores\-\_\-\-D\-B\-\_\-d@{n\-Cores\-\_\-\-D\-B\-\_\-d}!Application@{Application}}
 \subsubsection[{n\-Cores\-\_\-\-D\-B\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::n\-Cores\-\_\-\-D\-B\-\_\-d}}\label{classApplication_a95104d330c9c7ed2c1017b4938a39a9a}
+
+
+Initialized to the value from look-\/up table. 
+
 \hypertarget{classApplication_a42c22b9a3130cf1f2722ce222f2e5bae}{\index{Application@{Application}!nu\-\_\-d@{nu\-\_\-d}}
 \index{nu\-\_\-d@{nu\-\_\-d}!Application@{Application}}
 \subsubsection[{nu\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::nu\-\_\-d}}\label{classApplication_a42c22b9a3130cf1f2722ce222f2e5bae}
+
+
+nu value 
+
 \hypertarget{classApplication_a32da2e06513ef910601d75eb89bb528b}{\index{Application@{Application}!R\-\_\-bound\-\_\-d@{R\-\_\-bound\-\_\-d}}
 \index{R\-\_\-bound\-\_\-d@{R\-\_\-bound\-\_\-d}!Application@{Application}}
 \subsubsection[{R\-\_\-bound\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::\-R\-\_\-bound\-\_\-d}}\label{classApplication_a32da2e06513ef910601d75eb89bb528b}
+
+
+Bound (R) 
+
 \hypertarget{classApplication_a374d43f68ae27aaed98278e8152a434c}{\index{Application@{Application}!R\-\_\-d@{R\-\_\-d}}
 \index{R\-\_\-d@{R\-\_\-d}!Application@{Application}}
 \subsubsection[{R\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::\-R\-\_\-d}}\label{classApplication_a374d43f68ae27aaed98278e8152a434c}
+
+
+Value of R as per the predictor. 
+
 \hypertarget{classApplication_a6bbd698f2df7c4cedb9fb46fce23dbfe}{\index{Application@{Application}!s\-A\-B@{s\-A\-B}}
 \index{s\-A\-B@{s\-A\-B}!Application@{Application}}
 \subsubsection[{s\-A\-B}]{\setlength{\rightskip}{0pt plus 5cm}{\bf s\-Alpha\-Beta\-Management} Application\-::s\-A\-B}}\label{classApplication_a6bbd698f2df7c4cedb9fb46fce23dbfe}
 \hypertarget{classApplication_a5e28ffadb86925ecae57ab18c0085d90}{\index{Application@{Application}!session\-\_\-app\-\_\-id@{session\-\_\-app\-\_\-id}}
 \index{session\-\_\-app\-\_\-id@{session\-\_\-app\-\_\-id}!Application@{Application}}
 \subsubsection[{session\-\_\-app\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Application\-::session\-\_\-app\-\_\-id}}\label{classApplication_a5e28ffadb86925ecae57ab18c0085d90}
+
+
+Session identifier. 
+
 \hypertarget{classApplication_adb1cba2c06695bfdf81482dfba449d5b}{\index{Application@{Application}!stage@{stage}}
 \index{stage@{stage}!Application@{Application}}
 \subsubsection[{stage}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Application\-::stage}}\label{classApplication_adb1cba2c06695bfdf81482dfba449d5b}
+
+
+\hyperlink{classApplication}{Application}'s stage (used in case of residual time) 
+
 \hypertarget{classApplication_ad5486702327ad61e56ed04fb54d58c20}{\index{Application@{Application}!term\-\_\-i@{term\-\_\-i}}
 \index{term\-\_\-i@{term\-\_\-i}!Application@{Application}}
 \subsubsection[{term\-\_\-i}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::term\-\_\-i}}\label{classApplication_ad5486702327ad61e56ed04fb54d58c20}
+
+
+Used to calculate nu index. 
+
 \hypertarget{classApplication_aa92ad37e6701931176e0dc9b260fd7ee}{\index{Application@{Application}!V@{V}}
 \index{V@{V}!Application@{Application}}
 \subsubsection[{V}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::\-V}}\label{classApplication_aa92ad37e6701931176e0dc9b260fd7ee}
@@ -209,9 +300,17 @@ Here is the call graph for this function\-:\nopagebreak
 \hypertarget{classApplication_a0a3fe386eb8244e536bc5297709d1269}{\index{Application@{Application}!vm@{vm}}
 \index{vm@{vm}!Application@{Application}}
 \subsubsection[{vm}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::vm}}\label{classApplication_a0a3fe386eb8244e536bc5297709d1269}
+
+
+Read from O\-P\-T\-I\-M\-I\-Z\-E\-R\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N\-\_\-\-T\-A\-B\-L\-E. 
+
 \hypertarget{classApplication_aead1b7b0150c2a3ebd6c36b1db8c4732}{\index{Application@{Application}!w@{w}}
 \index{w@{w}!Application@{Application}}
 \subsubsection[{w}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::w}}\label{classApplication_aead1b7b0150c2a3ebd6c36b1db8c4732}
+
+
+Weight application. 
+
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}

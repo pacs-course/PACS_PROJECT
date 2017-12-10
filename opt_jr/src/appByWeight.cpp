@@ -2,7 +2,7 @@
 
 
 /*
- *  SALVO PUNTATORI A LISTA IN ORDINE DECRESCENTE DI PESO W
+ *  It saves Application* in decreasing weight "w" order
  */
 
 void addApplicationPointer(appByWeight &LP, Application &App)

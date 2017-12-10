@@ -7,11 +7,113 @@
 #include <string>
 
 
+
+
+/*
+ * Name: approximatedLoop
+ * Description: It estimates the objective function for each move. The candidate applications for which the move is profitable is stored in a sCandidate object
+ */
+
+sCandidates Search::approximatedLoop( Batch &App_manager, int &iteration, optJrParameters &par )
+{
+
+  std::string debugMsg;
+
+
+	if (App_manager.APPs.empty())
+	{
+		printf("Error: approximatedLoop: NO Applications\n");
+		exit(-1);
+	}
+
+	int nCoreMov;
+	double DELTAVM_i;
+	double DELTAVM_j;
+	double DELTA_fo_App_i, DELTA_fo_App_j;
+  sCandidates  sCandidateApproximated ;
+
+
+	debugMsg= "Approximated iterated loop"; debugMessage(debugMsg, par);
+  auto application_i=App_manager.APPs.begin();
+
+  while (application_i!=App_manager.APPs.end())
+  {
+
+		auto application_j = App_manager.APPs.begin();
+		while (application_j != App_manager.APPs.end())
+		{
+			if (application_i->session_app_id!=application_j->session_app_id)
+			{
+				debugMsg="Comparing " + application_i->session_app_id + " with " + application_j->session_app_id;debugMessage(debugMsg, par);
+
+				nCoreMov = std::max(application_i->V, application_j->V);
+
+				DELTAVM_i = nCoreMov/application_i->V; debugMsg = "app " + application_i->session_app_id + " DELTAVM_i " +  std::to_string(DELTAVM_i); debugMessage(debugMsg, par);
+				DELTAVM_j = nCoreMov/application_j->V; debugMsg = "app " + application_j->session_app_id + " DELTAVM_j " +  std::to_string(DELTAVM_j); debugMessage(debugMsg, par);
+
+				// Change the currentCores, but rollback later
+				int deltaNCores_i = DELTAVM_i * application_i->V;
+				int deltaNCores_j = DELTAVM_j * application_j->V;
+				application_i->currentCores_d = application_i->currentCores_d + deltaNCores_i;
+				application_j->currentCores_d = application_j->currentCores_d - deltaNCores_j;
+
+
+				debugMsg= "After cores exchange: app " + application_i->session_app_id + " currentCores " + std::to_string((int)application_i->currentCores_d);debugMessage(debugMsg, par);
+        debugMsg= "After cores exchange: app " + application_j->session_app_id + " currentCores " + std::to_string((int)application_j->currentCores_d);debugMessage(debugMsg, par);
+
+
+				if (application_i->currentCores_d > 0 && application_j->currentCores_d > 0)
+				{
+					DELTA_fo_App_i = ObjFun::ObjFunctionComponentApprox(*application_i, par) - application_i->baseFO;
+					debugMsg = "app " + application_i->session_app_id + "DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i);debugMessage(debugMsg, par);
+
+					DELTA_fo_App_j = ObjFun::ObjFunctionComponentApprox(*application_j, par) - application_j->baseFO;
+          debugMsg = "app " + application_j->session_app_id + "DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j);debugMessage(debugMsg, par);
+
+
+          std::cout << "\n\n\n\n   TOT DELTA FO: "+ std::to_string(DELTA_fo_App_i + DELTA_fo_App_j)+ "   \n\n\n ";
+
+
+					if ((DELTA_fo_App_i + DELTA_fo_App_j < 0))
+					{
+            std::cout << "\n\n\n\n      adding candidate :D       \n\n\n ";
+						addCandidate(sCandidateApproximated,
+									*application_i ,
+									*application_j ,
+									application_i->currentCores_d,
+									application_j->currentCores_d,
+									DELTA_fo_App_i + DELTA_fo_App_j,
+									DELTAVM_i,
+									DELTAVM_j) ;
+
+					}
+
+
+				}
+
+				application_i->currentCores_d = application_i->currentCores_d - DELTAVM_i*application_i->V;
+				application_j->currentCores_d = application_j->currentCores_d + DELTAVM_j*application_j->V;
+			}
+		application_j++;
+		}
+  application_i++;
+	}
+
+
+
+  iteration= sCandidateApproximated.size();
+
+	return sCandidateApproximated;
+
+}
+
+
+
+
+
 /*
  * 		Name:					checkTotalNodes
- * 		Output parameters:		TBD
  * 		Description:			It checks that the total allocated nodes is still less or equal than the total number of cores available N
- *
  */
 
 void Search::checkTotalNodes(int N, Batch &App_manager)
@@ -43,7 +145,6 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
 
 	Application * application_i, *application_j;
 	sCandidates sCandidateApproximated ;
-	//char debugMsg[DEBUG_MSG];
 
   std::string debugMsg;
 	int index = 0;
@@ -62,7 +163,7 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
 		debugMsg= "ITERATION " + std::to_string(iteration); debugMessage(debugMsg, par);
 
 		// Estimate the candidates for the predictor
-		sCandidateApproximated = App_manager.approximatedLoop( how_many, par );
+		sCandidateApproximated = approximatedLoop( App_manager, how_many, par );
     std::cout<< "\n\n\n\n       finished approximatedLoop   \n\n\n\n"<<std::endl;
 
 		if (sCandidateApproximated.empty())
@@ -214,7 +315,7 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
 			sprintf(debugMsg,"\n\nGlobal obj function %lf", TotalFO);debugMessage(debugMsg, par);
 			// Update Statistics
 			addStatistics(&firstS, &currentS, iteration, how_many, TotalFO);
-			
+
 		}
 		*/
 

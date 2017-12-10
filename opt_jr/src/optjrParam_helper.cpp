@@ -52,7 +52,6 @@ char* parseArg(char* string, char* gap, int type)
 
             printf("Fatal Error: parseArg: option not recognized\n");
             exit(-1);
-
         }
 
         return NULL;

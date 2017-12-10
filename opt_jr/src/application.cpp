@@ -1,6 +1,9 @@
 #include "application.hh"
 
 
+/*
+Constructor:  expects all static values of the application
+*/
 Application::Application(std::string session_app_id, std::string app_id, double w,
             double chi_0, double chi_C, double m, double M, double V,
             double v, double D, double csi, std::string St, int DatasetSize):
@@ -12,12 +15,10 @@ Application::Application(std::string session_app_id, std::string app_id, double 
 
 
 /*
- * 		Name:						ObjFunctionComponent
- * 		Input parameters:			The pointer to the applications Application
- * 		Output parameters:			double The contribution to the calculation of the objective function
- * 		Description:				Currently, only one method is supported. Note that the algorithm's choice is stored in the "mode" field
- * 									of the application structure.
- *
+  		Name:						ObjFunctionComponent
+  		Description:		Evaluates the contribution to the calculation of the objective function.
+ 	                    Currently, only one method is supported. Note that the algorithm's choice is stored in the "mode" field
+  									  of the application structure.
  */
 
 double Application::ObjFunctionComponent(sConfiguration &configuration, MYSQL *conn, optJrParameters &par)
