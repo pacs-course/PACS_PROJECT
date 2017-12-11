@@ -3,6 +3,7 @@
 #include "debugmessage.hh"
 #include "utility.hh"
 #include "objectiveFunction.hh"
+#include "statistics.hh"
 
 
 #include <string>
@@ -156,7 +157,7 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
    int DELTAVM_i, DELTAVM_j;
    double DELTA_fo_App_i, DELTA_fo_App_j;
    //sCandidates  minCandidate;
-   //sStatistics *firstS = NULL, *currentS = NULL;
+   sStatistics statistics;
 
    debugMsg =  "\n     ***** Estimate the candidates for the predictor ******\n"; debugMessage(debugMsg, par);
    for (int iteration = 1; iteration <= par.get_maxIteration(); iteration++)
@@ -216,7 +217,7 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
        {
          application_i = it->app_i;
          application_j = it->app_j;
-         
+
          nCoreMov = std::max(application_i->V, application_j->V);
 
          DELTAVM_i = nCoreMov/application_i->V;
@@ -350,7 +351,7 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
 
 
        // Update Statistics
-       //addStatistics(&firstS, &currentS, iteration, how_many, TotalFO);
+       addStatistics(statistics, iteration, how_many, TotalFO);
 
      }
 
@@ -368,21 +369,13 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
 
      minCandidate->app_i->currentCores_d = minCandidate->app_i->currentCores_d + minCandidate->delta_i * minCandidate->app_i->V;
      minCandidate->app_j->currentCores_d = minCandidate->app_j->currentCores_d - minCandidate->delta_j * minCandidate->app_j->V;
-
-     sprintf(debugMsg, "Information: LocalSearch: Destroy Candidate Application");debugInformational(debugMsg, par);
-
-     // DESTROY Candidates list and prepare it for a new run
-     freeCandidates(sfirstCandidateApproximated);
      */
-     // TODO Modify to recalculate only FO for apps i,j (use the above copies without invoke dagSim)
-     //App_manager.initialize(configuration, conn, par);
 
    }
-   /*
-   if (par.globalFOcalculation)
+
+   if (par.get_globalFOcalculation())
    {
-   readStatistics(firstS, par);
-   if (firstS) freeStatistics(firstS);
- }
- */
+     readStatistics(statistics, par);
+   }
+
 }
