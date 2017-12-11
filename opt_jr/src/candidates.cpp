@@ -34,25 +34,22 @@ void addCandidate(sCandidates  &cand,  Application &app_i, Application &app_j, i
 
 
 
-
-
-
 void invokePredictorOpenMP(sCandidates  &candidates,  optJrParameters &par, sConfiguration  &configuration )
 {
   std::string debugMsg;
 
 
-	int n_threads = par.get_numberOfThreads();
-	
-	MYSQL *conn2[n_threads]; //open a connection for each thread
+  int n_threads = par.get_numberOfThreads();
+
+  MYSQL *conn2[n_threads]; //open a connection for each thread
 
 
-	if (candidates.size()==0) return;
+  if (candidates.size()==0) return;
 
-	debugMsg="invokePredictorInAdvance"; debugMessage(debugMsg, par);
-	for (int i = 0; i< n_threads;++i)
-	{
-			conn2[i]=DBopen(
+  debugMsg="invokePredictorInAdvance"; debugMessage(debugMsg, par);
+  for (int i = 0; i< n_threads;++i)
+  {
+      conn2[i]=DBopen(
                     const_cast<char*>(configuration["OptDB_IP"].c_str()),
                     const_cast<char*>(configuration["DB_port"].c_str()),
                 const_cast<char*>(configuration["OptDB_user"].c_str()),
@@ -60,37 +57,35 @@ void invokePredictorOpenMP(sCandidates  &candidates,  optJrParameters &par, sCon
                 const_cast<char*>(configuration["OptDB_dbName"].c_str())
                 );
 
-	}
+  }
+  //call invokePredictorInAdvance in parallel
+  #pragma omp parallel num_threads(n_threads)
+  {
+    int ID=omp_get_thread_num();
+    int j=0;
 
 
- 	//call invokePredictorInAdvance in parallel
-	#pragma omp parallel num_threads(n_threads)
-	{
-		int ID=omp_get_thread_num();
-		int j=0;
-
-
-		// assign each app to a thread
+    // assign each app to a thread
     for (auto it=candidates.begin(); it!=candidates.end(); ++it ) // assign each app to a thread
-		{
+    {
 
-			int pos=j % n_threads;
+      int pos=j % n_threads;
 
-			if(pos==ID)
-			{
+      if(pos==ID)
+      {
 
         it->real_i = ObjFun::ObjFunctionComponent(configuration, conn2[ID], *(it->app_i), par);
         it->nodes_i = it->app_i->currentCores_d;
 
-				it->real_j = ObjFun::ObjFunctionComponent(configuration, conn2[ID], *(it->app_j), par);
-				it->nodes_j = it->app_j->currentCores_d;
+        it->real_j = ObjFun::ObjFunctionComponent(configuration, conn2[ID], *(it->app_j), par);
+        it->nodes_j = it->app_j->currentCores_d;
 
-			}
-			++j;
-		}
+      }
+      ++j;
+    }
 
-	}
-	for (int i = 0; i < n_threads;++i)
-				DBclose(conn2[i]);
+  }
+  for (int i = 0; i < n_threads;++i)
+    DBclose(conn2[i]);
 
 }

@@ -199,6 +199,8 @@ void Bounds::calculateBounds(Batch  & app_manager,
   {
 		int n_threads = par.get_numberOfThreads();
     std::string debugMsg;
+		if (n_threads>0)
+		{
     debugMsg=" Calculate bounds for each application in parallel with "+ std::to_string(n_threads)+" threads (using openMP) \n" ;debugMessage(debugMsg,par);
 
     MYSQL *conn2[n_threads];
@@ -232,6 +234,15 @@ void Bounds::calculateBounds(Batch  & app_manager,
         ++j;
       }
     }
+	}
+	else
+	{
+
+		debugMsg=" Calculate bounds for each application (sequencial version) \n" ;debugMessage(debugMsg,par);
+		for (auto it=app_manager.APPs.begin(); it !=app_manager.APPs.end(); it++)
+				findBound(configuration, conn, const_cast<char*>(configuration["OptDB_dbName"].c_str()), *it, par);
+
+	}
 
 		debugMsg="\n\n************* FINAL BOUNDS RESULTS: **************";
 		for (auto it= app_manager.APPs.begin(); it!= app_manager.APPs.end();it++)
