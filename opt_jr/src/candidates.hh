@@ -63,7 +63,12 @@ void addCandidate(sCandidates  &cand,  Application &app_i, Application &app_j,
                   int contr1, int contr2, double delta, double delta_i, double delta_j);
 
 
-
+/**
+"invokePredictorOpenMP" calls in parallel the ObjFunctionComponent for each pair of application
+and it stores the results for each pair in real_i, real_j.
+Furthermore it sets nodes_i, nodes_j values.
+*/
+void invokePredictorOpenMP(sCandidates  &candidates,  optJrParameters &par, sConfiguration  &configuration );
 
 
 

@@ -4,6 +4,7 @@
 #include "utility.hh"
 #include "objectiveFunction.hh"
 
+
 #include <string>
 
 
@@ -71,12 +72,12 @@ sCandidates Search::approximatedLoop( Batch &App_manager, int &iteration, optJrP
           debugMsg = "app " + application_j->session_app_id + "DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j);debugMessage(debugMsg, par);
 
 
-          std::cout << "\n\n\n\n   TOT DELTA FO: "+ std::to_string(DELTA_fo_App_i + DELTA_fo_App_j)+ "   \n\n\n ";
+          debugMsg= "\n\n  Approximated TOTAL DELTA FO: " + std::to_string(DELTA_fo_App_i + DELTA_fo_App_j) + "   \n\n "; debugMessage(debugMsg, par);
 
 
 					if ((DELTA_fo_App_i + DELTA_fo_App_j < 0))
 					{
-            std::cout << "\n\n\n\n      adding candidate :D       \n\n\n ";
+            debugMsg= "\n\nAdding candidate  \n\n "; debugMessage(debugMsg, par);
 						addCandidate(sCandidateApproximated,
 									*application_i ,
 									*application_j ,
@@ -141,12 +142,12 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
 
  void Search::localSearch(sConfiguration &configuration, MYSQL *conn, Batch &App_manager , optJrParameters &par)
 {
-  std::cout <<"               hello from localsearch :) "<<std::endl;
 
 	Application * application_i, *application_j;
 	sCandidates sCandidateApproximated ;
 
   std::string debugMsg;
+
 	int index = 0;
 	//double TotalFO;
 	int how_many;
@@ -157,14 +158,14 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
 	//sCandidates  minCandidate;
 	//sStatistics *firstS = NULL, *currentS = NULL;
 
-  std::cout<< "\n***** Estimate the candidates for the predictor ******\n"<<std::endl;
+  debugMsg =  "\n     ***** Estimate the candidates for the predictor ******\n"; debugMessage(debugMsg, par);
 	for (int iteration = 1; iteration <= par.get_maxIteration(); iteration++)
 	{
 		debugMsg= "ITERATION " + std::to_string(iteration); debugMessage(debugMsg, par);
 
 		// Estimate the candidates for the predictor
 		sCandidateApproximated = approximatedLoop( App_manager, how_many, par );
-    std::cout<< "\n\n\n\n       finished approximatedLoop   \n\n\n\n"<<std::endl;
+    debugMsg= "\n\n\n\n       finished approximatedLoop   \n\n\n\n"; debugMessage(debugMsg, par);
 
 		if (sCandidateApproximated.empty())
 		{
@@ -177,25 +178,23 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
 	//minCandidate = sCandidateApproximated;
 	debugMsg = " \n\n\n\n\n*****  Ex-iteration loop ******\n\n\n\n\n";debugMessage(debugMsg, par);
 
-//TODO: decommentare questa parte!
-/*
-	if (par.numberOfThreads > 0)
+
+
+	if (par.get_numberOfThreads() > 0)
 	{
 		// Calculate in advance and in parallel the results of the predictor for each candidate
-		invokePredictorOpenMP(sfirstCandidateApproximated, par, configuration);
-	}*/
+		invokePredictorOpenMP(sCandidateApproximated, par, configuration);
+	}
 
-		// To Do: consider only the first MAX_PROMISING_CONFIGURATIONS of the Application -> DONE
-		//for (auto it = sCandidateApproximated.begin(); it != sCandidateApproximated.end(); it++)
-
-    std::cout<<"\n\n*************************************************************************\n";
-    std::cout<<"*** Consider the first MAX_PROMISING_CONFIGURATIONS of the Application ****\n";
-    std::cout<<"*************************************************************************\n\n\n\n";
-
-    std::cout << " There are "<< how_many <<" promising configurations in iteration "<< iteration <<"\n\n"<<std::endl;
+    debugMsg = "\n\n*******************************************************************\n";
+    debugMsg +="*** Consider the first MAX_PROMISING_CONFIGURATIONS of the Application ****\n";
+    debugMsg +="*******************************************************************\n"; debugMessage(debugMsg,par);
 
 
-    //for (int k=0;k< how_many; ++k )
+    debugMsg = " There are " + std::to_string(how_many) +" promising configurations in iteration " + std::to_string(iteration) + "\n\n"; debugMessage(debugMsg,par);
+
+
+
 		int index_pair=-1, tmp=0;
 		int cores_i, cores_j;
 		double DELTA_pair=0, DELTA_tmp;
@@ -243,38 +242,36 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
 			{
 				// Call object function evaluation calculated earlier
 				application_i->mode= R_ALGORITHM;application_j->mode= R_ALGORITHM;
-        /*
-				if (par.numberOfThreads == 0) //TODO: includere openMP version
-				{*/
+
+				if (par.get_numberOfThreads() == 0)
+				{
 					// No openmp
-          std::cout << "\n\n\n    CALLING OBJ_FUNCTION_COMPONENT \n\n";
+          debugMsg =  " CALLING OBJ_FUNCTION_COMPONENT \n\n"; debugMessage(debugMsg, par);
 					DELTA_fo_App_i = ObjFun::ObjFunctionComponent(configuration, conn, *application_i, par) - application_i->baseFO;
 					DELTA_fo_App_j = ObjFun::ObjFunctionComponent(configuration, conn, *application_j, par) - application_j->baseFO;
-					DELTA_tmp=DELTA_fo_App_i+DELTA_fo_App_j;
-					if (DELTA_tmp<DELTA_pair)
-					{
-						DELTA_pair=DELTA_tmp;
-						index_pair=tmp;
-						cores_i=application_i->currentCores_d;
-						cores_j=application_j->currentCores_d;
-						DELTA_fo_App_i_tmp = DELTA_fo_App_i;
-						DELTA_fo_App_j_tmp = DELTA_fo_App_j;
 
-					}
-
-				  /*
         }
 				else
 				{
 					// OpenMP
-					DELTA_fo_App_i = sfirstCandidateApproximated->real_i - application_i->baseFO;
-					DELTA_fo_App_j = sfirstCandidateApproximated->real_j - application_j->baseFO;
+					DELTA_fo_App_i = it->real_i - application_i->baseFO;
+					DELTA_fo_App_j = it->real_j - application_j->baseFO;
+          
 				}
-        */
-        std::cout <<"\n\n\n\n";
+        DELTA_tmp=DELTA_fo_App_i+DELTA_fo_App_j;
+        if (DELTA_tmp<DELTA_pair)
+        {
+          DELTA_pair=DELTA_tmp;
+          index_pair=tmp;
+          cores_i=application_i->currentCores_d;
+          cores_j=application_j->currentCores_d;
+          DELTA_fo_App_i_tmp = DELTA_fo_App_i;
+          DELTA_fo_App_j_tmp = DELTA_fo_App_j;
+        }
+
 				 debugMsg = "app " + application_i->session_app_id + " DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i); debugMessage(debugMsg, par);
          debugMsg = "app " + application_j->session_app_id + " DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j); debugMessage(debugMsg, par);
-				 std::cout << " TOTAL DELTA FO : "<< DELTA_tmp<<"\n\n\n\n";
+				 debugMsg= "\n      TOTAL DELTA FO : " +  std::to_string(DELTA_tmp) + "\n\n"; debugMessage(debugMsg, par);
 
 			}
 			// Restore previous number of cores

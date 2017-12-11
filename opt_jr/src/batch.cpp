@@ -93,7 +93,7 @@ Batch::calculate_nu(optJrParameters &par)
       it->nu_d = (it->term_i/(1 + tot))*N;
     }
     it->currentCores_d = it->nu_d;
-    std::cout<<"App ID: "<<it->app_id<<", NU: "<<it->nu_d<<std::endl;
+    debugMsg="App ID: " + it->app_id + ", NU: " + std::to_string(it->nu_d); debugMessage(debugMsg, par);
 
 
 
@@ -182,7 +182,7 @@ void Batch::fixInitialSolution(optJrParameters &par)
 
 
 	residualCores = N - allocatedCores;
-  std::cout << "RESIDUAL CORES: "<<residualCores<<std::endl;
+  debugMsg = "RESIDUAL CORES: "+ std::to_string(residualCores); debugMessage(debugMsg, par);
 	int addedCores;
 
 

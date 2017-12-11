@@ -193,10 +193,11 @@ void Bounds::findBound(sConfiguration &configuration, MYSQL *conn, char* db,  Ap
 /*
  * CALL IN PARALLEL FINDBOUND (OPENMP)
  */
-void Bounds::calculateBounds(Batch  & app_manager, int n_threads,
+void Bounds::calculateBounds(Batch  & app_manager,
                              sConfiguration &configuration, MYSQL *conn,
                              optJrParameters &par)
   {
+		int n_threads = par.get_numberOfThreads();
     std::string debugMsg;
     debugMsg=" Calculate bounds for each application in parallel with "+ std::to_string(n_threads)+" threads (using openMP) \n" ;debugMessage(debugMsg,par);
 
@@ -205,6 +206,7 @@ void Bounds::calculateBounds(Batch  & app_manager, int n_threads,
     {
       conn2[i]=DBopen(
         const_cast<char*>(configuration["OptDB_IP"].c_str()),
+				const_cast<char*>(configuration["DB_port"].c_str()),
         const_cast<char*>(configuration["OptDB_user"].c_str()),
         const_cast<char*>(configuration["OptDB_pass"].c_str()),
         const_cast<char*>(configuration["OptDB_dbName"].c_str())

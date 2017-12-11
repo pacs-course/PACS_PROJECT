@@ -47,7 +47,7 @@ int main(int argc, char **argv)
   */
 
   std::cout<<"\n\n*******************************************************************\n";
-  std::cout<<"**************** READING EXECUTION PARAMETERS ******************\n";
+  std::cout<<"****************  READING EXECUTION PARAMETERS  *******************\n";
   std::cout<<"*******************************************************************\n";
 
 
@@ -74,12 +74,15 @@ int main(int argc, char **argv)
      3) Connect to the Database
   */
 
-  std::cout<<"\n\n*******************************************************************\n";
-  std::cout<<"************     CONNECTING TO THE DATABASE       *****************\n";
-  std::cout<<"*******************************************************************\n";
+  debugMsg = "\n*******************************************************************\n";
+  debugMsg += "*************     CONNECTING TO THE DATABASE       ****************\n";
+  debugMsg += "*******************************************************************\n\n"; debugMessage(debugMsg,par);
+
+
 
   MYSQL *conn = DBopen(
                 const_cast<char*>(configuration["OptDB_IP"].c_str()),
+                const_cast<char*>(configuration["DB_port"].c_str()),
             const_cast<char*>(configuration["OptDB_user"].c_str()),
             const_cast<char*>(configuration["OptDB_pass"].c_str()),
             const_cast<char*>(configuration["OptDB_dbName"].c_str())
@@ -87,16 +90,17 @@ int main(int argc, char **argv)
 
   if (conn == NULL) DBerror(conn, (char*)"open_db: Opening the database");
 
-  std::cout<<"*******************************************************************\n\n\n";
 
 
 
   /**
     4) Open  *.csv  file with Applications data, and save it in a "Batch" object
   */
-  std::cout<<"\n\n*******************************************************************\n";
-  std::cout<<"************     READ .CSV FILE WITH APPS       *******************\n";
-  std::cout<<"*******************************************************************\n";
+
+  debugMsg = "\n*******************************************************************\n";
+  debugMsg += "***********     READING .csv FILE WITH APPLICATIONS     ***********\n";
+  debugMsg += "*******************************************************************"; debugMessage(debugMsg,par);
+
 
   std::string folder = configuration["UPLOAD_HOME"];
   std::string filename = folder+ "/"+ par.get_filename();
@@ -110,54 +114,55 @@ int main(int argc, char **argv)
   }
 
   /* CREATE A BUTCH OBJECT */
-
   Batch App_manager(readAppFile(stream));
 
-  std::cout<<"<check message>: session_app_id of loaded applications"<<std::endl;
+  debugMsg= "session_app_id of loaded applications:  \n";
   for (auto it= App_manager.APPs.begin(); it!=App_manager.APPs.end();++it)
-    std::cout<< "App_ID: "<<it->session_app_id<<std::endl;
-  std::cout<<"*******************************************************************\n\n\n";
+    debugMsg+= "App_ID: "+ it->session_app_id +"\n";
+
+  debugMsg +="**************************************************\n\n\n"; debugMessage(debugMsg,par);
+
 
 
   /**
     5) Calculate bounds for each application loaded (with the calculateBounds method of Bounds class)
   */
 
-  std::cout<<"\n\n*******************************************************************\n";
-  std::cout<<"****************       CALCULATE BOUNDS         *******************\n";
-  std::cout<<"*******************************************************************\n\n";
+  debugMsg = "\n*******************************************************************\n";
+  debugMsg += "****************       COMPUTING BOUNDS         *******************\n";
+  debugMsg += "*******************************************************************\n\n"; debugMessage(debugMsg,par);
 
-  int n_threads=1;
-  Bounds::calculateBounds(App_manager,n_threads, configuration, conn, par );
 
-  std::cout<<"*******************************************************************\n\n\n";
+  Bounds::calculateBounds(App_manager, configuration, conn, par );
+
+  debugMsg = "\n***************    END COMPUTING BOUNDS     ********************\n\n\n"; debugMessage(debugMsg,par);
 
 
   /**
     6) Calculate nu indices for each application (with the calculate_nu method of Batch class)
   */
-  std::cout<<"\n\n*******************************************************************\n";
-  std::cout<<"************       CALCULATE NU INDICES         *******************\n";
-  std::cout<<"*******************************************************************\n";
+  debugMsg = "\n\n*******************************************************************\n";
+  debugMsg +="************       COMPUTING NU INDICES         *******************\n";
+  debugMsg +="*******************************************************************\n"; debugMessage(debugMsg,par);
 
   App_manager.calculate_nu(par);
 
-  std::cout<<"*******************************************************************\n\n\n";
+  debugMsg ="\n*********************    END COMPUTING NU INDICES    ********************\n\n\n"; debugMessage(debugMsg,par);
 
 
   /**
       7) Fix initial solution (with the fixInitialSolution method of Batch class)
   */
 
-  std::cout<<"\n\n*******************************************************************\n";
-  std::cout<<"********************    FIX INITIAL SOLUTION   ********************\n";
-  std::cout<<"*******************************************************************\n\n";
+  debugMsg = "\n\n*******************************************************************\n";
+  debugMsg +="*******************    FIXING INITIAL SOLUTION   ******************\n";
+  debugMsg +="*******************************************************************\n\n"; debugMessage(debugMsg,par);
 
 
   App_manager.fixInitialSolution(par);
 
+  debugMsg ="\n*******************    END FIXING INITIAL SOLUTION    *******************\n\n\n"; debugMessage(debugMsg,par);
 
-  std::cout<<"*******************************************************************\n\n\n";
 
 
 
@@ -165,15 +170,13 @@ int main(int argc, char **argv)
       8) Initialize Objective Function evaluation for each application (with the initalize method of Batch class)
   */
 
-  std::cout<<"\n\n*******************************************************************\n";
-  std::cout<<"************    INITIALIZE BASE OBJECTIVE FUNCTION   **************\n";
-  std::cout<<"*******************************************************************\n\n";
+  debugMsg = "\n*******************************************************************\n";
+  debugMsg +="************    INITIALIZE BASE OBJECTIVE FUNCTION   **************\n";
+  debugMsg +="*******************************************************************\n\n"; debugMessage(debugMsg,par);
 
   App_manager.initialize(configuration, conn, par);
 
-
-  debugMsg= "end calculate base objective function";
-  std::cout<<"*******************************************************************\n\n\n";
+  debugMsg ="\n************    END INITIALIZE BASE OBJECTIVE FUNCTION   **************\n\n\n"; debugMessage(debugMsg,par);
 
 
 
@@ -182,17 +185,17 @@ int main(int argc, char **argv)
       9) Find an "optimal" solution invoking "localSearch" method (of "Search" class)
   */
 
-  std::cout<<"\n\n*******************************************************************\n";
-  std::cout<<"******************       LOCAL SEARCH         *********************\n";
-  std::cout<<"*******************************************************************\n\n";
+  debugMsg = "\n\n*******************************************************************\n";
+  debugMsg +="******************       LOCAL SEARCH         *********************\n";
+  debugMsg +="*******************************************************************\n\n"; debugMessage(debugMsg,par);
 
 
   Search::localSearch(configuration, conn, App_manager,  par );
-  std::cout<<"*******************************************************************\n\n\n";
+  debugMsg ="\n**********************    END LOCAL SEARCH   ********************\n\n\n"; debugMessage(debugMsg,par);
 
 
   std::cout<<"\n\n*******************************************************************\n";
-  std::cout<<"******************       FINAL SOLUTION      *********************\n";
+  std::cout<<"******************       FINAL SOLUTION      **********************\n";
   std::cout<<"*******************************************************************\n\n";
 
 
@@ -204,14 +207,7 @@ int main(int argc, char **argv)
              << "     ncores = " << it->currentCores_d <<  "      FO = " << it->baseFO << std::endl;
   }
 
-  std::cout<<"*******************************************************************\n\n";
-
-
-
-
-
-
-
+  std::cout<<"\n********************   END FINAL SOLUTION   **************************\n\n";
 
 
 

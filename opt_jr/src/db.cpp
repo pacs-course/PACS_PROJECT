@@ -50,27 +50,29 @@ MYSQL_ROW executeSQL(MYSQL *conn, char *statement, optJrParameters par)
 }
 
 
-/*
- * Open a DB connection
- */
-
-MYSQL * DBopen(char * host, char * login, char * passw, char *dbName)
-{
 
 
-MYSQL *con = mysql_init(NULL);
+ /*
+  * Open a DB connection
+  */
 
-  if (con == NULL)
-  {
-      fprintf(stderr, "DBError: %s\n", mysql_error(con));
-      exit(1);
-  }
+ MYSQL * DBopen(char * host, char * port, char * login, char * passw, char *dbName)
+ {
 
-  if (mysql_real_connect(con, host, login, passw,
-          dbName, 0, NULL, 0) == NULL) DBerror(con, (char*)"mysql_real_connect");
 
-  return con;
-}
+ MYSQL *con = mysql_init(NULL);
+
+   if (con == NULL)
+   {
+       fprintf(stderr, "DBError: %s\n", mysql_error(con));
+       exit(1);
+   }
+
+   if (mysql_real_connect(con, host, login, passw,
+           dbName, atoi(port), NULL, 0) == NULL) DBerror(con, (char*)"mysql_real_connect");
+
+   return con;
+ }
 
 
 

@@ -29,7 +29,7 @@ public:
   The function looks before if the result is already stored in the database, otherwise it
   invokes the predictor doing a "HILL CLIMBING".
   */
-  static void calculateBounds(Batch  & app_manager, int n_threads, sConfiguration &configuration,
+  static void calculateBounds(Batch  & app_manager, sConfiguration &configuration,
                        MYSQL *conn,  optJrParameters &par);
 
 };

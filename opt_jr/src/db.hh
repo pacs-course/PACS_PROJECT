@@ -29,7 +29,7 @@ MYSQL_ROW executeSQL(MYSQL *conn, char *statement, optJrParameters par);
  (not substantially changed from original C version)
  */
 
-MYSQL * DBopen(char * host, char * login, char * passw, char *dbName);
+ MYSQL * DBopen(char * host, char * port, char * login, char * passw, char *dbName);
 
 /**
   Close DB connection

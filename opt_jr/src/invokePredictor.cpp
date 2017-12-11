@@ -1,13 +1,14 @@
 #include "invokePredictor.hh"
 
 
+
+
 #include <string>
 #include <string.h>
 
 
 /*
-	-This file is not substantially changed from original C version
-	-Here is defined the function to invoke a predictor
+	-Here are defined functions to invoke a predictor
  */
 
 

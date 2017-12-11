@@ -9,6 +9,7 @@
 #include "db.hh"
 
 
+
 #include <mysql.h>
 
 #define WHOLE_DAGSIM 0
@@ -16,8 +17,7 @@
 
 
 /*
-	-This file is not substantially changed from original C version
-	-Here is declared the function to invoke a predictor
+	-Here are declared functions to invoke a predictor
  */
 
 
@@ -33,6 +33,11 @@
 char* invokePredictor(sConfiguration  &configuration, MYSQL *conn, int nNodes, int currentCores,
 											char * memory, int datasize,  char *sessionId, char *appId, char *stage,
 											optJrParameters &par, int flagDagsim);
+
+
+
+
+
 
 
 #endif

@@ -56,7 +56,7 @@ double Application::ObjFunctionComponent(sConfiguration &configuration, MYSQL *c
 				if (pointer->newCores >pointer->bound) output = 0;
 				else output = pointer->w * pointer->R - pointer->R;
 			break;
-			*/
+      */
 		default:
 			printf("ObjFunctionComponent: unknown case within Switch statement: mode %d\n", mode);
 			exit(-1);

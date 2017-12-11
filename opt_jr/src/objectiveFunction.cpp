@@ -65,8 +65,7 @@ double ObjFun::ObjFunctionComponent(sConfiguration &configuration, MYSQL *conn, 
 
 double ObjFun::ObjFunctionComponentApprox(Application &App, optJrParameters &par)//sApplication * pointer, struct optJrParameters par)
 {
-
-  std::cout << "  hello from ObjFunctionComponentApprox "<<std::endl;
+	
   std::string debugMsg;
 	double output;
 
