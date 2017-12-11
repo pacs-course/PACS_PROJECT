@@ -35,7 +35,7 @@ class Candidate{
   double real_j;             ///< Real predictor value calculated (MPI) after the interpolation (second application)
 
 
-	int nodes_i, nodes_j;
+	//int nodes_i, nodes_j;
 
 
 
@@ -66,7 +66,6 @@ void addCandidate(sCandidates  &cand,  Application &app_i, Application &app_j,
 /**
 "invokePredictorOpenMP" calls in parallel the ObjFunctionComponent for each pair of application
 and it stores the results for each pair in real_i, real_j.
-Furthermore it sets nodes_i, nodes_j values.
 */
 void invokePredictorOpenMP(sCandidates  &candidates,  optJrParameters &par, sConfiguration  &configuration );
 

@@ -75,10 +75,10 @@ void invokePredictorOpenMP(sCandidates  &candidates,  optJrParameters &par, sCon
       {
 
         it->real_i = ObjFun::ObjFunctionComponent(configuration, conn2[ID], *(it->app_i), par);
-        it->nodes_i = it->app_i->currentCores_d;
+        //it->nodes_i = it->app_i->currentCores_d;
 
         it->real_j = ObjFun::ObjFunctionComponent(configuration, conn2[ID], *(it->app_j), par);
-        it->nodes_j = it->app_j->currentCores_d;
+        //it->nodes_j = it->app_j->currentCores_d;
 
       }
       ++j;

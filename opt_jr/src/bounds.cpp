@@ -54,10 +54,12 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 
 
 
-		app.sAB.index = 0;
+		/*app.sAB.index = 0;
 		app.sAB.vec[app.sAB.index].nCores = nCores;
 		app.sAB.vec[app.sAB.index].R = predictorOutput;
 		app.sAB.index++;
+		*/
+		app.computeAlphaBeta(nCores, predictorOutput);
 
 
 		BTime = predictorOutput;
@@ -88,12 +90,14 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 				BCores = nCores;
 				BTime = predictorOutput;
 
-
+				/*
 				app.sAB.vec[app.sAB.index].nCores = nCores;
 				app.sAB.vec[app.sAB.index].R = predictorOutput;
 				app.sAB.index = (app.sAB.index +1) % HYP_INTERPOLATION_POINTS;
+				*/
 
 				app.boundIterations++;
+				app.computeAlphaBeta(nCores, predictorOutput);
 
 			}
 
@@ -125,12 +129,14 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 								 "(deadline is " +std::to_string(app.Deadline_d)+ ") cores "
 								 + std::to_string(nCores); debugMessage(debugMsg, par);
 
+				/*
 				app.sAB.vec[app.sAB.index].nCores = nCores;
 				app.sAB.vec[app.sAB.index].R = predictorOutput;
 				app.sAB.index = app.sAB.index % HYP_INTERPOLATION_POINTS; //NB:  sAB.index it's always the same!
-				std::cout<< " \n\n\n\n eiiii\n\n\n\n"<<app.sAB.index << "\n\n\n\n eiiii\n\n\n\n"; //NB: remove this when fixed
-
+				*/
 				app.boundIterations++;
+				app.computeAlphaBeta(nCores, predictorOutput);
+
 			}
 
 	/* Update the record with bound values */
@@ -159,6 +165,7 @@ void Bounds::findBound(sConfiguration &configuration, MYSQL *conn, char* db,  Ap
 {
   std::string debugMsg;
   char statement[256];
+
 
 
 
@@ -234,6 +241,10 @@ void Bounds::calculateBounds(Batch  & app_manager,
         ++j;
       }
     }
+
+		for (int i = 0; i < n_threads;++i)
+	    DBclose(conn2[i]);
+
 	}
 	else
 	{
@@ -244,13 +255,7 @@ void Bounds::calculateBounds(Batch  & app_manager,
 
 	}
 
-		debugMsg="\n\n************* FINAL BOUNDS RESULTS: **************";
-		for (auto it= app_manager.APPs.begin(); it!= app_manager.APPs.end();it++)
-		{
-			debugMsg+="\nBound evaluated for Session_app_id : " + it->session_app_id + " , APP_ID: " + it->app_id +
-							 ", Deadline = "+ std::to_string(it->Deadline_d) + ", R =" + std::to_string(it->R_d)+
-							 ", bound = "+ std::to_string(it->bound) ;
-		}debugMessage(debugMsg, par);
+		
 
     debugMsg= " End calculate bounds ";debugMessage(debugMsg,par);
 

@@ -92,6 +92,7 @@ Batch::calculate_nu(optJrParameters &par)
     {
       it->nu_d = (it->term_i/(1 + tot))*N;
     }
+
     it->currentCores_d = it->nu_d;
     debugMsg="App ID: " + it->app_id + ", NU: " + std::to_string(it->nu_d); debugMessage(debugMsg, par);
 
@@ -100,8 +101,11 @@ Batch::calculate_nu(optJrParameters &par)
     /*
     *  COMPUTE ALPHA AND BETA
     */
+    /*
     it->beta = ((double) it->sAB.vec[1].nCores) / (it->sAB.vec[0].nCores - it->sAB.vec[1].nCores) * (((double) it->sAB.vec[0].nCores)/it->sAB.vec[1].nCores * it->sAB.vec[0].R - it->sAB.vec[1].R);
     it->alpha =it->sAB.vec[1].nCores * (it->sAB.vec[1].R - it->beta);
+    */
+
 
   }
   debugMsg="end calculate nu"; debugMessage(debugMsg, par);
@@ -123,19 +127,11 @@ void Batch::initialize(sConfiguration  &configuration, MYSQL *conn, optJrParamet
 	for (auto it =APPs.begin(); it!= APPs.end(); it++)
 	{
 			it->mode = R_ALGORITHM;
-			it->baseFO = it->ObjFunctionComponent(configuration, conn, par);
+			it->baseFO = ObjFun::ObjFunctionComponent(configuration, conn, *it, par);
 			it->initialBaseFO = it->baseFO;
 			debugMsg = "INITIALIZE BASE FO for APP "+ it->session_app_id
                 + " baseFO = " + std::to_string(it->baseFO)+"\n"; debugMessage(debugMsg, par);
 	}
-
-  debugMsg = "\n************ INITIALIZATION OBJECTIVE FUNCTION RESULTS ***************";
-  for (auto it =APPs.begin(); it!= APPs.end(); it++)
-	{
-
-			debugMsg += "\nINITIALIZE BASE FO for APP "+ it->session_app_id
-                + " baseFO = " + std::to_string(it->baseFO);
-	}debugMessage(debugMsg, par);
 
 
 };
@@ -182,6 +178,13 @@ void Batch::fixInitialSolution(optJrParameters &par)
 
 
 	residualCores = N - allocatedCores;
+
+  if (residualCores<0) //NOTE: if true this is a very strange situations; if it happens an idea could be to change
+  {                    //      source file in such a way that cores are taken from applications with less weight
+    std::cout<< "FATAL ERROR: limit situation, too few cores. Allocated cores exceed the number of available cores \n";
+    exit(-1);
+  }
+
   debugMsg = "RESIDUAL CORES: "+ std::to_string(residualCores); debugMessage(debugMsg, par);
 	int addedCores;
 
@@ -226,11 +229,6 @@ void Batch::fixInitialSolution(optJrParameters &par)
 	}
 
 
-  debugMsg= " \n\n   ********************  FIXED INITIAL SOLUTION ***********************";debugMessage(debugMsg, par);
-	for (auto it = APPs.begin(); it!=APPs.end(); ++it)
-  {
-    debugMsg = " Application " + it->session_app_id + ",  w = " + std::to_string(it->w)
-             + " ncores = " + std::to_string(it->currentCores_d); debugMessage(debugMsg, par);
-  }
+
 
 }

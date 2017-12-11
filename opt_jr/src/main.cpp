@@ -22,6 +22,7 @@
 int main(int argc, char **argv)
 {
   std::string debugMsg; // string to store debug messages
+  std::string Msg;      //// string to store useful messages
 
 
 
@@ -34,7 +35,7 @@ int main(int argc, char **argv)
 
 
   sConfiguration configuration = readConfigurationFile();
-  std::cout<<"<check message>: i dati nel file di configurazione sono:\n\n";
+  std::cout<<"<check message>: data in the configuration file:\n\n";
   for(auto i = configuration.begin(); i !=configuration.end();++i)
   {
     std::cout<< i->first <<": "<<i->second<<std::endl;
@@ -55,7 +56,7 @@ int main(int argc, char **argv)
   par.set_numberOfThreads(configuration); // set the number of threads as specified in configuration file
 
 
-  std::cout<<"<check message>: i parametri memorizzati per l'esecuzione di OPT_JR_CPP sono:\n\n";
+  std::cout<<"<check message>: parameters for the execution of OPT_JR_CPP:\n\n";
   std::cout<<"filename: "<<par.get_filename()<<std::endl;
   std::cout<<"debug: "<<par.get_debug()<<std::endl;
   std::cout<<"cache: "<<par.get_cache()<<std::endl;
@@ -123,20 +124,26 @@ int main(int argc, char **argv)
   debugMsg +="**************************************************\n\n\n"; debugMessage(debugMsg,par);
 
 
-
   /**
     5) Calculate bounds for each application loaded (with the calculateBounds method of Bounds class)
   */
 
-  debugMsg = "\n*******************************************************************\n";
-  debugMsg += "****************       COMPUTING BOUNDS         *******************\n";
-  debugMsg += "*******************************************************************\n\n"; debugMessage(debugMsg,par);
-
+  Msg = "\n*******************************************************************\n";
+  Msg += "****************       COMPUTING BOUNDS         *******************\n";
+  Msg += "*******************************************************************\n"; //debugMessage(debugMsg,par);
+  std::cout << Msg;
 
   Bounds::calculateBounds(App_manager, configuration, conn, par );
 
-  debugMsg = "\n***************    END COMPUTING BOUNDS     ********************\n\n\n"; debugMessage(debugMsg,par);
-
+  Msg="\n Final Bound results: ";
+  for (auto it= App_manager.APPs.begin(); it!= App_manager.APPs.end();it++)
+  {
+    Msg+="\nBound evaluated for Session_app_id : " + it->session_app_id + " , APP_ID: " + it->app_id +
+             ", Deadline = "+ std::to_string(it->Deadline_d) + ", R =" + std::to_string(it->R_d)+
+             ", bound = "+ std::to_string(it->bound) ;
+  }//debugMessage(debugMsg, par);
+  Msg += "\n*****************    END COMPUTING BOUNDS     ********************\n\n\n"; //debugMessage(debugMsg,par);
+  std::cout << Msg;
 
   /**
     6) Calculate nu indices for each application (with the calculate_nu method of Batch class)
@@ -154,15 +161,22 @@ int main(int argc, char **argv)
       7) Fix initial solution (with the fixInitialSolution method of Batch class)
   */
 
-  debugMsg = "\n\n*******************************************************************\n";
-  debugMsg +="*******************    FIXING INITIAL SOLUTION   ******************\n";
-  debugMsg +="*******************************************************************\n\n"; debugMessage(debugMsg,par);
-
+  Msg = "\n\n*******************************************************************\n";
+  Msg +="*******************    FIXING INITIAL SOLUTION   ******************\n";
+  Msg +="*******************************************************************\n\n"; //debugMessage(debugMsg,par);
+  std::cout << Msg;
 
   App_manager.fixInitialSolution(par);
 
-  debugMsg ="\n*******************    END FIXING INITIAL SOLUTION    *******************\n\n\n"; debugMessage(debugMsg,par);
 
+  Msg= " \nFixed Initial Solution: ";//debugMessage(debugMsg, par);
+	for (auto it = App_manager.APPs.begin(); it!=App_manager.APPs.end(); ++it)
+  {
+    Msg += "\n Application " + it->session_app_id + ",  w = " + std::to_string(it->w)
+             + " ncores = " + std::to_string(it->currentCores_d); //debugMessage(debugMsg, par);
+  }
+  Msg +="\n*******************    END FIXING INITIAL SOLUTION    **************\n\n\n"; debugMessage(debugMsg,par);
+  std::cout << Msg;
 
 
 
@@ -170,14 +184,22 @@ int main(int argc, char **argv)
       8) Initialize Objective Function evaluation for each application (with the initalize method of Batch class)
   */
 
-  debugMsg = "\n*******************************************************************\n";
-  debugMsg +="************    INITIALIZE BASE OBJECTIVE FUNCTION   **************\n";
-  debugMsg +="*******************************************************************\n\n"; debugMessage(debugMsg,par);
-
+  Msg = "\n*******************************************************************\n";
+  Msg +="************    INITIALIZE BASE OBJECTIVE FUNCTION   **************\n";
+  Msg +="*******************************************************************\n\n"; //debugMessage(debugMsg,par);
+  std::cout << Msg;
   App_manager.initialize(configuration, conn, par);
 
-  debugMsg ="\n************    END INITIALIZE BASE OBJECTIVE FUNCTION   **************\n\n\n"; debugMessage(debugMsg,par);
 
+  Msg = "\n Inizialization Objective Function Results:";
+  for (auto it =App_manager.APPs.begin(); it!= App_manager.APPs.end(); it++)
+	{
+			Msg += "\nINITIALIZE BASE FO for APP "+ it->session_app_id
+                + " baseFO = " + std::to_string(it->baseFO);
+	}//debugMessage(debugMsg, par);
+
+  Msg +="\n************    END INITIALIZE BASE OBJECTIVE FUNCTION   *********\n\n\n"; debugMessage(debugMsg,par);
+  std::cout<< Msg;
 
 
 
@@ -185,10 +207,10 @@ int main(int argc, char **argv)
       9) Find an "optimal" solution invoking "localSearch" method (of "Search" class)
   */
 
-  debugMsg = "\n\n*******************************************************************\n";
-  debugMsg +="******************       LOCAL SEARCH         *********************\n";
-  debugMsg +="*******************************************************************\n\n"; debugMessage(debugMsg,par);
-
+  Msg = "\n\n*******************************************************************\n";
+  Msg +="*******************    INVOKING  LOCAL SEARCH    ******************\n";
+  Msg +="*******************************************************************\n\n"; //debugMessage(debugMsg,par);
+  std::cout <<Msg;
 
   Search::localSearch(configuration, conn, App_manager,  par );
   debugMsg ="\n**********************    END LOCAL SEARCH   ********************\n\n\n"; debugMessage(debugMsg,par);
@@ -207,8 +229,10 @@ int main(int argc, char **argv)
              << "     ncores = " << it->currentCores_d <<  "      FO = " << it->baseFO << std::endl;
   }
 
-  std::cout<<"\n********************   END FINAL SOLUTION   **************************\n\n";
+  std::cout<<"\n*******************************************************************\n\n";
 
+
+  DBclose(conn);
 
 
 }

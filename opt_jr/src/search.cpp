@@ -297,7 +297,6 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
          DELTA_tmp=DELTA_fo_App_i+DELTA_fo_App_j;
 
 
-         std::cout<<" \n\n DELTA_tmp: "<< DELTA_tmp<<" it->real_i  "  <<it->real_i<<"     DELTA_fo_App_i " << DELTA_fo_App_i <<"\n\n\n\n";
 
 
          if (DELTA_tmp<DELTA_pair)

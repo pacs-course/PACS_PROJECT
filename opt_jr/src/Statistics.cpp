@@ -35,5 +35,6 @@ void readStatistics(sStatistics &statistics, optJrParameters &par)
 	{
     std::cout <<"              "<< el.get_iteration() <<"           "<< el.get_size() << "           " << el.get_FO_Total()<< "\n";
 	}
+  std::cout<<"*************************************************\n\n";
 
 }

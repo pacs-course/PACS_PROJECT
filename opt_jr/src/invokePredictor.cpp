@@ -65,6 +65,9 @@ char* invokePredictor(sConfiguration  &configuration, MYSQL *conn, int nNodes, i
 			break;
 		case DAGSIM:
 
+		MYSQL_ROW row=NULL;
+		if (par.get_cache()==1)
+		{
 			debugMsg= "Chosen simulator: DAGSIM"; debugMessage(debugMsg, par);
 
 			// Check if there is an output from dagSim already cached in the DB
@@ -88,13 +91,15 @@ char* invokePredictor(sConfiguration  &configuration, MYSQL *conn, int nNodes, i
 
 
 		  debugMsg= "From invokePredictor executing SQL STATEMENT below "; debugMessage(debugMsg, par);
-			MYSQL_ROW row = executeSQL(conn, statement, par);
+			row = executeSQL(conn, statement, par);
+			}
 
 
 
-			if (row == NULL)
+			if (row == NULL || par.get_cache()==0)
 			{
-				debugMsg= "Last SQL statement returned 0 rows. Invoking predictor..."; debugMessage(debugMsg, par);
+				if (par.get_cache()==1)
+					debugMsg= "Last SQL statement returned 0 rows. Invoking predictor..."; debugMessage(debugMsg, par);
 
 				// Replaced FAKE variable with RESULTS_HOME
 				sprintf(path, "%s/%s/%s/logs", const_cast<char*>(configuration["RESULTS_HOME"].c_str()), readFolder(path), appId);
