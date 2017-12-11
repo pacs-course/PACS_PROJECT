@@ -16,25 +16,28 @@ class Candidate{
 
  public:
 
-  /* First application */
+   /* Static values */
 
   Application  *app_i;      ///< Pointer to the first Application
+  Application  *app_j;       ///< Pointer to the second Application
 
 	int newCoreAssignment_i;	///< Application cores after the move (first application)
-	int delta_i;				      ///< Delta cores following the move (first application)
-	double real_i;				    ///< Real predictor value calculated (MPI) after the interpolation (first application)
+  int newCoreAssignment_j;   ///< Application cores after the move (second application)
 
-	/* Second application */
-
-  Application  *app_j;       ///< Pointer to the second Application
-	int newCoreAssignment_j;   ///< Application cores after the move (second application)
+  double deltaFO;				///< Delta Objective Function following the move
+  int delta_i;				      ///< Delta cores following the move (first application)
 	int delta_j;               ///< Delta cores following the move (second application)
-	double real_j;             ///< Real predictor value calculated (MPI) after the interpolation (second application)
+
+
+  /* Dynamic values */
+
+  double real_i;				    ///< Real predictor value calculated (MPI) after the interpolation (first application)
+  double real_j;             ///< Real predictor value calculated (MPI) after the interpolation (second application)
 
 
 	int nodes_i, nodes_j;
 
-	double deltaFO;				///< Delta Objective Function following the move
+
 
 
   /// Constructor
@@ -48,12 +51,12 @@ class Candidate{
 
 
 /**
-list container used in localSearch to store Candidates with increasing deltaFO
+List container used in localSearch to store Candidates with increasing deltaFO
 */
 using sCandidates = std::list<Candidate>;
 
 /**
-  addCandidate stores build a "Candidate" object and stores it in a sCandidates container
+  "addCandidate" stores build a "Candidate" object and stores it in a sCandidates container
   ordered by increasing delta FO
 */
 void addCandidate(sCandidates  &cand,  Application &app_i, Application &app_j,

@@ -148,7 +148,7 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
 
   std::string debugMsg;
 	int index = 0;
-	double TotalFO;
+	//double TotalFO;
 	int how_many;
 	int nCoreMov;
 	int MAX_PROMISING_CONFIGURATIONS = par.get_K();
@@ -311,7 +311,7 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
 
       std::cout << " \n\n\n\n GLOBAL FO: "<< TotalFO <<"\n\n\n\n\n"<<std::endl;
 
-      /*
+
 			sprintf(debugMsg,"\n\nGlobal obj function %lf", TotalFO);debugMessage(debugMsg, par);
 			// Update Statistics
 			addStatistics(&firstS, &currentS, iteration, how_many, TotalFO);

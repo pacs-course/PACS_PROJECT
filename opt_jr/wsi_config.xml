@@ -20,4 +20,6 @@
 <entry key="OptDB_pass">cia!98;qwQQQi</entry>
 <entry key="AppsPropDB_pass">cia!98;qwQQQi</entry>
 <entry key="OptDB_dbName">database_1</entry>
+<entry key="THREADS_NUMBER">2</entry>
+
 </properties>

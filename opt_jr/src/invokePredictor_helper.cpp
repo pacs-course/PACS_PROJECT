@@ -124,7 +124,7 @@ char * extractRowN(char *text, int row)
 	{
 		iLine = 0;
 		while(text[iText] != '\n' &&
-				iText < strlen(text))
+				iText < (int)strlen(text))
 		{
 			line[iLine++] = text[iText++];
 		}
@@ -132,7 +132,7 @@ char * extractRowN(char *text, int row)
 		iText++;
 	}
 
-	if (row > countRow) return "stop";
+	if (row > countRow) return (char*)"stop";
 	line[iLine] = '\0';
 
 	if (line == NULL)
@@ -209,7 +209,7 @@ char *_run(char * cmd, optJrParameters &par)
 
 {
 	int BUFSIZE = 10240;
-	
+
 	std::string debugMsg;
 	int outcome;
 	char *buf = (char *)malloc(BUFSIZE);

@@ -8,7 +8,7 @@ GLOBAL VARIABLES USEFUL TO CREATE OBJECT OF CLASS OPTJRPARAMETER
 
 
 
-#define ARGS 8 ///< number of arguments from command line
+#define ARGS 9 ///< number of arguments from command line
 
 #define FILENAME "-f="
 #define NUM_N "-n="
@@ -17,6 +17,7 @@ GLOBAL VARIABLES USEFUL TO CREATE OBJECT OF CLASS OPTJRPARAMETER
 #define MAX_ITERATIONS "-i="
 #define SIMULATOR "-s="
 #define GLOBAL_FO_CALCULATION "-g"
+#define CACHE "-c"
 
 #define NUMBER 0
 #define STRING 1
@@ -41,12 +42,12 @@ GLOBAL VARIABLES USEFUL TO CREATE OBJECT OF CLASS OPTJRPARAMETER
 Explain usage of the OPT_JR_CPP program
 Invoked if the number of parameters send at command line is incorrect
 */
-void Usage();
+void Usage(int argc);
 
 /**
 Function to parse argument from command line;
 Invoked by optJrParameters constructor
 */
-char* parseArg(char * string, char * gap, int type);
+char* parseArg(char * string, char * gap, int type, int argc);
 
 #endif

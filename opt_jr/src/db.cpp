@@ -67,7 +67,7 @@ MYSQL *con = mysql_init(NULL);
   }
 
   if (mysql_real_connect(con, host, login, passw,
-          dbName, 0, NULL, 0) == NULL) DBerror(con, "mysql_real_connect");
+          dbName, 0, NULL, 0) == NULL) DBerror(con, (char*)"mysql_real_connect");
 
   return con;
 }

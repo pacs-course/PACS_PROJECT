@@ -7,6 +7,7 @@
 #define LUNDSTROM 1
 
 #include <string>
+#include "readConfigurationFile.hh"
 
 /**
     optJrParameters saves parameters received from command line; once they are saved
@@ -23,10 +24,12 @@ class optJrParameters
 	int simulator;			///< The simulator type: either dagSim or Lundstrom
 	int number;				///< Number of total cores available for the applications (N)
 	int maxIterations;		///< The maximum number of iterations in LocalSearch
-	//int numberOfThreads;	///< The number of MPI threads
+	int numberOfThreads;	///< The number of MPI threads
 public:
   /// The constructor takes in input all the input from command line
   optJrParameters(char **args, int argc);
+  /// Set the number of threads: it looks in configuration file (0= "no parallelization")
+  void set_numberOfThreads(sConfiguration &configuration);
   /// Returns the name of the file with applications
   const std::string get_filename();
   /// Returns the debug option (1==YES, 0==NO)
@@ -43,6 +46,8 @@ public:
   const int get_number();
   /// Returns the maximum number of iteration for localSearch
   const int get_maxIteration();
+  /// Returns the number of threads to use in parallelization; if it is 0 there is no parallelization
+  const int get_numberOfThreads();
 };
 
 #endif

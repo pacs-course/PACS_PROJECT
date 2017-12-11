@@ -9,4 +9,6 @@ The original project is available at: https://github.com/eubr-bigsea/opt_jr
 BUILD DOCUMENTATION:
 
 run in the doc directory: doxygen opt_jr_doxy
+requirments to build documentation: doxygen and graphviz
+(sudo yum install ..)
 

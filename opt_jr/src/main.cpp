@@ -23,32 +23,10 @@ int main(int argc, char **argv)
 {
   std::string debugMsg; // string to store debug messages
 
-  /**
-     1)  Read parameters from command line and save them in an "optJrParameters" object
-  */
-
-  std::cout<<"\n\n*******************************************************************\n";
-  std::cout<<"**************** READING COMMAND-LINE PARAMETERS ******************\n";
-  std::cout<<"*******************************************************************\n";
-
-
-  optJrParameters par(argv,argc); // object "par" has execution parameters
-
-
-  std::cout<<"<check message>: i parametri memorizzati per l'esecuzione di OPT_JR_CPP sono:\n\n";
-  std::cout<<"filename: "<<par.get_filename()<<std::endl;
-  std::cout<<"debug: "<<par.get_debug()<<std::endl;
-  std::cout<<"cache: "<<par.get_cache()<<std::endl;
-  std::cout<<"globalFOcalculation: "<<par.get_globalFOcalculation()<<std::endl;
-  std::cout<<"K: "<<par.get_K()<<std::endl;
-  std::cout<<"simulator: "<<par.get_simulator()<<std::endl;
-  std::cout<<"number: "<<par.get_number()<<std::endl;
-  std::cout<<"maxIteration: "<<par.get_maxIteration()<<std::endl;
-  std::cout<<"*******************************************************************\n\n\n";
 
 
   /**
-    2) read informations from "wsi_config.xml" file and save it in a "sConfiguration" object (which is unordered_map(string,string))
+    1) read informations from "wsi_config.xml" file and save it in a "sConfiguration" object (which is unordered_map(string,string))
   */
   std::cout<<"\n\n*******************************************************************\n";
   std::cout<<"************     READING CONFIGURATION FILE     *******************\n";
@@ -62,6 +40,35 @@ int main(int argc, char **argv)
     std::cout<< i->first <<": "<<i->second<<std::endl;
   }
   std::cout<<"*******************************************************************\n\n\n";
+
+
+  /**
+     2)  Read execution parameters from command line and configuration file and save them in an "optJrParameters" object
+  */
+
+  std::cout<<"\n\n*******************************************************************\n";
+  std::cout<<"**************** READING EXECUTION PARAMETERS ******************\n";
+  std::cout<<"*******************************************************************\n";
+
+
+  optJrParameters par(argv,argc); // object "par" has execution parameters
+  par.set_numberOfThreads(configuration); // set the number of threads as specified in configuration file
+
+
+  std::cout<<"<check message>: i parametri memorizzati per l'esecuzione di OPT_JR_CPP sono:\n\n";
+  std::cout<<"filename: "<<par.get_filename()<<std::endl;
+  std::cout<<"debug: "<<par.get_debug()<<std::endl;
+  std::cout<<"cache: "<<par.get_cache()<<std::endl;
+  std::cout<<"globalFOcalculation: "<<par.get_globalFOcalculation()<<std::endl;
+  std::cout<<"K: "<<par.get_K()<<std::endl;
+  std::cout<<"simulator: "<<par.get_simulator()<<std::endl;
+  std::cout<<"number: "<<par.get_number()<<std::endl;
+  std::cout<<"maxIteration: "<<par.get_maxIteration()<<std::endl;
+  std::cout<<"numberOfThreads: "<<par.get_numberOfThreads()<<std::endl;
+
+  std::cout<<"*******************************************************************\n\n\n";
+
+
 
   /**
      3) Connect to the Database
@@ -78,7 +85,7 @@ int main(int argc, char **argv)
             const_cast<char*>(configuration["OptDB_dbName"].c_str())
             );
 
-  if (conn == NULL) DBerror(conn, "open_db: Opening the database");
+  if (conn == NULL) DBerror(conn, (char*)"open_db: Opening the database");
 
   std::cout<<"*******************************************************************\n\n\n";
 
@@ -193,8 +200,8 @@ int main(int argc, char **argv)
   for (auto it = App_manager.APPs.begin(); it!=App_manager.APPs.end(); ++it)
   {
 
-    debugMsg = " Application   " + it->session_app_id + "      w = " + std::to_string(it->w)//NB FO non viene aggiornato in localsearch?
-             + "     ncores = " + std::to_string(it->currentCores_d) +  "      FO = " + std::to_string(it->baseFO); debugMessage(debugMsg, par);
+    std::cout<< " Application   " << it->session_app_id << "      w = " << it->w
+             << "     ncores = " << it->currentCores_d <<  "      FO = " << it->baseFO << std::endl;
   }
 
   std::cout<<"*******************************************************************\n\n";

@@ -35,8 +35,8 @@ sConfiguration  readConfigurationFile()
 	  	if (line != NULL)
 	    	if (strstr(line, "entry key=") != NULL)
 	    	{
-	    		strcpy(var, extractItem(line, "\"", "\""));
-	    		strcpy(val, extractItem(line, ">", "<"));
+	    		strcpy(var, extractItem(line, (char*)"\"", (char*)"\""));
+	    		strcpy(val, extractItem(line, (char*)">", (char*)"<"));
 					//config.push_back(std::make_pair(var,val));
 					config.insert(std::make_pair(var,val));
 					//printf("%s",var);

@@ -19,7 +19,7 @@ double ObjFun::ObjFunctionComponent(sConfiguration &configuration, MYSQL *conn, 
 	double output;
 
 	/* The memory pattern can be anything such as "*" */
-	app.R_d = atof(invokePredictor( configuration, conn, 1, app.currentCores_d, "*", app.datasetSize,  const_cast<char*>((app.session_app_id).c_str()),
+	app.R_d = atof(invokePredictor( configuration, conn, 1, app.currentCores_d, (char*)"*", app.datasetSize,  const_cast<char*>((app.session_app_id).c_str()),
 													const_cast<char*>((app.app_id).c_str()), const_cast<char*>((app.stage).c_str()), par,RESIDUAL_EXECUTION_TIME));
 
 

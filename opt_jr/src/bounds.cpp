@@ -42,7 +42,7 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 	 *   First evaluation, with data guessed by findbound
 	 */
 
-	predictorOutput = atoi(invokePredictor(configuration, conn, nNodes, nCores, "*", app.datasetSize, const_cast<char*>((app.session_app_id).c_str()),
+	predictorOutput = atoi(invokePredictor(configuration, conn, nNodes, nCores, (char*)"*", app.datasetSize, const_cast<char*>((app.session_app_id).c_str()),
 													const_cast<char*>((app.app_id).c_str()), const_cast<char*>((app.stage).c_str()), par, flagDagsim));
 
 
@@ -77,7 +77,7 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 				}
 
 				nCores = nCores + STEP; //add the cores NB: possible improvement: add more than one VM at a time
-				predictorOutput = atof(invokePredictor(configuration, conn, nNodes, nCores, "8G", app.datasetSize, const_cast<char*>((app.session_app_id).c_str()),
+				predictorOutput = atof(invokePredictor(configuration, conn, nNodes, nCores, (char*)"8G", app.datasetSize, const_cast<char*>((app.session_app_id).c_str()),
 																const_cast<char*>((app.app_id).c_str()), const_cast<char*>((app.stage).c_str()), par, WHOLE_DAGSIM));
 
 				debugMsg="Bound evaluation for " + app.session_app_id +
@@ -117,7 +117,7 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 					break;
 				}
 
-				predictorOutput = atof(invokePredictor(configuration, conn, nNodes, nCores, "8G", app.datasetSize, const_cast<char*>((app.session_app_id).c_str()),
+				predictorOutput = atof(invokePredictor(configuration, conn, nNodes, nCores, (char*)"8G", app.datasetSize, const_cast<char*>((app.session_app_id).c_str()),
 				const_cast<char*>((app.app_id).c_str()), const_cast<char*>((app.stage).c_str()), par, WHOLE_DAGSIM));
 
 				debugMsg="Bound evaluation for" + app.session_app_id +

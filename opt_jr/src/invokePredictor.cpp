@@ -125,14 +125,14 @@ char* invokePredictor(sConfiguration  &configuration, MYSQL *conn, int nNodes, i
 				switch(flagDagsim)
 				{
 					case RESIDUAL_DAGSIM:
-						systemTime = atof(extractWord(extractRowN(readFile("/tmp/outputDagsim.txt"),3), 3));
-						stageTime = atof(extractWord(extractRowN(extractRowMatchingPattern(readFile("/tmp/outputDagsim.txt"), stage),1), 4));
+						systemTime = atof(extractWord(extractRowN(readFile((char*)"/tmp/outputDagsim.txt"),3), 3));
+						stageTime = atof(extractWord(extractRowN(extractRowMatchingPattern(readFile((char*)"/tmp/outputDagsim.txt"), stage),1), 4));
 
 						sprintf(output1, "%lf", (systemTime - stageTime));
 						debugMsg="Residual time: "; debugMsg+=output1; debugMessage(debugMsg, par);
 						break;
 					case WHOLE_DAGSIM:
-						strcpy(output1, extractWord(extractRowN(readFile("/tmp/outputDagsim.txt"),1),3));
+						strcpy(output1, extractWord(extractRowN(readFile((char*)"/tmp/outputDagsim.txt"),1),3));
 						break;
 					default:
 						printf("FATAL ERROR: invokePredictor: unknown case %d\n", flagDagsim);

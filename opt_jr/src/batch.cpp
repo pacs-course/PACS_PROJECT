@@ -209,14 +209,14 @@ void Batch::fixInitialSolution(optJrParameters &par)
 
 			if ((*it)->currentCores_d == 0)
 			{
-				printf("\nFatal Error: FixInitialSolution: app %s has %d cores after fix\n", (*it)->session_app_id, (*it)->currentCores_d);
+				printf("\nFatal Error: FixInitialSolution: app %s has %d cores after fix\n", (*it)->session_app_id.c_str(), (*it)->currentCores_d);
 				exit(-1);
 			}
 			if (addedCores > 0)
 			{
 
 				debugMsg="adding cores to App " + (*it)->session_app_id + " added Cores: " +  std::to_string(addedCores) ;debugMessage(debugMsg, par);
-				debugMsg," application_id " + (*it)->session_app_id + " new cores " + std::to_string((int)(*it)->currentCores_d) + " moved cores "+ std::to_string(addedCores) ;debugMessage(debugMsg, par);
+				debugMsg=" application_id " + (*it)->session_app_id + " new cores " + std::to_string((int)(*it)->currentCores_d) + " moved cores "+ std::to_string(addedCores) ;debugMessage(debugMsg, par);
 				residualCores = residualCores - addedCores;
 			}
 			it++;
