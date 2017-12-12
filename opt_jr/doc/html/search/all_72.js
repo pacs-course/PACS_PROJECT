@@ -15,6 +15,5 @@ var searchData=
   ['real_5fi',['real_i',['../classCandidate.html#a93a050a3128d98f446176d9411535eea',1,'Candidate']]],
   ['real_5fj',['real_j',['../classCandidate.html#ad7e4bca76815c11f378f005baa93bffb',1,'Candidate']]],
   ['replace',['replace',['../invokePredictor__helper_8cpp.html#a66e21ca5b85d790af9025eb13f4beca5',1,'replace(char *text, char *newLine):&#160;invokePredictor_helper.cpp'],['../invokePredictor__helper_8hh.html#a66e21ca5b85d790af9025eb13f4beca5',1,'replace(char *text, char *newLine):&#160;invokePredictor_helper.cpp']]],
-  ['residual_5fdagsim',['RESIDUAL_DAGSIM',['../invokePredictor_8hh.html#a016c9fba38e790ceafd4d9843f2dc564',1,'invokePredictor.hh']]],
-  ['residual_5fexecution_5ftime',['RESIDUAL_EXECUTION_TIME',['../application_8hh.html#acd4b89499372ef05e013036e76151890',1,'application.hh']]]
+  ['residual_5fdagsim',['RESIDUAL_DAGSIM',['../invokePredictor_8hh.html#a016c9fba38e790ceafd4d9843f2dc564',1,'invokePredictor.hh']]]
 ];

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['ncores_5falgorithm',['NCORES_ALGORITHM',['../application_8hh.html#a0c205e83d269cb93a701adda1f45156d',1,'application.hh']]],
   ['ncores_5fdb_5fd',['nCores_DB_d',['../classApplication.html#a95104d330c9c7ed2c1017b4938a39a9a',1,'Application']]],
   ['newcoreassignment_5fi',['newCoreAssignment_i',['../classCandidate.html#a859313416296683b7c0496d842dab48a',1,'Candidate']]],
   ['newcoreassignment_5fj',['newCoreAssignment_j',['../classCandidate.html#a1203966358bd849169b5f967de3c2bf7',1,'Candidate']]],

@@ -7,7 +7,6 @@
 
 
 /*
-	-This file is not substantially changed from original C version
 	-Here are declared the functions to manage databases
  */
 

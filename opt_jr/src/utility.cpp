@@ -1,6 +1,20 @@
 #include "utility.hh"
 
 
+
+
+
+
+double elapsedTime(struct timeval  tv1, struct timeval tv2)
+{
+	return (double) (tv2.tv_usec - tv1.tv_usec) / 1000000 +
+	                     (double) (tv2.tv_sec - tv1.tv_sec);
+}
+
+
+
+
+
 /*
  * 		Name:					doubleCompare
  * 		Input parameters:		double a, double b

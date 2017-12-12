@@ -91,17 +91,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="utility_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef UTILITY_HH</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define UTILITY_HH</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;sys/time.h&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="utility_8hh.html#ac29df3dcbefa1ce189e5990bde994025">    6</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="utility_8hh.html#ac29df3dcbefa1ce189e5990bde994025">epsilon</a> = 0.001; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="utility_8hh.html#ac29df3dcbefa1ce189e5990bde994025">    7</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="utility_8hh.html#ac29df3dcbefa1ce189e5990bde994025">epsilon</a> = 0.001; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordtype">int</span> <a class="code" href="utility_8cpp.html#a9d47b6f031f040e12b256b8aaca54671">doubleCompare</a>(<span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="utility_8cpp_html_a9d47b6f031f040e12b256b8aaca54671"><div class="ttname"><a href="utility_8cpp.html#a9d47b6f031f040e12b256b8aaca54671">doubleCompare</a></div><div class="ttdeci">int doubleCompare(double a, double b)</div><div class="ttdef"><b>Definition:</b> utility.cpp:14</div></div>
-<div class="ttc" id="utility_8hh_html_ac29df3dcbefa1ce189e5990bde994025"><div class="ttname"><a href="utility_8hh.html#ac29df3dcbefa1ce189e5990bde994025">epsilon</a></div><div class="ttdeci">const double epsilon</div><div class="ttdoc">precision in doubleCompare </div><div class="ttdef"><b>Definition:</b> utility.hh:6</div></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">double</span> <a class="code" href="utility_8cpp.html#affb98702b6d646743be567444260ac1f">elapsedTime</a>(<span class="keyword">struct</span> timeval  tv1, <span class="keyword">struct</span> timeval tv2);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">int</span> <a class="code" href="utility_8cpp.html#a9d47b6f031f040e12b256b8aaca54671">doubleCompare</a>(<span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="utility_8cpp_html_a9d47b6f031f040e12b256b8aaca54671"><div class="ttname"><a href="utility_8cpp.html#a9d47b6f031f040e12b256b8aaca54671">doubleCompare</a></div><div class="ttdeci">int doubleCompare(double a, double b)</div><div class="ttdef"><b>Definition:</b> utility.cpp:28</div></div>
+<div class="ttc" id="utility_8cpp_html_affb98702b6d646743be567444260ac1f"><div class="ttname"><a href="utility_8cpp.html#affb98702b6d646743be567444260ac1f">elapsedTime</a></div><div class="ttdeci">double elapsedTime(struct timeval tv1, struct timeval tv2)</div><div class="ttdef"><b>Definition:</b> utility.cpp:8</div></div>
+<div class="ttc" id="utility_8hh_html_ac29df3dcbefa1ce189e5990bde994025"><div class="ttname"><a href="utility_8hh.html#ac29df3dcbefa1ce189e5990bde994025">epsilon</a></div><div class="ttdeci">const double epsilon</div><div class="ttdoc">precision in doubleCompare </div><div class="ttdef"><b>Definition:</b> utility.hh:7</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

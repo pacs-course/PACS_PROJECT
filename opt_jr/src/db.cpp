@@ -5,7 +5,6 @@
 #include "debugmessage.hh"
 
 /*
-	-This file is not substantially changed from original C version
 	-Here are defined the functions to manage databases
  */
 

@@ -91,34 +91,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="objectiveFunction_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef OBJECTIVE_FUNCTION_HH</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define OBJECTIVE_FUNCTION_HH</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="application_8hh.html">application.hh</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="optjrParameters_8hh.html">optjrParameters.hh</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="batch_8hh.html">batch.hh</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classObjFun.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classObjFun.html">ObjFun</a> {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7">ObjFunctionComponent</a>(<a class="code" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;configuration, MYSQL *conn, <a class="code" href="classApplication.html">Application</a>  &amp;app, <a class="code" href="classoptJrParameters.html">optJrParameters</a> &amp;par);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="classObjFun.html#abb89a994d34b44ec4cb6e0e2562c0107">ObjFunctionComponentApprox</a>(<a class="code" href="classApplication.html">Application</a> &amp;App, <a class="code" href="classoptJrParameters.html">optJrParameters</a> &amp;par);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b">ObjFunctionGlobal</a>(<a class="code" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;configuration, MYSQL *conn, <a class="code" href="classBatch.html">Batch</a> &amp;App_manager, <a class="code" href="classoptJrParameters.html">optJrParameters</a> &amp;par);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="application_8hh.html">application.hh</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="optjrParameters_8hh.html">optjrParameters.hh</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="batch_8hh.html">batch.hh</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classObjFun.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classObjFun.html">ObjFun</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7">ObjFunctionComponent</a>(<a class="code" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;configuration, MYSQL *conn, <a class="code" href="classApplication.html">Application</a>  &amp;app, <a class="code" href="classoptJrParameters.html">optJrParameters</a> &amp;par);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="classObjFun.html#abb89a994d34b44ec4cb6e0e2562c0107">ObjFunctionComponentApprox</a>(<a class="code" href="classApplication.html">Application</a> &amp;App, <a class="code" href="classoptJrParameters.html">optJrParameters</a> &amp;par);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b">ObjFunctionGlobal</a>(<a class="code" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;configuration, MYSQL *conn, <a class="code" href="classBatch.html">Batch</a> &amp;App_manager, <a class="code" href="classoptJrParameters.html">optJrParameters</a> &amp;par);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="classObjFun_html_a7c9ecaa07ca776eb64f6e73f84513bc7"><div class="ttname"><a href="classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7">ObjFun::ObjFunctionComponent</a></div><div class="ttdeci">static double ObjFunctionComponent(sConfiguration &amp;configuration, MYSQL *conn, Application &amp;app, optJrParameters &amp;par)</div><div class="ttdef"><b>Definition:</b> objectiveFunction.cpp:15</div></div>
-<div class="ttc" id="classObjFun_html"><div class="ttname"><a href="classObjFun.html">ObjFun</a></div><div class="ttdef"><b>Definition:</b> objectiveFunction.hh:12</div></div>
-<div class="ttc" id="classObjFun_html_abb89a994d34b44ec4cb6e0e2562c0107"><div class="ttname"><a href="classObjFun.html#abb89a994d34b44ec4cb6e0e2562c0107">ObjFun::ObjFunctionComponentApprox</a></div><div class="ttdeci">static double ObjFunctionComponentApprox(Application &amp;App, optJrParameters &amp;par)</div><div class="ttdef"><b>Definition:</b> objectiveFunction.cpp:66</div></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classObjFun_html_a7c9ecaa07ca776eb64f6e73f84513bc7"><div class="ttname"><a href="classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7">ObjFun::ObjFunctionComponent</a></div><div class="ttdeci">static double ObjFunctionComponent(sConfiguration &amp;configuration, MYSQL *conn, Application &amp;app, optJrParameters &amp;par)</div><div class="ttdef"><b>Definition:</b> objectiveFunction.cpp:16</div></div>
+<div class="ttc" id="classObjFun_html"><div class="ttname"><a href="classObjFun.html">ObjFun</a></div><div class="ttdef"><b>Definition:</b> objectiveFunction.hh:16</div></div>
+<div class="ttc" id="classObjFun_html_abb89a994d34b44ec4cb6e0e2562c0107"><div class="ttname"><a href="classObjFun.html#abb89a994d34b44ec4cb6e0e2562c0107">ObjFun::ObjFunctionComponentApprox</a></div><div class="ttdeci">static double ObjFunctionComponentApprox(Application &amp;App, optJrParameters &amp;par)</div><div class="ttdef"><b>Definition:</b> objectiveFunction.cpp:67</div></div>
 <div class="ttc" id="readConfigurationFile_8hh_html_ab8f35b1da3261263c5e9c0e7c8921f5c"><div class="ttname"><a href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a></div><div class="ttdeci">std::unordered_map&lt; std::string, std::string &gt; sConfiguration</div><div class="ttdef"><b>Definition:</b> readConfigurationFile.hh:12</div></div>
 <div class="ttc" id="classBatch_html"><div class="ttname"><a href="classBatch.html">Batch</a></div><div class="ttdef"><b>Definition:</b> batch.hh:13</div></div>
 <div class="ttc" id="classoptJrParameters_html"><div class="ttname"><a href="classoptJrParameters.html">optJrParameters</a></div><div class="ttdef"><b>Definition:</b> optjrParameters.hh:17</div></div>
-<div class="ttc" id="classApplication_html"><div class="ttname"><a href="classApplication.html">Application</a></div><div class="ttdef"><b>Definition:</b> application.hh:48</div></div>
-<div class="ttc" id="classObjFun_html_ab36af3a1d85dbcaa79dc9b582b00928b"><div class="ttname"><a href="classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b">ObjFun::ObjFunctionGlobal</a></div><div class="ttdeci">static double ObjFunctionGlobal(sConfiguration &amp;configuration, MYSQL *conn, Batch &amp;App_manager, optJrParameters &amp;par)</div><div class="ttdef"><b>Definition:</b> objectiveFunction.cpp:94</div></div>
+<div class="ttc" id="classApplication_html"><div class="ttname"><a href="classApplication.html">Application</a></div><div class="ttdef"><b>Definition:</b> application.hh:47</div></div>
+<div class="ttc" id="classObjFun_html_ab36af3a1d85dbcaa79dc9b582b00928b"><div class="ttname"><a href="classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b">ObjFun::ObjFunctionGlobal</a></div><div class="ttdeci">static double ObjFunctionGlobal(sConfiguration &amp;configuration, MYSQL *conn, Batch &amp;App_manager, optJrParameters &amp;par)</div><div class="ttdef"><b>Definition:</b> objectiveFunction.cpp:95</div></div>
 <div class="ttc" id="application_8hh_html"><div class="ttname"><a href="application_8hh.html">application.hh</a></div></div>
 <div class="ttc" id="optjrParameters_8hh_html"><div class="ttname"><a href="optjrParameters_8hh.html">optjrParameters.hh</a></div></div>
 <div class="ttc" id="batch_8hh_html"><div class="ttname"><a href="batch_8hh.html">batch.hh</a></div></div>

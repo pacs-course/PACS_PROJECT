@@ -4,6 +4,7 @@
 #include <string>
 #include <mysql.h>
 #include <vector>
+#include <sys/time.h>
 
 #include "optjrparameters.hh"
 #include "readConfigurationFile.hh"
@@ -16,13 +17,27 @@
 #include "search.hh"
 #include "objectiveFunction.hh"
 #include "candidates.hh"
-
+#include "utility.hh"
+#include "writeResults.hh"
 
 
 int main(int argc, char **argv)
 {
   std::string debugMsg; // string to store debug messages
   std::string Msg;      //// string to store useful messages
+
+  struct timeval  tv_initial_main,
+          tv_initial_bounds,
+              tv_final_bounds,
+              tv_initial_nu,
+              tv_final_nu,
+            tv_initial_init,
+            tv_final_init,
+              tv_initial_fix,
+              tv_final_fix,
+              tv_initial_locals,
+              tv_final_locals,
+              tv_final_main;
 
 
 
@@ -93,6 +108,9 @@ int main(int argc, char **argv)
 
 
 
+  // Calculate the time taken
+  gettimeofday(&tv_initial_main, NULL);
+
 
   /**
     4) Open  *.csv  file with Applications data, and save it in a "Batch" object
@@ -133,7 +151,11 @@ int main(int argc, char **argv)
   Msg += "*******************************************************************\n"; //debugMessage(debugMsg,par);
   std::cout << Msg;
 
+  gettimeofday(&tv_initial_bounds, NULL);
+
   Bounds::calculateBounds(App_manager, configuration, conn, par );
+
+  gettimeofday(&tv_final_bounds, NULL);
 
   Msg="\n Final Bound results: ";
   for (auto it= App_manager.APPs.begin(); it!= App_manager.APPs.end();it++)
@@ -152,7 +174,9 @@ int main(int argc, char **argv)
   debugMsg +="************       COMPUTING NU INDICES         *******************\n";
   debugMsg +="*******************************************************************\n"; debugMessage(debugMsg,par);
 
+  gettimeofday(&tv_initial_nu, NULL);
   App_manager.calculate_nu(par);
+  gettimeofday(&tv_final_nu, NULL);
 
   debugMsg ="\n*********************    END COMPUTING NU INDICES    ********************\n\n\n"; debugMessage(debugMsg,par);
 
@@ -166,7 +190,11 @@ int main(int argc, char **argv)
   Msg +="*******************************************************************\n\n"; //debugMessage(debugMsg,par);
   std::cout << Msg;
 
+  gettimeofday(&tv_initial_fix, NULL);
+
   App_manager.fixInitialSolution(par);
+
+  gettimeofday(&tv_final_fix, NULL);
 
 
   Msg= " \nFixed Initial Solution: ";//debugMessage(debugMsg, par);
@@ -188,7 +216,12 @@ int main(int argc, char **argv)
   Msg +="************    INITIALIZE BASE OBJECTIVE FUNCTION   **************\n";
   Msg +="*******************************************************************\n\n"; //debugMessage(debugMsg,par);
   std::cout << Msg;
+
+  gettimeofday(&tv_initial_init, NULL);
+
   App_manager.initialize(configuration, conn, par);
+
+  gettimeofday(&tv_final_init, NULL);
 
 
   Msg = "\n Inizialization Objective Function Results:";
@@ -212,7 +245,15 @@ int main(int argc, char **argv)
   Msg +="*******************************************************************\n\n"; //debugMessage(debugMsg,par);
   std::cout <<Msg;
 
+  gettimeofday(&tv_initial_locals, NULL);
+
   Search::localSearch(configuration, conn, App_manager,  par );
+
+  gettimeofday(&tv_final_locals, NULL);
+
+  writeResults(conn, const_cast<char*>(configuration["DB_dbName"].c_str()),App_manager, par);
+
+
   debugMsg ="\n**********************    END LOCAL SEARCH   ********************\n\n\n"; debugMessage(debugMsg,par);
 
 
@@ -233,6 +274,19 @@ int main(int argc, char **argv)
 
 
   DBclose(conn);
+
+  gettimeofday(&tv_final_main, NULL);
+
+
+  debugMsg ="\n********************    time informations   *******************"; debugMessage(debugMsg,par);
+
+  debugMsg =  "FixInitial step elapsed time: " + std::to_string(elapsedTime(tv_initial_fix, tv_final_fix));debugMessage(debugMsg, par);
+  debugMsg = "Findbounds  elapsed time: " + std::to_string(elapsedTime(tv_initial_bounds, tv_final_bounds));debugMessage(debugMsg, par);
+  debugMsg = "Initialization elapsed time: " + std::to_string(elapsedTime(tv_initial_nu, tv_final_nu));debugMessage(debugMsg, par);
+  debugMsg = "LocalSearch step elapsed time: " + std::to_string(elapsedTime(tv_initial_locals, tv_final_locals));debugMessage(debugMsg, par);
+  debugMsg = "Overall elapsed time: " + std::to_string(elapsedTime(tv_initial_main, tv_final_main));debugMessage(debugMsg, par);
+  debugMsg ="\n***************************************************************\n\n\n"; debugMessage(debugMsg,par);
+
 
 
 }

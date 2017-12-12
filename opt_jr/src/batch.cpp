@@ -126,7 +126,7 @@ void Batch::initialize(sConfiguration  &configuration, MYSQL *conn, optJrParamet
   debugMsg =  "Information: INITIALIZE baseFo for all the applications" ;debugMessage(debugMsg, par);
 	for (auto it =APPs.begin(); it!= APPs.end(); it++)
 	{
-			it->mode = R_ALGORITHM;
+			it->mode = R_ALGORITHM; //currently only this method is supported
 			it->baseFO = ObjFun::ObjFunctionComponent(configuration, conn, *it, par);
 			it->initialBaseFO = it->baseFO;
 			debugMsg = "INITIALIZE BASE FO for APP "+ it->session_app_id
