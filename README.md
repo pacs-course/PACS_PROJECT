@@ -27,12 +27,17 @@ where:
 
 `-i represents the maximum number of iterations`
 
-#Example:
+
+
+#EXAMPLE
 
 `./OPT_JR -f="Test1.csv" -n=150  -i=10 -k=0 -d=y -c=y -s=dagSim -g=Y`
        
 In this case, OPT_JR is executed on a file Test1.csv, the total number of cores is 150, all the candidates are considered, the predictor used is dagSim, the maximum number of iterations is 10, the value of global objective function for each iteration will be printed in output. 
 
+
+#TEST:
+Some testing files are provided in tests directory. 
 
 
 
@@ -91,7 +96,11 @@ NOTE: MySQL's validate_password plugin is installed by default. This will requir
  > source PREDICTOR_CACHE_TABLE.sql;
 
 
-4) set wsi_config.xml configuration file
+4) set wsi_config.xml configuration file 
+
+5) Extract and move logp8 directory: 
+ > sudo mkdir /home/work
+ > sudo mv logP8 /home/work/logP8
 
 
 5) set and run the environmental variables in the settingEV.sh file
@@ -102,7 +111,9 @@ NOTE: MySQL's validate_password plugin is installed by default. This will requir
   > make
 
 
-look at first point for usage instructions 
+
+
+Look at first point for usage instructions.
 
 
 

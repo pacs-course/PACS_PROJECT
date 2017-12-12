@@ -2,12 +2,13 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 <comment/>
-<entry key="RESOPT_HOME">/home/work/OPT_IC</entry>
-<entry key="RESULTS_HOME">/vagrant/PROJECT_SPARK/LogP8</entry>
+<entry key="THREADS_NUMBER">2</entry>
+<entry key="RESOPT_HOME">/home/work/LogP8</entry>
+<entry key="RESULTS_HOME">/home/work/LogP8</entry>
 <entry key="AppsPropDB_port">3306</entry>
 <entry key="DB_port">3306</entry>
 <entry key="DAGSIM_HOME">/vagrant/PROJECT_SPARK/dagSim-master</entry>
-<entry key="LUNDSTROM_HOME">/home/work/spark-lundstrom-master</entry>
+<entry key="LUNDSTROM_HOME"></entry>
 <entry key="OptDB_user">root</entry>
 <entry key="AppsPropDB_user">root</entry>
 <entry key="AppsPropDB_IP">localhost</entry>
@@ -18,6 +19,6 @@
 <entry key="OptDB_pass">cia!98;qwQQQi</entry>
 <entry key="AppsPropDB_pass">cia!98;qwQQQi</entry>
 <entry key="OptDB_dbName">database_1</entry>
-<entry key="THREADS_NUMBER">2</entry>
+
 
 </properties>

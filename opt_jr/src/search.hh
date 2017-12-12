@@ -17,7 +17,8 @@ class Search{
 
   static sCandidates approximatedLoop( Batch &App_manager, int &iteration, optJrParameters &par );
   static void checkTotalNodes(int N, Batch &App_manager);
-
+  static void sequencial_localSearch(sConfiguration &configuration, MYSQL *conn, Batch &App_manager , optJrParameters &par);
+  static void openMP_localSearch(sConfiguration &configuration, MYSQL *conn, Batch &App_manager , optJrParameters &par);
 public:
   /**
     localSearch perform a local search of a solution minimizing the objective function;
