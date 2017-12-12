@@ -18,8 +18,8 @@ class Candidate{
 
    /* Static values */
 
-  Application  *app_i;      ///< Pointer to the first Application
-  Application  *app_j;       ///< Pointer to the second Application
+  Application  app_i;      ///< Copy of the first Application
+  Application  app_j;       ///< Copy of the second Application
 
 	int newCoreAssignment_i;	///< Cores after the move (first application)
   int newCoreAssignment_j;   ///< Cores after the move (second application)
@@ -41,7 +41,7 @@ class Candidate{
 
 
   /// Constructor
-  Candidate(Application *i, Application *j, int NCi, int NCj, double D_FO, int d_i, int d_j ): app_i(i), app_j(j), newCoreAssignment_i(NCi), newCoreAssignment_j(NCj),deltaFO(D_FO), delta_i(d_i), delta_j(d_j) {};
+  Candidate(Application i, Application j, int NCi, int NCj, double D_FO, int d_i, int d_j ): app_i(i), app_j(j), newCoreAssignment_i(NCi), newCoreAssignment_j(NCj),deltaFO(D_FO), delta_i(d_i), delta_j(d_j) {};
 
 
 

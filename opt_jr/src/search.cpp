@@ -162,7 +162,7 @@ Sequencial localSearch
 
 void Search::sequencial_localSearch(sConfiguration &configuration, MYSQL *conn, Batch &App_manager , optJrParameters &par)
 {
-  Application * application_i, *application_j;
+  //Application * application_i, *application_j;
   sCandidates sCandidateApproximated ;
 
   std::string debugMsg;
@@ -212,6 +212,7 @@ void Search::sequencial_localSearch(sConfiguration &configuration, MYSQL *conn, 
     int cores_i, cores_j;
     double DELTA_pair=0, DELTA_tmp;
     double DELTA_fo_App_i_tmp, DELTA_fo_App_j_tmp;
+    //std::string sID_i, sID_j, ID_i, ID_j;
 
     checkTotalNodes(par.get_number(), App_manager);
 
@@ -227,40 +228,40 @@ void Search::sequencial_localSearch(sConfiguration &configuration, MYSQL *conn, 
         break;
       }
 
-      application_i = it->app_i;
-      application_j = it->app_j;
+      //application_i = it->app_i;
+      //application_j = it->app_j;
 
 
-      debugMsg= "Comparing " + application_i->session_app_id + " with " + application_j->session_app_id; debugMessage(debugMsg, par);
+      debugMsg= "Comparing " + it->app_i.session_app_id + " with " + it->app_j.session_app_id; debugMessage(debugMsg, par);
 
-      nCoreMov = std::max(application_i->V, application_j->V);
+      nCoreMov = std::max(it->app_i.V, it->app_j.V);
 
-      DELTAVM_i = nCoreMov/application_i->V;
-      debugMsg= "app " + application_i->session_app_id + "   DELTAVM_i: " + std::to_string(DELTAVM_i); debugMessage(debugMsg, par);
-      DELTAVM_j = nCoreMov/application_j->V;
-      debugMsg= "app " + application_j->session_app_id + "    DELTAVM_j: " + std::to_string(DELTAVM_j); debugMessage(debugMsg, par);
+      DELTAVM_i = nCoreMov/it->app_i.V;
+      debugMsg= "app " + it->app_i.session_app_id + "   DELTAVM_i: " + std::to_string(DELTAVM_i); debugMessage(debugMsg, par);
+      DELTAVM_j = nCoreMov/it->app_j.V;
+      debugMsg= "app " + it->app_j.session_app_id + "    DELTAVM_j: " + std::to_string(DELTAVM_j); debugMessage(debugMsg, par);
 
 
       // Change the currentCores, but rollback later
-      debugMsg = "app " + application_i->session_app_id + "     currentCores: " + std::to_string((int)application_i->currentCores_d); debugMessage(debugMsg, par);
-      debugMsg = "app " + application_j->session_app_id + "     currentCores: " + std::to_string((int)application_j->currentCores_d); debugMessage(debugMsg, par);
+      debugMsg = "app " + it->app_i.session_app_id + "     currentCores: " + std::to_string((int)it->app_i.currentCores_d); debugMessage(debugMsg, par);
+      debugMsg = "app " + it->app_j.session_app_id + "     currentCores: " + std::to_string((int)it->app_j.currentCores_d); debugMessage(debugMsg, par);
 
-      application_i->currentCores_d = application_i->currentCores_d + DELTAVM_i*application_i->V;
-      application_j->currentCores_d = application_j->currentCores_d - DELTAVM_j*application_j->V;
+      it->app_i.currentCores_d = it->app_i.currentCores_d + DELTAVM_i*it->app_i.V;
+      it->app_j.currentCores_d = it->app_j.currentCores_d - DELTAVM_j*it->app_j.V;
 
-      debugMsg = "After cores exchange: app " + application_i->session_app_id + " currentCores " + std::to_string( (int)application_i->currentCores_d); debugMessage(debugMsg, par);
-      debugMsg = "After cores exchange: app " + application_j->session_app_id + " currentCores " + std::to_string( (int)application_j->currentCores_d); debugMessage(debugMsg, par);
+      debugMsg = "After cores exchange: app " + it->app_i.session_app_id + " currentCores " + std::to_string( (int)it->app_i.currentCores_d); debugMessage(debugMsg, par);
+      debugMsg = "After cores exchange: app " + it->app_j.session_app_id + " currentCores " + std::to_string( (int)it->app_j.currentCores_d); debugMessage(debugMsg, par);
 
-      if (application_i->currentCores_d > 0 && application_j->currentCores_d > 0)
+      if (it->app_i.currentCores_d > 0 && it->app_j.currentCores_d > 0)
       {
 
-        application_i->mode= R_ALGORITHM; application_j->mode= R_ALGORITHM;
+        it->app_i.mode= R_ALGORITHM; it->app_j.mode= R_ALGORITHM;
 
 
           // No openmp
           debugMsg =  " CALLING OBJ_FUNCTION_COMPONENT \n\n"; debugMessage(debugMsg, par);
-          DELTA_fo_App_i = ObjFun::ObjFunctionComponent(configuration, conn, *application_i, par) - application_i->baseFO;
-          DELTA_fo_App_j = ObjFun::ObjFunctionComponent(configuration, conn, *application_j, par) - application_j->baseFO;
+          DELTA_fo_App_i = ObjFun::ObjFunctionComponent(configuration, conn, it->app_i, par) - it->app_i.baseFO;
+          DELTA_fo_App_j = ObjFun::ObjFunctionComponent(configuration, conn, it->app_j, par) - it->app_j.baseFO;
 
 
 
@@ -274,28 +275,28 @@ void Search::sequencial_localSearch(sConfiguration &configuration, MYSQL *conn, 
         {
           DELTA_pair=DELTA_tmp;
           index_pair=tmp;
-          cores_i=application_i->currentCores_d;
-          cores_j=application_j->currentCores_d;
+          cores_i=it->app_i.currentCores_d;
+          cores_j=it->app_j.currentCores_d;
           DELTA_fo_App_i_tmp = DELTA_fo_App_i;
           DELTA_fo_App_j_tmp = DELTA_fo_App_j;
         }
 
-        debugMsg = "app " + application_i->session_app_id + " DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i); debugMessage(debugMsg, par);
-        debugMsg = "app " + application_j->session_app_id + " DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j); debugMessage(debugMsg, par);
+        debugMsg = "app " + it->app_i.session_app_id + " DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i); debugMessage(debugMsg, par);
+        debugMsg = "app " + it->app_j.session_app_id + " DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j); debugMessage(debugMsg, par);
         debugMsg= "\n      TOTAL DELTA FO : " +  std::to_string(DELTA_tmp) + "\n\n"; debugMessage(debugMsg, par);
 
       }
       // Restore previous number of cores
 
-      application_i->currentCores_d = application_i->currentCores_d - DELTAVM_i * application_i->V;
-      application_j->currentCores_d = application_j->currentCores_d + DELTAVM_j * application_j->V;
+    //  application_i->currentCores_d = application_i->currentCores_d - DELTAVM_i * application_i->V;
+      //it->app_j->currentCores_d = it->app_j->currentCores_d + DELTAVM_j * it->app_j->V;
       tmp++;
 
 
 
     }
 
-    //TODO: improve this part
+
 
     if(index_pair!=-1)
     {
@@ -304,16 +305,34 @@ void Search::sequencial_localSearch(sConfiguration &configuration, MYSQL *conn, 
       {
         it++;
       }
+      // potrei andare per copia, scorrere app in batch e trovare quelle con session app_id e ID selezionati:
+
+        for (auto &elem : App_manager.APPs)
+        {
+          if (it->app_i.app_id==elem.app_id && it->app_i.session_app_id==elem.session_app_id)
+          {
+            elem.currentCores_d = cores_i;
+            elem.baseFO=it->app_i.baseFO +  DELTA_fo_App_i_tmp;
+          }
+          if (it->app_j.app_id==elem.app_id && it->app_j.session_app_id==elem.session_app_id)
+          {
+            elem.currentCores_d = cores_j;
+            elem.baseFO=it->app_i.baseFO +  DELTA_fo_App_j_tmp;
+          }
+
+        }
+
+      /*
       it->app_i->currentCores_d = cores_i;
       it->app_i->baseFO=it->app_i->baseFO +  DELTA_fo_App_i_tmp;
       it->app_j->currentCores_d = cores_j;
       it->app_j->baseFO=it->app_j->baseFO +  DELTA_fo_App_j_tmp;
+      */
     }
 
 
     if (par.get_globalFOcalculation())
     {
-
 
       TotalFO = ObjFun::ObjFunctionGlobal(configuration, conn, App_manager, par);
 
@@ -341,7 +360,7 @@ void Search::sequencial_localSearch(sConfiguration &configuration, MYSQL *conn, 
 
 void Search::openMP_localSearch(sConfiguration &configuration, MYSQL *conn, Batch &App_manager , optJrParameters &par)
 {
-  Application * application_i, *application_j;
+  //Application * application_i, *application_j;
   sCandidates sCandidateApproximated ;
 
   std::string debugMsg;
@@ -398,15 +417,15 @@ void Search::openMP_localSearch(sConfiguration &configuration, MYSQL *conn, Batc
     for (auto it = sCandidateApproximated.begin(); it != sCandidateApproximated.end(); it++)
     {
 
-      application_i = it->app_i;
-      application_j = it->app_j;
-      nCoreMov = std::max(application_i->V, application_j->V);
+      //application_i = it->app_i;
+      //application_j = it->app_j;
+      nCoreMov = std::max(it->app_i.V, it->app_j.V);
 
-      DELTAVM_i = nCoreMov/application_i->V;
-      DELTAVM_j = nCoreMov/application_j->V;
+      DELTAVM_i = nCoreMov/it->app_i.V;
+      DELTAVM_j = nCoreMov/it->app_j.V;
 
-      application_i->currentCores_d = application_i->currentCores_d + DELTAVM_i*application_i->V;
-      application_j->currentCores_d = application_j->currentCores_d - DELTAVM_j*application_j->V;
+      it->app_i.currentCores_d = it->app_i.currentCores_d + DELTAVM_i*it->app_i.V;
+      it->app_j.currentCores_d = it->app_j.currentCores_d - DELTAVM_j*it->app_j.V;
     }
 
 
@@ -418,13 +437,13 @@ void Search::openMP_localSearch(sConfiguration &configuration, MYSQL *conn, Batc
     {
       // OpenMP:  object function just computed
 
-      if (application_i->currentCores_d > 0 && application_j->currentCores_d > 0)
+      if (it->app_i.currentCores_d > 0 && it->app_j.currentCores_d > 0)
       {
 
 
         // OpenMP:  object function evaluation calculated earlier
-        DELTA_fo_App_i = it->real_i - application_i->baseFO;
-        DELTA_fo_App_j = it->real_j - application_j->baseFO;
+        DELTA_fo_App_i = it->real_i - it->app_i.baseFO;
+        DELTA_fo_App_j = it->real_j - it->app_j.baseFO;
 
 
 
@@ -437,14 +456,14 @@ void Search::openMP_localSearch(sConfiguration &configuration, MYSQL *conn, Batc
         {
           DELTA_pair=DELTA_tmp;
           index_pair=tmp;
-          cores_i=application_i->currentCores_d;
-          cores_j=application_j->currentCores_d;
+          cores_i=it->app_i.currentCores_d;
+          cores_j=it->app_j.currentCores_d;
           DELTA_fo_App_i_tmp = DELTA_fo_App_i;
           DELTA_fo_App_j_tmp = DELTA_fo_App_j;
         }
 
-        debugMsg = "app " + application_i->session_app_id + " DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i); debugMessage(debugMsg, par);
-        debugMsg = "app " + application_j->session_app_id + " DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j); debugMessage(debugMsg, par);
+        debugMsg = "app " + it->app_i.session_app_id + " DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i); debugMessage(debugMsg, par);
+        debugMsg = "app " + it->app_j.session_app_id + " DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j); debugMessage(debugMsg, par);
         debugMsg= "\n      TOTAL DELTA FO : " +  std::to_string(DELTA_tmp) + "\n\n"; debugMessage(debugMsg, par);
 
       }
@@ -452,20 +471,22 @@ void Search::openMP_localSearch(sConfiguration &configuration, MYSQL *conn, Batc
     }
 
     // Restore previous number of cores
+    /*
     for (auto it = sCandidateApproximated.begin(); it != sCandidateApproximated.end(); it++)
     {
-      application_i = it->app_i;
-      application_j = it->app_j;
+      //application_i = it->app_i;
+      //application_j = it->app_j;
 
-      nCoreMov = std::max(application_i->V, application_j->V);
+      nCoreMov = std::max(it->app_i.V, it->app_j.V);
 
-      DELTAVM_i = nCoreMov/application_i->V;
-      DELTAVM_j = nCoreMov/application_j->V;
+      DELTAVM_i = nCoreMov/it->app_i.V;
+      DELTAVM_j = nCoreMov/it->app_j.V;
 
 
-      application_i->currentCores_d = application_i->currentCores_d - DELTAVM_i * application_i->V;
-      application_j->currentCores_d = application_j->currentCores_d + DELTAVM_j * application_j->V;
+      it->app_i.currentCores_d = it->app_i.currentCores_d - DELTAVM_i * it->app_i.V;
+      it->app_j.currentCores_d = it->app_j.currentCores_d + DELTAVM_j * it->app_j.V;
     }
+    */
 
     if(index_pair!=-1)
     {
@@ -474,11 +495,31 @@ void Search::openMP_localSearch(sConfiguration &configuration, MYSQL *conn, Batc
       {
         it++;
       }
+      // potrei andare per copia, scorrere app in batch e trovare quelle con session app_id e ID selezionati:
+
+        for (auto &elem : App_manager.APPs)
+        {
+          if (it->app_i.app_id==elem.app_id && it->app_i.session_app_id==elem.session_app_id)
+          {
+            elem.currentCores_d = cores_i;
+            elem.baseFO=elem.baseFO +  DELTA_fo_App_i_tmp;
+          }
+          if (it->app_j.app_id==elem.app_id && it->app_j.session_app_id==elem.session_app_id)
+          {
+            elem.currentCores_d = cores_j;
+            elem.baseFO=elem.baseFO +  DELTA_fo_App_j_tmp;
+          }
+
+        }
+
+      /*
       it->app_i->currentCores_d = cores_i;
       it->app_i->baseFO=it->app_i->baseFO +  DELTA_fo_App_i_tmp;
       it->app_j->currentCores_d = cores_j;
       it->app_j->baseFO=it->app_j->baseFO +  DELTA_fo_App_j_tmp;
+      */
     }
+
 
     if (par.get_globalFOcalculation())
     {

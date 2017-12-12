@@ -18,18 +18,18 @@ void addCandidate(sCandidates  &cand,  Application &app_i, Application &app_j, i
 
      if (cand.empty())
      {
-       cand.emplace(cand.begin(), &app_i, &app_j, contr1, contr2, delta, delta_i, delta_j);
+       cand.emplace(cand.begin(), app_i, app_j, contr1, contr2, delta, delta_i, delta_j);
        return;
      }
      for (auto it= cand.begin(); it!=cand.end(); it++)
      {
        if ( it->deltaFO < delta)
        {
-         cand.emplace(it, &app_i, &app_j, contr1, contr2, delta, delta_i, delta_j );
+         cand.emplace(it, app_i, app_j, contr1, contr2, delta, delta_i, delta_j );
          return;
        }
      }
-     cand.emplace(cand.end(), &app_i, &app_j , contr1, contr2, delta, delta_i, delta_j);
+     cand.emplace(cand.end(), app_i, app_j , contr1, contr2, delta, delta_i, delta_j);
 }
 
 
@@ -74,10 +74,10 @@ void invokePredictorOpenMP(sCandidates  &candidates,  optJrParameters &par, sCon
       if(pos==ID)
       {
 
-        it->real_i = ObjFun::ObjFunctionComponent(configuration, conn2[ID], *(it->app_i), par);
+        it->real_i = ObjFun::ObjFunctionComponent(configuration, conn2[ID], (it->app_i), par);
         //it->nodes_i = it->app_i->currentCores_d;
 
-        it->real_j = ObjFun::ObjFunctionComponent(configuration, conn2[ID], *(it->app_j), par);
+        it->real_j = ObjFun::ObjFunctionComponent(configuration, conn2[ID], (it->app_j), par);
         //it->nodes_j = it->app_j->currentCores_d;
 
       }
