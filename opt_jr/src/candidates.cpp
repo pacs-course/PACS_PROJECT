@@ -13,7 +13,7 @@
  *       Description:         This function adds all the information regarding the localSearch deltafo calculation.
  *                            The list is sorted by deltafo value.
  */
-void addCandidate(sCandidates  &cand,  Application &app_i, Application &app_j, int contr1, int contr2, double delta, double delta_i, double delta_j)
+void sCandidates::addCandidate(  Application &app_i, Application &app_j, int contr1, int contr2, double delta, double delta_i, double delta_j)
 {
 
      if (cand.empty())
@@ -34,7 +34,7 @@ void addCandidate(sCandidates  &cand,  Application &app_i, Application &app_j, i
 
 
 
-void invokePredictorOpenMP(sCandidates  &candidates,  optJrParameters &par, sConfiguration  &configuration )
+void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  &configuration )
 {
   std::string debugMsg;
 
@@ -44,7 +44,7 @@ void invokePredictorOpenMP(sCandidates  &candidates,  optJrParameters &par, sCon
   MYSQL *conn2[n_threads]; //open a connection for each thread
 
 
-  if (candidates.size()==0) return;
+  if (cand.size()==0) return;
 
   debugMsg="invokePredictorInAdvance"; debugMessage(debugMsg, par);
   for (int i = 0; i< n_threads;++i)
@@ -66,7 +66,7 @@ void invokePredictorOpenMP(sCandidates  &candidates,  optJrParameters &par, sCon
 
 
     // assign each app to a thread
-    for (auto it=candidates.begin(); it!=candidates.end(); ++it ) // assign each app to a thread
+    for (auto it=cand.begin(); it!=cand.end(); ++it ) // assign each app to a thread
     {
 
       int pos=j % n_threads;

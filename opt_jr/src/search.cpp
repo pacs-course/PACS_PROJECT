@@ -13,7 +13,7 @@
 
 /*
  * Name: approximatedLoop
- * Description: It estimates the objective function for each move. The candidate applications for which the move is profitable is stored in a sCandidate object
+ * Description: It estimates the objective function for each move. The candidate applications for which the move is profitable are stored in a sCandidate object
  */
 
 sCandidates Search::approximatedLoop( Batch &App_manager, int &iteration, optJrParameters &par )
@@ -79,14 +79,13 @@ sCandidates Search::approximatedLoop( Batch &App_manager, int &iteration, optJrP
 					if ((DELTA_fo_App_i + DELTA_fo_App_j < 0))
 					{
             debugMsg= "\n\nAdding candidate  \n\n "; debugMessage(debugMsg, par);
-						addCandidate(sCandidateApproximated,
-									*application_i ,
-									*application_j ,
-									application_i->currentCores_d,
-									application_j->currentCores_d,
-									DELTA_fo_App_i + DELTA_fo_App_j,
-									DELTAVM_i,
-									DELTAVM_j) ;
+						sCandidateApproximated.addCandidate( *application_i ,
+									                               *application_j ,
+									                                application_i->currentCores_d,
+									                                application_j->currentCores_d,
+									                                DELTA_fo_App_i + DELTA_fo_App_j,
+									                                DELTAVM_i,
+									                                DELTAVM_j) ;
 
 					}
 
@@ -103,7 +102,7 @@ sCandidates Search::approximatedLoop( Batch &App_manager, int &iteration, optJrP
 
 
 
-  iteration= sCandidateApproximated.size();
+  iteration= sCandidateApproximated.cand.size();
 
 	return sCandidateApproximated;
 
@@ -188,7 +187,7 @@ void Search::sequencial_localSearch(sConfiguration &configuration, MYSQL *conn, 
     sCandidateApproximated = approximatedLoop( App_manager, how_many, par );
     debugMsg= "\n\n\n\n       finished approximatedLoop   \n\n\n\n"; debugMessage(debugMsg, par);
 
-    if (sCandidateApproximated.empty())
+    if (sCandidateApproximated.cand.empty())
     {
       // The Candidate Application is empty. No further solution enhancements possible
       debugMsg = "LocalSearch: empty Candidate Application "; debugMessage(debugMsg, par);
@@ -216,7 +215,7 @@ void Search::sequencial_localSearch(sConfiguration &configuration, MYSQL *conn, 
 
     checkTotalNodes(par.get_number(), App_manager);
 
-    for (auto it = sCandidateApproximated.begin(); it != sCandidateApproximated.end(); it++)
+    for (auto it = sCandidateApproximated.cand.begin(); it != sCandidateApproximated.cand.end(); it++)
     {
 
       debugMsg=  "Browsing CandidateApproximated Application \n\n";debugMessage(debugMsg, par);
@@ -300,7 +299,7 @@ void Search::sequencial_localSearch(sConfiguration &configuration, MYSQL *conn, 
 
     if(index_pair!=-1)
     {
-      auto it = sCandidateApproximated.begin();
+      auto it = sCandidateApproximated.cand.begin();
       for (int j=0; j< index_pair; j++)
       {
         it++;
@@ -386,7 +385,7 @@ void Search::openMP_localSearch(sConfiguration &configuration, MYSQL *conn, Batc
     sCandidateApproximated = approximatedLoop( App_manager, how_many, par );
     debugMsg= "\n\n\n\n       finished approximatedLoop   \n\n\n\n"; debugMessage(debugMsg, par);
 
-    if (sCandidateApproximated.empty())
+    if (sCandidateApproximated.cand.empty())
     {
       // The Candidate Application is empty. No further solution enhancements possible
       debugMsg = "LocalSearch: empty Candidate Application "; debugMessage(debugMsg, par);
@@ -413,8 +412,8 @@ void Search::openMP_localSearch(sConfiguration &configuration, MYSQL *conn, Batc
 
     checkTotalNodes(par.get_number(), App_manager);
 
-    // Change the currentCores, but rollback later
-    for (auto it = sCandidateApproximated.begin(); it != sCandidateApproximated.end(); it++)
+
+    for (auto it = sCandidateApproximated.cand.begin(); it != sCandidateApproximated.cand.end(); it++)
     {
 
       //application_i = it->app_i;
@@ -430,10 +429,10 @@ void Search::openMP_localSearch(sConfiguration &configuration, MYSQL *conn, Batc
 
 
     // Calculate in advance and in parallel the results of the predictor FOR EACH candidate
-    invokePredictorOpenMP(sCandidateApproximated, par, configuration);
+    sCandidateApproximated.invokePredictorOpenMP( par, configuration);
 
     // find the best pair <0 (it it exists)
-    for (auto it = sCandidateApproximated.begin(); it != sCandidateApproximated.end(); it++)
+    for (auto it = sCandidateApproximated.cand.begin(); it != sCandidateApproximated.cand.end(); it++)
     {
       // OpenMP:  object function just computed
 
@@ -490,7 +489,7 @@ void Search::openMP_localSearch(sConfiguration &configuration, MYSQL *conn, Batc
 
     if(index_pair!=-1)
     {
-      auto it = sCandidateApproximated.begin();
+      auto it = sCandidateApproximated.cand.begin();
       for (int j=0; j< index_pair; j++)
       {
         it++;

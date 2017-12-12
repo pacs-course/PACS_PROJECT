@@ -51,24 +51,33 @@ class Candidate{
 
 
 /**
-List container used in localSearch to store Candidates with increasing deltaFO
+Auxiliary class used by localSearch; it stores pairs of applications for which a cores exchange
+could be profitable and provide methods to add Candidates and evaluate in parallel the objective function
+ 
 */
-using sCandidates = std::list<Candidate>;
 
-/**
+class sCandidates
+{
+public:
+  /**
+  Container where applications candidates to change cores are stored in order of increasing deltaFO
+  */
+  std::list<Candidate> cand;
+
+  /**
   "addCandidate" stores build a "Candidate" object and stores it in a sCandidates container
   ordered by increasing delta FO
-*/
-void addCandidate(sCandidates  &cand,  Application &app_i, Application &app_j,
-                  int contr1, int contr2, double delta, double delta_i, double delta_j);
+  */
+  void addCandidate(Application &app_i, Application &app_j,int contr1, int contr2, double delta, double delta_i, double delta_j);
 
 
-/**
-"invokePredictorOpenMP" calls in parallel the ObjFunctionComponent for each pair of application
-and it stores the results for each pair in real_i, real_j.
-*/
-void invokePredictorOpenMP(sCandidates  &candidates,  optJrParameters &par, sConfiguration  &configuration );
+  /**
+  "invokePredictorOpenMP" calls in parallel the ObjFunctionComponent for each pair of application
+  and it stores the results for each pair in real_i, real_j.
+  */
+  void invokePredictorOpenMP( optJrParameters &par, sConfiguration  &configuration );
 
+};
 
 
 #endif
