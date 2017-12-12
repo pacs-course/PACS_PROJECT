@@ -2,21 +2,19 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 <comment/>
-<entry key="MPI_HOME">/home/work/MPI</entry>
 <entry key="RESOPT_HOME">/home/work/OPT_IC</entry>
-<entry key="RESULTS_HOME">/vagrant/PROJECT_SPARK/ENTIRE_PROJECT/OPT_DATA_CONFIG-master/LogP8</entry>
+<entry key="RESULTS_HOME">/vagrant/PROJECT_SPARK/LogP8</entry>
 <entry key="AppsPropDB_port">3306</entry>
 <entry key="DB_port">3306</entry>
-<entry key="DAGSIM_HOME">/vagrant/PROJECT_SPARK/ENTIRE_PROJECT/dagSim-master</entry>
+<entry key="DAGSIM_HOME">/vagrant/PROJECT_SPARK/dagSim-master</entry>
 <entry key="LUNDSTROM_HOME">/home/work/spark-lundstrom-master</entry>
-<entry key="OPTIMIZE_HOME">/vagrant/PROJECT_SPARK/ENTIRE_PROJECT/opt_jr-master/OPT_JR</entry>
 <entry key="OptDB_user">root</entry>
 <entry key="AppsPropDB_user">root</entry>
 <entry key="AppsPropDB_IP">localhost</entry>
 <entry key="AppsPropDB_dbName">database_1</entry>
 <entry key="OptDB_tablename">OPT_SESSIONS_RESULTS_TABLE</entry>
 <entry key="OptDB_IP">localhost</entry>
-<entry key="UPLOAD_HOME">/vagrant/PROJECT_SPARK/ENTIRE_PROJECT/Tests</entry>
+<entry key="UPLOAD_HOME">/vagrant/PROJECT_SPARK/PACS_PROJECT/opt_jr/Tests</entry>
 <entry key="OptDB_pass">cia!98;qwQQQi</entry>
 <entry key="AppsPropDB_pass">cia!98;qwQQQi</entry>
 <entry key="OptDB_dbName">database_1</entry>
