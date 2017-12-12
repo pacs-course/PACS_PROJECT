@@ -7,9 +7,9 @@
 
 
 /**
-   "Candidate" class is an auxiliary class used by localSearch; it stores data
+   Candidate class is an auxiliary class used by localSearch; it stores data
    about pairs of application and the consequent changes on the objective function
-   after cores exchange
+   after cores exchange.
 */
 
 class Candidate{
@@ -21,8 +21,8 @@ class Candidate{
   Application  *app_i;      ///< Pointer to the first Application
   Application  *app_j;       ///< Pointer to the second Application
 
-	int newCoreAssignment_i;	///< Application cores after the move (first application)
-  int newCoreAssignment_j;   ///< Application cores after the move (second application)
+	int newCoreAssignment_i;	///< Cores after the move (first application)
+  int newCoreAssignment_j;   ///< Cores after the move (second application)
 
   double deltaFO;				///< Delta Objective Function following the move
   int delta_i;				      ///< Delta cores following the move (first application)

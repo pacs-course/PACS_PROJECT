@@ -3,6 +3,9 @@
 }
 {\ttfamily \#include \char`\"{}candidates.\-hh\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}utility.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}db.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}objective\-Function.\-hh\char`\"{}}\\*
+{\ttfamily \#include $<$omp.\-h$>$}\\*
 Include dependency graph for candidates.\-cpp\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -14,6 +17,8 @@ Include dependency graph for candidates.\-cpp\-:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{candidates_8cpp_a0dead9d126fdc270fa4692dc0e4671e2}{add\-Candidate} (\hyperlink{candidates_8hh_af1ec7d668b0f7361dc7e1e1da5c4ce7d}{s\-Candidates} \&cand, \hyperlink{classApplication}{Application} \&app\-\_\-i, \hyperlink{classApplication}{Application} \&app\-\_\-j, int contr1, int contr2, double delta, double delta\-\_\-i, double delta\-\_\-j)
+\item 
+void \hyperlink{candidates_8cpp_a06a4390403bfbe9df4c986a3c8f07d28}{invoke\-Predictor\-Open\-M\-P} (\hyperlink{candidates_8hh_af1ec7d668b0f7361dc7e1e1da5c4ce7d}{s\-Candidates} \&candidates, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par, \hyperlink{readConfigurationFile_8hh_ab8f35b1da3261263c5e9c0e7c8921f5c}{s\-Configuration} \&configuration)
 \end{DoxyCompactItemize}
 
 
@@ -32,4 +37,34 @@ void \hyperlink{candidates_8cpp_a0dead9d126fdc270fa4692dc0e4671e2}{add\-Candidat
 \item[{double}]{delta\-\_\-j}
 \end{DoxyParamCaption}
 )}}\label{candidates_8cpp_a0dead9d126fdc270fa4692dc0e4671e2}
-add\-Candidate stores build a \char`\"{}\-Candidate\char`\"{} object and stores it in a s\-Candidates container ordered by increasing delta F\-O 
+\char`\"{}add\-Candidate\char`\"{} stores build a \char`\"{}\-Candidate\char`\"{} object and stores it in a s\-Candidates container ordered by increasing delta F\-O \hypertarget{candidates_8cpp_a06a4390403bfbe9df4c986a3c8f07d28}{\index{candidates.\-cpp@{candidates.\-cpp}!invoke\-Predictor\-Open\-M\-P@{invoke\-Predictor\-Open\-M\-P}}
+\index{invoke\-Predictor\-Open\-M\-P@{invoke\-Predictor\-Open\-M\-P}!candidates.cpp@{candidates.\-cpp}}
+\subsubsection[{invoke\-Predictor\-Open\-M\-P}]{\setlength{\rightskip}{0pt plus 5cm}void invoke\-Predictor\-Open\-M\-P (
+\begin{DoxyParamCaption}
+\item[{{\bf s\-Candidates} \&}]{candidates, }
+\item[{{\bf opt\-Jr\-Parameters} \&}]{par, }
+\item[{{\bf s\-Configuration} \&}]{configuration}
+\end{DoxyParamCaption}
+)}}\label{candidates_8cpp_a06a4390403bfbe9df4c986a3c8f07d28}
+\char`\"{}invoke\-Predictor\-Open\-M\-P\char`\"{} calls in parallel the Obj\-Function\-Component for each pair of application and it stores the results for each pair in real\-\_\-i, real\-\_\-j. 
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{candidates_8cpp_a06a4390403bfbe9df4c986a3c8f07d28_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{candidates_8cpp_a06a4390403bfbe9df4c986a3c8f07d28_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,5 +1,6 @@
 <map id="/vagrant/PROJECT_SPARK/PACS_PROJECT/opt_jr/src/db.cpp" name="/vagrant/PROJECT_SPARK/PACS_PROJECT/opt_jr/src/db.cpp">
-<area shape="rect" id="node5" href="$db_8hh.html" title="db.hh" alt="" coords="303,109,357,136"/>
-<area shape="rect" id="node9" href="$debugmessage_8hh.html" title="debugmessage.hh" alt="" coords="643,109,771,136"/>
-<area shape="rect" id="node8" href="$optjrParameters_8hh.html" title="optjrParameters.hh" alt="" coords="441,184,572,211"/>
+<area shape="rect" id="node5" href="$db_8hh.html" title="db.hh" alt="" coords="441,109,495,136"/>
+<area shape="rect" id="node13" href="$debugmessage_8hh.html" title="debugmessage.hh" alt="" coords="131,259,259,285"/>
+<area shape="rect" id="node8" href="$optjrParameters_8hh.html" title="optjrParameters.hh" alt="" coords="334,184,465,211"/>
+<area shape="rect" id="node9" href="$readConfigurationFile_8hh.html" title="readConfigurationFile.hh" alt="" coords="384,259,547,285"/>
 </map>

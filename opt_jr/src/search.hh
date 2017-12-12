@@ -9,7 +9,7 @@
 
 /**
   "Search" class provides methods to find a solution minimizing
-   the objective function. Actually only one method is supported
+   the objective function. Actually only one method is supported.
 
 */
 
@@ -20,10 +20,10 @@ class Search{
 
 public:
   /**
-    "localSearch" perform a local search of a solution minimizing the objective function;
+    localSearch perform a local search of a solution minimizing the objective function;
     it performs cores exchanges between pairs of application and chooses the best pair. The
     search stops when no improvements are possible or the maximum number of iteration is reached.
-    The function before look at approximated values of objective function and then
+    The function looks before at approximated values of objective function and then
     for the potential best pairs it invokes the predictor.
   */
   static void localSearch(sConfiguration &configuration, MYSQL *conn, Batch &App_manager , optJrParameters &par);

@@ -2,7 +2,8 @@ var searchData=
 [
   ['addapplicationpointer',['addApplicationPointer',['../appByWeight_8cpp.html#aade8f908ef9c582df27a535457f29b00',1,'addApplicationPointer(appByWeight &amp;LP, Application &amp;App):&#160;appByWeight.cpp'],['../appByWeight_8hh.html#aade8f908ef9c582df27a535457f29b00',1,'addApplicationPointer(appByWeight &amp;LP, Application &amp;App):&#160;appByWeight.cpp']]],
   ['addcandidate',['addCandidate',['../candidates_8cpp.html#a0dead9d126fdc270fa4692dc0e4671e2',1,'addCandidate(sCandidates &amp;cand, Application &amp;app_i, Application &amp;app_j, int contr1, int contr2, double delta, double delta_i, double delta_j):&#160;candidates.cpp'],['../candidates_8hh.html#a0dead9d126fdc270fa4692dc0e4671e2',1,'addCandidate(sCandidates &amp;cand, Application &amp;app_i, Application &amp;app_j, int contr1, int contr2, double delta, double delta_i, double delta_j):&#160;candidates.cpp']]],
-  ['alpha',['alpha',['../classApplication.html#a087ef34a09792f2954940324dcea20d6',1,'Application']]],
+  ['addstatistics',['addStatistics',['../Statistics_8cpp.html#a3e40d76b988cd89aade3253394444b34',1,'addStatistics(sStatistics &amp;statistics, int iteration, int size, double FO_total):&#160;Statistics.cpp'],['../statistics_8hh.html#a3e40d76b988cd89aade3253394444b34',1,'addStatistics(sStatistics &amp;statistics, int iteration, int size, double FO_total):&#160;Statistics.cpp']]],
+  ['alpha',['alpha',['../classApplication.html#a57e16d80835a1911b72c63d5eeb5d2f2',1,'Application']]],
   ['app_5fi',['app_i',['../classCandidate.html#a1bfed0429bba41f57dce0fbd37225c2c',1,'Candidate']]],
   ['app_5fid',['app_id',['../classApplication.html#a05377e6cdcb9d48f29e0f1972a4a16fe',1,'Application']]],
   ['app_5fj',['app_j',['../classCandidate.html#a8b0f26e8b45e9a3331be8a9694d3be5e',1,'Candidate']]],

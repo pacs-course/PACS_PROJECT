@@ -7,7 +7,7 @@
 
 
 /**
-  This class manage the applications; it stores application data in a vector and provide
+  This class manages the applications; it stores applications data in a vector and it provides
   methods useful to apply before executing the localSearch
 */
 class Batch{
@@ -16,10 +16,10 @@ public:
   /// The vector stores application data
   std::vector<Application> APPs;
 
-  /// Constructor expects a vector of application which should be given by the "readAppFile" function
+  /// Constructor expects a vector of application which should be given by the "readAppFile" function declared in "read_app_file.hh"
   Batch(std::vector<Application> apps): APPs(apps){};
 
-  /// It calculates nu indices for each application and stores it in the "Application" object
+  /// It calculates nu indices for each application and stores it in each "Application" object
   void calculate_nu(optJrParameters &par);
 
   /// For each application, a base value for the objective function is calculated.

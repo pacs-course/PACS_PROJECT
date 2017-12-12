@@ -1,6 +1,4 @@
 <map id="Application" name="Application">
-<area shape="rect" id="node2" href="$classsAlphaBetaManagement.html" title="sAlphaBetaManagement" alt="" coords="5,112,168,139"/>
-<area shape="rect" id="node3" href="$classslastSimulatorRun.html" title="slastSimulatorRun" alt="" coords="21,13,149,40"/>
-<area shape="rect" id="node4" title="STL class. " alt="" coords="196,112,276,139"/>
-<area shape="rect" id="node5" title="STL class. " alt="" coords="174,6,300,47"/>
+<area shape="rect" id="node2" title="STL class. " alt="" coords="28,99,108,125"/>
+<area shape="rect" id="node3" title="STL class. " alt="" coords="5,6,131,47"/>
 </map>

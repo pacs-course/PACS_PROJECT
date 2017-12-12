@@ -2,8 +2,6 @@
 #include <string.h>
 #include <iostream>
 
-#define MAX_APP_LENGTH 1024
-
 
 
 char * getfield(char* line, int num)

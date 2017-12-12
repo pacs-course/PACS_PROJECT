@@ -1,8 +1,9 @@
 <map id="doubleCompare" name="doubleCompare">
-<area shape="rect" id="node2" href="$invokePredictor_8hh.html#a342ccdfe7923368e52a4894d69c7455a" title="invokePredictor" alt="" coords="168,71,280,97"/>
-<area shape="rect" id="node5" href="$classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b" title="ObjFun::ObjFunctionGlobal" alt="" coords="587,121,765,148"/>
-<area shape="rect" id="node3" href="$classApplication.html#a97054cee52b315da040098c3927c909e" title="Evaluates objective function for the application. " alt="" coords="351,5,515,46"/>
-<area shape="rect" id="node4" href="$classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7" title="ObjFun::ObjFunctionComponent" alt="" coords="329,71,538,97"/>
-<area shape="rect" id="node6" href="$classSearch.html#af95c649fd7dba70b7bd3c124ec501046" title="Search::localSearch" alt="" coords="607,71,745,97"/>
-<area shape="rect" id="node7" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="813,71,864,97"/>
+<area shape="rect" id="node2" href="$invokePredictor_8hh.html#a342ccdfe7923368e52a4894d69c7455a" title="invokePredictor" alt="" coords="168,93,280,120"/>
+<area shape="rect" id="node8" href="$classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b" title="ObjFun::ObjFunctionGlobal" alt="" coords="587,144,765,171"/>
+<area shape="rect" id="node3" href="$classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7" title="ObjFun::ObjFunctionComponent" alt="" coords="329,93,538,120"/>
+<area shape="rect" id="node4" href="$classBatch.html#ae212d22fa812b51160f57507242152c1" title="For each application, a base value for the objective function is calculated. " alt="" coords="827,5,938,32"/>
+<area shape="rect" id="node6" href="$candidates_8hh.html#a06a4390403bfbe9df4c986a3c8f07d28" title="invokePredictorOpenMP" alt="" coords="595,43,757,69"/>
+<area shape="rect" id="node7" href="$classSearch.html#af95c649fd7dba70b7bd3c124ec501046" title="Search::localSearch" alt="" coords="813,81,952,108"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1000,44,1051,71"/>
 </map>

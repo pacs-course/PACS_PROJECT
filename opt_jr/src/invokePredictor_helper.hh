@@ -1,6 +1,9 @@
 #ifndef INVOKEPREDICTOR_HELPER_HH
 #define INVOKEPREDICTOR_HELPER_HH
 
+#define BIG_LINE 4000
+#define BIG_TEXT 20000
+
 #include "optJrParameters.hh"
 #include "utility.hh"
 
@@ -8,7 +11,6 @@
 #include <stdio.h>
 
 /*
-	-This file is not substantially changed from original C version
 	-Here are declared helper functions to invoke a predictor
  */
 

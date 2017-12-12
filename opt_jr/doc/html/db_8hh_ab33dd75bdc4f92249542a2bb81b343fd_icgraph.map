@@ -1,11 +1,12 @@
 <map id="DBerror" name="DBerror">
-<area shape="rect" id="node2" href="$db_8hh.html#a2491baf1bdfde4dc81303042399a6278" title="executeSQL" alt="" coords="121,71,215,97"/>
-<area shape="rect" id="node9" href="$db_8hh.html#a8707daf0868830f96c88a43b3d9ece50" title="DBopen" alt="" coords="495,172,564,199"/>
-<area shape="rect" id="node3" href="$invokePredictor_8hh.html#a342ccdfe7923368e52a4894d69c7455a" title="invokePredictor" alt="" coords="264,71,376,97"/>
-<area shape="rect" id="node8" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="909,147,960,173"/>
-<area shape="rect" id="node4" href="$classApplication.html#a97054cee52b315da040098c3927c909e" title="Evaluates objective function for the application. " alt="" coords="447,5,611,46"/>
-<area shape="rect" id="node5" href="$classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7" title="ObjFun::ObjFunctionComponent" alt="" coords="425,71,634,97"/>
-<area shape="rect" id="node6" href="$classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b" title="ObjFun::ObjFunctionGlobal" alt="" coords="683,20,861,47"/>
-<area shape="rect" id="node7" href="$classSearch.html#af95c649fd7dba70b7bd3c124ec501046" title="Search::localSearch" alt="" coords="703,71,841,97"/>
-<area shape="rect" id="node10" href="$classBounds.html#a64948c32dbb742f849656362391650bd" title="Bounds::calculateBounds" alt="" coords="687,121,857,148"/>
+<area shape="rect" id="node2" href="$db_8hh.html#a2491baf1bdfde4dc81303042399a6278" title="executeSQL" alt="" coords="121,82,215,109"/>
+<area shape="rect" id="node10" href="$db_8hh.html#aced0f518cdbba35b17b3ce9f316131ce" title="DBopen" alt="" coords="495,184,564,210"/>
+<area shape="rect" id="node3" href="$invokePredictor_8hh.html#a342ccdfe7923368e52a4894d69c7455a" title="invokePredictor" alt="" coords="264,82,376,109"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1128,184,1179,210"/>
+<area shape="rect" id="node4" href="$classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7" title="ObjFun::ObjFunctionComponent" alt="" coords="425,82,634,109"/>
+<area shape="rect" id="node5" href="$classBatch.html#ae212d22fa812b51160f57507242152c1" title="For each application, a base value for the objective function is calculated. " alt="" coords="939,6,1050,33"/>
+<area shape="rect" id="node7" href="$candidates_8hh.html#a06a4390403bfbe9df4c986a3c8f07d28" title="invokePredictorOpenMP" alt="" coords="691,133,853,160"/>
+<area shape="rect" id="node9" href="$classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b" title="ObjFun::ObjFunctionGlobal" alt="" coords="683,32,861,58"/>
+<area shape="rect" id="node8" href="$classSearch.html#af95c649fd7dba70b7bd3c124ec501046" title="Search::localSearch" alt="" coords="925,108,1064,134"/>
+<area shape="rect" id="node11" href="$classBounds.html#adea89543a39dfa00bee2e4aa3f58e5e0" title="Bounds::calculateBounds" alt="" coords="909,184,1080,210"/>
 </map>

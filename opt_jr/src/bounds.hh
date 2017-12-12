@@ -24,10 +24,11 @@ class Bounds {
 public:
 
   /**
-  evaluate in parallel (using openMP) the bound for the applications in BATCH
+  calculateBounds evaluates the bound for the applications in BATCH
   i.e. the minimal number of cores necessary to finish the execution before the deadline.
   The function looks before if the result is already stored in the database, otherwise it
-  invokes the predictor doing a "HILL CLIMBING".
+  invokes the predictor doing a "HILL CLIMBING". If the number of threads in the configuration file is
+  greater than 0, it does the computations in parallel (using openMP).
   */
   static void calculateBounds(Batch  & app_manager, sConfiguration &configuration,
                        MYSQL *conn,  optJrParameters &par);

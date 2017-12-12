@@ -1,17 +1,17 @@
 <map id="optJrParameters::get_debug" name="optJrParameters::get_debug">
-<area shape="rect" id="node2" href="$debugmessage_8hh.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="198,347,309,373"/>
-<area shape="rect" id="node5" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1288,277,1339,304"/>
-<area shape="rect" id="node3" href="$classApplication.html#a97054cee52b315da040098c3927c909e" title="Evaluates objective function for the application. " alt="" coords="826,267,990,309"/>
-<area shape="rect" id="node4" href="$classBatch.html#a14f132321413b45d6446200807451414" title="It calculates nu indices for each application and stores it in the &quot;Application&quot; object. " alt="" coords="617,43,754,69"/>
-<area shape="rect" id="node6" href="$classBatch.html#ae212d22fa812b51160f57507242152c1" title="For each application, a base value for the objective function is calculated. " alt="" coords="630,93,741,120"/>
-<area shape="rect" id="node7" href="$classBatch.html#ac50dad870490ca7c60e0e15d86c02614" title="It fixes the initial solution by reallocating the residual cores to the applications that may need mo..." alt="" coords="830,549,986,576"/>
-<area shape="rect" id="node8" href="$classBounds.html#a64948c32dbb742f849656362391650bd" title="Bounds::calculateBounds" alt="" coords="1065,633,1236,660"/>
-<area shape="rect" id="node9" href="$db_8hh.html#a2491baf1bdfde4dc81303042399a6278" title="executeSQL" alt="" coords="415,347,510,373"/>
-<area shape="rect" id="node10" href="$invokePredictor_8hh.html#a342ccdfe7923368e52a4894d69c7455a" title="invokePredictor" alt="" coords="629,321,741,348"/>
-<area shape="rect" id="node14" href="$invokePredictor__helper_8hh.html#ab01a14d4a3e7b93f83060c8664c3bc42" title="ls" alt="" coords="443,245,482,272"/>
-<area shape="rect" id="node15" href="$invokePredictor__helper_8hh.html#a0f49de720b1b8bcb143e37e9e8a5ab39" title="_run" alt="" coords="439,296,486,323"/>
-<area shape="rect" id="node11" href="$classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7" title="ObjFun::ObjFunctionComponent" alt="" coords="803,397,1013,424"/>
-<area shape="rect" id="node16" href="$classObjFun.html#abb89a994d34b44ec4cb6e0e2562c0107" title="ObjFun::ObjFunctionComponent\lApprox" alt="" coords="358,601,567,642"/>
-<area shape="rect" id="node12" href="$classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b" title="ObjFun::ObjFunctionGlobal" alt="" coords="1061,461,1240,488"/>
-<area shape="rect" id="node13" href="$classSearch.html#af95c649fd7dba70b7bd3c124ec501046" title="Search::localSearch" alt="" coords="1081,277,1220,304"/>
+<area shape="rect" id="node2" href="$debugmessage_8hh.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="198,363,309,389"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1507,211,1557,237"/>
+<area shape="rect" id="node3" href="$classBatch.html#a14f132321413b45d6446200807451414" title="It calculates nu indices for each application and stores it in each &quot;Application&quot; object..." alt="" coords="617,109,754,136"/>
+<area shape="rect" id="node5" href="$classBatch.html#ae212d22fa812b51160f57507242152c1" title="For each application, a base value for the objective function is calculated. " alt="" coords="1095,312,1206,339"/>
+<area shape="rect" id="node6" href="$classBatch.html#ac50dad870490ca7c60e0e15d86c02614" title="It fixes the initial solution by reallocating the residual cores to the applications that may need mo..." alt="" coords="830,211,986,237"/>
+<area shape="rect" id="node7" href="$classBounds.html#adea89543a39dfa00bee2e4aa3f58e5e0" title="Bounds::calculateBounds" alt="" coords="1288,261,1459,288"/>
+<area shape="rect" id="node8" href="$candidates_8hh.html#a06a4390403bfbe9df4c986a3c8f07d28" title="invokePredictorOpenMP" alt="" coords="1069,464,1232,491"/>
+<area shape="rect" id="node10" href="$db_8hh.html#a2491baf1bdfde4dc81303042399a6278" title="executeSQL" alt="" coords="415,565,510,592"/>
+<area shape="rect" id="node11" href="$invokePredictor_8hh.html#a342ccdfe7923368e52a4894d69c7455a" title="invokePredictor" alt="" coords="629,515,741,541"/>
+<area shape="rect" id="node14" href="$invokePredictor__helper_8hh.html#ab01a14d4a3e7b93f83060c8664c3bc42" title="ls" alt="" coords="443,616,482,643"/>
+<area shape="rect" id="node15" href="$invokePredictor__helper_8hh.html#a0f49de720b1b8bcb143e37e9e8a5ab39" title="_run" alt="" coords="439,464,486,491"/>
+<area shape="rect" id="node12" href="$classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7" title="ObjFun::ObjFunctionComponent" alt="" coords="803,413,1013,440"/>
+<area shape="rect" id="node16" href="$classObjFun.html#abb89a994d34b44ec4cb6e0e2562c0107" title="ObjFun::ObjFunctionComponent\lApprox" alt="" coords="358,145,567,186"/>
+<area shape="rect" id="node13" href="$classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b" title="ObjFun::ObjFunctionGlobal" alt="" coords="1061,363,1240,389"/>
+<area shape="rect" id="node9" href="$classSearch.html#af95c649fd7dba70b7bd3c124ec501046" title="Search::localSearch" alt="" coords="1304,413,1443,440"/>
 </map>

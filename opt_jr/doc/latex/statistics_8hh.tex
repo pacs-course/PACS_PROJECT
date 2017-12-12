@@ -1,0 +1,97 @@
+\hypertarget{statistics_8hh}{\section{/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/statistics.hh File Reference}
+\label{statistics_8hh}\index{/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/statistics.\-hh@{/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/statistics.\-hh}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include \char`\"{}opt\-Jr\-Parameters.\-hh\char`\"{}}\\*
+Include dependency graph for statistics.\-hh\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{statistics_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{statistics_8hh__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classStatistic}{Statistic}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{statistics_8hh_abd0800e960b601bba1c0734f6f8e4949}{s\-Statistics} = std\-::vector$<$ \hyperlink{classStatistic}{Statistic} $>$
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{statistics_8hh_a3e40d76b988cd89aade3253394444b34}{add\-Statistics} (\hyperlink{statistics_8hh_abd0800e960b601bba1c0734f6f8e4949}{s\-Statistics} \&statistics, int iteration, int size, double F\-O\-\_\-total)
+\item 
+void \hyperlink{statistics_8hh_a202f8e6d9896663ccc22e85450db0112}{read\-Statistics} (\hyperlink{statistics_8hh_abd0800e960b601bba1c0734f6f8e4949}{s\-Statistics} \&statistics, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{statistics_8hh_abd0800e960b601bba1c0734f6f8e4949}{\index{statistics.\-hh@{statistics.\-hh}!s\-Statistics@{s\-Statistics}}
+\index{s\-Statistics@{s\-Statistics}!statistics.hh@{statistics.\-hh}}
+\subsubsection[{s\-Statistics}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf s\-Statistics} =  std\-::vector$<${\bf Statistic}$>$}}\label{statistics_8hh_abd0800e960b601bba1c0734f6f8e4949}
+A vector of \char`\"{}\-Statistic\char`\"{} object is used to store statistical information about the local search. 
+
+\subsection{Function Documentation}
+\hypertarget{statistics_8hh_a3e40d76b988cd89aade3253394444b34}{\index{statistics.\-hh@{statistics.\-hh}!add\-Statistics@{add\-Statistics}}
+\index{add\-Statistics@{add\-Statistics}!statistics.hh@{statistics.\-hh}}
+\subsubsection[{add\-Statistics}]{\setlength{\rightskip}{0pt plus 5cm}void add\-Statistics (
+\begin{DoxyParamCaption}
+\item[{{\bf s\-Statistics} \&}]{statistics, }
+\item[{int}]{iteration, }
+\item[{int}]{size, }
+\item[{double}]{F\-O\-\_\-total}
+\end{DoxyParamCaption}
+)}}\label{statistics_8hh_a3e40d76b988cd89aade3253394444b34}
+\char`\"{}add\-Statistics\char`\"{} is used to add information about an iteration to the \char`\"{}s\-Statistics\char`\"{} object. 
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{statistics_8hh_a3e40d76b988cd89aade3253394444b34_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{statistics_8hh_a202f8e6d9896663ccc22e85450db0112}{\index{statistics.\-hh@{statistics.\-hh}!read\-Statistics@{read\-Statistics}}
+\index{read\-Statistics@{read\-Statistics}!statistics.hh@{statistics.\-hh}}
+\subsubsection[{read\-Statistics}]{\setlength{\rightskip}{0pt plus 5cm}void read\-Statistics (
+\begin{DoxyParamCaption}
+\item[{{\bf s\-Statistics} \&}]{statistics, }
+\item[{{\bf opt\-Jr\-Parameters} \&}]{par}
+\end{DoxyParamCaption}
+)}}\label{statistics_8hh_a202f8e6d9896663ccc22e85450db0112}
+\char`\"{}read\-Statistics\char`\"{} shows the statistics about localsearch iterations. 
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{statistics_8hh_a202f8e6d9896663ccc22e85450db0112_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{statistics_8hh_a202f8e6d9896663ccc22e85450db0112_icgraph}
+\end{center}
+\end{figure}
+
+

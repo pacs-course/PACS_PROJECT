@@ -8,11 +8,9 @@
 #include <dirent.h>
 #include <glob.h>
 
-#define BIG_LINE 4000
-#define BIG_TEXT 20000
+
 
 /*
-	-This file is not substantially changed from original C version
 	-Here are defined helper functions to invoke a predictor
  */
 

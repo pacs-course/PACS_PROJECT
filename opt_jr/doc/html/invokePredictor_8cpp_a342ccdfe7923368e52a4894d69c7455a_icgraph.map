@@ -1,7 +1,8 @@
 <map id="invokePredictor" name="invokePredictor">
-<area shape="rect" id="node2" href="$classApplication.html#a97054cee52b315da040098c3927c909e" title="Evaluates objective function for the application. " alt="" coords="189,5,353,46"/>
-<area shape="rect" id="node3" href="$classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7" title="ObjFun::ObjFunctionComponent" alt="" coords="166,71,375,97"/>
-<area shape="rect" id="node4" href="$classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b" title="ObjFun::ObjFunctionGlobal" alt="" coords="424,45,603,72"/>
-<area shape="rect" id="node5" href="$classSearch.html#af95c649fd7dba70b7bd3c124ec501046" title="Search::localSearch" alt="" coords="444,96,583,123"/>
-<area shape="rect" id="node6" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="651,96,701,123"/>
+<area shape="rect" id="node2" href="$classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7" title="ObjFun::ObjFunctionComponent" alt="" coords="166,68,375,95"/>
+<area shape="rect" id="node3" href="$classBatch.html#ae212d22fa812b51160f57507242152c1" title="For each application, a base value for the objective function is calculated. " alt="" coords="665,5,775,32"/>
+<area shape="rect" id="node5" href="$candidates_8hh.html#a06a4390403bfbe9df4c986a3c8f07d28" title="invokePredictorOpenMP" alt="" coords="432,43,595,69"/>
+<area shape="rect" id="node7" href="$classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b" title="ObjFun::ObjFunctionGlobal" alt="" coords="424,93,603,120"/>
+<area shape="rect" id="node6" href="$classSearch.html#af95c649fd7dba70b7bd3c124ec501046" title="Search::localSearch" alt="" coords="651,68,789,95"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="837,37,888,64"/>
 </map>

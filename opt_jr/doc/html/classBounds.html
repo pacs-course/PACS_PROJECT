@@ -93,13 +93,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a64948c32dbb742f849656362391650bd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBounds.html#a64948c32dbb742f849656362391650bd">calculateBounds</a> (<a class="el" href="classBatch.html">Batch</a> &amp;app_manager, int n_threads, <a class="el" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;configuration, MYSQL *conn, <a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
-<tr class="separator:a64948c32dbb742f849656362391650bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adea89543a39dfa00bee2e4aa3f58e5e0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBounds.html#adea89543a39dfa00bee2e4aa3f58e5e0">calculateBounds</a> (<a class="el" href="classBatch.html">Batch</a> &amp;app_manager, <a class="el" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;configuration, MYSQL *conn, <a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
+<tr class="separator:adea89543a39dfa00bee2e4aa3f58e5e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classBounds.html">Bounds</a> class provide a method to evaluate the bound for the applications in BATCH i.e. the minimal number of cores necessary to finish the execution before the deadline </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a64948c32dbb742f849656362391650bd"></a>
+<a class="anchor" id="adea89543a39dfa00bee2e4aa3f58e5e0"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -111,12 +111,6 @@ Static Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classBatch.html">Batch</a> &amp;&#160;</td>
           <td class="paramname"><em>app_manager</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n_threads</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -148,22 +142,22 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>evaluate in parallel (using openMP) the bound for the applications in BATCH i.e. the minimal number of cores necessary to finish the execution before the deadline. The function looks before if the result is already stored in the database, otherwise it invokes the predictor doing a "HILL CLIMBING". </p>
+<p>calculateBounds evaluates the bound for the applications in BATCH i.e. the minimal number of cores necessary to finish the execution before the deadline. The function looks before if the result is already stored in the database, otherwise it invokes the predictor doing a "HILL CLIMBING". If the number of threads in the configuration file is greater than 0, it does the computations in parallel (using openMP). </p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classBounds_a64948c32dbb742f849656362391650bd_cgraph.png" border="0" usemap="#classBounds_a64948c32dbb742f849656362391650bd_cgraph" alt=""/></div>
-<map name="classBounds_a64948c32dbb742f849656362391650bd_cgraph" id="classBounds_a64948c32dbb742f849656362391650bd_cgraph">
-<area shape="rect" id="node2" href="debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="225,15,335,41"/><area shape="rect" id="node4" href="db_8cpp.html#a8707daf0868830f96c88a43b3d9ece50" title="DBopen" alt="" coords="245,67,315,93"/><area shape="rect" id="node3" href="classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="Returns the debug option (1==YES, 0==NO) " alt="" coords="384,5,528,46"/><area shape="rect" id="node5" href="db_8cpp.html#ab33dd75bdc4f92249542a2bb81b343fd" title="DBerror" alt="" coords="423,71,489,97"/></map>
+<div class="center"><img src="classBounds_adea89543a39dfa00bee2e4aa3f58e5e0_cgraph.png" border="0" usemap="#classBounds_adea89543a39dfa00bee2e4aa3f58e5e0_cgraph" alt=""/></div>
+<map name="classBounds_adea89543a39dfa00bee2e4aa3f58e5e0_cgraph" id="classBounds_adea89543a39dfa00bee2e4aa3f58e5e0_cgraph">
+<area shape="rect" id="node2" href="classoptJrParameters.html#a6654c5bb36a825393e759b2824444bbb" title="Returns the number of threads to use in parallelization; if it is 0 there is no parallelization. " alt="" coords="224,5,368,46"/><area shape="rect" id="node3" href="debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="241,71,351,97"/><area shape="rect" id="node5" href="db_8cpp.html#aced0f518cdbba35b17b3ce9f316131ce" title="DBopen" alt="" coords="261,121,331,148"/><area shape="rect" id="node7" href="db_8cpp.html#a54af21d55b55bae7b63cb28d3cd05758" title="DBclose" alt="" coords="260,172,332,199"/><area shape="rect" id="node4" href="classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="Returns the debug option (1==YES, 0==NO) " alt="" coords="416,59,560,101"/><area shape="rect" id="node6" href="db_8cpp.html#ab33dd75bdc4f92249542a2bb81b343fd" title="DBerror" alt="" coords="455,125,521,152"/></map>
 </div>
 </p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classBounds_a64948c32dbb742f849656362391650bd_icgraph.png" border="0" usemap="#classBounds_a64948c32dbb742f849656362391650bd_icgraph" alt=""/></div>
-<map name="classBounds_a64948c32dbb742f849656362391650bd_icgraph" id="classBounds_a64948c32dbb742f849656362391650bd_icgraph">
+<div class="center"><img src="classBounds_adea89543a39dfa00bee2e4aa3f58e5e0_icgraph.png" border="0" usemap="#classBounds_adea89543a39dfa00bee2e4aa3f58e5e0_icgraph" alt=""/></div>
+<map name="classBounds_adea89543a39dfa00bee2e4aa3f58e5e0_icgraph" id="classBounds_adea89543a39dfa00bee2e4aa3f58e5e0_icgraph">
 <area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="224,5,275,32"/></map>
 </div>
 </p>

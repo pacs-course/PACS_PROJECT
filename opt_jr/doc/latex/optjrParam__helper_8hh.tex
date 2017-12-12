@@ -21,7 +21,7 @@ This graph shows which files directly or indirectly include this file\-:\nopageb
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{optjrParam__helper_8hh_aff1b09d6630c6c0942f78171e74c1b9d}{A\-R\-G\-S}~8
+\#define \hyperlink{optjrParam__helper_8hh_aff1b09d6630c6c0942f78171e74c1b9d}{A\-R\-G\-S}~9
 \begin{DoxyCompactList}\small\item\em number of arguments from command line \end{DoxyCompactList}\item 
 \#define \hyperlink{optjrParam__helper_8hh_a8de29f7c8bbf1a81cc6e71ac602032d3}{F\-I\-L\-E\-N\-A\-M\-E}~\char`\"{}-\/f=\char`\"{}
 \item 
@@ -37,6 +37,8 @@ This graph shows which files directly or indirectly include this file\-:\nopageb
 \item 
 \#define \hyperlink{optjrParam__helper_8hh_a48549690ff4f612c62edddb87aacc438}{G\-L\-O\-B\-A\-L\-\_\-\-F\-O\-\_\-\-C\-A\-L\-C\-U\-L\-A\-T\-I\-O\-N}~\char`\"{}-\/g\char`\"{}
 \item 
+\#define \hyperlink{optjrParam__helper_8hh_a43fd55aa78bd891ebbd6a450f5eecce4}{C\-A\-C\-H\-E}~\char`\"{}-\/c\char`\"{}
+\item 
 \#define \hyperlink{optjrParam__helper_8hh_abc544a4ed22112e62773c113652c5063}{N\-U\-M\-B\-E\-R}~0
 \item 
 \#define \hyperlink{optjrParam__helper_8hh_a0f4d394a3ab4e09bff60f714c66dc5ee}{S\-T\-R\-I\-N\-G}~1
@@ -50,20 +52,23 @@ This graph shows which files directly or indirectly include this file\-:\nopageb
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{optjrParam__helper_8hh_a5ae07f63d6b390e42068d941038dadf2}{Usage} ()
+void \hyperlink{optjrParam__helper_8hh_a071ae424a27c67719a722878e9f2ab9a}{Usage} (int argc)
 \item 
-char $\ast$ \hyperlink{optjrParam__helper_8hh_a7f9e2be22b56862eb593a40550cff1dc}{parse\-Arg} (char $\ast$string, char $\ast$gap, int type)
+char $\ast$ \hyperlink{optjrParam__helper_8hh_ac15f519b8531039fbfc3380f9de89580}{parse\-Arg} (char $\ast$string, char $\ast$gap, int type, int argc)
 \end{DoxyCompactItemize}
 
 
 \subsection{Macro Definition Documentation}
 \hypertarget{optjrParam__helper_8hh_aff1b09d6630c6c0942f78171e74c1b9d}{\index{optjr\-Param\-\_\-helper.\-hh@{optjr\-Param\-\_\-helper.\-hh}!A\-R\-G\-S@{A\-R\-G\-S}}
 \index{A\-R\-G\-S@{A\-R\-G\-S}!optjrParam_helper.hh@{optjr\-Param\-\_\-helper.\-hh}}
-\subsubsection[{A\-R\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-G\-S~8}}\label{optjrParam__helper_8hh_aff1b09d6630c6c0942f78171e74c1b9d}
+\subsubsection[{A\-R\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-G\-S~9}}\label{optjrParam__helper_8hh_aff1b09d6630c6c0942f78171e74c1b9d}
 
 
 number of arguments from command line 
 
+\hypertarget{optjrParam__helper_8hh_a43fd55aa78bd891ebbd6a450f5eecce4}{\index{optjr\-Param\-\_\-helper.\-hh@{optjr\-Param\-\_\-helper.\-hh}!C\-A\-C\-H\-E@{C\-A\-C\-H\-E}}
+\index{C\-A\-C\-H\-E@{C\-A\-C\-H\-E}!optjrParam_helper.hh@{optjr\-Param\-\_\-helper.\-hh}}
+\subsubsection[{C\-A\-C\-H\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-A\-C\-H\-E~\char`\"{}-\/c\char`\"{}}}\label{optjrParam__helper_8hh_a43fd55aa78bd891ebbd6a450f5eecce4}
 \hypertarget{optjrParam__helper_8hh_ad72dbcf6d0153db1b8d8a58001feed83}{\index{optjr\-Param\-\_\-helper.\-hh@{optjr\-Param\-\_\-helper.\-hh}!D\-E\-B\-U\-G@{D\-E\-B\-U\-G}}
 \index{D\-E\-B\-U\-G@{D\-E\-B\-U\-G}!optjrParam_helper.hh@{optjr\-Param\-\_\-helper.\-hh}}
 \subsubsection[{D\-E\-B\-U\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-B\-U\-G~\char`\"{}-\/d=\char`\"{}}}\label{optjrParam__helper_8hh_ad72dbcf6d0153db1b8d8a58001feed83}
@@ -103,22 +108,23 @@ number of arguments from command line
 
 
 \subsection{Function Documentation}
-\hypertarget{optjrParam__helper_8hh_a7f9e2be22b56862eb593a40550cff1dc}{\index{optjr\-Param\-\_\-helper.\-hh@{optjr\-Param\-\_\-helper.\-hh}!parse\-Arg@{parse\-Arg}}
+\hypertarget{optjrParam__helper_8hh_ac15f519b8531039fbfc3380f9de89580}{\index{optjr\-Param\-\_\-helper.\-hh@{optjr\-Param\-\_\-helper.\-hh}!parse\-Arg@{parse\-Arg}}
 \index{parse\-Arg@{parse\-Arg}!optjrParam_helper.hh@{optjr\-Param\-\_\-helper.\-hh}}
 \subsubsection[{parse\-Arg}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ parse\-Arg (
 \begin{DoxyParamCaption}
 \item[{char $\ast$}]{string, }
 \item[{char $\ast$}]{gap, }
-\item[{int}]{type}
+\item[{int}]{type, }
+\item[{int}]{argc}
 \end{DoxyParamCaption}
-)}}\label{optjrParam__helper_8hh_a7f9e2be22b56862eb593a40550cff1dc}
+)}}\label{optjrParam__helper_8hh_ac15f519b8531039fbfc3380f9de89580}
 Function to parse argument from command line; Invoked by \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} constructor 
 
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=218pt]{optjrParam__helper_8hh_a7f9e2be22b56862eb593a40550cff1dc_cgraph}
+\includegraphics[width=218pt]{optjrParam__helper_8hh_ac15f519b8531039fbfc3380f9de89580_cgraph}
 \end{center}
 \end{figure}
 
@@ -129,25 +135,25 @@ Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=340pt]{optjrParam__helper_8hh_a7f9e2be22b56862eb593a40550cff1dc_icgraph}
+\includegraphics[width=340pt]{optjrParam__helper_8hh_ac15f519b8531039fbfc3380f9de89580_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{optjrParam__helper_8hh_a5ae07f63d6b390e42068d941038dadf2}{\index{optjr\-Param\-\_\-helper.\-hh@{optjr\-Param\-\_\-helper.\-hh}!Usage@{Usage}}
+\hypertarget{optjrParam__helper_8hh_a071ae424a27c67719a722878e9f2ab9a}{\index{optjr\-Param\-\_\-helper.\-hh@{optjr\-Param\-\_\-helper.\-hh}!Usage@{Usage}}
 \index{Usage@{Usage}!optjrParam_helper.hh@{optjr\-Param\-\_\-helper.\-hh}}
 \subsubsection[{Usage}]{\setlength{\rightskip}{0pt plus 5cm}void Usage (
 \begin{DoxyParamCaption}
-{}
+\item[{int}]{argc}
 \end{DoxyParamCaption}
-)}}\label{optjrParam__helper_8hh_a5ae07f63d6b390e42068d941038dadf2}
+)}}\label{optjrParam__helper_8hh_a071ae424a27c67719a722878e9f2ab9a}
 Explain usage of the O\-P\-T\-\_\-\-J\-R\-\_\-\-C\-P\-P program Invoked if the number of parameters send at command line is incorrect 
 
 Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{optjrParam__helper_8hh_a5ae07f63d6b390e42068d941038dadf2_icgraph}
+\includegraphics[width=350pt]{optjrParam__helper_8hh_a071ae424a27c67719a722878e9f2ab9a_icgraph}
 \end{center}
 \end{figure}
 

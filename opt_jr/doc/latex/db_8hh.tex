@@ -8,7 +8,7 @@ Include dependency graph for db.\-hh\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=334pt]{db_8hh__incl}
+\includegraphics[width=350pt]{db_8hh__incl}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\-:\nopagebreak
@@ -25,7 +25,7 @@ void \hyperlink{db_8hh_ab33dd75bdc4f92249542a2bb81b343fd}{D\-Berror} (M\-Y\-S\-Q
 \item 
 M\-Y\-S\-Q\-L\-\_\-\-R\-O\-W \hyperlink{db_8hh_a2491baf1bdfde4dc81303042399a6278}{execute\-S\-Q\-L} (M\-Y\-S\-Q\-L $\ast$conn, char $\ast$statement, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} par)
 \item 
-M\-Y\-S\-Q\-L $\ast$ \hyperlink{db_8hh_a8707daf0868830f96c88a43b3d9ece50}{D\-Bopen} (char $\ast$host, char $\ast$login, char $\ast$passw, char $\ast$db\-Name)
+M\-Y\-S\-Q\-L $\ast$ \hyperlink{db_8hh_aced0f518cdbba35b17b3ce9f316131ce}{D\-Bopen} (char $\ast$host, char $\ast$port, char $\ast$login, char $\ast$passw, char $\ast$db\-Name)
 \item 
 void \hyperlink{db_8hh_a54af21d55b55bae7b63cb28d3cd05758}{D\-Bclose} (M\-Y\-S\-Q\-L $\ast$conn)
 \end{DoxyCompactItemize}
@@ -39,7 +39,18 @@ void \hyperlink{db_8hh_a54af21d55b55bae7b63cb28d3cd05758}{D\-Bclose} (M\-Y\-S\-Q
 \item[{M\-Y\-S\-Q\-L $\ast$}]{conn}
 \end{DoxyParamCaption}
 )}}\label{db_8hh_a54af21d55b55bae7b63cb28d3cd05758}
-Close D\-B connection (not substantially changed from original C version) \hypertarget{db_8hh_ab33dd75bdc4f92249542a2bb81b343fd}{\index{db.\-hh@{db.\-hh}!D\-Berror@{D\-Berror}}
+Close D\-B connection (not substantially changed from original C version) 
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db_8hh_a54af21d55b55bae7b63cb28d3cd05758_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{db_8hh_ab33dd75bdc4f92249542a2bb81b343fd}{\index{db.\-hh@{db.\-hh}!D\-Berror@{D\-Berror}}
 \index{D\-Berror@{D\-Berror}!db.hh@{db.\-hh}}
 \subsubsection[{D\-Berror}]{\setlength{\rightskip}{0pt plus 5cm}void D\-Berror (
 \begin{DoxyParamCaption}
@@ -58,23 +69,24 @@ Here is the caller graph for this function\-:\nopagebreak
 \end{figure}
 
 
-\hypertarget{db_8hh_a8707daf0868830f96c88a43b3d9ece50}{\index{db.\-hh@{db.\-hh}!D\-Bopen@{D\-Bopen}}
+\hypertarget{db_8hh_aced0f518cdbba35b17b3ce9f316131ce}{\index{db.\-hh@{db.\-hh}!D\-Bopen@{D\-Bopen}}
 \index{D\-Bopen@{D\-Bopen}!db.hh@{db.\-hh}}
 \subsubsection[{D\-Bopen}]{\setlength{\rightskip}{0pt plus 5cm}M\-Y\-S\-Q\-L$\ast$ D\-Bopen (
 \begin{DoxyParamCaption}
 \item[{char $\ast$}]{host, }
+\item[{char $\ast$}]{port, }
 \item[{char $\ast$}]{login, }
 \item[{char $\ast$}]{passw, }
 \item[{char $\ast$}]{db\-Name}
 \end{DoxyParamCaption}
-)}}\label{db_8hh_a8707daf0868830f96c88a43b3d9ece50}
+)}}\label{db_8hh_aced0f518cdbba35b17b3ce9f316131ce}
 Open a D\-B connection (not substantially changed from original C version) 
 
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=218pt]{db_8hh_a8707daf0868830f96c88a43b3d9ece50_cgraph}
+\includegraphics[width=218pt]{db_8hh_aced0f518cdbba35b17b3ce9f316131ce_cgraph}
 \end{center}
 \end{figure}
 
@@ -85,7 +97,7 @@ Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{db_8hh_a8707daf0868830f96c88a43b3d9ece50_icgraph}
+\includegraphics[width=350pt]{db_8hh_aced0f518cdbba35b17b3ce9f316131ce_icgraph}
 \end{center}
 \end{figure}
 

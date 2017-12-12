@@ -6,7 +6,8 @@
 #include <vector>
 #include "application.hh"
 
-
+/* Used to parse args */
+#define MAX_APP_LENGTH 1024
 const int MAX_LINE_LENGTH = 1024;
 const int _SESSION_APP_ID = 1;
 const int _APP_ID = 2;
@@ -36,7 +37,7 @@ const int PARAMETERS = 12;
 char * getfield(char* line, int num);
 
 /**
-  This function given a file* with data of application returns the vector of "Application" objects 
+  This function given a file* with data of application returns the vector of "Application" objects
 */
 std::vector<Application> readAppFile(FILE* stream);
 
