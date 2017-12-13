@@ -1,7 +1,7 @@
 <map id="optJrParameters::get_numberOfThreads" name="optJrParameters::get_numberOfThreads">
-<area shape="rect" id="node2" href="$classBounds.html#adea89543a39dfa00bee2e4aa3f58e5e0" title="Bounds::calculateBounds" alt="" coords="408,9,579,36"/>
-<area shape="rect" id="node4" href="$candidates_8hh.html#a06a4390403bfbe9df4c986a3c8f07d28" title="invokePredictorOpenMP" alt="" coords="197,35,360,61"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="627,85,677,112"/>
-<area shape="rect" id="node5" href="$classSearch.html#af95c649fd7dba70b7bd3c124ec501046" title="Search::localSearch" alt="" coords="424,85,563,112"/>
-<area shape="rect" id="node6" href="$statistics_8hh.html#a202f8e6d9896663ccc22e85450db0112" title="readStatistics" alt="" coords="227,136,330,163"/>
+<area shape="rect" id="node2" href="$classBounds.html#adea89543a39dfa00bee2e4aa3f58e5e0" title="Bounds::calculateBounds" alt="" coords="209,5,380,32"/>
+<area shape="rect" id="node4" href="$classsCandidates.html#ac5ff86e5acf736ef57a3eb25c0d724ab" title="sCandidates::invokePredictor\lOpenMP" alt="" coords="198,57,391,98"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="440,123,491,149"/>
+<area shape="rect" id="node5" href="$classSearch.html#af95c649fd7dba70b7bd3c124ec501046" title="Search::localSearch" alt="" coords="225,173,364,200"/>
+<area shape="rect" id="node6" href="$statistics_8hh.html#a202f8e6d9896663ccc22e85450db0112" title="readStatistics" alt="" coords="243,224,346,251"/>
 </map>

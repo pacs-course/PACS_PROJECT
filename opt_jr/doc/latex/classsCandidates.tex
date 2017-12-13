@@ -1,0 +1,80 @@
+\hypertarget{classsCandidates}{\section{s\-Candidates Class Reference}
+\label{classsCandidates}\index{s\-Candidates@{s\-Candidates}}
+}
+
+
+{\ttfamily \#include $<$candidates.\-hh$>$}
+
+
+
+Collaboration diagram for s\-Candidates\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classsCandidates__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classsCandidates_a48323f8fa14cde7569faa219d8282b9d}{add\-Candidate} (\hyperlink{classApplication}{Application} \&app\-\_\-i, \hyperlink{classApplication}{Application} \&app\-\_\-j, int contr1, int contr2, double delta, double delta\-\_\-i, double delta\-\_\-j)
+\item 
+void \hyperlink{classsCandidates_ac5ff86e5acf736ef57a3eb25c0d724ab}{invoke\-Predictor\-Open\-M\-P} (\hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par, \hyperlink{readConfigurationFile_8hh_ab8f35b1da3261263c5e9c0e7c8921f5c}{s\-Configuration} \&configuration)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::list$<$ \hyperlink{classCandidate}{Candidate} $>$ \hyperlink{classsCandidates_a71334f188ac386cd5958508288487832}{cand}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Auxiliary class used by local\-Search; it stores pairs of applications for which a cores exchange could be profitable and provide methods to add Candidates and evaluate in parallel the objective function 
+
+\subsection{Member Function Documentation}
+\hypertarget{classsCandidates_a48323f8fa14cde7569faa219d8282b9d}{\index{s\-Candidates@{s\-Candidates}!add\-Candidate@{add\-Candidate}}
+\index{add\-Candidate@{add\-Candidate}!sCandidates@{s\-Candidates}}
+\subsubsection[{add\-Candidate}]{\setlength{\rightskip}{0pt plus 5cm}void s\-Candidates\-::add\-Candidate (
+\begin{DoxyParamCaption}
+\item[{{\bf Application} \&}]{app\-\_\-i, }
+\item[{{\bf Application} \&}]{app\-\_\-j, }
+\item[{int}]{contr1, }
+\item[{int}]{contr2, }
+\item[{double}]{delta, }
+\item[{double}]{delta\-\_\-i, }
+\item[{double}]{delta\-\_\-j}
+\end{DoxyParamCaption}
+)}}\label{classsCandidates_a48323f8fa14cde7569faa219d8282b9d}
+\char`\"{}add\-Candidate\char`\"{} stores build a \char`\"{}\-Candidate\char`\"{} object and stores it in a \hyperlink{classsCandidates}{s\-Candidates} container ordered by increasing delta F\-O \hypertarget{classsCandidates_ac5ff86e5acf736ef57a3eb25c0d724ab}{\index{s\-Candidates@{s\-Candidates}!invoke\-Predictor\-Open\-M\-P@{invoke\-Predictor\-Open\-M\-P}}
+\index{invoke\-Predictor\-Open\-M\-P@{invoke\-Predictor\-Open\-M\-P}!sCandidates@{s\-Candidates}}
+\subsubsection[{invoke\-Predictor\-Open\-M\-P}]{\setlength{\rightskip}{0pt plus 5cm}void s\-Candidates\-::invoke\-Predictor\-Open\-M\-P (
+\begin{DoxyParamCaption}
+\item[{{\bf opt\-Jr\-Parameters} \&}]{par, }
+\item[{{\bf s\-Configuration} \&}]{configuration}
+\end{DoxyParamCaption}
+)}}\label{classsCandidates_ac5ff86e5acf736ef57a3eb25c0d724ab}
+\char`\"{}invoke\-Predictor\-Open\-M\-P\char`\"{} calls in parallel the Obj\-Function\-Component for each pair of application and it stores the results for each pair in real\-\_\-i, real\-\_\-j. 
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsCandidates_ac5ff86e5acf736ef57a3eb25c0d724ab_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classsCandidates_a71334f188ac386cd5958508288487832}{\index{s\-Candidates@{s\-Candidates}!cand@{cand}}
+\index{cand@{cand}!sCandidates@{s\-Candidates}}
+\subsubsection[{cand}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<${\bf Candidate}$>$ s\-Candidates\-::cand}}\label{classsCandidates_a71334f188ac386cd5958508288487832}
+Container where applications candidates to change cores are stored in order of increasing delta\-F\-O 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/\hyperlink{candidates_8hh}{candidates.\-hh}\item 
+/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/\hyperlink{candidates_8cpp}{candidates.\-cpp}\end{DoxyCompactItemize}

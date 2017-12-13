@@ -17,15 +17,15 @@ Collaboration diagram for Candidate\-:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classCandidate_a2d1453a6b8c1a39561e67a2c67b79ed1}{Candidate} (\hyperlink{classApplication}{Application} $\ast$i, \hyperlink{classApplication}{Application} $\ast$j, int N\-Ci, int N\-Cj, double D\-\_\-\-F\-O, int d\-\_\-i, int d\-\_\-j)
+\hyperlink{classCandidate_a050c6cc5ed86d2a40cd2b2b0f79b8e13}{Candidate} (\hyperlink{classApplication}{Application} i, \hyperlink{classApplication}{Application} j, int N\-Ci, int N\-Cj, double D\-\_\-\-F\-O, int d\-\_\-i, int d\-\_\-j)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classApplication}{Application} $\ast$ \hyperlink{classCandidate_a1bfed0429bba41f57dce0fbd37225c2c}{app\-\_\-i}
-\begin{DoxyCompactList}\small\item\em Pointer to the first \hyperlink{classApplication}{Application}. \end{DoxyCompactList}\item 
-\hyperlink{classApplication}{Application} $\ast$ \hyperlink{classCandidate_a8b0f26e8b45e9a3331be8a9694d3be5e}{app\-\_\-j}
-\begin{DoxyCompactList}\small\item\em Pointer to the second \hyperlink{classApplication}{Application}. \end{DoxyCompactList}\item 
+\hyperlink{classApplication}{Application} \hyperlink{classCandidate_ac0132d260daf989781ac94fdf494d507}{app\-\_\-i}
+\begin{DoxyCompactList}\small\item\em Copy of the first \hyperlink{classApplication}{Application}. \end{DoxyCompactList}\item 
+\hyperlink{classApplication}{Application} \hyperlink{classCandidate_ad420293664ad21ac74713b90bfa73f04}{app\-\_\-j}
+\begin{DoxyCompactList}\small\item\em Copy of the second \hyperlink{classApplication}{Application}. \end{DoxyCompactList}\item 
 int \hyperlink{classCandidate_a859313416296683b7c0496d842dab48a}{new\-Core\-Assignment\-\_\-i}
 \begin{DoxyCompactList}\small\item\em Cores after the move (first application) \end{DoxyCompactList}\item 
 int \hyperlink{classCandidate_a1203966358bd849169b5f967de3c2bf7}{new\-Core\-Assignment\-\_\-j}
@@ -43,22 +43,22 @@ double \hyperlink{classCandidate_ad7e4bca76815c11f378f005baa93bffb}{real\-\_\-j}
 
 
 \subsection{Detailed Description}
-\hyperlink{classCandidate}{Candidate} class is an auxiliary class used by local\-Search; it stores data about pairs of application and the consequent changes on the objective function after cores exchange. 
+\hyperlink{classCandidate}{Candidate} class is an auxiliary class included in \hyperlink{classsCandidates}{s\-Candidates} which is used by local\-Search; it stores data about pairs of application and the consequent changes on the objective function after cores exchange. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classCandidate_a2d1453a6b8c1a39561e67a2c67b79ed1}{\index{Candidate@{Candidate}!Candidate@{Candidate}}
+\hypertarget{classCandidate_a050c6cc5ed86d2a40cd2b2b0f79b8e13}{\index{Candidate@{Candidate}!Candidate@{Candidate}}
 \index{Candidate@{Candidate}!Candidate@{Candidate}}
 \subsubsection[{Candidate}]{\setlength{\rightskip}{0pt plus 5cm}Candidate\-::\-Candidate (
 \begin{DoxyParamCaption}
-\item[{{\bf Application} $\ast$}]{i, }
-\item[{{\bf Application} $\ast$}]{j, }
+\item[{{\bf Application}}]{i, }
+\item[{{\bf Application}}]{j, }
 \item[{int}]{N\-Ci, }
 \item[{int}]{N\-Cj, }
 \item[{double}]{D\-\_\-\-F\-O, }
 \item[{int}]{d\-\_\-i, }
 \item[{int}]{d\-\_\-j}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCandidate_a2d1453a6b8c1a39561e67a2c67b79ed1}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCandidate_a050c6cc5ed86d2a40cd2b2b0f79b8e13}
 
 
 Constructor. 
@@ -66,19 +66,19 @@ Constructor.
 
 
 \subsection{Member Data Documentation}
-\hypertarget{classCandidate_a1bfed0429bba41f57dce0fbd37225c2c}{\index{Candidate@{Candidate}!app\-\_\-i@{app\-\_\-i}}
+\hypertarget{classCandidate_ac0132d260daf989781ac94fdf494d507}{\index{Candidate@{Candidate}!app\-\_\-i@{app\-\_\-i}}
 \index{app\-\_\-i@{app\-\_\-i}!Candidate@{Candidate}}
-\subsubsection[{app\-\_\-i}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Application}$\ast$ Candidate\-::app\-\_\-i}}\label{classCandidate_a1bfed0429bba41f57dce0fbd37225c2c}
+\subsubsection[{app\-\_\-i}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Application} Candidate\-::app\-\_\-i}}\label{classCandidate_ac0132d260daf989781ac94fdf494d507}
 
 
-Pointer to the first \hyperlink{classApplication}{Application}. 
+Copy of the first \hyperlink{classApplication}{Application}. 
 
-\hypertarget{classCandidate_a8b0f26e8b45e9a3331be8a9694d3be5e}{\index{Candidate@{Candidate}!app\-\_\-j@{app\-\_\-j}}
+\hypertarget{classCandidate_ad420293664ad21ac74713b90bfa73f04}{\index{Candidate@{Candidate}!app\-\_\-j@{app\-\_\-j}}
 \index{app\-\_\-j@{app\-\_\-j}!Candidate@{Candidate}}
-\subsubsection[{app\-\_\-j}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Application}$\ast$ Candidate\-::app\-\_\-j}}\label{classCandidate_a8b0f26e8b45e9a3331be8a9694d3be5e}
+\subsubsection[{app\-\_\-j}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Application} Candidate\-::app\-\_\-j}}\label{classCandidate_ad420293664ad21ac74713b90bfa73f04}
 
 
-Pointer to the second \hyperlink{classApplication}{Application}. 
+Copy of the second \hyperlink{classApplication}{Application}. 
 
 \hypertarget{classCandidate_ab1033e1f3e0060f0773c7d9268c2ce0b}{\index{Candidate@{Candidate}!delta\-\_\-i@{delta\-\_\-i}}
 \index{delta\-\_\-i@{delta\-\_\-i}!Candidate@{Candidate}}

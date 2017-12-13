@@ -7,7 +7,7 @@
 
 
 /**
-   Candidate class is an auxiliary class used by localSearch; it stores data
+   Candidate class is an auxiliary class included in sCandidates which is used by localSearch; it stores data
    about pairs of application and the consequent changes on the objective function
    after cores exchange.
 */
@@ -43,8 +43,6 @@ class Candidate{
   /// Constructor
   Candidate(Application i, Application j, int NCi, int NCj, double D_FO, int d_i, int d_j ): app_i(i), app_j(j), newCoreAssignment_i(NCi), newCoreAssignment_j(NCj),deltaFO(D_FO), delta_i(d_i), delta_j(d_j) {};
 
-
-
 };
 
 
@@ -53,7 +51,7 @@ class Candidate{
 /**
 Auxiliary class used by localSearch; it stores pairs of applications for which a cores exchange
 could be profitable and provide methods to add Candidates and evaluate in parallel the objective function
- 
+
 */
 
 class sCandidates

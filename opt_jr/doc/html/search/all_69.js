@@ -8,5 +8,5 @@ var searchData=
   ['invokepredictor_2ehh',['invokePredictor.hh',['../invokePredictor_8hh.html',1,'']]],
   ['invokepredictor_5fhelper_2ecpp',['invokePredictor_helper.cpp',['../invokePredictor__helper_8cpp.html',1,'']]],
   ['invokepredictor_5fhelper_2ehh',['invokePredictor_helper.hh',['../invokePredictor__helper_8hh.html',1,'']]],
-  ['invokepredictoropenmp',['invokePredictorOpenMP',['../candidates_8cpp.html#a06a4390403bfbe9df4c986a3c8f07d28',1,'invokePredictorOpenMP(sCandidates &amp;candidates, optJrParameters &amp;par, sConfiguration &amp;configuration):&#160;candidates.cpp'],['../candidates_8hh.html#a06a4390403bfbe9df4c986a3c8f07d28',1,'invokePredictorOpenMP(sCandidates &amp;candidates, optJrParameters &amp;par, sConfiguration &amp;configuration):&#160;candidates.cpp']]]
+  ['invokepredictoropenmp',['invokePredictorOpenMP',['../classsCandidates.html#ac5ff86e5acf736ef57a3eb25c0d724ab',1,'sCandidates']]]
 ];

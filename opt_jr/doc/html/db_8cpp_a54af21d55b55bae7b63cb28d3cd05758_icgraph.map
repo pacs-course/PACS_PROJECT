@@ -1,6 +1,5 @@
 <map id="DBclose" name="DBclose">
-<area shape="rect" id="node2" href="$classBounds.html#adea89543a39dfa00bee2e4aa3f58e5e0" title="Bounds::calculateBounds" alt="" coords="336,5,507,32"/>
-<area shape="rect" id="node4" href="$candidates_8hh.html#a06a4390403bfbe9df4c986a3c8f07d28" title="invokePredictorOpenMP" alt="" coords="125,56,288,83"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="555,56,605,83"/>
-<area shape="rect" id="node5" href="$classSearch.html#af95c649fd7dba70b7bd3c124ec501046" title="Search::localSearch" alt="" coords="352,56,491,83"/>
+<area shape="rect" id="node2" href="$classBounds.html#adea89543a39dfa00bee2e4aa3f58e5e0" title="Bounds::calculateBounds" alt="" coords="137,5,308,32"/>
+<area shape="rect" id="node4" href="$classsCandidates.html#ac5ff86e5acf736ef57a3eb25c0d724ab" title="sCandidates::invokePredictor\lOpenMP" alt="" coords="126,57,319,98"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="368,64,419,91"/>
 </map>

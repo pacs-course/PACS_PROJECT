@@ -11,7 +11,7 @@
 
 
 
-#define R_ALGORITHM 0
+#define R_ALGORITHM 0 ///< R_ALGORITHM: currently redundant, it specifies how the objective function should be computed 
 /*#define CORES_ALGORITHM 1
 #define NCORES_ALGORITHM 2*/
 

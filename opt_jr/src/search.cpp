@@ -241,7 +241,7 @@ void Search::sequencial_localSearch(sConfiguration &configuration, MYSQL *conn, 
       debugMsg= "app " + it->app_j.session_app_id + "    DELTAVM_j: " + std::to_string(DELTAVM_j); debugMessage(debugMsg, par);
 
 
-      // Change the currentCores, but rollback later
+
       debugMsg = "app " + it->app_i.session_app_id + "     currentCores: " + std::to_string((int)it->app_i.currentCores_d); debugMessage(debugMsg, par);
       debugMsg = "app " + it->app_j.session_app_id + "     currentCores: " + std::to_string((int)it->app_j.currentCores_d); debugMessage(debugMsg, par);
 
