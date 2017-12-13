@@ -143,403 +143,147 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
  void Search::localSearch(sConfiguration &configuration, MYSQL *conn, Batch &App_manager , optJrParameters &par)
  {
 
-     if (par.get_numberOfThreads() > 0) // openMP
+   std::string debugMsg;
+   sCandidates sCandidateApproximated ;
+  // int index = 0;
+   double TotalFO;
+   int how_many;
+   int MAX_PROMISING_CONFIGURATIONS = par.get_K();
+   double DELTA_fo_App_i, DELTA_fo_App_j;
+   sStatistics statistics;
+
+   debugMsg =  "\n     ***** Estimate the candidates for the predictor ******\n"; debugMessage(debugMsg, par);
+
+   //START THE ITERATION LOOP
+   for (int iteration = 1; iteration <= par.get_maxIteration(); iteration++)
+   {
+     checkTotalNodes(par.get_number(), App_manager);
+     debugMsg= "ITERATION " + std::to_string(iteration); debugMessage(debugMsg, par);
+
+
+     /*
+     *   Estimate the candidates for the predictor
+     */
+     sCandidateApproximated = approximatedLoop( App_manager, how_many, par );
+     debugMsg= "\n\n\n\n       finished approximatedLoop   \n\n\n\n"; debugMessage(debugMsg, par);
+
+     if (sCandidateApproximated.cand.empty())
      {
-       openMP_localSearch(configuration, conn, App_manager,  par );
+       // The Candidate Application is empty. No further solution enhancements possible
+       debugMsg = "LocalSearch: empty Candidate Application "; debugMessage(debugMsg, par);
+       break;
+     }
+
+     debugMsg = " \n\n\n\n\n*****  Ex-iteration loop ******\n\n\n\n\n";debugMessage(debugMsg, par);
+
+
+     debugMsg = "\n\n*******************************************************************\n";
+     debugMsg +="*** Consider the first MAX_PROMISING_CONFIGURATIONS of the Application ****\n";
+     debugMsg +="*******************************************************************\n"; debugMessage(debugMsg,par);
+
+     debugMsg = " There are " + std::to_string(how_many) +" promising configurations in iteration " + std::to_string(iteration) + "\n\n"; debugMessage(debugMsg,par);
+
+     /*
+     *   Evaluate objective function for most promising pairs (until finished or MAX_PROMISING_CONFIGURATIONS is reached)
+     */
+
+     if(par.get_numberOfThreads()==0)
+     {
+       // Calculate in advance the results of the predictor FOR EACH candidate s.t. currentCores > 0 (until finished or MAX_PROMISING_CONFIGURATIONS is reached)
+       sCandidateApproximated.invokePredictorSeq( conn, par, configuration);
      }
      else
      {
-       sequencial_localSearch(configuration, conn, App_manager,  par );
+       // Calculate in advance and in parallel the results of the predictor FOR EACH candidate (TODO:to be changed)
+       sCandidateApproximated.invokePredictorOpenMP( par, configuration);
      }
 
-}
+     /*
+     *  Find the best pair with deltaFO<0 (if it exists)
+     */
 
-/*
-Sequencial localSearch
-*/
 
 
-void Search::sequencial_localSearch(sConfiguration &configuration, MYSQL *conn, Batch &App_manager , optJrParameters &par)
-{
-  //Application * application_i, *application_j;
-  sCandidates sCandidateApproximated ;
+     //Those values are useful to detect the best pair
+     int index_pair=-1, index=0;
+     double DELTA_pair=0, DELTA_tmp;
 
-  std::string debugMsg;
 
-  int index = 0;
-  double TotalFO;
-  int how_many;
-  int nCoreMov;
-  int MAX_PROMISING_CONFIGURATIONS = par.get_K();
-  int DELTAVM_i, DELTAVM_j;
-  double DELTA_fo_App_i, DELTA_fo_App_j;
-  //sCandidates  minCandidate;
-  sStatistics statistics;
+     for (auto it = sCandidateApproximated.cand.begin(); it != sCandidateApproximated.cand.end(); it++)
+     {
+       if(index>0 && index==MAX_PROMISING_CONFIGURATIONS)//This is done because in invokePredictor* only the first MAX_PROMISING_CONFIGURATIONS are evaluated; index=0 means par.get_k()==0 i.e. all the pairs are explored
+       {
+         break;
+       }
 
-  debugMsg =  "\n     ***** Estimate the candidates for the predictor ******\n"; debugMessage(debugMsg, par);
+       if (it->app_i.currentCores_d > 0 && it->app_j.currentCores_d > 0) // For those pairs, object function evaluation calculated earlier
+       {
 
-  //START THE ITERATION LOOP
-  for (int iteration = 1; iteration <= par.get_maxIteration(); iteration++)
-  {
-    debugMsg= "ITERATION " + std::to_string(iteration); debugMessage(debugMsg, par);
+         DELTA_fo_App_i = it->real_i - it->app_i.baseFO;
+         DELTA_fo_App_j = it->real_j - it->app_j.baseFO;
 
-    // Estimate the candidates for the predictor
-    sCandidateApproximated = approximatedLoop( App_manager, how_many, par );
-    debugMsg= "\n\n\n\n       finished approximatedLoop   \n\n\n\n"; debugMessage(debugMsg, par);
+         DELTA_tmp=DELTA_fo_App_i+DELTA_fo_App_j;
 
-    if (sCandidateApproximated.cand.empty())
-    {
-      // The Candidate Application is empty. No further solution enhancements possible
-      debugMsg = "LocalSearch: empty Candidate Application "; debugMessage(debugMsg, par);
-      break;
-    }
+         if (DELTA_tmp<DELTA_pair)
+         {
+           DELTA_pair=DELTA_tmp;
+           index_pair=index;
+         }
 
-    // Copy the pointer to couple of application with smallest deltafo
-    //minCandidate = sCandidateApproximated;
-    debugMsg = " \n\n\n\n\n*****  Ex-iteration loop ******\n\n\n\n\n";debugMessage(debugMsg, par);
+         debugMsg = "app " + it->app_i.session_app_id + " DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i); debugMessage(debugMsg, par);
+         debugMsg = "app " + it->app_j.session_app_id + " DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j); debugMessage(debugMsg, par);
+         debugMsg= "\n      TOTAL DELTA FO : " +  std::to_string(DELTA_tmp) + "\n\n"; debugMessage(debugMsg, par);
+       }
 
+       index++;
 
-    debugMsg = "\n\n*******************************************************************\n";
-    debugMsg +="*** Consider the first MAX_PROMISING_CONFIGURATIONS of the Application ****\n";
-    debugMsg +="*******************************************************************\n"; debugMessage(debugMsg,par);
+     }
 
-    debugMsg = " There are " + std::to_string(how_many) +" promising configurations in iteration " + std::to_string(iteration) + "\n\n"; debugMessage(debugMsg,par);
 
-
-
-    int index_pair=-1, tmp=0;
-    int cores_i, cores_j;
-    double DELTA_pair=0, DELTA_tmp;
-    double DELTA_fo_App_i_tmp, DELTA_fo_App_j_tmp;
-    //std::string sID_i, sID_j, ID_i, ID_j;
-
-    checkTotalNodes(par.get_number(), App_manager);
-
-    for (auto it = sCandidateApproximated.cand.begin(); it != sCandidateApproximated.cand.end(); it++)
-    {
-
-      debugMsg=  "Browsing CandidateApproximated Application \n\n";debugMessage(debugMsg, par);
-
-      // Consider only the first MAX_PROMISING_CONFIGURATIONS (0 value means browse the entire Application) Application members
-      if (index > 0 && index == MAX_PROMISING_CONFIGURATIONS)
-      {
-        debugMsg="LocalSearch: MAX_PROMISING_CONFIGURATIONS was reached, leaving sfirstCandidateApproximated loop";debugMessage(debugMsg, par);
-        break;
-      }
-
-      //application_i = it->app_i;
-      //application_j = it->app_j;
-
-
-      debugMsg= "Comparing " + it->app_i.session_app_id + " with " + it->app_j.session_app_id; debugMessage(debugMsg, par);
-
-      nCoreMov = std::max(it->app_i.V, it->app_j.V);
-
-      DELTAVM_i = nCoreMov/it->app_i.V;
-      debugMsg= "app " + it->app_i.session_app_id + "   DELTAVM_i: " + std::to_string(DELTAVM_i); debugMessage(debugMsg, par);
-      DELTAVM_j = nCoreMov/it->app_j.V;
-      debugMsg= "app " + it->app_j.session_app_id + "    DELTAVM_j: " + std::to_string(DELTAVM_j); debugMessage(debugMsg, par);
-
-
-
-      debugMsg = "app " + it->app_i.session_app_id + "     currentCores: " + std::to_string((int)it->app_i.currentCores_d); debugMessage(debugMsg, par);
-      debugMsg = "app " + it->app_j.session_app_id + "     currentCores: " + std::to_string((int)it->app_j.currentCores_d); debugMessage(debugMsg, par);
-
-      it->app_i.currentCores_d = it->app_i.currentCores_d + DELTAVM_i*it->app_i.V;
-      it->app_j.currentCores_d = it->app_j.currentCores_d - DELTAVM_j*it->app_j.V;
-
-      debugMsg = "After cores exchange: app " + it->app_i.session_app_id + " currentCores " + std::to_string( (int)it->app_i.currentCores_d); debugMessage(debugMsg, par);
-      debugMsg = "After cores exchange: app " + it->app_j.session_app_id + " currentCores " + std::to_string( (int)it->app_j.currentCores_d); debugMessage(debugMsg, par);
-
-      if (it->app_i.currentCores_d > 0 && it->app_j.currentCores_d > 0)
-      {
-
-        it->app_i.mode= R_ALGORITHM; it->app_j.mode= R_ALGORITHM;
-
-
-          // No openmp
-          debugMsg =  " CALLING OBJ_FUNCTION_COMPONENT \n\n"; debugMessage(debugMsg, par);
-          DELTA_fo_App_i = ObjFun::ObjFunctionComponent(configuration, conn, it->app_i, par) - it->app_i.baseFO;
-          DELTA_fo_App_j = ObjFun::ObjFunctionComponent(configuration, conn, it->app_j, par) - it->app_j.baseFO;
-
-
-
-
-        DELTA_tmp=DELTA_fo_App_i+DELTA_fo_App_j;
-
-
-
-
-        if (DELTA_tmp<DELTA_pair)
-        {
-          DELTA_pair=DELTA_tmp;
-          index_pair=tmp;
-          cores_i=it->app_i.currentCores_d;
-          cores_j=it->app_j.currentCores_d;
-          DELTA_fo_App_i_tmp = DELTA_fo_App_i;
-          DELTA_fo_App_j_tmp = DELTA_fo_App_j;
-        }
-
-        debugMsg = "app " + it->app_i.session_app_id + " DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i); debugMessage(debugMsg, par);
-        debugMsg = "app " + it->app_j.session_app_id + " DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j); debugMessage(debugMsg, par);
-        debugMsg= "\n      TOTAL DELTA FO : " +  std::to_string(DELTA_tmp) + "\n\n"; debugMessage(debugMsg, par);
-
-      }
-      // Restore previous number of cores
-
-    //  application_i->currentCores_d = application_i->currentCores_d - DELTAVM_i * application_i->V;
-      //it->app_j->currentCores_d = it->app_j->currentCores_d + DELTAVM_j * it->app_j->V;
-      tmp++;
-
-
-
-    }
-
-
-
-    if(index_pair!=-1)
-    {
-      auto it = sCandidateApproximated.cand.begin();
-      for (int j=0; j< index_pair; j++)
-      {
-        it++;
-      }
-      // potrei andare per copia, scorrere app in batch e trovare quelle con session app_id e ID selezionati:
-
-        for (auto &elem : App_manager.APPs)
-        {
-          if (it->app_i.app_id==elem.app_id && it->app_i.session_app_id==elem.session_app_id)
-          {
-            elem.currentCores_d = cores_i;
-            elem.baseFO=it->app_i.baseFO +  DELTA_fo_App_i_tmp;
-          }
-          if (it->app_j.app_id==elem.app_id && it->app_j.session_app_id==elem.session_app_id)
-          {
-            elem.currentCores_d = cores_j;
-            elem.baseFO=it->app_i.baseFO +  DELTA_fo_App_j_tmp;
-          }
-
-        }
-
-      /*
-      it->app_i->currentCores_d = cores_i;
-      it->app_i->baseFO=it->app_i->baseFO +  DELTA_fo_App_i_tmp;
-      it->app_j->currentCores_d = cores_j;
-      it->app_j->baseFO=it->app_j->baseFO +  DELTA_fo_App_j_tmp;
-      */
-    }
-
-
-    if (par.get_globalFOcalculation())
-    {
-
-      TotalFO = ObjFun::ObjFunctionGlobal(configuration, conn, App_manager, par);
-
-      std::cout << "\n At iteration: "<< iteration << " GLOBAL OBJECTIVE FUNCTION = "<< TotalFO <<"\n"<<std::endl;
-
-      // Update Statistics
-      addStatistics(statistics, iteration, how_many, TotalFO);
-
-    }
-
-    index++;
-  }
-
-  if (par.get_globalFOcalculation())
-  {
-    readStatistics(statistics, par);
-  }
-}
-
-
-
-/*
- Parallel localSearch
-*/
-
-void Search::openMP_localSearch(sConfiguration &configuration, MYSQL *conn, Batch &App_manager , optJrParameters &par)
-{
-  //Application * application_i, *application_j;
-  sCandidates sCandidateApproximated ;
-
-  std::string debugMsg;
-
-  int index = 0;
-  double TotalFO;
-  int how_many;
-  int nCoreMov;
-  //int MAX_PROMISING_CONFIGURATIONS = par.get_K();
-  int DELTAVM_i, DELTAVM_j;
-  double DELTA_fo_App_i, DELTA_fo_App_j;
-  //sCandidates  minCandidate;
-  sStatistics statistics;
-
-  debugMsg =  "\n     ***** Estimate the candidates for the predictor ******\n"; debugMessage(debugMsg, par);
-
-  //START THE ITERATION LOOP
-  for (int iteration = 1; iteration <= par.get_maxIteration(); iteration++)
-  {
-    debugMsg= "ITERATION " + std::to_string(iteration); debugMessage(debugMsg, par);
-
-    // Estimate the candidates for the predictor
-    sCandidateApproximated = approximatedLoop( App_manager, how_many, par );
-    debugMsg= "\n\n\n\n       finished approximatedLoop   \n\n\n\n"; debugMessage(debugMsg, par);
-
-    if (sCandidateApproximated.cand.empty())
-    {
-      // The Candidate Application is empty. No further solution enhancements possible
-      debugMsg = "LocalSearch: empty Candidate Application "; debugMessage(debugMsg, par);
-      break;
-    }
-
-    // Copy the pointer to couple of application with smallest deltafo
-    //minCandidate = sCandidateApproximated;
-    debugMsg = " \n\n\n\n\n*****  Ex-iteration loop ******\n\n\n\n\n";debugMessage(debugMsg, par);
-
-
-    debugMsg = "\n\n*******************************************************************\n";
-    debugMsg +="*** Consider the first MAX_PROMISING_CONFIGURATIONS of the Application ****\n";
-    debugMsg +="*******************************************************************\n"; debugMessage(debugMsg,par);
-
-    debugMsg = " There are " + std::to_string(how_many) +" promising configurations in iteration " + std::to_string(iteration) + "\n\n"; debugMessage(debugMsg,par);
-
-
-
-    int index_pair=-1, tmp=0;
-    int cores_i, cores_j;
-    double DELTA_pair=0, DELTA_tmp;
-    double DELTA_fo_App_i_tmp, DELTA_fo_App_j_tmp;
-
-    checkTotalNodes(par.get_number(), App_manager);
-
-
-    for (auto it = sCandidateApproximated.cand.begin(); it != sCandidateApproximated.cand.end(); it++)
-    {
-
-      //application_i = it->app_i;
-      //application_j = it->app_j;
-      nCoreMov = std::max(it->app_i.V, it->app_j.V);
-
-      DELTAVM_i = nCoreMov/it->app_i.V;
-      DELTAVM_j = nCoreMov/it->app_j.V;
-
-      it->app_i.currentCores_d = it->app_i.currentCores_d + DELTAVM_i*it->app_i.V;
-      it->app_j.currentCores_d = it->app_j.currentCores_d - DELTAVM_j*it->app_j.V;
-    }
-
-
-    // Calculate in advance and in parallel the results of the predictor FOR EACH candidate
-    sCandidateApproximated.invokePredictorOpenMP( par, configuration);
-
-    // find the best pair <0 (it it exists)
-    for (auto it = sCandidateApproximated.cand.begin(); it != sCandidateApproximated.cand.end(); it++)
-    {
-      // OpenMP:  object function just computed
-
-      if (it->app_i.currentCores_d > 0 && it->app_j.currentCores_d > 0)
-      {
-
-
-        // OpenMP:  object function evaluation calculated earlier
-        DELTA_fo_App_i = it->real_i - it->app_i.baseFO;
-        DELTA_fo_App_j = it->real_j - it->app_j.baseFO;
-
-
-
-        DELTA_tmp=DELTA_fo_App_i+DELTA_fo_App_j;
-
-
-
-
-        if (DELTA_tmp<DELTA_pair)
-        {
-          DELTA_pair=DELTA_tmp;
-          index_pair=tmp;
-          cores_i=it->app_i.currentCores_d;
-          cores_j=it->app_j.currentCores_d;
-          DELTA_fo_App_i_tmp = DELTA_fo_App_i;
-          DELTA_fo_App_j_tmp = DELTA_fo_App_j;
-        }
-
-        debugMsg = "app " + it->app_i.session_app_id + " DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i); debugMessage(debugMsg, par);
-        debugMsg = "app " + it->app_j.session_app_id + " DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j); debugMessage(debugMsg, par);
-        debugMsg= "\n      TOTAL DELTA FO : " +  std::to_string(DELTA_tmp) + "\n\n"; debugMessage(debugMsg, par);
-
-      }
-      tmp++;
-    }
-
-    // Restore previous number of cores
-    /*
-    for (auto it = sCandidateApproximated.begin(); it != sCandidateApproximated.end(); it++)
-    {
-      //application_i = it->app_i;
-      //application_j = it->app_j;
-
-      nCoreMov = std::max(it->app_i.V, it->app_j.V);
-
-      DELTAVM_i = nCoreMov/it->app_i.V;
-      DELTAVM_j = nCoreMov/it->app_j.V;
-
-
-      it->app_i.currentCores_d = it->app_i.currentCores_d - DELTAVM_i * it->app_i.V;
-      it->app_j.currentCores_d = it->app_j.currentCores_d + DELTAVM_j * it->app_j.V;
-    }
+   /*
+    *  Find (if any) the corresponding applications in batch and modify them
     */
 
-    if(index_pair!=-1)
-    {
-      auto it = sCandidateApproximated.cand.begin();
-      for (int j=0; j< index_pair; j++)
-      {
-        it++;
-      }
-      // potrei andare per copia, scorrere app in batch e trovare quelle con session app_id e ID selezionati:
+     if(index_pair!=-1)
+     {
+       auto it = sCandidateApproximated.cand.begin();
+       for (int j=0; j< index_pair; j++)
+       {
+         it++;
+       }
 
-        for (auto &elem : App_manager.APPs)
-        {
-          if (it->app_i.app_id==elem.app_id && it->app_i.session_app_id==elem.session_app_id)
-          {
-            elem.currentCores_d = cores_i;
-            elem.baseFO=elem.baseFO +  DELTA_fo_App_i_tmp;
-          }
-          if (it->app_j.app_id==elem.app_id && it->app_j.session_app_id==elem.session_app_id)
-          {
-            elem.currentCores_d = cores_j;
-            elem.baseFO=elem.baseFO +  DELTA_fo_App_j_tmp;
-          }
+       for (auto &elem : App_manager.APPs)
+       {
+         if (it->app_i.app_id==elem.app_id && it->app_i.session_app_id==elem.session_app_id)
+         {
+           elem.currentCores_d = it->newCoreAssignment_i;//cores_i;
+           elem.baseFO= it->real_i; //elem.baseFO +  DELTA_fo_App_i_tmp;//
+         }
+         if (it->app_j.app_id==elem.app_id && it->app_j.session_app_id==elem.session_app_id)
+         {
+           elem.currentCores_d =  it->newCoreAssignment_j;//cores_j;//
+           elem.baseFO= it->real_j;//elem.baseFO +  DELTA_fo_App_j_tmp;//
+         }
+       }
+     }
 
-        }
-
-      /*
-      it->app_i->currentCores_d = cores_i;
-      it->app_i->baseFO=it->app_i->baseFO +  DELTA_fo_App_i_tmp;
-      it->app_j->currentCores_d = cores_j;
-      it->app_j->baseFO=it->app_j->baseFO +  DELTA_fo_App_j_tmp;
-      */
-    }
+     checkTotalNodes(par.get_number(), App_manager);
 
 
-    if (par.get_globalFOcalculation())
-    {
+     if (par.get_globalFOcalculation())
+     {
+       TotalFO = ObjFun::ObjFunctionGlobal(configuration, conn, App_manager, par);
+       std::cout << "\n At iteration: "<< iteration << " GLOBAL OBJECTIVE FUNCTION = "<< TotalFO <<"\n"<<std::endl;
+       addStatistics(statistics, iteration, how_many, TotalFO); // Update Statistics
+     }
+
+   }
 
 
-      TotalFO = ObjFun::ObjFunctionGlobal(configuration, conn, App_manager, par);
 
-      std::cout << "\n At iteration: "<< iteration << " GLOBAL OBJECTIVE FUNCTION = "<< TotalFO <<"\n"<<std::endl;
+   if (par.get_globalFOcalculation())
+   {
+     readStatistics(statistics, par);
+   }
 
-
-      // Update Statistics
-      addStatistics(statistics, iteration, how_many, TotalFO);
-
-    }
-
-    index++;
-
-  }
-
-  if (par.get_globalFOcalculation())
-  {
-    readStatistics(statistics, par);
-  }
-}
+ }

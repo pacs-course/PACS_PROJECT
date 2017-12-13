@@ -10,10 +10,10 @@
 
 /*
  *       Name:               addCandidate
- *       Description:         This function adds all the information regarding the localSearch deltafo calculation.
+ *       Description:         This function adds all the information regarding the localSearch deltafo calculation in a candidate object and it stores the object in the list.
  *                            The list is sorted by deltafo value.
  */
-void sCandidates::addCandidate(  Application &app_i, Application &app_j, int contr1, int contr2, double delta, double delta_i, double delta_j)
+void sCandidates::addCandidate(  Application app_i, Application app_j, int contr1, int contr2, double delta, double delta_i, double delta_j)
 {
 
      if (cand.empty())
@@ -36,8 +36,9 @@ void sCandidates::addCandidate(  Application &app_i, Application &app_j, int con
 
 void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  &configuration )
 {
-  std::string debugMsg;
 
+  std::string debugMsg;
+  debugMsg= "Executing invokePredictorOpenMP"; debugMessage(debugMsg, par);
 
   int n_threads = par.get_numberOfThreads();
 
@@ -88,4 +89,37 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
   for (int i = 0; i < n_threads;++i)
     DBclose(conn2[i]);
 
+}
+
+
+void sCandidates::invokePredictorSeq(MYSQL *conn, optJrParameters &par, sConfiguration  &configuration )
+{
+  std::string debugMsg;
+  debugMsg= "Executing invokePredictorSeq"; debugMessage(debugMsg, par);
+
+  int MAX_PROMISING_CONFIGURATIONS =par.get_K();
+  int index=0;
+
+  for (auto it = cand.begin(); it != cand.end(); it++)
+  {
+    // Consider only the first MAX_PROMISING_CONFIGURATIONS (0 value means browse the entire Application) Application members
+    if (index > 0 && index == MAX_PROMISING_CONFIGURATIONS)
+    {
+      debugMsg="invokePredictorSeq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invokePredictorSeq loop";debugMessage(debugMsg, par);
+      break;
+    }
+
+
+
+    if (it->app_i.currentCores_d > 0 && it->app_j.currentCores_d > 0)
+    {
+      debugMsg= "Comparing " + it->app_i.session_app_id + " with " + it->app_j.session_app_id; debugMessage(debugMsg, par);
+      it->app_i.mode= R_ALGORITHM; it->app_j.mode= R_ALGORITHM;
+      // No openmp
+      debugMsg =  " CALLING OBJ_FUNCTION_COMPONENT \n\n"; debugMessage(debugMsg, par);
+      it->real_i = ObjFun::ObjFunctionComponent(configuration, conn, it->app_i, par);
+      it->real_j = ObjFun::ObjFunctionComponent(configuration, conn, it->app_j, par);
+    }
+    index++;
+  }
 }

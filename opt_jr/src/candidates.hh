@@ -66,7 +66,7 @@ public:
   "addCandidate" stores build a "Candidate" object and stores it in a sCandidates container
   ordered by increasing delta FO
   */
-  void addCandidate(Application &app_i, Application &app_j,int contr1, int contr2, double delta, double delta_i, double delta_j);
+  void addCandidate(Application app_i, Application app_j,int contr1, int contr2, double delta, double delta_i, double delta_j);
 
 
   /**
@@ -74,6 +74,15 @@ public:
   and it stores the results for each pair in real_i, real_j.
   */
   void invokePredictorOpenMP( optJrParameters &par, sConfiguration  &configuration );
+
+  /**
+  "invokePredictorSeq" calls sequencially the ObjFunctionComponent for each pair of application
+  and it stores the results for each pair in real_i, real_j.
+  */
+  void invokePredictorSeq( MYSQL *conn, optJrParameters &par, sConfiguration  &configuration );
+
+
+
 
 };
 
