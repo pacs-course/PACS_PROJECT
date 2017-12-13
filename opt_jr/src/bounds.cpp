@@ -24,15 +24,15 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
   std::string debugMsg;
 	double BTime = 0;
 	int BCores = 0;
-	int STEP = app.V;
+	int STEP = app.get_V();
 	int nCores;
 	int nNodes = 1;
 
 	app.currentCores_d = app.nCores_DB_d;
 
 
-	int X0 = ((int) ( app.currentCores_d / app.V) ) * app.V;
-	app.currentCores_d = std::max( X0, ((int) app.V));
+	int X0 = ((int) ( app.currentCores_d / app.get_V()) ) * app.get_V();
+	app.currentCores_d = std::max( X0, ((int) app.get_V()));
 
 
 	nCores = app.currentCores_d;
@@ -42,14 +42,14 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 	 *   First evaluation, with data guessed by findbound
 	 */
 
-	predictorOutput = atoi(invokePredictor(configuration, conn, nNodes, nCores, (char*)"*", app.datasetSize, const_cast<char*>((app.get_session_app_id()).c_str()),
-													const_cast<char*>((app.get_app_id()).c_str()), const_cast<char*>((app.stage).c_str()), par, flagDagsim));
+	predictorOutput = atoi(invokePredictor(configuration, conn, nNodes, nCores, (char*)"*", app.get_dataset_size(), const_cast<char*>((app.get_session_app_id()).c_str()),
+													const_cast<char*>((app.get_app_id()).c_str()), const_cast<char*>((app.get_stage()).c_str()), par, flagDagsim));
 
 
 	debugMsg="Bound evaluation for " + app.get_session_app_id() +
 					 " (app_ID: " + app.get_app_id() +  ") " +
 					 " predictorOutput = " + std::to_string(predictorOutput) +
-					 "(deadline is " +std::to_string(app.Deadline_d)+ ") cores "
+					 "(deadline is " +std::to_string(app.get_Deadline_d())+ ") cores "
 					 + std::to_string(nCores); debugMessage(debugMsg, par);
 
 
@@ -67,24 +67,24 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 		/*
 		 *   START THE HILL CLIMBING
 		 */
-		if (doubleCompare(predictorOutput, app.Deadline_d) == 1)
-			while (predictorOutput > app.Deadline_d)
+		if (doubleCompare(predictorOutput, app.get_Deadline_d()) == 1)
+			while (predictorOutput > app.get_Deadline_d())
 			{
 				if (nCores ==0)
 				{
 					printf("Warning Bound (| if case): nCores is currently 0 for app. Cannot invoke Predictor\n");
-					nCores= app.V;
+					nCores= app.get_V();
 					//leave the while loop
 					break;
 				}
 
 				nCores = nCores + STEP; //add the cores NB: possible improvement: add more than one VM at a time
-				predictorOutput = atof(invokePredictor(configuration, conn, nNodes, nCores, (char*)"8G", app.datasetSize, const_cast<char*>((app.get_session_app_id()).c_str()),
-																const_cast<char*>((app.get_app_id()).c_str()), const_cast<char*>((app.stage).c_str()), par, WHOLE_DAGSIM));
+				predictorOutput = atof(invokePredictor(configuration, conn, nNodes, nCores, (char*)"8G", app.get_dataset_size(), const_cast<char*>((app.get_session_app_id()).c_str()),
+																const_cast<char*>((app.get_app_id()).c_str()), const_cast<char*>((app.get_stage()).c_str()), par, WHOLE_DAGSIM));
 
 				debugMsg="Bound evaluation for " + app.get_session_app_id() +
 								 " predictorOutput = " + std::to_string(predictorOutput) +
-								 "(deadline is " +std::to_string(app.Deadline_d)+ ") cores "
+								 "(deadline is " +std::to_string(app.get_Deadline_d())+ ") cores "
 								 + std::to_string(nCores); debugMessage(debugMsg, par);
 
 				BCores = nCores;
@@ -102,7 +102,7 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 			}
 
 		else
-			while (doubleCompare(predictorOutput, app.Deadline_d) == -1)
+			while (doubleCompare(predictorOutput, app.get_Deadline_d()) == -1)
 			{
 				BCores = nCores;
 				BTime = predictorOutput;
@@ -116,17 +116,17 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 
 				if (nCores ==0)
 				{
-					nCores= app.V;
+					nCores= app.get_V();
 					//leave the while loop
 					break;
 				}
 
-				predictorOutput = atof(invokePredictor(configuration, conn, nNodes, nCores, (char*)"8G", app.datasetSize, const_cast<char*>((app.get_session_app_id()).c_str()),
-				const_cast<char*>((app.get_app_id()).c_str()), const_cast<char*>((app.stage).c_str()), par, WHOLE_DAGSIM));
+				predictorOutput = atof(invokePredictor(configuration, conn, nNodes, nCores, (char*)"8G", app.get_dataset_size(), const_cast<char*>((app.get_session_app_id()).c_str()),
+				const_cast<char*>((app.get_app_id()).c_str()), const_cast<char*>((app.get_stage()).c_str()), par, WHOLE_DAGSIM));
 
 				debugMsg="Bound evaluation for" + app.get_session_app_id() +
 								 " predictorOutput = " + std::to_string(predictorOutput) +
-								 "(deadline is " +std::to_string(app.Deadline_d)+ ") cores "
+								 "(deadline is " +std::to_string(app.get_Deadline_d())+ ") cores "
 								 + std::to_string(nCores); debugMessage(debugMsg, par);
 
 				/*
@@ -145,7 +145,7 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 	app.R_d = BTime;
 	app.bound = BCores;
 	debugMsg="\n\nSession_app_id : " + app.get_session_app_id() + " , APP_ID: " + app.get_app_id() +
-					 ", D = "+ std::to_string(app.Deadline_d) + ", R =" + std::to_string(app.R_d)+
+					 ", D = "+ std::to_string(app.get_Deadline_d()) + ", R =" + std::to_string(app.R_d)+
 					 ", bound = "+ std::to_string(app.bound) + "\n\n"; debugMessage(debugMsg, par);
 
 
@@ -171,7 +171,7 @@ void Bounds::findBound(sConfiguration &configuration, MYSQL *conn, char* db,  Ap
 
     sprintf(statement,
                         "select num_cores_opt, num_vm_opt from %s.OPTIMIZER_CONFIGURATION_TABLE where application_id='%s' and dataset_size=%d and deadline=%lf;"
-                        , db, const_cast<char*>(app.get_app_id().c_str()), app.datasetSize, app.Deadline_d);
+                        , db, const_cast<char*>(app.get_app_id().c_str()), app.get_dataset_size(), app.get_Deadline_d());
 		debugMsg= "From findbound executing SQL STATEMENT below for app "+app.get_app_id(); debugMessage(debugMsg, par);
     MYSQL_ROW row = executeSQL(conn, statement, par);
 

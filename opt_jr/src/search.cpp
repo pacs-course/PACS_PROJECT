@@ -48,14 +48,14 @@ sCandidates Search::approximatedLoop( Batch &App_manager, int &iteration, optJrP
 			{
 				debugMsg="Comparing " + application_i->get_session_app_id() + " with " + application_j->get_session_app_id();debugMessage(debugMsg, par);
 
-				nCoreMov = std::max(application_i->V, application_j->V);
+				nCoreMov = std::max(application_i->get_V(), application_j->get_V());
 
-				DELTAVM_i = nCoreMov/application_i->V; debugMsg = "app " + application_i->get_session_app_id() + " DELTAVM_i " +  std::to_string(DELTAVM_i); debugMessage(debugMsg, par);
-				DELTAVM_j = nCoreMov/application_j->V; debugMsg = "app " + application_j->get_session_app_id() + " DELTAVM_j " +  std::to_string(DELTAVM_j); debugMessage(debugMsg, par);
+				DELTAVM_i = nCoreMov/application_i->get_V(); debugMsg = "app " + application_i->get_session_app_id() + " DELTAVM_i " +  std::to_string(DELTAVM_i); debugMessage(debugMsg, par);
+				DELTAVM_j = nCoreMov/application_j->get_V(); debugMsg = "app " + application_j->get_session_app_id() + " DELTAVM_j " +  std::to_string(DELTAVM_j); debugMessage(debugMsg, par);
 
 				// Change the currentCores, but rollback later
-				int deltaNCores_i = DELTAVM_i * application_i->V;
-				int deltaNCores_j = DELTAVM_j * application_j->V;
+				int deltaNCores_i = DELTAVM_i * application_i->get_V();
+				int deltaNCores_j = DELTAVM_j * application_j->get_V();
 				application_i->currentCores_d = application_i->currentCores_d + deltaNCores_i;
 				application_j->currentCores_d = application_j->currentCores_d - deltaNCores_j;
 
@@ -92,8 +92,8 @@ sCandidates Search::approximatedLoop( Batch &App_manager, int &iteration, optJrP
 
 				}
 
-				application_i->currentCores_d = application_i->currentCores_d - DELTAVM_i*application_i->V;
-				application_j->currentCores_d = application_j->currentCores_d + DELTAVM_j*application_j->V;
+				application_i->currentCores_d = application_i->currentCores_d - DELTAVM_i*application_i->get_V();
+				application_j->currentCores_d = application_j->currentCores_d + DELTAVM_j*application_j->get_V();
 			}
 		application_j++;
 		}

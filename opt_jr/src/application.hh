@@ -57,7 +57,22 @@ class Application{
 
 	/* Static values */
 	std::string session_app_id; ///< Session identifier
+	std::string app_id; 		///<  Application identifier
+	double w; 			///<  Weight application
+	double term_i;	///<  Used to calculate nu index
+	double chi_0; 	///< Machine learning parameter
+	double chi_C;		///< Machine learning parameter
+	double m;				///< Ram of a container for this application
+	double M;				///< Total Ram available at the YARN NodeManager
+	double V;				///< Total vCPUs available at the YARN NodeManager
+	double v;				///< vCPUs of a container for this application
+	double Deadline_d; ///< Deadline for the application
+	double csi;
+	std::string stage; ///<  Application's stage (used in case of residual time)
 
+	int dataset_size;   ///< Size of the dataset
+
+	const int mode=R_ALGORITHM; 				///< How the objective function is calculated (currently redundant)
 
 
 
@@ -66,24 +81,20 @@ class Application{
 public:
 
 
-	std::string app_id; 		///<  Application identifier
-
-	int mode=R_ALGORITHM; 				///< How the objective function is calculated (currently redundant)
 
 
 
-  double w; 			///<  Weight application
-  double term_i;	///<  Used to calculate nu index
-  double chi_0; 	///< Machine learning parameter
-  double chi_C;		///< Machine learning parameter
-  double m;				///< Ram of a container for this application
-  double M;				///< Total Ram available at the YARN NodeManager
-  double V;				///< Total vCPUs available at the YARN NodeManager
-  double v;				///< vCPUs of a container for this application
-  double Deadline_d; ///< Deadline for the application
-  double csi;
-  std::string stage; ///<  Application's stage (used in case of residual time)
-  int datasetSize;   ///< Size of the dataset
+
+
+
+
+
+
+
+
+
+
+
 
   /* Dynamic values */
 
@@ -110,7 +121,7 @@ public:
 	///Constructor expects all static values.
   Application(std::string session_app_id, std::string app_id, double w,
               double chi_0, double chi_C, double m, double M, double V,
-              double v, double D, double csi, std::string St, int DatasetSize);
+              double v, double D, double csi, std::string St, int dataset_size);
 	/// This function evaluates the Hyperbolic interpolation for alpha and beta (from the second time it is invoked).
 	void computeAlphaBeta(int nCores_n, double R_n);
 
@@ -124,6 +135,84 @@ public:
 	{
 	  return app_id;
 	}
+
+	double get_w()
+	{
+	  return w;
+	}
+
+	double get_term_i()
+	{
+	  return term_i;
+	}
+
+	double get_chi_0()
+	{
+	  return chi_0;
+	}
+
+	double get_chi_C()
+	{
+	  return chi_C;
+	}
+
+	double get_m()
+	{
+	  return m;
+	}
+
+	double get_M()
+	{
+	  return M;
+	}
+
+	double get_v()
+	{
+	  return v;
+	}
+
+	double get_V()
+	{
+	  return V;
+	}
+
+	double get_Deadline_d()
+	{
+	  return Deadline_d;
+	}
+
+	double get_csi()
+	{
+	  return csi;
+	}
+
+	std::string get_stage()
+	{
+	  return stage;
+	}
+
+	int get_dataset_size()
+	{
+		return dataset_size;
+	}
+
+	int get_mode()
+	{
+		return mode;
+	}
+
+	void set_term_i(double t_i)
+	{
+		term_i=t_i;
+	}
+
+
+
+
+
+
+
+
 
 
 

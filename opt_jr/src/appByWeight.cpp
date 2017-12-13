@@ -14,7 +14,7 @@ void addApplicationPointer(appByWeight &LP, Application &App)
   }
   for (auto it= LP.begin(); it!=LP.end(); it++)
   {
-    if ( (*it)->w < App.w)
+    if ( (*it)->get_w() < App.get_w())
     {
       LP.emplace(it, &App);
       return;

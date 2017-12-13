@@ -33,7 +33,7 @@ std::vector<Application>  readAppFile(FILE* stream)
   char * session_app_id;
   char * app_id;
   char * St;
-  int DatasetSize;
+  int dataset_size;
   int rows = 1;
 
   session_app_id = (char *)malloc(MAX_APP_LENGTH);
@@ -77,10 +77,10 @@ std::vector<Application>  readAppFile(FILE* stream)
       v = 	atof(getfield(tmp, _v));tmp = strdup(line);
       D = 	atoi(getfield(tmp, _D));tmp = strdup(line);
       strcpy(St, getfield(tmp, _St));tmp = strdup(line);
-      DatasetSize = 	atoi(getfield(tmp, _Dsz));
+      dataset_size = 	atoi(getfield(tmp, _Dsz));
       csi=std::max(M/m,V/v);
       /* Add application parameters to the List */
-      Application app(session_app_id,app_id, w, chi_0, chi_C, m, M, V, v, D, csi, St, DatasetSize);
+      Application app(session_app_id,app_id, w, chi_0, chi_C, m, M, V, v, D, csi, St, dataset_size);
       APPs.push_back(app);
 
       rows++;

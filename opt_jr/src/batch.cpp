@@ -45,7 +45,7 @@ Batch::calculate_nu(optJrParameters &par)
    */
   for (auto it=APPs.begin(); it!=APPs.end(); it++)
   {
-    minCapacity+= it->V;
+    minCapacity+= it->get_V();
   }
 
   if(N<minCapacity)
@@ -67,15 +67,15 @@ Batch::calculate_nu(optJrParameters &par)
   {
     if (it==APPs.begin()) // First app only
     {
-      w1 = it->w;
-      chi_c_1 = it->chi_C;
-      csi_1 = std::max(it->M/it->m, it->V/it->v);
+      w1 = it->get_w();
+      chi_c_1 = it->get_chi_C();
+      csi_1 = std::max(it->get_M()/it->get_m(), it->get_V()/it->get_v());
     }
     else //Any other row (compute tot)
     {
-      csi = std::max(it->M/it->m, it->V/it->v);
-      it->term_i = sqrt( (it->w/w1)*(it->chi_C/chi_c_1)*(csi_1/csi));
-      tot = tot + it->term_i;
+      csi = std::max(it->get_M()/it->get_m(), it->get_V()/it->get_v());
+      it->set_term_i(  sqrt( (it->get_w()/w1)*(it->get_chi_C()/chi_c_1)*(csi_1/csi)));
+      tot = tot + it->get_term_i();
     }
   }
 
@@ -90,7 +90,7 @@ Batch::calculate_nu(optJrParameters &par)
     if (it==APPs.begin()) it->nu_d = nu_1;
     else
     {
-      it->nu_d = (it->term_i/(1 + tot))*N;
+      it->nu_d = (it->get_term_i()/(1 + tot))*N;
     }
 
     it->currentCores_d = it->nu_d;
@@ -126,7 +126,7 @@ void Batch::initialize(sConfiguration  &configuration, MYSQL *conn, optJrParamet
   debugMsg =  "Information: INITIALIZE baseFo for all the applications" ;debugMessage(debugMsg, par);
 	for (auto it =APPs.begin(); it!= APPs.end(); it++)
 	{
-			it->mode = R_ALGORITHM; //currently only this method is supported
+			//it->mode = R_ALGORITHM; //currently only this method is supported
 			it->baseFO = ObjFun::ObjFunctionComponent(configuration, conn, *it, par);
 			it->initialBaseFO = it->baseFO;
 			debugMsg = "INITIALIZE BASE FO for APP "+ it->get_session_app_id()
@@ -159,7 +159,7 @@ void Batch::fixInitialSolution(optJrParameters &par)
 	for(auto it = APPs.begin(); it!=APPs.end(); ++it)
 	{
 
-		it->currentCores_d = std::max(((int)(it->currentCores_d / it->V)) * it->V,it->V);
+		it->currentCores_d = std::max(((int)(it->currentCores_d / it->get_V())) * it->get_V(),it->get_V());
 		if (it->currentCores_d > it->bound)
 			it->currentCores_d = it->bound;
 		else
@@ -198,7 +198,7 @@ void Batch::fixInitialSolution(optJrParameters &par)
 		else
 		{
 
-			int potentialDeltaCores=((int)(residualCores / (*it)->V ) )* (*it)->V;
+			int potentialDeltaCores=((int)(residualCores / (*it)->get_V() ) )* (*it)->get_V();
 
 			if (((*it)->currentCores_d + potentialDeltaCores) > (*it)->bound){
 				addedCores = (*it)->bound - (*it)->currentCores_d ;

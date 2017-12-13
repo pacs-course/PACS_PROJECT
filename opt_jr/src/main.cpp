@@ -161,7 +161,7 @@ int main(int argc, char **argv)
   for (auto it= App_manager.APPs.begin(); it!= App_manager.APPs.end();it++)
   {
     Msg+="\nBound evaluated for Session_app_id : " + it->get_session_app_id() + " , APP_ID: " + it->get_app_id() +
-             ", Deadline = "+ std::to_string(it->Deadline_d) + ", R =" + std::to_string(it->R_d)+
+             ", Deadline = "+ std::to_string(it->get_Deadline_d()) + ", R =" + std::to_string(it->R_d)+
              ", bound = "+ std::to_string(it->bound) ;
   }//debugMessage(debugMsg, par);
   Msg += "\n*****************    END COMPUTING BOUNDS     ********************\n\n\n"; //debugMessage(debugMsg,par);
@@ -200,7 +200,7 @@ int main(int argc, char **argv)
   Msg= " \nFixed Initial Solution: ";//debugMessage(debugMsg, par);
 	for (auto it = App_manager.APPs.begin(); it!=App_manager.APPs.end(); ++it)
   {
-    Msg += "\n Application " + it->get_session_app_id() + ",  w = " + std::to_string(it->w)
+    Msg += "\n Application " + it->get_session_app_id() + ",  w = " + std::to_string(it->get_w())
              + " ncores = " + std::to_string(it->currentCores_d); //debugMessage(debugMsg, par);
   }
   Msg +="\n*******************    END FIXING INITIAL SOLUTION    **************\n\n\n"; debugMessage(debugMsg,par);
@@ -266,7 +266,7 @@ int main(int argc, char **argv)
   for (auto it = App_manager.APPs.begin(); it!=App_manager.APPs.end(); ++it)
   {
 
-    std::cout<< " Application   " << it->get_session_app_id() << "      w = " << it->w
+    std::cout<< " Application   " << it->get_session_app_id() << "      w = " << it->get_w()
              << "     ncores = " << it->currentCores_d <<  "      FO = " << it->baseFO << std::endl;
   }
 
