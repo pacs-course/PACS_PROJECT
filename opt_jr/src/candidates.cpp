@@ -23,7 +23,7 @@ void sCandidates::addCandidate(  Application app_i, Application app_j, int contr
      }
      for (auto it= cand.begin(); it!=cand.end(); it++)
      {
-       if ( it->deltaFO < delta)
+       if ( it->deltaFO > delta)
        {
          cand.emplace(it, app_i, app_j, contr1, contr2, delta, delta_i, delta_j );
          return;

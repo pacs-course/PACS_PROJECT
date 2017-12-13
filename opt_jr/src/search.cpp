@@ -145,12 +145,13 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
 
    std::string debugMsg;
    sCandidates sCandidateApproximated ;
-  // int index = 0;
    double TotalFO;
    int how_many;
    int MAX_PROMISING_CONFIGURATIONS = par.get_K();
    double DELTA_fo_App_i, DELTA_fo_App_j;
    sStatistics statistics;
+   int index_pair=-1, index=0; //Those values are useful to detect the best pair
+   double DELTA_pair=0, DELTA_tmp;
 
    debugMsg =  "\n     ***** Estimate the candidates for the predictor ******\n"; debugMessage(debugMsg, par);
 
@@ -205,12 +206,14 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
 
 
      //Those values are useful to detect the best pair
-     int index_pair=-1, index=0;
-     double DELTA_pair=0, DELTA_tmp;
+     index_pair=-1;
+     index=0;
+     DELTA_pair=0;
 
 
      for (auto it = sCandidateApproximated.cand.begin(); it != sCandidateApproximated.cand.end(); it++)
      {
+       std::cout<< "\n\n deltaFO: decrescente (should): "<< it->deltaFO<<"\n\n";
        if(index>0 && index==MAX_PROMISING_CONFIGURATIONS)//This is done because in invokePredictor* only the first MAX_PROMISING_CONFIGURATIONS are evaluated; index=0 means par.get_k()==0 i.e. all the pairs are explored
        {
          break;
@@ -256,13 +259,13 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
        {
          if (it->app_i.app_id==elem.app_id && it->app_i.session_app_id==elem.session_app_id)
          {
-           elem.currentCores_d = it->newCoreAssignment_i;//cores_i;
-           elem.baseFO= it->real_i; //elem.baseFO +  DELTA_fo_App_i_tmp;//
+           elem.currentCores_d = it->newCoreAssignment_i;
+           elem.baseFO= it->real_i;
          }
          if (it->app_j.app_id==elem.app_id && it->app_j.session_app_id==elem.session_app_id)
          {
-           elem.currentCores_d =  it->newCoreAssignment_j;//cores_j;//
-           elem.baseFO= it->real_j;//elem.baseFO +  DELTA_fo_App_j_tmp;//
+           elem.currentCores_d =  it->newCoreAssignment_j;
+           elem.baseFO= it->real_j;
          }
        }
      }
