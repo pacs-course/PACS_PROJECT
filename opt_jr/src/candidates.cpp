@@ -38,11 +38,11 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
 {
 
   std::string debugMsg;
-  debugMsg= "Executing invokePredictorOpenMP"; debugMessage(debugMsg, par);
-
   int n_threads = par.get_numberOfThreads();
-
+  int MAX_PROMISING_CONFIGURATIONS =par.get_K();
   MYSQL *conn2[n_threads]; //open a connection for each thread
+
+  debugMsg= "Executing invokePredictorOpenMP"; debugMessage(debugMsg, par);
 
 
   if (cand.size()==0) return;
@@ -63,23 +63,31 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
   #pragma omp parallel num_threads(n_threads)
   {
     int ID=omp_get_thread_num();
+    int index=0;
     int j=0;
-
 
     // assign each app to a thread
     for (auto it=cand.begin(); it!=cand.end(); ++it ) // assign each app to a thread
     {
+      if (index > 0 && index == MAX_PROMISING_CONFIGURATIONS)
+      {
+        debugMsg="invokePredictorSeq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invokePredictorSeq loop";debugMessage(debugMsg, par);
+        break;
+      }
 
       int pos=j % n_threads;
 
       if(pos==ID)
       {
+        if (it->app_i.currentCores_d > 0 && it->app_j.currentCores_d > 0)
+        {
 
-        it->real_i = ObjFun::ObjFunctionComponent(configuration, conn2[ID], (it->app_i), par);
-        //it->nodes_i = it->app_i->currentCores_d;
+          it->real_i = ObjFun::ObjFunctionComponent(configuration, conn2[ID], (it->app_i), par);
+          //it->nodes_i = it->app_i->currentCores_d;
 
-        it->real_j = ObjFun::ObjFunctionComponent(configuration, conn2[ID], (it->app_j), par);
-        //it->nodes_j = it->app_j->currentCores_d;
+          it->real_j = ObjFun::ObjFunctionComponent(configuration, conn2[ID], (it->app_j), par);
+          //it->nodes_j = it->app_j->currentCores_d;
+        }
 
       }
       ++j;

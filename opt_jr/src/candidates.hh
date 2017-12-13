@@ -63,7 +63,7 @@ public:
   std::list<Candidate> cand;
 
   /**
-  "addCandidate" stores build a "Candidate" object and stores it in a sCandidates container
+  "addCandidate" build a "Candidate" object and stores it in a sCandidates container
   ordered by increasing delta FO
   */
   void addCandidate(Application app_i, Application app_j,int contr1, int contr2, double delta, double delta_i, double delta_j);

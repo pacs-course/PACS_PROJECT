@@ -213,7 +213,6 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
 
      for (auto it = sCandidateApproximated.cand.begin(); it != sCandidateApproximated.cand.end(); it++)
      {
-       std::cout<< "\n\n deltaFO: decrescente (should): "<< it->deltaFO<<"\n\n";
        if(index>0 && index==MAX_PROMISING_CONFIGURATIONS)//This is done because in invokePredictor* only the first MAX_PROMISING_CONFIGURATIONS are evaluated; index=0 means par.get_k()==0 i.e. all the pairs are explored
        {
          break;
