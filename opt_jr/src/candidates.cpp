@@ -121,7 +121,7 @@ void sCandidates::invokePredictorSeq(MYSQL *conn, optJrParameters &par, sConfigu
 
     if (it->app_i.currentCores_d > 0 && it->app_j.currentCores_d > 0)
     {
-      debugMsg= "Comparing " + it->app_i.session_app_id + " with " + it->app_j.session_app_id; debugMessage(debugMsg, par);
+      debugMsg= "Comparing " + it->app_i.get_session_app_id() + " with " + it->app_j.get_session_app_id(); debugMessage(debugMsg, par);
       it->app_i.mode= R_ALGORITHM; it->app_j.mode= R_ALGORITHM;
       // No openmp
       debugMsg =  " CALLING OBJ_FUNCTION_COMPONENT \n\n"; debugMessage(debugMsg, par);

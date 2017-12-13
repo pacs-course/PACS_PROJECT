@@ -42,12 +42,12 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 	 *   First evaluation, with data guessed by findbound
 	 */
 
-	predictorOutput = atoi(invokePredictor(configuration, conn, nNodes, nCores, (char*)"*", app.datasetSize, const_cast<char*>((app.session_app_id).c_str()),
-													const_cast<char*>((app.app_id).c_str()), const_cast<char*>((app.stage).c_str()), par, flagDagsim));
+	predictorOutput = atoi(invokePredictor(configuration, conn, nNodes, nCores, (char*)"*", app.datasetSize, const_cast<char*>((app.get_session_app_id()).c_str()),
+													const_cast<char*>((app.get_app_id()).c_str()), const_cast<char*>((app.stage).c_str()), par, flagDagsim));
 
 
-	debugMsg="Bound evaluation for " + app.session_app_id +
-					 " (app_ID: " + app.app_id +  ") " +
+	debugMsg="Bound evaluation for " + app.get_session_app_id() +
+					 " (app_ID: " + app.get_app_id() +  ") " +
 					 " predictorOutput = " + std::to_string(predictorOutput) +
 					 "(deadline is " +std::to_string(app.Deadline_d)+ ") cores "
 					 + std::to_string(nCores); debugMessage(debugMsg, par);
@@ -79,10 +79,10 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 				}
 
 				nCores = nCores + STEP; //add the cores NB: possible improvement: add more than one VM at a time
-				predictorOutput = atof(invokePredictor(configuration, conn, nNodes, nCores, (char*)"8G", app.datasetSize, const_cast<char*>((app.session_app_id).c_str()),
-																const_cast<char*>((app.app_id).c_str()), const_cast<char*>((app.stage).c_str()), par, WHOLE_DAGSIM));
+				predictorOutput = atof(invokePredictor(configuration, conn, nNodes, nCores, (char*)"8G", app.datasetSize, const_cast<char*>((app.get_session_app_id()).c_str()),
+																const_cast<char*>((app.get_app_id()).c_str()), const_cast<char*>((app.stage).c_str()), par, WHOLE_DAGSIM));
 
-				debugMsg="Bound evaluation for " + app.session_app_id +
+				debugMsg="Bound evaluation for " + app.get_session_app_id() +
 								 " predictorOutput = " + std::to_string(predictorOutput) +
 								 "(deadline is " +std::to_string(app.Deadline_d)+ ") cores "
 								 + std::to_string(nCores); debugMessage(debugMsg, par);
@@ -121,10 +121,10 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 					break;
 				}
 
-				predictorOutput = atof(invokePredictor(configuration, conn, nNodes, nCores, (char*)"8G", app.datasetSize, const_cast<char*>((app.session_app_id).c_str()),
-				const_cast<char*>((app.app_id).c_str()), const_cast<char*>((app.stage).c_str()), par, WHOLE_DAGSIM));
+				predictorOutput = atof(invokePredictor(configuration, conn, nNodes, nCores, (char*)"8G", app.datasetSize, const_cast<char*>((app.get_session_app_id()).c_str()),
+				const_cast<char*>((app.get_app_id()).c_str()), const_cast<char*>((app.stage).c_str()), par, WHOLE_DAGSIM));
 
-				debugMsg="Bound evaluation for" + app.session_app_id +
+				debugMsg="Bound evaluation for" + app.get_session_app_id() +
 								 " predictorOutput = " + std::to_string(predictorOutput) +
 								 "(deadline is " +std::to_string(app.Deadline_d)+ ") cores "
 								 + std::to_string(nCores); debugMessage(debugMsg, par);
@@ -144,7 +144,7 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 	app.currentCores_d = BCores;
 	app.R_d = BTime;
 	app.bound = BCores;
-	debugMsg="\n\nSession_app_id : " + app.session_app_id + " , APP_ID: " + app.app_id +
+	debugMsg="\n\nSession_app_id : " + app.get_session_app_id() + " , APP_ID: " + app.get_app_id() +
 					 ", D = "+ std::to_string(app.Deadline_d) + ", R =" + std::to_string(app.R_d)+
 					 ", bound = "+ std::to_string(app.bound) + "\n\n"; debugMessage(debugMsg, par);
 
@@ -171,8 +171,8 @@ void Bounds::findBound(sConfiguration &configuration, MYSQL *conn, char* db,  Ap
 
     sprintf(statement,
                         "select num_cores_opt, num_vm_opt from %s.OPTIMIZER_CONFIGURATION_TABLE where application_id='%s' and dataset_size=%d and deadline=%lf;"
-                        , db, const_cast<char*>(app.app_id.c_str()), app.datasetSize, app.Deadline_d);
-		debugMsg= "From findbound executing SQL STATEMENT below for app "+app.app_id; debugMessage(debugMsg, par);
+                        , db, const_cast<char*>(app.get_app_id().c_str()), app.datasetSize, app.Deadline_d);
+		debugMsg= "From findbound executing SQL STATEMENT below for app "+app.get_app_id(); debugMessage(debugMsg, par);
     MYSQL_ROW row = executeSQL(conn, statement, par);
 
     if (row == NULL)
@@ -184,12 +184,12 @@ void Bounds::findBound(sConfiguration &configuration, MYSQL *conn, char* db,  Ap
     app.nCores_DB_d = atoi(row[0]);
     app.vm = atoi(row[1]);
 		debugMsg=" From findbound a first estimate on ncores:"+  std::to_string(app.nCores_DB_d)
-							+" and VM: "+ std::to_string(app.vm) + " for application "+app.app_id ;debugMessage(debugMsg, par);
+							+" and VM: "+ std::to_string(app.vm) + " for application "+app.get_app_id() ;debugMessage(debugMsg, par);
 
 
 
     Bound(configuration, conn, app, par, WHOLE_DAGSIM);
-    debugMsg="A bound for " + app.session_app_id + "  (app_id: " + app.app_id + ") has been calculated";debugMessage(debugMsg, par);
+    debugMsg="A bound for " + app.get_session_app_id() + "  (app_id: " + app.get_app_id() + ") has been calculated";debugMessage(debugMsg, par);
 
 
 }
@@ -233,7 +233,7 @@ void Bounds::calculateBounds(Batch  & app_manager,
         int pos=j%n_threads;
         if(pos==ID)
         {
-          debugMsg= "Call findBound of app " + app_manager.APPs[j].app_id
+          debugMsg= "Call findBound of app " + app_manager.APPs[j].get_app_id()
                     + " from thread " + std::to_string(ID); debugMessage(debugMsg,par);
 
           findBound(configuration, conn2[ID], const_cast<char*>(configuration["OptDB_dbName"].c_str()), app_manager.APPs[j], par);
@@ -255,7 +255,7 @@ void Bounds::calculateBounds(Batch  & app_manager,
 
 	}
 
-		
+
 
     debugMsg= " End calculate bounds ";debugMessage(debugMsg,par);
 

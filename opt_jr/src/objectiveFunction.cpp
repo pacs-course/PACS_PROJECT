@@ -20,8 +20,8 @@ double ObjFun::ObjFunctionComponent(sConfiguration &configuration, MYSQL *conn, 
 	double output;
 
 	/* The memory pattern can be anything such as "*" */
-	app.R_d = atof(invokePredictor( configuration, conn, 1, app.currentCores_d, (char*)"*", app.datasetSize,  const_cast<char*>((app.session_app_id).c_str()),
-													const_cast<char*>((app.app_id).c_str()), const_cast<char*>((app.stage).c_str()), par,RESIDUAL_DAGSIM));
+	app.R_d = atof(invokePredictor( configuration, conn, 1, app.currentCores_d, (char*)"*", app.datasetSize,  const_cast<char*>((app.get_session_app_id()).c_str()),
+													const_cast<char*>((app.get_app_id()).c_str()), const_cast<char*>((app.stage).c_str()), par,RESIDUAL_DAGSIM));
 
 
 	/* Determine how the obj function needs to be calculated */
@@ -32,7 +32,7 @@ double ObjFun::ObjFunctionComponent(sConfiguration &configuration, MYSQL *conn, 
 				if (app.R_d > app.Deadline_d)
 					output = app.w * (app.R_d - app.Deadline_d);
 				else output = 0;
-				debugMsg = "Compute FO for app " + app.session_app_id + " currentCores_d " + std::to_string((int)app.currentCores_d) + "  R " + std::to_string(app.R_d) + " FO = "+  std::to_string(output); debugMessage(debugMsg, par);
+				debugMsg = "Compute FO for app " + app.get_session_app_id() + " currentCores_d " + std::to_string((int)app.currentCores_d) + "  R " + std::to_string(app.R_d) + " FO = "+  std::to_string(output); debugMessage(debugMsg, par);
 			break;
 			/*
 		case CORES_ALGORITHM:
@@ -79,7 +79,7 @@ double ObjFun::ObjFunctionComponentApprox(Application &App, optJrParameters &par
 	if (App.R_d > App.Deadline_d)
 		output = App.w * (App.R_d - App.Deadline_d);//NB: is it correct? very high values
 	else output = 0;
-		debugMsg = "Compute FO for app " +  App.session_app_id + " currentCores_d"
+		debugMsg = "Compute FO for app " +  App.get_session_app_id() + " currentCores_d"
                 + std::to_string((int)App.currentCores_d) + " R "+ std::to_string(App.R_d)
                 + " FO=" + std::to_string(output); debugMessage(debugMsg, par);
 

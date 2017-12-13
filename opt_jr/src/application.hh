@@ -11,7 +11,7 @@
 
 
 
-#define R_ALGORITHM 0 ///< R_ALGORITHM: currently redundant, it specifies how the objective function should be computed 
+#define R_ALGORITHM 0 ///< R_ALGORITHM: currently redundant, it specifies how the objective function should be computed
 /*#define CORES_ALGORITHM 1
 #define NCORES_ALGORITHM 2*/
 
@@ -55,14 +55,23 @@ class Application{
 	double R_old;
 	double R_new;
 
+	/* Static values */
+	std::string session_app_id; ///< Session identifier
+
+
+
+
+
+
 public:
 
 
-	/* Static values */
+	std::string app_id; 		///<  Application identifier
 
-  int mode=R_ALGORITHM; 				///< How the objective function is calculated (currently redundant)
-  std::string session_app_id; ///< Session identifier
-  std::string app_id; 		///<  Application identifier
+	int mode=R_ALGORITHM; 				///< How the objective function is calculated (currently redundant)
+
+
+
   double w; 			///<  Weight application
   double term_i;	///<  Used to calculate nu index
   double chi_0; 	///< Machine learning parameter
@@ -104,6 +113,20 @@ public:
               double v, double D, double csi, std::string St, int DatasetSize);
 	/// This function evaluates the Hyperbolic interpolation for alpha and beta (from the second time it is invoked).
 	void computeAlphaBeta(int nCores_n, double R_n);
+
+
+	std::string get_session_app_id()
+	{
+	  return session_app_id;
+	}
+
+	std::string get_app_id()
+	{
+	  return app_id;
+	}
+
+
+
 
 };
 

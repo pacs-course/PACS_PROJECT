@@ -27,12 +27,12 @@ void writeResults(MYSQL *conn, char * dbName, Batch &App_manager, optJrParameter
 	//while (pointer!=NULL)
 	for(auto &elem : App_manager.APPs)
 	{
-		"Session ID " + elem.session_app_id+ " Application Id " + elem.app_id  + " cores " + std::to_string(elem.currentCores_d)+ " VMs "+ std::to_string(elem.vm); debugMessage(debugMsg, par);
+		"Session ID " + elem.get_session_app_id()+ " Application Id " + elem.get_app_id()  + " cores " + std::to_string(elem.currentCores_d)+ " VMs "+ std::to_string(elem.vm); debugMessage(debugMsg, par);
 
 		// Check if the result of the computation for that session, application has been already computed and stored previously
 		sprintf(sqlStatement, "select opt_id, app_id from %s.OPT_SESSIONS_RESULTS_TABLE where opt_id='%s' and app_id='%s'",
 				dbName,  par.get_filename().c_str(),
-				elem.session_app_id.c_str());
+				elem.get_session_app_id().c_str());
 		MYSQL_ROW row = executeSQL(conn, sqlStatement, par);
 
 		if (row == NULL)
@@ -40,7 +40,7 @@ void writeResults(MYSQL *conn, char * dbName, Batch &App_manager, optJrParameter
 			sprintf(sqlStatement, "insert %s.OPT_SESSIONS_RESULTS_TABLE values('%s', '%s',%d, %d)",
 								dbName,
 								par.get_filename().c_str(),
-								elem.session_app_id.c_str(),
+								elem.get_session_app_id().c_str(),
 								elem.currentCores_d,
 								elem.vm
 						);
@@ -56,11 +56,11 @@ void writeResults(MYSQL *conn, char * dbName, Batch &App_manager, optJrParameter
 			sprintf(sqlStatement, "update %s.OPT_SESSIONS_RESULTS_TABLE set opt_id = '%s', app_id = '%s',num_cores = %d, num_vm = %d where opt_id='%s' and app_id='%s'",
 											dbName,
 											par.get_filename().c_str(),
-											elem.session_app_id.c_str(),
+											elem.get_session_app_id().c_str(),
 											elem.currentCores_d,
 											elem.vm,
 											par.get_filename().c_str(),
-											elem.session_app_id.c_str()
+											elem.get_session_app_id().c_str()
 									);
 			if (mysql_query(conn, sqlStatement))
 						{

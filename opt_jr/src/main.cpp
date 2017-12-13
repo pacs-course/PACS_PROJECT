@@ -137,7 +137,7 @@ int main(int argc, char **argv)
 
   debugMsg= "session_app_id of loaded applications:  \n";
   for (auto it= App_manager.APPs.begin(); it!=App_manager.APPs.end();++it)
-    debugMsg+= "App_ID: "+ it->session_app_id +"\n";
+    debugMsg+= "App_ID: "+ it->get_session_app_id() +"\n";
 
   debugMsg +="**************************************************\n\n\n"; debugMessage(debugMsg,par);
 
@@ -160,7 +160,7 @@ int main(int argc, char **argv)
   Msg="\n Final Bound results: ";
   for (auto it= App_manager.APPs.begin(); it!= App_manager.APPs.end();it++)
   {
-    Msg+="\nBound evaluated for Session_app_id : " + it->session_app_id + " , APP_ID: " + it->app_id +
+    Msg+="\nBound evaluated for Session_app_id : " + it->get_session_app_id() + " , APP_ID: " + it->get_app_id() +
              ", Deadline = "+ std::to_string(it->Deadline_d) + ", R =" + std::to_string(it->R_d)+
              ", bound = "+ std::to_string(it->bound) ;
   }//debugMessage(debugMsg, par);
@@ -200,7 +200,7 @@ int main(int argc, char **argv)
   Msg= " \nFixed Initial Solution: ";//debugMessage(debugMsg, par);
 	for (auto it = App_manager.APPs.begin(); it!=App_manager.APPs.end(); ++it)
   {
-    Msg += "\n Application " + it->session_app_id + ",  w = " + std::to_string(it->w)
+    Msg += "\n Application " + it->get_session_app_id() + ",  w = " + std::to_string(it->w)
              + " ncores = " + std::to_string(it->currentCores_d); //debugMessage(debugMsg, par);
   }
   Msg +="\n*******************    END FIXING INITIAL SOLUTION    **************\n\n\n"; debugMessage(debugMsg,par);
@@ -227,7 +227,7 @@ int main(int argc, char **argv)
   Msg = "\n Inizialization Objective Function Results:";
   for (auto it =App_manager.APPs.begin(); it!= App_manager.APPs.end(); it++)
 	{
-			Msg += "\nINITIALIZE BASE FO for APP "+ it->session_app_id
+			Msg += "\nINITIALIZE BASE FO for APP "+ it->get_session_app_id()
                 + " baseFO = " + std::to_string(it->baseFO);
 	}//debugMessage(debugMsg, par);
 
@@ -266,7 +266,7 @@ int main(int argc, char **argv)
   for (auto it = App_manager.APPs.begin(); it!=App_manager.APPs.end(); ++it)
   {
 
-    std::cout<< " Application   " << it->session_app_id << "      w = " << it->w
+    std::cout<< " Application   " << it->get_session_app_id() << "      w = " << it->w
              << "     ncores = " << it->currentCores_d <<  "      FO = " << it->baseFO << std::endl;
   }
 

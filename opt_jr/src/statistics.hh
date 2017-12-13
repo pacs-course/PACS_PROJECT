@@ -8,19 +8,20 @@
 /**
   Statistic includes relevant statistical information about a single iteration in localSearch
  */
-class Statistic
-{
+ class Statistic
+ {
 
-	int iteration;		///< Iteration number
-	int size;			///< Size of the candidates list at the considered iteration
-	double FO_Total;	///< total objective function value for that interation
-  public:
-		Statistic(int iter, int s, double FO): iteration(iter), size(s), FO_Total(FO){};
-		int get_iteration();
-		int get_size();
-		double get_FO_Total();
+	 int iteration;		///< Iteration number
+	 int size;			///< Size of the candidates list at the considered iteration
+	 double FO_Total;	///< total objective function value for that interation
 
-};
+ public:
+	 Statistic(int iter, int s, double FO): iteration(iter), size(s), FO_Total(FO){};
+	 int get_iteration();
+	 int get_size();
+	 double get_FO_Total();
+
+ };
 
 /**
 	A vector of "Statistic" object is used to store statistical information about the local search.

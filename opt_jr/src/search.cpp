@@ -44,14 +44,14 @@ sCandidates Search::approximatedLoop( Batch &App_manager, int &iteration, optJrP
 		auto application_j = App_manager.APPs.begin();
 		while (application_j != App_manager.APPs.end())
 		{
-			if (application_i->session_app_id!=application_j->session_app_id)
+			if (application_i->get_session_app_id()!=application_j->get_session_app_id())
 			{
-				debugMsg="Comparing " + application_i->session_app_id + " with " + application_j->session_app_id;debugMessage(debugMsg, par);
+				debugMsg="Comparing " + application_i->get_session_app_id() + " with " + application_j->get_session_app_id();debugMessage(debugMsg, par);
 
 				nCoreMov = std::max(application_i->V, application_j->V);
 
-				DELTAVM_i = nCoreMov/application_i->V; debugMsg = "app " + application_i->session_app_id + " DELTAVM_i " +  std::to_string(DELTAVM_i); debugMessage(debugMsg, par);
-				DELTAVM_j = nCoreMov/application_j->V; debugMsg = "app " + application_j->session_app_id + " DELTAVM_j " +  std::to_string(DELTAVM_j); debugMessage(debugMsg, par);
+				DELTAVM_i = nCoreMov/application_i->V; debugMsg = "app " + application_i->get_session_app_id() + " DELTAVM_i " +  std::to_string(DELTAVM_i); debugMessage(debugMsg, par);
+				DELTAVM_j = nCoreMov/application_j->V; debugMsg = "app " + application_j->get_session_app_id() + " DELTAVM_j " +  std::to_string(DELTAVM_j); debugMessage(debugMsg, par);
 
 				// Change the currentCores, but rollback later
 				int deltaNCores_i = DELTAVM_i * application_i->V;
@@ -60,17 +60,17 @@ sCandidates Search::approximatedLoop( Batch &App_manager, int &iteration, optJrP
 				application_j->currentCores_d = application_j->currentCores_d - deltaNCores_j;
 
 
-				debugMsg= "After cores exchange: app " + application_i->session_app_id + " currentCores " + std::to_string((int)application_i->currentCores_d);debugMessage(debugMsg, par);
-        debugMsg= "After cores exchange: app " + application_j->session_app_id + " currentCores " + std::to_string((int)application_j->currentCores_d);debugMessage(debugMsg, par);
+				debugMsg= "After cores exchange: app " + application_i->get_session_app_id() + " currentCores " + std::to_string((int)application_i->currentCores_d);debugMessage(debugMsg, par);
+        debugMsg= "After cores exchange: app " + application_j->get_session_app_id() + " currentCores " + std::to_string((int)application_j->currentCores_d);debugMessage(debugMsg, par);
 
 
 				if (application_i->currentCores_d > 0 && application_j->currentCores_d > 0)
 				{
 					DELTA_fo_App_i = ObjFun::ObjFunctionComponentApprox(*application_i, par) - application_i->baseFO;
-					debugMsg = "app " + application_i->session_app_id + "DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i);debugMessage(debugMsg, par);
+					debugMsg = "app " + application_i->get_session_app_id() + "DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i);debugMessage(debugMsg, par);
 
 					DELTA_fo_App_j = ObjFun::ObjFunctionComponentApprox(*application_j, par) - application_j->baseFO;
-          debugMsg = "app " + application_j->session_app_id + "DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j);debugMessage(debugMsg, par);
+          debugMsg = "app " + application_j->get_session_app_id() + "DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j);debugMessage(debugMsg, par);
 
 
           debugMsg= "\n\n  Approximated TOTAL DELTA FO: " + std::to_string(DELTA_fo_App_i + DELTA_fo_App_j) + "   \n\n "; debugMessage(debugMsg, par);
@@ -232,8 +232,8 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
            index_pair=index;
          }
 
-         debugMsg = "app " + it->app_i.session_app_id + " DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i); debugMessage(debugMsg, par);
-         debugMsg = "app " + it->app_j.session_app_id + " DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j); debugMessage(debugMsg, par);
+         debugMsg = "app " + it->app_i.get_session_app_id() + " DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i); debugMessage(debugMsg, par);
+         debugMsg = "app " + it->app_j.get_session_app_id() + " DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j); debugMessage(debugMsg, par);
          debugMsg= "\n      TOTAL DELTA FO : " +  std::to_string(DELTA_tmp) + "\n\n"; debugMessage(debugMsg, par);
        }
 
@@ -256,18 +256,19 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
 
        for (auto &elem : App_manager.APPs)
        {
-         if (it->app_i.app_id==elem.app_id && it->app_i.session_app_id==elem.session_app_id)
+         if (it->app_i.get_app_id()==elem.get_app_id() && it->app_i.get_session_app_id()==elem.get_session_app_id())
          {
            elem.currentCores_d = it->newCoreAssignment_i;
            elem.baseFO= it->real_i;
          }
-         if (it->app_j.app_id==elem.app_id && it->app_j.session_app_id==elem.session_app_id)
+         if (it->app_j.get_app_id()==elem.get_app_id() && it->app_j.get_session_app_id()==elem.get_session_app_id())
          {
            elem.currentCores_d =  it->newCoreAssignment_j;
            elem.baseFO= it->real_j;
          }
        }
      }
+
 
      checkTotalNodes(par.get_number(), App_manager);
 
@@ -277,6 +278,11 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
        TotalFO = ObjFun::ObjFunctionGlobal(configuration, conn, App_manager, par);
        std::cout << "\n At iteration: "<< iteration << " GLOBAL OBJECTIVE FUNCTION = "<< TotalFO <<"\n"<<std::endl;
        addStatistics(statistics, iteration, how_many, TotalFO); // Update Statistics
+     }
+
+     if (index_pair==-1)
+     {
+       break; // It means that even there are promising configuration, but they are not convenient
      }
 
    }

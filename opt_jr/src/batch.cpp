@@ -94,7 +94,7 @@ Batch::calculate_nu(optJrParameters &par)
     }
 
     it->currentCores_d = it->nu_d;
-    debugMsg="App ID: " + it->app_id + ", NU: " + std::to_string(it->nu_d); debugMessage(debugMsg, par);
+    debugMsg="App ID: " + it->get_app_id() + ", NU: " + std::to_string(it->nu_d); debugMessage(debugMsg, par);
 
 
 
@@ -129,7 +129,7 @@ void Batch::initialize(sConfiguration  &configuration, MYSQL *conn, optJrParamet
 			it->mode = R_ALGORITHM; //currently only this method is supported
 			it->baseFO = ObjFun::ObjFunctionComponent(configuration, conn, *it, par);
 			it->initialBaseFO = it->baseFO;
-			debugMsg = "INITIALIZE BASE FO for APP "+ it->session_app_id
+			debugMsg = "INITIALIZE BASE FO for APP "+ it->get_session_app_id()
                 + " baseFO = " + std::to_string(it->baseFO)+"\n"; debugMessage(debugMsg, par);
 	}
 
@@ -164,12 +164,12 @@ void Batch::fixInitialSolution(optJrParameters &par)
 			it->currentCores_d = it->bound;
 		else
 			{
-				debugMsg= "adding " + it->session_app_id + " to ApplicationPointers"; debugMessage(debugMsg, par);
+				debugMsg= "adding " + it->get_session_app_id() + " to ApplicationPointers"; debugMessage(debugMsg, par);
         addApplicationPointer(LP, *it);
 			}
 
 		allocatedCores+= it->currentCores_d;
-		debugMsg =  "fixInitialSolution FIXING CORES "+  it->session_app_id
+		debugMsg =  "fixInitialSolution FIXING CORES "+  it->get_session_app_id()
                 + " cores: " + std::to_string(it->currentCores_d); debugMessage(debugMsg, par);
 	}
 
@@ -212,14 +212,14 @@ void Batch::fixInitialSolution(optJrParameters &par)
 
 			if ((*it)->currentCores_d == 0)
 			{
-				printf("\nFatal Error: FixInitialSolution: app %s has %d cores after fix\n", (*it)->session_app_id.c_str(), (*it)->currentCores_d);
+				printf("\nFatal Error: FixInitialSolution: app %s has %d cores after fix\n", (*it)->get_session_app_id().c_str(), (*it)->currentCores_d);
 				exit(-1);
 			}
 			if (addedCores > 0)
 			{
 
-				debugMsg="adding cores to App " + (*it)->session_app_id + " added Cores: " +  std::to_string(addedCores) ;debugMessage(debugMsg, par);
-				debugMsg=" application_id " + (*it)->session_app_id + " new cores " + std::to_string((int)(*it)->currentCores_d) + " moved cores "+ std::to_string(addedCores) ;debugMessage(debugMsg, par);
+				debugMsg="adding cores to App " + (*it)->get_session_app_id() + " added Cores: " +  std::to_string(addedCores) ;debugMessage(debugMsg, par);
+				debugMsg=" application_id " + (*it)->get_session_app_id() + " new cores " + std::to_string((int)(*it)->currentCores_d) + " moved cores "+ std::to_string(addedCores) ;debugMessage(debugMsg, par);
 				residualCores = residualCores - addedCores;
 			}
 			it++;
