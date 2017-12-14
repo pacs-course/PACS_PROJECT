@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['m',['M',['../classApplication.html#a14904a2abf46cc0a50eb82043fa0912e',1,'Application::M()'],['../classApplication.html#ab903d83d3cde51569a27f97752c9f158',1,'Application::m()']]],
+  ['m',['M',['../classApplication.html#a98cc47f6aa4ac3c70133d2922952ef7a',1,'Application::M()'],['../classApplication.html#ad95ca8809237917d16779d7ed0013c8e',1,'Application::m()']]],
   ['max_5fline_5flength',['MAX_LINE_LENGTH',['../read__app__file_8hh.html#a2bed00245e126b4eff6914757499fa03',1,'read_app_file.hh']]],
-  ['mode',['mode',['../classApplication.html#abc7e87e8cbe2e64fa4e2ff2afdf7a4fc',1,'Application']]]
+  ['maxiterations',['maxIterations',['../classoptJrParameters.html#af1f1ee05cb0a9962182b9330c7e9536b',1,'optJrParameters']]],
+  ['mode',['mode',['../classApplication.html#a351cf2c8500b5b5520aeeac8f53c7f74',1,'Application']]]
 ];

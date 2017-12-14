@@ -142,7 +142,7 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
  *
  */
 
- void Search::localSearch(sConfiguration &configuration, MYSQL *conn, Batch &App_manager , optJrParameters &par)
+ void Search::localSearch(sConfiguration &configuration, MYSQL *conn,  optJrParameters &par)
  {
 
    std::string debugMsg;
@@ -296,5 +296,20 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
    {
      readStatistics(statistics, par);
    }
+
+ }
+
+ void Search::writeResults(MYSQL *conn, char * dbName,  optJrParameters &par)
+ {
+   App_manager.writeResults(conn, dbName, par);
+ }
+
+
+
+
+
+ void Search::print_solution()
+ {
+   std::cout<< App_manager.show_solution();
 
  }

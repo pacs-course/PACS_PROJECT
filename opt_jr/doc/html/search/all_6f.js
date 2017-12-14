@@ -2,7 +2,7 @@ var searchData=
 [
   ['objectivefunction_2ecpp',['objectiveFunction.cpp',['../objectiveFunction_8cpp.html',1,'']]],
   ['objectivefunction_2ehh',['objectiveFunction.hh',['../objectiveFunction_8hh.html',1,'']]],
-  ['objfun',['ObjFun',['../classObjFun.html',1,'']]],
+  ['objfun',['ObjFun',['../classObjFun.html',1,'ObjFun'],['../classBatch.html#ab332b708060d79472caf1a215fe8b6a9',1,'Batch::ObjFun()']]],
   ['objfunctioncomponent',['ObjFunctionComponent',['../classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7',1,'ObjFun']]],
   ['objfunctioncomponentapprox',['ObjFunctionComponentApprox',['../classObjFun.html#abb89a994d34b44ec4cb6e0e2562c0107',1,'ObjFun']]],
   ['objfunctionglobal',['ObjFunctionGlobal',['../classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b',1,'ObjFun']]],

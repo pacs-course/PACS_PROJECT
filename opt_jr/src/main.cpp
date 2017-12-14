@@ -135,10 +135,8 @@ int main(int argc, char **argv)
   /* CREATE A BUTCH OBJECT */
   Batch App_manager(readAppFile(stream));
 
-  debugMsg= "session_app_id of loaded applications:  \n";
-  for (auto it= App_manager.APPs.begin(); it!=App_manager.APPs.end();++it)
-    debugMsg+= "App_ID: "+ it->get_session_app_id() +"\n";
 
+  debugMsg= App_manager.show_session_app_id();
   debugMsg +="**************************************************\n\n\n"; debugMessage(debugMsg,par);
 
 
@@ -152,21 +150,20 @@ int main(int argc, char **argv)
   std::cout << Msg;
 
   gettimeofday(&tv_initial_bounds, NULL);
-  Bounds Bounds_eval;
+  Bounds Bounds_eval(App_manager);
 
-  Bounds_eval.calculateBounds(App_manager, configuration, conn, par );
+  Bounds_eval.calculateBounds( configuration, conn, par );
 
   gettimeofday(&tv_final_bounds, NULL);
 
+
+  App_manager= Bounds_eval.get_app_manager();
+
   Msg="\n Final Bound results: ";
-  for (auto it= App_manager.APPs.begin(); it!= App_manager.APPs.end();it++)
-  {
-    Msg+="\nBound evaluated for Session_app_id : " + it->get_session_app_id() + " , APP_ID: " + it->get_app_id() +
-             ", Deadline = "+ std::to_string(it->get_Deadline_d()) + ", R =" + std::to_string(it->get_R_d())+
-             ", bound = "+ std::to_string(it->get_bound()) ;
-  }//debugMessage(debugMsg, par);
+  Msg+=App_manager.show_bounds();
   Msg += "\n*****************    END COMPUTING BOUNDS     ********************\n\n\n"; //debugMessage(debugMsg,par);
   std::cout << Msg;
+
 
   /**
     6) Calculate nu indices for each application (with the calculate_nu method of Batch class)
@@ -176,7 +173,9 @@ int main(int argc, char **argv)
   debugMsg +="*******************************************************************\n"; debugMessage(debugMsg,par);
 
   gettimeofday(&tv_initial_nu, NULL);
+
   App_manager.calculate_nu(par);
+
   gettimeofday(&tv_final_nu, NULL);
 
   debugMsg ="\n*********************    END COMPUTING NU INDICES    ********************\n\n\n"; debugMessage(debugMsg,par);
@@ -186,10 +185,10 @@ int main(int argc, char **argv)
       7) Fix initial solution (with the fixInitialSolution method of Batch class)
   */
 
-  Msg = "\n\n*******************************************************************\n";
-  Msg +="*******************    FIXING INITIAL SOLUTION   ******************\n";
-  Msg +="*******************************************************************\n\n"; //debugMessage(debugMsg,par);
-  std::cout << Msg;
+  debugMsg = "\n\n*******************************************************************\n";
+  debugMsg +="*******************    FIXING INITIAL SOLUTION   ******************\n";
+  debugMsg +="*******************************************************************\n\n"; debugMessage(debugMsg,par);
+
 
   gettimeofday(&tv_initial_fix, NULL);
 
@@ -197,15 +196,8 @@ int main(int argc, char **argv)
 
   gettimeofday(&tv_final_fix, NULL);
 
+  debugMsg ="\n*******************    END FIXING INITIAL SOLUTION    **************\n\n\n"; debugMessage(debugMsg,par);
 
-  Msg= " \nFixed Initial Solution: ";//debugMessage(debugMsg, par);
-	for (auto it = App_manager.APPs.begin(); it!=App_manager.APPs.end(); ++it)
-  {
-    Msg += "\n Application " + it->get_session_app_id() + ",  w = " + std::to_string(it->get_w())
-             + " ncores = " + std::to_string(it->get_currentCores_d()); //debugMessage(debugMsg, par);
-  }
-  Msg +="\n*******************    END FIXING INITIAL SOLUTION    **************\n\n\n"; debugMessage(debugMsg,par);
-  std::cout << Msg;
 
 
 
@@ -213,10 +205,10 @@ int main(int argc, char **argv)
       8) Initialize Objective Function evaluation for each application (with the initalize method of Batch class)
   */
 
-  Msg = "\n*******************************************************************\n";
-  Msg +="************    INITIALIZE BASE OBJECTIVE FUNCTION   **************\n";
-  Msg +="*******************************************************************\n\n"; //debugMessage(debugMsg,par);
-  std::cout << Msg;
+  debugMsg = "\n*******************************************************************\n";
+  debugMsg +="************    INITIALIZE BASE OBJECTIVE FUNCTION   **************\n";
+  debugMsg +="*******************************************************************\n\n"; debugMessage(debugMsg,par);
+
 
   gettimeofday(&tv_initial_init, NULL);
 
@@ -224,16 +216,16 @@ int main(int argc, char **argv)
 
   gettimeofday(&tv_final_init, NULL);
 
+  debugMsg +="\n************    END INITIALIZE BASE OBJECTIVE FUNCTION   *********\n\n\n"; debugMessage(debugMsg,par);
 
-  Msg = "\n Inizialization Objective Function Results:";
-  for (auto it =App_manager.APPs.begin(); it!= App_manager.APPs.end(); it++)
-	{
-			Msg += "\nINITIALIZE BASE FO for APP "+ it->get_session_app_id()
-                + " baseFO = " + std::to_string(it->get_baseFO());
-	}//debugMessage(debugMsg, par);
 
-  Msg +="\n************    END INITIALIZE BASE OBJECTIVE FUNCTION   *********\n\n\n"; debugMessage(debugMsg,par);
-  std::cout<< Msg;
+  Msg = "\n\n*******************************************************************\n";
+  Msg +="*********************    INITIAL SOLUTION    **********************\n";
+  Msg +="*******************************************************************\n\n";std::cout <<Msg;
+
+  std::cout<<App_manager.show_solution();
+
+  std::cout<< "\n**************************************************\n\n\n";
 
 
 
@@ -241,20 +233,21 @@ int main(int argc, char **argv)
       9) Find an "optimal" solution invoking "localSearch" method (of "Search" class)
   */
 
-  Msg = "\n\n*******************************************************************\n";
-  Msg +="*******************    INVOKING  LOCAL SEARCH    ******************\n";
-  Msg +="*******************************************************************\n\n"; //debugMessage(debugMsg,par);
-  std::cout <<Msg;
+  debugMsg = "\n\n*******************************************************************\n";
+  debugMsg +="*******************    INVOKING  LOCAL SEARCH    ******************\n";
+  debugMsg +="*******************************************************************\n\n"; debugMessage(debugMsg,par);
+
 
   gettimeofday(&tv_initial_locals, NULL);
 
-  Search search_eval;
+  Search search_eval(App_manager);
 
-  search_eval.localSearch(configuration, conn, App_manager,  par );
+  search_eval.localSearch(configuration, conn,  par );
 
   gettimeofday(&tv_final_locals, NULL);
 
-  writeResults(conn, const_cast<char*>(configuration["DB_dbName"].c_str()),App_manager, par);
+  //App_manager=search_eval.get_app_manager();
+  search_eval.writeResults(conn, const_cast<char*>(configuration["DB_dbName"].c_str()), par);
 
 
   debugMsg ="\n**********************    END LOCAL SEARCH   ********************\n\n\n"; debugMessage(debugMsg,par);
@@ -264,14 +257,7 @@ int main(int argc, char **argv)
   std::cout<<"******************       FINAL SOLUTION      **********************\n";
   std::cout<<"*******************************************************************\n\n";
 
-
-
-  for (auto it = App_manager.APPs.begin(); it!=App_manager.APPs.end(); ++it)
-  {
-
-    std::cout<< " Application   " << it->get_session_app_id() << "      w = " << it->get_w()
-             << "     ncores = " << it->get_currentCores_d() <<  "      FO = " << it->get_baseFO() << std::endl;
-  }
+  search_eval.print_solution();
 
   std::cout<<"\n*******************************************************************\n\n";
 

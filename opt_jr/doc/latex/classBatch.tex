@@ -7,11 +7,12 @@
 
 
 
-Collaboration diagram for Batch\-:\nopagebreak
+Collaboration diagram for Batch\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=215pt]{classBatch__coll__graph}
+\includegraphics[height=550pt]{classBatch__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -25,11 +26,22 @@ void \hyperlink{classBatch_ae212d22fa812b51160f57507242152c1}{initialize} (\hype
 \begin{DoxyCompactList}\small\item\em For each application, a base value for the objective function is calculated. \end{DoxyCompactList}\item 
 void \hyperlink{classBatch_ac50dad870490ca7c60e0e15d86c02614}{fix\-Initial\-Solution} (\hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
 \begin{DoxyCompactList}\small\item\em It fixes the initial solution by reallocating the residual cores to the applications that may need more resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Public Attributes}
+\subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\-::vector$<$ \hyperlink{classApplication}{Application} $>$ \hyperlink{classBatch_a757bf1a36fee46b1b47263ab4a59c560}{A\-P\-Ps}
 \begin{DoxyCompactList}\small\item\em The vector stores application data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classBatch_ac174a08cdaebb01dfd90673034f10fab}{Bounds}
+\item 
+class \hyperlink{classBatch_aea88561fddd2e924cebf793f0cfdc8b6}{Search}
+\item 
+class \hyperlink{classBatch_ab332b708060d79472caf1a215fe8b6a9}{Obj\-Fun}
+\item 
+void \hyperlink{classBatch_a327fdf85cb600d4bb50ff32c2462c699}{write\-Results} (M\-Y\-S\-Q\-L $\ast$conn, char $\ast$db\-Name, \hyperlink{classBatch}{Batch} \&App\-\_\-manager, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -67,7 +79,7 @@ Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classBatch_a14f132321413b45d6446200807451414_cgraph}
+\includegraphics[width=328pt]{classBatch_a14f132321413b45d6446200807451414_cgraph}
 \end{center}
 \end{figure}
 
@@ -100,7 +112,7 @@ Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classBatch_ac50dad870490ca7c60e0e15d86c02614_cgraph}
+\includegraphics[width=342pt]{classBatch_ac50dad870490ca7c60e0e15d86c02614_cgraph}
 \end{center}
 \end{figure}
 
@@ -153,10 +165,32 @@ Here is the caller graph for this function\-:\nopagebreak
 
 
 
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classBatch_ac174a08cdaebb01dfd90673034f10fab}{\index{Batch@{Batch}!Bounds@{Bounds}}
+\index{Bounds@{Bounds}!Batch@{Batch}}
+\subsubsection[{Bounds}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Bounds}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classBatch_ac174a08cdaebb01dfd90673034f10fab}
+\hypertarget{classBatch_ab332b708060d79472caf1a215fe8b6a9}{\index{Batch@{Batch}!Obj\-Fun@{Obj\-Fun}}
+\index{Obj\-Fun@{Obj\-Fun}!Batch@{Batch}}
+\subsubsection[{Obj\-Fun}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Obj\-Fun}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classBatch_ab332b708060d79472caf1a215fe8b6a9}
+\hypertarget{classBatch_aea88561fddd2e924cebf793f0cfdc8b6}{\index{Batch@{Batch}!Search@{Search}}
+\index{Search@{Search}!Batch@{Batch}}
+\subsubsection[{Search}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Search}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classBatch_aea88561fddd2e924cebf793f0cfdc8b6}
+\hypertarget{classBatch_a327fdf85cb600d4bb50ff32c2462c699}{\index{Batch@{Batch}!write\-Results@{write\-Results}}
+\index{write\-Results@{write\-Results}!Batch@{Batch}}
+\subsubsection[{write\-Results}]{\setlength{\rightskip}{0pt plus 5cm}void write\-Results (
+\begin{DoxyParamCaption}
+\item[{M\-Y\-S\-Q\-L $\ast$}]{conn, }
+\item[{char $\ast$}]{db\-Name, }
+\item[{{\bf Batch} \&}]{App\-\_\-manager, }
+\item[{{\bf opt\-Jr\-Parameters} \&}]{par}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classBatch_a327fdf85cb600d4bb50ff32c2462c699}
+write\-Results prints the results of the local\-Search application (number of cores and V\-M) in a D\-B table. If a result for a (session\-\_\-id, application\-\_\-id) already exists, then it is replaced. 
+
 \subsection{Member Data Documentation}
 \hypertarget{classBatch_a757bf1a36fee46b1b47263ab4a59c560}{\index{Batch@{Batch}!A\-P\-Ps@{A\-P\-Ps}}
 \index{A\-P\-Ps@{A\-P\-Ps}!Batch@{Batch}}
-\subsubsection[{A\-P\-Ps}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Application}$>$ Batch\-::\-A\-P\-Ps}}\label{classBatch_a757bf1a36fee46b1b47263ab4a59c560}
+\subsubsection[{A\-P\-Ps}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Application}$>$ Batch\-::\-A\-P\-Ps\hspace{0.3cm}{\ttfamily [private]}}}\label{classBatch_a757bf1a36fee46b1b47263ab4a59c560}
 
 
 The vector stores application data. 

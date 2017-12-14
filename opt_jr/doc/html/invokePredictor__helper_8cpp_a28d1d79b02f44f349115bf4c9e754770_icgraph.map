@@ -1,8 +1,4 @@
 <map id="readFolder" name="readFolder">
-<area shape="rect" id="node2" href="$invokePredictor_8hh.html#a342ccdfe7923368e52a4894d69c7455a" title="invokePredictor" alt="" coords="136,64,248,91"/>
-<area shape="rect" id="node3" href="$classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7" title="ObjFun::ObjFunctionComponent" alt="" coords="297,64,506,91"/>
-<area shape="rect" id="node4" href="$classBatch.html#ae212d22fa812b51160f57507242152c1" title="For each application, a base value for the objective function is calculated. " alt="" coords="597,5,707,32"/>
-<area shape="rect" id="node6" href="$classsCandidates.html#ac5ff86e5acf736ef57a3eb25c0d724ab" title="sCandidates::invokePredictor\lOpenMP" alt="" coords="555,57,749,98"/>
-<area shape="rect" id="node7" href="$classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b" title="ObjFun::ObjFunctionGlobal" alt="" coords="563,123,741,149"/>
-<area shape="rect" id="node5" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="797,5,848,32"/>
+<area shape="rect" id="node2" href="$invokePredictor_8hh.html#a342ccdfe7923368e52a4894d69c7455a" title="invokePredictor" alt="" coords="136,5,248,32"/>
+<area shape="rect" id="node3" href="$classBounds.html#a6bc038892059a8181984daff0003065f" title="Bounds::Bound" alt="" coords="297,5,407,32"/>
 </map>

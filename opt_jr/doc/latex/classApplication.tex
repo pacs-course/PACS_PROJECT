@@ -11,49 +11,123 @@ Collaboration diagram for Application\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=198pt]{classApplication__coll__graph}
+\includegraphics[height=550pt]{classApplication__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classApplication_aa660e2135b162cfddaca0918be8599e8}{Application} (std\-::string \hyperlink{classApplication_a5e28ffadb86925ecae57ab18c0085d90}{session\-\_\-app\-\_\-id}, std\-::string \hyperlink{classApplication_a05377e6cdcb9d48f29e0f1972a4a16fe}{app\-\_\-id}, double \hyperlink{classApplication_aead1b7b0150c2a3ebd6c36b1db8c4732}{w}, double \hyperlink{classApplication_a3b9dab40d189989c836b8d328946bbb6}{chi\-\_\-0}, double \hyperlink{classApplication_a46e29a6bfc74de610feec809a77dfb62}{chi\-\_\-\-C}, double \hyperlink{classApplication_ab903d83d3cde51569a27f97752c9f158}{m}, double \hyperlink{classApplication_a14904a2abf46cc0a50eb82043fa0912e}{M}, double \hyperlink{classApplication_aa92ad37e6701931176e0dc9b260fd7ee}{V}, double \hyperlink{classApplication_a9efc167094a42382504dd28a7ac402e0}{v}, double D, double \hyperlink{classApplication_a20adc533c6b6147342b3f60dc0fbd9bc}{csi}, std\-::string St, int Dataset\-Size)
+\hyperlink{classApplication_a3413eb5b5ba7bd2d1dfe2ce6d2e28c48}{Application} (std\-::string \hyperlink{classApplication_a6152c40564d526b9b60871c98f7a51c7}{session\-\_\-app\-\_\-id}, std\-::string \hyperlink{classApplication_a5cedee59cfd3cbf89d02174e2f521493}{app\-\_\-id}, double \hyperlink{classApplication_a89e171cf287b09ce4b37dd94c0d61e2b}{w}, double \hyperlink{classApplication_a6066fad4c229a6035652efd712d0d78c}{chi\-\_\-0}, double \hyperlink{classApplication_a73d8a1604a2b2c99b14db1c8bd9c2798}{chi\-\_\-\-C}, double \hyperlink{classApplication_ad95ca8809237917d16779d7ed0013c8e}{m}, double \hyperlink{classApplication_a98cc47f6aa4ac3c70133d2922952ef7a}{M}, double \hyperlink{classApplication_a03a99fa3553c376653e53bb5f489c316}{V}, double \hyperlink{classApplication_a57853498c230af817bc4173169847bfc}{v}, double D, double \hyperlink{classApplication_a7c4d5b6d8d7b2c480008dbd958872ed2}{csi}, std\-::string St, int \hyperlink{classApplication_a83bcec93383a2816d9bbaa51b7dfa0c6}{dataset\-\_\-size})
 \begin{DoxyCompactList}\small\item\em Constructor expects all static values. \end{DoxyCompactList}\item 
 void \hyperlink{classApplication_a9e86a23b1be9e49c0a890f9cf1abb7fe}{compute\-Alpha\-Beta} (int n\-Cores\-\_\-n, double R\-\_\-n)
-\begin{DoxyCompactList}\small\item\em This function evaluates the Hyperbolic interpolation for alpha and beta (from the second time it is invoked). \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Public Attributes}
+\begin{DoxyCompactList}\small\item\em This function evaluates the Hyperbolic interpolation for alpha and beta (from the second time it is invoked). \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classApplication_a76968cc06cb913a46b1b9c248fefced9}{get\-\_\-session\-\_\-app\-\_\-id} ()
+\item 
+std\-::string \hyperlink{classApplication_adff24fffdc7df386e03671cd084289a4}{get\-\_\-app\-\_\-id} ()
+\item 
+double \hyperlink{classApplication_a354b6b805f2993418260a8dd10368759}{get\-\_\-w} ()
+\item 
+double \hyperlink{classApplication_a19089a029251a3034747866c2084f4af}{get\-\_\-term\-\_\-i} ()
+\item 
+double \hyperlink{classApplication_aabe1bfd32595da63199c745ed8736e6c}{get\-\_\-chi\-\_\-0} ()
+\item 
+double \hyperlink{classApplication_a83fd92829139ab7fcac7b84bd765e7c2}{get\-\_\-chi\-\_\-\-C} ()
+\item 
+double \hyperlink{classApplication_a9ffe20e49ac2220e937c9133ea676c93}{get\-\_\-m} ()
+\item 
+double \hyperlink{classApplication_afd6fb36e7d3080e7cf479ec57bf511d8}{get\-\_\-\-M} ()
+\item 
+double \hyperlink{classApplication_a769241efad622861b4d177b6cef95afb}{get\-\_\-v} ()
+\item 
+double \hyperlink{classApplication_aabc164f25c55cdb78cccb9441b5a3952}{get\-\_\-\-V} ()
+\item 
+double \hyperlink{classApplication_a67f6af018dd1e4774e01c38d3c933ece}{get\-\_\-\-Deadline\-\_\-d} ()
+\item 
+double \hyperlink{classApplication_ac0f748455a140ca52bf09759ade0842d}{get\-\_\-csi} ()
+\item 
+std\-::string \hyperlink{classApplication_a140b3eeddfcf31a29b477301f37c5ad0}{get\-\_\-stage} ()
+\item 
+int \hyperlink{classApplication_a03c830382c61d8383a86f011883138ec}{get\-\_\-dataset\-\_\-size} ()
+\item 
+int \hyperlink{classApplication_a4ad44dc9971608e01a81164c13f2d73e}{get\-\_\-mode} ()
+\item 
+int \hyperlink{classApplication_a1a87d8c2de9650b2fa3e7b3f64857dd1}{get\-\_\-current\-Cores\-\_\-d} ()
+\item 
+double \hyperlink{classApplication_aa6b441c3147aec3aa0192d2e9f76251d}{get\-\_\-nu\-\_\-d} ()
+\item 
+int \hyperlink{classApplication_a97149e55a340940c15d56be4fb577767}{get\-\_\-n\-Cores\-\_\-\-D\-B\-\_\-d} ()
+\item 
+int \hyperlink{classApplication_afe686f73d03090e8e179704df91a0b2b}{get\-\_\-bound} ()
+\item 
+double \hyperlink{classApplication_ad0d83c496de2ca9268bb4d3f743dacac}{get\-\_\-\-R\-\_\-d} ()
+\item 
+double \hyperlink{classApplication_affaab47de2a18e0dc08c7a6bcd272c5a}{get\-\_\-base\-F\-O} ()
+\item 
+int \hyperlink{classApplication_a5d59e42d6f67c8f519d4c14df49e82a6}{get\-\_\-vm} ()
+\item 
+double \hyperlink{classApplication_a0bb182c29dbaf5293a120bdced8d08b6}{get\-\_\-alpha} ()
+\item 
+double \hyperlink{classApplication_abc8a0a0b78144145d8aeefba5b3e256c}{get\-\_\-beta} ()
+\item 
+void \hyperlink{classApplication_a5a4a2ea2cb6d85978d9eee95d02c6689}{set\-\_\-term\-\_\-i} (double t\-\_\-i)
+\item 
+void \hyperlink{classApplication_a54b218ca87366e0897571416da763ba2}{set\-\_\-current\-Cores\-\_\-d} (int c\-\_\-d)
+\item 
+void \hyperlink{classApplication_a158448d570c0e25f7d7884af4fca0b8c}{set\-\_\-nu\-\_\-d} (double n)
+\item 
+void \hyperlink{classApplication_a3d116c903ecb0d92d5dc66f1210f227a}{set\-\_\-n\-Cores\-\_\-\-D\-B\-\_\-d} (int n)
+\item 
+void \hyperlink{classApplication_aa5bda390f99dea85e95f8d43b45c01a6}{set\-\_\-bound} (int b)
+\item 
+void \hyperlink{classApplication_a74d83f1191a1ab311c055da4d0d8d8d9}{set\-\_\-\-R\-\_\-d} (double r)
+\item 
+void \hyperlink{classApplication_a4931a778639958beec06c7efa6343602}{set\-\_\-base\-F\-O} (double f)
+\item 
+void \hyperlink{classApplication_a26df38cf838de9baf1ed5e5923b32124}{set\-\_\-vm} (int \hyperlink{classApplication_a57853498c230af817bc4173169847bfc}{v})
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{classApplication_abc7e87e8cbe2e64fa4e2ff2afdf7a4fc}{mode} =\hyperlink{application_8hh_aaeed326368abd712225f9ca34c338fbf}{R\-\_\-\-A\-L\-G\-O\-R\-I\-T\-H\-M}
-\begin{DoxyCompactList}\small\item\em How the objective function is calculated (currently redundant) \end{DoxyCompactList}\item 
-std\-::string \hyperlink{classApplication_a5e28ffadb86925ecae57ab18c0085d90}{session\-\_\-app\-\_\-id}
+double \hyperlink{classApplication_a425bb14c5264f07d9eafa6f9caa6a8b1}{n\-Cores\-\_\-old}
+\item 
+double \hyperlink{classApplication_af7b37c07da0fefef4d86ed3c567b08d2}{n\-Cores\-\_\-new}
+\item 
+double \hyperlink{classApplication_a950cfc8da4a8e4640aee8d2840f53e0e}{R\-\_\-old}
+\item 
+double \hyperlink{classApplication_a9e94824741ac0c52d0fa5ede30c72fa1}{R\-\_\-new}
+\item 
+int \hyperlink{classApplication_a6a3692743eccba602a58fdfc3f23950b}{bound\-Iterations} =0
+\begin{DoxyCompactList}\small\item\em Index for Hyperbolic interpolation. \end{DoxyCompactList}\item 
+const std\-::string \hyperlink{classApplication_a6152c40564d526b9b60871c98f7a51c7}{session\-\_\-app\-\_\-id}
 \begin{DoxyCompactList}\small\item\em Session identifier. \end{DoxyCompactList}\item 
-std\-::string \hyperlink{classApplication_a05377e6cdcb9d48f29e0f1972a4a16fe}{app\-\_\-id}
+const std\-::string \hyperlink{classApplication_a5cedee59cfd3cbf89d02174e2f521493}{app\-\_\-id}
 \begin{DoxyCompactList}\small\item\em \hyperlink{classApplication}{Application} identifier. \end{DoxyCompactList}\item 
-double \hyperlink{classApplication_aead1b7b0150c2a3ebd6c36b1db8c4732}{w}
+const double \hyperlink{classApplication_a89e171cf287b09ce4b37dd94c0d61e2b}{w}
 \begin{DoxyCompactList}\small\item\em Weight application. \end{DoxyCompactList}\item 
 double \hyperlink{classApplication_ad5486702327ad61e56ed04fb54d58c20}{term\-\_\-i}
 \begin{DoxyCompactList}\small\item\em Used to calculate nu index. \end{DoxyCompactList}\item 
-double \hyperlink{classApplication_a3b9dab40d189989c836b8d328946bbb6}{chi\-\_\-0}
+const double \hyperlink{classApplication_a6066fad4c229a6035652efd712d0d78c}{chi\-\_\-0}
 \begin{DoxyCompactList}\small\item\em Machine learning parameter. \end{DoxyCompactList}\item 
-double \hyperlink{classApplication_a46e29a6bfc74de610feec809a77dfb62}{chi\-\_\-\-C}
+const double \hyperlink{classApplication_a73d8a1604a2b2c99b14db1c8bd9c2798}{chi\-\_\-\-C}
 \begin{DoxyCompactList}\small\item\em Machine learning parameter. \end{DoxyCompactList}\item 
-double \hyperlink{classApplication_ab903d83d3cde51569a27f97752c9f158}{m}
+const double \hyperlink{classApplication_ad95ca8809237917d16779d7ed0013c8e}{m}
 \begin{DoxyCompactList}\small\item\em Ram of a container for this application. \end{DoxyCompactList}\item 
-double \hyperlink{classApplication_a14904a2abf46cc0a50eb82043fa0912e}{M}
+const double \hyperlink{classApplication_a98cc47f6aa4ac3c70133d2922952ef7a}{M}
 \begin{DoxyCompactList}\small\item\em Total Ram available at the Y\-A\-R\-N Node\-Manager. \end{DoxyCompactList}\item 
-double \hyperlink{classApplication_aa92ad37e6701931176e0dc9b260fd7ee}{V}
+const double \hyperlink{classApplication_a03a99fa3553c376653e53bb5f489c316}{V}
 \begin{DoxyCompactList}\small\item\em Total v\-C\-P\-Us available at the Y\-A\-R\-N Node\-Manager. \end{DoxyCompactList}\item 
-double \hyperlink{classApplication_a9efc167094a42382504dd28a7ac402e0}{v}
+const double \hyperlink{classApplication_a57853498c230af817bc4173169847bfc}{v}
 \begin{DoxyCompactList}\small\item\em v\-C\-P\-Us of a container for this application \end{DoxyCompactList}\item 
-double \hyperlink{classApplication_a2a989ae288a74ee5250b5acf449c864a}{Deadline\-\_\-d}
+const double \hyperlink{classApplication_ae90c165056428718e7341999781a3963}{Deadline\-\_\-d}
 \begin{DoxyCompactList}\small\item\em Deadline for the application. \end{DoxyCompactList}\item 
-double \hyperlink{classApplication_a20adc533c6b6147342b3f60dc0fbd9bc}{csi}
+const double \hyperlink{classApplication_a7c4d5b6d8d7b2c480008dbd958872ed2}{csi}
 \item 
-std\-::string \hyperlink{classApplication_adb1cba2c06695bfdf81482dfba449d5b}{stage}
+const std\-::string \hyperlink{classApplication_a27731ed4d16f6e9583b52c4f09a69258}{stage}
 \begin{DoxyCompactList}\small\item\em \hyperlink{classApplication}{Application}'s stage (used in case of residual time) \end{DoxyCompactList}\item 
-int \hyperlink{classApplication_aaa155e818d807f585d83ecacf4abfe42}{dataset\-Size}
+const int \hyperlink{classApplication_a83bcec93383a2816d9bbaa51b7dfa0c6}{dataset\-\_\-size}
 \begin{DoxyCompactList}\small\item\em Size of the dataset. \end{DoxyCompactList}\item 
+const int \hyperlink{classApplication_a351cf2c8500b5b5520aeeac8f53c7f74}{mode} =\hyperlink{application_8hh_aaeed326368abd712225f9ca34c338fbf}{R\-\_\-\-A\-L\-G\-O\-R\-I\-T\-H\-M}
+\begin{DoxyCompactList}\small\item\em How the objective function is calculated (currently redundant) \end{DoxyCompactList}\item 
 double \hyperlink{classApplication_a42c22b9a3130cf1f2722ce222f2e5bae}{nu\-\_\-d}
 \begin{DoxyCompactList}\small\item\em nu value \end{DoxyCompactList}\item 
 int \hyperlink{classApplication_adee341a84a5389dfd4d16e7f8e697190}{current\-Cores\-\_\-d}
@@ -66,25 +140,19 @@ double \hyperlink{classApplication_a374d43f68ae27aaed98278e8152a434c}{R\-\_\-d}
 \begin{DoxyCompactList}\small\item\em Value of R as per the predictor. \end{DoxyCompactList}\item 
 double \hyperlink{classApplication_aa703e7525d446d98b5cd51c959d35998}{base\-F\-O}
 \begin{DoxyCompactList}\small\item\em base F\-O value (used to calculate the delta) \end{DoxyCompactList}\item 
-double \hyperlink{classApplication_a95fd54cbed658fb23ce27939666c91d2}{initial\-Base\-F\-O}
-\begin{DoxyCompactList}\small\item\em copy of base F\-O value (used to reset the value) \end{DoxyCompactList}\item 
-int \hyperlink{classApplication_a6a3692743eccba602a58fdfc3f23950b}{bound\-Iterations}
-\begin{DoxyCompactList}\small\item\em Metrics. \end{DoxyCompactList}\item 
 int \hyperlink{classApplication_a0a3fe386eb8244e536bc5297709d1269}{vm}
 \begin{DoxyCompactList}\small\item\em Read from O\-P\-T\-I\-M\-I\-Z\-E\-R\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N\-\_\-\-T\-A\-B\-L\-E. \end{DoxyCompactList}\item 
 double \hyperlink{classApplication_a57e16d80835a1911b72c63d5eeb5d2f2}{alpha}
 \begin{DoxyCompactList}\small\item\em First parameter for Hyperbolic interpolation. \end{DoxyCompactList}\item 
 double \hyperlink{classApplication_a356ffae49ae223b3d98b57e56210e3a9}{beta}
-\begin{DoxyCompactList}\small\item\em Second parameter for Hyperbolic interpolation. \end{DoxyCompactList}\item 
-int \hyperlink{classApplication_ac3f0d1900b7ca640c270666d166db530}{index} =0
-\begin{DoxyCompactList}\small\item\em Index for Hyperbolic interpolation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Second parameter for Hyperbolic interpolation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 In the \hyperlink{classApplication}{Application} class all the data of one application are stored ; it's provided also a method to evaluate Hyperbolic interpolation for alpha and beta. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classApplication_aa660e2135b162cfddaca0918be8599e8}{\index{Application@{Application}!Application@{Application}}
+\hypertarget{classApplication_a3413eb5b5ba7bd2d1dfe2ce6d2e28c48}{\index{Application@{Application}!Application@{Application}}
 \index{Application@{Application}!Application@{Application}}
 \subsubsection[{Application}]{\setlength{\rightskip}{0pt plus 5cm}Application\-::\-Application (
 \begin{DoxyParamCaption}
@@ -100,9 +168,9 @@ In the \hyperlink{classApplication}{Application} class all the data of one appli
 \item[{double}]{D, }
 \item[{double}]{csi, }
 \item[{std\-::string}]{St, }
-\item[{int}]{Dataset\-Size}
+\item[{int}]{dataset\-\_\-size}
 \end{DoxyParamCaption}
-)}}\label{classApplication_aa660e2135b162cfddaca0918be8599e8}
+)}}\label{classApplication_a3413eb5b5ba7bd2d1dfe2ce6d2e28c48}
 
 
 Constructor expects all static values. 
@@ -124,188 +192,564 @@ This function evaluates the Hyperbolic interpolation for alpha and beta (from th
 
 
 
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApplication_a9e86a23b1be9e49c0a890f9cf1abb7fe_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classApplication_a0bb182c29dbaf5293a120bdced8d08b6}{\index{Application@{Application}!get\-\_\-alpha@{get\-\_\-alpha}}
+\index{get\-\_\-alpha@{get\-\_\-alpha}!Application@{Application}}
+\subsubsection[{get\-\_\-alpha}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::get\-\_\-alpha (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_a0bb182c29dbaf5293a120bdced8d08b6}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApplication_a0bb182c29dbaf5293a120bdced8d08b6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classApplication_adff24fffdc7df386e03671cd084289a4}{\index{Application@{Application}!get\-\_\-app\-\_\-id@{get\-\_\-app\-\_\-id}}
+\index{get\-\_\-app\-\_\-id@{get\-\_\-app\-\_\-id}!Application@{Application}}
+\subsubsection[{get\-\_\-app\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Application\-::get\-\_\-app\-\_\-id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_adff24fffdc7df386e03671cd084289a4}
+\hypertarget{classApplication_affaab47de2a18e0dc08c7a6bcd272c5a}{\index{Application@{Application}!get\-\_\-base\-F\-O@{get\-\_\-base\-F\-O}}
+\index{get\-\_\-base\-F\-O@{get\-\_\-base\-F\-O}!Application@{Application}}
+\subsubsection[{get\-\_\-base\-F\-O}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::get\-\_\-base\-F\-O (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_affaab47de2a18e0dc08c7a6bcd272c5a}
+\hypertarget{classApplication_abc8a0a0b78144145d8aeefba5b3e256c}{\index{Application@{Application}!get\-\_\-beta@{get\-\_\-beta}}
+\index{get\-\_\-beta@{get\-\_\-beta}!Application@{Application}}
+\subsubsection[{get\-\_\-beta}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::get\-\_\-beta (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_abc8a0a0b78144145d8aeefba5b3e256c}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApplication_abc8a0a0b78144145d8aeefba5b3e256c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classApplication_afe686f73d03090e8e179704df91a0b2b}{\index{Application@{Application}!get\-\_\-bound@{get\-\_\-bound}}
+\index{get\-\_\-bound@{get\-\_\-bound}!Application@{Application}}
+\subsubsection[{get\-\_\-bound}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::get\-\_\-bound (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_afe686f73d03090e8e179704df91a0b2b}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApplication_afe686f73d03090e8e179704df91a0b2b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classApplication_aabe1bfd32595da63199c745ed8736e6c}{\index{Application@{Application}!get\-\_\-chi\-\_\-0@{get\-\_\-chi\-\_\-0}}
+\index{get\-\_\-chi\-\_\-0@{get\-\_\-chi\-\_\-0}!Application@{Application}}
+\subsubsection[{get\-\_\-chi\-\_\-0}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::get\-\_\-chi\-\_\-0 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_aabe1bfd32595da63199c745ed8736e6c}
+\hypertarget{classApplication_a83fd92829139ab7fcac7b84bd765e7c2}{\index{Application@{Application}!get\-\_\-chi\-\_\-\-C@{get\-\_\-chi\-\_\-\-C}}
+\index{get\-\_\-chi\-\_\-\-C@{get\-\_\-chi\-\_\-\-C}!Application@{Application}}
+\subsubsection[{get\-\_\-chi\-\_\-\-C}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::get\-\_\-chi\-\_\-\-C (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_a83fd92829139ab7fcac7b84bd765e7c2}
+\hypertarget{classApplication_ac0f748455a140ca52bf09759ade0842d}{\index{Application@{Application}!get\-\_\-csi@{get\-\_\-csi}}
+\index{get\-\_\-csi@{get\-\_\-csi}!Application@{Application}}
+\subsubsection[{get\-\_\-csi}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::get\-\_\-csi (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_ac0f748455a140ca52bf09759ade0842d}
+\hypertarget{classApplication_a1a87d8c2de9650b2fa3e7b3f64857dd1}{\index{Application@{Application}!get\-\_\-current\-Cores\-\_\-d@{get\-\_\-current\-Cores\-\_\-d}}
+\index{get\-\_\-current\-Cores\-\_\-d@{get\-\_\-current\-Cores\-\_\-d}!Application@{Application}}
+\subsubsection[{get\-\_\-current\-Cores\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::get\-\_\-current\-Cores\-\_\-d (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_a1a87d8c2de9650b2fa3e7b3f64857dd1}
+\hypertarget{classApplication_a03c830382c61d8383a86f011883138ec}{\index{Application@{Application}!get\-\_\-dataset\-\_\-size@{get\-\_\-dataset\-\_\-size}}
+\index{get\-\_\-dataset\-\_\-size@{get\-\_\-dataset\-\_\-size}!Application@{Application}}
+\subsubsection[{get\-\_\-dataset\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::get\-\_\-dataset\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_a03c830382c61d8383a86f011883138ec}
+\hypertarget{classApplication_a67f6af018dd1e4774e01c38d3c933ece}{\index{Application@{Application}!get\-\_\-\-Deadline\-\_\-d@{get\-\_\-\-Deadline\-\_\-d}}
+\index{get\-\_\-\-Deadline\-\_\-d@{get\-\_\-\-Deadline\-\_\-d}!Application@{Application}}
+\subsubsection[{get\-\_\-\-Deadline\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::get\-\_\-\-Deadline\-\_\-d (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_a67f6af018dd1e4774e01c38d3c933ece}
+\hypertarget{classApplication_a9ffe20e49ac2220e937c9133ea676c93}{\index{Application@{Application}!get\-\_\-m@{get\-\_\-m}}
+\index{get\-\_\-m@{get\-\_\-m}!Application@{Application}}
+\subsubsection[{get\-\_\-m}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::get\-\_\-m (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_a9ffe20e49ac2220e937c9133ea676c93}
+\hypertarget{classApplication_afd6fb36e7d3080e7cf479ec57bf511d8}{\index{Application@{Application}!get\-\_\-\-M@{get\-\_\-\-M}}
+\index{get\-\_\-\-M@{get\-\_\-\-M}!Application@{Application}}
+\subsubsection[{get\-\_\-\-M}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::get\-\_\-\-M (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_afd6fb36e7d3080e7cf479ec57bf511d8}
+\hypertarget{classApplication_a4ad44dc9971608e01a81164c13f2d73e}{\index{Application@{Application}!get\-\_\-mode@{get\-\_\-mode}}
+\index{get\-\_\-mode@{get\-\_\-mode}!Application@{Application}}
+\subsubsection[{get\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::get\-\_\-mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_a4ad44dc9971608e01a81164c13f2d73e}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApplication_a4ad44dc9971608e01a81164c13f2d73e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classApplication_a97149e55a340940c15d56be4fb577767}{\index{Application@{Application}!get\-\_\-n\-Cores\-\_\-\-D\-B\-\_\-d@{get\-\_\-n\-Cores\-\_\-\-D\-B\-\_\-d}}
+\index{get\-\_\-n\-Cores\-\_\-\-D\-B\-\_\-d@{get\-\_\-n\-Cores\-\_\-\-D\-B\-\_\-d}!Application@{Application}}
+\subsubsection[{get\-\_\-n\-Cores\-\_\-\-D\-B\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::get\-\_\-n\-Cores\-\_\-\-D\-B\-\_\-d (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_a97149e55a340940c15d56be4fb577767}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApplication_a97149e55a340940c15d56be4fb577767_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classApplication_aa6b441c3147aec3aa0192d2e9f76251d}{\index{Application@{Application}!get\-\_\-nu\-\_\-d@{get\-\_\-nu\-\_\-d}}
+\index{get\-\_\-nu\-\_\-d@{get\-\_\-nu\-\_\-d}!Application@{Application}}
+\subsubsection[{get\-\_\-nu\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::get\-\_\-nu\-\_\-d (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_aa6b441c3147aec3aa0192d2e9f76251d}
+\hypertarget{classApplication_ad0d83c496de2ca9268bb4d3f743dacac}{\index{Application@{Application}!get\-\_\-\-R\-\_\-d@{get\-\_\-\-R\-\_\-d}}
+\index{get\-\_\-\-R\-\_\-d@{get\-\_\-\-R\-\_\-d}!Application@{Application}}
+\subsubsection[{get\-\_\-\-R\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::get\-\_\-\-R\-\_\-d (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_ad0d83c496de2ca9268bb4d3f743dacac}
+\hypertarget{classApplication_a76968cc06cb913a46b1b9c248fefced9}{\index{Application@{Application}!get\-\_\-session\-\_\-app\-\_\-id@{get\-\_\-session\-\_\-app\-\_\-id}}
+\index{get\-\_\-session\-\_\-app\-\_\-id@{get\-\_\-session\-\_\-app\-\_\-id}!Application@{Application}}
+\subsubsection[{get\-\_\-session\-\_\-app\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Application\-::get\-\_\-session\-\_\-app\-\_\-id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_a76968cc06cb913a46b1b9c248fefced9}
+\hypertarget{classApplication_a140b3eeddfcf31a29b477301f37c5ad0}{\index{Application@{Application}!get\-\_\-stage@{get\-\_\-stage}}
+\index{get\-\_\-stage@{get\-\_\-stage}!Application@{Application}}
+\subsubsection[{get\-\_\-stage}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Application\-::get\-\_\-stage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_a140b3eeddfcf31a29b477301f37c5ad0}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApplication_a140b3eeddfcf31a29b477301f37c5ad0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classApplication_a19089a029251a3034747866c2084f4af}{\index{Application@{Application}!get\-\_\-term\-\_\-i@{get\-\_\-term\-\_\-i}}
+\index{get\-\_\-term\-\_\-i@{get\-\_\-term\-\_\-i}!Application@{Application}}
+\subsubsection[{get\-\_\-term\-\_\-i}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::get\-\_\-term\-\_\-i (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_a19089a029251a3034747866c2084f4af}
+\hypertarget{classApplication_a769241efad622861b4d177b6cef95afb}{\index{Application@{Application}!get\-\_\-v@{get\-\_\-v}}
+\index{get\-\_\-v@{get\-\_\-v}!Application@{Application}}
+\subsubsection[{get\-\_\-v}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::get\-\_\-v (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_a769241efad622861b4d177b6cef95afb}
+\hypertarget{classApplication_aabc164f25c55cdb78cccb9441b5a3952}{\index{Application@{Application}!get\-\_\-\-V@{get\-\_\-\-V}}
+\index{get\-\_\-\-V@{get\-\_\-\-V}!Application@{Application}}
+\subsubsection[{get\-\_\-\-V}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::get\-\_\-\-V (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_aabc164f25c55cdb78cccb9441b5a3952}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApplication_aabc164f25c55cdb78cccb9441b5a3952_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classApplication_a5d59e42d6f67c8f519d4c14df49e82a6}{\index{Application@{Application}!get\-\_\-vm@{get\-\_\-vm}}
+\index{get\-\_\-vm@{get\-\_\-vm}!Application@{Application}}
+\subsubsection[{get\-\_\-vm}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::get\-\_\-vm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_a5d59e42d6f67c8f519d4c14df49e82a6}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApplication_a5d59e42d6f67c8f519d4c14df49e82a6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classApplication_a354b6b805f2993418260a8dd10368759}{\index{Application@{Application}!get\-\_\-w@{get\-\_\-w}}
+\index{get\-\_\-w@{get\-\_\-w}!Application@{Application}}
+\subsubsection[{get\-\_\-w}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::get\-\_\-w (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_a354b6b805f2993418260a8dd10368759}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApplication_a354b6b805f2993418260a8dd10368759_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classApplication_a4931a778639958beec06c7efa6343602}{\index{Application@{Application}!set\-\_\-base\-F\-O@{set\-\_\-base\-F\-O}}
+\index{set\-\_\-base\-F\-O@{set\-\_\-base\-F\-O}!Application@{Application}}
+\subsubsection[{set\-\_\-base\-F\-O}]{\setlength{\rightskip}{0pt plus 5cm}void Application\-::set\-\_\-base\-F\-O (
+\begin{DoxyParamCaption}
+\item[{double}]{f}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_a4931a778639958beec06c7efa6343602}
+\hypertarget{classApplication_aa5bda390f99dea85e95f8d43b45c01a6}{\index{Application@{Application}!set\-\_\-bound@{set\-\_\-bound}}
+\index{set\-\_\-bound@{set\-\_\-bound}!Application@{Application}}
+\subsubsection[{set\-\_\-bound}]{\setlength{\rightskip}{0pt plus 5cm}void Application\-::set\-\_\-bound (
+\begin{DoxyParamCaption}
+\item[{int}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_aa5bda390f99dea85e95f8d43b45c01a6}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApplication_aa5bda390f99dea85e95f8d43b45c01a6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classApplication_a54b218ca87366e0897571416da763ba2}{\index{Application@{Application}!set\-\_\-current\-Cores\-\_\-d@{set\-\_\-current\-Cores\-\_\-d}}
+\index{set\-\_\-current\-Cores\-\_\-d@{set\-\_\-current\-Cores\-\_\-d}!Application@{Application}}
+\subsubsection[{set\-\_\-current\-Cores\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}void Application\-::set\-\_\-current\-Cores\-\_\-d (
+\begin{DoxyParamCaption}
+\item[{int}]{c\-\_\-d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_a54b218ca87366e0897571416da763ba2}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApplication_a54b218ca87366e0897571416da763ba2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classApplication_a3d116c903ecb0d92d5dc66f1210f227a}{\index{Application@{Application}!set\-\_\-n\-Cores\-\_\-\-D\-B\-\_\-d@{set\-\_\-n\-Cores\-\_\-\-D\-B\-\_\-d}}
+\index{set\-\_\-n\-Cores\-\_\-\-D\-B\-\_\-d@{set\-\_\-n\-Cores\-\_\-\-D\-B\-\_\-d}!Application@{Application}}
+\subsubsection[{set\-\_\-n\-Cores\-\_\-\-D\-B\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}void Application\-::set\-\_\-n\-Cores\-\_\-\-D\-B\-\_\-d (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_a3d116c903ecb0d92d5dc66f1210f227a}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApplication_a3d116c903ecb0d92d5dc66f1210f227a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classApplication_a158448d570c0e25f7d7884af4fca0b8c}{\index{Application@{Application}!set\-\_\-nu\-\_\-d@{set\-\_\-nu\-\_\-d}}
+\index{set\-\_\-nu\-\_\-d@{set\-\_\-nu\-\_\-d}!Application@{Application}}
+\subsubsection[{set\-\_\-nu\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}void Application\-::set\-\_\-nu\-\_\-d (
+\begin{DoxyParamCaption}
+\item[{double}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_a158448d570c0e25f7d7884af4fca0b8c}
+\hypertarget{classApplication_a74d83f1191a1ab311c055da4d0d8d8d9}{\index{Application@{Application}!set\-\_\-\-R\-\_\-d@{set\-\_\-\-R\-\_\-d}}
+\index{set\-\_\-\-R\-\_\-d@{set\-\_\-\-R\-\_\-d}!Application@{Application}}
+\subsubsection[{set\-\_\-\-R\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}void Application\-::set\-\_\-\-R\-\_\-d (
+\begin{DoxyParamCaption}
+\item[{double}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_a74d83f1191a1ab311c055da4d0d8d8d9}
+\hypertarget{classApplication_a5a4a2ea2cb6d85978d9eee95d02c6689}{\index{Application@{Application}!set\-\_\-term\-\_\-i@{set\-\_\-term\-\_\-i}}
+\index{set\-\_\-term\-\_\-i@{set\-\_\-term\-\_\-i}!Application@{Application}}
+\subsubsection[{set\-\_\-term\-\_\-i}]{\setlength{\rightskip}{0pt plus 5cm}void Application\-::set\-\_\-term\-\_\-i (
+\begin{DoxyParamCaption}
+\item[{double}]{t\-\_\-i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_a5a4a2ea2cb6d85978d9eee95d02c6689}
+\hypertarget{classApplication_a26df38cf838de9baf1ed5e5923b32124}{\index{Application@{Application}!set\-\_\-vm@{set\-\_\-vm}}
+\index{set\-\_\-vm@{set\-\_\-vm}!Application@{Application}}
+\subsubsection[{set\-\_\-vm}]{\setlength{\rightskip}{0pt plus 5cm}void Application\-::set\-\_\-vm (
+\begin{DoxyParamCaption}
+\item[{int}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classApplication_a26df38cf838de9baf1ed5e5923b32124}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApplication_a26df38cf838de9baf1ed5e5923b32124_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
 \subsection{Member Data Documentation}
 \hypertarget{classApplication_a57e16d80835a1911b72c63d5eeb5d2f2}{\index{Application@{Application}!alpha@{alpha}}
 \index{alpha@{alpha}!Application@{Application}}
-\subsubsection[{alpha}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::alpha}}\label{classApplication_a57e16d80835a1911b72c63d5eeb5d2f2}
+\subsubsection[{alpha}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::alpha\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_a57e16d80835a1911b72c63d5eeb5d2f2}
 
 
 First parameter for Hyperbolic interpolation. 
 
-\hypertarget{classApplication_a05377e6cdcb9d48f29e0f1972a4a16fe}{\index{Application@{Application}!app\-\_\-id@{app\-\_\-id}}
+\hypertarget{classApplication_a5cedee59cfd3cbf89d02174e2f521493}{\index{Application@{Application}!app\-\_\-id@{app\-\_\-id}}
 \index{app\-\_\-id@{app\-\_\-id}!Application@{Application}}
-\subsubsection[{app\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Application\-::app\-\_\-id}}\label{classApplication_a05377e6cdcb9d48f29e0f1972a4a16fe}
+\subsubsection[{app\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string Application\-::app\-\_\-id\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_a5cedee59cfd3cbf89d02174e2f521493}
 
 
 \hyperlink{classApplication}{Application} identifier. 
 
 \hypertarget{classApplication_aa703e7525d446d98b5cd51c959d35998}{\index{Application@{Application}!base\-F\-O@{base\-F\-O}}
 \index{base\-F\-O@{base\-F\-O}!Application@{Application}}
-\subsubsection[{base\-F\-O}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::base\-F\-O}}\label{classApplication_aa703e7525d446d98b5cd51c959d35998}
+\subsubsection[{base\-F\-O}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::base\-F\-O\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_aa703e7525d446d98b5cd51c959d35998}
 
 
 base F\-O value (used to calculate the delta) 
 
 \hypertarget{classApplication_a356ffae49ae223b3d98b57e56210e3a9}{\index{Application@{Application}!beta@{beta}}
 \index{beta@{beta}!Application@{Application}}
-\subsubsection[{beta}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::beta}}\label{classApplication_a356ffae49ae223b3d98b57e56210e3a9}
+\subsubsection[{beta}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::beta\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_a356ffae49ae223b3d98b57e56210e3a9}
 
 
 Second parameter for Hyperbolic interpolation. 
 
 \hypertarget{classApplication_a6e91bef9d503af0e8ba38c8f445c8cb0}{\index{Application@{Application}!bound@{bound}}
 \index{bound@{bound}!Application@{Application}}
-\subsubsection[{bound}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::bound}}\label{classApplication_a6e91bef9d503af0e8ba38c8f445c8cb0}
+\subsubsection[{bound}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::bound\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_a6e91bef9d503af0e8ba38c8f445c8cb0}
 
 
 Bound (number of cores) 
 
 \hypertarget{classApplication_a6a3692743eccba602a58fdfc3f23950b}{\index{Application@{Application}!bound\-Iterations@{bound\-Iterations}}
 \index{bound\-Iterations@{bound\-Iterations}!Application@{Application}}
-\subsubsection[{bound\-Iterations}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::bound\-Iterations}}\label{classApplication_a6a3692743eccba602a58fdfc3f23950b}
-
-
-Metrics. 
-
-\hypertarget{classApplication_a3b9dab40d189989c836b8d328946bbb6}{\index{Application@{Application}!chi\-\_\-0@{chi\-\_\-0}}
-\index{chi\-\_\-0@{chi\-\_\-0}!Application@{Application}}
-\subsubsection[{chi\-\_\-0}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::chi\-\_\-0}}\label{classApplication_a3b9dab40d189989c836b8d328946bbb6}
-
-
-Machine learning parameter. 
-
-\hypertarget{classApplication_a46e29a6bfc74de610feec809a77dfb62}{\index{Application@{Application}!chi\-\_\-\-C@{chi\-\_\-\-C}}
-\index{chi\-\_\-\-C@{chi\-\_\-\-C}!Application@{Application}}
-\subsubsection[{chi\-\_\-\-C}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::chi\-\_\-\-C}}\label{classApplication_a46e29a6bfc74de610feec809a77dfb62}
-
-
-Machine learning parameter. 
-
-\hypertarget{classApplication_a20adc533c6b6147342b3f60dc0fbd9bc}{\index{Application@{Application}!csi@{csi}}
-\index{csi@{csi}!Application@{Application}}
-\subsubsection[{csi}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::csi}}\label{classApplication_a20adc533c6b6147342b3f60dc0fbd9bc}
-\hypertarget{classApplication_adee341a84a5389dfd4d16e7f8e697190}{\index{Application@{Application}!current\-Cores\-\_\-d@{current\-Cores\-\_\-d}}
-\index{current\-Cores\-\_\-d@{current\-Cores\-\_\-d}!Application@{Application}}
-\subsubsection[{current\-Cores\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::current\-Cores\-\_\-d}}\label{classApplication_adee341a84a5389dfd4d16e7f8e697190}
-
-
-Initialized to nu\-\_\-i. 
-
-\hypertarget{classApplication_aaa155e818d807f585d83ecacf4abfe42}{\index{Application@{Application}!dataset\-Size@{dataset\-Size}}
-\index{dataset\-Size@{dataset\-Size}!Application@{Application}}
-\subsubsection[{dataset\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::dataset\-Size}}\label{classApplication_aaa155e818d807f585d83ecacf4abfe42}
-
-
-Size of the dataset. 
-
-\hypertarget{classApplication_a2a989ae288a74ee5250b5acf449c864a}{\index{Application@{Application}!Deadline\-\_\-d@{Deadline\-\_\-d}}
-\index{Deadline\-\_\-d@{Deadline\-\_\-d}!Application@{Application}}
-\subsubsection[{Deadline\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::\-Deadline\-\_\-d}}\label{classApplication_a2a989ae288a74ee5250b5acf449c864a}
-
-
-Deadline for the application. 
-
-\hypertarget{classApplication_ac3f0d1900b7ca640c270666d166db530}{\index{Application@{Application}!index@{index}}
-\index{index@{index}!Application@{Application}}
-\subsubsection[{index}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::index =0}}\label{classApplication_ac3f0d1900b7ca640c270666d166db530}
+\subsubsection[{bound\-Iterations}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::bound\-Iterations =0\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_a6a3692743eccba602a58fdfc3f23950b}
 
 
 Index for Hyperbolic interpolation. 
 
-\hypertarget{classApplication_a95fd54cbed658fb23ce27939666c91d2}{\index{Application@{Application}!initial\-Base\-F\-O@{initial\-Base\-F\-O}}
-\index{initial\-Base\-F\-O@{initial\-Base\-F\-O}!Application@{Application}}
-\subsubsection[{initial\-Base\-F\-O}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::initial\-Base\-F\-O}}\label{classApplication_a95fd54cbed658fb23ce27939666c91d2}
+\hypertarget{classApplication_a6066fad4c229a6035652efd712d0d78c}{\index{Application@{Application}!chi\-\_\-0@{chi\-\_\-0}}
+\index{chi\-\_\-0@{chi\-\_\-0}!Application@{Application}}
+\subsubsection[{chi\-\_\-0}]{\setlength{\rightskip}{0pt plus 5cm}const double Application\-::chi\-\_\-0\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_a6066fad4c229a6035652efd712d0d78c}
 
 
-copy of base F\-O value (used to reset the value) 
+Machine learning parameter. 
 
-\hypertarget{classApplication_ab903d83d3cde51569a27f97752c9f158}{\index{Application@{Application}!m@{m}}
+\hypertarget{classApplication_a73d8a1604a2b2c99b14db1c8bd9c2798}{\index{Application@{Application}!chi\-\_\-\-C@{chi\-\_\-\-C}}
+\index{chi\-\_\-\-C@{chi\-\_\-\-C}!Application@{Application}}
+\subsubsection[{chi\-\_\-\-C}]{\setlength{\rightskip}{0pt plus 5cm}const double Application\-::chi\-\_\-\-C\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_a73d8a1604a2b2c99b14db1c8bd9c2798}
+
+
+Machine learning parameter. 
+
+\hypertarget{classApplication_a7c4d5b6d8d7b2c480008dbd958872ed2}{\index{Application@{Application}!csi@{csi}}
+\index{csi@{csi}!Application@{Application}}
+\subsubsection[{csi}]{\setlength{\rightskip}{0pt plus 5cm}const double Application\-::csi\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_a7c4d5b6d8d7b2c480008dbd958872ed2}
+\hypertarget{classApplication_adee341a84a5389dfd4d16e7f8e697190}{\index{Application@{Application}!current\-Cores\-\_\-d@{current\-Cores\-\_\-d}}
+\index{current\-Cores\-\_\-d@{current\-Cores\-\_\-d}!Application@{Application}}
+\subsubsection[{current\-Cores\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::current\-Cores\-\_\-d\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_adee341a84a5389dfd4d16e7f8e697190}
+
+
+Initialized to nu\-\_\-i. 
+
+\hypertarget{classApplication_a83bcec93383a2816d9bbaa51b7dfa0c6}{\index{Application@{Application}!dataset\-\_\-size@{dataset\-\_\-size}}
+\index{dataset\-\_\-size@{dataset\-\_\-size}!Application@{Application}}
+\subsubsection[{dataset\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}const int Application\-::dataset\-\_\-size\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_a83bcec93383a2816d9bbaa51b7dfa0c6}
+
+
+Size of the dataset. 
+
+\hypertarget{classApplication_ae90c165056428718e7341999781a3963}{\index{Application@{Application}!Deadline\-\_\-d@{Deadline\-\_\-d}}
+\index{Deadline\-\_\-d@{Deadline\-\_\-d}!Application@{Application}}
+\subsubsection[{Deadline\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}const double Application\-::\-Deadline\-\_\-d\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_ae90c165056428718e7341999781a3963}
+
+
+Deadline for the application. 
+
+\hypertarget{classApplication_ad95ca8809237917d16779d7ed0013c8e}{\index{Application@{Application}!m@{m}}
 \index{m@{m}!Application@{Application}}
-\subsubsection[{m}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::m}}\label{classApplication_ab903d83d3cde51569a27f97752c9f158}
+\subsubsection[{m}]{\setlength{\rightskip}{0pt plus 5cm}const double Application\-::m\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_ad95ca8809237917d16779d7ed0013c8e}
 
 
 Ram of a container for this application. 
 
-\hypertarget{classApplication_a14904a2abf46cc0a50eb82043fa0912e}{\index{Application@{Application}!M@{M}}
+\hypertarget{classApplication_a98cc47f6aa4ac3c70133d2922952ef7a}{\index{Application@{Application}!M@{M}}
 \index{M@{M}!Application@{Application}}
-\subsubsection[{M}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::\-M}}\label{classApplication_a14904a2abf46cc0a50eb82043fa0912e}
+\subsubsection[{M}]{\setlength{\rightskip}{0pt plus 5cm}const double Application\-::\-M\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_a98cc47f6aa4ac3c70133d2922952ef7a}
 
 
 Total Ram available at the Y\-A\-R\-N Node\-Manager. 
 
-\hypertarget{classApplication_abc7e87e8cbe2e64fa4e2ff2afdf7a4fc}{\index{Application@{Application}!mode@{mode}}
+\hypertarget{classApplication_a351cf2c8500b5b5520aeeac8f53c7f74}{\index{Application@{Application}!mode@{mode}}
 \index{mode@{mode}!Application@{Application}}
-\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::mode ={\bf R\-\_\-\-A\-L\-G\-O\-R\-I\-T\-H\-M}}}\label{classApplication_abc7e87e8cbe2e64fa4e2ff2afdf7a4fc}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}const int Application\-::mode ={\bf R\-\_\-\-A\-L\-G\-O\-R\-I\-T\-H\-M}\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_a351cf2c8500b5b5520aeeac8f53c7f74}
 
 
 How the objective function is calculated (currently redundant) 
 
 \hypertarget{classApplication_a95104d330c9c7ed2c1017b4938a39a9a}{\index{Application@{Application}!n\-Cores\-\_\-\-D\-B\-\_\-d@{n\-Cores\-\_\-\-D\-B\-\_\-d}}
 \index{n\-Cores\-\_\-\-D\-B\-\_\-d@{n\-Cores\-\_\-\-D\-B\-\_\-d}!Application@{Application}}
-\subsubsection[{n\-Cores\-\_\-\-D\-B\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::n\-Cores\-\_\-\-D\-B\-\_\-d}}\label{classApplication_a95104d330c9c7ed2c1017b4938a39a9a}
+\subsubsection[{n\-Cores\-\_\-\-D\-B\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::n\-Cores\-\_\-\-D\-B\-\_\-d\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_a95104d330c9c7ed2c1017b4938a39a9a}
 
 
 Initialized to the value from look-\/up table. 
 
+\hypertarget{classApplication_af7b37c07da0fefef4d86ed3c567b08d2}{\index{Application@{Application}!n\-Cores\-\_\-new@{n\-Cores\-\_\-new}}
+\index{n\-Cores\-\_\-new@{n\-Cores\-\_\-new}!Application@{Application}}
+\subsubsection[{n\-Cores\-\_\-new}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::n\-Cores\-\_\-new\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_af7b37c07da0fefef4d86ed3c567b08d2}
+\hypertarget{classApplication_a425bb14c5264f07d9eafa6f9caa6a8b1}{\index{Application@{Application}!n\-Cores\-\_\-old@{n\-Cores\-\_\-old}}
+\index{n\-Cores\-\_\-old@{n\-Cores\-\_\-old}!Application@{Application}}
+\subsubsection[{n\-Cores\-\_\-old}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::n\-Cores\-\_\-old\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_a425bb14c5264f07d9eafa6f9caa6a8b1}
 \hypertarget{classApplication_a42c22b9a3130cf1f2722ce222f2e5bae}{\index{Application@{Application}!nu\-\_\-d@{nu\-\_\-d}}
 \index{nu\-\_\-d@{nu\-\_\-d}!Application@{Application}}
-\subsubsection[{nu\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::nu\-\_\-d}}\label{classApplication_a42c22b9a3130cf1f2722ce222f2e5bae}
+\subsubsection[{nu\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::nu\-\_\-d\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_a42c22b9a3130cf1f2722ce222f2e5bae}
 
 
 nu value 
 
 \hypertarget{classApplication_a374d43f68ae27aaed98278e8152a434c}{\index{Application@{Application}!R\-\_\-d@{R\-\_\-d}}
 \index{R\-\_\-d@{R\-\_\-d}!Application@{Application}}
-\subsubsection[{R\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::\-R\-\_\-d}}\label{classApplication_a374d43f68ae27aaed98278e8152a434c}
+\subsubsection[{R\-\_\-d}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::\-R\-\_\-d\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_a374d43f68ae27aaed98278e8152a434c}
 
 
 Value of R as per the predictor. 
 
-\hypertarget{classApplication_a5e28ffadb86925ecae57ab18c0085d90}{\index{Application@{Application}!session\-\_\-app\-\_\-id@{session\-\_\-app\-\_\-id}}
+\hypertarget{classApplication_a9e94824741ac0c52d0fa5ede30c72fa1}{\index{Application@{Application}!R\-\_\-new@{R\-\_\-new}}
+\index{R\-\_\-new@{R\-\_\-new}!Application@{Application}}
+\subsubsection[{R\-\_\-new}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::\-R\-\_\-new\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_a9e94824741ac0c52d0fa5ede30c72fa1}
+\hypertarget{classApplication_a950cfc8da4a8e4640aee8d2840f53e0e}{\index{Application@{Application}!R\-\_\-old@{R\-\_\-old}}
+\index{R\-\_\-old@{R\-\_\-old}!Application@{Application}}
+\subsubsection[{R\-\_\-old}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::\-R\-\_\-old\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_a950cfc8da4a8e4640aee8d2840f53e0e}
+\hypertarget{classApplication_a6152c40564d526b9b60871c98f7a51c7}{\index{Application@{Application}!session\-\_\-app\-\_\-id@{session\-\_\-app\-\_\-id}}
 \index{session\-\_\-app\-\_\-id@{session\-\_\-app\-\_\-id}!Application@{Application}}
-\subsubsection[{session\-\_\-app\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Application\-::session\-\_\-app\-\_\-id}}\label{classApplication_a5e28ffadb86925ecae57ab18c0085d90}
+\subsubsection[{session\-\_\-app\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string Application\-::session\-\_\-app\-\_\-id\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_a6152c40564d526b9b60871c98f7a51c7}
 
 
 Session identifier. 
 
-\hypertarget{classApplication_adb1cba2c06695bfdf81482dfba449d5b}{\index{Application@{Application}!stage@{stage}}
+\hypertarget{classApplication_a27731ed4d16f6e9583b52c4f09a69258}{\index{Application@{Application}!stage@{stage}}
 \index{stage@{stage}!Application@{Application}}
-\subsubsection[{stage}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Application\-::stage}}\label{classApplication_adb1cba2c06695bfdf81482dfba449d5b}
+\subsubsection[{stage}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string Application\-::stage\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_a27731ed4d16f6e9583b52c4f09a69258}
 
 
 \hyperlink{classApplication}{Application}'s stage (used in case of residual time) 
 
 \hypertarget{classApplication_ad5486702327ad61e56ed04fb54d58c20}{\index{Application@{Application}!term\-\_\-i@{term\-\_\-i}}
 \index{term\-\_\-i@{term\-\_\-i}!Application@{Application}}
-\subsubsection[{term\-\_\-i}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::term\-\_\-i}}\label{classApplication_ad5486702327ad61e56ed04fb54d58c20}
+\subsubsection[{term\-\_\-i}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::term\-\_\-i\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_ad5486702327ad61e56ed04fb54d58c20}
 
 
 Used to calculate nu index. 
 
-\hypertarget{classApplication_aa92ad37e6701931176e0dc9b260fd7ee}{\index{Application@{Application}!V@{V}}
+\hypertarget{classApplication_a03a99fa3553c376653e53bb5f489c316}{\index{Application@{Application}!V@{V}}
 \index{V@{V}!Application@{Application}}
-\subsubsection[{V}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::\-V}}\label{classApplication_aa92ad37e6701931176e0dc9b260fd7ee}
+\subsubsection[{V}]{\setlength{\rightskip}{0pt plus 5cm}const double Application\-::\-V\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_a03a99fa3553c376653e53bb5f489c316}
 
 
 Total v\-C\-P\-Us available at the Y\-A\-R\-N Node\-Manager. 
 
-\hypertarget{classApplication_a9efc167094a42382504dd28a7ac402e0}{\index{Application@{Application}!v@{v}}
+\hypertarget{classApplication_a57853498c230af817bc4173169847bfc}{\index{Application@{Application}!v@{v}}
 \index{v@{v}!Application@{Application}}
-\subsubsection[{v}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::v}}\label{classApplication_a9efc167094a42382504dd28a7ac402e0}
+\subsubsection[{v}]{\setlength{\rightskip}{0pt plus 5cm}const double Application\-::v\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_a57853498c230af817bc4173169847bfc}
 
 
 v\-C\-P\-Us of a container for this application 
 
 \hypertarget{classApplication_a0a3fe386eb8244e536bc5297709d1269}{\index{Application@{Application}!vm@{vm}}
 \index{vm@{vm}!Application@{Application}}
-\subsubsection[{vm}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::vm}}\label{classApplication_a0a3fe386eb8244e536bc5297709d1269}
+\subsubsection[{vm}]{\setlength{\rightskip}{0pt plus 5cm}int Application\-::vm\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_a0a3fe386eb8244e536bc5297709d1269}
 
 
 Read from O\-P\-T\-I\-M\-I\-Z\-E\-R\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N\-\_\-\-T\-A\-B\-L\-E. 
 
-\hypertarget{classApplication_aead1b7b0150c2a3ebd6c36b1db8c4732}{\index{Application@{Application}!w@{w}}
+\hypertarget{classApplication_a89e171cf287b09ce4b37dd94c0d61e2b}{\index{Application@{Application}!w@{w}}
 \index{w@{w}!Application@{Application}}
-\subsubsection[{w}]{\setlength{\rightskip}{0pt plus 5cm}double Application\-::w}}\label{classApplication_aead1b7b0150c2a3ebd6c36b1db8c4732}
+\subsubsection[{w}]{\setlength{\rightskip}{0pt plus 5cm}const double Application\-::w\hspace{0.3cm}{\ttfamily [private]}}}\label{classApplication_a89e171cf287b09ce4b37dd94c0d61e2b}
 
 
 Weight application. 

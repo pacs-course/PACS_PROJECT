@@ -1,8 +1,13 @@
 <map id="doubleCompare" name="doubleCompare">
-<area shape="rect" id="node2" href="$invokePredictor_8hh.html#a342ccdfe7923368e52a4894d69c7455a" title="invokePredictor" alt="" coords="168,67,280,93"/>
-<area shape="rect" id="node7" href="$classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b" title="ObjFun::ObjFunctionGlobal" alt="" coords="595,123,773,149"/>
-<area shape="rect" id="node3" href="$classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7" title="ObjFun::ObjFunctionComponent" alt="" coords="329,65,538,92"/>
-<area shape="rect" id="node4" href="$classBatch.html#ae212d22fa812b51160f57507242152c1" title="For each application, a base value for the objective function is calculated. " alt="" coords="629,5,739,32"/>
-<area shape="rect" id="node6" href="$classsCandidates.html#ac5ff86e5acf736ef57a3eb25c0d724ab" title="sCandidates::invokePredictor\lOpenMP" alt="" coords="587,57,781,98"/>
-<area shape="rect" id="node5" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="829,5,880,32"/>
+<area shape="rect" id="node2" href="$classBounds.html#a6bc038892059a8181984daff0003065f" title="Bounds::Bound" alt="" coords="378,79,489,105"/>
+<area shape="rect" id="node6" href="$invokePredictor_8hh.html#a342ccdfe7923368e52a4894d69c7455a" title="invokePredictor" alt="" coords="168,129,280,156"/>
+<area shape="rect" id="node12" href="$classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b" title="ObjFun::ObjFunctionGlobal" alt="" coords="605,224,784,251"/>
+<area shape="rect" id="node3" href="$classBounds.html#ade8356aa22e675868ba98226e4216cf3" title="Bounds::findBound" alt="" coords="629,5,761,32"/>
+<area shape="rect" id="node4" href="$classBounds.html#aefc7e0bd2cd1c5850a903aabe0351dbe" title="Bounds::calculateBounds" alt="" coords="851,5,1021,32"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1069,56,1120,83"/>
+<area shape="rect" id="node7" href="$classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7" title="ObjFun::ObjFunctionComponent" alt="" coords="329,129,538,156"/>
+<area shape="rect" id="node8" href="$classBatch.html#ae212d22fa812b51160f57507242152c1" title="For each application, a base value for the objective function is calculated. " alt="" coords="881,56,991,83"/>
+<area shape="rect" id="node9" href="$classsCandidates.html#ac5ff86e5acf736ef57a3eb25c0d724ab" title="sCandidates::invokePredictor\lOpenMP" alt="" coords="598,107,791,149"/>
+<area shape="rect" id="node11" href="$classsCandidates.html#a79ab5675418a37532bf447cfa8baf975" title="sCandidates::invokePredictorSeq" alt="" coords="587,173,803,200"/>
+<area shape="rect" id="node10" href="$classSearch.html#ae5937c445a63dfa24786b5fce04d2b27" title="Search::localSearch" alt="" coords="867,144,1005,171"/>
 </map>

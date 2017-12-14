@@ -1,6 +1,8 @@
 <map id="ObjFun::ObjFunctionComponent" name="ObjFun::ObjFunctionComponent">
-<area shape="rect" id="node2" href="$classBatch.html#ae212d22fa812b51160f57507242152c1" title="For each application, a base value for the objective function is calculated. " alt="" coords="306,5,417,32"/>
-<area shape="rect" id="node4" href="$classsCandidates.html#ac5ff86e5acf736ef57a3eb25c0d724ab" title="sCandidates::invokePredictor\lOpenMP" alt="" coords="265,57,458,98"/>
-<area shape="rect" id="node5" href="$classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b" title="ObjFun::ObjFunctionGlobal" alt="" coords="272,123,451,149"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="507,5,557,32"/>
+<area shape="rect" id="node2" href="$classBatch.html#ae212d22fa812b51160f57507242152c1" title="For each application, a base value for the objective function is calculated. " alt="" coords="542,5,653,32"/>
+<area shape="rect" id="node4" href="$classsCandidates.html#ac5ff86e5acf736ef57a3eb25c0d724ab" title="sCandidates::invokePredictor\lOpenMP" alt="" coords="275,39,469,81"/>
+<area shape="rect" id="node6" href="$classsCandidates.html#a79ab5675418a37532bf447cfa8baf975" title="sCandidates::invokePredictorSeq" alt="" coords="264,105,480,132"/>
+<area shape="rect" id="node7" href="$classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b" title="ObjFun::ObjFunctionGlobal" alt="" coords="283,156,461,183"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="715,48,765,75"/>
+<area shape="rect" id="node5" href="$classSearch.html#ae5937c445a63dfa24786b5fce04d2b27" title="Search::localSearch" alt="" coords="528,89,667,116"/>
 </map>

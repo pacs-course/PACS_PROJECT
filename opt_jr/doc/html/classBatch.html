@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,7 +83,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classBatch-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Batch Class Reference</div>  </div>
@@ -96,8 +97,8 @@ Collaboration diagram for Batch:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBatch__coll__graph.png" border="0" usemap="#Batch_coll__map" alt="Collaboration graph"/></div>
 <map name="Batch_coll__map" id="Batch_coll__map">
-<area shape="rect" id="node3" href="classApplication.html" title="Application" alt="" coords="47,219,133,245"/><area shape="rect" id="node4" title="STL class. " alt="" coords="51,99,131,125"/><area shape="rect" id="node5" title="STL class. " alt="" coords="27,6,153,47"/></map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<area shape="rect" id="node3" href="classApplication.html" title="{Application\n|&#45; nCores_old\l&#45; nCores_new\l&#45; R_old\l&#45; R_new\l&#45; boundIterations\l&#45; w\l&#45; term_i\l&#45; chi_0\l&#45; chi_C\l&#45; m\land 16 more...\l|+ Application()\l+ computeAlphaBeta()\l+ get_session_app_id()\l+ get_app_id()\l+ get_w()\l+ get_term_i()\l+ get_chi_0()\l+ get_chi_C()\l+ get_m()\l+ get_M()\land 24 more...\l}" alt="" coords="12,5,169,376"/></map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -114,11 +115,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac50dad870490ca7c60e0e15d86c02614"><td class="mdescLeft">&#160;</td><td class="mdescRight">It fixes the initial solution by reallocating the residual cores to the applications that may need more resources.  <a href="#ac50dad870490ca7c60e0e15d86c02614">More...</a><br/></td></tr>
 <tr class="separator:ac50dad870490ca7c60e0e15d86c02614"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
 <tr class="memitem:a757bf1a36fee46b1b47263ab4a59c560"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classApplication.html">Application</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a757bf1a36fee46b1b47263ab4a59c560">APPs</a></td></tr>
 <tr class="memdesc:a757bf1a36fee46b1b47263ab4a59c560"><td class="mdescLeft">&#160;</td><td class="mdescRight">The vector stores application data.  <a href="#a757bf1a36fee46b1b47263ab4a59c560">More...</a><br/></td></tr>
 <tr class="separator:a757bf1a36fee46b1b47263ab4a59c560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:ac174a08cdaebb01dfd90673034f10fab"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#ac174a08cdaebb01dfd90673034f10fab">Bounds</a></td></tr>
+<tr class="separator:ac174a08cdaebb01dfd90673034f10fab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea88561fddd2e924cebf793f0cfdc8b6"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#aea88561fddd2e924cebf793f0cfdc8b6">Search</a></td></tr>
+<tr class="separator:aea88561fddd2e924cebf793f0cfdc8b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab332b708060d79472caf1a215fe8b6a9"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#ab332b708060d79472caf1a215fe8b6a9">ObjFun</a></td></tr>
+<tr class="separator:ab332b708060d79472caf1a215fe8b6a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a327fdf85cb600d4bb50ff32c2462c699"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a327fdf85cb600d4bb50ff32c2462c699">writeResults</a> (MYSQL *conn, char *dbName, <a class="el" href="classBatch.html">Batch</a> &amp;App_manager, <a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
+<tr class="separator:a327fdf85cb600d4bb50ff32c2462c699"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class manages the applications; it stores applications data in a vector and it provides methods useful to apply before executing the localSearch </p>
@@ -171,7 +183,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBatch_a14f132321413b45d6446200807451414_cgraph.png" border="0" usemap="#classBatch_a14f132321413b45d6446200807451414_cgraph" alt=""/></div>
 <map name="classBatch_a14f132321413b45d6446200807451414_cgraph" id="classBatch_a14f132321413b45d6446200807451414_cgraph">
-<area shape="rect" id="node2" href="classoptJrParameters.html#a9bb0e783bd6bf555e86cea874f13cb4f" title="Returns the available number of cores. " alt="" coords="192,5,336,46"/><area shape="rect" id="node3" href="debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="209,71,319,97"/><area shape="rect" id="node4" href="classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="Returns the debug option (1==YES, 0==NO) " alt="" coords="384,63,528,105"/></map>
+<area shape="rect" id="node2" href="classoptJrParameters.html#a9bb0e783bd6bf555e86cea874f13cb4f" title="Returns the available number of cores. " alt="" coords="192,5,336,46"/><area shape="rect" id="node3" href="debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="209,71,319,97"/></map>
 </div>
 </p>
 
@@ -207,7 +219,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBatch_ac50dad870490ca7c60e0e15d86c02614_cgraph.png" border="0" usemap="#classBatch_ac50dad870490ca7c60e0e15d86c02614_cgraph" alt=""/></div>
 <map name="classBatch_ac50dad870490ca7c60e0e15d86c02614_cgraph" id="classBatch_ac50dad870490ca7c60e0e15d86c02614_cgraph">
-<area shape="rect" id="node2" href="classoptJrParameters.html#a9bb0e783bd6bf555e86cea874f13cb4f" title="Returns the available number of cores. " alt="" coords="213,5,357,46"/><area shape="rect" id="node3" href="debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="230,71,341,97"/><area shape="rect" id="node5" href="appByWeight_8cpp.html#aade8f908ef9c582df27a535457f29b00" title="addApplicationPointer" alt="" coords="211,121,359,148"/><area shape="rect" id="node4" href="classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="Returns the debug option (1==YES, 0==NO) " alt="" coords="408,63,552,105"/></map>
+<area shape="rect" id="node2" href="classoptJrParameters.html#a9bb0e783bd6bf555e86cea874f13cb4f" title="Returns the available number of cores. " alt="" coords="211,5,355,46"/><area shape="rect" id="node3" href="debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="227,71,338,97"/></map>
 </div>
 </p>
 
@@ -259,7 +271,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBatch_ae212d22fa812b51160f57507242152c1_cgraph.png" border="0" usemap="#classBatch_ae212d22fa812b51160f57507242152c1_cgraph" alt=""/></div>
 <map name="classBatch_ae212d22fa812b51160f57507242152c1_cgraph" id="classBatch_ae212d22fa812b51160f57507242152c1_cgraph">
-<area shape="rect" id="node2" href="debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="817,132,927,158"/><area shape="rect" id="node4" href="classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7" title="ObjFun::ObjFunctionComponent" alt="" coords="166,56,375,82"/><area shape="rect" id="node3" href="classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="Returns the debug option (1==YES, 0==NO) " alt="" coords="976,124,1120,166"/><area shape="rect" id="node5" href="invokePredictor_8cpp.html#a342ccdfe7923368e52a4894d69c7455a" title="invokePredictor" alt="" coords="424,466,536,493"/><area shape="rect" id="node6" href="invokePredictor__helper_8cpp.html#a28d1d79b02f44f349115bf4c9e754770" title="readFolder" alt="" coords="635,208,717,234"/><area shape="rect" id="node7" href="classoptJrParameters.html#a199e3fc83f3efb82fc63796a540d6589" title="Returns which simulator is used. " alt="" coords="604,259,748,300"/><area shape="rect" id="node8" href="classoptJrParameters.html#ac698812fa1177c71eb46dc61d2e5af77" title="Returns the cache option (1==YES, 0==NO) " alt="" coords="604,324,748,366"/><area shape="rect" id="node9" href="db_8cpp.html#a2491baf1bdfde4dc81303042399a6278" title="executeSQL" alt="" coords="629,441,723,468"/><area shape="rect" id="node11" href="invokePredictor__helper_8cpp.html#ab01a14d4a3e7b93f83060c8664c3bc42" title="ls" alt="" coords="657,106,695,133"/><area shape="rect" id="node12" href="invokePredictor__helper_8cpp.html#a7eb7b34e9ea84bfbed4afbf5f63dd024" title="writeFile" alt="" coords="641,492,711,518"/><area shape="rect" id="node13" href="invokePredictor__helper_8cpp.html#a66e21ca5b85d790af9025eb13f4beca5" title="replace" alt="" coords="644,644,708,670"/><area shape="rect" id="node15" href="invokePredictor__helper_8cpp.html#aec83b878d49ef5976f2175867cdc2d82" title="readFile" alt="" coords="642,593,710,620"/><area shape="rect" id="node16" href="invokePredictor__helper_8cpp.html#a0f49de720b1b8bcb143e37e9e8a5ab39" title="_run" alt="" coords="653,157,699,184"/><area shape="rect" id="node17" href="invokePredictor__helper_8cpp.html#af6244416f7b414764278d2f5cdfe262c" title="extractWord" alt="" coords="629,694,723,721"/><area shape="rect" id="node14" href="invokePredictor__helper_8cpp.html#af8e06c5020e70e2f740101fc7bed6fea" title="extractRowN" alt="" coords="823,694,921,721"/><area shape="rect" id="node18" href="invokePredictor__helper_8cpp.html#abf4e66cc6aa015a35688c049d4f72ade" title="extractRowMatchingPattern" alt="" coords="584,796,768,822"/><area shape="rect" id="node19" href="utility_8cpp.html#a9d47b6f031f040e12b256b8aaca54671" title="doubleCompare" alt="" coords="619,846,733,873"/><area shape="rect" id="node10" href="db_8cpp.html#ab33dd75bdc4f92249542a2bb81b343fd" title="DBerror" alt="" coords="839,492,905,518"/></map>
+<area shape="rect" id="node2" href="debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="425,5,535,32"/><area shape="rect" id="node3" href="classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7" title="ObjFun::ObjFunctionComponent" alt="" coords="166,31,375,57"/></map>
 </div>
 </p>
 
@@ -274,15 +286,131 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a class="anchor" id="ac174a08cdaebb01dfd90673034f10fab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classBounds.html">Bounds</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab332b708060d79472caf1a215fe8b6a9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classObjFun.html">ObjFun</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aea88561fddd2e924cebf793f0cfdc8b6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classSearch.html">Search</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a327fdf85cb600d4bb50ff32c2462c699"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void writeResults </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>conn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>dbName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classBatch.html">Batch</a> &amp;&#160;</td>
+          <td class="paramname"><em>App_manager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;&#160;</td>
+          <td class="paramname"><em>par</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>writeResults prints the results of the localSearch application (number of cores and VM) in a DB table. If a result for a (session_id, application_id) already exists, then it is replaced. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a class="anchor" id="a757bf1a36fee46b1b47263ab4a59c560"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::vector&lt;<a class="el" href="classApplication.html">Application</a>&gt; Batch::APPs</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>The vector stores application data. </p>

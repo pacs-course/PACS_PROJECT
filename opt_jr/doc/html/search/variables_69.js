@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['index',['index',['../classApplication.html#ac3f0d1900b7ca640c270666d166db530',1,'Application']]],
-  ['initialbasefo',['initialBaseFO',['../classApplication.html#a95fd54cbed658fb23ce27939666c91d2',1,'Application']]]
+  ['iteration',['iteration',['../classStatistic.html#a1c1a722f5e4b883fb2d24b99a9c1b554',1,'Statistic']]]
 ];

@@ -5,50 +5,156 @@
 
 {\ttfamily \#include $<$search.\-hh$>$}
 
-\subsection*{Static Public Member Functions}
+
+
+Collaboration diagram for Search\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classSearch__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static void \hyperlink{classSearch_af95c649fd7dba70b7bd3c124ec501046}{local\-Search} (\hyperlink{readConfigurationFile_8hh_ab8f35b1da3261263c5e9c0e7c8921f5c}{s\-Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, \hyperlink{classBatch}{Batch} \&App\-\_\-manager, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
+\hyperlink{classSearch_a9fefa80fb3e3cb3b4d81c34e98b53398}{Search} (\hyperlink{classBatch}{Batch} app\-\_\-m)
+\item 
+void \hyperlink{classSearch_ae5937c445a63dfa24786b5fce04d2b27}{local\-Search} (\hyperlink{readConfigurationFile_8hh_ab8f35b1da3261263c5e9c0e7c8921f5c}{s\-Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
+\item 
+void \hyperlink{classSearch_a421161ac4a63ea88eb86832395e32ab5}{show\-\_\-solution} ()
+\item 
+\hyperlink{classBatch}{Batch} \hyperlink{classSearch_a81ba3ce78974e5b4d46ef2c0804a3477}{get\-\_\-app\-\_\-manager} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsCandidates}{s\-Candidates} \hyperlink{classSearch_aa7c0b0385cd0bcb4ec4239e339f7a301}{approximated\-Loop} (\hyperlink{classBatch}{Batch} \&\hyperlink{classSearch_aa5f2a65e5b640dec221284069963b91a}{App\-\_\-manager}, int \&iteration, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
+\item 
+void \hyperlink{classSearch_ac57d065b4931d1c22e92d76d7e20040a}{check\-Total\-Nodes} (int N, \hyperlink{classBatch}{Batch} \&\hyperlink{classSearch_aa5f2a65e5b640dec221284069963b91a}{App\-\_\-manager})
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBatch}{Batch} \hyperlink{classSearch_aa5f2a65e5b640dec221284069963b91a}{App\-\_\-manager}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 \char`\"{}\-Search\char`\"{} class provides methods to find a solution minimizing the objective function. Actually only one method is supported. 
 
-\subsection{Member Function Documentation}
-\hypertarget{classSearch_af95c649fd7dba70b7bd3c124ec501046}{\index{Search@{Search}!local\-Search@{local\-Search}}
-\index{local\-Search@{local\-Search}!Search@{Search}}
-\subsubsection[{local\-Search}]{\setlength{\rightskip}{0pt plus 5cm}void Search\-::local\-Search (
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSearch_a9fefa80fb3e3cb3b4d81c34e98b53398}{\index{Search@{Search}!Search@{Search}}
+\index{Search@{Search}!Search@{Search}}
+\subsubsection[{Search}]{\setlength{\rightskip}{0pt plus 5cm}Search\-::\-Search (
 \begin{DoxyParamCaption}
-\item[{{\bf s\-Configuration} \&}]{configuration, }
-\item[{M\-Y\-S\-Q\-L $\ast$}]{conn, }
+\item[{{\bf Batch}}]{app\-\_\-m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classSearch_a9fefa80fb3e3cb3b4d81c34e98b53398}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSearch_aa7c0b0385cd0bcb4ec4239e339f7a301}{\index{Search@{Search}!approximated\-Loop@{approximated\-Loop}}
+\index{approximated\-Loop@{approximated\-Loop}!Search@{Search}}
+\subsubsection[{approximated\-Loop}]{\setlength{\rightskip}{0pt plus 5cm}{\bf s\-Candidates} Search\-::approximated\-Loop (
+\begin{DoxyParamCaption}
 \item[{{\bf Batch} \&}]{App\-\_\-manager, }
+\item[{int \&}]{iteration, }
 \item[{{\bf opt\-Jr\-Parameters} \&}]{par}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{classSearch_af95c649fd7dba70b7bd3c124ec501046}
-local\-Search perform a local search of a solution minimizing the objective function; it performs cores exchanges between pairs of application and chooses the best pair. The search stops when no improvements are possible or the maximum number of iteration is reached. The function looks before at approximated values of objective function and then for the potential best pairs it invokes the predictor. 
-
-Here is the call graph for this function\-:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=328pt]{classSearch_af95c649fd7dba70b7bd3c124ec501046_cgraph}
-\end{center}
-\end{figure}
-
-
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearch_aa7c0b0385cd0bcb4ec4239e339f7a301}
 
 
 Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=258pt]{classSearch_af95c649fd7dba70b7bd3c124ec501046_icgraph}
+\includegraphics[width=350pt]{classSearch_aa7c0b0385cd0bcb4ec4239e339f7a301_icgraph}
 \end{center}
 \end{figure}
 
 
+\hypertarget{classSearch_ac57d065b4931d1c22e92d76d7e20040a}{\index{Search@{Search}!check\-Total\-Nodes@{check\-Total\-Nodes}}
+\index{check\-Total\-Nodes@{check\-Total\-Nodes}!Search@{Search}}
+\subsubsection[{check\-Total\-Nodes}]{\setlength{\rightskip}{0pt plus 5cm}void Search\-::check\-Total\-Nodes (
+\begin{DoxyParamCaption}
+\item[{int}]{N, }
+\item[{{\bf Batch} \&}]{App\-\_\-manager}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearch_ac57d065b4931d1c22e92d76d7e20040a}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSearch_ac57d065b4931d1c22e92d76d7e20040a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSearch_a81ba3ce78974e5b4d46ef2c0804a3477}{\index{Search@{Search}!get\-\_\-app\-\_\-manager@{get\-\_\-app\-\_\-manager}}
+\index{get\-\_\-app\-\_\-manager@{get\-\_\-app\-\_\-manager}!Search@{Search}}
+\subsubsection[{get\-\_\-app\-\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Batch} Search\-::get\-\_\-app\-\_\-manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classSearch_a81ba3ce78974e5b4d46ef2c0804a3477}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classSearch_a81ba3ce78974e5b4d46ef2c0804a3477_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSearch_ae5937c445a63dfa24786b5fce04d2b27}{\index{Search@{Search}!local\-Search@{local\-Search}}
+\index{local\-Search@{local\-Search}!Search@{Search}}
+\subsubsection[{local\-Search}]{\setlength{\rightskip}{0pt plus 5cm}void Search\-::local\-Search (
+\begin{DoxyParamCaption}
+\item[{{\bf s\-Configuration} \&}]{configuration, }
+\item[{M\-Y\-S\-Q\-L $\ast$}]{conn, }
+\item[{{\bf opt\-Jr\-Parameters} \&}]{par}
+\end{DoxyParamCaption}
+)}}\label{classSearch_ae5937c445a63dfa24786b5fce04d2b27}
+local\-Search perform a local search of a solution minimizing the objective function; it performs cores exchanges between pairs of application and chooses the best pair. The search stops when no improvements are possible or the maximum number of iteration is reached. The function looks before at approximated values of objective function and then for the potential best pairs it invokes the predictor. 
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{classSearch_ae5937c445a63dfa24786b5fce04d2b27_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSearch_a421161ac4a63ea88eb86832395e32ab5}{\index{Search@{Search}!show\-\_\-solution@{show\-\_\-solution}}
+\index{show\-\_\-solution@{show\-\_\-solution}!Search@{Search}}
+\subsubsection[{show\-\_\-solution}]{\setlength{\rightskip}{0pt plus 5cm}void Search\-::show\-\_\-solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSearch_a421161ac4a63ea88eb86832395e32ab5}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{classSearch_a421161ac4a63ea88eb86832395e32ab5_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classSearch_aa5f2a65e5b640dec221284069963b91a}{\index{Search@{Search}!App\-\_\-manager@{App\-\_\-manager}}
+\index{App\-\_\-manager@{App\-\_\-manager}!Search@{Search}}
+\subsubsection[{App\-\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Batch} Search\-::\-App\-\_\-manager\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearch_aa5f2a65e5b640dec221284069963b91a}
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}

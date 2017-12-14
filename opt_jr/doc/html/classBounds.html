@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,7 +82,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classBounds-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Bounds Class Reference</div>  </div>
@@ -90,16 +92,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="bounds_8hh_source.html">bounds.hh</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Bounds:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBounds__coll__graph.png" border="0" usemap="#Bounds_coll__map" alt="Collaboration graph"/></div>
+<map name="Bounds_coll__map" id="Bounds_coll__map">
+<area shape="rect" id="node2" href="classBatch.html" title="{Batch\n||+ Batch()\l+ calculate_nu()\l+ initialize()\l+ fixInitialSolution()\l}" alt="" coords="23,147,157,269"/></map>
+</div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:adea89543a39dfa00bee2e4aa3f58e5e0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBounds.html#adea89543a39dfa00bee2e4aa3f58e5e0">calculateBounds</a> (<a class="el" href="classBatch.html">Batch</a> &amp;app_manager, <a class="el" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;configuration, MYSQL *conn, <a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
-<tr class="separator:adea89543a39dfa00bee2e4aa3f58e5e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a57a9894ee450eb885a83e884b5fb79e7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBounds.html#a57a9894ee450eb885a83e884b5fb79e7">Bounds</a> (<a class="el" href="classBatch.html">Batch</a> app_m)</td></tr>
+<tr class="separator:a57a9894ee450eb885a83e884b5fb79e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefc7e0bd2cd1c5850a903aabe0351dbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBounds.html#aefc7e0bd2cd1c5850a903aabe0351dbe">calculateBounds</a> (<a class="el" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;configuration, MYSQL *conn, <a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
+<tr class="separator:aefc7e0bd2cd1c5850a903aabe0351dbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefebbfe17ca3a7d6a0f6cbf4a0bf2782"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBatch.html">Batch</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBounds.html#aefebbfe17ca3a7d6a0f6cbf4a0bf2782">get_app_manager</a> ()</td></tr>
+<tr class="separator:aefebbfe17ca3a7d6a0f6cbf4a0bf2782"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a6bc038892059a8181984daff0003065f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBounds.html#a6bc038892059a8181984daff0003065f">Bound</a> (<a class="el" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;configuration, MYSQL *conn, <a class="el" href="classApplication.html">Application</a> &amp;app, <a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par, int flagDagsim)</td></tr>
+<tr class="separator:a6bc038892059a8181984daff0003065f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade8356aa22e675868ba98226e4216cf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBounds.html#ade8356aa22e675868ba98226e4216cf3">findBound</a> (<a class="el" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;configuration, MYSQL *conn, char *db, <a class="el" href="classApplication.html">Application</a> &amp;app, <a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
+<tr class="separator:ade8356aa22e675868ba98226e4216cf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a9b463c00e877b6bf67d9e1ff4f36950b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBatch.html">Batch</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBounds.html#a9b463c00e877b6bf67d9e1ff4f36950b">app_manager</a></td></tr>
+<tr class="separator:a9b463c00e877b6bf67d9e1ff4f36950b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classBounds.html">Bounds</a> class provide a method to evaluate the bound for the applications in BATCH i.e. the minimal number of cores necessary to finish the execution before the deadline </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="adea89543a39dfa00bee2e4aa3f58e5e0"></a>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a57a9894ee450eb885a83e884b5fb79e7"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -107,14 +132,91 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Bounds::calculateBounds </td>
+          <td class="memname">Bounds::Bounds </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classBatch.html">Batch</a> &amp;&#160;</td>
-          <td class="paramname"><em>app_manager</em>, </td>
+          <td class="paramtype"><a class="el" href="classBatch.html">Batch</a>&#160;</td>
+          <td class="paramname"><em>app_m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a6bc038892059a8181984daff0003065f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bounds::Bound </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;&#160;</td>
+          <td class="paramname"><em>configuration</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>conn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classApplication.html">Application</a> &amp;&#160;</td>
+          <td class="paramname"><em>app</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;&#160;</td>
+          <td class="paramname"><em>par</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>flagDagsim</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBounds_a6bc038892059a8181984daff0003065f_icgraph.png" border="0" usemap="#classBounds_a6bc038892059a8181984daff0003065f_icgraph" alt=""/></div>
+<map name="classBounds_a6bc038892059a8181984daff0003065f_icgraph" id="classBounds_a6bc038892059a8181984daff0003065f_icgraph">
+<area shape="rect" id="node2" href="classBounds.html#ade8356aa22e675868ba98226e4216cf3" title="Bounds::findBound" alt="" coords="166,5,298,32"/><area shape="rect" id="node3" href="classBounds.html#aefc7e0bd2cd1c5850a903aabe0351dbe" title="Bounds::calculateBounds" alt="" coords="347,5,517,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aefc7e0bd2cd1c5850a903aabe0351dbe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bounds::calculateBounds </td>
+          <td>(</td>
           <td class="paramtype"><a class="el" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;&#160;</td>
           <td class="paramname"><em>configuration</em>, </td>
         </tr>
@@ -136,31 +238,131 @@ Static Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p>calculateBounds evaluates the bound for the applications in BATCH i.e. the minimal number of cores necessary to finish the execution before the deadline. The function looks before if the result is already stored in the database, otherwise it invokes the predictor doing a "HILL CLIMBING". If the number of threads in the configuration file is greater than 0, it does the computations in parallel (using openMP). </p>
 
 <p><div class="dynheader">
-Here is the call graph for this function:</div>
+Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classBounds_adea89543a39dfa00bee2e4aa3f58e5e0_cgraph.png" border="0" usemap="#classBounds_adea89543a39dfa00bee2e4aa3f58e5e0_cgraph" alt=""/></div>
-<map name="classBounds_adea89543a39dfa00bee2e4aa3f58e5e0_cgraph" id="classBounds_adea89543a39dfa00bee2e4aa3f58e5e0_cgraph">
-<area shape="rect" id="node2" href="classoptJrParameters.html#a6654c5bb36a825393e759b2824444bbb" title="Returns the number of threads to use in parallelization; if it is 0 there is no parallelization. " alt="" coords="224,5,368,46"/><area shape="rect" id="node3" href="debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="241,71,351,97"/><area shape="rect" id="node5" href="db_8cpp.html#aced0f518cdbba35b17b3ce9f316131ce" title="DBopen" alt="" coords="261,121,331,148"/><area shape="rect" id="node7" href="db_8cpp.html#a54af21d55b55bae7b63cb28d3cd05758" title="DBclose" alt="" coords="260,172,332,199"/><area shape="rect" id="node4" href="classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="Returns the debug option (1==YES, 0==NO) " alt="" coords="416,59,560,101"/><area shape="rect" id="node6" href="db_8cpp.html#ab33dd75bdc4f92249542a2bb81b343fd" title="DBerror" alt="" coords="455,125,521,152"/></map>
+<div class="center"><img src="classBounds_aefc7e0bd2cd1c5850a903aabe0351dbe_icgraph.png" border="0" usemap="#classBounds_aefc7e0bd2cd1c5850a903aabe0351dbe_icgraph" alt=""/></div>
+<map name="classBounds_aefc7e0bd2cd1c5850a903aabe0351dbe_icgraph" id="classBounds_aefc7e0bd2cd1c5850a903aabe0351dbe_icgraph">
+<area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="224,5,275,32"/></map>
 </div>
 </p>
+
+</div>
+</div>
+<a class="anchor" id="ade8356aa22e675868ba98226e4216cf3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bounds::findBound </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;&#160;</td>
+          <td class="paramname"><em>configuration</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>conn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classApplication.html">Application</a> &amp;&#160;</td>
+          <td class="paramname"><em>app</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;&#160;</td>
+          <td class="paramname"><em>par</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classBounds_adea89543a39dfa00bee2e4aa3f58e5e0_icgraph.png" border="0" usemap="#classBounds_adea89543a39dfa00bee2e4aa3f58e5e0_icgraph" alt=""/></div>
-<map name="classBounds_adea89543a39dfa00bee2e4aa3f58e5e0_icgraph" id="classBounds_adea89543a39dfa00bee2e4aa3f58e5e0_icgraph">
-<area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="224,5,275,32"/></map>
+<div class="center"><img src="classBounds_ade8356aa22e675868ba98226e4216cf3_icgraph.png" border="0" usemap="#classBounds_ade8356aa22e675868ba98226e4216cf3_icgraph" alt=""/></div>
+<map name="classBounds_ade8356aa22e675868ba98226e4216cf3_icgraph" id="classBounds_ade8356aa22e675868ba98226e4216cf3_icgraph">
+<area shape="rect" id="node2" href="classBounds.html#aefc7e0bd2cd1c5850a903aabe0351dbe" title="Bounds::calculateBounds" alt="" coords="187,5,357,32"/><area shape="rect" id="node3" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="405,5,456,32"/></map>
 </div>
 </p>
+
+</div>
+</div>
+<a class="anchor" id="aefebbfe17ca3a7d6a0f6cbf4a0bf2782"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classBatch.html">Batch</a> Bounds::get_app_manager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBounds_aefebbfe17ca3a7d6a0f6cbf4a0bf2782_icgraph.png" border="0" usemap="#classBounds_aefebbfe17ca3a7d6a0f6cbf4a0bf2782_icgraph" alt=""/></div>
+<map name="classBounds_aefebbfe17ca3a7d6a0f6cbf4a0bf2782_icgraph" id="classBounds_aefebbfe17ca3a7d6a0f6cbf4a0bf2782_icgraph">
+<area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="232,5,283,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a9b463c00e877b6bf67d9e1ff4f36950b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classBatch.html">Batch</a> Bounds::app_manager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

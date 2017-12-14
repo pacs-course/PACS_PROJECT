@@ -244,3 +244,113 @@ void Batch::fixInitialSolution(optJrParameters &par)
 
 
 }
+
+/*
+ * 		Name:					writeResults
+ * 		Description:			This function prints the results of the localSearch application (number of cores and VM) in a DB table.
+ * 								If a result for a (session_id, application_id) already exists, then it is replaced.
+ *
+ */
+
+
+void Batch::writeResults(MYSQL *conn, char * dbName, optJrParameters &par)
+{
+	std::string debugMsg;
+
+	char sqlStatement[512];
+
+	debugMsg= "writeResults"; debugMessage(debugMsg, par);
+	if (APPs.empty())
+	{
+		printf("FATAL ERROR: writeResults: APPs cannot be empty\n");
+		exit(-1);
+	}
+	//while (pointer!=NULL)
+	for(auto &elem : APPs)
+	{
+		"Session ID " + elem.get_session_app_id()+ " Application Id " + elem.get_app_id()  + " cores " + std::to_string(elem.get_currentCores_d())+ " VMs "+ std::to_string(elem.get_vm()); debugMessage(debugMsg, par);
+
+		// Check if the result of the computation for that session, application has been already computed and stored previously
+		sprintf(sqlStatement, "select opt_id, app_id from %s.OPT_SESSIONS_RESULTS_TABLE where opt_id='%s' and app_id='%s'",
+				dbName,  par.get_filename().c_str(),
+				elem.get_session_app_id().c_str());
+		MYSQL_ROW row = executeSQL(conn, sqlStatement, par);
+
+		if (row == NULL)
+		{
+			sprintf(sqlStatement, "insert %s.OPT_SESSIONS_RESULTS_TABLE values('%s', '%s',%d, %d)",
+								dbName,
+								par.get_filename().c_str(),
+								elem.get_session_app_id().c_str(),
+								elem.get_currentCores_d(),
+								elem.get_vm()
+						);
+			if (mysql_query(conn, sqlStatement))
+			{
+				char error[512];
+				sprintf(error, " %s", sqlStatement);
+				DBerror(conn, error);
+			}
+		}
+		else // Perform an update
+		{
+			sprintf(sqlStatement, "update %s.OPT_SESSIONS_RESULTS_TABLE set opt_id = '%s', app_id = '%s',num_cores = %d, num_vm = %d where opt_id='%s' and app_id='%s'",
+											dbName,
+											par.get_filename().c_str(),
+											elem.get_session_app_id().c_str(),
+											elem.get_currentCores_d(),
+											elem.get_vm(),
+											par.get_filename().c_str(),
+											elem.get_session_app_id().c_str()
+									);
+			if (mysql_query(conn, sqlStatement))
+						{
+
+							char error[512];
+							sprintf(error, " %s", sqlStatement);
+							DBerror(conn, error);
+						}
+		}
+
+	}
+
+}
+
+
+
+
+
+std::string Batch::show_session_app_id()
+{
+  std::string Msg;
+  Msg= "session_app_id of loaded applications:  \n";
+  for (auto it= APPs.begin(); it!=APPs.end();++it)
+    Msg+= "App_ID: "+ it->get_session_app_id() +"\n";
+  return Msg;
+}
+
+std::string Batch::show_bounds()
+{
+  std::string Msg;
+  for (auto it= APPs.begin(); it!= APPs.end();it++)
+  {
+    Msg+="\nBound evaluated for Session_app_id : " + it->get_session_app_id() + " , APP_ID: " + it->get_app_id() +
+             ", Deadline = "+ std::to_string(it->get_Deadline_d()) + ", R =" + std::to_string(it->get_R_d())+
+             ", bound = "+ std::to_string(it->get_bound()) ;
+  }
+  return Msg;
+}
+
+
+
+std::string Batch::show_solution()
+{
+  std::string Msg;
+  for (auto it = APPs.begin(); it!=APPs.end(); ++it)
+  {
+
+    Msg+= "\n Application   " + it->get_session_app_id() + "      w = " + std::to_string(it->get_w())
+             + "     ncores = "  + std::to_string( it->get_currentCores_d()) +  "      FO = " + std::to_string( it->get_baseFO() );
+  }
+  return Msg;
+}

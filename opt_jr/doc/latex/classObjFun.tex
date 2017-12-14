@@ -5,14 +5,23 @@
 
 {\ttfamily \#include $<$objective\-Function.\-hh$>$}
 
-\subsection*{Static Public Member Functions}
+
+
+Collaboration diagram for Obj\-Fun\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classObjFun__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static double \hyperlink{classObjFun_a7c9ecaa07ca776eb64f6e73f84513bc7}{Obj\-Function\-Component} (\hyperlink{readConfigurationFile_8hh_ab8f35b1da3261263c5e9c0e7c8921f5c}{s\-Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, \hyperlink{classApplication}{Application} \&app, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
+double \hyperlink{classObjFun_a7c9ecaa07ca776eb64f6e73f84513bc7}{Obj\-Function\-Component} (\hyperlink{readConfigurationFile_8hh_ab8f35b1da3261263c5e9c0e7c8921f5c}{s\-Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, \hyperlink{classApplication}{Application} \&app, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
 \item 
-static double \hyperlink{classObjFun_abb89a994d34b44ec4cb6e0e2562c0107}{Obj\-Function\-Component\-Approx} (\hyperlink{classApplication}{Application} \&App, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
+double \hyperlink{classObjFun_abb89a994d34b44ec4cb6e0e2562c0107}{Obj\-Function\-Component\-Approx} (\hyperlink{classApplication}{Application} \&App, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
 \item 
-static double \hyperlink{classObjFun_ab36af3a1d85dbcaa79dc9b582b00928b}{Obj\-Function\-Global} (\hyperlink{readConfigurationFile_8hh_ab8f35b1da3261263c5e9c0e7c8921f5c}{s\-Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, \hyperlink{classBatch}{Batch} \&App\-\_\-manager, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
+double \hyperlink{classObjFun_ab36af3a1d85dbcaa79dc9b582b00928b}{Obj\-Function\-Global} (\hyperlink{readConfigurationFile_8hh_ab8f35b1da3261263c5e9c0e7c8921f5c}{s\-Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, \hyperlink{classBatch}{Batch} \&App\-\_\-manager, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
 \end{DoxyCompactItemize}
 
 
@@ -29,47 +38,24 @@ This class provides methods to evaluate the objective function in different ways
 \item[{{\bf Application} \&}]{app, }
 \item[{{\bf opt\-Jr\-Parameters} \&}]{par}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{classObjFun_a7c9ecaa07ca776eb64f6e73f84513bc7}
-Obj\-Function\-Component evaluates the contribution to the calculation of the objective function of one application. Currently, only one method is supported. Note that the algorithm's choice is stored in the \char`\"{}mode\char`\"{} field of the application structure. 
-
-Here is the call graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classObjFun_a7c9ecaa07ca776eb64f6e73f84513bc7_cgraph}
-\end{center}
-\end{figure}
-
-
-
-
-Here is the caller graph for this function\-:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classObjFun_a7c9ecaa07ca776eb64f6e73f84513bc7_icgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{classObjFun_abb89a994d34b44ec4cb6e0e2562c0107}{\index{Obj\-Fun@{Obj\-Fun}!Obj\-Function\-Component\-Approx@{Obj\-Function\-Component\-Approx}}
+)}}\label{classObjFun_a7c9ecaa07ca776eb64f6e73f84513bc7}
+Obj\-Function\-Component evaluates the contribution to the calculation of the objective function of one application. Currently, only one method is supported. Note that the algorithm's choice is stored in the \char`\"{}mode\char`\"{} field of the application structure. \hypertarget{classObjFun_abb89a994d34b44ec4cb6e0e2562c0107}{\index{Obj\-Fun@{Obj\-Fun}!Obj\-Function\-Component\-Approx@{Obj\-Function\-Component\-Approx}}
 \index{Obj\-Function\-Component\-Approx@{Obj\-Function\-Component\-Approx}!ObjFun@{Obj\-Fun}}
 \subsubsection[{Obj\-Function\-Component\-Approx}]{\setlength{\rightskip}{0pt plus 5cm}double Obj\-Fun\-::\-Obj\-Function\-Component\-Approx (
 \begin{DoxyParamCaption}
 \item[{{\bf Application} \&}]{App, }
 \item[{{\bf opt\-Jr\-Parameters} \&}]{par}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{classObjFun_abb89a994d34b44ec4cb6e0e2562c0107}
+)}}\label{classObjFun_abb89a994d34b44ec4cb6e0e2562c0107}
 Obj\-Function\-Component\-Approx computes an approximation of the objective function (and update R\-\_\-d)
 
 Name\-: Obj\-Function\-Component\-Approx Output parameters\-: a double The value of the approximated objective function Description It computes an approximation of the objective function (and update R\-\_\-d) 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classObjFun_abb89a994d34b44ec4cb6e0e2562c0107_cgraph}
+\includegraphics[width=350pt]{classObjFun_abb89a994d34b44ec4cb6e0e2562c0107_icgraph}
 \end{center}
 \end{figure}
 
@@ -83,14 +69,14 @@ Here is the call graph for this function\-:\nopagebreak
 \item[{{\bf Batch} \&}]{App\-\_\-manager, }
 \item[{{\bf opt\-Jr\-Parameters} \&}]{par}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{classObjFun_ab36af3a1d85dbcaa79dc9b582b00928b}
+)}}\label{classObjFun_ab36af3a1d85dbcaa79dc9b582b00928b}
 Obj\-Function\-Global computes the value of the total objective function 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classObjFun_ab36af3a1d85dbcaa79dc9b582b00928b_cgraph}
+\includegraphics[width=350pt]{classObjFun_ab36af3a1d85dbcaa79dc9b582b00928b_icgraph}
 \end{center}
 \end{figure}
 

@@ -1,22 +1,4 @@
 <map id="/vagrant/PROJECT_SPARK/PACS_PROJECT/opt_jr/src/invokePredictor.hh" name="/vagrant/PROJECT_SPARK/PACS_PROJECT/opt_jr/src/invokePredictor.hh">
-<area shape="rect" id="node2" href="$application_8hh.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/application.hh" alt="" coords="1066,109,1256,165"/>
-<area shape="rect" id="node14" href="$bounds_8cpp.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/bounds.cpp" alt="" coords="70,421,260,477"/>
-<area shape="rect" id="node21" href="$invokePredictor_8cpp.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/invokePredictor.cpp" alt="" coords="1748,109,1938,165"/>
-<area shape="rect" id="node11" href="$objectiveFunction_8cpp.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/objectiveFunction.cpp" alt="" coords="1578,421,1768,477"/>
-<area shape="rect" id="node3" href="$appByWeight_8hh.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/appByWeight.hh" alt="" coords="1266,213,1456,269"/>
-<area shape="rect" id="node6" href="$application_8cpp.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/application.cpp" alt="" coords="1481,213,1671,269"/>
-<area shape="rect" id="node7" href="$batch_8hh.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/batch.hh" alt="" coords="785,213,975,269"/>
-<area shape="rect" id="node8" href="$objectiveFunction_8hh.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/objectiveFunction.hh" alt="" coords="1144,317,1334,373"/>
-<area shape="rect" id="node18" href="$candidates_8hh.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/candidates.hh" alt="" coords="1000,213,1190,269"/>
-<area shape="rect" id="node10" href="$main_8cpp.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/main.cpp" alt="" coords="676,421,866,477"/>
-<area shape="rect" id="node19" href="$read__app__file_8hh.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/read_app_file.hh" alt="" coords="509,213,699,269"/>
-<area shape="rect" id="node4" href="$appByWeight_8cpp.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/appByWeight.cpp" alt="" coords="1461,317,1651,373"/>
-<area shape="rect" id="node5" href="$batch_8cpp.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/batch.cpp" alt="" coords="1113,421,1303,477"/>
-<area shape="rect" id="node13" href="$bounds_8hh.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/bounds.hh" alt="" coords="244,317,434,373"/>
-<area shape="rect" id="node15" href="$search_8hh.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/search.hh" alt="" coords="826,317,1016,373"/>
-<area shape="rect" id="node16" href="$writeResults_8hh.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/writeResults.hh" alt="" coords="458,317,648,373"/>
-<area shape="rect" id="node9" href="$candidates_8cpp.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/candidates.cpp" alt="" coords="1328,421,1518,477"/>
-<area shape="rect" id="node12" href="$search_8cpp.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/search.cpp" alt="" coords="896,421,1086,477"/>
-<area shape="rect" id="node17" href="$writeResults_8cpp.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/writeResults.cpp" alt="" coords="458,421,648,477"/>
-<area shape="rect" id="node20" href="$read__app__file_8cpp.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/read_app_file.cpp" alt="" coords="29,317,219,373"/>
+<area shape="rect" id="node2" href="$application_8hh.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/application.hh" alt="" coords="5,109,195,165"/>
+<area shape="rect" id="node3" href="$bounds_8cpp.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/bounds.cpp" alt="" coords="219,109,409,165"/>
 </map>

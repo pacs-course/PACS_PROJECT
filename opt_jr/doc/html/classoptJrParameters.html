@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,6 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classoptJrParameters-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">optJrParameters Class Reference</div>  </div>
@@ -90,6 +91,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="optjrParameters_8hh_source.html">optjrParameters.hh</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for optJrParameters:</div>
+<div class="dyncontent">
+<div class="center"><img src="classoptJrParameters__coll__graph.png" border="0" usemap="#optJrParameters_coll__map" alt="Collaboration graph"/></div>
+<map name="optJrParameters_coll__map" id="optJrParameters_coll__map">
+<area shape="rect" id="node2" title="STL class. " alt="" coords="56,149,136,227"/><area shape="rect" id="node3" title="STL class. " alt="" coords="33,6,159,98"/></map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -126,6 +134,36 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6654c5bb36a825393e759b2824444bbb"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classoptJrParameters.html#a6654c5bb36a825393e759b2824444bbb">get_numberOfThreads</a> ()</td></tr>
 <tr class="memdesc:a6654c5bb36a825393e759b2824444bbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of threads to use in parallelization; if it is 0 there is no parallelization.  <a href="#a6654c5bb36a825393e759b2824444bbb">More...</a><br/></td></tr>
 <tr class="separator:a6654c5bb36a825393e759b2824444bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a62fe03fe9f9484b54235a0dbe4c09736"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classoptJrParameters.html#a62fe03fe9f9484b54235a0dbe4c09736">filename</a></td></tr>
+<tr class="memdesc:a62fe03fe9f9484b54235a0dbe4c09736"><td class="mdescLeft">&#160;</td><td class="mdescRight">The csv file.  <a href="#a62fe03fe9f9484b54235a0dbe4c09736">More...</a><br/></td></tr>
+<tr class="separator:a62fe03fe9f9484b54235a0dbe4c09736"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeac321db6ab6babd047c06696a260e90"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classoptJrParameters.html#aeac321db6ab6babd047c06696a260e90">debug</a></td></tr>
+<tr class="memdesc:aeac321db6ab6babd047c06696a260e90"><td class="mdescLeft">&#160;</td><td class="mdescRight">debug option: "y" prints every message, "n" only prints fatal errors  <a href="#aeac321db6ab6babd047c06696a260e90">More...</a><br/></td></tr>
+<tr class="separator:aeac321db6ab6babd047c06696a260e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62b46c4db0655e8aea32e2929996d626"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classoptJrParameters.html#a62b46c4db0655e8aea32e2929996d626">cache</a></td></tr>
+<tr class="memdesc:a62b46c4db0655e8aea32e2929996d626"><td class="mdescLeft">&#160;</td><td class="mdescRight">cache option: "y" makes use of the DB predictor cache table; "n" doesn't  <a href="#a62b46c4db0655e8aea32e2929996d626">More...</a><br/></td></tr>
+<tr class="separator:a62b46c4db0655e8aea32e2929996d626"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad00a4d00bc8b65f4323a1bd1383c632b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classoptJrParameters.html#ad00a4d00bc8b65f4323a1bd1383c632b">globalFOcalculation</a></td></tr>
+<tr class="memdesc:ad00a4d00bc8b65f4323a1bd1383c632b"><td class="mdescLeft">&#160;</td><td class="mdescRight">global FO calculation: "y" calculates at each loop of localSearch function the global objective function value, "n" doesn't  <a href="#ad00a4d00bc8b65f4323a1bd1383c632b">More...</a><br/></td></tr>
+<tr class="separator:ad00a4d00bc8b65f4323a1bd1383c632b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8943dcfa48e368831ec28c9d1f5a953d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classoptJrParameters.html#a8943dcfa48e368831ec28c9d1f5a953d">K</a></td></tr>
+<tr class="memdesc:a8943dcfa48e368831ec28c9d1f5a953d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum depth: the search of candidates in the auxiliary list stops if this limit is exceeded.  <a href="#a8943dcfa48e368831ec28c9d1f5a953d">More...</a><br/></td></tr>
+<tr class="separator:a8943dcfa48e368831ec28c9d1f5a953d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bb0a0aa1f458ff3973fbe43552e1cd5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classoptJrParameters.html#a8bb0a0aa1f458ff3973fbe43552e1cd5">simulator</a></td></tr>
+<tr class="memdesc:a8bb0a0aa1f458ff3973fbe43552e1cd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The simulator type: either dagSim or Lundstrom.  <a href="#a8bb0a0aa1f458ff3973fbe43552e1cd5">More...</a><br/></td></tr>
+<tr class="separator:a8bb0a0aa1f458ff3973fbe43552e1cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d99c995ae7815448131832e13b7c723"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classoptJrParameters.html#a9d99c995ae7815448131832e13b7c723">number</a></td></tr>
+<tr class="memdesc:a9d99c995ae7815448131832e13b7c723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of total cores available for the applications (N)  <a href="#a9d99c995ae7815448131832e13b7c723">More...</a><br/></td></tr>
+<tr class="separator:a9d99c995ae7815448131832e13b7c723"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1f1ee05cb0a9962182b9330c7e9536b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classoptJrParameters.html#af1f1ee05cb0a9962182b9330c7e9536b">maxIterations</a></td></tr>
+<tr class="memdesc:af1f1ee05cb0a9962182b9330c7e9536b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum number of iterations in LocalSearch.  <a href="#af1f1ee05cb0a9962182b9330c7e9536b">More...</a><br/></td></tr>
+<tr class="separator:af1f1ee05cb0a9962182b9330c7e9536b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7748d7ba51ef897423d145f2e33273d8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classoptJrParameters.html#a7748d7ba51ef897423d145f2e33273d8">numberOfThreads</a></td></tr>
+<tr class="memdesc:a7748d7ba51ef897423d145f2e33273d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of MPI threads.  <a href="#a7748d7ba51ef897423d145f2e33273d8">More...</a><br/></td></tr>
+<tr class="separator:a7748d7ba51ef897423d145f2e33273d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classoptJrParameters.html">optJrParameters</a> saves parameters received from command line; once they are saved they are visible with public get_*() functions </p>
@@ -188,7 +226,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classoptJrParameters_ac698812fa1177c71eb46dc61d2e5af77_icgraph.png" border="0" usemap="#classoptJrParameters_ac698812fa1177c71eb46dc61d2e5af77_icgraph" alt=""/></div>
 <map name="classoptJrParameters_ac698812fa1177c71eb46dc61d2e5af77_icgraph" id="classoptJrParameters_ac698812fa1177c71eb46dc61d2e5af77_icgraph">
-<area shape="rect" id="node2" href="invokePredictor_8hh.html#a342ccdfe7923368e52a4894d69c7455a" title="invokePredictor" alt="" coords="197,93,309,120"/><area shape="rect" id="node5" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="859,89,909,116"/><area shape="rect" id="node3" href="classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7" title="ObjFun::ObjFunctionComponent" alt="" coords="358,79,567,105"/><area shape="rect" id="node4" href="classBatch.html#ae212d22fa812b51160f57507242152c1" title="For each application, a base value for the objective function is calculated. " alt="" coords="658,5,769,32"/><area shape="rect" id="node6" href="classsCandidates.html#ac5ff86e5acf736ef57a3eb25c0d724ab" title="sCandidates::invokePredictor\lOpenMP" alt="" coords="617,57,810,98"/><area shape="rect" id="node7" href="classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b" title="ObjFun::ObjFunctionGlobal" alt="" coords="624,123,803,149"/></map>
+<area shape="rect" id="node2" href="invokePredictor_8hh.html#a342ccdfe7923368e52a4894d69c7455a" title="invokePredictor" alt="" coords="197,5,309,32"/><area shape="rect" id="node3" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="228,56,279,83"/></map>
 </div>
 </p>
 
@@ -214,7 +252,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classoptJrParameters_a64016f274261a7a7d74d8460bb7e2ee4_icgraph.png" border="0" usemap="#classoptJrParameters_a64016f274261a7a7d74d8460bb7e2ee4_icgraph" alt=""/></div>
 <map name="classoptJrParameters_a64016f274261a7a7d74d8460bb7e2ee4_icgraph" id="classoptJrParameters_a64016f274261a7a7d74d8460bb7e2ee4_icgraph">
-<area shape="rect" id="node2" href="debugmessage_8hh.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="198,363,309,389"/><area shape="rect" id="node4" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1323,360,1373,387"/><area shape="rect" id="node3" href="classBatch.html#a14f132321413b45d6446200807451414" title="It calculates nu indices for each application and stores it in each &quot;Application&quot; object..." alt="" coords="858,93,995,120"/><area shape="rect" id="node5" href="classBatch.html#ae212d22fa812b51160f57507242152c1" title="For each application, a base value for the objective function is calculated. " alt="" coords="1122,360,1233,387"/><area shape="rect" id="node6" href="classBatch.html#ac50dad870490ca7c60e0e15d86c02614" title="It fixes the initial solution by reallocating the residual cores to the applications that may need mo..." alt="" coords="617,565,773,592"/><area shape="rect" id="node7" href="classBounds.html#adea89543a39dfa00bee2e4aa3f58e5e0" title="Bounds::calculateBounds" alt="" coords="841,692,1012,719"/><area shape="rect" id="node8" href="classsCandidates.html#ac5ff86e5acf736ef57a3eb25c0d724ab" title="sCandidates::invokePredictor\lOpenMP" alt="" coords="1081,478,1274,519"/><area shape="rect" id="node9" href="db_8hh.html#a2491baf1bdfde4dc81303042399a6278" title="executeSQL" alt="" coords="415,565,510,592"/><area shape="rect" id="node10" href="invokePredictor_8hh.html#a342ccdfe7923368e52a4894d69c7455a" title="invokePredictor" alt="" coords="639,368,751,395"/><area shape="rect" id="node14" href="invokePredictor__helper_8hh.html#ab01a14d4a3e7b93f83060c8664c3bc42" title="ls" alt="" coords="443,363,482,389"/><area shape="rect" id="node15" href="invokePredictor__helper_8hh.html#a0f49de720b1b8bcb143e37e9e8a5ab39" title="_run" alt="" coords="439,413,486,440"/><area shape="rect" id="node11" href="classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7" title="ObjFun::ObjFunctionComponent" alt="" coords="822,368,1031,395"/><area shape="rect" id="node16" href="classObjFun.html#abb89a994d34b44ec4cb6e0e2562c0107" title="ObjFun::ObjFunctionComponent\lApprox" alt="" coords="358,246,567,287"/><area shape="rect" id="node12" href="classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b" title="ObjFun::ObjFunctionGlobal" alt="" coords="1088,416,1267,443"/><area shape="rect" id="node13" href="writeResults_8hh.html#a327fdf85cb600d4bb50ff32c2462c699" title="writeResults" alt="" coords="647,616,742,643"/></map>
+<area shape="rect" id="node2" href="debugmessage_8hh.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="198,5,309,32"/><area shape="rect" id="node3" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="357,31,408,57"/></map>
 </div>
 </p>
 
@@ -266,7 +304,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classoptJrParameters_a7eec5151603fd03276b6fcf6213f9f90_icgraph.png" border="0" usemap="#classoptJrParameters_a7eec5151603fd03276b6fcf6213f9f90_icgraph" alt=""/></div>
 <map name="classoptJrParameters_a7eec5151603fd03276b6fcf6213f9f90_icgraph" id="classoptJrParameters_a7eec5151603fd03276b6fcf6213f9f90_icgraph">
-<area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="197,12,248,39"/></map>
+<area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="384,12,435,39"/><area shape="rect" id="node3" href="classSearch.html#ae5937c445a63dfa24786b5fce04d2b27" title="Search::localSearch" alt="" coords="197,37,336,64"/></map>
 </div>
 </p>
 
@@ -286,15 +324,6 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Returns K. </p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classoptJrParameters_a8274b4a95698ce1681147fdddbced0d8_icgraph.png" border="0" usemap="#classoptJrParameters_a8274b4a95698ce1681147fdddbced0d8_icgraph" alt=""/></div>
-<map name="classoptJrParameters_a8274b4a95698ce1681147fdddbced0d8_icgraph" id="classoptJrParameters_a8274b4a95698ce1681147fdddbced0d8_icgraph">
-<area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="213,5,264,32"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -318,7 +347,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classoptJrParameters_a73340961e894748c6c143284e0b278fa_icgraph.png" border="0" usemap="#classoptJrParameters_a73340961e894748c6c143284e0b278fa_icgraph" alt=""/></div>
 <map name="classoptJrParameters_a73340961e894748c6c143284e0b278fa_icgraph" id="classoptJrParameters_a73340961e894748c6c143284e0b278fa_icgraph">
-<area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="197,12,248,39"/></map>
+<area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="384,12,435,39"/><area shape="rect" id="node3" href="classSearch.html#ae5937c445a63dfa24786b5fce04d2b27" title="Search::localSearch" alt="" coords="197,37,336,64"/></map>
 </div>
 </p>
 
@@ -339,15 +368,6 @@ Here is the caller graph for this function:</div>
 
 <p>Returns the available number of cores. </p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classoptJrParameters_a9bb0e783bd6bf555e86cea874f13cb4f_icgraph.png" border="0" usemap="#classoptJrParameters_a9bb0e783bd6bf555e86cea874f13cb4f_icgraph" alt=""/></div>
-<map name="classoptJrParameters_a9bb0e783bd6bf555e86cea874f13cb4f_icgraph" id="classoptJrParameters_a9bb0e783bd6bf555e86cea874f13cb4f_icgraph">
-<area shape="rect" id="node2" href="classBatch.html#a14f132321413b45d6446200807451414" title="It calculates nu indices for each application and stores it in each &quot;Application&quot; object..." alt="" coords="207,5,345,32"/><area shape="rect" id="node4" href="classBatch.html#ac50dad870490ca7c60e0e15d86c02614" title="It fixes the initial solution by reallocating the residual cores to the applications that may need mo..." alt="" coords="198,56,354,83"/><area shape="rect" id="node3" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="403,56,453,83"/></map>
-</div>
-</p>
-
 </div>
 </div>
 <a class="anchor" id="a6654c5bb36a825393e759b2824444bbb"></a>
@@ -364,15 +384,6 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Returns the number of threads to use in parallelization; if it is 0 there is no parallelization. </p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classoptJrParameters_a6654c5bb36a825393e759b2824444bbb_icgraph.png" border="0" usemap="#classoptJrParameters_a6654c5bb36a825393e759b2824444bbb_icgraph" alt=""/></div>
-<map name="classoptJrParameters_a6654c5bb36a825393e759b2824444bbb_icgraph" id="classoptJrParameters_a6654c5bb36a825393e759b2824444bbb_icgraph">
-<area shape="rect" id="node2" href="classBounds.html#adea89543a39dfa00bee2e4aa3f58e5e0" title="Bounds::calculateBounds" alt="" coords="209,5,380,32"/><area shape="rect" id="node4" href="classsCandidates.html#ac5ff86e5acf736ef57a3eb25c0d724ab" title="sCandidates::invokePredictor\lOpenMP" alt="" coords="198,57,391,98"/><area shape="rect" id="node3" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="440,123,491,149"/><area shape="rect" id="node5" href="classSearch.html#af95c649fd7dba70b7bd3c124ec501046" title="Search::localSearch" alt="" coords="225,173,364,200"/><area shape="rect" id="node6" href="statistics_8hh.html#a202f8e6d9896663ccc22e85450db0112" title="readStatistics" alt="" coords="243,224,346,251"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -396,7 +407,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classoptJrParameters_a199e3fc83f3efb82fc63796a540d6589_icgraph.png" border="0" usemap="#classoptJrParameters_a199e3fc83f3efb82fc63796a540d6589_icgraph" alt=""/></div>
 <map name="classoptJrParameters_a199e3fc83f3efb82fc63796a540d6589_icgraph" id="classoptJrParameters_a199e3fc83f3efb82fc63796a540d6589_icgraph">
-<area shape="rect" id="node2" href="invokePredictor_8hh.html#a342ccdfe7923368e52a4894d69c7455a" title="invokePredictor" alt="" coords="197,93,309,120"/><area shape="rect" id="node5" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="859,89,909,116"/><area shape="rect" id="node3" href="classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7" title="ObjFun::ObjFunctionComponent" alt="" coords="358,79,567,105"/><area shape="rect" id="node4" href="classBatch.html#ae212d22fa812b51160f57507242152c1" title="For each application, a base value for the objective function is calculated. " alt="" coords="658,5,769,32"/><area shape="rect" id="node6" href="classsCandidates.html#ac5ff86e5acf736ef57a3eb25c0d724ab" title="sCandidates::invokePredictor\lOpenMP" alt="" coords="617,57,810,98"/><area shape="rect" id="node7" href="classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b" title="ObjFun::ObjFunctionGlobal" alt="" coords="624,123,803,149"/></map>
+<area shape="rect" id="node2" href="invokePredictor_8hh.html#a342ccdfe7923368e52a4894d69c7455a" title="invokePredictor" alt="" coords="197,5,309,32"/><area shape="rect" id="node3" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="228,56,279,83"/></map>
 </div>
 </p>
 
@@ -426,6 +437,205 @@ Here is the caller graph for this function:</div>
 <area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="197,12,248,39"/></map>
 </div>
 </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a62b46c4db0655e8aea32e2929996d626"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int optJrParameters::cache</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>cache option: "y" makes use of the DB predictor cache table; "n" doesn't </p>
+
+</div>
+</div>
+<a class="anchor" id="aeac321db6ab6babd047c06696a260e90"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int optJrParameters::debug</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>debug option: "y" prints every message, "n" only prints fatal errors </p>
+
+</div>
+</div>
+<a class="anchor" id="a62fe03fe9f9484b54235a0dbe4c09736"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string optJrParameters::filename</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The csv file. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad00a4d00bc8b65f4323a1bd1383c632b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int optJrParameters::globalFOcalculation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>global FO calculation: "y" calculates at each loop of localSearch function the global objective function value, "n" doesn't </p>
+
+</div>
+</div>
+<a class="anchor" id="a8943dcfa48e368831ec28c9d1f5a953d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int optJrParameters::K</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maximum depth: the search of candidates in the auxiliary list stops if this limit is exceeded. </p>
+
+</div>
+</div>
+<a class="anchor" id="af1f1ee05cb0a9962182b9330c7e9536b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int optJrParameters::maxIterations</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The maximum number of iterations in LocalSearch. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9d99c995ae7815448131832e13b7c723"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int optJrParameters::number</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Number of total cores available for the applications (N) </p>
+
+</div>
+</div>
+<a class="anchor" id="a7748d7ba51ef897423d145f2e33273d8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int optJrParameters::numberOfThreads</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The number of MPI threads. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8bb0a0aa1f458ff3973fbe43552e1cd5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int optJrParameters::simulator</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The simulator type: either dagSim or Lundstrom. </p>
 
 </div>
 </div>

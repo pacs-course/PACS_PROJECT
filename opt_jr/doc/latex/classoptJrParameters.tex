@@ -5,6 +5,15 @@
 
 {\ttfamily \#include $<$optjr\-Parameters.\-hh$>$}
 
+
+
+Collaboration diagram for opt\-Jr\-Parameters\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classoptJrParameters__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -30,6 +39,27 @@ const int \hyperlink{classoptJrParameters_a73340961e894748c6c143284e0b278fa}{get
 \begin{DoxyCompactList}\small\item\em Returns the maximum number of iteration for local\-Search. \end{DoxyCompactList}\item 
 const int \hyperlink{classoptJrParameters_a6654c5bb36a825393e759b2824444bbb}{get\-\_\-number\-Of\-Threads} ()
 \begin{DoxyCompactList}\small\item\em Returns the number of threads to use in parallelization; if it is 0 there is no parallelization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{classoptJrParameters_a62fe03fe9f9484b54235a0dbe4c09736}{filename}
+\begin{DoxyCompactList}\small\item\em The csv file. \end{DoxyCompactList}\item 
+int \hyperlink{classoptJrParameters_aeac321db6ab6babd047c06696a260e90}{debug}
+\begin{DoxyCompactList}\small\item\em debug option\-: \char`\"{}y\char`\"{} prints every message, \char`\"{}n\char`\"{} only prints fatal errors \end{DoxyCompactList}\item 
+int \hyperlink{classoptJrParameters_a62b46c4db0655e8aea32e2929996d626}{cache}
+\begin{DoxyCompactList}\small\item\em cache option\-: \char`\"{}y\char`\"{} makes use of the D\-B predictor cache table; \char`\"{}n\char`\"{} doesn't \end{DoxyCompactList}\item 
+int \hyperlink{classoptJrParameters_ad00a4d00bc8b65f4323a1bd1383c632b}{global\-F\-Ocalculation}
+\begin{DoxyCompactList}\small\item\em global F\-O calculation\-: \char`\"{}y\char`\"{} calculates at each loop of local\-Search function the global objective function value, \char`\"{}n\char`\"{} doesn't \end{DoxyCompactList}\item 
+int \hyperlink{classoptJrParameters_a8943dcfa48e368831ec28c9d1f5a953d}{K}
+\begin{DoxyCompactList}\small\item\em Maximum depth\-: the search of candidates in the auxiliary list stops if this limit is exceeded. \end{DoxyCompactList}\item 
+int \hyperlink{classoptJrParameters_a8bb0a0aa1f458ff3973fbe43552e1cd5}{simulator}
+\begin{DoxyCompactList}\small\item\em The simulator type\-: either dag\-Sim or Lundstrom. \end{DoxyCompactList}\item 
+int \hyperlink{classoptJrParameters_a9d99c995ae7815448131832e13b7c723}{number}
+\begin{DoxyCompactList}\small\item\em Number of total cores available for the applications (N) \end{DoxyCompactList}\item 
+int \hyperlink{classoptJrParameters_af1f1ee05cb0a9962182b9330c7e9536b}{max\-Iterations}
+\begin{DoxyCompactList}\small\item\em The maximum number of iterations in Local\-Search. \end{DoxyCompactList}\item 
+int \hyperlink{classoptJrParameters_a7748d7ba51ef897423d145f2e33273d8}{number\-Of\-Threads}
+\begin{DoxyCompactList}\small\item\em The number of M\-P\-I threads. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -75,12 +105,11 @@ Returns the cache option (1==Y\-E\-S, 0==N\-O)
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classoptJrParameters_ac698812fa1177c71eb46dc61d2e5af77_icgraph}
+\includegraphics[width=308pt]{classoptJrParameters_ac698812fa1177c71eb46dc61d2e5af77_icgraph}
 \end{center}
 \end{figure}
 
@@ -98,8 +127,7 @@ Returns the debug option (1==Y\-E\-S, 0==N\-O)
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -143,12 +171,11 @@ Returns the option global\-F\-Ocalculation (1==Y\-E\-S, 0==N\-O)
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=262pt]{classoptJrParameters_a7eec5151603fd03276b6fcf6213f9f90_icgraph}
+\includegraphics[width=350pt]{classoptJrParameters_a7eec5151603fd03276b6fcf6213f9f90_icgraph}
 \end{center}
 \end{figure}
 
@@ -164,18 +191,6 @@ Here is the caller graph for this function\-:
 
 Returns K. 
 
-
-
-Here is the caller graph for this function\-:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=274pt]{classoptJrParameters_a8274b4a95698ce1681147fdddbced0d8_icgraph}
-\end{center}
-\end{figure}
-
-
 \hypertarget{classoptJrParameters_a73340961e894748c6c143284e0b278fa}{\index{opt\-Jr\-Parameters@{opt\-Jr\-Parameters}!get\-\_\-max\-Iteration@{get\-\_\-max\-Iteration}}
 \index{get\-\_\-max\-Iteration@{get\-\_\-max\-Iteration}!optJrParameters@{opt\-Jr\-Parameters}}
 \subsubsection[{get\-\_\-max\-Iteration}]{\setlength{\rightskip}{0pt plus 5cm}const int opt\-Jr\-Parameters\-::get\-\_\-max\-Iteration (
@@ -189,12 +204,11 @@ Returns the maximum number of iteration for local\-Search.
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=262pt]{classoptJrParameters_a73340961e894748c6c143284e0b278fa_icgraph}
+\includegraphics[width=350pt]{classoptJrParameters_a73340961e894748c6c143284e0b278fa_icgraph}
 \end{center}
 \end{figure}
 
@@ -210,18 +224,6 @@ Here is the caller graph for this function\-:
 
 Returns the available number of cores. 
 
-
-
-Here is the caller graph for this function\-:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classoptJrParameters_a9bb0e783bd6bf555e86cea874f13cb4f_icgraph}
-\end{center}
-\end{figure}
-
-
 \hypertarget{classoptJrParameters_a6654c5bb36a825393e759b2824444bbb}{\index{opt\-Jr\-Parameters@{opt\-Jr\-Parameters}!get\-\_\-number\-Of\-Threads@{get\-\_\-number\-Of\-Threads}}
 \index{get\-\_\-number\-Of\-Threads@{get\-\_\-number\-Of\-Threads}!optJrParameters@{opt\-Jr\-Parameters}}
 \subsubsection[{get\-\_\-number\-Of\-Threads}]{\setlength{\rightskip}{0pt plus 5cm}const int opt\-Jr\-Parameters\-::get\-\_\-number\-Of\-Threads (
@@ -232,18 +234,6 @@ Here is the caller graph for this function\-:
 
 
 Returns the number of threads to use in parallelization; if it is 0 there is no parallelization. 
-
-
-
-Here is the caller graph for this function\-:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classoptJrParameters_a6654c5bb36a825393e759b2824444bbb_icgraph}
-\end{center}
-\end{figure}
-
 
 \hypertarget{classoptJrParameters_a199e3fc83f3efb82fc63796a540d6589}{\index{opt\-Jr\-Parameters@{opt\-Jr\-Parameters}!get\-\_\-simulator@{get\-\_\-simulator}}
 \index{get\-\_\-simulator@{get\-\_\-simulator}!optJrParameters@{opt\-Jr\-Parameters}}
@@ -258,12 +248,11 @@ Returns which simulator is used.
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classoptJrParameters_a199e3fc83f3efb82fc63796a540d6589_icgraph}
+\includegraphics[width=308pt]{classoptJrParameters_a199e3fc83f3efb82fc63796a540d6589_icgraph}
 \end{center}
 \end{figure}
 
@@ -289,6 +278,72 @@ Here is the caller graph for this function\-:\nopagebreak
 \end{center}
 \end{figure}
 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classoptJrParameters_a62b46c4db0655e8aea32e2929996d626}{\index{opt\-Jr\-Parameters@{opt\-Jr\-Parameters}!cache@{cache}}
+\index{cache@{cache}!optJrParameters@{opt\-Jr\-Parameters}}
+\subsubsection[{cache}]{\setlength{\rightskip}{0pt plus 5cm}int opt\-Jr\-Parameters\-::cache\hspace{0.3cm}{\ttfamily [private]}}}\label{classoptJrParameters_a62b46c4db0655e8aea32e2929996d626}
+
+
+cache option\-: \char`\"{}y\char`\"{} makes use of the D\-B predictor cache table; \char`\"{}n\char`\"{} doesn't 
+
+\hypertarget{classoptJrParameters_aeac321db6ab6babd047c06696a260e90}{\index{opt\-Jr\-Parameters@{opt\-Jr\-Parameters}!debug@{debug}}
+\index{debug@{debug}!optJrParameters@{opt\-Jr\-Parameters}}
+\subsubsection[{debug}]{\setlength{\rightskip}{0pt plus 5cm}int opt\-Jr\-Parameters\-::debug\hspace{0.3cm}{\ttfamily [private]}}}\label{classoptJrParameters_aeac321db6ab6babd047c06696a260e90}
+
+
+debug option\-: \char`\"{}y\char`\"{} prints every message, \char`\"{}n\char`\"{} only prints fatal errors 
+
+\hypertarget{classoptJrParameters_a62fe03fe9f9484b54235a0dbe4c09736}{\index{opt\-Jr\-Parameters@{opt\-Jr\-Parameters}!filename@{filename}}
+\index{filename@{filename}!optJrParameters@{opt\-Jr\-Parameters}}
+\subsubsection[{filename}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string opt\-Jr\-Parameters\-::filename\hspace{0.3cm}{\ttfamily [private]}}}\label{classoptJrParameters_a62fe03fe9f9484b54235a0dbe4c09736}
+
+
+The csv file. 
+
+\hypertarget{classoptJrParameters_ad00a4d00bc8b65f4323a1bd1383c632b}{\index{opt\-Jr\-Parameters@{opt\-Jr\-Parameters}!global\-F\-Ocalculation@{global\-F\-Ocalculation}}
+\index{global\-F\-Ocalculation@{global\-F\-Ocalculation}!optJrParameters@{opt\-Jr\-Parameters}}
+\subsubsection[{global\-F\-Ocalculation}]{\setlength{\rightskip}{0pt plus 5cm}int opt\-Jr\-Parameters\-::global\-F\-Ocalculation\hspace{0.3cm}{\ttfamily [private]}}}\label{classoptJrParameters_ad00a4d00bc8b65f4323a1bd1383c632b}
+
+
+global F\-O calculation\-: \char`\"{}y\char`\"{} calculates at each loop of local\-Search function the global objective function value, \char`\"{}n\char`\"{} doesn't 
+
+\hypertarget{classoptJrParameters_a8943dcfa48e368831ec28c9d1f5a953d}{\index{opt\-Jr\-Parameters@{opt\-Jr\-Parameters}!K@{K}}
+\index{K@{K}!optJrParameters@{opt\-Jr\-Parameters}}
+\subsubsection[{K}]{\setlength{\rightskip}{0pt plus 5cm}int opt\-Jr\-Parameters\-::\-K\hspace{0.3cm}{\ttfamily [private]}}}\label{classoptJrParameters_a8943dcfa48e368831ec28c9d1f5a953d}
+
+
+Maximum depth\-: the search of candidates in the auxiliary list stops if this limit is exceeded. 
+
+\hypertarget{classoptJrParameters_af1f1ee05cb0a9962182b9330c7e9536b}{\index{opt\-Jr\-Parameters@{opt\-Jr\-Parameters}!max\-Iterations@{max\-Iterations}}
+\index{max\-Iterations@{max\-Iterations}!optJrParameters@{opt\-Jr\-Parameters}}
+\subsubsection[{max\-Iterations}]{\setlength{\rightskip}{0pt plus 5cm}int opt\-Jr\-Parameters\-::max\-Iterations\hspace{0.3cm}{\ttfamily [private]}}}\label{classoptJrParameters_af1f1ee05cb0a9962182b9330c7e9536b}
+
+
+The maximum number of iterations in Local\-Search. 
+
+\hypertarget{classoptJrParameters_a9d99c995ae7815448131832e13b7c723}{\index{opt\-Jr\-Parameters@{opt\-Jr\-Parameters}!number@{number}}
+\index{number@{number}!optJrParameters@{opt\-Jr\-Parameters}}
+\subsubsection[{number}]{\setlength{\rightskip}{0pt plus 5cm}int opt\-Jr\-Parameters\-::number\hspace{0.3cm}{\ttfamily [private]}}}\label{classoptJrParameters_a9d99c995ae7815448131832e13b7c723}
+
+
+Number of total cores available for the applications (N) 
+
+\hypertarget{classoptJrParameters_a7748d7ba51ef897423d145f2e33273d8}{\index{opt\-Jr\-Parameters@{opt\-Jr\-Parameters}!number\-Of\-Threads@{number\-Of\-Threads}}
+\index{number\-Of\-Threads@{number\-Of\-Threads}!optJrParameters@{opt\-Jr\-Parameters}}
+\subsubsection[{number\-Of\-Threads}]{\setlength{\rightskip}{0pt plus 5cm}int opt\-Jr\-Parameters\-::number\-Of\-Threads\hspace{0.3cm}{\ttfamily [private]}}}\label{classoptJrParameters_a7748d7ba51ef897423d145f2e33273d8}
+
+
+The number of M\-P\-I threads. 
+
+\hypertarget{classoptJrParameters_a8bb0a0aa1f458ff3973fbe43552e1cd5}{\index{opt\-Jr\-Parameters@{opt\-Jr\-Parameters}!simulator@{simulator}}
+\index{simulator@{simulator}!optJrParameters@{opt\-Jr\-Parameters}}
+\subsubsection[{simulator}]{\setlength{\rightskip}{0pt plus 5cm}int opt\-Jr\-Parameters\-::simulator\hspace{0.3cm}{\ttfamily [private]}}}\label{classoptJrParameters_a8bb0a0aa1f458ff3973fbe43552e1cd5}
+
+
+The simulator type\-: either dag\-Sim or Lundstrom. 
 
 
 

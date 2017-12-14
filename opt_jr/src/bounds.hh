@@ -15,6 +15,8 @@
 */
 class Bounds {
 
+  Batch app_manager;
+
   // helper function, see .cpp file for detailed description
   void  Bound(sConfiguration &configuration, MYSQL *conn, Application &app,
               optJrParameters &par, int flagDagsim);
@@ -23,6 +25,8 @@ class Bounds {
                  optJrParameters &par);
 public:
 
+  Bounds(Batch app_m): app_manager(app_m){};
+
   /**
   calculateBounds evaluates the bound for the applications in BATCH
   i.e. the minimal number of cores necessary to finish the execution before the deadline.
@@ -30,8 +34,12 @@ public:
   invokes the predictor doing a "HILL CLIMBING". If the number of threads in the configuration file is
   greater than 0, it does the computations in parallel (using openMP).
   */
-  void calculateBounds(Batch  & app_manager, sConfiguration &configuration,
+  void calculateBounds( sConfiguration &configuration,
                        MYSQL *conn,  optJrParameters &par);
+
+  Batch get_app_manager(){
+    return app_manager;
+  }
 
 };
 

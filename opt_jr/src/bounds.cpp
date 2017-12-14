@@ -200,9 +200,8 @@ void Bounds::findBound(sConfiguration &configuration, MYSQL *conn, char* db,  Ap
 /*
  * CALL IN PARALLEL FINDBOUND (OPENMP)
  */
-void Bounds::calculateBounds(Batch  & app_manager,
-                             sConfiguration &configuration, MYSQL *conn,
-                             optJrParameters &par)
+void Bounds::calculateBounds( sConfiguration &configuration, MYSQL *conn,
+                              optJrParameters &par)
   {
 		int n_threads = par.get_numberOfThreads();
     std::string debugMsg;

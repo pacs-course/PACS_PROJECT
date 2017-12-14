@@ -1,0 +1,14 @@
+<map id="Search::approximatedLoop" name="Search::approximatedLoop">
+<area shape="rect" id="node2" href="$debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="527,12,638,39"/>
+<area shape="rect" id="node4" href="$classObjFun.html#abb89a994d34b44ec4cb6e0e2562c0107" title="ObjFun::ObjFunctionComponent\lApprox" alt="" coords="233,194,442,235"/>
+<area shape="rect" id="node13" href="$classsCandidates.html#ae71fd23dda6a91a774ae6e61147bcf59" title="sCandidates::addCandidate" alt="" coords="246,260,429,287"/>
+<area shape="rect" id="node3" href="$classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="Returns the debug option (1==YES, 0==NO) " alt="" coords="723,5,867,46"/>
+<area shape="rect" id="node5" href="$classApplication.html#a74d83f1191a1ab311c055da4d0d8d8d9" title="Application::set_R_d" alt="" coords="511,63,654,89"/>
+<area shape="rect" id="node6" href="$classApplication.html#a0bb182c29dbaf5293a120bdced8d08b6" title="Application::get_alpha" alt="" coords="507,113,658,140"/>
+<area shape="rect" id="node7" href="$classApplication.html#a1a87d8c2de9650b2fa3e7b3f64857dd1" title="Application::get_current\lCores_d" alt="" coords="503,165,662,206"/>
+<area shape="rect" id="node8" href="$classApplication.html#abc8a0a0b78144145d8aeefba5b3e256c" title="Application::get_beta" alt="" coords="511,231,655,257"/>
+<area shape="rect" id="node9" href="$classApplication.html#a354b6b805f2993418260a8dd10368759" title="Application::get_w" alt="" coords="518,281,647,308"/>
+<area shape="rect" id="node10" href="$classApplication.html#ad0d83c496de2ca9268bb4d3f743dacac" title="Application::get_R_d" alt="" coords="511,332,654,359"/>
+<area shape="rect" id="node11" href="$classApplication.html#a67f6af018dd1e4774e01c38d3c933ece" title="Application::get_Deadline_d" alt="" coords="491,383,675,409"/>
+<area shape="rect" id="node12" href="$classApplication.html#a76968cc06cb913a46b1b9c248fefced9" title="Application::get_session\l_app_id" alt="" coords="501,434,665,475"/>
+</map>

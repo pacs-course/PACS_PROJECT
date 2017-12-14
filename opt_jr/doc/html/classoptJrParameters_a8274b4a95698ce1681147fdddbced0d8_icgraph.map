@@ -1,3 +1,6 @@
 <map id="optJrParameters::get_K" name="optJrParameters::get_K">
-<area shape="rect" id="node2" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="213,5,264,32"/>
+<area shape="rect" id="node2" href="$classsCandidates.html#ac5ff86e5acf736ef57a3eb25c0d724ab" title="sCandidates::invokePredictor\lOpenMP" alt="" coords="225,5,418,46"/>
+<area shape="rect" id="node5" href="$classsCandidates.html#a79ab5675418a37532bf447cfa8baf975" title="sCandidates::invokePredictorSeq" alt="" coords="213,71,429,97"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="664,135,715,161"/>
+<area shape="rect" id="node3" href="$classSearch.html#ae5937c445a63dfa24786b5fce04d2b27" title="Search::localSearch" alt="" coords="477,96,616,123"/>
 </map>

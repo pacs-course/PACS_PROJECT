@@ -2,6 +2,8 @@ var searchData=
 [
   ['r_5falgorithm',['R_ALGORITHM',['../application_8hh.html#aaeed326368abd712225f9ca34c338fbf',1,'application.hh']]],
   ['r_5fd',['R_d',['../classApplication.html#a374d43f68ae27aaed98278e8152a434c',1,'Application']]],
+  ['r_5fnew',['R_new',['../classApplication.html#a9e94824741ac0c52d0fa5ede30c72fa1',1,'Application']]],
+  ['r_5fold',['R_old',['../classApplication.html#a950cfc8da4a8e4640aee8d2840f53e0e',1,'Application']]],
   ['read_5fapp_5ffile_2ecpp',['read_app_file.cpp',['../read__app__file_8cpp.html',1,'']]],
   ['read_5fapp_5ffile_2ehh',['read_app_file.hh',['../read__app__file_8hh.html',1,'']]],
   ['readappfile',['readAppFile',['../read__app__file_8cpp.html#aa73d7abbbef707bf918fbef4c1942cae',1,'readAppFile(FILE *stream):&#160;read_app_file.cpp'],['../read__app__file_8hh.html#aa73d7abbbef707bf918fbef4c1942cae',1,'readAppFile(FILE *stream):&#160;read_app_file.cpp']]],
