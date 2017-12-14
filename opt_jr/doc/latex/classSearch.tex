@@ -22,7 +22,9 @@ Collaboration diagram for Search\-:
 \item 
 void \hyperlink{classSearch_ae5937c445a63dfa24786b5fce04d2b27}{local\-Search} (\hyperlink{readConfigurationFile_8hh_ab8f35b1da3261263c5e9c0e7c8921f5c}{s\-Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
 \item 
-void \hyperlink{classSearch_a421161ac4a63ea88eb86832395e32ab5}{show\-\_\-solution} ()
+void \hyperlink{classSearch_a5fd3baeb685f1ab699743b9a1d2fc4d6}{write\-Results} (M\-Y\-S\-Q\-L $\ast$conn, char $\ast$db\-Name, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
+\item 
+void \hyperlink{classSearch_a72dc9b3fa3f4f6dd83fcb88968b7448d}{print\-\_\-solution} ()
 \item 
 \hyperlink{classBatch}{Batch} \hyperlink{classSearch_a81ba3ce78974e5b4d46ef2c0804a3477}{get\-\_\-app\-\_\-manager} ()
 \end{DoxyCompactItemize}
@@ -63,7 +65,7 @@ void \hyperlink{classSearch_ac57d065b4931d1c22e92d76d7e20040a}{check\-Total\-Nod
 \item[{{\bf opt\-Jr\-Parameters} \&}]{par}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearch_aa7c0b0385cd0bcb4ec4239e339f7a301}
-
+It estimates the objective function for each move. The candidate applications for which the move is profitable are stored in a s\-Candidate object 
 
 Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
@@ -82,7 +84,7 @@ Here is the caller graph for this function\-:\nopagebreak
 \item[{{\bf Batch} \&}]{App\-\_\-manager}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearch_ac57d065b4931d1c22e92d76d7e20040a}
-
+It checks that the total allocated nodes is still less or equal than the total number of cores available N 
 
 Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
@@ -100,17 +102,6 @@ Here is the caller graph for this function\-:\nopagebreak
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classSearch_a81ba3ce78974e5b4d46ef2c0804a3477}
-
-
-Here is the caller graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=286pt]{classSearch_a81ba3ce78974e5b4d46ef2c0804a3477_icgraph}
-\end{center}
-\end{figure}
-
-
 \hypertarget{classSearch_ae5937c445a63dfa24786b5fce04d2b27}{\index{Search@{Search}!local\-Search@{local\-Search}}
 \index{local\-Search@{local\-Search}!Search@{Search}}
 \subsubsection[{local\-Search}]{\setlength{\rightskip}{0pt plus 5cm}void Search\-::local\-Search (
@@ -131,20 +122,66 @@ Here is the caller graph for this function\-:\nopagebreak
 \end{figure}
 
 
-\hypertarget{classSearch_a421161ac4a63ea88eb86832395e32ab5}{\index{Search@{Search}!show\-\_\-solution@{show\-\_\-solution}}
-\index{show\-\_\-solution@{show\-\_\-solution}!Search@{Search}}
-\subsubsection[{show\-\_\-solution}]{\setlength{\rightskip}{0pt plus 5cm}void Search\-::show\-\_\-solution (
+\hypertarget{classSearch_a72dc9b3fa3f4f6dd83fcb88968b7448d}{\index{Search@{Search}!print\-\_\-solution@{print\-\_\-solution}}
+\index{print\-\_\-solution@{print\-\_\-solution}!Search@{Search}}
+\subsubsection[{print\-\_\-solution}]{\setlength{\rightskip}{0pt plus 5cm}void Search\-::print\-\_\-solution (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classSearch_a421161ac4a63ea88eb86832395e32ab5}
+)}}\label{classSearch_a72dc9b3fa3f4f6dd83fcb88968b7448d}
+It prints the output of App\-\_\-manager.\-show\-\_\-solution 
 
-
-Here is the caller graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=270pt]{classSearch_a421161ac4a63ea88eb86832395e32ab5_icgraph}
+\includegraphics[width=338pt]{classSearch_a72dc9b3fa3f4f6dd83fcb88968b7448d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{classSearch_a72dc9b3fa3f4f6dd83fcb88968b7448d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSearch_a5fd3baeb685f1ab699743b9a1d2fc4d6}{\index{Search@{Search}!write\-Results@{write\-Results}}
+\index{write\-Results@{write\-Results}!Search@{Search}}
+\subsubsection[{write\-Results}]{\setlength{\rightskip}{0pt plus 5cm}void Search\-::write\-Results (
+\begin{DoxyParamCaption}
+\item[{M\-Y\-S\-Q\-L $\ast$}]{conn, }
+\item[{char $\ast$}]{db\-Name, }
+\item[{{\bf opt\-Jr\-Parameters} \&}]{par}
+\end{DoxyParamCaption}
+)}}\label{classSearch_a5fd3baeb685f1ab699743b9a1d2fc4d6}
+It calls write\-Results member function of App\-\_\-manager private member 
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSearch_a5fd3baeb685f1ab699743b9a1d2fc4d6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classSearch_a5fd3baeb685f1ab699743b9a1d2fc4d6_icgraph}
 \end{center}
 \end{figure}
 
@@ -155,7 +192,7 @@ Here is the caller graph for this function\-:\nopagebreak
 \hypertarget{classSearch_aa5f2a65e5b640dec221284069963b91a}{\index{Search@{Search}!App\-\_\-manager@{App\-\_\-manager}}
 \index{App\-\_\-manager@{App\-\_\-manager}!Search@{Search}}
 \subsubsection[{App\-\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Batch} Search\-::\-App\-\_\-manager\hspace{0.3cm}{\ttfamily [private]}}}\label{classSearch_aa5f2a65e5b640dec221284069963b91a}
-
+\hyperlink{classBatch}{Batch} object as described in \hyperlink{classBatch}{Batch} class 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 

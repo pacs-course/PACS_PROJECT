@@ -149,13 +149,15 @@ int main(int argc, char **argv)
   std::cout << Msg;
 
   gettimeofday(&tv_initial_bounds, NULL);
+
+  /* CREATE A BOUNDS OBJECT */
   Bounds Bounds_eval(App_manager);
 
   Bounds_eval.calculateBounds( configuration, conn, par );
 
   gettimeofday(&tv_final_bounds, NULL);
 
-
+  /* UPDATE BUTCH OBJECT WITH BOUNDS */
   App_manager= Bounds_eval.get_app_manager();
 
   Msg="\n Final Bound results: ";
@@ -239,6 +241,8 @@ int main(int argc, char **argv)
 
 
   gettimeofday(&tv_initial_locals, NULL);
+
+  /* CREATE A SEARCH OBJECT */
 
   Search search_eval(App_manager);
 

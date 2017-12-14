@@ -90,13 +90,6 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 				BCores = nCores;
 				BTime = predictorOutput;
 
-				/*
-				app.sAB.vec[app.sAB.index].nCores = nCores;
-				app.sAB.vec[app.sAB.index].R = predictorOutput;
-				app.sAB.index = (app.sAB.index +1) % HYP_INTERPOLATION_POINTS;
-				*/
-
-				//app.boundIterations++;
 				app.computeAlphaBeta(nCores, predictorOutput);
 
 			}
@@ -129,12 +122,6 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 								 "(deadline is " +std::to_string(app.get_Deadline_d())+ ") cores "
 								 + std::to_string(nCores); debugMessage(debugMsg, par);
 
-				/*
-				app.sAB.vec[app.sAB.index].nCores = nCores;
-				app.sAB.vec[app.sAB.index].R = predictorOutput;
-				app.sAB.index = app.sAB.index % HYP_INTERPOLATION_POINTS; //NB:  sAB.index it's always the same!
-				*/
-				//app.boundIterations++;
 				app.computeAlphaBeta(nCores, predictorOutput);
 
 			}

@@ -97,7 +97,7 @@ Collaboration diagram for Search:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSearch__coll__graph.png" border="0" usemap="#Search_coll__map" alt="Collaboration graph"/></div>
 <map name="Search_coll__map" id="Search_coll__map">
-<area shape="rect" id="node2" href="classBatch.html" title="{Batch\n||+ Batch()\l+ calculate_nu()\l+ initialize()\l+ fixInitialSolution()\l}" alt="" coords="23,147,157,269"/></map>
+<area shape="rect" id="node2" href="classBatch.html" title="{Batch\n||+ Batch()\l+ calculate_nu()\l+ initialize()\l+ fixInitialSolution()\l+ writeResults()\l+ show_session_app_id()\l+ show_bounds()\l+ show_solution()\l}" alt="" coords="5,147,176,327"/></map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -106,8 +106,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9fefa80fb3e3cb3b4d81c34e98b53398"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5937c445a63dfa24786b5fce04d2b27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearch.html#ae5937c445a63dfa24786b5fce04d2b27">localSearch</a> (<a class="el" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;configuration, MYSQL *conn, <a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
 <tr class="separator:ae5937c445a63dfa24786b5fce04d2b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a421161ac4a63ea88eb86832395e32ab5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearch.html#a421161ac4a63ea88eb86832395e32ab5">show_solution</a> ()</td></tr>
-<tr class="separator:a421161ac4a63ea88eb86832395e32ab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fd3baeb685f1ab699743b9a1d2fc4d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearch.html#a5fd3baeb685f1ab699743b9a1d2fc4d6">writeResults</a> (MYSQL *conn, char *dbName, <a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
+<tr class="separator:a5fd3baeb685f1ab699743b9a1d2fc4d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72dc9b3fa3f4f6dd83fcb88968b7448d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearch.html#a72dc9b3fa3f4f6dd83fcb88968b7448d">print_solution</a> ()</td></tr>
+<tr class="separator:a72dc9b3fa3f4f6dd83fcb88968b7448d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81ba3ce78974e5b4d46ef2c0804a3477"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBatch.html">Batch</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearch.html#a81ba3ce78974e5b4d46ef2c0804a3477">get_app_manager</a> ()</td></tr>
 <tr class="separator:a81ba3ce78974e5b4d46ef2c0804a3477"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -188,6 +190,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>It estimates the objective function for each move. The candidate applications for which the move is profitable are stored in a sCandidate object </p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -231,6 +234,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>It checks that the total allocated nodes is still less or equal than the total number of cores available N </p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -263,15 +267,6 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classSearch_a81ba3ce78974e5b4d46ef2c0804a3477_icgraph.png" border="0" usemap="#classSearch_a81ba3ce78974e5b4d46ef2c0804a3477_icgraph" alt=""/></div>
-<map name="classSearch_a81ba3ce78974e5b4d46ef2c0804a3477_icgraph" id="classSearch_a81ba3ce78974e5b4d46ef2c0804a3477_icgraph">
-<area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="229,5,280,32"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -317,25 +312,86 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a421161ac4a63ea88eb86832395e32ab5"></a>
+<a class="anchor" id="a72dc9b3fa3f4f6dd83fcb88968b7448d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Search::show_solution </td>
+          <td class="memname">void Search::print_solution </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>It prints the output of App_manager.show_solution </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSearch_a72dc9b3fa3f4f6dd83fcb88968b7448d_cgraph.png" border="0" usemap="#classSearch_a72dc9b3fa3f4f6dd83fcb88968b7448d_cgraph" alt=""/></div>
+<map name="classSearch_a72dc9b3fa3f4f6dd83fcb88968b7448d_cgraph" id="classSearch_a72dc9b3fa3f4f6dd83fcb88968b7448d_cgraph">
+<area shape="rect" id="node2" href="classBatch.html#a54f580f3d93657bdf72420d338551087" title="Batch::show_solution" alt="" coords="203,5,349,32"/></map>
+</div>
+</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classSearch_a421161ac4a63ea88eb86832395e32ab5_icgraph.png" border="0" usemap="#classSearch_a421161ac4a63ea88eb86832395e32ab5_icgraph" alt=""/></div>
-<map name="classSearch_a421161ac4a63ea88eb86832395e32ab5_icgraph" id="classSearch_a421161ac4a63ea88eb86832395e32ab5_icgraph">
-<area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="208,5,259,32"/></map>
+<div class="center"><img src="classSearch_a72dc9b3fa3f4f6dd83fcb88968b7448d_icgraph.png" border="0" usemap="#classSearch_a72dc9b3fa3f4f6dd83fcb88968b7448d_icgraph" alt=""/></div>
+<map name="classSearch_a72dc9b3fa3f4f6dd83fcb88968b7448d_icgraph" id="classSearch_a72dc9b3fa3f4f6dd83fcb88968b7448d_icgraph">
+<area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="203,5,253,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5fd3baeb685f1ab699743b9a1d2fc4d6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Search::writeResults </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>conn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>dbName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;&#160;</td>
+          <td class="paramname"><em>par</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>It calls writeResults member function of App_manager private member </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSearch_a5fd3baeb685f1ab699743b9a1d2fc4d6_cgraph.png" border="0" usemap="#classSearch_a5fd3baeb685f1ab699743b9a1d2fc4d6_cgraph" alt=""/></div>
+<map name="classSearch_a5fd3baeb685f1ab699743b9a1d2fc4d6_cgraph" id="classSearch_a5fd3baeb685f1ab699743b9a1d2fc4d6_cgraph">
+<area shape="rect" id="node2" href="classBatch.html#a4c6c23dd95eccc220115af294d481219" title="Batch::writeResults" alt="" coords="198,5,335,32"/><area shape="rect" id="node3" href="debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="385,5,495,32"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSearch_a5fd3baeb685f1ab699743b9a1d2fc4d6_icgraph.png" border="0" usemap="#classSearch_a5fd3baeb685f1ab699743b9a1d2fc4d6_icgraph" alt=""/></div>
+<map name="classSearch_a5fd3baeb685f1ab699743b9a1d2fc4d6_icgraph" id="classSearch_a5fd3baeb685f1ab699743b9a1d2fc4d6_icgraph">
+<area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="197,5,248,32"/></map>
 </div>
 </p>
 
@@ -359,6 +415,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p><a class="el" href="classBatch.html">Batch</a> object as described in <a class="el" href="classBatch.html">Batch</a> class </p>
 
 </div>
 </div>

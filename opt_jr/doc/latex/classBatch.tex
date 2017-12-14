@@ -21,11 +21,19 @@ Collaboration diagram for Batch\-:
 \hyperlink{classBatch_aea459d16c99c2f02af53b3ad5b0ff12d}{Batch} (std\-::vector$<$ \hyperlink{classApplication}{Application} $>$ apps)
 \begin{DoxyCompactList}\small\item\em Constructor expects a vector of application which should be given by the \char`\"{}read\-App\-File\char`\"{} function declared in \char`\"{}read\-\_\-app\-\_\-file.\-hh\char`\"{}. \end{DoxyCompactList}\item 
 void \hyperlink{classBatch_a14f132321413b45d6446200807451414}{calculate\-\_\-nu} (\hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
-\begin{DoxyCompactList}\small\item\em It calculates nu indices for each application and stores it in each \char`\"{}\-Application\char`\"{} object. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em It calculates nu indices for each application and stores it in each \char`\"{}\-Application\char`\"{} object. It also initializes the number of cores. \end{DoxyCompactList}\item 
 void \hyperlink{classBatch_ae212d22fa812b51160f57507242152c1}{initialize} (\hyperlink{readConfigurationFile_8hh_ab8f35b1da3261263c5e9c0e7c8921f5c}{s\-Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
 \begin{DoxyCompactList}\small\item\em For each application, a base value for the objective function is calculated. \end{DoxyCompactList}\item 
 void \hyperlink{classBatch_ac50dad870490ca7c60e0e15d86c02614}{fix\-Initial\-Solution} (\hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
-\begin{DoxyCompactList}\small\item\em It fixes the initial solution by reallocating the residual cores to the applications that may need more resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em It fixes the initial solution by reallocating the residual cores to the applications that may need more resources. \end{DoxyCompactList}\item 
+void \hyperlink{classBatch_a4c6c23dd95eccc220115af294d481219}{write\-Results} (M\-Y\-S\-Q\-L $\ast$conn, char $\ast$db\-Name, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
+\item 
+std\-::string \hyperlink{classBatch_a7bb052d7d9fd3cfe1a00ebd60f977afb}{show\-\_\-session\-\_\-app\-\_\-id} ()
+\item 
+std\-::string \hyperlink{classBatch_a6e3c7278556780b9fb1e530c740b41de}{show\-\_\-bounds} ()
+\item 
+std\-::string \hyperlink{classBatch_a54f580f3d93657bdf72420d338551087}{show\-\_\-solution} ()
+\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -39,8 +47,6 @@ class \hyperlink{classBatch_ac174a08cdaebb01dfd90673034f10fab}{Bounds}
 class \hyperlink{classBatch_aea88561fddd2e924cebf793f0cfdc8b6}{Search}
 \item 
 class \hyperlink{classBatch_ab332b708060d79472caf1a215fe8b6a9}{Obj\-Fun}
-\item 
-void \hyperlink{classBatch_a327fdf85cb600d4bb50ff32c2462c699}{write\-Results} (M\-Y\-S\-Q\-L $\ast$conn, char $\ast$db\-Name, \hyperlink{classBatch}{Batch} \&App\-\_\-manager, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
 \end{DoxyCompactItemize}
 
 
@@ -71,11 +77,12 @@ Constructor expects a vector of application which should be given by the \char`\
 )}}\label{classBatch_a14f132321413b45d6446200807451414}
 
 
-It calculates nu indices for each application and stores it in each \char`\"{}\-Application\char`\"{} object. 
+It calculates nu indices for each application and stores it in each \char`\"{}\-Application\char`\"{} object. It also initializes the number of cores. 
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -108,7 +115,8 @@ It fixes the initial solution by reallocating the residual cores to the applicat
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -163,6 +171,84 @@ Here is the caller graph for this function\-:\nopagebreak
 \end{figure}
 
 
+\hypertarget{classBatch_a6e3c7278556780b9fb1e530c740b41de}{\index{Batch@{Batch}!show\-\_\-bounds@{show\-\_\-bounds}}
+\index{show\-\_\-bounds@{show\-\_\-bounds}!Batch@{Batch}}
+\subsubsection[{show\-\_\-bounds}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Batch\-::show\-\_\-bounds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classBatch_a6e3c7278556780b9fb1e530c740b41de}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classBatch_a6e3c7278556780b9fb1e530c740b41de_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classBatch_a7bb052d7d9fd3cfe1a00ebd60f977afb}{\index{Batch@{Batch}!show\-\_\-session\-\_\-app\-\_\-id@{show\-\_\-session\-\_\-app\-\_\-id}}
+\index{show\-\_\-session\-\_\-app\-\_\-id@{show\-\_\-session\-\_\-app\-\_\-id}!Batch@{Batch}}
+\subsubsection[{show\-\_\-session\-\_\-app\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Batch\-::show\-\_\-session\-\_\-app\-\_\-id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classBatch_a7bb052d7d9fd3cfe1a00ebd60f977afb}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{classBatch_a7bb052d7d9fd3cfe1a00ebd60f977afb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classBatch_a54f580f3d93657bdf72420d338551087}{\index{Batch@{Batch}!show\-\_\-solution@{show\-\_\-solution}}
+\index{show\-\_\-solution@{show\-\_\-solution}!Batch@{Batch}}
+\subsubsection[{show\-\_\-solution}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Batch\-::show\-\_\-solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classBatch_a54f580f3d93657bdf72420d338551087}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBatch_a54f580f3d93657bdf72420d338551087_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classBatch_a4c6c23dd95eccc220115af294d481219}{\index{Batch@{Batch}!write\-Results@{write\-Results}}
+\index{write\-Results@{write\-Results}!Batch@{Batch}}
+\subsubsection[{write\-Results}]{\setlength{\rightskip}{0pt plus 5cm}void Batch\-::write\-Results (
+\begin{DoxyParamCaption}
+\item[{M\-Y\-S\-Q\-L $\ast$}]{conn, }
+\item[{char $\ast$}]{db\-Name, }
+\item[{{\bf opt\-Jr\-Parameters} \&}]{par}
+\end{DoxyParamCaption}
+)}}\label{classBatch_a4c6c23dd95eccc220115af294d481219}
+write\-Results prints the results of the local\-Search application (number of cores and V\-M) in a D\-B table. If a result for a (session\-\_\-id, application\-\_\-id) already exists, then it is replaced. 
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBatch_a4c6c23dd95eccc220115af294d481219_icgraph}
+\end{center}
+\end{figure}
+
+
 
 
 \subsection{Friends And Related Function Documentation}
@@ -175,17 +261,7 @@ Here is the caller graph for this function\-:\nopagebreak
 \hypertarget{classBatch_aea88561fddd2e924cebf793f0cfdc8b6}{\index{Batch@{Batch}!Search@{Search}}
 \index{Search@{Search}!Batch@{Batch}}
 \subsubsection[{Search}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Search}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classBatch_aea88561fddd2e924cebf793f0cfdc8b6}
-\hypertarget{classBatch_a327fdf85cb600d4bb50ff32c2462c699}{\index{Batch@{Batch}!write\-Results@{write\-Results}}
-\index{write\-Results@{write\-Results}!Batch@{Batch}}
-\subsubsection[{write\-Results}]{\setlength{\rightskip}{0pt plus 5cm}void write\-Results (
-\begin{DoxyParamCaption}
-\item[{M\-Y\-S\-Q\-L $\ast$}]{conn, }
-\item[{char $\ast$}]{db\-Name, }
-\item[{{\bf Batch} \&}]{App\-\_\-manager, }
-\item[{{\bf opt\-Jr\-Parameters} \&}]{par}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classBatch_a327fdf85cb600d4bb50ff32c2462c699}
-write\-Results prints the results of the local\-Search application (number of cores and V\-M) in a D\-B table. If a result for a (session\-\_\-id, application\-\_\-id) already exists, then it is replaced. 
+
 
 \subsection{Member Data Documentation}
 \hypertarget{classBatch_a757bf1a36fee46b1b47263ab4a59c560}{\index{Batch@{Batch}!A\-P\-Ps@{A\-P\-Ps}}

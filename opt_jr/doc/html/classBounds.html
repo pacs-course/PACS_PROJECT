@@ -97,7 +97,7 @@ Collaboration diagram for Bounds:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBounds__coll__graph.png" border="0" usemap="#Bounds_coll__map" alt="Collaboration graph"/></div>
 <map name="Bounds_coll__map" id="Bounds_coll__map">
-<area shape="rect" id="node2" href="classBatch.html" title="{Batch\n||+ Batch()\l+ calculate_nu()\l+ initialize()\l+ fixInitialSolution()\l}" alt="" coords="23,147,157,269"/></map>
+<area shape="rect" id="node2" href="classBatch.html" title="{Batch\n||+ Batch()\l+ calculate_nu()\l+ initialize()\l+ fixInitialSolution()\l+ writeResults()\l+ show_session_app_id()\l+ show_bounds()\l+ show_solution()\l}" alt="" coords="5,147,176,327"/></map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -198,6 +198,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>This function calculates the bound given a certain deadline and number of cores. Predictor method is invoked until an upper bound, consisting of the number of nodes, is found (once that the time calculated by the predictor, a rollback is performed to return the last "safe" number of core and time. </p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -301,6 +302,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Initially, this function queries the lookup table to find the number of cores, calculated by OPT_IC earlier, given a deadline, an application id and a dataset size. Secondly, it invokes the Bound function. </p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -363,6 +365,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p><a class="el" href="classBatch.html">Batch</a> object as described in <a class="el" href="classBatch.html">Batch</a> class </p>
 
 </div>
 </div>

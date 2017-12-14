@@ -106,7 +106,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aea459d16c99c2f02af53b3ad5b0ff12d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor expects a vector of application which should be given by the "readAppFile" function declared in "read_app_file.hh".  <a href="#aea459d16c99c2f02af53b3ad5b0ff12d">More...</a><br/></td></tr>
 <tr class="separator:aea459d16c99c2f02af53b3ad5b0ff12d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14f132321413b45d6446200807451414"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a14f132321413b45d6446200807451414">calculate_nu</a> (<a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
-<tr class="memdesc:a14f132321413b45d6446200807451414"><td class="mdescLeft">&#160;</td><td class="mdescRight">It calculates nu indices for each application and stores it in each "Application" object.  <a href="#a14f132321413b45d6446200807451414">More...</a><br/></td></tr>
+<tr class="memdesc:a14f132321413b45d6446200807451414"><td class="mdescLeft">&#160;</td><td class="mdescRight">It calculates nu indices for each application and stores it in each "Application" object. It also initializes the number of cores.  <a href="#a14f132321413b45d6446200807451414">More...</a><br/></td></tr>
 <tr class="separator:a14f132321413b45d6446200807451414"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae212d22fa812b51160f57507242152c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#ae212d22fa812b51160f57507242152c1">initialize</a> (<a class="el" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;configuration, MYSQL *conn, <a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
 <tr class="memdesc:ae212d22fa812b51160f57507242152c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">For each application, a base value for the objective function is calculated.  <a href="#ae212d22fa812b51160f57507242152c1">More...</a><br/></td></tr>
@@ -114,6 +114,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac50dad870490ca7c60e0e15d86c02614"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#ac50dad870490ca7c60e0e15d86c02614">fixInitialSolution</a> (<a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
 <tr class="memdesc:ac50dad870490ca7c60e0e15d86c02614"><td class="mdescLeft">&#160;</td><td class="mdescRight">It fixes the initial solution by reallocating the residual cores to the applications that may need more resources.  <a href="#ac50dad870490ca7c60e0e15d86c02614">More...</a><br/></td></tr>
 <tr class="separator:ac50dad870490ca7c60e0e15d86c02614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c6c23dd95eccc220115af294d481219"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a4c6c23dd95eccc220115af294d481219">writeResults</a> (MYSQL *conn, char *dbName, <a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
+<tr class="separator:a4c6c23dd95eccc220115af294d481219"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bb052d7d9fd3cfe1a00ebd60f977afb"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a7bb052d7d9fd3cfe1a00ebd60f977afb">show_session_app_id</a> ()</td></tr>
+<tr class="separator:a7bb052d7d9fd3cfe1a00ebd60f977afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e3c7278556780b9fb1e530c740b41de"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a6e3c7278556780b9fb1e530c740b41de">show_bounds</a> ()</td></tr>
+<tr class="separator:a6e3c7278556780b9fb1e530c740b41de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54f580f3d93657bdf72420d338551087"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a54f580f3d93657bdf72420d338551087">show_solution</a> ()</td></tr>
+<tr class="separator:a54f580f3d93657bdf72420d338551087"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -129,8 +137,6 @@ Friends</h2></td></tr>
 <tr class="separator:aea88561fddd2e924cebf793f0cfdc8b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab332b708060d79472caf1a215fe8b6a9"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#ab332b708060d79472caf1a215fe8b6a9">ObjFun</a></td></tr>
 <tr class="separator:ab332b708060d79472caf1a215fe8b6a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a327fdf85cb600d4bb50ff32c2462c699"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a327fdf85cb600d4bb50ff32c2462c699">writeResults</a> (MYSQL *conn, char *dbName, <a class="el" href="classBatch.html">Batch</a> &amp;App_manager, <a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
-<tr class="separator:a327fdf85cb600d4bb50ff32c2462c699"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class manages the applications; it stores applications data in a vector and it provides methods useful to apply before executing the localSearch </p>
@@ -176,14 +182,14 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>It calculates nu indices for each application and stores it in each "Application" object. </p>
+<p>It calculates nu indices for each application and stores it in each "Application" object. It also initializes the number of cores. </p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBatch_a14f132321413b45d6446200807451414_cgraph.png" border="0" usemap="#classBatch_a14f132321413b45d6446200807451414_cgraph" alt=""/></div>
 <map name="classBatch_a14f132321413b45d6446200807451414_cgraph" id="classBatch_a14f132321413b45d6446200807451414_cgraph">
-<area shape="rect" id="node2" href="classoptJrParameters.html#a9bb0e783bd6bf555e86cea874f13cb4f" title="Returns the available number of cores. " alt="" coords="192,5,336,46"/><area shape="rect" id="node3" href="debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="209,71,319,97"/></map>
+<area shape="rect" id="node2" href="classoptJrParameters.html#a9bb0e783bd6bf555e86cea874f13cb4f" title="optJrParameters::get\l_number" alt="" coords="192,5,336,46"/><area shape="rect" id="node3" href="debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="209,71,319,97"/></map>
 </div>
 </p>
 
@@ -219,7 +225,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBatch_ac50dad870490ca7c60e0e15d86c02614_cgraph.png" border="0" usemap="#classBatch_ac50dad870490ca7c60e0e15d86c02614_cgraph" alt=""/></div>
 <map name="classBatch_ac50dad870490ca7c60e0e15d86c02614_cgraph" id="classBatch_ac50dad870490ca7c60e0e15d86c02614_cgraph">
-<area shape="rect" id="node2" href="classoptJrParameters.html#a9bb0e783bd6bf555e86cea874f13cb4f" title="Returns the available number of cores. " alt="" coords="211,5,355,46"/><area shape="rect" id="node3" href="debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="227,71,338,97"/></map>
+<area shape="rect" id="node2" href="classoptJrParameters.html#a9bb0e783bd6bf555e86cea874f13cb4f" title="optJrParameters::get\l_number" alt="" coords="211,5,355,46"/><area shape="rect" id="node3" href="debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="227,71,338,97"/></map>
 </div>
 </p>
 
@@ -286,6 +292,120 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a class="anchor" id="a6e3c7278556780b9fb1e530c740b41de"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Batch::show_bounds </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBatch_a6e3c7278556780b9fb1e530c740b41de_icgraph.png" border="0" usemap="#classBatch_a6e3c7278556780b9fb1e530c740b41de_icgraph" alt=""/></div>
+<map name="classBatch_a6e3c7278556780b9fb1e530c740b41de_icgraph" id="classBatch_a6e3c7278556780b9fb1e530c740b41de_icgraph">
+<area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="197,5,248,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7bb052d7d9fd3cfe1a00ebd60f977afb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Batch::show_session_app_id </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBatch_a7bb052d7d9fd3cfe1a00ebd60f977afb_icgraph.png" border="0" usemap="#classBatch_a7bb052d7d9fd3cfe1a00ebd60f977afb_icgraph" alt=""/></div>
+<map name="classBatch_a7bb052d7d9fd3cfe1a00ebd60f977afb_icgraph" id="classBatch_a7bb052d7d9fd3cfe1a00ebd60f977afb_icgraph">
+<area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="200,12,251,39"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a54f580f3d93657bdf72420d338551087"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Batch::show_solution </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBatch_a54f580f3d93657bdf72420d338551087_icgraph.png" border="0" usemap="#classBatch_a54f580f3d93657bdf72420d338551087_icgraph" alt=""/></div>
+<map name="classBatch_a54f580f3d93657bdf72420d338551087_icgraph" id="classBatch_a54f580f3d93657bdf72420d338551087_icgraph">
+<area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="397,5,448,32"/><area shape="rect" id="node3" href="classSearch.html#a72dc9b3fa3f4f6dd83fcb88968b7448d" title="Search::print_solution" alt="" coords="201,31,349,57"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4c6c23dd95eccc220115af294d481219"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Batch::writeResults </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>conn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>dbName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;&#160;</td>
+          <td class="paramname"><em>par</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>writeResults prints the results of the localSearch application (number of cores and VM) in a DB table. If a result for a (session_id, application_id) already exists, then it is replaced. </p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBatch_a4c6c23dd95eccc220115af294d481219_icgraph.png" border="0" usemap="#classBatch_a4c6c23dd95eccc220115af294d481219_icgraph" alt=""/></div>
+<map name="classBatch_a4c6c23dd95eccc220115af294d481219_icgraph" id="classBatch_a4c6c23dd95eccc220115af294d481219_icgraph">
+<area shape="rect" id="node2" href="classSearch.html#a5fd3baeb685f1ab699743b9a1d2fc4d6" title="Search::writeResults" alt="" coords="192,5,336,32"/><area shape="rect" id="node3" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="384,5,435,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
 <h2 class="groupheader">Friends And Related Function Documentation</h2>
 <a class="anchor" id="ac174a08cdaebb01dfd90673034f10fab"></a>
 <div class="memitem">
@@ -344,53 +464,6 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a327fdf85cb600d4bb50ff32c2462c699"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void writeResults </td>
-          <td>(</td>
-          <td class="paramtype">MYSQL *&#160;</td>
-          <td class="paramname"><em>conn</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>dbName</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classBatch.html">Batch</a> &amp;&#160;</td>
-          <td class="paramname"><em>App_manager</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;&#160;</td>
-          <td class="paramname"><em>par</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>writeResults prints the results of the localSearch application (number of cores and VM) in a DB table. If a result for a (session_id, application_id) already exists, then it is replaced. </p>
 
 </div>
 </div>

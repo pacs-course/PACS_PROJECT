@@ -15,32 +15,50 @@
 
 class Search{
 
-  Batch App_manager;
-  sCandidates approximatedLoop( Batch &App_manager, int &iteration, optJrParameters &par );
-  void checkTotalNodes(int N, Batch &App_manager);
-  //static void sequencial_localSearch(sConfiguration &configuration, MYSQL *conn, Batch &App_manager , optJrParameters &par);
-  //static void openMP_localSearch(sConfiguration &configuration, MYSQL *conn, Batch &App_manager , optJrParameters &par);
-public:
-  Search(Batch app_m): App_manager(app_m){};
   /**
-    localSearch perform a local search of a solution minimizing the objective function;
-    it performs cores exchanges between pairs of application and chooses the best pair. The
-    search stops when no improvements are possible or the maximum number of iteration is reached.
-    The function looks before at approximated values of objective function and then
-    for the potential best pairs it invokes the predictor.
+  Batch object as described in Batch class
+  */
+  Batch App_manager;
+
+  /**
+  It estimates the objective function for each move.
+  The candidate applications for which the move is profitable are stored in a
+  sCandidate object
+  */
+  sCandidates approximatedLoop( Batch &App_manager, int &iteration, optJrParameters &par );
+
+  /**
+  It checks that the total allocated nodes is still less or equal
+  than the total number of cores available N
+  */
+  void checkTotalNodes(int N, Batch &App_manager);
+
+public:
+
+  Search(Batch app_m): App_manager(app_m){};
+
+  /**
+  localSearch perform a local search of a solution minimizing the objective function;
+  it performs cores exchanges between pairs of application and chooses the best pair. The
+  search stops when no improvements are possible or the maximum number of iteration is reached.
+  The function looks before at approximated values of objective function and then
+  for the potential best pairs it invokes the predictor.
   */
   void localSearch(sConfiguration &configuration, MYSQL *conn,  optJrParameters &par);
 
+  /**
+  It calls writeResults member function of App_manager private member
+
+  */
   void writeResults(MYSQL *conn, char * dbName,  optJrParameters &par);
 
-
+  /**
+  It prints the output of App_manager.show_solution
+  */
 
   void print_solution();
 
-  Batch get_app_manager()
-  {
-    return App_manager;
-  }
+  Batch get_app_manager(){    return App_manager;}
 
 };
 

@@ -10,6 +10,8 @@ var searchData=
   ['set_5fr_5fd',['set_R_d',['../classApplication.html#a74d83f1191a1ab311c055da4d0d8d8d9',1,'Application']]],
   ['set_5fterm_5fi',['set_term_i',['../classApplication.html#a5a4a2ea2cb6d85978d9eee95d02c6689',1,'Application']]],
   ['set_5fvm',['set_vm',['../classApplication.html#a26df38cf838de9baf1ed5e5923b32124',1,'Application']]],
-  ['show_5fsolution',['show_solution',['../classSearch.html#a421161ac4a63ea88eb86832395e32ab5',1,'Search']]],
+  ['show_5fbounds',['show_bounds',['../classBatch.html#a6e3c7278556780b9fb1e530c740b41de',1,'Batch']]],
+  ['show_5fsession_5fapp_5fid',['show_session_app_id',['../classBatch.html#a7bb052d7d9fd3cfe1a00ebd60f977afb',1,'Batch']]],
+  ['show_5fsolution',['show_solution',['../classBatch.html#a54f580f3d93657bdf72420d338551087',1,'Batch']]],
   ['statistic',['Statistic',['../classStatistic.html#a26751917fec693e54f53ddd82bdcfeb6',1,'Statistic']]]
 ];

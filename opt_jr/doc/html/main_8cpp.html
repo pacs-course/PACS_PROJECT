@@ -107,7 +107,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &quot;<a class="el" href="objectiveFunction_8hh_source.html">objectiveFunction.hh</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="candidates_8hh_source.html">candidates.hh</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="utility_8hh_source.html">utility.hh</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="writeResults_8hh_source.html">writeResults.hh</a>&quot;</code><br/>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -143,7 +142,7 @@ Functions</h2></td></tr>
 <p>3) Connect to the Database</p>
 <p>4) Open *.csv file with Applications data, and save it in a "Batch" object</p>
 <p>5) Calculate bounds for each application loaded (with the calculateBounds method of <a class="el" href="classBounds.html">Bounds</a> class)</p>
-<p>6) Calculate nu indices for each application (with the calculate_nu method of <a class="el" href="classBatch.html">Batch</a> class)</p>
+<p>6) Calculate nu indices for each application (with the calculate_nu method of <a class="el" href="classBatch.html">Batch</a> class). It also initializes the number of cores.</p>
 <p>7) Fix initial solution (with the fixInitialSolution method of <a class="el" href="classBatch.html">Batch</a> class)</p>
 <p>8) Initialize Objective Function evaluation for each application (with the initalize method of <a class="el" href="classBatch.html">Batch</a> class)</p>
 <p>9) Find an "optimal" solution invoking "localSearch" method (of "Search" class)</p>

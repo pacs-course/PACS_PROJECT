@@ -7,17 +7,9 @@
 #include "invokePredictor.hh"
 
 
-
-
-
 #define R_ALGORITHM 0 ///< R_ALGORITHM: currently redundant, it specifies how the objective function should be computed
 /*#define CORES_ALGORITHM 1
 #define NCORES_ALGORITHM 2*/
-
-
-
-
-
 
 
 /**
@@ -26,11 +18,11 @@
 */
 class Application{
 
-	/*Values used by computeAlphaBeta*/
-	double nCores_old;
-	double nCores_new;
-	double R_old;
-	double R_new;
+
+	double nCores_old;   ///<Value used by computeAlphaBeta
+	double nCores_new;   ///<Value used by computeAlphaBeta
+	double R_old;        ///<Value used by computeAlphaBeta
+	double R_new;        ///<Value used by computeAlphaBeta
 	int boundIterations=0;       ///< Index for Hyperbolic interpolation
 
 	/* Static values */
@@ -51,7 +43,7 @@ class Application{
 	const int mode=R_ALGORITHM; 				///< How the objective function is calculated (currently redundant)
 
 	/* Dynamic values */
-	double nu_d; ///< nu value
+	double nu_d;        ///< nu value
 	int  currentCores_d;		///< Initialized to nu_i
 	int  nCores_DB_d;			///< Initialized to the value from look-up table
 	int bound;					///< Bound (number of cores)
@@ -75,187 +67,42 @@ public:
 	/*
 	GETTER FUNCTIONS
 	*/
-
-	std::string get_session_app_id()
-	{
-	  return session_app_id;
-	}
-
-	std::string get_app_id()
-	{
-	  return app_id;
-	}
-
-	double get_w()
-	{
-	  return w;
-	}
-
-	double get_term_i()
-	{
-	  return term_i;
-	}
-
-	double get_chi_0()
-	{
-	  return chi_0;
-	}
-
-	double get_chi_C()
-	{
-	  return chi_C;
-	}
-
-	double get_m()
-	{
-	  return m;
-	}
-
-	double get_M()
-	{
-	  return M;
-	}
-
-	double get_v()
-	{
-	  return v;
-	}
-
-	double get_V()
-	{
-	  return V;
-	}
-
-	double get_Deadline_d()
-	{
-	  return Deadline_d;
-	}
-
-	double get_csi()
-	{
-	  return csi;
-	}
-
-	std::string get_stage()
-	{
-	  return stage;
-	}
-
-	int get_dataset_size()
-	{
-		return dataset_size;
-	}
-
-	int get_mode()
-	{
-		return mode;
-	}
-
-	int get_currentCores_d()
-	{
-		return currentCores_d;
-	}
-
-	double get_nu_d()
-	{
-		return nu_d;
-	}
-
-	int get_nCores_DB_d()
-	{
-		return nCores_DB_d;
-	}
-
-	int get_bound()
-	{
-		return bound;
-	}
-
-	double get_R_d()
-	{
-	  return R_d;
-	}
-
-	double get_baseFO()
-	{
-	  return baseFO;
-	}
-
-	int get_vm()
-	{
-		return vm;
-	}
-
-	double get_alpha()
-	{
-	  return alpha;
-	}
-
-	double get_beta()
-	{
-	  return beta;
-	}
+	const std::string get_session_app_id(){  return session_app_id;}
+	const std::string get_app_id(){  return app_id;}
+	const double get_w(){	  return w;}
+	double get_term_i(){  return term_i;}
+	const double get_chi_0(){ return chi_0;}
+	const double get_chi_C(){ return chi_C;}
+	const double get_m(){  return m;}
+	const double get_M(){  return M;}
+	const double get_v(){ return v;}
+	const double get_V(){  return V;}
+	const double get_Deadline_d(){  return Deadline_d;}
+	const double get_csi(){  return csi;}
+	const std::string get_stage(){  return stage;	}
+	const int get_dataset_size()	{	return dataset_size;}
+	const int get_mode(){	return mode;}
+	const int get_currentCores_d(){return currentCores_d;}
+	double get_nu_d(){return nu_d;}
+	int get_nCores_DB_d(){	return nCores_DB_d;}
+	int get_bound(){	return bound;}
+	double get_R_d(){  return R_d;}
+	double get_baseFO(){ return baseFO;}
+	int get_vm(){	return vm;}
+	double get_alpha(){ return alpha;}
+	double get_beta(){ return beta;}
 
 	/*
 			SETTER FUNCTIONS
 	*/
-
-
-
-
-	void set_term_i(double t_i)
-	{
-		term_i=t_i;
-	}
-
-	void set_currentCores_d(int c_d)
-	{
-		currentCores_d=c_d;
-	}
-
-	void set_nu_d(double n)
-	{
-		nu_d=n;
-	}
-
-	void  set_nCores_DB_d(int n)
-	{
-		nCores_DB_d=n;
-	}
-
-	void set_bound (int b)
-	{
-		bound= b;
-	}
-
-	void set_R_d(double r)
-	{
-		R_d=r;
-	}
-
-	void set_baseFO(double f)
-	{
-		baseFO=f;
-	}
-
-	void set_vm(int v)
-	{
-		vm=v;
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	void set_term_i(double t_i){	term_i=t_i;}
+	void set_currentCores_d(int c_d){	currentCores_d=c_d;}
+  void set_nu_d(double n){	nu_d=n;}
+	void  set_nCores_DB_d(int n){	nCores_DB_d=n;	}
+	void set_bound (int b){	bound= b;}
+	void set_R_d(double r){	R_d=r;}
+	void set_baseFO(double f){baseFO=f;}
+	void set_vm(int v){vm=v;}
 
 
 };
