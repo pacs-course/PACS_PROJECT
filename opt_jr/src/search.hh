@@ -15,8 +15,8 @@
 
 class Search{
 
-  static sCandidates approximatedLoop( Batch &App_manager, int &iteration, optJrParameters &par );
-  static void checkTotalNodes(int N, Batch &App_manager);
+  sCandidates approximatedLoop( Batch &App_manager, int &iteration, optJrParameters &par );
+  void checkTotalNodes(int N, Batch &App_manager);
   //static void sequencial_localSearch(sConfiguration &configuration, MYSQL *conn, Batch &App_manager , optJrParameters &par);
   //static void openMP_localSearch(sConfiguration &configuration, MYSQL *conn, Batch &App_manager , optJrParameters &par);
 public:
@@ -27,7 +27,7 @@ public:
     The function looks before at approximated values of objective function and then
     for the potential best pairs it invokes the predictor.
   */
-  static void localSearch(sConfiguration &configuration, MYSQL *conn, Batch &App_manager , optJrParameters &par);
+  void localSearch(sConfiguration &configuration, MYSQL *conn, Batch &App_manager , optJrParameters &par);
 
 };
 

@@ -65,6 +65,7 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
     int ID=omp_get_thread_num();
     int index=0;
     int j=0;
+    ObjFun OF;
 
     // assign each app to a thread
     for (auto it=cand.begin(); it!=cand.end(); ++it ) // assign each app to a thread
@@ -82,10 +83,10 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
         if (it->app_i.get_currentCores_d() > 0 && it->app_j.get_currentCores_d() > 0)
         {
 
-          it->real_i = ObjFun::ObjFunctionComponent(configuration, conn2[ID], (it->app_i), par);
+          it->real_i = OF.ObjFunctionComponent(configuration, conn2[ID], (it->app_i), par);
           //it->nodes_i = it->app_i->get_currentCores_d();
 
-          it->real_j = ObjFun::ObjFunctionComponent(configuration, conn2[ID], (it->app_j), par);
+          it->real_j = OF.ObjFunctionComponent(configuration, conn2[ID], (it->app_j), par);
           //it->nodes_j = it->app_j->get_currentCores_d();
         }
 
@@ -107,6 +108,7 @@ void sCandidates::invokePredictorSeq(MYSQL *conn, optJrParameters &par, sConfigu
 
   int MAX_PROMISING_CONFIGURATIONS =par.get_K();
   int index=0;
+  ObjFun OF;
 
   for (auto it = cand.begin(); it != cand.end(); it++)
   {
@@ -125,8 +127,8 @@ void sCandidates::invokePredictorSeq(MYSQL *conn, optJrParameters &par, sConfigu
       //it->app_i.mode= R_ALGORITHM; it->app_j.mode= R_ALGORITHM;
       // No openmp
       debugMsg =  " CALLING OBJ_FUNCTION_COMPONENT \n\n"; debugMessage(debugMsg, par);
-      it->real_i = ObjFun::ObjFunctionComponent(configuration, conn, it->app_i, par);
-      it->real_j = ObjFun::ObjFunctionComponent(configuration, conn, it->app_j, par);
+      it->real_i = OF.ObjFunctionComponent(configuration, conn, it->app_i, par);
+      it->real_j = OF.ObjFunctionComponent(configuration, conn, it->app_j, par);
     }
     index++;
   }

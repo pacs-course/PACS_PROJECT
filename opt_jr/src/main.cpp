@@ -152,8 +152,9 @@ int main(int argc, char **argv)
   std::cout << Msg;
 
   gettimeofday(&tv_initial_bounds, NULL);
+  Bounds Bounds_eval;
 
-  Bounds::calculateBounds(App_manager, configuration, conn, par );
+  Bounds_eval.calculateBounds(App_manager, configuration, conn, par );
 
   gettimeofday(&tv_final_bounds, NULL);
 
@@ -247,7 +248,9 @@ int main(int argc, char **argv)
 
   gettimeofday(&tv_initial_locals, NULL);
 
-  Search::localSearch(configuration, conn, App_manager,  par );
+  Search search_eval;
+
+  search_eval.localSearch(configuration, conn, App_manager,  par );
 
   gettimeofday(&tv_final_locals, NULL);
 

@@ -16,10 +16,10 @@
 class Bounds {
 
   // helper function, see .cpp file for detailed description
-  static void  Bound(sConfiguration &configuration, MYSQL *conn, Application &app,
+  void  Bound(sConfiguration &configuration, MYSQL *conn, Application &app,
               optJrParameters &par, int flagDagsim);
   // helper function, see .cpp file for detailed description
-  static void findBound(sConfiguration &configuration, MYSQL *conn, char* db,  Application &app,
+  void findBound(sConfiguration &configuration, MYSQL *conn, char* db,  Application &app,
                  optJrParameters &par);
 public:
 
@@ -30,7 +30,7 @@ public:
   invokes the predictor doing a "HILL CLIMBING". If the number of threads in the configuration file is
   greater than 0, it does the computations in parallel (using openMP).
   */
-  static void calculateBounds(Batch  & app_manager, sConfiguration &configuration,
+  void calculateBounds(Batch  & app_manager, sConfiguration &configuration,
                        MYSQL *conn,  optJrParameters &par);
 
 };

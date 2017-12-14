@@ -20,6 +20,7 @@ sCandidates Search::approximatedLoop( Batch &App_manager, int &iteration, optJrP
 {
 
   std::string debugMsg;
+  ObjFun OF;
 
 
 	if (App_manager.APPs.empty())
@@ -37,6 +38,7 @@ sCandidates Search::approximatedLoop( Batch &App_manager, int &iteration, optJrP
 
 	debugMsg= "Approximated iterated loop"; debugMessage(debugMsg, par);
   auto application_i=App_manager.APPs.begin();
+
 
   while (application_i!=App_manager.APPs.end())
   {
@@ -66,10 +68,10 @@ sCandidates Search::approximatedLoop( Batch &App_manager, int &iteration, optJrP
 
 				if (application_i->get_currentCores_d() > 0 && application_j->get_currentCores_d() > 0)
 				{
-					DELTA_fo_App_i = ObjFun::ObjFunctionComponentApprox(*application_i, par) - application_i->get_baseFO();
+					DELTA_fo_App_i = OF.ObjFunctionComponentApprox(*application_i, par) - application_i->get_baseFO();
 					debugMsg = "app " + application_i->get_session_app_id() + "DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i);debugMessage(debugMsg, par);
 
-					DELTA_fo_App_j = ObjFun::ObjFunctionComponentApprox(*application_j, par) - application_j->get_baseFO();
+					DELTA_fo_App_j = OF.ObjFunctionComponentApprox(*application_j, par) - application_j->get_baseFO();
           debugMsg = "app " + application_j->get_session_app_id() + "DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j);debugMessage(debugMsg, par);
 
 
@@ -152,6 +154,7 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
    sStatistics statistics;
    int index_pair=-1, index=0; //Those values are useful to detect the best pair
    double DELTA_pair=0, DELTA_tmp;
+   ObjFun OF;
 
    debugMsg =  "\n     ***** Estimate the candidates for the predictor ******\n"; debugMessage(debugMsg, par);
 
@@ -275,7 +278,7 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
 
      if (par.get_globalFOcalculation())
      {
-       TotalFO = ObjFun::ObjFunctionGlobal(configuration, conn, App_manager, par);
+       TotalFO = OF.ObjFunctionGlobal(configuration, conn, App_manager, par);
        std::cout << "\n At iteration: "<< iteration << " GLOBAL OBJECTIVE FUNCTION = "<< TotalFO <<"\n"<<std::endl;
        addStatistics(statistics, iteration, how_many, TotalFO); // Update Statistics
      }

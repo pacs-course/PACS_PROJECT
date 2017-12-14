@@ -21,18 +21,18 @@ public:
    Currently, only one method is supported. Note that the algorithm's choice is stored in the "mode" field
    of the application structure.
    */
-  static double ObjFunctionComponent(sConfiguration &configuration, MYSQL *conn, Application  &app, optJrParameters &par);
+  double ObjFunctionComponent(sConfiguration &configuration, MYSQL *conn, Application  &app, optJrParameters &par);
 
   /**
   ObjFunctionComponentApprox computes an approximation of the objective function (and update R_d)
   */
-  static double ObjFunctionComponentApprox(Application &App, optJrParameters &par);
+  double ObjFunctionComponentApprox(Application &App, optJrParameters &par);
 
 
   /**
   ObjFunctionGlobal computes the value of the total objective function
   */
-  static double ObjFunctionGlobal(sConfiguration &configuration, MYSQL *conn, Batch &App_manager, optJrParameters &par);
+  double ObjFunctionGlobal(sConfiguration &configuration, MYSQL *conn, Batch &App_manager, optJrParameters &par);
 
 
 };
