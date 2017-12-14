@@ -18,7 +18,6 @@
 #include "objectiveFunction.hh"
 #include "candidates.hh"
 #include "utility.hh"
-#include "writeResults.hh"
 
 
 int main(int argc, char **argv)
@@ -166,7 +165,8 @@ int main(int argc, char **argv)
 
 
   /**
-    6) Calculate nu indices for each application (with the calculate_nu method of Batch class)
+    6) Calculate nu indices for each application (with the calculate_nu method of Batch class).
+    It also initializes the number of cores.
   */
   debugMsg = "\n\n*******************************************************************\n";
   debugMsg +="************       COMPUTING NU INDICES         *******************\n";

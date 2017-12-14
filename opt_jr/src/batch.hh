@@ -15,8 +15,7 @@ class Batch{
   friend class Bounds;
   friend class Search;
   friend class ObjFun;
-  friend void writeResults(MYSQL *conn, char * dbName, Batch &App_manager, optJrParameters &par);
-
+  
 private:
   /// The vector stores application data
   std::vector<Application> APPs;
@@ -30,7 +29,7 @@ public:
   /// Constructor expects a vector of application which should be given by the "readAppFile" function declared in "read_app_file.hh"
   Batch(std::vector<Application> apps): APPs(apps){};
 
-  /// It calculates nu indices for each application and stores it in each "Application" object
+  /// It calculates nu indices for each application and stores it in each "Application" object. It also initializes the number of cores.
   void calculate_nu(optJrParameters &par);
 
   /// For each application, a base value for the objective function is calculated.
