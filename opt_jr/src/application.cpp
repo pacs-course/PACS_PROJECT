@@ -14,11 +14,11 @@ Application::Application(std::string session_app_id, std::string app_id, double 
 
 void Application::computeAlphaBeta(int nCores_n, double R_n)
 {
-  if (index==0)
+  if (boundIterations==0)
   {
     R_new=R_n;
     nCores_new=nCores_n;
-    index++;
+    boundIterations++;
   }
   else
   {
@@ -28,6 +28,6 @@ void Application::computeAlphaBeta(int nCores_n, double R_n)
     nCores_new=nCores_n;
     beta = (nCores_old*R_old - nCores_new*R_new)/ (nCores_old-nCores_new);
     alpha =(R_new - beta)*nCores_new;
-    index++;
+    boundIterations++;
   }
 }

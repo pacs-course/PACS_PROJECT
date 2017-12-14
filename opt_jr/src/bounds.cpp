@@ -28,14 +28,14 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 	int nCores;
 	int nNodes = 1;
 
-	app.currentCores_d = app.nCores_DB_d;
+	app.set_currentCores_d(app.get_nCores_DB_d());
 
 
-	int X0 = ((int) ( app.currentCores_d / app.get_V()) ) * app.get_V();
-	app.currentCores_d = std::max( X0, ((int) app.get_V()));
+	int X0 = ((int) ( app.get_currentCores_d() / app.get_V()) ) * app.get_V();
+	app.set_currentCores_d( std::max( X0, ((int) app.get_V())));
 
 
-	nCores = app.currentCores_d;
+	nCores = app.get_currentCores_d();
 
 
 	/*
@@ -96,7 +96,7 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 				app.sAB.index = (app.sAB.index +1) % HYP_INTERPOLATION_POINTS;
 				*/
 
-				app.boundIterations++;
+				//app.boundIterations++;
 				app.computeAlphaBeta(nCores, predictorOutput);
 
 			}
@@ -134,19 +134,19 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 				app.sAB.vec[app.sAB.index].R = predictorOutput;
 				app.sAB.index = app.sAB.index % HYP_INTERPOLATION_POINTS; //NB:  sAB.index it's always the same!
 				*/
-				app.boundIterations++;
+				//app.boundIterations++;
 				app.computeAlphaBeta(nCores, predictorOutput);
 
 			}
 
 	/* Update the record with bound values */
 
-	app.currentCores_d = BCores;
-	app.R_d = BTime;
-	app.bound = BCores;
+	app.set_currentCores_d( BCores);
+	app.set_R_d( BTime);
+	app.set_bound( BCores);
 	debugMsg="\n\nSession_app_id : " + app.get_session_app_id() + " , APP_ID: " + app.get_app_id() +
-					 ", D = "+ std::to_string(app.get_Deadline_d()) + ", R =" + std::to_string(app.R_d)+
-					 ", bound = "+ std::to_string(app.bound) + "\n\n"; debugMessage(debugMsg, par);
+					 ", D = "+ std::to_string(app.get_Deadline_d()) + ", R =" + std::to_string(app.get_R_d())+
+					 ", bound = "+ std::to_string(app.get_bound()) + "\n\n"; debugMessage(debugMsg, par);
 
 
 }
@@ -181,10 +181,10 @@ void Bounds::findBound(sConfiguration &configuration, MYSQL *conn, char* db,  Ap
       exit(-1);
     }
 
-    app.nCores_DB_d = atoi(row[0]);
-    app.vm = atoi(row[1]);
-		debugMsg=" From findbound a first estimate on ncores:"+  std::to_string(app.nCores_DB_d)
-							+" and VM: "+ std::to_string(app.vm) + " for application "+app.get_app_id() ;debugMessage(debugMsg, par);
+    app.set_nCores_DB_d( atoi(row[0]));
+    app.set_vm(atoi(row[1]));
+		debugMsg=" From findbound a first estimate on ncores:"+  std::to_string(app.get_nCores_DB_d())
+							+" and VM: "+ std::to_string(app.get_vm()) + " for application "+app.get_app_id() ;debugMessage(debugMsg, par);
 
 
 

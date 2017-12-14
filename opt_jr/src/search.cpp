@@ -56,20 +56,20 @@ sCandidates Search::approximatedLoop( Batch &App_manager, int &iteration, optJrP
 				// Change the currentCores, but rollback later
 				int deltaNCores_i = DELTAVM_i * application_i->get_V();
 				int deltaNCores_j = DELTAVM_j * application_j->get_V();
-				application_i->currentCores_d = application_i->currentCores_d + deltaNCores_i;
-				application_j->currentCores_d = application_j->currentCores_d - deltaNCores_j;
+				application_i->set_currentCores_d( application_i->get_currentCores_d() + deltaNCores_i);
+				application_j->set_currentCores_d(application_j->get_currentCores_d() - deltaNCores_j);
 
 
-				debugMsg= "After cores exchange: app " + application_i->get_session_app_id() + " currentCores " + std::to_string((int)application_i->currentCores_d);debugMessage(debugMsg, par);
-        debugMsg= "After cores exchange: app " + application_j->get_session_app_id() + " currentCores " + std::to_string((int)application_j->currentCores_d);debugMessage(debugMsg, par);
+				debugMsg= "After cores exchange: app " + application_i->get_session_app_id() + " currentCores " + std::to_string((int)application_i->get_currentCores_d());debugMessage(debugMsg, par);
+        debugMsg= "After cores exchange: app " + application_j->get_session_app_id() + " currentCores " + std::to_string((int)application_j->get_currentCores_d());debugMessage(debugMsg, par);
 
 
-				if (application_i->currentCores_d > 0 && application_j->currentCores_d > 0)
+				if (application_i->get_currentCores_d() > 0 && application_j->get_currentCores_d() > 0)
 				{
-					DELTA_fo_App_i = ObjFun::ObjFunctionComponentApprox(*application_i, par) - application_i->baseFO;
+					DELTA_fo_App_i = ObjFun::ObjFunctionComponentApprox(*application_i, par) - application_i->get_baseFO();
 					debugMsg = "app " + application_i->get_session_app_id() + "DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i);debugMessage(debugMsg, par);
 
-					DELTA_fo_App_j = ObjFun::ObjFunctionComponentApprox(*application_j, par) - application_j->baseFO;
+					DELTA_fo_App_j = ObjFun::ObjFunctionComponentApprox(*application_j, par) - application_j->get_baseFO();
           debugMsg = "app " + application_j->get_session_app_id() + "DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j);debugMessage(debugMsg, par);
 
 
@@ -81,8 +81,8 @@ sCandidates Search::approximatedLoop( Batch &App_manager, int &iteration, optJrP
             debugMsg= "\n\nAdding candidate  \n\n "; debugMessage(debugMsg, par);
 						sCandidateApproximated.addCandidate( *application_i ,
 									                               *application_j ,
-									                                application_i->currentCores_d,
-									                                application_j->currentCores_d,
+									                                application_i->get_currentCores_d(),
+									                                application_j->get_currentCores_d(),
 									                                DELTA_fo_App_i + DELTA_fo_App_j,
 									                                DELTAVM_i,
 									                                DELTAVM_j) ;
@@ -92,8 +92,8 @@ sCandidates Search::approximatedLoop( Batch &App_manager, int &iteration, optJrP
 
 				}
 
-				application_i->currentCores_d = application_i->currentCores_d - DELTAVM_i*application_i->get_V();
-				application_j->currentCores_d = application_j->currentCores_d + DELTAVM_j*application_j->get_V();
+				application_i->set_currentCores_d( application_i->get_currentCores_d() - DELTAVM_i*application_i->get_V());
+				application_j->set_currentCores_d( application_j->get_currentCores_d() + DELTAVM_j*application_j->get_V());
 			}
 		application_j++;
 		}
@@ -123,7 +123,7 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
 
 	for (auto it= App_manager.APPs.begin(); it!=App_manager.APPs.end();++it)
 	{
-		total+= it->currentCores_d;
+		total+= it->get_currentCores_d();
 		if (total > N)
 		{
 			printf("Fatal Error: checkTotalNodes: Total current nodes (%d) exceeds maximum nodes number (%d)\n", total, N);
@@ -218,11 +218,11 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
          break;
        }
 
-       if (it->app_i.currentCores_d > 0 && it->app_j.currentCores_d > 0) // For those pairs, object function evaluation calculated earlier
+       if (it->app_i.get_currentCores_d() > 0 && it->app_j.get_currentCores_d() > 0) // For those pairs, object function evaluation calculated earlier
        {
 
-         DELTA_fo_App_i = it->real_i - it->app_i.baseFO;
-         DELTA_fo_App_j = it->real_j - it->app_j.baseFO;
+         DELTA_fo_App_i = it->real_i - it->app_i.get_baseFO();
+         DELTA_fo_App_j = it->real_j - it->app_j.get_baseFO();
 
          DELTA_tmp=DELTA_fo_App_i+DELTA_fo_App_j;
 
@@ -258,13 +258,13 @@ void Search::checkTotalNodes(int N, Batch &App_manager)
        {
          if (it->app_i.get_app_id()==elem.get_app_id() && it->app_i.get_session_app_id()==elem.get_session_app_id())
          {
-           elem.currentCores_d = it->newCoreAssignment_i;
-           elem.baseFO= it->real_i;
+           elem.set_currentCores_d( it->newCoreAssignment_i);
+           elem.set_baseFO( it->real_i);
          }
          if (it->app_j.get_app_id()==elem.get_app_id() && it->app_j.get_session_app_id()==elem.get_session_app_id())
          {
-           elem.currentCores_d =  it->newCoreAssignment_j;
-           elem.baseFO= it->real_j;
+           elem.set_currentCores_d( it->newCoreAssignment_j);
+           elem.set_baseFO( it->real_j);
          }
        }
      }

@@ -20,19 +20,19 @@ double ObjFun::ObjFunctionComponent(sConfiguration &configuration, MYSQL *conn, 
 	double output;
 
 	/* The memory pattern can be anything such as "*" */
-	app.R_d = atof(invokePredictor( configuration, conn, 1, app.currentCores_d, (char*)"*", app.get_dataset_size(),  const_cast<char*>((app.get_session_app_id()).c_str()),
-													const_cast<char*>((app.get_app_id()).c_str()), const_cast<char*>((app.get_stage()).c_str()), par,RESIDUAL_DAGSIM));
+	app.set_R_d( atof(invokePredictor( configuration, conn, 1, app.get_currentCores_d(), (char*)"*", app.get_dataset_size(),  const_cast<char*>((app.get_session_app_id()).c_str()),
+													const_cast<char*>((app.get_app_id()).c_str()), const_cast<char*>((app.get_stage()).c_str()), par,RESIDUAL_DAGSIM)));
 
 
 	/* Determine how the obj function needs to be calculated */
 	switch(app.get_mode())
 	{
 		case R_ALGORITHM:
-				debugMsg = "ObjFunctionComponent W " + std::to_string(app.get_w()) + "   R_d " + std::to_string(app.R_d) + "  D " + std::to_string(app.get_Deadline_d()); debugMessage(debugMsg, par);
-				if (app.R_d > app.get_Deadline_d())
-					output = app.get_w() * (app.R_d - app.get_Deadline_d());
+				debugMsg = "ObjFunctionComponent W " + std::to_string(app.get_w()) + "   R_d " + std::to_string(app.get_R_d()) + "  D " + std::to_string(app.get_Deadline_d()); debugMessage(debugMsg, par);
+				if (app.get_R_d() > app.get_Deadline_d())
+					output = app.get_w() * (app.get_R_d() - app.get_Deadline_d());
 				else output = 0;
-				debugMsg = "Compute FO for app " + app.get_session_app_id() + " currentCores_d " + std::to_string((int)app.currentCores_d) + "  R " + std::to_string(app.R_d) + " FO = "+  std::to_string(output); debugMessage(debugMsg, par);
+				debugMsg = "Compute FO for app " + app.get_session_app_id() + " currentCores_d " + std::to_string((int)app.get_currentCores_d()) + "  R " + std::to_string(app.get_R_d()) + " FO = "+  std::to_string(output); debugMessage(debugMsg, par);
 			break;
 			/*
 		case CORES_ALGORITHM:
@@ -43,7 +43,7 @@ double ObjFun::ObjFunctionComponent(sConfiguration &configuration, MYSQL *conn, 
 			break;
 		case NCORES_ALGORITHM:
 			printf("NCores Algorithm\n");
-				if (app.newCores >app.bound) output = 0;
+				if (app.newCores >app.get_bound()) output = 0;
 				else output = app.get_w() * app.R - app.R;
 			break;
 			*/
@@ -71,16 +71,16 @@ double ObjFun::ObjFunctionComponentApprox(Application &App, optJrParameters &par
 	double output;
 
 
-	App.R_d = App.alpha/App.currentCores_d + App.beta; // update R_d
+	App.set_R_d( App.get_alpha()/App.get_currentCores_d() + App.get_beta()); // update R_d
 
 	/* Determine how the obj function needs to be calculated */
 
-	debugMsg= "W " + std::to_string(App.get_w()) + " R_d " + std::to_string(App.R_d) + " D " + std::to_string(App.get_Deadline_d()); debugMessage(debugMsg, par);
-	if (App.R_d > App.get_Deadline_d())
-		output = App.get_w() * (App.R_d - App.get_Deadline_d());//NB: is it correct? very high values
+	debugMsg= "W " + std::to_string(App.get_w()) + " R_d " + std::to_string(App.get_R_d()) + " D " + std::to_string(App.get_Deadline_d()); debugMessage(debugMsg, par);
+	if (App.get_R_d() > App.get_Deadline_d())
+		output = App.get_w() * (App.get_R_d() - App.get_Deadline_d());//NB: is it correct? very high values
 	else output = 0;
 		debugMsg = "Compute FO for app " +  App.get_session_app_id() + " currentCores_d"
-                + std::to_string((int)App.currentCores_d) + " R "+ std::to_string(App.R_d)
+                + std::to_string((int)App.get_currentCores_d()) + " R "+ std::to_string(App.get_R_d())
                 + " FO=" + std::to_string(output); debugMessage(debugMsg, par);
 
 	return output;

@@ -86,14 +86,14 @@ Batch::calculate_nu(optJrParameters &par)
 
   for (auto it=APPs.begin(); it!=APPs.end(); it++)
   {
-    if (it==APPs.begin()) it->nu_d = nu_1;
+    if (it==APPs.begin()) it->set_nu_d(nu_1);
     else
     {
-      it->nu_d = (it->get_term_i()/(1 + tot))*N;
+      it->set_nu_d( (it->get_term_i()/(1 + tot))*N);
     }
 
-    it->currentCores_d = it->nu_d;
-    debugMsg="App ID: " + it->get_app_id() + ", NU: " + std::to_string(it->nu_d); debugMessage(debugMsg, par);
+    it->set_currentCores_d( it->get_nu_d());
+    debugMsg="App ID: " + it->get_app_id() + ", NU: " + std::to_string(it->get_nu_d()); debugMessage(debugMsg, par);
 
 
 
@@ -118,10 +118,10 @@ void Batch::initialize(sConfiguration  &configuration, MYSQL *conn, optJrParamet
 	for (auto it =APPs.begin(); it!= APPs.end(); it++)
 	{
 			//it->mode = R_ALGORITHM; //currently only this method is supported
-			it->baseFO = ObjFun::ObjFunctionComponent(configuration, conn, *it, par);
-			it->initialBaseFO = it->baseFO;
+			it->set_baseFO( ObjFun::ObjFunctionComponent(configuration, conn, *it, par));
+			//it->initialBaseFO = it->get_baseFO();
 			debugMsg = "INITIALIZE BASE FO for APP "+ it->get_session_app_id()
-                + " baseFO = " + std::to_string(it->baseFO)+"\n"; debugMessage(debugMsg, par);
+                + " baseFO = " + std::to_string(it->get_baseFO())+"\n"; debugMessage(debugMsg, par);
 	}
 
 
@@ -151,9 +151,9 @@ void Batch::fixInitialSolution(optJrParameters &par)
 	for(auto it = APPs.begin(); it!=APPs.end(); ++it)
 	{
 
-		it->currentCores_d = std::max(((int)(it->currentCores_d / it->get_V())) * it->get_V(),it->get_V());
-		if (it->currentCores_d > it->bound)
-			it->currentCores_d = it->bound;
+		it->set_currentCores_d( std::max(((int)(it->get_currentCores_d() / it->get_V())) * it->get_V(),it->get_V()));
+		if (it->get_currentCores_d() > it->get_bound())
+			it->set_currentCores_d(  it->get_bound() );
 		else
 			{
         //add the application to the list of applications pointer ordered  by weight
@@ -179,9 +179,9 @@ void Batch::fixInitialSolution(optJrParameters &par)
         }
 			}
 
-		allocatedCores+= it->currentCores_d;
+		allocatedCores+= it->get_currentCores_d();
 		debugMsg =  "fixInitialSolution FIXING CORES "+  it->get_session_app_id()
-                + " cores: " + std::to_string(it->currentCores_d); debugMessage(debugMsg, par);
+                + " cores: " + std::to_string(it->get_currentCores_d()); debugMessage(debugMsg, par);
 	}
 
 	debugMsg= "fixInitialSolution: allocatedCores "+ std::to_string(allocatedCores); debugMessage(debugMsg, par);
@@ -212,26 +212,26 @@ void Batch::fixInitialSolution(optJrParameters &par)
 
 			int potentialDeltaCores=((int)(residualCores / (*it)->get_V() ) )* (*it)->get_V();
 
-			if (((*it)->currentCores_d + potentialDeltaCores) > (*it)->bound){
-				addedCores = (*it)->bound - (*it)->currentCores_d ;
-			  (*it)->currentCores_d = (*it)->bound;
+			if (((*it)->get_currentCores_d() + potentialDeltaCores) > (*it)->get_bound()){
+				addedCores = (*it)->get_bound() - (*it)->get_currentCores_d() ;
+			  (*it)->set_currentCores_d( (*it)->get_bound());
 
 			}
 			else{
-				(*it)->currentCores_d = (*it)->currentCores_d + potentialDeltaCores;
+				(*it)->set_currentCores_d( (*it)->get_currentCores_d() + potentialDeltaCores);
 				addedCores=potentialDeltaCores;
 			}
 
-			if ((*it)->currentCores_d == 0)
+			if ((*it)->get_currentCores_d() == 0)
 			{
-				printf("\nFatal Error: FixInitialSolution: app %s has %d cores after fix\n", (*it)->get_session_app_id().c_str(), (*it)->currentCores_d);
+				printf("\nFatal Error: FixInitialSolution: app %s has %d cores after fix\n", (*it)->get_session_app_id().c_str(), (*it)->get_currentCores_d());
 				exit(-1);
 			}
 			if (addedCores > 0)
 			{
 
 				debugMsg="adding cores to App " + (*it)->get_session_app_id() + " added Cores: " +  std::to_string(addedCores) ;debugMessage(debugMsg, par);
-				debugMsg=" application_id " + (*it)->get_session_app_id() + " new cores " + std::to_string((int)(*it)->currentCores_d) + " moved cores "+ std::to_string(addedCores) ;debugMessage(debugMsg, par);
+				debugMsg=" application_id " + (*it)->get_session_app_id() + " new cores " + std::to_string((int)(*it)->get_currentCores_d()) + " moved cores "+ std::to_string(addedCores) ;debugMessage(debugMsg, par);
 				residualCores = residualCores - addedCores;
 			}
 			it++;

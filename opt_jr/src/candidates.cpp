@@ -79,14 +79,14 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
 
       if(pos==ID)
       {
-        if (it->app_i.currentCores_d > 0 && it->app_j.currentCores_d > 0)
+        if (it->app_i.get_currentCores_d() > 0 && it->app_j.get_currentCores_d() > 0)
         {
 
           it->real_i = ObjFun::ObjFunctionComponent(configuration, conn2[ID], (it->app_i), par);
-          //it->nodes_i = it->app_i->currentCores_d;
+          //it->nodes_i = it->app_i->get_currentCores_d();
 
           it->real_j = ObjFun::ObjFunctionComponent(configuration, conn2[ID], (it->app_j), par);
-          //it->nodes_j = it->app_j->currentCores_d;
+          //it->nodes_j = it->app_j->get_currentCores_d();
         }
 
       }
@@ -119,7 +119,7 @@ void sCandidates::invokePredictorSeq(MYSQL *conn, optJrParameters &par, sConfigu
 
 
 
-    if (it->app_i.currentCores_d > 0 && it->app_j.currentCores_d > 0)
+    if (it->app_i.get_currentCores_d() > 0 && it->app_j.get_currentCores_d() > 0)
     {
       debugMsg= "Comparing " + it->app_i.get_session_app_id() + " with " + it->app_j.get_session_app_id(); debugMessage(debugMsg, par);
       //it->app_i.mode= R_ALGORITHM; it->app_j.mode= R_ALGORITHM;

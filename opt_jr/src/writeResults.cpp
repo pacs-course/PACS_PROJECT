@@ -27,7 +27,7 @@ void writeResults(MYSQL *conn, char * dbName, Batch &App_manager, optJrParameter
 	//while (pointer!=NULL)
 	for(auto &elem : App_manager.APPs)
 	{
-		"Session ID " + elem.get_session_app_id()+ " Application Id " + elem.get_app_id()  + " cores " + std::to_string(elem.currentCores_d)+ " VMs "+ std::to_string(elem.vm); debugMessage(debugMsg, par);
+		"Session ID " + elem.get_session_app_id()+ " Application Id " + elem.get_app_id()  + " cores " + std::to_string(elem.get_currentCores_d())+ " VMs "+ std::to_string(elem.get_vm()); debugMessage(debugMsg, par);
 
 		// Check if the result of the computation for that session, application has been already computed and stored previously
 		sprintf(sqlStatement, "select opt_id, app_id from %s.OPT_SESSIONS_RESULTS_TABLE where opt_id='%s' and app_id='%s'",
@@ -41,8 +41,8 @@ void writeResults(MYSQL *conn, char * dbName, Batch &App_manager, optJrParameter
 								dbName,
 								par.get_filename().c_str(),
 								elem.get_session_app_id().c_str(),
-								elem.currentCores_d,
-								elem.vm
+								elem.get_currentCores_d(),
+								elem.get_vm()
 						);
 			if (mysql_query(conn, sqlStatement))
 			{
@@ -57,8 +57,8 @@ void writeResults(MYSQL *conn, char * dbName, Batch &App_manager, optJrParameter
 											dbName,
 											par.get_filename().c_str(),
 											elem.get_session_app_id().c_str(),
-											elem.currentCores_d,
-											elem.vm,
+											elem.get_currentCores_d(),
+											elem.get_vm(),
 											par.get_filename().c_str(),
 											elem.get_session_app_id().c_str()
 									);

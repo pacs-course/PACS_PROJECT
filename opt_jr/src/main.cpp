@@ -161,8 +161,8 @@ int main(int argc, char **argv)
   for (auto it= App_manager.APPs.begin(); it!= App_manager.APPs.end();it++)
   {
     Msg+="\nBound evaluated for Session_app_id : " + it->get_session_app_id() + " , APP_ID: " + it->get_app_id() +
-             ", Deadline = "+ std::to_string(it->get_Deadline_d()) + ", R =" + std::to_string(it->R_d)+
-             ", bound = "+ std::to_string(it->bound) ;
+             ", Deadline = "+ std::to_string(it->get_Deadline_d()) + ", R =" + std::to_string(it->get_R_d())+
+             ", bound = "+ std::to_string(it->get_bound()) ;
   }//debugMessage(debugMsg, par);
   Msg += "\n*****************    END COMPUTING BOUNDS     ********************\n\n\n"; //debugMessage(debugMsg,par);
   std::cout << Msg;
@@ -201,7 +201,7 @@ int main(int argc, char **argv)
 	for (auto it = App_manager.APPs.begin(); it!=App_manager.APPs.end(); ++it)
   {
     Msg += "\n Application " + it->get_session_app_id() + ",  w = " + std::to_string(it->get_w())
-             + " ncores = " + std::to_string(it->currentCores_d); //debugMessage(debugMsg, par);
+             + " ncores = " + std::to_string(it->get_currentCores_d()); //debugMessage(debugMsg, par);
   }
   Msg +="\n*******************    END FIXING INITIAL SOLUTION    **************\n\n\n"; debugMessage(debugMsg,par);
   std::cout << Msg;
@@ -228,7 +228,7 @@ int main(int argc, char **argv)
   for (auto it =App_manager.APPs.begin(); it!= App_manager.APPs.end(); it++)
 	{
 			Msg += "\nINITIALIZE BASE FO for APP "+ it->get_session_app_id()
-                + " baseFO = " + std::to_string(it->baseFO);
+                + " baseFO = " + std::to_string(it->get_baseFO());
 	}//debugMessage(debugMsg, par);
 
   Msg +="\n************    END INITIALIZE BASE OBJECTIVE FUNCTION   *********\n\n\n"; debugMessage(debugMsg,par);
@@ -267,7 +267,7 @@ int main(int argc, char **argv)
   {
 
     std::cout<< " Application   " << it->get_session_app_id() << "      w = " << it->get_w()
-             << "     ncores = " << it->currentCores_d <<  "      FO = " << it->baseFO << std::endl;
+             << "     ncores = " << it->get_currentCores_d() <<  "      FO = " << it->get_baseFO() << std::endl;
   }
 
   std::cout<<"\n*******************************************************************\n\n";

@@ -6,7 +6,6 @@
 
 #include "invokePredictor.hh"
 
-//#define HYP_INTERPOLATION_POINTS  2
 
 
 
@@ -16,26 +15,7 @@
 #define NCORES_ALGORITHM 2*/
 
 
-/*
 
-
-
-class slastSimulatorRun{
-public:
-	int nCores;
-	double R;
-};
-
-
-
-
-class sAlphaBetaManagement{
-public:
-  slastSimulatorRun vec[HYP_INTERPOLATION_POINTS];
-  int index;
-
-};
-*/
 
 
 
@@ -45,78 +25,44 @@ public:
 	it's provided also a method to evaluate Hyperbolic interpolation for alpha and beta.
 */
 class Application{
-	/*
-	int nCores;
-	double R;
-	slastSimulatorRun vec[HYP_INTERPOLATION_POINTS];
-	int index;*/
+
+	/*Values used by computeAlphaBeta*/
 	double nCores_old;
 	double nCores_new;
 	double R_old;
 	double R_new;
+	int boundIterations=0;       ///< Index for Hyperbolic interpolation
 
 	/* Static values */
-	std::string session_app_id; ///< Session identifier
-	std::string app_id; 		///<  Application identifier
-	double w; 			///<  Weight application
+	const std::string session_app_id; ///< Session identifier
+	const std::string app_id; 		///<  Application identifier
+	const double w; 			///<  Weight application
 	double term_i;	///<  Used to calculate nu index
-	double chi_0; 	///< Machine learning parameter
-	double chi_C;		///< Machine learning parameter
-	double m;				///< Ram of a container for this application
-	double M;				///< Total Ram available at the YARN NodeManager
-	double V;				///< Total vCPUs available at the YARN NodeManager
-	double v;				///< vCPUs of a container for this application
-	double Deadline_d; ///< Deadline for the application
-	double csi;
-	std::string stage; ///<  Application's stage (used in case of residual time)
-
-	int dataset_size;   ///< Size of the dataset
-
+	const double chi_0; 	///< Machine learning parameter
+	const double chi_C;		///< Machine learning parameter
+	const double m;				///< Ram of a container for this application
+	const double M;				///< Total Ram available at the YARN NodeManager
+	const double V;				///< Total vCPUs available at the YARN NodeManager
+	const double v;				///< vCPUs of a container for this application
+	const double Deadline_d; ///< Deadline for the application
+	const double csi;
+	const std::string stage; ///<  Application's stage (used in case of residual time)
+	const int dataset_size;   ///< Size of the dataset
 	const int mode=R_ALGORITHM; 				///< How the objective function is calculated (currently redundant)
 
-
-
+	/* Dynamic values */
+	double nu_d; ///< nu value
+	int  currentCores_d;		///< Initialized to nu_i
+	int  nCores_DB_d;			///< Initialized to the value from look-up table
+	int bound;					///< Bound (number of cores)
+	double R_d;					///< Value of R as per the predictor
+	double baseFO;				///< base FO value (used to calculate the delta)
+	int vm;						///< Read from OPTIMIZER_CONFIGURATION_TABLE
+	double alpha;      ///< First parameter for Hyperbolic interpolation
+	double beta;       ///< Second parameter for Hyperbolic interpolation
 
 
 public:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /* Dynamic values */
-
-  double nu_d; ///< nu value
-  int  currentCores_d;		///< Initialized to nu_i
-  int  nCores_DB_d;			///< Initialized to the value from look-up table
-  int bound;					///< Bound (number of cores)
-  double R_d;					///< Value of R as per the predictor
-  //double R_bound_d;			///< Bound (R)
-	double baseFO;				///< base FO value (used to calculate the delta)
-	double initialBaseFO;		///< copy of base FO value (used to reset the value)
-  //float alpha;
-  //float beta;
-//  sAlphaBetaManagement sAB;
-  int boundIterations;		///< Metrics
-  int vm;						///< Read from OPTIMIZER_CONFIGURATION_TABLE
-
-	double alpha;      ///< First parameter for Hyperbolic interpolation
-	double beta;       ///< Second parameter for Hyperbolic interpolation
-	int index=0;       ///< Index for Hyperbolic interpolation
-
-
 
 	///Constructor expects all static values.
   Application(std::string session_app_id, std::string app_id, double w,
@@ -125,6 +71,10 @@ public:
 	/// This function evaluates the Hyperbolic interpolation for alpha and beta (from the second time it is invoked).
 	void computeAlphaBeta(int nCores_n, double R_n);
 
+
+	/*
+	GETTER FUNCTIONS
+	*/
 
 	std::string get_session_app_id()
 	{
@@ -201,10 +151,101 @@ public:
 		return mode;
 	}
 
+	int get_currentCores_d()
+	{
+		return currentCores_d;
+	}
+
+	double get_nu_d()
+	{
+		return nu_d;
+	}
+
+	int get_nCores_DB_d()
+	{
+		return nCores_DB_d;
+	}
+
+	int get_bound()
+	{
+		return bound;
+	}
+
+	double get_R_d()
+	{
+	  return R_d;
+	}
+
+	double get_baseFO()
+	{
+	  return baseFO;
+	}
+
+	int get_vm()
+	{
+		return vm;
+	}
+
+	double get_alpha()
+	{
+	  return alpha;
+	}
+
+	double get_beta()
+	{
+	  return beta;
+	}
+
+	/*
+			SETTER FUNCTIONS
+	*/
+
+
+
+
 	void set_term_i(double t_i)
 	{
 		term_i=t_i;
 	}
+
+	void set_currentCores_d(int c_d)
+	{
+		currentCores_d=c_d;
+	}
+
+	void set_nu_d(double n)
+	{
+		nu_d=n;
+	}
+
+	void  set_nCores_DB_d(int n)
+	{
+		nCores_DB_d=n;
+	}
+
+	void set_bound (int b)
+	{
+		bound= b;
+	}
+
+	void set_R_d(double r)
+	{
+		R_d=r;
+	}
+
+	void set_baseFO(double f)
+	{
+		baseFO=f;
+	}
+
+	void set_vm(int v)
+	{
+		vm=v;
+	}
+
+
+
+
 
 
 
