@@ -4,7 +4,6 @@
 
 #include "debugmessage.hh"
 #include "objectiveFunction.hh"
-#include "appByWeight.hh"
 
 #include <string>
 #include <cmath>
@@ -98,14 +97,6 @@ Batch::calculate_nu(optJrParameters &par)
 
 
 
-    /*
-    *  COMPUTE ALPHA AND BETA
-    */
-    /*
-    it->beta = ((double) it->sAB.vec[1].nCores) / (it->sAB.vec[0].nCores - it->sAB.vec[1].nCores) * (((double) it->sAB.vec[0].nCores)/it->sAB.vec[1].nCores * it->sAB.vec[0].R - it->sAB.vec[1].R);
-    it->alpha =it->sAB.vec[1].nCores * (it->sAB.vec[1].R - it->beta);
-    */
-
 
   }
   debugMsg="end calculate nu"; debugMessage(debugMsg, par);
@@ -148,7 +139,8 @@ void Batch::fixInitialSolution(optJrParameters &par)
 {
 
 	int allocatedCores;
-	appByWeight  LP ;
+  std::list< Application* > LP; // Auxiliary list, to store "suffering" app pointers in weight order
+
 	int loopExit = 0;
 	int residualCores;
   std::string debugMsg;
@@ -164,8 +156,27 @@ void Batch::fixInitialSolution(optJrParameters &par)
 			it->currentCores_d = it->bound;
 		else
 			{
+        //add the application to the list of applications pointer ordered  by weight
 				debugMsg= "adding " + it->get_session_app_id() + " to ApplicationPointers"; debugMessage(debugMsg, par);
-        addApplicationPointer(LP, *it);
+        if (LP.empty())
+        {
+          LP.emplace(LP.begin(), &(*it));
+        }
+        else
+        {
+          auto it_l= LP.begin();
+          while (it_l!=LP.end())
+          {
+            if ( (*it_l)->get_w() < it->get_w())
+            {
+              LP.emplace(it_l, &(*it));
+              break;
+            }
+            it_l++;
+          }
+          if(it_l==LP.end())
+          LP.emplace(LP.end(), &(*it));
+        }
 			}
 
 		allocatedCores+= it->currentCores_d;
@@ -190,6 +201,7 @@ void Batch::fixInitialSolution(optJrParameters &par)
 
 
   //I browse the list of "suffering" apps in order of weight, as long as I have available cores
+
 
   auto it=LP.begin();
 	while (!loopExit&& (residualCores>0))
@@ -227,8 +239,6 @@ void Batch::fixInitialSolution(optJrParameters &par)
 
 		if (residualCores == 0) loopExit = 1;
 	}
-
-
 
 
 }
