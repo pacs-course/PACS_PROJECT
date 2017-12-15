@@ -15,6 +15,7 @@ class Batch{
   friend class Bounds;
   friend class Search;
   friend class ObjFun;
+  friend class Search_methods;
 
 private:
   /// The vector stores application data

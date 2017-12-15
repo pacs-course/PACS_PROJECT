@@ -18,6 +18,7 @@
 #include "objectiveFunction.hh"
 #include "candidates.hh"
 #include "utility.hh"
+#include "search_alterning.hh"
 
 
 int main(int argc, char **argv)
@@ -266,7 +267,7 @@ int main(int argc, char **argv)
   std::cout<<"\n*******************************************************************\n\n";
 
 
-  DBclose(conn);
+
 
   gettimeofday(&tv_final_main, NULL);
 
@@ -280,6 +281,11 @@ int main(int argc, char **argv)
   debugMsg = "Overall elapsed time: " + std::to_string(elapsedTime(tv_initial_main, tv_final_main));debugMessage(debugMsg, par);
   debugMsg ="\n***************************************************************\n\n\n"; debugMessage(debugMsg,par);
 
+
+  Search_alterning prova;
+  prova.localSearch(App_manager, configuration, conn, par);
+
+  DBclose(conn);
 
 
 }
