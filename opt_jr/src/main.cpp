@@ -19,6 +19,8 @@
 #include "candidates.hh"
 #include "utility.hh"
 #include "search_alterning.hh"
+#include "search_separing.hh"
+#include "search_selector.hh"
 
 
 int main(int argc, char **argv)
@@ -243,9 +245,13 @@ int main(int argc, char **argv)
 
   gettimeofday(&tv_initial_locals, NULL);
 
+  //Search_selector sel;
   /* CREATE A SEARCH OBJECT */
+  //Search = select(par) ;
 
-  Search search_eval(App_manager);
+  search<Search_alterning> search_eval(App_manager);
+
+  //Search search_eval(App_manager);
 
   search_eval.localSearch(configuration, conn,  par );
 
@@ -282,8 +288,8 @@ int main(int argc, char **argv)
   debugMsg ="\n***************************************************************\n\n\n"; debugMessage(debugMsg,par);
 
 
-  Search_alterning prova;
-  prova.localSearch(App_manager, configuration, conn, par);
+  //Search_alterning prova;
+  //prova.localSearch(App_manager, configuration, conn, par);
 
   DBclose(conn);
 
