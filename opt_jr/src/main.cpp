@@ -30,39 +30,29 @@ int main(int argc, char **argv)
   std::string Msg;      //// string to store useful messages
 
   struct timeval  tv_initial_main,
-          tv_initial_bounds,
-              tv_final_bounds,
-              tv_initial_nu,
-              tv_final_nu,
-            tv_initial_init,
-            tv_final_init,
-              tv_initial_fix,
-              tv_final_fix,
-              tv_initial_locals,
-              tv_final_locals,
-              tv_final_main;
-
+  tv_initial_bounds,
+  tv_final_bounds,
+  tv_initial_nu,
+  tv_final_nu,
+  tv_initial_init,
+  tv_final_init,
+  tv_initial_fix,
+  tv_final_fix,
+  tv_initial_locals,
+  tv_final_locals,
+  tv_final_main;
 
 
   /**
-    1) read informations from "wsi_config.xml" file and save it in a "sConfiguration" object (which is unordered_map(string,string))
+  1) read informations from "wsi_config.xml" file and save it in a "sConfiguration" object (which is unordered_map(string,string))
   */
-  std::cout<<"\n\n*******************************************************************\n";
-  std::cout<<"************     READING CONFIGURATION FILE     *******************\n";
-  std::cout<<"*******************************************************************\n";
-
 
   sConfiguration configuration = readConfigurationFile();
-  std::cout<<"<check message>: data in the configuration file:\n\n";
-  for(auto i = configuration.begin(); i !=configuration.end();++i)
-  {
-    std::cout<< i->first <<": "<<i->second<<std::endl;
-  }
-  std::cout<<"*******************************************************************\n\n\n";
+
 
 
   /**
-     2)  Read execution parameters from command line and configuration file and save them in an "optJrParameters" object
+  2)  Read execution parameters from command line and configuration file and save them in an "optJrParameters" object
   */
 
   std::cout<<"\n\n*******************************************************************\n";
@@ -84,13 +74,19 @@ int main(int argc, char **argv)
   std::cout<<"number: "<<par.get_number()<<std::endl;
   std::cout<<"maxIteration: "<<par.get_maxIteration()<<std::endl;
   std::cout<<"numberOfThreads: "<<par.get_numberOfThreads()<<std::endl;
+  std::cout <<"Search type: "<<par.get_search_type()<<std::endl;
 
   std::cout<<"*******************************************************************\n\n\n";
 
 
 
+
+
+
+
+
   /**
-     3) Connect to the Database
+  3) Connect to the Database
   */
 
   debugMsg = "\n*******************************************************************\n";
@@ -100,12 +96,12 @@ int main(int argc, char **argv)
 
 
   MYSQL *conn = DBopen(
-                const_cast<char*>(configuration["OptDB_IP"].c_str()),
-                const_cast<char*>(configuration["DB_port"].c_str()),
-            const_cast<char*>(configuration["OptDB_user"].c_str()),
-            const_cast<char*>(configuration["OptDB_pass"].c_str()),
-            const_cast<char*>(configuration["OptDB_dbName"].c_str())
-            );
+    const_cast<char*>(configuration["OptDB_IP"].c_str()),
+    const_cast<char*>(configuration["DB_port"].c_str()),
+    const_cast<char*>(configuration["OptDB_user"].c_str()),
+    const_cast<char*>(configuration["OptDB_pass"].c_str()),
+    const_cast<char*>(configuration["OptDB_dbName"].c_str())
+  );
 
   if (conn == NULL) DBerror(conn, (char*)"open_db: Opening the database");
 
@@ -116,7 +112,7 @@ int main(int argc, char **argv)
 
 
   /**
-    4) Open  *.csv  file with Applications data, and save it in a "Batch" object
+  4) Open  *.csv  file with Applications data, and save it in a "Batch" object
   */
 
   debugMsg = "\n*******************************************************************\n";
@@ -144,7 +140,7 @@ int main(int argc, char **argv)
 
 
   /**
-    5) Calculate bounds for each application loaded (with the calculateBounds method of Bounds class)
+  5) Calculate bounds for each application loaded (with the calculateBounds method of Bounds class)
   */
 
   Msg = "\n*******************************************************************\n";
@@ -171,8 +167,8 @@ int main(int argc, char **argv)
 
 
   /**
-    6) Calculate nu indices for each application (with the calculate_nu method of Batch class).
-    It also initializes the number of cores.
+  6) Calculate nu indices for each application (with the calculate_nu method of Batch class).
+  It also initializes the number of cores.
   */
   debugMsg = "\n\n*******************************************************************\n";
   debugMsg +="************       COMPUTING NU INDICES         *******************\n";
@@ -188,7 +184,7 @@ int main(int argc, char **argv)
 
 
   /**
-      7) Fix initial solution (with the fixInitialSolution method of Batch class)
+  7) Fix initial solution (with the fixInitialSolution method of Batch class)
   */
 
   debugMsg = "\n\n*******************************************************************\n";
@@ -208,7 +204,7 @@ int main(int argc, char **argv)
 
 
   /**
-      8) Initialize Objective Function evaluation for each application (with the initalize method of Batch class)
+  8) Initialize Objective Function evaluation for each application (with the initalize method of Batch class)
   */
 
   debugMsg = "\n*******************************************************************\n";
@@ -236,7 +232,7 @@ int main(int argc, char **argv)
 
 
   /**
-      9) Find an "optimal" solution invoking "localSearch" method (of "Search" class)
+  9) Find an "optimal" solution invoking "localSearch" method (of "Search" class)
   */
 
   debugMsg = "\n\n*******************************************************************\n";
@@ -246,13 +242,10 @@ int main(int argc, char **argv)
 
   gettimeofday(&tv_initial_locals, NULL);
 
-  //Search_selector sel;
-  /* CREATE A SEARCH OBJECT */
+
+  /* CREATE A SEARCH OBJECT (using the factory) */
   auto search_eval = Search_factory::search_builder(par, App_manager);
 
-  //search<Search_separing> search_eval(App_manager);
-
-  //Search search_eval(App_manager);
 
   search_eval->localSearch(configuration, conn,  par );
 

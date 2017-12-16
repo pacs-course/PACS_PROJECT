@@ -36,6 +36,8 @@ optJrParameters::optJrParameters (char **args, int argc)
 									maxIterations = atoi(parseArg(args[i], (char*)MAX_ITERATIONS, NUMBER, argc));
 								else if (strstr(args[i], CACHE))
 									cache = atoi(parseArg(args[i], (char*)CACHE, YES_NO, argc));
+								else if (strstr(args[i], SEARCH_TYPE))
+									search_type = parseArg(args[i], (char*)SEARCH_TYPE, STRING, argc);
 
 
 

@@ -25,7 +25,7 @@ class optJrParameters
 	int number;				///< Number of total cores available for the applications (N)
 	int maxIterations;		///< The maximum number of iterations in LocalSearch
 	int numberOfThreads;	///< The number of MPI threads
-  std::string search_type="a"; //TODO : to be changed and passed from command line 
+  std::string search_type; ///< type of localsearch to be used (alternating/separing)
 public:
   /// The constructor takes in input all the input from command line
   optJrParameters(char **args, int argc);

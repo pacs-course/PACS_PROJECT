@@ -7,9 +7,9 @@
 
 std::unique_ptr<Search_base> Search_factory::search_builder(optJrParameters &par, Batch &App_manager)
 {
-  if (par.get_search_type()=="a")
+  if (par.get_search_type()=="a"|| par.get_search_type()=="A")
   return std::unique_ptr<Search_base>(new search<Search_alterning>(App_manager));
-  else if (par.get_search_type()=="s")
+  else if (par.get_search_type()=="s" || par.get_search_type()=="S")
   return std::unique_ptr<Search_base>(new search<Search_separing>(App_manager));
   else
   {
