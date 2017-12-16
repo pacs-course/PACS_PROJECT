@@ -18,7 +18,7 @@ class Search_methods{
 public:
   void checkTotalNodes(int N, Batch &App_manager);
   sCandidates approximated_loop( Batch &App_manager, int &iteration, optJrParameters &par);
-  void exact_loop(sCandidates app_pairs, sConfiguration &configuration,  MYSQL *conn,  Batch &App_manager, optJrParameters &par, int &index_pair);
+  void exact_loop(sCandidates &app_pairs, sConfiguration &configuration,  MYSQL *conn,  Batch &App_manager, optJrParameters &par, int &index_pair);
 
 
 

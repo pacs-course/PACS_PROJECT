@@ -148,7 +148,7 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, int &iteratio
   *
   */
 
-  void Search_methods::exact_loop(sCandidates app_pairs, sConfiguration &configuration,  MYSQL *conn,  Batch &App_manager, optJrParameters &par, int &index_pair)
+  void Search_methods::exact_loop(sCandidates &app_pairs, sConfiguration &configuration,  MYSQL *conn,  Batch &App_manager, optJrParameters &par, int &index_pair)
   {
 
     std::string debugMsg;
@@ -170,7 +170,7 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, int &iteratio
     }
     else
     {
-      // Calculate in advance and in parallel the results of the predictor FOR EACH candidate (TODO:to be changed)
+      // Calculate in advance and in parallel the results of the predictor FOR EACH candidate s.t. currentCores > 0 (until finished or MAX_PROMISING_CONFIGURATIONS is reached)
       app_pairs.invokePredictorOpenMP( par, configuration);
     }
 
