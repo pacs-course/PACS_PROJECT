@@ -5,6 +5,7 @@
 #include <mysql.h>
 #include <vector>
 #include <sys/time.h>
+#include <memory>
 
 #include "optjrparameters.hh"
 #include "readConfigurationFile.hh"
@@ -20,7 +21,7 @@
 #include "utility.hh"
 #include "search_alterning.hh"
 #include "search_separing.hh"
-#include "search_selector.hh"
+#include "search_factory.hh"
 
 
 int main(int argc, char **argv)
@@ -247,18 +248,18 @@ int main(int argc, char **argv)
 
   //Search_selector sel;
   /* CREATE A SEARCH OBJECT */
-  //Search = select(par) ;
+  auto search_eval = Search_factory::search_builder(par, App_manager);
 
-  search<Search_alterning> search_eval(App_manager);
+  //search<Search_separing> search_eval(App_manager);
 
   //Search search_eval(App_manager);
 
-  search_eval.localSearch(configuration, conn,  par );
+  search_eval->localSearch(configuration, conn,  par );
 
   gettimeofday(&tv_final_locals, NULL);
 
-  //App_manager=search_eval.get_app_manager();
-  search_eval.writeResults(conn, const_cast<char*>(configuration["DB_dbName"].c_str()), par);
+
+  search_eval->writeResults(conn, const_cast<char*>(configuration["DB_dbName"].c_str()), par);
 
 
   debugMsg ="\n**********************    END LOCAL SEARCH   ********************\n\n\n"; debugMessage(debugMsg,par);
@@ -268,12 +269,12 @@ int main(int argc, char **argv)
   std::cout<<"******************       FINAL SOLUTION      **********************\n";
   std::cout<<"*******************************************************************\n\n";
 
-  search_eval.print_solution();
+  search_eval->print_solution();
 
   std::cout<<"\n*******************************************************************\n\n";
 
 
-
+  DBclose(conn);
 
   gettimeofday(&tv_final_main, NULL);
 
@@ -288,10 +289,8 @@ int main(int argc, char **argv)
   debugMsg ="\n***************************************************************\n\n\n"; debugMessage(debugMsg,par);
 
 
-  //Search_alterning prova;
-  //prova.localSearch(App_manager, configuration, conn, par);
 
-  DBclose(conn);
+
 
 
 }

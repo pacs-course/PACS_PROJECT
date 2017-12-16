@@ -6,11 +6,11 @@ var searchData=
   ['app_5fi',['app_i',['../classCandidate.html#ac0132d260daf989781ac94fdf494d507',1,'Candidate']]],
   ['app_5fid',['app_id',['../classApplication.html#a5cedee59cfd3cbf89d02174e2f521493',1,'Application']]],
   ['app_5fj',['app_j',['../classCandidate.html#ad420293664ad21ac74713b90bfa73f04',1,'Candidate']]],
-  ['app_5fmanager',['app_manager',['../classBounds.html#a9b463c00e877b6bf67d9e1ff4f36950b',1,'Bounds::app_manager()'],['../classSearch.html#aa5f2a65e5b640dec221284069963b91a',1,'Search::App_manager()']]],
+  ['app_5fmanager',['app_manager',['../classBounds.html#a9b463c00e877b6bf67d9e1ff4f36950b',1,'Bounds::app_manager()'],['../classsearch.html#aa9b7922418788c7febf5aca7af407264',1,'search::App_manager()']]],
   ['application',['Application',['../classApplication.html',1,'Application'],['../classApplication.html#a3413eb5b5ba7bd2d1dfe2ce6d2e28c48',1,'Application::Application()']]],
   ['application_2ecpp',['application.cpp',['../application_8cpp.html',1,'']]],
   ['application_2ehh',['application.hh',['../application_8hh.html',1,'']]],
-  ['approximatedloop',['approximatedLoop',['../classSearch.html#aa7c0b0385cd0bcb4ec4239e339f7a301',1,'Search']]],
+  ['approximated_5floop',['approximated_loop',['../classSearch__methods.html#afde3e60f82e466ed1161bbeb99f6d424',1,'Search_methods']]],
   ['apps',['APPs',['../classBatch.html#a757bf1a36fee46b1b47263ab4a59c560',1,'Batch']]],
   ['args',['ARGS',['../optjrParam__helper_8hh.html#aff1b09d6630c6c0942f78171e74c1b9d',1,'optjrParam_helper.hh']]]
 ];

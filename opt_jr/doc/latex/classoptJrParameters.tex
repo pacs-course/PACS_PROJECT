@@ -7,11 +7,12 @@
 
 
 
-Collaboration diagram for opt\-Jr\-Parameters\-:\nopagebreak
+Collaboration diagram for opt\-Jr\-Parameters\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=216pt]{classoptJrParameters__coll__graph}
+\includegraphics[height=550pt]{classoptJrParameters__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -38,6 +39,8 @@ const int \hyperlink{classoptJrParameters_a9bb0e783bd6bf555e86cea874f13cb4f}{get
 const int \hyperlink{classoptJrParameters_a73340961e894748c6c143284e0b278fa}{get\-\_\-max\-Iteration} ()
 \item 
 const int \hyperlink{classoptJrParameters_a6654c5bb36a825393e759b2824444bbb}{get\-\_\-number\-Of\-Threads} ()
+\item 
+const std\-::string \hyperlink{classoptJrParameters_ad85aa8c85b78b70e3fad881d6aae0143}{get\-\_\-search\-\_\-type} ()
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -59,7 +62,9 @@ int \hyperlink{classoptJrParameters_a9d99c995ae7815448131832e13b7c723}{number}
 int \hyperlink{classoptJrParameters_af1f1ee05cb0a9962182b9330c7e9536b}{max\-Iterations}
 \begin{DoxyCompactList}\small\item\em The maximum number of iterations in Local\-Search. \end{DoxyCompactList}\item 
 int \hyperlink{classoptJrParameters_a7748d7ba51ef897423d145f2e33273d8}{number\-Of\-Threads}
-\begin{DoxyCompactList}\small\item\em The number of M\-P\-I threads. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The number of M\-P\-I threads. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classoptJrParameters_ace4df9a02106cc7c3f7e8e65cb94770f}{search\-\_\-type} =\char`\"{}a\char`\"{}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -137,8 +142,7 @@ Here is the caller graph for this function\-:\nopagebreak
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classoptJrParameters_a8dcc738e721b3df88c2622712ed83414}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -156,7 +160,8 @@ Here is the caller graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classoptJrParameters_a7eec5151603fd03276b6fcf6213f9f90}
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -181,7 +186,8 @@ Here is the caller graph for this function\-:\nopagebreak
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classoptJrParameters_a73340961e894748c6c143284e0b278fa}
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -204,6 +210,13 @@ Here is the caller graph for this function\-:\nopagebreak
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classoptJrParameters_a6654c5bb36a825393e759b2824444bbb}
+\hypertarget{classoptJrParameters_ad85aa8c85b78b70e3fad881d6aae0143}{\index{opt\-Jr\-Parameters@{opt\-Jr\-Parameters}!get\-\_\-search\-\_\-type@{get\-\_\-search\-\_\-type}}
+\index{get\-\_\-search\-\_\-type@{get\-\_\-search\-\_\-type}!optJrParameters@{opt\-Jr\-Parameters}}
+\subsubsection[{get\-\_\-search\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string opt\-Jr\-Parameters\-::get\-\_\-search\-\_\-type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classoptJrParameters_ad85aa8c85b78b70e3fad881d6aae0143}
 \hypertarget{classoptJrParameters_a199e3fc83f3efb82fc63796a540d6589}{\index{opt\-Jr\-Parameters@{opt\-Jr\-Parameters}!get\-\_\-simulator@{get\-\_\-simulator}}
 \index{get\-\_\-simulator@{get\-\_\-simulator}!optJrParameters@{opt\-Jr\-Parameters}}
 \subsubsection[{get\-\_\-simulator}]{\setlength{\rightskip}{0pt plus 5cm}const int opt\-Jr\-Parameters\-::get\-\_\-simulator (
@@ -303,6 +316,9 @@ Number of total cores available for the applications (N)
 
 The number of M\-P\-I threads. 
 
+\hypertarget{classoptJrParameters_ace4df9a02106cc7c3f7e8e65cb94770f}{\index{opt\-Jr\-Parameters@{opt\-Jr\-Parameters}!search\-\_\-type@{search\-\_\-type}}
+\index{search\-\_\-type@{search\-\_\-type}!optJrParameters@{opt\-Jr\-Parameters}}
+\subsubsection[{search\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string opt\-Jr\-Parameters\-::search\-\_\-type =\char`\"{}a\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}}\label{classoptJrParameters_ace4df9a02106cc7c3f7e8e65cb94770f}
 \hypertarget{classoptJrParameters_a8bb0a0aa1f458ff3973fbe43552e1cd5}{\index{opt\-Jr\-Parameters@{opt\-Jr\-Parameters}!simulator@{simulator}}
 \index{simulator@{simulator}!optJrParameters@{opt\-Jr\-Parameters}}
 \subsubsection[{simulator}]{\setlength{\rightskip}{0pt plus 5cm}int opt\-Jr\-Parameters\-::simulator\hspace{0.3cm}{\ttfamily [private]}}}\label{classoptJrParameters_a8bb0a0aa1f458ff3973fbe43552e1cd5}
