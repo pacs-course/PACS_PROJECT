@@ -70,29 +70,31 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
     }
 
 
-    for (auto &elem : app_manager.APPs)
+
+    for (auto elem= app_manager.APPs.begin(); elem!=app_manager.APPs.end(); elem++)
     {
-      if(  it->app_i.get_app_id()==elem.get_app_id())
-      {
-        if (it->app_i.get_session_app_id()==elem.get_session_app_id())
-        {
 
-          std::cout<< "\nehilaa\n";
-          elem.set_currentCores_d( it->newCoreAssignment_i);
-          elem.set_baseFO( it->real_i);
-        }
-      }
-
-      if(  it->app_j.get_app_id()==elem.get_app_id())
-      {
-        if (it->app_j.get_session_app_id()==elem.get_session_app_id())
+        if(  it->app_i.get_app_id()==elem->get_app_id())
         {
-          elem.set_currentCores_d( it->newCoreAssignment_j);
-          elem.set_baseFO( it->real_j);
+          if (it->app_i.get_session_app_id()==elem->get_session_app_id())
+          {
+            elem->set_currentCores_d( it->newCoreAssignment_i);
+            elem->set_baseFO( it->real_i);
+          }
         }
-      }
+
+        if(  it->app_j.get_app_id()==elem->get_app_id())
+        {
+          if (it->app_j.get_session_app_id()==elem->get_session_app_id())
+          {
+            elem->set_currentCores_d( it->newCoreAssignment_j);
+            elem->set_baseFO( it->real_j);
+          }
+        }
+
 
     }
+
   }
 
 
@@ -109,7 +111,7 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
   {
     sCandidates all_pairs;
     /*
-    save ALL the potential exchanges in a sCandidate object
+    save ALL the potential exchanges in a sCandidates object
     */
 
     auto application_i=app_manager.APPs.begin();
@@ -141,6 +143,7 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
               DELTAVM_j) ;
             }
 
+            //rollback
             application_i->set_currentCores_d( application_i->get_currentCores_d() - DELTAVM_i*application_i->get_V());
             application_j->set_currentCores_d( application_j->get_currentCores_d() + DELTAVM_j*application_j->get_V());
           }
@@ -152,7 +155,7 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
       // exact_loop also updates app_manager
       exact_loop(all_pairs, configuration, conn, app_manager, par, indicator);
 
-      
+
       checkTotalNodes(par.get_number(), app_manager);
       if (indicator==-1) //It means that there are not convenient exchanges
       {

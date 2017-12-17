@@ -59,6 +59,47 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
                 );
 
   }
+
+  /*
+  since some pairs could share the same application object, I use an auxiliary vector in order to
+  avoid unnecessary calls (and avoid error);
+  */
+
+  std::vector<Application*> aux;
+  int indicator_i, indicator_j;
+
+  for (auto it=cand.begin(); it!= cand.end();it++)
+  {
+    indicator_i =1;
+    indicator_j =1;
+    for (auto aux_it= aux.begin();aux_it!= aux.end();aux_it++)
+    {
+      if ( (*aux_it)->get_app_id()== it->app_i.get_app_id()  &&  (*aux_it)->get_session_app_id()== it->app_i.get_session_app_id() && (*aux_it)->get_currentCores_d()== it->app_i.get_currentCores_d() )
+      {
+        indicator_i=-1;
+      }
+      if ( (*aux_it)->get_app_id()== it->app_j.get_app_id()  &&  (*aux_it)->get_session_app_id()== it->app_j.get_session_app_id() && (*aux_it)->get_currentCores_d()== it->app_j.get_currentCores_d() )
+      {
+        indicator_j=-1;
+      }
+
+    }
+    if (indicator_i==1)
+    {
+      aux.push_back(&(it->app_i));
+    }
+    if (indicator_j==1)
+    {
+      aux.push_back(&(it->app_j));
+    }
+
+  }
+  for (auto &elem : aux)
+  {
+    std::cout<< "\n"<< elem->get_session_app_id()<<" "<< elem->get_app_id()<<" "<<elem->get_currentCores_d() <<" "<<elem->get_stage()<<std::endl;
+  }
+  std::cout << "\n\n\n "<<aux.size()<<"\n\n\n";
+
   //call invokePredictorInAdvance in parallel
   #pragma omp parallel num_threads(n_threads)
   {
@@ -66,9 +107,48 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
     int index=0;
     int j=0;
     ObjFun OF;
+    //double tmp;
 
     // assign each app to a thread
-    for (auto it=cand.begin(); it!=cand.end(); ++it ) // assign each app to a thread
+
+    for (auto it=aux.begin(); it!=aux.end(); ++it ) // assign each app to a thread
+    {
+      if (index > 0 && index == 2*MAX_PROMISING_CONFIGURATIONS)
+      {
+        debugMsg="invokePredictorSeq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invokePredictorSeq loop";debugMessage(debugMsg, par);
+        break;
+      }
+
+      int pos=j % n_threads;
+
+      if(pos==ID)
+      {
+        if ((*it)->get_currentCores_d() > 0 )//it->app_i.get_currentCores_d() > 0 && it->app_j.get_currentCores_d() > 0)
+        {
+
+          OF.ObjFunctionComponent(configuration, conn2[ID], **it, par); //caches the results
+          //it->nodes_i = it->app_i->get_currentCores_d();
+
+          //it->real_j = OF.ObjFunctionComponent(configuration, conn2[ID], (it->app_j), par);
+          //it->nodes_j = it->app_j->get_currentCores_d();
+        }
+
+      }
+      ++j;
+    }
+
+  }
+
+
+  #pragma omp parallel num_threads(n_threads)
+  {
+    int ID=omp_get_thread_num();
+    int index=0;
+    int j=0;
+    ObjFun OF;
+
+    // assign each app-pairs to a thread
+    for (auto it=cand.begin(); it!=cand.end(); ++it )
     {
       if (index > 0 && index == MAX_PROMISING_CONFIGURATIONS)
       {
@@ -83,10 +163,10 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
         if (it->app_i.get_currentCores_d() > 0 && it->app_j.get_currentCores_d() > 0)
         {
 
-          it->real_i = OF.ObjFunctionComponent(configuration, conn2[ID], (it->app_i), par);
+          it->real_i = OF.ObjFunctionComponent(configuration, conn2[ID], (it->app_i), par); //Already cached
           //it->nodes_i = it->app_i->get_currentCores_d();
 
-          it->real_j = OF.ObjFunctionComponent(configuration, conn2[ID], (it->app_j), par);
+          it->real_j = OF.ObjFunctionComponent(configuration, conn2[ID], (it->app_j), par); //Already cached
           //it->nodes_j = it->app_j->get_currentCores_d();
         }
 
@@ -95,6 +175,8 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
     }
 
   }
+
+
   for (int i = 0; i < n_threads;++i)
     DBclose(conn2[i]);
 

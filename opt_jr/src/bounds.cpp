@@ -175,7 +175,7 @@ void Bounds::findBound(sConfiguration &configuration, MYSQL *conn, char* db,  Ap
 
 
 
-    Bound(configuration, conn, app, par, WHOLE_DAGSIM);
+    Bound(configuration, conn, app, par,WHOLE_DAGSIM);
     debugMsg="A bound for " + app.get_session_app_id() + "  (app_id: " + app.get_app_id() + ") has been calculated";debugMessage(debugMsg, par);
 
 

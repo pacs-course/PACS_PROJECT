@@ -221,23 +221,25 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, int &iteratio
 
     if(index_pair!=-1)
     {
+      debugMsg="DELTA FO best pair: "+ std::to_string(DELTA_pair);debugMessage(debugMsg,par);
       auto it = app_pairs.cand.begin();
       for (int j=0; j< index_pair; j++)
       {
         it++;
       }
 
-      for (auto &elem : App_manager.APPs)
+
+      for (auto elem= App_manager.APPs.begin(); elem!=App_manager.APPs.end(); elem++)
       {
-        if (it->app_i.get_app_id()==elem.get_app_id() && it->app_i.get_session_app_id()==elem.get_session_app_id())
+        if (it->app_i.get_app_id()==elem->get_app_id() && it->app_i.get_session_app_id()==elem->get_session_app_id())
         {
-          elem.set_currentCores_d( it->newCoreAssignment_i);
-          elem.set_baseFO( it->real_i);
+          elem->set_currentCores_d( it->newCoreAssignment_i);
+          elem->set_baseFO( it->real_i);
         }
-        if (it->app_j.get_app_id()==elem.get_app_id() && it->app_j.get_session_app_id()==elem.get_session_app_id())
+        if (it->app_j.get_app_id()==elem->get_app_id() && it->app_j.get_session_app_id()==elem->get_session_app_id())
         {
-          elem.set_currentCores_d( it->newCoreAssignment_j);
-          elem.set_baseFO( it->real_j);
+          elem->set_currentCores_d( it->newCoreAssignment_j);
+          elem->set_baseFO( it->real_j);
         }
       }
     }

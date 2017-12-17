@@ -18,6 +18,10 @@ class Search_methods{
 public:
   void checkTotalNodes(int N, Batch &App_manager);
   sCandidates approximated_loop( Batch &App_manager, int &iteration, optJrParameters &par);
+
+  /**
+  It evaluates the delta FO for all the candidates in app_pairs and it does the best change (if it exist) in App_manager
+  */
   void exact_loop(sCandidates &app_pairs, sConfiguration &configuration,  MYSQL *conn,  Batch &App_manager, optJrParameters &par, int &index_pair);
 
 
