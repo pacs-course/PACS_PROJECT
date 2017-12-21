@@ -1,3 +1,3 @@
 <map id="Batch" name="Batch">
-<area shape="rect" id="node3" href="$classApplication.html" title="{Application\n|&#45; nCores_old\l&#45; nCores_new\l&#45; R_old\l&#45; R_new\l&#45; boundIterations\l&#45; w\l&#45; term_i\l&#45; chi_0\l&#45; chi_C\l&#45; m\land 16 more...\l|+ Application()\l+ computeAlphaBeta()\l+ get_session_app_id()\l+ get_app_id()\l+ get_w()\l+ get_term_i()\l+ get_chi_0()\l+ get_chi_C()\l+ get_m()\l+ get_M()\land 24 more...\l}" alt="" coords="12,5,169,376"/>
+<area shape="rect" id="node3" href="$classApplication.html" title="{Application\n|&#45; nCores_old\l&#45; R_old\l&#45; chi_C\l&#45; m\l&#45; M\l&#45; Deadline_d\l&#45; csi\l&#45; alpha\l&#45; beta\l|+ Application()\l+ computeAlphaBeta()\l+ get_session_app_id()\l+ get_app_id()\l+ get_w()\l+ get_term_i()\l+ get_chi_0()\l+ get_chi_C()\l+ get_m()\l+ get_M()\land 24 more...\l}" alt="" coords="12,5,169,347"/>
 </map>

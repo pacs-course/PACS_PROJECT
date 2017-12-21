@@ -6,7 +6,7 @@ var searchData=
   ['app_5fi',['app_i',['../classCandidate.html#ac0132d260daf989781ac94fdf494d507',1,'Candidate']]],
   ['app_5fid',['app_id',['../classApplication.html#a5cedee59cfd3cbf89d02174e2f521493',1,'Application']]],
   ['app_5fj',['app_j',['../classCandidate.html#ad420293664ad21ac74713b90bfa73f04',1,'Candidate']]],
-  ['app_5fmanager',['app_manager',['../classBounds.html#a9b463c00e877b6bf67d9e1ff4f36950b',1,'Bounds::app_manager()'],['../classsearch.html#aa9b7922418788c7febf5aca7af407264',1,'search::App_manager()']]],
+  ['app_5fmanager',['app_manager',['../classBounds.html#a9b463c00e877b6bf67d9e1ff4f36950b',1,'Bounds::app_manager()'],['../classSearch__base.html#ad4cadf0273cce78e1ae9920bd9100e7a',1,'Search_base::App_manager()']]],
   ['application',['Application',['../classApplication.html',1,'Application'],['../classApplication.html#a3413eb5b5ba7bd2d1dfe2ce6d2e28c48',1,'Application::Application()']]],
   ['application_2ecpp',['application.cpp',['../application_8cpp.html',1,'']]],
   ['application_2ehh',['application.hh',['../application_8hh.html',1,'']]],

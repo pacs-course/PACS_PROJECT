@@ -27,6 +27,7 @@
 	 optJrParameters &par, int flagDagsim)
 	 {
 
+
 		 char parameters[1024];
 		 char cmd[1024];
 		 char path[1024];
@@ -54,8 +55,9 @@
 		 // This is possible because the variance between the log folders is small
 
 		 strcpy(path, const_cast<char*>(configuration["RESULTS_HOME"].c_str()));
-
+     std::cout<<"\n\n invoking invokePredictor :D\n\n"<<"path: "<<path<<"\n\n";
 		 strcpy(dir, readFolder(path));
+     std::cout<<"\n\ndir: "<<dir<<"\n\n";
 
 		 switch(par.get_simulator())
 		 {

@@ -1,3 +1,4 @@
 <map id="search&lt; Policy &gt;" name="search&lt; Policy &gt;">
-<area shape="rect" id="node3" href="$classBatch.html" title="{Batch\n||+ Batch()\l+ calculate_nu()\l+ initialize()\l+ fixInitialSolution()\l+ writeResults()\l+ show_session_app_id()\l+ show_bounds()\l+ show_solution()\l}" alt="" coords="88,6,259,186"/>
+<area shape="rect" id="node2" href="$classSearch__base.html" title="{Search_base\n||+ Search_base()\l+ localSearch()\l+ writeResults()\l+ print_solution()\l+ get_app_manager()\l}" alt="" coords="18,251,163,387"/>
+<area shape="rect" id="node3" href="$classBatch.html" title="{Batch\n||+ Batch()\l+ calculate_nu()\l+ initialize()\l+ fixInitialSolution()\l+ writeResults()\l+ show_session_app_id()\l+ show_bounds()\l+ show_solution()\l}" alt="" coords="5,6,176,186"/>
 </map>

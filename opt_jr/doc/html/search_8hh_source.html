@@ -99,68 +99,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;mysql.h&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="search__separing_8hh.html">search_separing.hh</a>&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="search__alterning_8hh.html">search_alterning.hh</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Policy&gt;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classsearch.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classsearch.html">search</a> :<span class="keyword">public</span> Policy {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="search__base_8hh.html">search_base.hh</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Policy&gt;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classsearch.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classsearch.html">search</a> :<span class="keyword">public</span> <a class="code" href="classSearch__base.html">Search_base</a> {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classsearch.html#aa9b7922418788c7febf5aca7af407264">   28</a></span>&#160;  <a class="code" href="classBatch.html">Batch</a> <a class="code" href="classsearch.html#aa9b7922418788c7febf5aca7af407264">App_manager</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classsearch.html#a68606af5b4adbb5d9f7df88f8ed06e2c">   27</a></span>&#160;  <a class="code" href="classsearch.html#a68606af5b4adbb5d9f7df88f8ed06e2c">search</a>(<a class="code" href="classBatch.html">Batch</a> app_m): <a class="code" href="classSearch__base.html">Search_base</a>(app_m){};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="comment">//sCandidates approximatedLoop( Batch &amp;App_manager, int &amp;iteration, optJrParameters &amp;par );</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">//void checkTotalNodes(int N, Batch &amp;App_manager);</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classsearch.html#a43081dcb0553c48414c0e358323fecb2">   38</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classsearch.html#a43081dcb0553c48414c0e358323fecb2">localSearch</a>(<a class="code" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;configuration, MYSQL *conn,  <a class="code" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::string debugMsg;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    Policy P;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    P.localSearch(<a class="code" href="classSearch__base.html#ad4cadf0273cce78e1ae9920bd9100e7a">App_manager</a>, configuration, conn, par);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classsearch.html#a68606af5b4adbb5d9f7df88f8ed06e2c">   50</a></span>&#160;  <a class="code" href="classsearch.html#a68606af5b4adbb5d9f7df88f8ed06e2c">search</a>(<a class="code" href="classBatch.html">Batch</a> app_m): <a class="code" href="classsearch.html#aa9b7922418788c7febf5aca7af407264">App_manager</a>(app_m){};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classsearch.html#a43081dcb0553c48414c0e358323fecb2">   60</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classsearch.html#a43081dcb0553c48414c0e358323fecb2">localSearch</a>(<a class="code" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;configuration, MYSQL *conn,  <a class="code" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    std::string debugMsg;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    Policy P;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    P.localSearch(<a class="code" href="classsearch.html#aa9b7922418788c7febf5aca7af407264">App_manager</a>, configuration, conn, par);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classsearch.html#a5c2193a35a9e1be1b05c9499037b0b6f">   73</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classsearch.html#a5c2193a35a9e1be1b05c9499037b0b6f">writeResults</a>(MYSQL *conn, <span class="keywordtype">char</span> * dbName,  <a class="code" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="classsearch.html#aa9b7922418788c7febf5aca7af407264">App_manager</a>.<a class="code" href="classBatch.html#a4c6c23dd95eccc220115af294d481219">writeResults</a>(conn, dbName, par);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classsearch.html#a0cf02fb0b69c8049e56dfec561e47bf9">   82</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classsearch.html#a0cf02fb0b69c8049e56dfec561e47bf9">print_solution</a>()</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    std::cout&lt;&lt; <a class="code" href="classsearch.html#aa9b7922418788c7febf5aca7af407264">App_manager</a>.<a class="code" href="classBatch.html#a54f580f3d93657bdf72420d338551087">show_solution</a>();</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classsearch.html#aa499999582d9d2b6f193075953fc882a">   89</a></span>&#160;  <a class="code" href="classBatch.html">Batch</a> <a class="code" href="classsearch.html#aa499999582d9d2b6f193075953fc882a">get_app_manager</a>(){    <span class="keywordflow">return</span> <a class="code" href="classsearch.html#aa9b7922418788c7febf5aca7af407264">App_manager</a>;}</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="classsearch_html_aa499999582d9d2b6f193075953fc882a"><div class="ttname"><a href="classsearch.html#aa499999582d9d2b6f193075953fc882a">search::get_app_manager</a></div><div class="ttdeci">Batch get_app_manager()</div><div class="ttdef"><b>Definition:</b> search.hh:89</div></div>
-<div class="ttc" id="classsearch_html_a5c2193a35a9e1be1b05c9499037b0b6f"><div class="ttname"><a href="classsearch.html#a5c2193a35a9e1be1b05c9499037b0b6f">search::writeResults</a></div><div class="ttdeci">void writeResults(MYSQL *conn, char *dbName, optJrParameters &amp;par)</div><div class="ttdef"><b>Definition:</b> search.hh:73</div></div>
-<div class="ttc" id="classsearch_html_a0cf02fb0b69c8049e56dfec561e47bf9"><div class="ttname"><a href="classsearch.html#a0cf02fb0b69c8049e56dfec561e47bf9">search::print_solution</a></div><div class="ttdeci">void print_solution()</div><div class="ttdef"><b>Definition:</b> search.hh:82</div></div>
-<div class="ttc" id="classsearch_html"><div class="ttname"><a href="classsearch.html">search</a></div><div class="ttdef"><b>Definition:</b> search.hh:22</div></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classsearch_html"><div class="ttname"><a href="classsearch.html">search</a></div><div class="ttdef"><b>Definition:</b> search.hh:23</div></div>
 <div class="ttc" id="readConfigurationFile_8hh_html"><div class="ttname"><a href="readConfigurationFile_8hh.html">readConfigurationFile.hh</a></div></div>
 <div class="ttc" id="candidates_8hh_html"><div class="ttname"><a href="candidates_8hh.html">candidates.hh</a></div></div>
-<div class="ttc" id="classBatch_html_a54f580f3d93657bdf72420d338551087"><div class="ttname"><a href="classBatch.html#a54f580f3d93657bdf72420d338551087">Batch::show_solution</a></div><div class="ttdeci">std::string show_solution()</div><div class="ttdef"><b>Definition:</b> batch.cpp:346</div></div>
-<div class="ttc" id="classsearch_html_aa9b7922418788c7febf5aca7af407264"><div class="ttname"><a href="classsearch.html#aa9b7922418788c7febf5aca7af407264">search::App_manager</a></div><div class="ttdeci">Batch App_manager</div><div class="ttdef"><b>Definition:</b> search.hh:28</div></div>
-<div class="ttc" id="classsearch_html_a68606af5b4adbb5d9f7df88f8ed06e2c"><div class="ttname"><a href="classsearch.html#a68606af5b4adbb5d9f7df88f8ed06e2c">search::search</a></div><div class="ttdeci">search(Batch app_m)</div><div class="ttdef"><b>Definition:</b> search.hh:50</div></div>
+<div class="ttc" id="classSearch__base_html"><div class="ttname"><a href="classSearch__base.html">Search_base</a></div><div class="ttdef"><b>Definition:</b> search_base.hh:6</div></div>
+<div class="ttc" id="classSearch__base_html_ad4cadf0273cce78e1ae9920bd9100e7a"><div class="ttname"><a href="classSearch__base.html#ad4cadf0273cce78e1ae9920bd9100e7a">Search_base::App_manager</a></div><div class="ttdeci">Batch App_manager</div><div class="ttdef"><b>Definition:</b> search_base.hh:12</div></div>
+<div class="ttc" id="classsearch_html_a68606af5b4adbb5d9f7df88f8ed06e2c"><div class="ttname"><a href="classsearch.html#a68606af5b4adbb5d9f7df88f8ed06e2c">search::search</a></div><div class="ttdeci">search(Batch app_m)</div><div class="ttdef"><b>Definition:</b> search.hh:27</div></div>
 <div class="ttc" id="readConfigurationFile_8hh_html_ab8f35b1da3261263c5e9c0e7c8921f5c"><div class="ttname"><a href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a></div><div class="ttdeci">std::unordered_map&lt; std::string, std::string &gt; sConfiguration</div><div class="ttdef"><b>Definition:</b> readConfigurationFile.hh:12</div></div>
 <div class="ttc" id="classBatch_html"><div class="ttname"><a href="classBatch.html">Batch</a></div><div class="ttdef"><b>Definition:</b> batch.hh:13</div></div>
-<div class="ttc" id="classsearch_html_a43081dcb0553c48414c0e358323fecb2"><div class="ttname"><a href="classsearch.html#a43081dcb0553c48414c0e358323fecb2">search::localSearch</a></div><div class="ttdeci">void localSearch(sConfiguration &amp;configuration, MYSQL *conn, optJrParameters &amp;par)</div><div class="ttdef"><b>Definition:</b> search.hh:60</div></div>
+<div class="ttc" id="classsearch_html_a43081dcb0553c48414c0e358323fecb2"><div class="ttname"><a href="classsearch.html#a43081dcb0553c48414c0e358323fecb2">search::localSearch</a></div><div class="ttdeci">void localSearch(sConfiguration &amp;configuration, MYSQL *conn, optJrParameters &amp;par)</div><div class="ttdef"><b>Definition:</b> search.hh:38</div></div>
 <div class="ttc" id="classoptJrParameters_html"><div class="ttname"><a href="classoptJrParameters.html">optJrParameters</a></div><div class="ttdef"><b>Definition:</b> optjrParameters.hh:17</div></div>
 <div class="ttc" id="search__alterning_8hh_html"><div class="ttname"><a href="search__alterning_8hh.html">search_alterning.hh</a></div></div>
 <div class="ttc" id="search__separing_8hh_html"><div class="ttname"><a href="search__separing_8hh.html">search_separing.hh</a></div></div>
-<div class="ttc" id="classBatch_html_a4c6c23dd95eccc220115af294d481219"><div class="ttname"><a href="classBatch.html#a4c6c23dd95eccc220115af294d481219">Batch::writeResults</a></div><div class="ttdeci">void writeResults(MYSQL *conn, char *dbName, optJrParameters &amp;par)</div><div class="ttdef"><b>Definition:</b> batch.cpp:256</div></div>
+<div class="ttc" id="search__base_8hh_html"><div class="ttname"><a href="search__base_8hh.html">search_base.hh</a></div></div>
 <div class="ttc" id="optjrParameters_8hh_html"><div class="ttname"><a href="optjrParameters_8hh.html">optjrParameters.hh</a></div></div>
 <div class="ttc" id="batch_8hh_html"><div class="ttname"><a href="batch_8hh.html">batch.hh</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

@@ -1,6 +1,8 @@
 var searchData=
 [
   ['search',['search',['../classsearch.html#a68606af5b4adbb5d9f7df88f8ed06e2c',1,'search']]],
+  ['search_5fbase',['Search_base',['../classSearch__base.html#a222697de87f38891f9018defe1988dc4',1,'Search_base']]],
+  ['search_5fbuilder',['search_builder',['../classSearch__factory.html#a47fca32f216bd67232f9ea82416a32d4',1,'Search_factory']]],
   ['set_5fbasefo',['set_baseFO',['../classApplication.html#a4931a778639958beec06c7efa6343602',1,'Application']]],
   ['set_5fbound',['set_bound',['../classApplication.html#aa5bda390f99dea85e95f8d43b45c01a6',1,'Application']]],
   ['set_5fcurrentcores_5fd',['set_currentCores_d',['../classApplication.html#a54b218ca87366e0897571416da763ba2',1,'Application']]],

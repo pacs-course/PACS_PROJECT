@@ -70,6 +70,7 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
 
   for (auto it=cand.begin(); it!= cand.end();it++)
   {
+
     indicator_i =1;
     indicator_j =1;
     for (auto aux_it= aux.begin();aux_it!= aux.end();aux_it++)
@@ -125,7 +126,7 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
       {
         if ((*it)->get_currentCores_d() > 0 )//it->app_i.get_currentCores_d() > 0 && it->app_j.get_currentCores_d() > 0)
         {
-
+          std::cout<<"\n\n invoking invokePredictorOpenMP :D\n\n";
           OF.ObjFunctionComponent(configuration, conn2[ID], **it, par); //caches the results
           //it->nodes_i = it->app_i->get_currentCores_d();
 

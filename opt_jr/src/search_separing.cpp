@@ -22,8 +22,8 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
 
 
     /*
-    *   Estimate the candidates for the predictor
-    */
+     *   Estimate the candidates for the predictor
+     */
     app_pairs = approximated_loop( app_manager, how_many, par );
     debugMsg= "\n\n\n\n       finished approximatedLoop   \n\n\n\n"; debugMessage(debugMsg, par);
 
@@ -42,7 +42,8 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
 
 
 
-    //modify the most promising pair in app_manager
+    //modify the most promising pair in app_manager... should be the first!!
+    /*
     double DELTA_tmp, DELTA_pair=0;
     int index=0, index_pair;
 
@@ -60,20 +61,25 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
 
 
 
+
     /*
     *  Find the corresponding applications in batch and modify them
     */
+
+
     auto it = app_pairs.cand.begin();
+    /*
     for (int j=0; j< index_pair; j++)
     {
       it++;
     }
+    */
 
 
 
     for (auto elem= app_manager.APPs.begin(); elem!=app_manager.APPs.end(); elem++)
     {
-
+        std::cout<<"\n\n I'm here 1\n\n";
         if(  it->app_i.get_app_id()==elem->get_app_id())
         {
           if (it->app_i.get_session_app_id()==elem->get_session_app_id())
@@ -82,6 +88,7 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
             elem->set_baseFO( it->real_i);
           }
         }
+        std::cout<<"\n\n I'm here 2\n\n";
 
         if(  it->app_j.get_app_id()==elem->get_app_id())
         {
@@ -152,9 +159,10 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
         application_i++;
       }
 
+      std::cout<<"\n\n I'm here 3\n\n";
       // exact_loop also updates app_manager
       exact_loop(all_pairs, configuration, conn, app_manager, par, indicator);
-
+      std::cout<<"\n\n I'm here 4\n\n";
 
       checkTotalNodes(par.get_number(), app_manager);
       if (indicator==-1) //It means that there are not convenient exchanges

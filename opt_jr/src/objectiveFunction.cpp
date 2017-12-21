@@ -20,6 +20,7 @@ double ObjFun::ObjFunctionComponent(sConfiguration &configuration, MYSQL *conn, 
 	double output;
 
 	/* The memory pattern can be anything such as "*" */
+	std::cout<<"\n\n invoking ObjFunctionComponent :D\n\n";
 	app.set_R_d( atof(invokePredictor( configuration, conn, 1, app.get_currentCores_d(), (char*)"*", app.get_dataset_size(),  const_cast<char*>((app.get_session_app_id()).c_str()),
 													const_cast<char*>((app.get_app_id()).c_str()), const_cast<char*>((app.get_stage()).c_str()), par,RESIDUAL_DAGSIM)));
 

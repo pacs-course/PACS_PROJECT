@@ -1,4 +1,4 @@
 <map id="Batch::show_solution" name="Batch::show_solution">
-<area shape="rect" id="node2" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="395,5,445,32"/>
-<area shape="rect" id="node3" href="$classsearch.html#a0cf02fb0b69c8049e56dfec561e47bf9" title="search::print_solution" alt="" coords="200,31,347,57"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="240,5,291,32"/>
+<area shape="rect" id="node3" href="$classSearch__base.html#a6380bc5489f95cf722fa7cc329dc9f9d" title="Search_base::print\l_solution" alt="" coords="200,57,331,98"/>
 </map>
