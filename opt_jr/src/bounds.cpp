@@ -214,7 +214,7 @@ void Bounds::calculateBounds( sConfiguration &configuration, MYSQL *conn,
       int ID=omp_get_thread_num();
       int j=0;
       /* assign each app to a thread */
-      for (auto it=app_manager.APPs.begin(); it !=app_manager.APPs.end(); it++)
+      for (auto it=app_manager.get_begin(); it !=app_manager.get_end(); it++)
       {
         int pos=j%n_threads;
         if(pos==ID)
@@ -236,7 +236,7 @@ void Bounds::calculateBounds( sConfiguration &configuration, MYSQL *conn,
 	{
 
 		debugMsg=" Calculate bounds for each application (sequencial version) \n" ;debugMessage(debugMsg,par);
-		for (auto it=app_manager.APPs.begin(); it !=app_manager.APPs.end(); it++)
+		for (auto it=app_manager.get_begin(); it !=app_manager.get_end(); it++)
 				findBound(configuration, conn, const_cast<char*>(configuration["OptDB_dbName"].c_str()), *it, par);
 
 	}

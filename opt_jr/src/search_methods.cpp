@@ -166,13 +166,11 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, int &iteratio
 
     if(par.get_numberOfThreads()==0)
     {
-      std::cout<<"\n\n invoking sequencial :D\n\n";
       // Calculate in advance the results of the predictor FOR EACH candidate s.t. currentCores > 0 (until finished or MAX_PROMISING_CONFIGURATIONS is reached)
       app_pairs.invokePredictorSeq( conn, par, configuration);
     }
     else
     {
-      std::cout<<"\n\n invoking parallel :D\n\n";
       // Calculate in advance and in parallel the results of the predictor FOR EACH candidate s.t. currentCores > 0 (until finished or MAX_PROMISING_CONFIGURATIONS is reached)
       app_pairs.invokePredictorOpenMP( par, configuration);
     }

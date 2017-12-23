@@ -79,7 +79,6 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
 
     for (auto elem= app_manager.APPs.begin(); elem!=app_manager.APPs.end(); elem++)
     {
-        std::cout<<"\n\n I'm here 1\n\n";
         if(  it->app_i.get_app_id()==elem->get_app_id())
         {
           if (it->app_i.get_session_app_id()==elem->get_session_app_id())
@@ -88,7 +87,6 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
             elem->set_baseFO( it->real_i);
           }
         }
-        std::cout<<"\n\n I'm here 2\n\n";
 
         if(  it->app_j.get_app_id()==elem->get_app_id())
         {
@@ -159,10 +157,8 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
         application_i++;
       }
 
-      std::cout<<"\n\n I'm here 3\n\n";
       // exact_loop also updates app_manager
       exact_loop(all_pairs, configuration, conn, app_manager, par, indicator);
-      std::cout<<"\n\n I'm here 4\n\n";
 
       checkTotalNodes(par.get_number(), app_manager);
       if (indicator==-1) //It means that there are not convenient exchanges
@@ -175,7 +171,7 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
       if (par.get_globalFOcalculation())
       {
         TotalFO = OF.ObjFunctionGlobal(configuration, conn, app_manager, par);
-        std::cout << "\n At iteration: "<< iteration << " GLOBAL OBJECTIVE FUNCTION = "<< TotalFO <<"\n"<<std::endl;
+        std::cout << "At iteration: "<< iteration << " GLOBAL OBJECTIVE FUNCTION = "<< TotalFO <<std::endl;
         addStatistics(statistics, iteration, how_many, TotalFO); // Update Statistics
       }
     }

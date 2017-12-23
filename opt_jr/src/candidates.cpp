@@ -95,11 +95,6 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
     }
 
   }
-  for (auto &elem : aux)
-  {
-    std::cout<< "\n"<< elem->get_session_app_id()<<" "<< elem->get_app_id()<<" "<<elem->get_currentCores_d() <<" "<<elem->get_stage()<<std::endl;
-  }
-  std::cout << "\n\n\n "<<aux.size()<<"\n\n\n";
 
   //call invokePredictorInAdvance in parallel
   #pragma omp parallel num_threads(n_threads)
@@ -126,7 +121,6 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
       {
         if ((*it)->get_currentCores_d() > 0 )//it->app_i.get_currentCores_d() > 0 && it->app_j.get_currentCores_d() > 0)
         {
-          std::cout<<"\n\n invoking invokePredictorOpenMP :D\n\n";
           OF.ObjFunctionComponent(configuration, conn2[ID], **it, par); //caches the results
           //it->nodes_i = it->app_i->get_currentCores_d();
 

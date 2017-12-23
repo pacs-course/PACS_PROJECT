@@ -26,12 +26,10 @@
 char * readFolder(char *  path)
 {
 	struct dirent *de;
-	std::cout<<"\n\n invoking readFolder :D  "<<"path: "<<path<<"\n\n" ;
 	DIR *dr = opendir(path);
 	if (dr == NULL)
 	{
 		printf("readFolder failure (%s)", path );
-		std::cout<<"\nerrno: "<<errno<<std::endl;
 		exit(-1);
 	}
 	while ((de = readdir(dr)) != NULL)
@@ -43,8 +41,6 @@ char * readFolder(char *  path)
 				strcmp(de->d_name, "..")
 			)
 			{
-
-				std::cout<<"\n\nclosing directory\n\n";
 				closedir(dr);
 				return de->d_name;
 			}
