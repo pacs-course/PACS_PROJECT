@@ -49,6 +49,13 @@ public:
 
   std::string show_solution();
 
+  std::vector<Application>::iterator get_begin(){return APPs.begin();};
+  std::vector<Application>::const_iterator get_cbegin(){return APPs.cbegin();};
+  std::vector<Application>::iterator get_end(){return APPs.end();};
+  std::vector<Application>::const_iterator get_cend(){return APPs.cend();};
+
+
+
 
 };
 
