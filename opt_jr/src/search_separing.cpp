@@ -172,14 +172,14 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
       {
         TotalFO = OF.ObjFunctionGlobal(configuration, conn, app_manager, par);
         std::cout << "At iteration: "<< iteration << " GLOBAL OBJECTIVE FUNCTION = "<< TotalFO <<std::endl;
-        addStatistics(statistics, iteration, how_many, TotalFO); // Update Statistics
+        statistics.addStatistics( iteration, how_many, TotalFO); // Update Statistics
       }
     }
 
 
     if (par.get_globalFOcalculation())
     {
-      readStatistics(statistics, par);
+      statistics.readStatistics( par);
     }
 
   }

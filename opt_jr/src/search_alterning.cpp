@@ -59,7 +59,7 @@ void Search_alterning::localSearch(Batch &app_manager, sConfiguration &configura
     {
       TotalFO = OF.ObjFunctionGlobal(configuration, conn, app_manager, par);
       std::cout << "\n At iteration: "<< iteration << " GLOBAL OBJECTIVE FUNCTION = "<< TotalFO <<"\n"<<std::endl;
-      addStatistics(statistics, iteration, how_many, TotalFO); // Update Statistics
+      statistics.addStatistics( iteration, how_many, TotalFO); // Update Statistics
     }
 
     if (index_pair==-1)
@@ -73,7 +73,7 @@ void Search_alterning::localSearch(Batch &app_manager, sConfiguration &configura
 
   if (par.get_globalFOcalculation())
   {
-    readStatistics(statistics, par);
+    statistics.readStatistics( par);
   }
 
 }

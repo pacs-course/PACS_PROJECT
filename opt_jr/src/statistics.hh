@@ -23,19 +23,24 @@
 
  };
 
+
+class sStatistics{
 /**
 	A vector of "Statistic" object is used to store statistical information about the local search.
 */
-using sStatistics=std::vector<Statistic>;
+std::vector<Statistic> statistics;
 
+public:
 /**
 	"addStatistics" is used to add information about an iteration to the "sStatistics" object.
 */
-void addStatistics(sStatistics &statistics,int iteration, int size, double FO_total);
+void addStatistics(int iteration, int size, double FO_total);
 
 /**
 	"readStatistics" shows the statistics about localsearch iterations.
 */
-void readStatistics(sStatistics &statistics, optJrParameters &par);
+void readStatistics(optJrParameters &par);
+
+};
 
 #endif

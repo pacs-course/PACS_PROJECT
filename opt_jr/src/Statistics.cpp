@@ -16,13 +16,16 @@ double Statistic::get_FO_Total()
 }
 
 
-void addStatistics(sStatistics &statistics,int iteration, int size, double FO_total)
+
+
+
+void sStatistics::addStatistics(int iteration, int size, double FO_total)
 {
   Statistic tmp(iteration,size,FO_total);
   statistics.push_back(tmp);
 }
 
-void readStatistics(sStatistics &statistics, optJrParameters &par)
+void sStatistics::readStatistics(optJrParameters &par)
 {
 
   std::cout << "\n\n*************************************************\n";

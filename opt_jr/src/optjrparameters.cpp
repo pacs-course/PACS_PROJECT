@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <iostream>
 
 
 /*
@@ -16,6 +17,7 @@ optJrParameters::optJrParameters (char **args, int argc)
 
 	if (argc != ARGS) Usage(argc);
 	for (int i = 0; i < ARGS; i++)
+	{
 		if (strstr(args[i], FILENAME)) filename=parseArg(args[i], (char*)FILENAME, STRING, argc);//strcpy(filename, parseArg(args[i], FILENAME, STRING));
 
 		else if (strstr(args[i], NUM_N)) number = atoi(parseArg(args[i], (char*)NUM_N, NUMBER, argc));
@@ -38,6 +40,12 @@ optJrParameters::optJrParameters (char **args, int argc)
 									cache = atoi(parseArg(args[i], (char*)CACHE, YES_NO, argc));
 								else if (strstr(args[i], SEARCH_TYPE))
 									search_type = parseArg(args[i], (char*)SEARCH_TYPE, STRING, argc);
+		}
+		if (K!=0 && (search_type=="s"||search_type=="S"))
+		{
+			std::cout<< "If search-type is sequencial (-st=s/S) it's necessary to have -k=0"<<std::endl;
+			exit(-1);
+		}
 
 
 
@@ -48,5 +56,4 @@ void optJrParameters::set_numberOfThreads(sConfiguration &configuration)
 {
 	/* Read the threads number */
 	numberOfThreads = stoi(configuration["THREADS_NUMBER"]);
-
 }
