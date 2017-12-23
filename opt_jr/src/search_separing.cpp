@@ -15,8 +15,9 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
   debugMsg =  "\n     ***** Estimate the candidates for the predictor ******\n"; debugMessage(debugMsg, par);
 
   //START THE ITERATION LOOP
-  for (int iteration = 1; iteration <= par.get_maxIteration(); iteration++)//to be changed!
+  for (int iteration = 1; iteration <= N_APPROX_LOOP*par.get_maxIteration(); iteration++)//to be changed!
   {
+    std::cout<<"\n\n\n"<<iteration;
     checkTotalNodes(par.get_number(), app_manager);
     debugMsg= "ITERATION " + std::to_string(iteration); debugMessage(debugMsg, par);
 

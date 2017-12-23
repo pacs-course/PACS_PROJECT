@@ -2,7 +2,7 @@
 #define SEARCH_HH
 
 
-#include "readConfigurationFile.hh"
+#include "ConfigurationFile.hh"
 #include "batch.hh"
 #include "optjrParameters.hh"
 #include "candidates.hh"

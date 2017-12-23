@@ -12,7 +12,6 @@
 */
 class Batch{
 
-private:
   /// The vector stores application data
   std::vector<Application> APPs;
 

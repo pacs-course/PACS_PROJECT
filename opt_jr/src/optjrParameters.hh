@@ -7,7 +7,7 @@
 #define LUNDSTROM 1
 
 #include <string>
-#include "readConfigurationFile.hh"
+#include "ConfigurationFile.hh"
 
 /**
     optJrParameters saves parameters received from command line; once they are saved

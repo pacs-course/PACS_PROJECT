@@ -3,7 +3,7 @@
 
 
 #include "invokePredictor_helper.hh"
-#include "readConfigurationFile.hh"
+#include "ConfigurationFile.hh"
 #include "optjrParameters.hh"
 #include "debugmessage.hh"
 #include "db.hh"

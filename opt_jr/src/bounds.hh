@@ -2,7 +2,7 @@
 #define BOUNDS_HH
 
 #include "batch.hh"
-#include "readConfigurationFile.hh"
+#include "ConfigurationFile.hh"
 #include "optjrparameters.hh"
 #include <mysql.h>
 #include <string.h>

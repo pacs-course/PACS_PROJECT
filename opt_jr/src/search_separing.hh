@@ -4,6 +4,8 @@
 #include "search_methods.hh"
 #include "batch.hh"
 
+# define N_APPROX_LOOP 10
+
 class Search_separing : public Search_methods
 {
 

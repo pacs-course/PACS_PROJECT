@@ -1,4 +1,4 @@
-#include "readConfigurationFile.hh"
+#include "ConfigurationFile.hh"
 #include <fstream>
 #include <string>
 #include <string.h>
@@ -7,7 +7,7 @@
 
 
 
-sConfiguration  readConfigurationFile()
+sConfiguration::sConfiguration()
 {
 	FILE * fp;
 
@@ -16,7 +16,7 @@ sConfiguration  readConfigurationFile()
 	    ssize_t read;
 	    char var[256], val[256],* configurationFile;
 
-	sConfiguration config;
+	//sConfiguration configuration;
 
 	configurationFile = getenv("WSI_CONFIG_FILE");
 	if (configurationFile == NULL)
@@ -38,16 +38,17 @@ sConfiguration  readConfigurationFile()
 	    		strcpy(var, extractItem(line, (char*)"\"", (char*)"\""));
 	    		strcpy(val, extractItem(line, (char*)">", (char*)"<"));
 					//config.push_back(std::make_pair(var,val));
-					config.insert(std::make_pair(var,val));
+					configuration.insert(std::make_pair(var,val));
 					//printf("%s",var);
 	    		//addConfiguration(&first, &current, var, val);
 	    	}
 	    }
-	    return config;
+			fclose(fp);
+	    //return config;
 }
 
 
-char * extractItem( char *const string, char *const left, const char *const right)
+char * sConfiguration::extractItem( char *const string, char *const left, const char *const right)
 {
     char  *head;
 	  char  *tail;

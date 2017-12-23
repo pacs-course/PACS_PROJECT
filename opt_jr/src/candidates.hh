@@ -38,10 +38,6 @@ class Candidate{
 
  public:
 
-
-
-
-
   /// Constructor
   Candidate(Application i, Application j, int NCi, int NCj, double D_FO, int d_i, int d_j ): app_i(i), app_j(j), newCoreAssignment_i(NCi), newCoreAssignment_j(NCj),delta_fo(D_FO), delta_i(d_i), delta_j(d_j) {};
 
@@ -66,9 +62,6 @@ class Candidate{
 
   void set_real_i(double d){real_i=d;}
   void set_real_j(double d){real_j=d;}
-
-
-
 
 
 

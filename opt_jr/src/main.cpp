@@ -8,7 +8,7 @@
 #include <memory>
 
 #include "optjrparameters.hh"
-#include "readConfigurationFile.hh"
+#include "ConfigurationFile.hh"
 #include "debugmessage.hh"
 #include "db.hh"
 #include "application.hh"
@@ -47,8 +47,7 @@ int main(int argc, char **argv)
   1) read informations from "wsi_config.xml" file and save it in a "sConfiguration" object (which is unordered_map(string,string))
   */
 
-  sConfiguration configuration = readConfigurationFile();
-
+  sConfiguration configuration; //automatically initialized
 
 
   /**
@@ -133,6 +132,7 @@ int main(int argc, char **argv)
 
   /* CREATE A BUTCH OBJECT */
   Batch App_manager(readAppFile(stream));
+  fclose(stream);
 
 
   debugMsg= App_manager.show_session_app_id();
