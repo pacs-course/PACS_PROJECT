@@ -22,7 +22,7 @@ void Search_methods::checkTotalNodes(int N, Batch &App_manager)
 {
   int total = 0;
 
-  for (auto it= App_manager.APPs.begin(); it!=App_manager.APPs.end();++it)
+  for (auto it= App_manager.get_begin(); it!=App_manager.get_end();++it)
   {
     total+= it->get_currentCores_d();
     if (total > N)
@@ -47,7 +47,7 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, int &iteratio
   ObjFun OF;
 
 
-  if (App_manager.APPs.empty())
+  if (App_manager.get_empty())
   {
     printf("Error: approximatedLoop: NO Applications\n");
     exit(-1);
@@ -61,14 +61,14 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, int &iteratio
 
 
   debugMsg= "Approximated iterated loop"; debugMessage(debugMsg, par);
-  auto application_i=App_manager.APPs.begin();
+  auto application_i=App_manager.get_begin();
 
 
-  while (application_i!=App_manager.APPs.end())
+  while (application_i!=App_manager.get_end())
   {
 
-    auto application_j = App_manager.APPs.begin();
-    while (application_j != App_manager.APPs.end())
+    auto application_j = App_manager.get_begin();
+    while (application_j != App_manager.get_end())
     {
       if (application_i->get_session_app_id()!=application_j->get_session_app_id())
       {
@@ -230,7 +230,7 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, int &iteratio
       }
 
 
-      for (auto elem= App_manager.APPs.begin(); elem!=App_manager.APPs.end(); elem++)
+      for (auto elem= App_manager.get_begin(); elem!=App_manager.get_end(); elem++)
       {
         if (it->app_i.get_app_id()==elem->get_app_id() && it->app_i.get_session_app_id()==elem->get_session_app_id())
         {

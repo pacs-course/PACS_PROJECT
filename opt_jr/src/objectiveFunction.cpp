@@ -98,7 +98,7 @@ double ObjFun::ObjFunctionGlobal(sConfiguration &configuration, MYSQL *conn, Bat
 	double sum = 0;
 
 
-	for (auto it = App_manager.APPs.begin(); it!=App_manager.APPs.end(); ++it)
+	for (auto it = App_manager.get_begin(); it!=App_manager.get_end(); ++it)
 	{
 		sum = sum + ObjFunctionComponent(configuration, conn, *it, par);
 	}

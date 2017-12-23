@@ -219,10 +219,10 @@ void Bounds::calculateBounds( sConfiguration &configuration, MYSQL *conn,
         int pos=j%n_threads;
         if(pos==ID)
         {
-          debugMsg= "Call findBound of app " + app_manager.APPs[j].get_app_id()
+          debugMsg= "Call findBound of app " + it->get_app_id()
                     + " from thread " + std::to_string(ID); debugMessage(debugMsg,par);
 
-          findBound(configuration, conn2[ID], const_cast<char*>(configuration["OptDB_dbName"].c_str()), app_manager.APPs[j], par);
+          findBound(configuration, conn2[ID], const_cast<char*>(configuration["OptDB_dbName"].c_str()), *it , par);
         }
         ++j;
       }

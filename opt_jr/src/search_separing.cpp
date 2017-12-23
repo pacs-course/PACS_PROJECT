@@ -77,7 +77,7 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
 
 
 
-    for (auto elem= app_manager.APPs.begin(); elem!=app_manager.APPs.end(); elem++)
+    for (auto elem= app_manager.get_begin(); elem!=app_manager.get_end(); elem++)
     {
         if(  it->app_i.get_app_id()==elem->get_app_id())
         {
@@ -119,11 +119,11 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
     save ALL the potential exchanges in a sCandidates object
     */
 
-    auto application_i=app_manager.APPs.begin();
-    while (application_i!=app_manager.APPs.end())
+    auto application_i=app_manager.get_begin();
+    while (application_i!=app_manager.get_end())
     {
-      auto application_j = app_manager.APPs.begin();
-      while (application_j != app_manager.APPs.end())
+      auto application_j = app_manager.get_begin();
+      while (application_j != app_manager.get_end())
       {
         if (application_i->get_session_app_id()!=application_j->get_session_app_id())
         {

@@ -12,11 +12,6 @@
 */
 class Batch{
 
-  friend class Bounds;
-  friend class ObjFun;
-  friend class Search_methods;
-  friend class Search_separing;
-
 private:
   /// The vector stores application data
   std::vector<Application> APPs;
@@ -53,6 +48,7 @@ public:
   std::vector<Application>::const_iterator get_cbegin(){return APPs.cbegin();};
   std::vector<Application>::iterator get_end(){return APPs.end();};
   std::vector<Application>::const_iterator get_cend(){return APPs.cend();};
+  bool get_empty(){return APPs.empty();};
 
 
 
