@@ -46,6 +46,11 @@ optJrParameters::optJrParameters (char **args, int argc)
 			std::cout<< "If search-type is sequencial (-st=s/S) it's necessary to have -k=0"<<std::endl;
 			exit(-1);
 		}
+		if(search_type!="s" && search_type!="S" && search_type!="a" &&search_type!="A")
+		{
+			std::cout << "Unknown search-type; -st option should be: -st=<a/A|s/S>"<<std::endl;
+			exit(-1);
+		}
 
 
 
