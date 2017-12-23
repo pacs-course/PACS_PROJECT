@@ -19,7 +19,6 @@ void DBerror(MYSQL *conn, char * msg);
 
 /**
   Execute SQL statement
-  (not substantially changed from original C version)
 */
 MYSQL_ROW executeSQL(MYSQL *conn, char *statement, optJrParameters par);
 

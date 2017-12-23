@@ -40,7 +40,7 @@ void Search_methods::checkTotalNodes(int N, Batch &App_manager)
 * Description: It estimates the objective function for each move. The candidate applications for which the move is profitable are stored in a sCandidate object
 */
 
-sCandidates Search_methods::approximated_loop( Batch &App_manager, int &iteration, optJrParameters &par )
+sCandidates Search_methods::approximated_loop( Batch &App_manager, /*int &iteration,*/ optJrParameters &par )
 {
 
   std::string debugMsg;
@@ -128,7 +128,7 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, int &iteratio
 
 
 
-    iteration= app_pairs.get_size(); //da modificare
+  //  iteration= app_pairs.get_size(); 
 
     return app_pairs;
 

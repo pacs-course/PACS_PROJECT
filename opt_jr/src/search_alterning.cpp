@@ -24,7 +24,7 @@ void Search_alterning::localSearch(Batch &app_manager, sConfiguration &configura
     /*
     *   Estimate the candidates for the predictor
     */
-    sCandidateApproximated = approximated_loop( app_manager, how_many, par );
+    sCandidateApproximated = approximated_loop( app_manager, par );
     debugMsg= "\n\n\n\n       finished approximatedLoop   \n\n\n\n"; debugMessage(debugMsg, par);
 
     if (sCandidateApproximated.get_empty())
@@ -41,6 +41,7 @@ void Search_alterning::localSearch(Batch &app_manager, sConfiguration &configura
     debugMsg +="*** Consider the first MAX_PROMISING_CONFIGURATIONS of the Application ****\n";
     debugMsg +="*******************************************************************\n"; debugMessage(debugMsg,par);
 
+    how_many=sCandidateApproximated.get_size();
     debugMsg = " There are " + std::to_string(how_many) +" promising configurations in iteration " + std::to_string(iteration) + "\n\n"; debugMessage(debugMsg,par);
 
 

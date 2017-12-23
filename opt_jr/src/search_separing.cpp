@@ -24,7 +24,7 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
     /*
      *   Estimate the candidates for the predictor
      */
-    app_pairs = approximated_loop( app_manager, how_many, par );
+    app_pairs = approximated_loop( app_manager, par );
     debugMsg= "\n\n\n\n       finished approximatedLoop   \n\n\n\n"; debugMessage(debugMsg, par);
 
     if (app_pairs.get_empty())
@@ -37,7 +37,7 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
     debugMsg = " \n\n\n\n\n*****  Ex-iteration loop ******\n\n\n\n\n";debugMessage(debugMsg, par);
 
 
-
+    how_many=app_pairs.get_size();
     debugMsg = " There are " + std::to_string(how_many) +" promising configurations in iteration " + std::to_string(iteration) + "\n\n"; debugMessage(debugMsg,par);
 
 

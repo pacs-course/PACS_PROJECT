@@ -21,7 +21,7 @@ public:
    It estimates the objective function for each move. The candidate applications for which the move is profitable are stored in a sCandidate object
   */
 
-  sCandidates approximated_loop( Batch &App_manager, int &iteration, optJrParameters &par);
+  sCandidates approximated_loop( Batch &App_manager,/* int &iteration,*/ optJrParameters &par);
 
   /**
   It evaluates the delta FO for all the candidates in app_pairs and it does the best change (if it exist) in App_manager
