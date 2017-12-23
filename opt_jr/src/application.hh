@@ -7,7 +7,7 @@
 #include "invokePredictor.hh"
 
 
-#define R_ALGORITHM 0 ///< R_ALGORITHM: currently redundant, it specifies how the objective function should be computed
+//#define R_ALGORITHM 0 ///< R_ALGORITHM: currently redundant, it specifies how the objective function should be computed
 /*#define CORES_ALGORITHM 1
 #define NCORES_ALGORITHM 2*/
 
@@ -40,7 +40,7 @@ class Application{
 	const double csi;
 	const std::string stage; ///<  Application's stage (used in case of residual time)
 	const int dataset_size;   ///< Size of the dataset
-	const int mode=R_ALGORITHM; 				///< How the objective function is calculated (currently redundant)
+	//const int mode=R_ALGORITHM; 				///< How the objective function is calculated (currently redundant)
 
 	/* Dynamic values */
 	double nu_d;        ///< nu value
@@ -81,7 +81,7 @@ public:
 	const double get_csi(){  return csi;}
 	const std::string get_stage(){  return stage;	}
 	const int get_dataset_size()	{	return dataset_size;}
-	const int get_mode(){	return mode;}
+	//const int get_mode(){	return mode;}
 	const int get_currentCores_d(){return currentCores_d;}
 	double get_nu_d(){return nu_d;}
 	int get_nCores_DB_d(){	return nCores_DB_d;}

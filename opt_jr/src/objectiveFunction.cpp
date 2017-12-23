@@ -25,15 +25,15 @@ double ObjFun::ObjFunctionComponent(sConfiguration &configuration, MYSQL *conn, 
 
 
 	/* Determine how the obj function needs to be calculated */
-	switch(app.get_mode())
-	{
-		case R_ALGORITHM:
+	/*switch(app.get_mode())
+	{*
+		case R_ALGORITHM:*/
 				debugMsg = "ObjFunctionComponent W " + std::to_string(app.get_w()) + "   R_d " + std::to_string(app.get_R_d()) + "  D " + std::to_string(app.get_Deadline_d()); debugMessage(debugMsg, par);
 				if (app.get_R_d() > app.get_Deadline_d())
 					output = app.get_w() * (app.get_R_d() - app.get_Deadline_d());
 				else output = 0;
 				debugMsg = "Compute FO for app " + app.get_session_app_id() + " currentCores_d " + std::to_string((int)app.get_currentCores_d()) + "  R " + std::to_string(app.get_R_d()) + " FO = "+  std::to_string(output); debugMessage(debugMsg, par);
-			break;
+			//break;
 			/*
 		case CORES_ALGORITHM:
 			printf("Cores Algorithm\n");
@@ -46,12 +46,12 @@ double ObjFun::ObjFunctionComponent(sConfiguration &configuration, MYSQL *conn, 
 				if (app.newCores >app.get_bound()) output = 0;
 				else output = app.get_w() * app.R - app.R;
 			break;
-			*/
+			*
 		default:
 			printf("ObjFunctionComponent: unknown case within Switch statement: get_mode() %d\n", app.get_mode());
 			exit(-1);
-			break;
-	}
+			break;*
+	}*/
 
 	return output;
 }
