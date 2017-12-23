@@ -27,7 +27,7 @@ void Search_alterning::localSearch(Batch &app_manager, sConfiguration &configura
     sCandidateApproximated = approximated_loop( app_manager, how_many, par );
     debugMsg= "\n\n\n\n       finished approximatedLoop   \n\n\n\n"; debugMessage(debugMsg, par);
 
-    if (sCandidateApproximated.cand.empty())
+    if (sCandidateApproximated.get_empty())
     {
       // The Candidate Application is empty. No further solution enhancements possible
       debugMsg = "LocalSearch: empty Candidate Application "; debugMessage(debugMsg, par);

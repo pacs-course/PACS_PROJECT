@@ -27,7 +27,7 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
     app_pairs = approximated_loop( app_manager, how_many, par );
     debugMsg= "\n\n\n\n       finished approximatedLoop   \n\n\n\n"; debugMessage(debugMsg, par);
 
-    if (app_pairs.cand.empty())
+    if (app_pairs.get_empty())
     {
       // The Candidate Application is empty. No further solution enhancements possible
       debugMsg = "LocalSearch: empty Candidate Application : exit to Approximated loop"; debugMessage(debugMsg, par);
@@ -62,12 +62,12 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
 
 
 
-    /*
+    *
     *  Find the corresponding applications in batch and modify them
     */
 
 
-    auto it = app_pairs.cand.begin();
+    auto it = app_pairs.get_begin();
     /*
     for (int j=0; j< index_pair; j++)
     {
@@ -79,21 +79,21 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
 
     for (auto elem= app_manager.get_begin(); elem!=app_manager.get_end(); elem++)
     {
-        if(  it->app_i.get_app_id()==elem->get_app_id())
+        if(  it->get_app_id_i()==elem->get_app_id())
         {
-          if (it->app_i.get_session_app_id()==elem->get_session_app_id())
+          if (it->get_session_app_id_i()==elem->get_session_app_id())
           {
-            elem->set_currentCores_d( it->newCoreAssignment_i);
-            elem->set_baseFO( it->real_i);
+            elem->set_currentCores_d( it->get_newCoreAssignment_i());
+            elem->set_baseFO( it->get_real_i());
           }
         }
 
-        if(  it->app_j.get_app_id()==elem->get_app_id())
+        if(  it->get_app_id_j()==elem->get_app_id())
         {
-          if (it->app_j.get_session_app_id()==elem->get_session_app_id())
+          if (it->get_session_app_id_j()==elem->get_session_app_id())
           {
-            elem->set_currentCores_d( it->newCoreAssignment_j);
-            elem->set_baseFO( it->real_j);
+            elem->set_currentCores_d( it->get_newCoreAssignment_j());
+            elem->set_baseFO( it->get_real_j());
           }
         }
 

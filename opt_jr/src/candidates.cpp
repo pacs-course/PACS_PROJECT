@@ -23,7 +23,7 @@ void sCandidates::addCandidate(  Application app_i, Application app_j, int contr
      }
      for (auto it= cand.begin(); it!=cand.end(); it++)
      {
-       if ( it->deltaFO > delta)
+       if ( it->get_delta_fo() > delta)
        {
          cand.emplace(it, app_i, app_j, contr1, contr2, delta, delta_i, delta_j );
          return;
@@ -65,7 +65,7 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
   avoid unnecessary calls (and avoid error);
   */
 
-  std::vector<Application*> aux;
+  std::vector<Application> aux;
   int indicator_i, indicator_j;
 
   for (auto it=cand.begin(); it!= cand.end();it++)
@@ -75,11 +75,11 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
     indicator_j =1;
     for (auto aux_it= aux.begin();aux_it!= aux.end();aux_it++)
     {
-      if ( (*aux_it)->get_app_id()== it->app_i.get_app_id()  &&  (*aux_it)->get_session_app_id()== it->app_i.get_session_app_id() && (*aux_it)->get_currentCores_d()== it->app_i.get_currentCores_d() )
+      if ( aux_it->get_app_id()== it->get_app_id_i()  &&  aux_it->get_session_app_id()== it->get_session_app_id_i() && aux_it->get_currentCores_d()== it->get_currentCores_d_i() )
       {
         indicator_i=-1;
       }
-      if ( (*aux_it)->get_app_id()== it->app_j.get_app_id()  &&  (*aux_it)->get_session_app_id()== it->app_j.get_session_app_id() && (*aux_it)->get_currentCores_d()== it->app_j.get_currentCores_d() )
+      if ( aux_it->get_app_id()== it->get_app_id_j()  &&  aux_it->get_session_app_id()== it->get_session_app_id_j() && aux_it->get_currentCores_d()== it->get_currentCores_d_j() )
       {
         indicator_j=-1;
       }
@@ -87,11 +87,11 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
     }
     if (indicator_i==1)
     {
-      aux.push_back(&(it->app_i));
+      aux.push_back(it->get_app_i());
     }
     if (indicator_j==1)
     {
-      aux.push_back(&(it->app_j));
+      aux.push_back(it->get_app_j());
     }
 
   }
@@ -119,9 +119,9 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
 
       if(pos==ID)
       {
-        if ((*it)->get_currentCores_d() > 0 )//it->app_i.get_currentCores_d() > 0 && it->app_j.get_currentCores_d() > 0)
+        if (it->get_currentCores_d() > 0 )//it->app_i.get_currentCores_d() > 0 && it->app_j.get_currentCores_d() > 0)
         {
-          OF.ObjFunctionComponent(configuration, conn2[ID], **it, par); //caches the results
+          OF.ObjFunctionComponent(configuration, conn2[ID], *it, par); //caches the results
           //it->nodes_i = it->app_i->get_currentCores_d();
 
           //it->real_j = OF.ObjFunctionComponent(configuration, conn2[ID], (it->app_j), par);
@@ -155,13 +155,13 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
 
       if(pos==ID)
       {
-        if (it->app_i.get_currentCores_d() > 0 && it->app_j.get_currentCores_d() > 0)
+        if (it->get_currentCores_d_i() > 0 && it->get_currentCores_d_j() > 0)
         {
 
-          it->real_i = OF.ObjFunctionComponent(configuration, conn2[ID], (it->app_i), par); //Already cached
+          it->set_real_i( OF.ObjFunctionComponent(configuration, conn2[ID], ( it->get_app_i_ref() ), par)); //Already cached
           //it->nodes_i = it->app_i->get_currentCores_d();
 
-          it->real_j = OF.ObjFunctionComponent(configuration, conn2[ID], (it->app_j), par); //Already cached
+          it->set_real_j( OF.ObjFunctionComponent(configuration, conn2[ID], (it->get_app_j_ref()), par)); //Already cached
           //it->nodes_j = it->app_j->get_currentCores_d();
         }
 
@@ -198,14 +198,14 @@ void sCandidates::invokePredictorSeq(MYSQL *conn, optJrParameters &par, sConfigu
 
 
 
-    if (it->app_i.get_currentCores_d() > 0 && it->app_j.get_currentCores_d() > 0)
+    if (it->get_currentCores_d_i() > 0 && it->get_currentCores_d_j() > 0)
     {
-      debugMsg= "Comparing " + it->app_i.get_session_app_id() + " with " + it->app_j.get_session_app_id(); debugMessage(debugMsg, par);
+      debugMsg= "Comparing " + it->get_session_app_id_i() + " with " + it->get_session_app_id_j(); debugMessage(debugMsg, par);
       //it->app_i.mode= R_ALGORITHM; it->app_j.mode= R_ALGORITHM;
       // No openmp
       debugMsg =  " CALLING OBJ_FUNCTION_COMPONENT \n\n"; debugMessage(debugMsg, par);
-      it->real_i = OF.ObjFunctionComponent(configuration, conn, it->app_i, par);
-      it->real_j = OF.ObjFunctionComponent(configuration, conn, it->app_j, par);
+      it->set_real_i ( OF.ObjFunctionComponent(configuration, conn, it->get_app_i_ref(), par));
+      it->set_real_j ( OF.ObjFunctionComponent(configuration, conn, it->get_app_j_ref(), par));
     }
     index++;
   }

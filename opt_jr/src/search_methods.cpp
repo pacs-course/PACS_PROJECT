@@ -128,7 +128,7 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, int &iteratio
 
 
 
-    iteration= app_pairs.cand.size(); //da modificare
+    iteration= app_pairs.get_size(); //da modificare
 
     return app_pairs;
 
@@ -185,18 +185,20 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, int &iteratio
     DELTA_pair=0;
 
 
-    for (auto it = app_pairs.cand.begin(); it != app_pairs.cand.end(); it++)
+    //NB: qui la lista dovrebbe essere già ordinata, giusto???? controlla.. dovrebbe servire solo begin e prima verifica su empty
+
+    for (auto it = app_pairs.get_begin(); it != app_pairs.get_end(); it++)
     {
       if(index>0 && index==MAX_PROMISING_CONFIGURATIONS)//This is done because in invokePredictor* only the first MAX_PROMISING_CONFIGURATIONS are evaluated; index=0 means par.get_k()==0 i.e. all the pairs are explored
       {
         break;
       }
 
-      if (it->app_i.get_currentCores_d() > 0 && it->app_j.get_currentCores_d() > 0) // For those pairs, object function evaluation calculated earlier
+      if (it->get_currentCores_d_i() > 0 && it->get_currentCores_d_j() > 0) // For those pairs, object function evaluation calculated earlier
       {
 
-        DELTA_fo_App_i = it->real_i - it->app_i.get_baseFO();
-        DELTA_fo_App_j = it->real_j - it->app_j.get_baseFO();
+        DELTA_fo_App_i = it->get_real_i() - it->get_base_fo_i();
+        DELTA_fo_App_j = it->get_real_j() - it->get_base_fo_j();
 
         DELTA_tmp=DELTA_fo_App_i+DELTA_fo_App_j;
 
@@ -206,8 +208,8 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, int &iteratio
           index_pair=index;
         }
 
-        debugMsg = "app " + it->app_i.get_session_app_id() + " DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i); debugMessage(debugMsg, par);
-        debugMsg = "app " + it->app_j.get_session_app_id() + " DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j); debugMessage(debugMsg, par);
+        debugMsg = "app " + it->get_session_app_id_i() + " DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i); debugMessage(debugMsg, par);
+        debugMsg = "app " + it->get_session_app_id_j() + " DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j); debugMessage(debugMsg, par);
         debugMsg= "\n      TOTAL DELTA FO : " +  std::to_string(DELTA_tmp) + "\n\n"; debugMessage(debugMsg, par);
       }
 
@@ -223,7 +225,7 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, int &iteratio
     if(index_pair!=-1)
     {
       debugMsg="DELTA FO best pair: "+ std::to_string(DELTA_pair);debugMessage(debugMsg,par);
-      auto it = app_pairs.cand.begin();
+      auto it = app_pairs.get_begin();
       for (int j=0; j< index_pair; j++)
       {
         it++;
@@ -232,15 +234,15 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, int &iteratio
 
       for (auto elem= App_manager.get_begin(); elem!=App_manager.get_end(); elem++)
       {
-        if (it->app_i.get_app_id()==elem->get_app_id() && it->app_i.get_session_app_id()==elem->get_session_app_id())
+        if (it->get_app_id_i()==elem->get_app_id() && it->get_session_app_id_i()==elem->get_session_app_id())
         {
-          elem->set_currentCores_d( it->newCoreAssignment_i);
-          elem->set_baseFO( it->real_i);
+          elem->set_currentCores_d( it->get_newCoreAssignment_i());
+          elem->set_baseFO( it->get_real_i());
         }
-        if (it->app_j.get_app_id()==elem->get_app_id() && it->app_j.get_session_app_id()==elem->get_session_app_id())
+        if (it->get_app_id_j()==elem->get_app_id() && it->get_session_app_id_j()==elem->get_session_app_id())
         {
-          elem->set_currentCores_d( it->newCoreAssignment_j);
-          elem->set_baseFO( it->real_j);
+          elem->set_currentCores_d( it->get_newCoreAssignment_j());
+          elem->set_baseFO( it->get_real_j());
         }
       }
     }
