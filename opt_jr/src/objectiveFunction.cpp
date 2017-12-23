@@ -2,7 +2,7 @@
 
 
 #include <string>
-#include "debugmessage.hh"
+
 #include "invokePredictor.hh"
 
 /*
@@ -28,11 +28,11 @@ double ObjFun::ObjFunctionComponent(sConfiguration &configuration, MYSQL *conn, 
 	/*switch(app.get_mode())
 	{*
 		case R_ALGORITHM:*/
-				debugMsg = "ObjFunctionComponent W " + std::to_string(app.get_w()) + "   R_d " + std::to_string(app.get_R_d()) + "  D " + std::to_string(app.get_Deadline_d()); debugMessage(debugMsg, par);
+				debugMsg = "ObjFunctionComponent W " + std::to_string(app.get_w()) + "   R_d " + std::to_string(app.get_R_d()) + "  D " + std::to_string(app.get_Deadline_d()); par.debugMessage(debugMsg);
 				if (app.get_R_d() > app.get_Deadline_d())
 					output = app.get_w() * (app.get_R_d() - app.get_Deadline_d());
 				else output = 0;
-				debugMsg = "Compute FO for app " + app.get_session_app_id() + " currentCores_d " + std::to_string((int)app.get_currentCores_d()) + "  R " + std::to_string(app.get_R_d()) + " FO = "+  std::to_string(output); debugMessage(debugMsg, par);
+				debugMsg = "Compute FO for app " + app.get_session_app_id() + " currentCores_d " + std::to_string((int)app.get_currentCores_d()) + "  R " + std::to_string(app.get_R_d()) + " FO = "+  std::to_string(output); par.debugMessage(debugMsg);
 			//break;
 			/*
 		case CORES_ALGORITHM:
@@ -75,13 +75,13 @@ double ObjFun::ObjFunctionComponentApprox(Application &App, optJrParameters &par
 
 	/* Determine how the obj function needs to be calculated */
 
-	debugMsg= "W " + std::to_string(App.get_w()) + " R_d " + std::to_string(App.get_R_d()) + " D " + std::to_string(App.get_Deadline_d()); debugMessage(debugMsg, par);
+	debugMsg= "W " + std::to_string(App.get_w()) + " R_d " + std::to_string(App.get_R_d()) + " D " + std::to_string(App.get_Deadline_d()); par.debugMessage(debugMsg);
 	if (App.get_R_d() > App.get_Deadline_d())
 		output = App.get_w() * (App.get_R_d() - App.get_Deadline_d());//NB: is it correct? very high values
 	else output = 0;
 		debugMsg = "Compute FO for app " +  App.get_session_app_id() + " currentCores_d"
                 + std::to_string((int)App.get_currentCores_d()) + " R "+ std::to_string(App.get_R_d())
-                + " FO=" + std::to_string(output); debugMessage(debugMsg, par);
+                + " FO=" + std::to_string(output); par.debugMessage(debugMsg);
 
 	return output;
 }
@@ -105,7 +105,7 @@ double ObjFun::ObjFunctionGlobal(sConfiguration &configuration, MYSQL *conn, Bat
 
 	if (doubleCompare(sum, 0) == 0)
 	{
-		std::string debugMsg="ObjFunctionGlobal: sum equal to zero"; debugMessage(debugMsg, par);
+		std::string debugMsg="ObjFunctionGlobal: sum equal to zero"; par.debugMessage(debugMsg);
 		//exit(-1);
 	}
 

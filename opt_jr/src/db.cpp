@@ -2,7 +2,7 @@
 #include <string.h>
 #include <string>
 #include "db.hh"
-#include "debugmessage.hh"
+
 
 /*
 	-Here are defined the functions to manage databases
@@ -36,7 +36,7 @@ MYSQL_ROW executeSQL(MYSQL *conn, char *statement, optJrParameters par)
 	}
 
 	result = mysql_store_result(conn);
-	debugMsg="statement :"+ std::string(statement) + "\n"; debugMessage(debugMsg, par);
+	debugMsg="statement :"+ std::string(statement) + "\n"; par.debugMessage(debugMsg);
 	if (result == NULL)
 	{
 		sprintf(error, "Failure: ExecuteSQL: statement was %s\n", statement);

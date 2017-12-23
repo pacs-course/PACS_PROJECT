@@ -12,37 +12,37 @@ void Search_alterning::localSearch(Batch &app_manager, sConfiguration &configura
   sStatistics statistics;
   ObjFun OF;
 
-  debugMsg =  "\n     ***** Estimate the candidates for the predictor ******\n"; debugMessage(debugMsg, par);
+  debugMsg =  "\n     ***** Estimate the candidates for the predictor ******\n"; par.debugMessage(debugMsg);
 
   //START THE ITERATION LOOP
   for (int iteration = 1; iteration <= par.get_maxIteration(); iteration++)
   {
     checkTotalNodes(par.get_number(), app_manager);
-    debugMsg= "ITERATION " + std::to_string(iteration); debugMessage(debugMsg, par);
+    debugMsg= "ITERATION " + std::to_string(iteration); par.debugMessage(debugMsg);
 
 
     /*
     *   Estimate the candidates for the predictor
     */
     sCandidateApproximated = approximated_loop( app_manager, par );
-    debugMsg= "\n\n\n\n       finished approximatedLoop   \n\n\n\n"; debugMessage(debugMsg, par);
+    debugMsg= "\n\n\n\n       finished approximatedLoop   \n\n\n\n"; par.debugMessage(debugMsg);
 
     if (sCandidateApproximated.get_empty())
     {
       // The Candidate Application is empty. No further solution enhancements possible
-      debugMsg = "LocalSearch: empty Candidate Application "; debugMessage(debugMsg, par);
+      debugMsg = "LocalSearch: empty Candidate Application "; par.debugMessage(debugMsg);
       break;
     }
 
-    debugMsg = " \n\n\n\n\n*****  Ex-iteration loop ******\n\n\n\n\n";debugMessage(debugMsg, par);
+    debugMsg = " \n\n\n\n\n*****  Ex-iteration loop ******\n\n\n\n\n";par.debugMessage(debugMsg);
 
 
     debugMsg = "\n\n*******************************************************************\n";
     debugMsg +="*** Consider the first MAX_PROMISING_CONFIGURATIONS of the Application ****\n";
-    debugMsg +="*******************************************************************\n"; debugMessage(debugMsg,par);
+    debugMsg +="*******************************************************************\n"; par.debugMessage(debugMsg);
 
     how_many=sCandidateApproximated.get_size();
-    debugMsg = " There are " + std::to_string(how_many) +" promising configurations in iteration " + std::to_string(iteration) + "\n\n"; debugMessage(debugMsg,par);
+    debugMsg = " There are " + std::to_string(how_many) +" promising configurations in iteration " + std::to_string(iteration) + "\n\n"; par.debugMessage(debugMsg);
 
 
 

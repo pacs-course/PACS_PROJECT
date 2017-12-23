@@ -42,12 +42,12 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
   int MAX_PROMISING_CONFIGURATIONS =par.get_K();
   MYSQL *conn2[n_threads]; //open a connection for each thread
 
-  debugMsg= "Executing invokePredictorOpenMP"; debugMessage(debugMsg, par);
+  debugMsg= "Executing invokePredictorOpenMP"; par.debugMessage(debugMsg);
 
 
   if (cand.size()==0) return;
 
-  debugMsg="invokePredictorInAdvance"; debugMessage(debugMsg, par);
+  debugMsg="invokePredictorInAdvance"; par.debugMessage(debugMsg);
   for (int i = 0; i< n_threads;++i)
   {
       conn2[i]=DBopen(
@@ -111,7 +111,7 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
     {
       if (index > 0 && index == 2*MAX_PROMISING_CONFIGURATIONS)
       {
-        debugMsg="invokePredictorSeq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invokePredictorSeq loop";debugMessage(debugMsg, par);
+        debugMsg="invokePredictorSeq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invokePredictorSeq loop";par.debugMessage(debugMsg);
         break;
       }
 
@@ -147,7 +147,7 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
     {
       if (index > 0 && index == MAX_PROMISING_CONFIGURATIONS)
       {
-        debugMsg="invokePredictorSeq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invokePredictorSeq loop";debugMessage(debugMsg, par);
+        debugMsg="invokePredictorSeq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invokePredictorSeq loop";par.debugMessage(debugMsg);
         break;
       }
 
@@ -181,7 +181,7 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
 void sCandidates::invokePredictorSeq(MYSQL *conn, optJrParameters &par, sConfiguration  &configuration )
 {
   std::string debugMsg;
-  debugMsg= "Executing invokePredictorSeq"; debugMessage(debugMsg, par);
+  debugMsg= "Executing invokePredictorSeq"; par.debugMessage(debugMsg);
 
   int MAX_PROMISING_CONFIGURATIONS =par.get_K();
   int index=0;
@@ -192,7 +192,7 @@ void sCandidates::invokePredictorSeq(MYSQL *conn, optJrParameters &par, sConfigu
     // Consider only the first MAX_PROMISING_CONFIGURATIONS (0 value means browse the entire Application) Application members
     if (index > 0 && index == MAX_PROMISING_CONFIGURATIONS)
     {
-      debugMsg="invokePredictorSeq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invokePredictorSeq loop";debugMessage(debugMsg, par);
+      debugMsg="invokePredictorSeq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invokePredictorSeq loop";par.debugMessage(debugMsg);
       break;
     }
 
@@ -200,10 +200,10 @@ void sCandidates::invokePredictorSeq(MYSQL *conn, optJrParameters &par, sConfigu
 
     if (it->get_currentCores_d_i() > 0 && it->get_currentCores_d_j() > 0)
     {
-      debugMsg= "Comparing " + it->get_session_app_id_i() + " with " + it->get_session_app_id_j(); debugMessage(debugMsg, par);
+      debugMsg= "Comparing " + it->get_session_app_id_i() + " with " + it->get_session_app_id_j(); par.debugMessage(debugMsg);
       //it->app_i.mode= R_ALGORITHM; it->app_j.mode= R_ALGORITHM;
       // No openmp
-      debugMsg =  " CALLING OBJ_FUNCTION_COMPONENT \n\n"; debugMessage(debugMsg, par);
+      debugMsg =  " CALLING OBJ_FUNCTION_COMPONENT \n\n"; par.debugMessage(debugMsg);
       it->set_real_i ( OF.ObjFunctionComponent(configuration, conn, it->get_app_i_ref(), par));
       it->set_real_j ( OF.ObjFunctionComponent(configuration, conn, it->get_app_j_ref(), par));
     }

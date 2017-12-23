@@ -2,9 +2,10 @@
 
 
 
-#include "debugmessage.hh"
+
 #include "objectiveFunction.hh"
 
+#include <iostream>
 #include <string>
 #include <cmath>
 #include <list>
@@ -32,7 +33,7 @@ Batch::calculate_nu(optJrParameters &par)
 
   int minCapacity= 0;
 
-  debugMsg="Calculate nu indices and bounds for each application"; debugMessage(debugMsg, par);
+  debugMsg="Calculate nu indices and bounds for each application"; par.debugMessage(debugMsg);
   if (APPs.begin()==APPs.end())
   {
     printf("Fatal error: There are not Applications\n");
@@ -55,7 +56,7 @@ Batch::calculate_nu(optJrParameters &par)
     exit(-1);
   }
   N = N - minCapacity; // N now is the number of cores available to exchange
-  debugMsg="available cores to exchange ="+ std::to_string(N); debugMessage(debugMsg, par);
+  debugMsg="available cores to exchange ="+ std::to_string(N); par.debugMessage(debugMsg);
 
 
   /*
@@ -93,13 +94,13 @@ Batch::calculate_nu(optJrParameters &par)
     }
 
     it->set_currentCores_d( it->get_nu_d());
-    debugMsg="App ID: " + it->get_app_id() + ", NU: " + std::to_string(it->get_nu_d()); debugMessage(debugMsg, par);
+    debugMsg="App ID: " + it->get_app_id() + ", NU: " + std::to_string(it->get_nu_d()); par.debugMessage(debugMsg);
 
 
 
 
   }
-  debugMsg="end calculate nu"; debugMessage(debugMsg, par);
+  debugMsg="end calculate nu"; par.debugMessage(debugMsg);
 
 
 };
@@ -115,7 +116,7 @@ void Batch::initialize(sConfiguration  &configuration, MYSQL *conn, optJrParamet
 	std::string debugMsg;
   ObjFun OF;
 
-  debugMsg =  "Information: INITIALIZE baseFo for all the applications" ;debugMessage(debugMsg, par);
+  debugMsg =  "Information: INITIALIZE baseFo for all the applications" ;par.debugMessage(debugMsg);
 	for (auto it =APPs.begin(); it!= APPs.end(); it++)
 	{
 			//it->mode = R_ALGORITHM; //currently only this method is supported
@@ -123,7 +124,7 @@ void Batch::initialize(sConfiguration  &configuration, MYSQL *conn, optJrParamet
 			it->set_baseFO( OF.ObjFunctionComponent(configuration, conn, *it, par));
 			//it->initialBaseFO = it->get_baseFO();
 			debugMsg = "INITIALIZE BASE FO for APP "+ it->get_session_app_id()
-                + " baseFO = " + std::to_string(it->get_baseFO())+"\n"; debugMessage(debugMsg, par);
+                + " baseFO = " + std::to_string(it->get_baseFO())+"\n"; par.debugMessage(debugMsg);
 	}
 
 
@@ -159,7 +160,7 @@ void Batch::fixInitialSolution(optJrParameters &par)
 		else
 			{
         //add the application to the list of applications pointer ordered  by weight
-				debugMsg= "adding " + it->get_session_app_id() + " to ApplicationPointers"; debugMessage(debugMsg, par);
+				debugMsg= "adding " + it->get_session_app_id() + " to ApplicationPointers"; par.debugMessage(debugMsg);
         if (LP.empty())
         {
           LP.emplace(LP.begin(), &(*it));
@@ -183,10 +184,10 @@ void Batch::fixInitialSolution(optJrParameters &par)
 
 		allocatedCores+= it->get_currentCores_d();
 		debugMsg =  "fixInitialSolution FIXING CORES "+  it->get_session_app_id()
-                + " cores: " + std::to_string(it->get_currentCores_d()); debugMessage(debugMsg, par);
+                + " cores: " + std::to_string(it->get_currentCores_d()); par.debugMessage(debugMsg);
 	}
 
-	debugMsg= "fixInitialSolution: allocatedCores "+ std::to_string(allocatedCores); debugMessage(debugMsg, par);
+	debugMsg= "fixInitialSolution: allocatedCores "+ std::to_string(allocatedCores); par.debugMessage(debugMsg);
 
 
 
@@ -198,7 +199,7 @@ void Batch::fixInitialSolution(optJrParameters &par)
     exit(-1);
   }
 
-  debugMsg = "RESIDUAL CORES: "+ std::to_string(residualCores); debugMessage(debugMsg, par);
+  debugMsg = "RESIDUAL CORES: "+ std::to_string(residualCores); par.debugMessage(debugMsg);
 	int addedCores;
 
 
@@ -232,8 +233,8 @@ void Batch::fixInitialSolution(optJrParameters &par)
 			if (addedCores > 0)
 			{
 
-				debugMsg="adding cores to App " + (*it)->get_session_app_id() + " added Cores: " +  std::to_string(addedCores) ;debugMessage(debugMsg, par);
-				debugMsg=" application_id " + (*it)->get_session_app_id() + " new cores " + std::to_string((int)(*it)->get_currentCores_d()) + " moved cores "+ std::to_string(addedCores) ;debugMessage(debugMsg, par);
+				debugMsg="adding cores to App " + (*it)->get_session_app_id() + " added Cores: " +  std::to_string(addedCores) ;par.debugMessage(debugMsg);
+				debugMsg=" application_id " + (*it)->get_session_app_id() + " new cores " + std::to_string((int)(*it)->get_currentCores_d()) + " moved cores "+ std::to_string(addedCores) ;par.debugMessage(debugMsg);
 				residualCores = residualCores - addedCores;
 			}
 			it++;
@@ -259,7 +260,7 @@ void Batch::writeResults(MYSQL *conn, char * dbName, optJrParameters &par)
 
 	char sqlStatement[512];
 
-	debugMsg= "writeResults"; debugMessage(debugMsg, par);
+	debugMsg= "writeResults"; par.debugMessage(debugMsg);
 	if (APPs.empty())
 	{
 		printf("FATAL ERROR: writeResults: APPs cannot be empty\n");
@@ -268,7 +269,7 @@ void Batch::writeResults(MYSQL *conn, char * dbName, optJrParameters &par)
 	//while (pointer!=NULL)
 	for(auto &elem : APPs)
 	{
-		"Session ID " + elem.get_session_app_id()+ " Application Id " + elem.get_app_id()  + " cores " + std::to_string(elem.get_currentCores_d())+ " VMs "+ std::to_string(elem.get_vm()); debugMessage(debugMsg, par);
+		"Session ID " + elem.get_session_app_id()+ " Application Id " + elem.get_app_id()  + " cores " + std::to_string(elem.get_currentCores_d())+ " VMs "+ std::to_string(elem.get_vm()); par.debugMessage(debugMsg);
 
 		// Check if the result of the computation for that session, application has been already computed and stored previously
 		sprintf(sqlStatement, "select opt_id, app_id from %s.OPT_SESSIONS_RESULTS_TABLE where opt_id='%s' and app_id='%s'",

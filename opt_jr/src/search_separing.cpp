@@ -12,34 +12,34 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
   sStatistics statistics;
   ObjFun OF;
 
-  debugMsg =  "\n     ***** Estimate the candidates for the predictor ******\n"; debugMessage(debugMsg, par);
+  debugMsg =  "\n     ***** Estimate the candidates for the predictor ******\n"; par.debugMessage(debugMsg);
 
   //START THE ITERATION LOOP
   for (int iteration = 1; iteration <= N_APPROX_LOOP*par.get_maxIteration(); iteration++)//to be changed!
   {
     std::cout<<"\n\n\n"<<iteration;
     checkTotalNodes(par.get_number(), app_manager);
-    debugMsg= "ITERATION " + std::to_string(iteration); debugMessage(debugMsg, par);
+    debugMsg= "ITERATION " + std::to_string(iteration); par.debugMessage(debugMsg);
 
 
     /*
      *   Estimate the candidates for the predictor
      */
     app_pairs = approximated_loop( app_manager, par );
-    debugMsg= "\n\n\n\n       finished approximatedLoop   \n\n\n\n"; debugMessage(debugMsg, par);
+    debugMsg= "\n\n\n\n       finished approximatedLoop   \n\n\n\n"; par.debugMessage(debugMsg);
 
     if (app_pairs.get_empty())
     {
       // The Candidate Application is empty. No further solution enhancements possible
-      debugMsg = "LocalSearch: empty Candidate Application : exit to Approximated loop"; debugMessage(debugMsg, par);
+      debugMsg = "LocalSearch: empty Candidate Application : exit to Approximated loop"; par.debugMessage(debugMsg);
       break;
     }
 
-    debugMsg = " \n\n\n\n\n*****  Ex-iteration loop ******\n\n\n\n\n";debugMessage(debugMsg, par);
+    debugMsg = " \n\n\n\n\n*****  Ex-iteration loop ******\n\n\n\n\n";par.debugMessage(debugMsg);
 
 
     how_many=app_pairs.get_size();
-    debugMsg = " There are " + std::to_string(how_many) +" promising configurations in iteration " + std::to_string(iteration) + "\n\n"; debugMessage(debugMsg,par);
+    debugMsg = " There are " + std::to_string(how_many) +" promising configurations in iteration " + std::to_string(iteration) + "\n\n"; par.debugMessage(debugMsg);
 
 
 
@@ -129,8 +129,8 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
         if (application_i->get_session_app_id()!=application_j->get_session_app_id())
         {
           nCoreMov = std::max(application_i->get_V(), application_j->get_V());
-          DELTAVM_i = nCoreMov/application_i->get_V(); debugMsg = "app " + application_i->get_session_app_id() + " DELTAVM_i " +  std::to_string(DELTAVM_i); debugMessage(debugMsg, par);
-          DELTAVM_j = nCoreMov/application_j->get_V(); debugMsg = "app " + application_j->get_session_app_id() + " DELTAVM_j " +  std::to_string(DELTAVM_j); debugMessage(debugMsg, par);
+          DELTAVM_i = nCoreMov/application_i->get_V(); debugMsg = "app " + application_i->get_session_app_id() + " DELTAVM_i " +  std::to_string(DELTAVM_i); par.debugMessage(debugMsg);
+          DELTAVM_j = nCoreMov/application_j->get_V(); debugMsg = "app " + application_j->get_session_app_id() + " DELTAVM_j " +  std::to_string(DELTAVM_j); par.debugMessage(debugMsg);
 
           // Change the currentCores, but rollback later
           int deltaNCores_i = DELTAVM_i * application_i->get_V();
@@ -164,7 +164,7 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
       checkTotalNodes(par.get_number(), app_manager);
       if (indicator==-1) //It means that there are not convenient exchanges
       {
-        debugMsg="No more convenient exchanges."; debugMessage(debugMsg,par);
+        debugMsg="No more convenient exchanges."; par.debugMessage(debugMsg);
         break;
       }
 

@@ -62,3 +62,11 @@ void optJrParameters::set_numberOfThreads(sConfiguration &configuration)
 	/* Read the threads number */
 	numberOfThreads = stoi(configuration["THREADS_NUMBER"]);
 }
+
+void optJrParameters::debugMessage(std::string &string)
+{
+	if (debug == 1)
+  {
+	  std::cout<<"<debug message>:"<<string<<std::endl;
+  }
+}

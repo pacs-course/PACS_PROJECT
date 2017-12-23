@@ -1,6 +1,6 @@
 
 #include "invokePredictor_helper.hh"
-#include "debugmessage.hh"
+
 
 #include <string>
 #include <sys/types.h>
@@ -73,7 +73,7 @@ char * ls(char * pattern, optJrParameters &par)
 	int outcome = glob(pattern, GLOB_ERR, NULL, &pglob);
 	if (pglob.gl_pathc == 1)
 	{
-		debugMsg="ls= "; debugMsg+=  pglob.gl_pathv[0]; debugMessage(debugMsg, par);
+		debugMsg="ls= "; debugMsg+=  pglob.gl_pathv[0]; par.debugMessage(debugMsg);
 		strcpy(filename, pglob.gl_pathv[0]);
 		globfree(&pglob);
 		return filename;
@@ -233,7 +233,7 @@ char *_run(char * cmd, optJrParameters &par)
 		printf("Fatal error: Command %s not found or exited with error status\n", cmd);
 		exit(-1);
 	} else
-	debugMsg ="_run has returned";debugMsg+=outcome;debugMsg+=" status"; debugMessage(debugMsg, par);
+	debugMsg ="_run has returned";debugMsg+=outcome;debugMsg+=" status"; par.debugMessage(debugMsg);
 	return buf;
 
 }

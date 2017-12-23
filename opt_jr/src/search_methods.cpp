@@ -1,6 +1,6 @@
 #include "Search_methods.hh"
 
-#include "debugmessage.hh"
+
 #include "utility.hh"
 #include "objectiveFunction.hh"
 #include "statistics.hh"
@@ -60,7 +60,7 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, /*int &iterat
   sCandidates  app_pairs ;
 
 
-  debugMsg= "Approximated iterated loop"; debugMessage(debugMsg, par);
+  debugMsg= "Approximated iterated loop"; par.debugMessage(debugMsg);
   auto application_i=App_manager.get_begin();
 
 
@@ -72,12 +72,12 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, /*int &iterat
     {
       if (application_i->get_session_app_id()!=application_j->get_session_app_id())
       {
-        debugMsg="Comparing " + application_i->get_session_app_id() + " with " + application_j->get_session_app_id();debugMessage(debugMsg, par);
+        debugMsg="Comparing " + application_i->get_session_app_id() + " with " + application_j->get_session_app_id();par.debugMessage(debugMsg);
 
         nCoreMov = std::max(application_i->get_V(), application_j->get_V());
 
-        DELTAVM_i = nCoreMov/application_i->get_V(); debugMsg = "app " + application_i->get_session_app_id() + " DELTAVM_i " +  std::to_string(DELTAVM_i); debugMessage(debugMsg, par);
-        DELTAVM_j = nCoreMov/application_j->get_V(); debugMsg = "app " + application_j->get_session_app_id() + " DELTAVM_j " +  std::to_string(DELTAVM_j); debugMessage(debugMsg, par);
+        DELTAVM_i = nCoreMov/application_i->get_V(); debugMsg = "app " + application_i->get_session_app_id() + " DELTAVM_i " +  std::to_string(DELTAVM_i); par.debugMessage(debugMsg);
+        DELTAVM_j = nCoreMov/application_j->get_V(); debugMsg = "app " + application_j->get_session_app_id() + " DELTAVM_j " +  std::to_string(DELTAVM_j); par.debugMessage(debugMsg);
 
         // Change the currentCores, but rollback later
         int deltaNCores_i = DELTAVM_i * application_i->get_V();
@@ -86,25 +86,25 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, /*int &iterat
         application_j->set_currentCores_d(application_j->get_currentCores_d() - deltaNCores_j);
 
 
-        debugMsg= "After cores exchange: app " + application_i->get_session_app_id() + " currentCores " + std::to_string((int)application_i->get_currentCores_d());debugMessage(debugMsg, par);
-        debugMsg= "After cores exchange: app " + application_j->get_session_app_id() + " currentCores " + std::to_string((int)application_j->get_currentCores_d());debugMessage(debugMsg, par);
+        debugMsg= "After cores exchange: app " + application_i->get_session_app_id() + " currentCores " + std::to_string((int)application_i->get_currentCores_d());par.debugMessage(debugMsg);
+        debugMsg= "After cores exchange: app " + application_j->get_session_app_id() + " currentCores " + std::to_string((int)application_j->get_currentCores_d());par.debugMessage(debugMsg);
 
 
         if (application_i->get_currentCores_d() > 0 && application_j->get_currentCores_d() > 0)
         {
           DELTA_fo_App_i = OF.ObjFunctionComponentApprox(*application_i, par) - application_i->get_baseFO();
-          debugMsg = "app " + application_i->get_session_app_id() + "DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i);debugMessage(debugMsg, par);
+          debugMsg = "app " + application_i->get_session_app_id() + "DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i);par.debugMessage(debugMsg);
 
           DELTA_fo_App_j = OF.ObjFunctionComponentApprox(*application_j, par) - application_j->get_baseFO();
-          debugMsg = "app " + application_j->get_session_app_id() + "DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j);debugMessage(debugMsg, par);
+          debugMsg = "app " + application_j->get_session_app_id() + "DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j);par.debugMessage(debugMsg);
 
 
-          debugMsg= "\n\n  Approximated TOTAL DELTA FO: " + std::to_string(DELTA_fo_App_i + DELTA_fo_App_j) + "   \n\n "; debugMessage(debugMsg, par);
+          debugMsg= "\n\n  Approximated TOTAL DELTA FO: " + std::to_string(DELTA_fo_App_i + DELTA_fo_App_j) + "   \n\n "; par.debugMessage(debugMsg);
 
 
           if ((DELTA_fo_App_i + DELTA_fo_App_j < 0))
           {
-            debugMsg= "\n\nAdding candidate  \n\n "; debugMessage(debugMsg, par);
+            debugMsg= "\n\nAdding candidate  \n\n "; par.debugMessage(debugMsg);
             app_pairs.addCandidate( *application_i ,
               *application_j ,
               application_i->get_currentCores_d(),
@@ -128,7 +128,7 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, /*int &iterat
 
 
 
-  //  iteration= app_pairs.get_size(); 
+  //  iteration= app_pairs.get_size();
 
     return app_pairs;
 
@@ -208,9 +208,9 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, /*int &iterat
           index_pair=index;
         }
 
-        debugMsg = "app " + it->get_session_app_id_i() + " DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i); debugMessage(debugMsg, par);
-        debugMsg = "app " + it->get_session_app_id_j() + " DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j); debugMessage(debugMsg, par);
-        debugMsg= "\n      TOTAL DELTA FO : " +  std::to_string(DELTA_tmp) + "\n\n"; debugMessage(debugMsg, par);
+        debugMsg = "app " + it->get_session_app_id_i() + " DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i); par.debugMessage(debugMsg);
+        debugMsg = "app " + it->get_session_app_id_j() + " DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j); par.debugMessage(debugMsg);
+        debugMsg= "\n      TOTAL DELTA FO : " +  std::to_string(DELTA_tmp) + "\n\n"; par.debugMessage(debugMsg);
       }
 
       index++;
@@ -224,7 +224,7 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, /*int &iterat
 
     if(index_pair!=-1)
     {
-      debugMsg="DELTA FO best pair: "+ std::to_string(DELTA_pair);debugMessage(debugMsg,par);
+      debugMsg="DELTA FO best pair: "+ std::to_string(DELTA_pair);par.debugMessage(debugMsg);
       auto it = app_pairs.get_begin();
       for (int j=0; j< index_pair; j++)
       {

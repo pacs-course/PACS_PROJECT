@@ -32,6 +32,9 @@ public:
   /// Set the number of threads: it looks in configuration file (0== "no parallelization")
   void set_numberOfThreads(sConfiguration &configuration);
 
+  void debugMessage(std::string &string);
+
+
   /*
   	Get Functions
   */

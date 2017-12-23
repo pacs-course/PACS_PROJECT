@@ -3,7 +3,7 @@
 
 #include "batch.hh"
 
-//TODO : .cpp file
+
 
 class Search_base
 {
@@ -25,22 +25,14 @@ public:
 
   */
 
-  void writeResults(MYSQL *conn, char * dbName,  optJrParameters &par)
-  {
-    App_manager.writeResults(conn, dbName, par);
-  }
-
+  void writeResults(MYSQL *conn, char * dbName,  optJrParameters &par);
   /**
   It prints the output of App_manager.show_solution
   */
 
-  void print_solution()
-  {
-    std::cout<< App_manager.show_solution();
+  void print_solution();
 
-  }
-
-  Batch get_app_manager(){    return App_manager;}
+  Batch get_app_manager();
 
 
 
