@@ -11,14 +11,14 @@
 
 
 /*
- * 		Name:				Bound
+ * 		Name:				bound
  * 		Description:		This function calculates the bound given a certain deadline and number of nodes, cores. Predictor method is invoked until an upper bound,
  * 		  							consisting of the number of nodes, is found (once that the time calculated by the predictor, a rollback is performed to
  * 										return the last "safe" number of core and time.
  *
  */
 
-void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app, optJrParameters &par, int flagDagsim)
+void  Bounds::bound(Configuration &configuration, MYSQL *conn, Application &app, optJrParameters &par, int flagDagsim)
 {
 	double predictorOutput;
   std::string debugMsg;
@@ -42,7 +42,7 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 	 *   First evaluation, with data guessed by findbound
 	 */
 
-	predictorOutput = atoi(invokePredictor(configuration, conn, nNodes, nCores, (char*)"*", app.get_dataset_size(), const_cast<char*>((app.get_session_app_id()).c_str()),
+	predictorOutput = atoi(invoke_predictor(configuration, conn, nNodes, nCores, (char*)"*", app.get_dataset_size(), const_cast<char*>((app.get_session_app_id()).c_str()),
 													const_cast<char*>((app.get_app_id()).c_str()), const_cast<char*>((app.get_stage()).c_str()), par, flagDagsim));
 
 
@@ -53,13 +53,7 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 					 + std::to_string(nCores); par.debugMessage(debugMsg);
 
 
-
-		/*app.sAB.index = 0;
-		app.sAB.vec[app.sAB.index].nCores = nCores;
-		app.sAB.vec[app.sAB.index].R = predictorOutput;
-		app.sAB.index++;
-		*/
-		app.computeAlphaBeta(nCores, predictorOutput);
+		app.compute_alpha_beta(nCores, predictorOutput);
 
 
 		BTime = predictorOutput;
@@ -79,7 +73,7 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 				}
 
 				nCores = nCores + STEP; //add the cores NB: possible improvement: add more than one VM at a time
-				predictorOutput = atof(invokePredictor(configuration, conn, nNodes, nCores, (char*)"8G", app.get_dataset_size(), const_cast<char*>((app.get_session_app_id()).c_str()),
+				predictorOutput = atof(invoke_predictor(configuration, conn, nNodes, nCores, (char*)"8G", app.get_dataset_size(), const_cast<char*>((app.get_session_app_id()).c_str()),
 																const_cast<char*>((app.get_app_id()).c_str()), const_cast<char*>((app.get_stage()).c_str()), par, WHOLE_DAGSIM));
 
 				debugMsg="Bound evaluation for " + app.get_session_app_id() +
@@ -90,7 +84,7 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 				BCores = nCores;
 				BTime = predictorOutput;
 
-				app.computeAlphaBeta(nCores, predictorOutput);
+				app.compute_alpha_beta(nCores, predictorOutput);
 
 			}
 
@@ -114,7 +108,7 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 					break;
 				}
 
-				predictorOutput = atof(invokePredictor(configuration, conn, nNodes, nCores, (char*)"8G", app.get_dataset_size(), const_cast<char*>((app.get_session_app_id()).c_str()),
+				predictorOutput = atof(invoke_predictor(configuration, conn, nNodes, nCores, (char*)"8G", app.get_dataset_size(), const_cast<char*>((app.get_session_app_id()).c_str()),
 				const_cast<char*>((app.get_app_id()).c_str()), const_cast<char*>((app.get_stage()).c_str()), par, WHOLE_DAGSIM));
 
 				debugMsg="Bound evaluation for" + app.get_session_app_id() +
@@ -122,7 +116,7 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 								 "(deadline is " +std::to_string(app.get_Deadline_d())+ ") cores "
 								 + std::to_string(nCores); par.debugMessage(debugMsg);
 
-				app.computeAlphaBeta(nCores, predictorOutput);
+				app.compute_alpha_beta(nCores, predictorOutput);
 
 			}
 
@@ -141,14 +135,14 @@ void  Bounds::Bound(sConfiguration &configuration, MYSQL *conn, Application &app
 
 
 /*
- * 		Name:					findBound
+ * 		Name:					find_bound
  * 		Description:			Initially, this function queries the lookup table to find the number of cores, calculated by OPT_IC earlier,
  * 								given a deadline, an application id and a dataset size.
- * 								Secondly, it invokes the Bound function.
+ * 								Secondly, it invokes the bound function.
  *
  */
 
-void Bounds::findBound(sConfiguration &configuration, MYSQL *conn, char* db,  Application &app, optJrParameters &par)
+void Bounds::find_bound(Configuration &configuration, MYSQL *conn, char* db,  Application &app, optJrParameters &par)
 {
   std::string debugMsg;
   char statement[256];
@@ -175,7 +169,7 @@ void Bounds::findBound(sConfiguration &configuration, MYSQL *conn, char* db,  Ap
 
 
 
-    Bound(configuration, conn, app, par,WHOLE_DAGSIM);
+    bound(configuration, conn, app, par,WHOLE_DAGSIM);
     debugMsg="A bound for " + app.get_session_app_id() + "  (app_id: " + app.get_app_id() + ") has been calculated";par.debugMessage(debugMsg);
 
 
@@ -187,7 +181,7 @@ void Bounds::findBound(sConfiguration &configuration, MYSQL *conn, char* db,  Ap
 /*
  * CALL IN PARALLEL FINDBOUND (OPENMP)
  */
-void Bounds::calculateBounds( sConfiguration &configuration, MYSQL *conn,
+void Bounds::calculate_bounds( Configuration &configuration, MYSQL *conn,
                               optJrParameters &par)
   {
 		int n_threads = par.get_numberOfThreads();
@@ -219,10 +213,10 @@ void Bounds::calculateBounds( sConfiguration &configuration, MYSQL *conn,
         int pos=j%n_threads;
         if(pos==ID)
         {
-          debugMsg= "Call findBound of app " + it->get_app_id()
+          debugMsg= "Call find_bound of app " + it->get_app_id()
                     + " from thread " + std::to_string(ID); par.debugMessage(debugMsg);
 
-          findBound(configuration, conn2[ID], const_cast<char*>(configuration["OptDB_dbName"].c_str()), *it , par);
+          find_bound(configuration, conn2[ID], const_cast<char*>(configuration["OptDB_dbName"].c_str()), *it , par);
         }
         ++j;
       }
@@ -237,7 +231,7 @@ void Bounds::calculateBounds( sConfiguration &configuration, MYSQL *conn,
 
 		debugMsg=" Calculate bounds for each application (sequencial version) \n" ;par.debugMessage(debugMsg);
 		for (auto it=app_manager.get_begin(); it !=app_manager.get_end(); it++)
-				findBound(configuration, conn, const_cast<char*>(configuration["OptDB_dbName"].c_str()), *it, par);
+				find_bound(configuration, conn, const_cast<char*>(configuration["OptDB_dbName"].c_str()), *it, par);
 
 	}
 

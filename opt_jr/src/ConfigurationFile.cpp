@@ -7,7 +7,7 @@
 
 
 
-sConfiguration::sConfiguration()
+Configuration::Configuration()
 {
 	FILE * fp;
 
@@ -16,7 +16,7 @@ sConfiguration::sConfiguration()
 	    ssize_t read;
 	    char var[256], val[256],* configurationFile;
 
-	//sConfiguration configuration;
+	//Configuration configuration;
 
 	configurationFile = getenv("WSI_CONFIG_FILE");
 	if (configurationFile == NULL)
@@ -35,8 +35,8 @@ sConfiguration::sConfiguration()
 	  	if (line != NULL)
 	    	if (strstr(line, "entry key=") != NULL)
 	    	{
-	    		strcpy(var, extractItem(line, (char*)"\"", (char*)"\""));
-	    		strcpy(val, extractItem(line, (char*)">", (char*)"<"));
+	    		strcpy(var, extract_item(line, (char*)"\"", (char*)"\""));
+	    		strcpy(val, extract_item(line, (char*)">", (char*)"<"));
 					//config.push_back(std::make_pair(var,val));
 					configuration.insert(std::make_pair(var,val));
 					//printf("%s",var);
@@ -48,7 +48,7 @@ sConfiguration::sConfiguration()
 }
 
 
-char * sConfiguration::extractItem( char *const string, char *const left, const char *const right)
+char * Configuration::extract_item( char *const string, char *const left, const char *const right)
 {
     char  *head;
 	  char  *tail;

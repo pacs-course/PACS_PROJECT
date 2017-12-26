@@ -57,7 +57,7 @@ optJrParameters::optJrParameters (char **args, int argc)
 }
 
 
-void optJrParameters::set_numberOfThreads(sConfiguration &configuration)
+void optJrParameters::set_numberOfThreads(Configuration &configuration)
 {
 	/* Read the threads number */
 	numberOfThreads = stoi(configuration["THREADS_NUMBER"]);

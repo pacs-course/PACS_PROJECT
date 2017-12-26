@@ -8,7 +8,7 @@
 
 /**
   This class manages the applications; it stores applications data in a vector and it provides
-  methods useful to apply before executing the localSearch
+  methods useful to apply before executing the Bounds and the localSearch
 */
 class Batch{
 
@@ -17,23 +17,23 @@ class Batch{
 
 public:
 
-  /// Constructor expects a vector of application which should be given by the "readAppFile" function declared in "read_app_file.hh"
+  /// Constructor expects a vector of application
   Batch(std::vector<Application> apps): APPs(apps){};
 
   /// It calculates nu indices for each application and stores it in each "Application" object. It also initializes the number of cores.
   void calculate_nu(optJrParameters &par);
 
   /// For each application, a base value for the objective function is calculated.
-  void initialize(sConfiguration  &configuration, MYSQL *conn, optJrParameters &par);
+  void initialize(Configuration  &configuration, MYSQL *conn, optJrParameters &par);
 
-  /// It fixes the initial solution by reallocating the residual cores to the applications that may need more resources
-  void fixInitialSolution(optJrParameters &par);
+  /// It fixes the initial solution by reallocating the residual cores to the applications that may need more resources.
+  void fix_initial_solution(optJrParameters &par);
 
   /**
-   writeResults prints the results of the localSearch application (number of cores and VM) in a DB table.
+   write_results prints the results of the localSearch application (number of cores and VM) in a DB table.
    If a result for a (session_id, application_id) already exists, then it is replaced.
    */
-  void writeResults(MYSQL *conn, char * dbName,  optJrParameters &par);
+  void write_results(MYSQL *conn, char * dbName,  optJrParameters &par);
 
 
 

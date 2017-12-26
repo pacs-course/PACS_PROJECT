@@ -9,11 +9,11 @@
 
 
 /*
- *       Name:               addCandidate
+ *       Name:               add_candidate
  *       Description:         This function adds all the information regarding the localSearch deltafo calculation in a candidate object and it stores the object in the list.
  *                            The list is sorted by deltafo value.
  */
-void sCandidates::addCandidate(  Application app_i, Application app_j, int contr1, int contr2, double delta, double delta_i, double delta_j)
+void Candidates::add_candidate(  Application app_i, Application app_j, int contr1, int contr2, double delta, double delta_i, double delta_j)
 {
 
      if (cand.empty())
@@ -34,7 +34,7 @@ void sCandidates::addCandidate(  Application app_i, Application app_j, int contr
 
 
 
-void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  &configuration )
+void Candidates::invoke_predictor_openMP(  optJrParameters &par, Configuration  &configuration )
 {
 
   std::string debugMsg;
@@ -42,7 +42,7 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
   int MAX_PROMISING_CONFIGURATIONS =par.get_K();
   MYSQL *conn2[n_threads]; //open a connection for each thread
 
-  debugMsg= "Executing invokePredictorOpenMP"; par.debugMessage(debugMsg);
+  debugMsg= "Executing invoke_predictor_openMP"; par.debugMessage(debugMsg);
 
 
   if (cand.size()==0) return;
@@ -102,7 +102,7 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
     int ID=omp_get_thread_num();
     int index=0;
     int j=0;
-    ObjFun OF;
+    Objective_fun OF;
     //double tmp;
 
     // assign each app to a thread
@@ -111,7 +111,7 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
     {
       if (index > 0 && index == 2*MAX_PROMISING_CONFIGURATIONS)
       {
-        debugMsg="invokePredictorSeq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invokePredictorSeq loop";par.debugMessage(debugMsg);
+        debugMsg="invoke_predictor_seq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invoke_predictor_seq loop";par.debugMessage(debugMsg);
         break;
       }
 
@@ -140,14 +140,14 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
     int ID=omp_get_thread_num();
     int index=0;
     int j=0;
-    ObjFun OF;
+    Objective_fun OF;
 
     // assign each app-pairs to a thread
     for (auto it=cand.begin(); it!=cand.end(); ++it )
     {
       if (index > 0 && index == MAX_PROMISING_CONFIGURATIONS)
       {
-        debugMsg="invokePredictorSeq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invokePredictorSeq loop";par.debugMessage(debugMsg);
+        debugMsg="invoke_predictor_seq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invoke_predictor_seq loop";par.debugMessage(debugMsg);
         break;
       }
 
@@ -178,21 +178,21 @@ void sCandidates::invokePredictorOpenMP(  optJrParameters &par, sConfiguration  
 }
 
 
-void sCandidates::invokePredictorSeq(MYSQL *conn, optJrParameters &par, sConfiguration  &configuration )
+void Candidates::invoke_predictor_seq(MYSQL *conn, optJrParameters &par, Configuration  &configuration )
 {
   std::string debugMsg;
-  debugMsg= "Executing invokePredictorSeq"; par.debugMessage(debugMsg);
+  debugMsg= "Executing invoke_predictor_seq"; par.debugMessage(debugMsg);
 
   int MAX_PROMISING_CONFIGURATIONS =par.get_K();
   int index=0;
-  ObjFun OF;
+  Objective_fun OF;
 
   for (auto it = cand.begin(); it != cand.end(); it++)
   {
     // Consider only the first MAX_PROMISING_CONFIGURATIONS (0 value means browse the entire Application) Application members
     if (index > 0 && index == MAX_PROMISING_CONFIGURATIONS)
     {
-      debugMsg="invokePredictorSeq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invokePredictorSeq loop";par.debugMessage(debugMsg);
+      debugMsg="invoke_predictor_seq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invoke_predictor_seq loop";par.debugMessage(debugMsg);
       break;
     }
 

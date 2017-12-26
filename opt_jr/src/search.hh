@@ -35,7 +35,7 @@ public:
   for the potential best pairs it invokes the predictor.
   */
 
-  void localSearch(sConfiguration &configuration, MYSQL *conn,  optJrParameters &par)
+  void localSearch(Configuration &configuration, MYSQL *conn,  optJrParameters &par)
   {
 
     std::string debugMsg;

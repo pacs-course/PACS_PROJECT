@@ -40,11 +40,11 @@ void Search_methods::checkTotalNodes(int N, Batch &App_manager)
 * Description: It estimates the objective function for each move. The candidate applications for which the move is profitable are stored in a sCandidate object
 */
 
-sCandidates Search_methods::approximated_loop( Batch &App_manager, /*int &iteration,*/ optJrParameters &par )
+Candidates Search_methods::approximated_loop( Batch &App_manager, /*int &iteration,*/ optJrParameters &par )
 {
 
   std::string debugMsg;
-  ObjFun OF;
+  Objective_fun OF;
 
 
   if (App_manager.get_empty())
@@ -57,7 +57,7 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, /*int &iterat
   double DELTAVM_i;
   double DELTAVM_j;
   double DELTA_fo_App_i, DELTA_fo_App_j;
-  sCandidates  app_pairs ;
+  Candidates  app_pairs ;
 
 
   debugMsg= "Approximated iterated loop"; par.debugMessage(debugMsg);
@@ -105,7 +105,7 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, /*int &iterat
           if ((DELTA_fo_App_i + DELTA_fo_App_j < 0))
           {
             debugMsg= "\n\nAdding candidate  \n\n "; par.debugMessage(debugMsg);
-            app_pairs.addCandidate( *application_i ,
+            app_pairs.add_candidate( *application_i ,
               *application_j ,
               application_i->get_currentCores_d(),
               application_j->get_currentCores_d(),
@@ -148,7 +148,7 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, /*int &iterat
   *
   */
 
-  void Search_methods::exact_loop(sCandidates &app_pairs, sConfiguration &configuration,  MYSQL *conn,  Batch &App_manager, optJrParameters &par, int &index_pair)
+  void Search_methods::exact_loop(Candidates &app_pairs, Configuration &configuration,  MYSQL *conn,  Batch &App_manager, optJrParameters &par, int &index_pair)
   {
 
     std::string debugMsg;
@@ -167,12 +167,12 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, /*int &iterat
     if(par.get_numberOfThreads()==0)
     {
       // Calculate in advance the results of the predictor FOR EACH candidate s.t. currentCores > 0 (until finished or MAX_PROMISING_CONFIGURATIONS is reached)
-      app_pairs.invokePredictorSeq( conn, par, configuration);
+      app_pairs.invoke_predictor_seq( conn, par, configuration);
     }
     else
     {
       // Calculate in advance and in parallel the results of the predictor FOR EACH candidate s.t. currentCores > 0 (until finished or MAX_PROMISING_CONFIGURATIONS is reached)
-      app_pairs.invokePredictorOpenMP( par, configuration);
+      app_pairs.invoke_predictor_openMP( par, configuration);
     }
 
     /*
@@ -189,7 +189,7 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, /*int &iterat
 
     for (auto it = app_pairs.get_begin(); it != app_pairs.get_end(); it++)
     {
-      if(index>0 && index==MAX_PROMISING_CONFIGURATIONS)//This is done because in invokePredictor* only the first MAX_PROMISING_CONFIGURATIONS are evaluated; index=0 means par.get_k()==0 i.e. all the pairs are explored
+      if(index>0 && index==MAX_PROMISING_CONFIGURATIONS)//This is done because in invoke_predictor* only the first MAX_PROMISING_CONFIGURATIONS are evaluated; index=0 means par.get_k()==0 i.e. all the pairs are explored
       {
         break;
       }
@@ -236,12 +236,12 @@ sCandidates Search_methods::approximated_loop( Batch &App_manager, /*int &iterat
       {
         if (it->get_app_id_i()==elem->get_app_id() && it->get_session_app_id_i()==elem->get_session_app_id())
         {
-          elem->set_currentCores_d( it->get_newCoreAssignment_i());
+          elem->set_currentCores_d( it->get_new_core_assignment_i());
           elem->set_baseFO( it->get_real_i());
         }
         if (it->get_app_id_j()==elem->get_app_id() && it->get_session_app_id_j()==elem->get_session_app_id())
         {
-          elem->set_currentCores_d( it->get_newCoreAssignment_j());
+          elem->set_currentCores_d( it->get_new_core_assignment_j());
           elem->set_baseFO( it->get_real_j());
         }
       }

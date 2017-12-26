@@ -44,10 +44,10 @@ int main(int argc, char **argv)
 
 
   /**
-  1) read informations from "wsi_config.xml" file and save it in a "sConfiguration" object (which is unordered_map(string,string))
+  1) read informations from "wsi_config.xml" file and save it in a "Configuration" object (which is unordered_map(string,string))
   */
 
-  sConfiguration configuration; //automatically initialized
+  Configuration configuration; //automatically initialized
 
 
   /**
@@ -153,7 +153,7 @@ int main(int argc, char **argv)
   /* CREATE A BOUNDS OBJECT */
   Bounds Bounds_eval(App_manager);
 
-  Bounds_eval.calculateBounds( configuration, conn, par );
+  Bounds_eval.calculate_bounds( configuration, conn, par );
 
   gettimeofday(&tv_final_bounds, NULL);
 
@@ -184,7 +184,7 @@ int main(int argc, char **argv)
 
 
   /**
-  7) Fix initial solution (with the fixInitialSolution method of Batch class)
+  7) Fix initial solution (with the fix_initial_solution method of Batch class)
   */
 
   debugMsg = "\n\n*******************************************************************\n";
@@ -194,7 +194,7 @@ int main(int argc, char **argv)
 
   gettimeofday(&tv_initial_fix, NULL);
 
-  App_manager.fixInitialSolution(par);
+  App_manager.fix_initial_solution(par);
 
   gettimeofday(&tv_final_fix, NULL);
 
@@ -252,7 +252,7 @@ int main(int argc, char **argv)
   gettimeofday(&tv_final_locals, NULL);
 
 
-  search_eval->writeResults(conn, const_cast<char*>(configuration["DB_dbName"].c_str()), par);
+  search_eval->write_results(conn, const_cast<char*>(configuration["DB_dbName"].c_str()), par);
 
 
   debugMsg ="\n**********************    END LOCAL SEARCH   ********************\n\n\n"; par.debugMessage(debugMsg);

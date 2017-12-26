@@ -25,12 +25,12 @@
 
 
 /**
- "invokePredictor" invokes a predictor (dagSim/Lundstrom).
+ "invoke_predictor" invokes a predictor (dagSim/Lundstrom).
  First it checks if an estimate of the execution time is already stored in the DB;
   if not, it invokes the actual predictor and stores the result on DB cache table.
  */
 
-char* invokePredictor(sConfiguration  &configuration, MYSQL *conn, int nNodes, int currentCores,
+char* invoke_predictor(Configuration  &configuration, MYSQL *conn, int nNodes, int currentCores,
 											char * memory, int datasize,  char *sessionId, char *appId, char *stage,
 											optJrParameters &par, int flagDagsim);
 

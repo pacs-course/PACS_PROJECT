@@ -30,7 +30,7 @@ public:
   /// The constructor takes in input all the input from command line
   optJrParameters(char **args, int argc);
   /// Set the number of threads: it looks in configuration file (0== "no parallelization")
-  void set_numberOfThreads(sConfiguration &configuration);
+  void set_numberOfThreads(Configuration &configuration);
 
   void debugMessage(std::string &string);
 

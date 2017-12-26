@@ -13,14 +13,14 @@
  *
  */
 
-double ObjFun::ObjFunctionComponent(sConfiguration &configuration, MYSQL *conn, Application  &app, optJrParameters &par)
+double Objective_fun::ObjFunctionComponent(Configuration &configuration, MYSQL *conn, Application  &app, optJrParameters &par)
 {
 
 	std::string debugMsg;
 	double output;
 
 	/* The memory pattern can be anything such as "*" */
-	app.set_R_d( atof(invokePredictor( configuration, conn, 1, app.get_currentCores_d(), (char*)"*", app.get_dataset_size(),  const_cast<char*>((app.get_session_app_id()).c_str()),
+	app.set_R_d( atof(invoke_predictor( configuration, conn, 1, app.get_currentCores_d(), (char*)"*", app.get_dataset_size(),  const_cast<char*>((app.get_session_app_id()).c_str()),
 													const_cast<char*>((app.get_app_id()).c_str()), const_cast<char*>((app.get_stage()).c_str()), par,RESIDUAL_DAGSIM)));
 
 
@@ -64,7 +64,7 @@ double ObjFun::ObjFunctionComponent(sConfiguration &configuration, MYSQL *conn, 
   Description It computes an approximation of the objective function (and update R_d)
  */
 
-double ObjFun::ObjFunctionComponentApprox(Application &App, optJrParameters &par)//sApplication * pointer, struct optJrParameters par)
+double Objective_fun::ObjFunctionComponentApprox(Application &App, optJrParameters &par)//sApplication * pointer, struct optJrParameters par)
 {
 
   std::string debugMsg;
@@ -92,7 +92,7 @@ double ObjFun::ObjFunctionComponentApprox(Application &App, optJrParameters &par
  * Output parameters: double, the total value of objective function
  * Description:It calculates the value of the total objective function
  */
-double ObjFun::ObjFunctionGlobal(sConfiguration &configuration, MYSQL *conn, Batch & App_manager, optJrParameters &par)
+double Objective_fun::ObjFunctionGlobal(Configuration &configuration, MYSQL *conn, Batch & App_manager, optJrParameters &par)
 {
 
 	double sum = 0;

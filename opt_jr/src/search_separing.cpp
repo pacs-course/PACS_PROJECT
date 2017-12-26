@@ -3,14 +3,14 @@
 #include "objectiveFunction.hh"
 
 
-void Search_separing::localSearch(Batch &app_manager, sConfiguration &configuration, MYSQL *conn,  optJrParameters &par)
+void Search_separing::localSearch(Batch &app_manager, Configuration &configuration, MYSQL *conn,  optJrParameters &par)
 {
   std::string debugMsg;
-  sCandidates app_pairs ;
+  Candidates app_pairs ;
   double TotalFO;
   int how_many;
   sStatistics statistics;
-  ObjFun OF;
+  Objective_fun OF;
 
   debugMsg =  "\n     ***** Estimate the candidates for the predictor ******\n"; par.debugMessage(debugMsg);
 
@@ -84,7 +84,7 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
         {
           if (it->get_session_app_id_i()==elem->get_session_app_id())
           {
-            elem->set_currentCores_d( it->get_newCoreAssignment_i());
+            elem->set_currentCores_d( it->get_new_core_assignment_i());
             elem->set_baseFO( it->get_real_i());
           }
         }
@@ -93,7 +93,7 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
         {
           if (it->get_session_app_id_j()==elem->get_session_app_id())
           {
-            elem->set_currentCores_d( it->get_newCoreAssignment_j());
+            elem->set_currentCores_d( it->get_new_core_assignment_j());
             elem->set_baseFO( it->get_real_j());
           }
         }
@@ -115,9 +115,9 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
   double DELTA_fo_App_i=0, DELTA_fo_App_j=0;//Those value are not really used
   for (int iteration = 1; iteration <= par.get_maxIteration(); iteration++)
   {
-    sCandidates all_pairs;
+    Candidates all_pairs;
     /*
-    save ALL the potential exchanges in a sCandidates object
+    save ALL the potential exchanges in a Candidates object
     */
 
     auto application_i=app_manager.get_begin();
@@ -140,7 +140,7 @@ void Search_separing::localSearch(Batch &app_manager, sConfiguration &configurat
 
           if (application_i->get_currentCores_d() > 0 && application_j->get_currentCores_d() > 0)
           {
-            all_pairs.addCandidate( *application_i ,
+            all_pairs.add_candidate( *application_i ,
               *application_j ,
               application_i->get_currentCores_d(),
               application_j->get_currentCores_d(),

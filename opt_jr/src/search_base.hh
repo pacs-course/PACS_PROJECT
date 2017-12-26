@@ -17,15 +17,15 @@ public:
   Search_base(Batch app_m): App_manager(app_m){};
 
 
-  virtual void localSearch(sConfiguration &configuration, MYSQL *conn,  optJrParameters &par)=0;
+  virtual void localSearch(Configuration &configuration, MYSQL *conn,  optJrParameters &par)=0;
 
 
   /**
-  It calls writeResults member function of App_manager private member
+  It calls write_results member function of App_manager private member
 
   */
 
-  void writeResults(MYSQL *conn, char * dbName,  optJrParameters &par);
+  void write_results(MYSQL *conn, char * dbName,  optJrParameters &par);
   /**
   It prints the output of App_manager.show_solution
   */

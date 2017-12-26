@@ -13,7 +13,6 @@
 
 /**
   Standard error procedure for DB operations
-  (not substantially changed from original C version)
 */
 void DBerror(MYSQL *conn, char * msg);
 
@@ -24,14 +23,12 @@ MYSQL_ROW executeSQL(MYSQL *conn, char *statement, optJrParameters par);
 
 /**
   Open a DB connection
- (not substantially changed from original C version)
  */
 
  MYSQL * DBopen(char * host, char * port, char * login, char * passw, char *dbName);
 
 /**
   Close DB connection
- (not substantially changed from original C version)
  */
 void DBclose(MYSQL *conn);
 

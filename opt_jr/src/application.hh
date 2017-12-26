@@ -7,28 +7,24 @@
 #include "invokePredictor.hh"
 
 
-//#define R_ALGORITHM 0 ///< R_ALGORITHM: currently redundant, it specifies how the objective function should be computed
-/*#define CORES_ALGORITHM 1
-#define NCORES_ALGORITHM 2*/
-
 
 /**
-	In the Application class all the data of one application are stored ;
-	it's provided also a method to evaluate Hyperbolic interpolation for alpha and beta.
+	In the Application class all the data of one application are stored;
+	it's provided also with a method to evaluate hyperbolic interpolation for alpha and beta, and several get and set funtions.
 */
 class Application{
 
 
-	double nCores_old;   ///<Value used by computeAlphaBeta
-	double nCores_new;   ///<Value used by computeAlphaBeta
-	double R_old;        ///<Value used by computeAlphaBeta
-	double R_new;        ///<Value used by computeAlphaBeta
-	int boundIterations=0;       ///< Index for Hyperbolic interpolation
+	double ncores_old;   ///<Value used by compute_alpha_beta
+	double ncores_new;   ///<Value used by compute_alpha_beta
+	double R_old;        ///<Value used by compute_alpha_beta
+	double R_new;        ///<Value used by compute_alpha_beta
+	int bound_iterations=0;       ///< Index for Hyperbolic interpolation
 
-	/* Static values */
+	/* "Static" values */
 	const std::string session_app_id; ///< Session identifier
 	const std::string app_id; 		///<  Application identifier
-	const double w; 			///<  Weight application
+	const double w; 			///<  Weight of the application
 	double term_i;	///<  Used to calculate nu index
 	const double chi_0; 	///< Machine learning parameter
 	const double chi_C;		///< Machine learning parameter
@@ -37,10 +33,10 @@ class Application{
 	const double V;				///< Total vCPUs available at the YARN NodeManager
 	const double v;				///< vCPUs of a container for this application
 	const double Deadline_d; ///< Deadline for the application
-	const double csi;
+	const double csi;					///csi:= Min{M/m,V/v}
 	const std::string stage; ///<  Application's stage (used in case of residual time)
 	const int dataset_size;   ///< Size of the dataset
-	//const int mode=R_ALGORITHM; 				///< How the objective function is calculated (currently redundant)
+
 
 	/* Dynamic values */
 	double nu_d;        ///< nu value
@@ -56,12 +52,12 @@ class Application{
 
 public:
 
-	///Constructor expects all static values.
+	///Constructor expects all not editable values.
   Application(std::string session_app_id, std::string app_id, double w,
               double chi_0, double chi_C, double m, double M, double V,
               double v, double D, double csi, std::string St, int dataset_size);
 	/// This function evaluates the Hyperbolic interpolation for alpha and beta (from the second time it is invoked).
-	void computeAlphaBeta(int nCores_n, double R_n);
+	void compute_alpha_beta(int nCores_n, double R_n);
 
 
 	/*
@@ -81,7 +77,6 @@ public:
 	const double get_csi(){  return csi;}
 	const std::string get_stage(){  return stage;	}
 	const int get_dataset_size()	{	return dataset_size;}
-	//const int get_mode(){	return mode;}
 	const int get_currentCores_d(){return currentCores_d;}
 	double get_nu_d(){return nu_d;}
 	int get_nCores_DB_d(){	return nCores_DB_d;}

@@ -13,7 +13,7 @@
   This class provides methods to evaluate the objective function in different ways
 */
 
-class ObjFun {
+class Objective_fun {
 
 public:
   /**
@@ -21,7 +21,7 @@ public:
    Currently, only one method is supported. Note that the algorithm's choice is stored in the "mode" field
    of the application structure.
    */
-  double ObjFunctionComponent(sConfiguration &configuration, MYSQL *conn, Application  &app, optJrParameters &par);
+  double ObjFunctionComponent(Configuration &configuration, MYSQL *conn, Application  &app, optJrParameters &par);
 
   /**
   ObjFunctionComponentApprox computes an approximation of the objective function (and update R_d)
@@ -32,7 +32,7 @@ public:
   /**
   ObjFunctionGlobal computes the value of the total objective function
   */
-  double ObjFunctionGlobal(sConfiguration &configuration, MYSQL *conn, Batch &App_manager, optJrParameters &par);
+  double ObjFunctionGlobal(Configuration &configuration, MYSQL *conn, Batch &App_manager, optJrParameters &par);
 
 
 };

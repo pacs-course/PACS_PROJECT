@@ -3,14 +3,14 @@
 #include "objectiveFunction.hh"
 
 
-void Search_alterning::localSearch(Batch &app_manager, sConfiguration &configuration, MYSQL *conn,  optJrParameters &par)
+void Search_alterning::localSearch(Batch &app_manager, Configuration &configuration, MYSQL *conn,  optJrParameters &par)
 {
   std::string debugMsg;
-  sCandidates sCandidateApproximated ;
+  Candidates sCandidateApproximated ;
   double TotalFO;
   int how_many;
   sStatistics statistics;
-  ObjFun OF;
+  Objective_fun OF;
 
   debugMsg =  "\n     ***** Estimate the candidates for the predictor ******\n"; par.debugMessage(debugMsg);
 

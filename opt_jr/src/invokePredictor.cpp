@@ -4,7 +4,6 @@
 
 
 
-
 #include <string>
 #include <string.h>
 
@@ -17,14 +16,14 @@
 
 
 /*
-  Name: invokePredictor
+  Name: invoke_predictor
   Description: It invokes a predictor (dagSim/Lundstrom).
  								First it checks if an estimate of the execution time is already stored in the DB;
  								if not, it invokes the actual predictor
  								and stores the result on DB cache table.
  */
 
- char* invokePredictor(sConfiguration  &configuration, MYSQL *conn, int nNodes, int currentCores,
+ char* invoke_predictor(Configuration  &configuration, MYSQL *conn, int nNodes, int currentCores,
 	 char * memory, int datasize,  char *sessionId, char *appId, char *stage,
 	 optJrParameters &par, int flagDagsim)
 	 {
@@ -45,7 +44,7 @@
 
 		 if (output1 == NULL)
 		 {
-			 printf("Malloc failure: invokePredictor: output1\n");
+			 printf("Malloc failure: invoke_predictor: output1\n");
 			 exit(-1);
 		 }
 
@@ -92,7 +91,7 @@
 				 dbName,appId, dbName,datasize, dbName,currentCores);
 
 
-				 debugMsg= "From invokePredictor executing SQL STATEMENT below "; par.debugMessage(debugMsg);
+				 debugMsg= "From invoke_predictor executing SQL STATEMENT below "; par.debugMessage(debugMsg);
 				 row = executeSQL(conn, statement, par);
 			 }
 
@@ -143,7 +142,7 @@
 					 strcpy(output1, extractWord(extractRowN(readFile((char*)"/tmp/outputDagsim.txt"),1),3));
 					 break;
 					 default:
-					 printf("FATAL ERROR: invokePredictor: unknown case %d\n", flagDagsim);
+					 printf("FATAL ERROR: invoke_predictor: unknown case %d\n", flagDagsim);
 					 exit(-1);
 					 break;
 				 }
@@ -151,7 +150,7 @@
 
 				 if (doubleCompare(atof(output1), 0) == 0)
 				 {
-					 printf("Fatal Error: invokePredictor: dagSim output was zero (%s)\n", lua);
+					 printf("Fatal Error: invoke_predictor: dagSim output was zero (%s)\n", lua);
 					 exit(-1);
 				 }
 

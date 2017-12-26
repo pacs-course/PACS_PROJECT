@@ -111,10 +111,10 @@ Batch::calculate_nu(optJrParameters &par)
  * Description			For each application, a base value for the objective function is calculated.
  */
 
-void Batch::initialize(sConfiguration  &configuration, MYSQL *conn, optJrParameters &par)
+void Batch::initialize(Configuration  &configuration, MYSQL *conn, optJrParameters &par)
 {
 	std::string debugMsg;
-  ObjFun OF;
+  Objective_fun OF;
 
   debugMsg =  "Information: INITIALIZE baseFo for all the applications" ;par.debugMessage(debugMsg);
 	for (auto it =APPs.begin(); it!= APPs.end(); it++)
@@ -133,12 +133,12 @@ void Batch::initialize(sConfiguration  &configuration, MYSQL *conn, optJrParamet
 
 
 /*
- * Name: fixInitialSolution
+ * Name: fix_initial_solution
  * Description: It fixes the initial solution by reallocating the residual
  *              cores to the applications that may need more resources
  */
 
-void Batch::fixInitialSolution(optJrParameters &par)
+void Batch::fix_initial_solution(optJrParameters &par)
 {
 
 	int allocatedCores;
@@ -183,11 +183,11 @@ void Batch::fixInitialSolution(optJrParameters &par)
 			}
 
 		allocatedCores+= it->get_currentCores_d();
-		debugMsg =  "fixInitialSolution FIXING CORES "+  it->get_session_app_id()
+		debugMsg =  "fix_initial_solution FIXING CORES "+  it->get_session_app_id()
                 + " cores: " + std::to_string(it->get_currentCores_d()); par.debugMessage(debugMsg);
 	}
 
-	debugMsg= "fixInitialSolution: allocatedCores "+ std::to_string(allocatedCores); par.debugMessage(debugMsg);
+	debugMsg= "fix_initial_solution: allocatedCores "+ std::to_string(allocatedCores); par.debugMessage(debugMsg);
 
 
 
@@ -247,23 +247,23 @@ void Batch::fixInitialSolution(optJrParameters &par)
 }
 
 /*
- * 		Name:					writeResults
+ * 		Name:					write_results
  * 		Description:			This function prints the results of the localSearch application (number of cores and VM) in a DB table.
  * 								If a result for a (session_id, application_id) already exists, then it is replaced.
  *
  */
 
 
-void Batch::writeResults(MYSQL *conn, char * dbName, optJrParameters &par)
+void Batch::write_results(MYSQL *conn, char * dbName, optJrParameters &par)
 {
 	std::string debugMsg;
 
 	char sqlStatement[512];
 
-	debugMsg= "writeResults"; par.debugMessage(debugMsg);
+	debugMsg= "write_results"; par.debugMessage(debugMsg);
 	if (APPs.empty())
 	{
-		printf("FATAL ERROR: writeResults: APPs cannot be empty\n");
+		printf("FATAL ERROR: write_results: APPs cannot be empty\n");
 		exit(-1);
 	}
 	//while (pointer!=NULL)

@@ -12,22 +12,22 @@ Application::Application(std::string session_app_id, std::string app_id, double 
             chi_C(chi_C), m(m), M(M), V(V), v(v), Deadline_d(D), csi(csi), stage(St),
             dataset_size(dataset_size){};
 
-void Application::computeAlphaBeta(int nCores_n, double R_n)
+void Application::compute_alpha_beta(int nCores_n, double R_n)
 {
-  if (boundIterations==0)
+  if (bound_iterations==0)
   {
     R_new=R_n;
-    nCores_new=nCores_n;
-    boundIterations++;
+    ncores_new=nCores_n;
+    bound_iterations++;
   }
   else
   {
     R_old=R_new;
-    nCores_old=nCores_new;
+    ncores_old=ncores_new;
     R_new=R_n;
-    nCores_new=nCores_n;
-    beta = (nCores_old*R_old - nCores_new*R_new)/ (nCores_old-nCores_new);
-    alpha =(R_new - beta)*nCores_new;
-    boundIterations++;
+    ncores_new=nCores_n;
+    beta = (ncores_old*R_old - ncores_new*R_new)/ (ncores_old-ncores_new);
+    alpha =(R_new - beta)*ncores_new;
+    bound_iterations++;
   }
 }

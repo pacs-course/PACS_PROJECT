@@ -26,32 +26,30 @@ class Bounds {
   return the last "safe" number of core and time.
 
   */
-  void  Bound(sConfiguration &configuration, MYSQL *conn, Application &app,
+  void  bound(Configuration &configuration, MYSQL *conn, Application &app,
               optJrParameters &par, int flagDagsim);
   /**
   Initially, this function queries the lookup table to find the number of cores, calculated by OPT_IC earlier,
   given a deadline, an application id and a dataset size.
-  Secondly, it invokes the Bound function.
+  Secondly, it invokes the bound function.
   */
-  void findBound(sConfiguration &configuration, MYSQL *conn, char* db,  Application &app,
+  void find_bound(Configuration &configuration, MYSQL *conn, char* db,  Application &app,
                  optJrParameters &par);
 public:
 
   Bounds(Batch app_m): app_manager(app_m){};
 
   /**
-  calculateBounds evaluates the bound for the applications in BATCH
+  calculate_bounds evaluates the bound for the applications in BATCH
   i.e. the minimal number of cores necessary to finish the execution before the deadline.
   The function looks before if the result is already stored in the database, otherwise it
   invokes the predictor doing a "HILL CLIMBING". If the number of threads in the configuration file is
   greater than 0, it does the computations in parallel (using openMP).
   */
-  void calculateBounds( sConfiguration &configuration,
+  void calculate_bounds( Configuration &configuration,
                        MYSQL *conn,  optJrParameters &par);
 
-  Batch get_app_manager(){
-    return app_manager;
-  }
+  Batch get_app_manager(){  return app_manager;}
 
 };
 
