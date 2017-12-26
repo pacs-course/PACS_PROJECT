@@ -5,16 +5,14 @@
 
 
 /*
-	-Here are defined the functions to manage databases
- */
+-Here are defined the functions to manage databases
+*/
 
 
 
 /*
- * Standard error procedure for DB operations
- */
-
-
+* Standard error procedure for DB operations
+*/
 void DBerror(MYSQL *conn, char * msg)
 {
 	printf("DBError: %s %s\n", msg, mysql_error(conn));
@@ -23,6 +21,9 @@ void DBerror(MYSQL *conn, char * msg)
 }
 
 
+/**
+Execute SQL statement
+*/
 MYSQL_ROW executeSQL(MYSQL *conn, char *statement, Opt_jr_parameters par)
 {
 	MYSQL_RES *result;
@@ -44,43 +45,41 @@ MYSQL_ROW executeSQL(MYSQL *conn, char *statement, Opt_jr_parameters par)
 		return NULL;
 	}
 	else
-		return(mysql_fetch_row(result));
+	return(mysql_fetch_row(result));
 
 }
 
 
 
 
- /*
-  * Open a DB connection
-  */
-
- MYSQL * DBopen(char * host, char * port, char * login, char * passw, char *dbName)
- {
-
-
- MYSQL *con = mysql_init(NULL);
-
-   if (con == NULL)
-   {
-       fprintf(stderr, "DBError: %s\n", mysql_error(con));
-       exit(1);
-   }
-
-   if (mysql_real_connect(con, host, login, passw,
-           dbName, atoi(port), NULL, 0) == NULL) DBerror(con, (char*)"mysql_real_connect");
-
-   return con;
- }
-
-
-
-
-/*
- * Close the Db connection
- */
-
-void DBclose(MYSQL *conn)
+/**
+Open a DB connection
+*/
+MYSQL * DBopen(char * host, char * port, char * login, char * passw, char *dbName)
 {
-	mysql_close(conn);
-}
+
+
+	MYSQL *con = mysql_init(NULL);
+
+	if (con == NULL)
+	{
+		fprintf(stderr, "DBError: %s\n", mysql_error(con));
+		exit(1);
+	}
+
+	if (mysql_real_connect(con, host, login, passw,
+		dbName, atoi(port), NULL, 0) == NULL) DBerror(con, (char*)"mysql_real_connect");
+
+		return con;
+	}
+
+
+
+
+	/**
+	Close DB connection
+	*/
+	void DBclose(MYSQL *conn)
+	{
+		mysql_close(conn);
+	}

@@ -6,7 +6,10 @@
 
 
 
-
+/**
+The constructor inizializes the configuration container; it reads the
+file defined in the environmental variable WSI_CONFIG_FILE
+*/
 Configuration::Configuration()
 {
 	FILE * fp;
@@ -16,7 +19,6 @@ Configuration::Configuration()
 	    ssize_t read;
 	    char var[256], val[256],* configurationFile;
 
-	//Configuration configuration;
 
 	configurationFile = getenv("WSI_CONFIG_FILE");
 	if (configurationFile == NULL)
@@ -37,17 +39,17 @@ Configuration::Configuration()
 	    	{
 	    		strcpy(var, extract_item(line, (char*)"\"", (char*)"\""));
 	    		strcpy(val, extract_item(line, (char*)">", (char*)"<"));
-					//config.push_back(std::make_pair(var,val));
 					configuration.insert(std::make_pair(var,val));
-					//printf("%s",var);
-	    		//addConfiguration(&first, &current, var, val);
 	    	}
 	    }
 			fclose(fp);
-	    //return config;
+
 }
 
 
+/**
+extract_item parses input from configuration file.
+*/
 char * Configuration::extract_item( char *const string, char *const left, const char *const right)
 {
     char  *head;

@@ -19,8 +19,6 @@
 #include "objective_fun.hh"
 #include "candidates.hh"
 #include "utility.hh"
-#include "search_alterning.hh"
-#include "search_separing.hh"
 #include "search_factory.hh"
 
 

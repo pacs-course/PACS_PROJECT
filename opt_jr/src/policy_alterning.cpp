@@ -1,9 +1,15 @@
-#include "search_alterning.hh"
+#include "policy_alterning.hh"
+
+
 #include "statistics.hh"
 #include "objective_fun.hh"
 
-
-void Search_alterning::local_search(Batch &app_manager, Configuration &configuration, MYSQL *conn,  Opt_jr_parameters &par)
+/**
+The local_search methods performs a single loop in which at each iteration an approximated value for
+the objective function is evaluated for each move and then the objective
+function is evaluated for most profitable moves.
+*/
+void Policy_alterning::local_search(Batch &app_manager, Configuration &configuration, MYSQL *conn,  Opt_jr_parameters &par)
 {
   std::string debugMsg;
   Candidates candidate_approximated ;
@@ -42,10 +48,6 @@ void Search_alterning::local_search(Batch &app_manager, Configuration &configura
 
     how_many=candidate_approximated.get_size();
     debugMsg = " There are " + std::to_string(how_many) +" promising configurations in iteration " + std::to_string(iteration) + "\n\n"; par.debug_message(debugMsg);
-
-
-
-    //tmp=app_manager;
 
     int index_pair;
     exact_loop(candidate_approximated, configuration, conn, app_manager, par, index_pair);

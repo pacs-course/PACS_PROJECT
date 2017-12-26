@@ -8,21 +8,12 @@
 #include <string.h>
 
 
-/*
-	-Here is defined the function to invoke the predictor
+
+ /**
+ invoke_predictor invokes the dagSim predictor.
+ First it checks if an estimate of the execution time is already stored in the DB;
+ if not, it invokes the predictor and stores the result on DB cache table.
  */
-
-
-
-
-/*
-  Name: invoke_predictor
-  Description: It invokes a predictor (dagSim/Lundstrom).
- 								First it checks if an estimate of the execution time is already stored in the DB;
- 								if not, it invokes the actual predictor
- 								and stores the result on DB cache table.
- */
-
  char* invoke_predictor(Configuration  &configuration, MYSQL *conn, int nNodes, int currentCores,
 	 char * memory, int datasize,  char *sessionId, char *appId, char *stage,
 	 Opt_jr_parameters &par, int flagDagsim)

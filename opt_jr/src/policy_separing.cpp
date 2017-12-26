@@ -1,9 +1,13 @@
-#include "search_separing.hh"
+#include "policy_separing.hh"
 #include "statistics.hh"
 #include "objective_fun.hh"
 
-
-void Search_separing::local_search(Batch &app_manager, Configuration &configuration, MYSQL *conn,  Opt_jr_parameters &par)
+/**
+The local_search methods performs first an approximated loop in which the most profitable
+move is done at each iteration, then it performs an exact loop in which the objective
+function is evaluated for all possible pairs exchanges at each iteration.
+*/
+void Policy_separing::local_search(Batch &app_manager, Configuration &configuration, MYSQL *conn,  Opt_jr_parameters &par)
 {
   std::string debugMsg;
   Candidates app_pairs ;
@@ -22,8 +26,8 @@ void Search_separing::local_search(Batch &app_manager, Configuration &configurat
 
 
     /*
-     *   Estimate the candidates for the predictor
-     */
+    *   Estimate the candidates for the predictor
+    */
     app_pairs = approximated_loop( app_manager, par );
     debugMsg= "\n\n\n\n       finished approximatedLoop   \n\n\n\n"; par.debug_message(debugMsg);
 
@@ -42,60 +46,34 @@ void Search_separing::local_search(Batch &app_manager, Configuration &configurat
 
 
 
-    //modify the most promising pair in app_manager... should be the first!!
+
+
     /*
-    double DELTA_tmp, DELTA_pair=0;
-    int index=0, index_pair;
-
-    for (auto it = app_pairs.cand.begin(); it != app_pairs.cand.end(); it++)
-    {
-      DELTA_tmp=it->delta_i+it->delta_j;
-
-      if (DELTA_tmp<DELTA_pair)
-      {
-        DELTA_pair=DELTA_tmp;
-        index_pair=index;
-      }
-      index++;
-    }
-
-
-
-
-    *
-    *  Find the corresponding applications in batch and modify them
+    *  Find the corresponding application in batch and modify it
     */
 
 
-    auto it = app_pairs.get_begin();
-    /*
-    for (int j=0; j< index_pair; j++)
-    {
-      it++;
-    }
-    */
-
-
+    auto it = app_pairs.get_begin(); // the list is ordered so the best pair is the first (already checked that the list is not empty)
 
     for (auto elem= app_manager.get_begin(); elem!=app_manager.get_end(); elem++)
     {
-        if(  it->get_app_id_i()==elem->get_app_id())
+      if(  it->get_app_id_i()==elem->get_app_id())
+      {
+        if (it->get_session_app_id_i()==elem->get_session_app_id())
         {
-          if (it->get_session_app_id_i()==elem->get_session_app_id())
-          {
-            elem->set_currentCores_d( it->get_new_core_assignment_i());
-            elem->set_baseFO( it->get_real_i());
-          }
+          elem->set_currentCores_d( it->get_new_core_assignment_i());
+          elem->set_baseFO( it->get_real_i());
         }
+      }
 
-        if(  it->get_app_id_j()==elem->get_app_id())
+      if(  it->get_app_id_j()==elem->get_app_id())
+      {
+        if (it->get_session_app_id_j()==elem->get_session_app_id())
         {
-          if (it->get_session_app_id_j()==elem->get_session_app_id())
-          {
-            elem->set_currentCores_d( it->get_new_core_assignment_j());
-            elem->set_baseFO( it->get_real_j());
-          }
+          elem->set_currentCores_d( it->get_new_core_assignment_j());
+          elem->set_baseFO( it->get_real_j());
         }
+      }
 
 
     }
@@ -105,7 +83,7 @@ void Search_separing::local_search(Batch &app_manager, Configuration &configurat
 
 
 
-  app_manager.initialize(configuration, conn, par);
+  app_manager.initialize(configuration, conn, par); //evaluate a base value for FO
 
   int indicator=0;
   int nCoreMov;

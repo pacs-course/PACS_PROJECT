@@ -10,14 +10,11 @@
 
 
 
-/*
- * 		Name:				bound
- * 		Description:		This function calculates the bound given a certain deadline and number of nodes, cores. Predictor method is invoked until an upper bound,
- * 		  							consisting of the number of nodes, is found (once that the time calculated by the predictor, a rollback is performed to
- * 										return the last "safe" number of core and time.
- *
- */
-
+/**
+bound calculates the bound given a certain deadline and number of cores. Predictor method is invoked until an upper bound,
+consisting of the number of nodes, is found (once that the time calculated by the predictor, a rollback is performed to
+return the last "safe" number of core and time).
+*/
 void  Bounds::bound(Configuration &configuration, MYSQL *conn, Application &app, Opt_jr_parameters &par, int flagDagsim)
 {
 	double predictorOutput;
@@ -72,7 +69,7 @@ void  Bounds::bound(Configuration &configuration, MYSQL *conn, Application &app,
 					break;
 				}
 
-				nCores = nCores + STEP; //add the cores NB: possible improvement: add more than one VM at a time
+				nCores = nCores + STEP; //add the cores
 				predictorOutput = atof(invoke_predictor(configuration, conn, nNodes, nCores, (char*)"8G", app.get_dataset_size(), const_cast<char*>((app.get_session_app_id()).c_str()),
 																const_cast<char*>((app.get_app_id()).c_str()), const_cast<char*>((app.get_stage()).c_str()), par, WHOLE_DAGSIM));
 
@@ -134,14 +131,11 @@ void  Bounds::bound(Configuration &configuration, MYSQL *conn, Application &app,
 
 
 
-/*
- * 		Name:					find_bound
- * 		Description:			Initially, this function queries the lookup table to find the number of cores, calculated by OPT_IC earlier,
- * 								given a deadline, an application id and a dataset size.
- * 								Secondly, it invokes the bound function.
- *
- */
-
+/**
+Initially, find_bound queries the lookup table to find the number of cores, calculated by OPT_IC earlier,
+given a deadline, an application id and a dataset size.
+Secondly, it invokes the bound function.
+*/
 void Bounds::find_bound(Configuration &configuration, MYSQL *conn, char* db,  Application &app, Opt_jr_parameters &par)
 {
   std::string debugMsg;
@@ -174,9 +168,6 @@ void Bounds::find_bound(Configuration &configuration, MYSQL *conn, char* db,  Ap
 
 
 }
-
-
-
 
 /*
  * CALL IN PARALLEL FINDBOUND (OPENMP)

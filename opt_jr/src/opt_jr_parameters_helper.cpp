@@ -2,11 +2,9 @@
 
 
 
-/*
- Explain usage of the OPT_JR_CPP program
- Invoked if the number of parameters send at command line is incorrect
+/**
+Usage explains the usage of the OPT_JR_CPP program.
 */
-
 void Usage(int argc)
 {
 		printf("Arguments expected %d, actual arguments number was %d\n", ARGS, argc);

@@ -28,7 +28,7 @@ class Bounds {
   void  bound(Configuration &configuration, MYSQL *conn, Application &app,
               Opt_jr_parameters &par, int flagDagsim);
   /**
-  Initially, this function queries the lookup table to find the number of cores, calculated by OPT_IC earlier,
+  Initially, find_bound queries the lookup table to find the number of cores, calculated by OPT_IC earlier,
   given a deadline, an application id and a dataset size.
   Secondly, it invokes the bound function.
   */

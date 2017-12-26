@@ -4,12 +4,13 @@
 
 
 
-
+///add_statistics is used to add information about an iteration to the Statistics object.
 void Statistics::add_statistics(int iteration, int size, double FO_total)
 {
   stat.emplace_back(iteration,size,FO_total);
 }
 
+///read_statistics shows the statistics about localsearch iterations.
 void Statistics::read_statistics(Opt_jr_parameters &par)
 {
 

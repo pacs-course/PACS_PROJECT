@@ -8,11 +8,10 @@
 
 
 
-/*
- *       Name:               add_candidate
- *       Description:         This function adds all the information regarding the local_search deltafo calculation in a candidate object and it stores the object in the list.
- *                            The list is sorted by deltafo value.
- */
+/**
+add_candidate build a Candidate_pair object and stores it in a Candidates container
+ordered by increasing delta FO
+*/
 void Candidates::add_candidate(  Application app_i, Application app_j, int contr1, int contr2, double delta, double delta_i, double delta_j)
 {
 
@@ -34,6 +33,10 @@ void Candidates::add_candidate(  Application app_i, Application app_j, int contr
 
 
 
+/**
+invoke_predictor_openMP calls in parallel the evaluation of the objective function for each pair of applications
+and it stores the results in real_i, real_j (members of Candidate_pair).
+*/
 void Candidates::invoke_predictor_openMP(  Opt_jr_parameters &par, Configuration  &configuration )
 {
 
@@ -61,7 +64,7 @@ void Candidates::invoke_predictor_openMP(  Opt_jr_parameters &par, Configuration
   }
 
   /*
-  since some pairs could share the same application object, I use an auxiliary vector in order to
+  since some pairs could share the same application object, an auxiliary vector is used in order to
   avoid unnecessary calls (and avoid error);
   */
 

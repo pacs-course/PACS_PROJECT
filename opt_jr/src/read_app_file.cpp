@@ -3,7 +3,9 @@
 #include <iostream>
 
 
-
+/**
+ get_field extracts values from the csv file
+ */
 char * get_field(char* line, int num)
 {
   char* tok;
@@ -16,6 +18,10 @@ char * get_field(char* line, int num)
 }
 
 
+
+/**
+  read_app_file, given a file* with data of application, returns the vector of "Application" objects
+*/
 std::vector<Application>  read_app_file(FILE* stream)
 {
   std::vector<Application> APPs;

@@ -15,14 +15,10 @@
 */
 
 
-/*
-* 		Name:					readFolder
-* 		Input parameters:		A path to a folder
-* 		Output parameters:		The name of subfolder contained in the folder corresponding to the folder in "path"
-* 		Description:			It's an helper function used by invoke predicttor; this function returns
-* 											the first subFolder in the folder corresponding to "path"
+/**
+readFolder is an helper function used by invoke predictor; it returns
+the first subFolder in the folder corresponding to "path"
 */
-
 char * readFolder(char *  path)
 {
 	struct dirent *de;
@@ -198,14 +194,9 @@ char * readFile(char * filename)
 	return str;
 }
 
-/*
-* 		Name:					_run
-* 		Input parameters:		char * cmd
-* 		Output parameters:		The output provided by the executed command
-* 		Description:			This function executes a command ("cmd")
-*
+/**
+_run executes a command ("cmd")
 */
-
 char *_run(char * cmd, Opt_jr_parameters &par)
 
 {

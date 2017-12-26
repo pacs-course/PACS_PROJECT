@@ -1,7 +1,7 @@
 #include "application.hh"
 
 
-/*
+/**
 Constructor:  expects all static values of the application
 */
 Application::Application(std::string session_app_id, std::string app_id, double w,
@@ -12,6 +12,13 @@ Application::Application(std::string session_app_id, std::string app_id, double 
             chi_C(chi_C), m(m), M(M), V(V), v(v), Deadline_d(D), csi(csi), stage(St),
             dataset_size(dataset_size){};
 
+
+
+
+/**
+compute_alpha_beta evaluates the hyperbolic interpolation for alpha and beta
+(from the second time it is invoked).
+*/
 void Application::compute_alpha_beta(int nCores_n, double R_n)
 {
   if (bound_iterations==0)

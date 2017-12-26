@@ -1,4 +1,4 @@
-#include "Search_methods.hh"
+#include "policy_methods.hh"
 
 
 #include "utility.hh"
@@ -12,13 +12,8 @@
 
 
 
-
-/*
-* 		Name:					check_total_nodes
-* 		Description:			It checks that the total allocated nodes is still less or equal than the total number of cores available N
-*/
-
-void Search_methods::check_total_nodes(int N, Batch &app_manager)
+///It checks that the total allocated nodes is still less or equal than the total number of cores available N
+void Policy_methods::check_total_nodes(int N, Batch &app_manager)
 {
   int total = 0;
 
@@ -35,12 +30,12 @@ void Search_methods::check_total_nodes(int N, Batch &app_manager)
 
 
 
-/*
-* Name: approximatedLoop
-* Description: It estimates the objective function for each move. The candidate applications for which the move is profitable are stored in a sCandidate object
-*/
 
-Candidates Search_methods::approximated_loop( Batch &app_manager, /*int &iteration,*/ Opt_jr_parameters &par )
+/**
+It estimates the objective function for each move. The pairs of applications for which the move
+is profitable are stored in a Candidates object (which is returned).
+*/
+Candidates Policy_methods::approximated_loop( Batch &app_manager, /*int &iteration,*/ Opt_jr_parameters &par )
 {
 
   std::string debugMsg;
@@ -126,9 +121,6 @@ Candidates Search_methods::approximated_loop( Batch &app_manager, /*int &iterati
     }
 
 
-
-  //  iteration= app_pairs.get_size();
-
     return app_pairs;
 
   }
@@ -141,13 +133,10 @@ Candidates Search_methods::approximated_loop( Batch &app_manager, /*int &iterati
 
 
 
-  /*
-  * 		Name:					exact_loop
-  * 		Description:  It evaluates the delta FO for all the candidates in app_pairs and it does the best change (if it exist) in app_manager
-  *
+  /**
+  It evaluates the delta FO for all the candidates in app_pairs and it does the best change (if it exist) in app_manager
   */
-
-  void Search_methods::exact_loop(Candidates &app_pairs, Configuration &configuration,  MYSQL *conn,  Batch &app_manager, Opt_jr_parameters &par, int &index_pair)
+  void Policy_methods::exact_loop(Candidates &app_pairs, Configuration &configuration,  MYSQL *conn,  Batch &app_manager, Opt_jr_parameters &par, int &index_pair)
   {
 
     std::string debugMsg;
@@ -183,8 +172,6 @@ Candidates Search_methods::approximated_loop( Batch &app_manager, /*int &iterati
     index=0;
     DELTA_pair=0;
 
-
-    //NB: qui la lista dovrebbe essere già ordinata, giusto???? controlla.. dovrebbe servire solo begin e prima verifica su empty
 
     for (auto it = app_pairs.get_begin(); it != app_pairs.get_end(); it++)
     {

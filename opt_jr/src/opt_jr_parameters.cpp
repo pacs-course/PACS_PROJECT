@@ -8,10 +8,7 @@
 #include <iostream>
 
 
-/*
- Constructor
- */
-
+/// The constructor takes in input all the input from command line.
 Opt_jr_parameters::Opt_jr_parameters (char **args, int argc)
 {
 
@@ -57,12 +54,17 @@ Opt_jr_parameters::Opt_jr_parameters (char **args, int argc)
 }
 
 
+/// set_number_of_threads sets the number_of_threads: it looks in configuration file (0== "no parallelization")
+
 void Opt_jr_parameters::set_number_of_threads(Configuration &configuration)
 {
 	/* Read the threads number */
 	number_of_threads = stoi(configuration["THREADS_NUMBER"]);
 }
 
+
+
+/// If debug is activated the message in string is printed.
 void Opt_jr_parameters::debug_message(std::string &string)
 {
 	if (debug == 1)

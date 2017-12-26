@@ -7,8 +7,8 @@
 #include "opt_jr_parameters.hh"
 #include "candidates.hh"
 #include <mysql.h>
-#include "search_separing.hh"
-#include "search_alterning.hh"
+#include "policy_separing.hh"
+#include "policy_alterning.hh"
 #include "search_base.hh"
 
 
@@ -33,8 +33,7 @@ public:
   void local_search(Configuration &configuration, MYSQL *conn,  Opt_jr_parameters &par)
   {
     std::string debugMsg;
-    Policy P;
-    P.local_search(app_manager, configuration, conn, par);
+    Policy::local_search(app_manager, configuration, conn, par);
   }
 
 

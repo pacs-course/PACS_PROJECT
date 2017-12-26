@@ -1,8 +1,5 @@
 #include "batch.hh"
 
-
-
-
 #include "objective_fun.hh"
 #include "db.hh"
 
@@ -15,12 +12,9 @@
 
 
 
-/*
- * 		Name:					calculate_nu
- * 		Description: - it computes the nu indice for the first application
- * 								 - it computes the nu indices for all the other applications
- */
-
+/**
+It calculates nu indices for each application and stores it in each Application object. It also initializes the number of cores.
+*/
 void
 Batch::calculate_nu(Opt_jr_parameters &par)
 {
@@ -107,11 +101,9 @@ Batch::calculate_nu(Opt_jr_parameters &par)
 };
 
 
-/*
- * Name:				initialize
- * Description			For each application, a base value for the objective function is calculated.
- */
-
+/**
+For each application, a base value for the objective function is calculated.
+*/
 void Batch::initialize(Configuration  &configuration, MYSQL *conn, Opt_jr_parameters &par)
 {
 	std::string debugMsg;
@@ -130,12 +122,9 @@ void Batch::initialize(Configuration  &configuration, MYSQL *conn, Opt_jr_parame
 
 
 
-/*
- * Name: fix_initial_solution
- * Description: It fixes the initial solution by reallocating the residual
- *              cores to the applications that may need more resources
- */
-
+/**
+It fixes the initial solution by reallocating the residual cores to the applications that may need more resources.
+*/
 void Batch::fix_initial_solution(Opt_jr_parameters &par)
 {
 
@@ -191,8 +180,8 @@ void Batch::fix_initial_solution(Opt_jr_parameters &par)
 
 	residualCores = N - allocatedCores;
 
-  if (residualCores<0) //NOTE: if true this is a very strange situations; if it happens an idea could be to change
-  {                    //      source file in such a way that cores are taken from applications with less weight
+  if (residualCores<0)
+  {
     std::cout<< "FATAL ERROR: limit situation, too few cores. Allocated cores exceed the number of available cores \n";
     exit(-1);
   }
@@ -201,9 +190,7 @@ void Batch::fix_initial_solution(Opt_jr_parameters &par)
 	int addedCores;
 
 
-  //I browse the list of "suffering" apps in order of weight, as long as I have available cores
-
-
+  //Browse the list of "suffering" apps in order of weight, as long as there are available cores
   auto it=LP.begin();
 	while (!loopExit&& (residualCores>0))
 	{
@@ -244,14 +231,10 @@ void Batch::fix_initial_solution(Opt_jr_parameters &par)
 
 }
 
-/*
- * 		Name:					write_results
- * 		Description:			This function prints the results of the localSearch application (number of cores and VM) in a DB table.
- * 								If a result for a (session_id, application_id) already exists, then it is replaced.
- *
+/**
+ write_results prints the results of the local_search (number of cores and VM) in a DB table.
+ If a result for a (session_id, application_id) already exists, then it is replaced.
  */
-
-
 void Batch::write_results(MYSQL *conn, char * dbName, Opt_jr_parameters &par)
 {
 	std::string debugMsg;
@@ -264,7 +247,6 @@ void Batch::write_results(MYSQL *conn, char * dbName, Opt_jr_parameters &par)
 		printf("FATAL ERROR: write_results: APPs cannot be empty\n");
 		exit(-1);
 	}
-	//while (pointer!=NULL)
 	for(auto &elem : APPs)
 	{
 		"Session ID " + elem.get_session_app_id()+ " Application Id " + elem.get_app_id()  + " cores " + std::to_string(elem.get_currentCores_d())+ " VMs "+ std::to_string(elem.get_vm()); par.debug_message(debugMsg);
@@ -329,6 +311,8 @@ std::string Batch::show_session_app_id()
 }
 
 
+
+
 std::string Batch::show_bounds()
 {
   std::string Msg;
@@ -340,6 +324,8 @@ std::string Batch::show_bounds()
   }
   return Msg;
 }
+
+
 
 
 
