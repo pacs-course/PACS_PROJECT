@@ -80,9 +80,7 @@ std::vector<Application>  read_app_file(FILE* stream)
       dataset_size = 	atoi(get_field(tmp, _Dsz));
       csi=std::max(M/m,V/v);
       /* Add application parameters to the List */
-      Application app(session_app_id,app_id, w, chi_0, chi_C, m, M, V, v, D, csi, St, dataset_size);
-      APPs.push_back(app);
-
+      APPs.emplace_back(session_app_id,app_id, w, chi_0, chi_C, m, M, V, v, D, csi, St, dataset_size);
       rows++;
       free(tmp);
     }

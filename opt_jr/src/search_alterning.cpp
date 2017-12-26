@@ -6,7 +6,7 @@
 void Search_alterning::local_search(Batch &app_manager, Configuration &configuration, MYSQL *conn,  Opt_jr_parameters &par)
 {
   std::string debugMsg;
-  Candidates sCandidateApproximated ;
+  Candidates candidate_approximated ;
   double TotalFO;
   int how_many;
   Statistics statistics;
@@ -24,10 +24,10 @@ void Search_alterning::local_search(Batch &app_manager, Configuration &configura
     /*
     *   Estimate the candidates for the predictor
     */
-    sCandidateApproximated = approximated_loop( app_manager, par );
+    candidate_approximated = approximated_loop( app_manager, par );
     debugMsg= "\n\n\n\n       finished approximatedLoop   \n\n\n\n"; par.debug_message(debugMsg);
 
-    if (sCandidateApproximated.get_empty())
+    if (candidate_approximated.get_empty())
     {
       // The Candidate Application is empty. No further solution enhancements possible
       debugMsg = "LocalSearch: empty Candidate Application "; par.debug_message(debugMsg);
@@ -41,7 +41,7 @@ void Search_alterning::local_search(Batch &app_manager, Configuration &configura
     debugMsg +="*** Consider the first MAX_PROMISING_CONFIGURATIONS of the Application ****\n";
     debugMsg +="*******************************************************************\n"; par.debug_message(debugMsg);
 
-    how_many=sCandidateApproximated.get_size();
+    how_many=candidate_approximated.get_size();
     debugMsg = " There are " + std::to_string(how_many) +" promising configurations in iteration " + std::to_string(iteration) + "\n\n"; par.debug_message(debugMsg);
 
 
@@ -49,7 +49,7 @@ void Search_alterning::local_search(Batch &app_manager, Configuration &configura
     //tmp=app_manager;
 
     int index_pair;
-    exact_loop(sCandidateApproximated, configuration, conn, app_manager, par, index_pair);
+    exact_loop(candidate_approximated, configuration, conn, app_manager, par, index_pair);
 
 
     check_total_nodes(par.get_number(), app_manager);

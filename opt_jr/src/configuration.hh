@@ -1,7 +1,7 @@
 #ifndef CONTAINERS_HH
 #define CONTAINERS_HH
 
-#include <vector>
+
 #include <utility>
 #include <string>
 #include <unordered_map>

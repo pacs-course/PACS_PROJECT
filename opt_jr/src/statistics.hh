@@ -16,10 +16,13 @@
 	 double FO_Total;	///< total objective function value for that interation
 
  public:
-	 Statistic_iter(int iter, int s, double FO): iteration(iter), size(s), FO_Total(FO){};
-	 int get_iteration();
-	 int get_size();
-	 double get_FO_Total();
+
+   Statistic_iter(int iter, int s, double FO): iteration(iter), size(s), FO_Total(FO){};
+
+   int get_iteration() {   return iteration; }
+   int get_size(){ return size;}
+   double get_FO_Total(){ return FO_Total;}
+
 
  };
 
@@ -28,7 +31,7 @@ class Statistics{
 /**
 	A vector of "Statistic_iter" object is used to store statistical information about the local search.
 */
-std::vector<Statistic_iter> statistics;
+std::vector<Statistic_iter> stat;
 
 public:
 /**
