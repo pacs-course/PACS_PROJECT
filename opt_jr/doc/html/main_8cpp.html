@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -96,16 +96,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;vector&gt;</code><br/>
 <code>#include &lt;sys/time.h&gt;</code><br/>
 <code>#include &lt;memory&gt;</code><br/>
-<code>#include &quot;optjrparameters.hh&quot;</code><br/>
-<code>#include &quot;<a class="el" href="readConfigurationFile_8hh_source.html">readConfigurationFile.hh</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="debugmessage_8hh_source.html">debugmessage.hh</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="opt__jr__parameters_8hh_source.html">opt_jr_parameters.hh</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="configuration_8hh_source.html">configuration.hh</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="db_8hh_source.html">db.hh</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="application_8hh_source.html">application.hh</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="read__app__file_8hh_source.html">read_app_file.hh</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="batch_8hh_source.html">batch.hh</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="bounds_8hh_source.html">bounds.hh</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="search_8hh_source.html">search.hh</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="objectiveFunction_8hh_source.html">objectiveFunction.hh</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="objective__fun_8hh_source.html">objective_fun.hh</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="candidates_8hh_source.html">candidates.hh</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="utility_8hh_source.html">utility.hh</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="search__alterning_8hh_source.html">search_alterning.hh</a>&quot;</code><br/>
@@ -141,15 +140,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>1) read informations from "wsi_config.xml" file and save it in a "sConfiguration" object (which is unordered_map(string,string))</p>
-<p>2) Read execution parameters from command line and configuration file and save them in an "optJrParameters" object</p>
+<p>1) read informations from "wsi_config.xml" file and save it in a "Configuration" object (which is unordered_map(string,string))</p>
+<p>2) Read execution parameters from command line and configuration file and save them in an "Opt_jr_parameters" object</p>
 <p>3) Connect to the Database</p>
 <p>4) Open *.csv file with Applications data, and save it in a "Batch" object</p>
 <p>5) Calculate bounds for each application loaded (with the calculateBounds method of <a class="el" href="classBounds.html">Bounds</a> class)</p>
 <p>6) Calculate nu indices for each application (with the calculate_nu method of <a class="el" href="classBatch.html">Batch</a> class). It also initializes the number of cores.</p>
-<p>7) Fix initial solution (with the fixInitialSolution method of <a class="el" href="classBatch.html">Batch</a> class)</p>
+<p>7) Fix initial solution (with the fix_initial_solution method of <a class="el" href="classBatch.html">Batch</a> class)</p>
 <p>8) Initialize Objective Function evaluation for each application (with the initalize method of <a class="el" href="classBatch.html">Batch</a> class)</p>
-<p>9) Find an "optimal" solution invoking "localSearch" method (of "Search" class)</p>
+<p>9) Find an "optimal" solution invoking "local_search" method (of "Search" class)</p>
 
 </div>
 </div>

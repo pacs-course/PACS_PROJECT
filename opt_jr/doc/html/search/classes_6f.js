@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['objfun',['ObjFun',['../classObjFun.html',1,'']]],
-  ['optjrparameters',['optJrParameters',['../classoptJrParameters.html',1,'']]]
+  ['objective_5ffun',['Objective_fun',['../classObjective__fun.html',1,'']]],
+  ['opt_5fjr_5fparameters',['Opt_jr_parameters',['../classOpt__jr__parameters.html',1,'']]]
 ];

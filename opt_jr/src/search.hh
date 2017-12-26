@@ -11,36 +11,30 @@
 #include "search_alterning.hh"
 #include "search_base.hh"
 
+
 /**
-//TODO: modify descript.
-  "Search" class provides methods to find a solution minimizing
-   the objective function. Actually only one method is supported.
-
+Search template class provides methods to find a solution minimizing
+the objective function.
+It's derived from Search_base class in order to allow dynamic polymorphism.
+It expects as template argument a Policy class which implements a local_search method.
 */
-
-
 template <class Policy>
 class Search :public Search_base {
 
 public:
 
+  /// Search class uses the base class constructor.
   Search(Batch app_m): Search_base(app_m){};
 
 
   /**
-  local_search perform a local search of a solution minimizing the objective function;
-  it performs cores exchanges between pairs of application and chooses the best pair. The
-  search stops when no improvements are possible or the maximum number of iteration is reached.
-  The function looks before at approximated values of objective function and then
-  for the potential best pairs it invokes the predictor.
+  local_search calls the local_search method defined in the Policy class
   */
-
   void local_search(Configuration &configuration, MYSQL *conn,  Opt_jr_parameters &par)
   {
-
     std::string debugMsg;
     Policy P;
-    P.local_search(App_manager, configuration, conn, par);
+    P.local_search(app_manager, configuration, conn, par);
   }
 
 

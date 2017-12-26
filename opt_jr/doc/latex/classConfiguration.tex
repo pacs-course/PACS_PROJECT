@@ -1,0 +1,100 @@
+\hypertarget{classConfiguration}{\section{Configuration Class Reference}
+\label{classConfiguration}\index{Configuration@{Configuration}}
+}
+
+
+{\ttfamily \#include $<$configuration.\-hh$>$}
+
+
+
+Collaboration diagram for Configuration\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classConfiguration__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classConfiguration_a779947337bf652f0e773cb29f37f14ba}{Configuration} ()
+\item 
+std\-::string \hyperlink{classConfiguration_ad01eea5b98871f1cc4dbf28b9fe92093}{operator\mbox{[}$\,$\mbox{]}} (std\-::string s)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classConfiguration_ac2ca184b014af7f7caa3ac487909a8f3}{extract\-\_\-item} (char $\ast$const string, char $\ast$const left, const char $\ast$const right)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::unordered\-\_\-map\\*
+$<$ std\-::string, std\-::string $>$ \hyperlink{classConfiguration_ab79bfcdc7339715a56a5a2f4a069bdda}{configuration}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classConfiguration_a779947337bf652f0e773cb29f37f14ba}{\index{Configuration@{Configuration}!Configuration@{Configuration}}
+\index{Configuration@{Configuration}!Configuration@{Configuration}}
+\subsubsection[{Configuration}]{\setlength{\rightskip}{0pt plus 5cm}Configuration\-::\-Configuration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classConfiguration_a779947337bf652f0e773cb29f37f14ba}
+The constructor inizializes the configuration container; it reads the file defined in the environmental variable W\-S\-I\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E 
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classConfiguration_a779947337bf652f0e773cb29f37f14ba_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classConfiguration_ac2ca184b014af7f7caa3ac487909a8f3}{\index{Configuration@{Configuration}!extract\-\_\-item@{extract\-\_\-item}}
+\index{extract\-\_\-item@{extract\-\_\-item}!Configuration@{Configuration}}
+\subsubsection[{extract\-\_\-item}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Configuration\-::extract\-\_\-item (
+\begin{DoxyParamCaption}
+\item[{char $\ast$const}]{string, }
+\item[{char $\ast$const}]{left, }
+\item[{const char $\ast$const}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classConfiguration_ac2ca184b014af7f7caa3ac487909a8f3}
+This is an helper function used by Configuration\-File; it's used to parse input from configuration file. 
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classConfiguration_ac2ca184b014af7f7caa3ac487909a8f3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classConfiguration_ad01eea5b98871f1cc4dbf28b9fe92093}{\index{Configuration@{Configuration}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!Configuration@{Configuration}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Configuration\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classConfiguration_ad01eea5b98871f1cc4dbf28b9fe92093}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classConfiguration_ab79bfcdc7339715a56a5a2f4a069bdda}{\index{Configuration@{Configuration}!configuration@{configuration}}
+\index{configuration@{configuration}!Configuration@{Configuration}}
+\subsubsection[{configuration}]{\setlength{\rightskip}{0pt plus 5cm}std\-::unordered\-\_\-map$<$std\-::string,std\-::string$>$ Configuration\-::configuration\hspace{0.3cm}{\ttfamily [private]}}}\label{classConfiguration_ab79bfcdc7339715a56a5a2f4a069bdda}
+\hyperlink{classConfiguration}{Configuration} is a container which memorize data from the configuration file; it's an unordered map 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/\hyperlink{configuration_8hh}{configuration.\-hh}\item 
+/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/\hyperlink{configuration_8cpp}{configuration.\-cpp}\end{DoxyCompactItemize}

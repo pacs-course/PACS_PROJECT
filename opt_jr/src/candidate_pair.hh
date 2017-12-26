@@ -5,7 +5,7 @@
 
 
 /**
-   Candidate_pair class is an auxiliary class included in Candidates which is used by local_search; it stores data
+   Candidate_pair class is an auxiliary class included in Candidates class which is used by local_search; it stores data
    about pairs of application and the consequent changes on the objective function
    after cores exchange.
 */
@@ -34,7 +34,7 @@ class Candidate_pair{
 
  public:
 
-  /// Constructor
+  /// Constructor expects all "non editable" values.
   Candidate_pair(Application i, Application j, int NCi, int NCj, double D_FO, int d_i, int d_j ): app_i(i), app_j(j), new_core_assignment_i(NCi), new_core_assignment_j(NCj),delta_fo(D_FO), delta_i(d_i), delta_j(d_j) {};
 
   const std::string get_app_id_i (){return app_i.get_app_id();}

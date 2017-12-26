@@ -7,16 +7,15 @@
 {\ttfamily \#include $<$vector$>$}\\*
 {\ttfamily \#include $<$sys/time.\-h$>$}\\*
 {\ttfamily \#include $<$memory$>$}\\*
-{\ttfamily \#include \char`\"{}optjrparameters.\-hh\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}read\-Configuration\-File.\-hh\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}debugmessage.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}opt\-\_\-jr\-\_\-parameters.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}configuration.\-hh\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}db.\-hh\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}application.\-hh\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}read\-\_\-app\-\_\-file.\-hh\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}batch.\-hh\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}bounds.\-hh\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}search.\-hh\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}objective\-Function.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}objective\-\_\-fun.\-hh\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}candidates.\-hh\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}utility.\-hh\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}search\-\_\-alterning.\-hh\char`\"{}}\\*
@@ -38,9 +37,9 @@ int \hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, cha
 \item[{char $\ast$$\ast$}]{argv}
 \end{DoxyParamCaption}
 )}}\label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
-1) read informations from \char`\"{}wsi\-\_\-config.\-xml\char`\"{} file and save it in a \char`\"{}s\-Configuration\char`\"{} object (which is unordered\-\_\-map(string,string))
+1) read informations from \char`\"{}wsi\-\_\-config.\-xml\char`\"{} file and save it in a \char`\"{}\-Configuration\char`\"{} object (which is unordered\-\_\-map(string,string))
 
-2) Read execution parameters from command line and configuration file and save them in an \char`\"{}opt\-Jr\-Parameters\char`\"{} object
+2) Read execution parameters from command line and configuration file and save them in an \char`\"{}\-Opt\-\_\-jr\-\_\-parameters\char`\"{} object
 
 3) Connect to the Database
 
@@ -50,8 +49,8 @@ int \hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, cha
 
 6) Calculate nu indices for each application (with the calculate\-\_\-nu method of \hyperlink{classBatch}{Batch} class). It also initializes the number of cores.
 
-7) Fix initial solution (with the fix\-Initial\-Solution method of \hyperlink{classBatch}{Batch} class)
+7) Fix initial solution (with the fix\-\_\-initial\-\_\-solution method of \hyperlink{classBatch}{Batch} class)
 
 8) Initialize Objective Function evaluation for each application (with the initalize method of \hyperlink{classBatch}{Batch} class)
 
-9) Find an \char`\"{}optimal\char`\"{} solution invoking \char`\"{}local\-Search\char`\"{} method (of \char`\"{}\-Search\char`\"{} class)
+9) Find an \char`\"{}optimal\char`\"{} solution invoking \char`\"{}local\-\_\-search\char`\"{} method (of \char`\"{}\-Search\char`\"{} class)

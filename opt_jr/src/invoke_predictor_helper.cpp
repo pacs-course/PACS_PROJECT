@@ -11,7 +11,7 @@
 
 
 /*
--Here are defined helper functions to invoke a predictor
+-Here are defined helper functions to invoke the predictor
 */
 
 

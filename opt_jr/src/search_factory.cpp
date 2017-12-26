@@ -5,12 +5,12 @@
 #include "search.hh"
 
 
-std::unique_ptr<Search_base> Search_factory::search_builder(Opt_jr_parameters &par, Batch &App_manager)
+std::unique_ptr<Search_base> Search_factory::search_builder(Opt_jr_parameters &par, Batch &app_manager)
 {
   if (par.get_search_type()=="a"|| par.get_search_type()=="A")
-  return std::unique_ptr<Search_base>(new Search<Search_alterning>(App_manager));
+  return std::unique_ptr<Search_base>(new Search<Search_alterning>(app_manager));
   else if (par.get_search_type()=="s" || par.get_search_type()=="S")
-  return std::unique_ptr<Search_base>(new Search<Search_separing>(App_manager));
+  return std::unique_ptr<Search_base>(new Search<Search_separing>(app_manager));
   else
   {
     std::cout<< "FATAL ERROR: unknown search type "<<std::endl;

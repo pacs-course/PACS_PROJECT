@@ -7,7 +7,8 @@
 
 
 
-Inheritance diagram for Search\-\_\-methods\-:\nopagebreak
+Inheritance diagram for Search\-\_\-methods\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,7 +17,8 @@ Inheritance diagram for Search\-\_\-methods\-:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Search\-\_\-methods\-:\nopagebreak
+Collaboration diagram for Search\-\_\-methods\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -26,11 +28,11 @@ Collaboration diagram for Search\-\_\-methods\-:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classSearch__methods_a0b350fd31c24d27de6a548b6a52c16ab}{check\-Total\-Nodes} (int N, \hyperlink{classBatch}{Batch} \&App\-\_\-manager)
+void \hyperlink{classSearch__methods_a0f0cb65795013122dde9a18f586b1a1c}{check\-\_\-total\-\_\-nodes} (int N, \hyperlink{classBatch}{Batch} \&App\-\_\-manager)
 \item 
-\hyperlink{classsCandidates}{s\-Candidates} \hyperlink{classSearch__methods_afde3e60f82e466ed1161bbeb99f6d424}{approximated\-\_\-loop} (\hyperlink{classBatch}{Batch} \&App\-\_\-manager, int \&iteration, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
+\hyperlink{classCandidates}{Candidates} \hyperlink{classSearch__methods_aba1565526a0ce1b9e349918057f6f2c2}{approximated\-\_\-loop} (\hyperlink{classBatch}{Batch} \&App\-\_\-manager, \hyperlink{classOpt__jr__parameters}{Opt\-\_\-jr\-\_\-parameters} \&par)
 \item 
-void \hyperlink{classSearch__methods_ad1e54a45fa9b1c971b96aaf15284580b}{exact\-\_\-loop} (\hyperlink{classsCandidates}{s\-Candidates} \&app\-\_\-pairs, \hyperlink{readConfigurationFile_8hh_ab8f35b1da3261263c5e9c0e7c8921f5c}{s\-Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, \hyperlink{classBatch}{Batch} \&App\-\_\-manager, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par, int \&index\-\_\-pair)
+void \hyperlink{classSearch__methods_a312ab1479b1b77c5c98f8b838b9c5461}{exact\-\_\-loop} (\hyperlink{classCandidates}{Candidates} \&app\-\_\-pairs, \hyperlink{classConfiguration}{Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, \hyperlink{classBatch}{Batch} \&App\-\_\-manager, \hyperlink{classOpt__jr__parameters}{Opt\-\_\-jr\-\_\-parameters} \&par, int \&index\-\_\-pair)
 \end{DoxyCompactItemize}
 
 
@@ -38,64 +40,78 @@ void \hyperlink{classSearch__methods_ad1e54a45fa9b1c971b96aaf15284580b}{exact\-\
 \char`\"{}\-Search\-\_\-methods\char`\"{} class provides methods to find a solution minimizing the objective function. 
 
 \subsection{Member Function Documentation}
-\hypertarget{classSearch__methods_afde3e60f82e466ed1161bbeb99f6d424}{\index{Search\-\_\-methods@{Search\-\_\-methods}!approximated\-\_\-loop@{approximated\-\_\-loop}}
+\hypertarget{classSearch__methods_aba1565526a0ce1b9e349918057f6f2c2}{\index{Search\-\_\-methods@{Search\-\_\-methods}!approximated\-\_\-loop@{approximated\-\_\-loop}}
 \index{approximated\-\_\-loop@{approximated\-\_\-loop}!Search_methods@{Search\-\_\-methods}}
-\subsubsection[{approximated\-\_\-loop}]{\setlength{\rightskip}{0pt plus 5cm}{\bf s\-Candidates} Search\-\_\-methods\-::approximated\-\_\-loop (
+\subsubsection[{approximated\-\_\-loop}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Candidates} Search\-\_\-methods\-::approximated\-\_\-loop (
 \begin{DoxyParamCaption}
 \item[{{\bf Batch} \&}]{App\-\_\-manager, }
-\item[{int \&}]{iteration, }
-\item[{{\bf opt\-Jr\-Parameters} \&}]{par}
+\item[{{\bf Opt\-\_\-jr\-\_\-parameters} \&}]{par}
 \end{DoxyParamCaption}
-)}}\label{classSearch__methods_afde3e60f82e466ed1161bbeb99f6d424}
+)}}\label{classSearch__methods_aba1565526a0ce1b9e349918057f6f2c2}
+It estimates the objective function for each move. The candidate applications for which the move is profitable are stored in a s\-Candidate object 
 
-
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classSearch__methods_afde3e60f82e466ed1161bbeb99f6d424_icgraph}
+\includegraphics[width=350pt]{classSearch__methods_aba1565526a0ce1b9e349918057f6f2c2_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{classSearch__methods_a0b350fd31c24d27de6a548b6a52c16ab}{\index{Search\-\_\-methods@{Search\-\_\-methods}!check\-Total\-Nodes@{check\-Total\-Nodes}}
-\index{check\-Total\-Nodes@{check\-Total\-Nodes}!Search_methods@{Search\-\_\-methods}}
-\subsubsection[{check\-Total\-Nodes}]{\setlength{\rightskip}{0pt plus 5cm}void Search\-\_\-methods\-::check\-Total\-Nodes (
+\hypertarget{classSearch__methods_a0f0cb65795013122dde9a18f586b1a1c}{\index{Search\-\_\-methods@{Search\-\_\-methods}!check\-\_\-total\-\_\-nodes@{check\-\_\-total\-\_\-nodes}}
+\index{check\-\_\-total\-\_\-nodes@{check\-\_\-total\-\_\-nodes}!Search_methods@{Search\-\_\-methods}}
+\subsubsection[{check\-\_\-total\-\_\-nodes}]{\setlength{\rightskip}{0pt plus 5cm}void Search\-\_\-methods\-::check\-\_\-total\-\_\-nodes (
 \begin{DoxyParamCaption}
 \item[{int}]{N, }
 \item[{{\bf Batch} \&}]{App\-\_\-manager}
 \end{DoxyParamCaption}
-)}}\label{classSearch__methods_a0b350fd31c24d27de6a548b6a52c16ab}
+)}}\label{classSearch__methods_a0f0cb65795013122dde9a18f586b1a1c}
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classSearch__methods_a0b350fd31c24d27de6a548b6a52c16ab_icgraph}
+\includegraphics[width=328pt]{classSearch__methods_a0f0cb65795013122dde9a18f586b1a1c_cgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{classSearch__methods_ad1e54a45fa9b1c971b96aaf15284580b}{\index{Search\-\_\-methods@{Search\-\_\-methods}!exact\-\_\-loop@{exact\-\_\-loop}}
-\index{exact\-\_\-loop@{exact\-\_\-loop}!Search_methods@{Search\-\_\-methods}}
-\subsubsection[{exact\-\_\-loop}]{\setlength{\rightskip}{0pt plus 5cm}void Search\-\_\-methods\-::exact\-\_\-loop (
-\begin{DoxyParamCaption}
-\item[{{\bf s\-Candidates} \&}]{app\-\_\-pairs, }
-\item[{{\bf s\-Configuration} \&}]{configuration, }
-\item[{M\-Y\-S\-Q\-L $\ast$}]{conn, }
-\item[{{\bf Batch} \&}]{App\-\_\-manager, }
-\item[{{\bf opt\-Jr\-Parameters} \&}]{par, }
-\item[{int \&}]{index\-\_\-pair}
-\end{DoxyParamCaption}
-)}}\label{classSearch__methods_ad1e54a45fa9b1c971b96aaf15284580b}
-It evaluates the delta F\-O for all the candidates in app\-\_\-pairs and it does the best change (if it exist) in App\-\_\-manager 
 
-Here is the caller graph for this function\-:\nopagebreak
+
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classSearch__methods_ad1e54a45fa9b1c971b96aaf15284580b_icgraph}
+\includegraphics[width=350pt]{classSearch__methods_a0f0cb65795013122dde9a18f586b1a1c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSearch__methods_a312ab1479b1b77c5c98f8b838b9c5461}{\index{Search\-\_\-methods@{Search\-\_\-methods}!exact\-\_\-loop@{exact\-\_\-loop}}
+\index{exact\-\_\-loop@{exact\-\_\-loop}!Search_methods@{Search\-\_\-methods}}
+\subsubsection[{exact\-\_\-loop}]{\setlength{\rightskip}{0pt plus 5cm}void Search\-\_\-methods\-::exact\-\_\-loop (
+\begin{DoxyParamCaption}
+\item[{{\bf Candidates} \&}]{app\-\_\-pairs, }
+\item[{{\bf Configuration} \&}]{configuration, }
+\item[{M\-Y\-S\-Q\-L $\ast$}]{conn, }
+\item[{{\bf Batch} \&}]{App\-\_\-manager, }
+\item[{{\bf Opt\-\_\-jr\-\_\-parameters} \&}]{par, }
+\item[{int \&}]{index\-\_\-pair}
+\end{DoxyParamCaption}
+)}}\label{classSearch__methods_a312ab1479b1b77c5c98f8b838b9c5461}
+It evaluates the delta F\-O for all the candidates in app\-\_\-pairs and it does the best change (if it exist) in App\-\_\-manager 
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSearch__methods_a312ab1479b1b77c5c98f8b838b9c5461_icgraph}
 \end{center}
 \end{figure}
 

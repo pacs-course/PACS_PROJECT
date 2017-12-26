@@ -131,11 +131,11 @@ int main(int argc, char **argv)
   }
 
   /* CREATE A BUTCH OBJECT */
-  Batch App_manager(read_app_file(stream));
+  Batch app_manager(read_app_file(stream));
   fclose(stream);
 
 
-  debugMsg= App_manager.show_session_app_id();
+  debugMsg= app_manager.show_session_app_id();
   debugMsg +="**************************************************\n\n\n"; par.debug_message(debugMsg);
 
 
@@ -151,17 +151,17 @@ int main(int argc, char **argv)
   gettimeofday(&tv_initial_bounds, NULL);
 
   /* CREATE A BOUNDS OBJECT */
-  Bounds Bounds_eval(App_manager);
+  Bounds Bounds_eval(app_manager);
 
   Bounds_eval.calculate_bounds( configuration, conn, par );
 
   gettimeofday(&tv_final_bounds, NULL);
 
   /* UPDATE BUTCH OBJECT WITH BOUNDS */
-  App_manager= Bounds_eval.get_app_manager();
+  app_manager= Bounds_eval.get_app_manager();
 
   Msg="\n Final Bound results: ";
-  Msg+=App_manager.show_bounds();
+  Msg+=app_manager.show_bounds();
   Msg += "\n*****************    END COMPUTING BOUNDS     ********************\n\n\n"; //par.debug_message(debugMsg);
   std::cout << Msg;
 
@@ -176,7 +176,7 @@ int main(int argc, char **argv)
 
   gettimeofday(&tv_initial_nu, NULL);
 
-  App_manager.calculate_nu(par);
+  app_manager.calculate_nu(par);
 
   gettimeofday(&tv_final_nu, NULL);
 
@@ -194,7 +194,7 @@ int main(int argc, char **argv)
 
   gettimeofday(&tv_initial_fix, NULL);
 
-  App_manager.fix_initial_solution(par);
+  app_manager.fix_initial_solution(par);
 
   gettimeofday(&tv_final_fix, NULL);
 
@@ -214,7 +214,7 @@ int main(int argc, char **argv)
 
   gettimeofday(&tv_initial_init, NULL);
 
-  App_manager.initialize(configuration, conn, par);
+  app_manager.initialize(configuration, conn, par);
 
   gettimeofday(&tv_final_init, NULL);
 
@@ -225,7 +225,7 @@ int main(int argc, char **argv)
   Msg +="*********************    INITIAL SOLUTION    **********************\n";
   Msg +="*******************************************************************\n\n";std::cout <<Msg;
 
-  std::cout<<App_manager.show_solution();
+  std::cout<<app_manager.show_solution();
 
   std::cout<< "\n**************************************************\n\n\n";
 
@@ -244,7 +244,7 @@ int main(int argc, char **argv)
 
 
   /* CREATE A SEARCH OBJECT (using the factory) */
-  auto search_eval = Search_factory::search_builder(par, App_manager);
+  auto search_eval = Search_factory::search_builder(par, app_manager);
 
 
   search_eval->local_search(configuration, conn,  par );

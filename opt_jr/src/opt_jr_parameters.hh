@@ -11,7 +11,7 @@
 
 /**
     Opt_jr_parameters saves parameters received from command line; once they are saved
-    they are visible with public get_*() functions
+    they are visible with public get functions
 */
 
 class Opt_jr_parameters
@@ -27,11 +27,13 @@ class Opt_jr_parameters
 	int number_of_threads;	///< The number of MPI threads
   std::string search_type; ///< type of localsearch to be used (alternating/separing)
 public:
-  /// The constructor takes in input all the input from command line
+  /// The constructor takes in input all the input from command line.
   Opt_jr_parameters(char **args, int argc);
-  /// Set the number of threads: it looks in configuration file (0== "no parallelization")
+
+  /// set_number_of_threads sets the number_of_threads: it looks in configuration file (0== "no parallelization")
   void set_number_of_threads(Configuration &configuration);
 
+  /// If debug is activated the message in string is printed.
   void debug_message(std::string &string);
 
 

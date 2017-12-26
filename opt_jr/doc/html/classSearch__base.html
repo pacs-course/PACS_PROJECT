@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -97,24 +97,24 @@ Inheritance diagram for Search_base:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSearch__base__inherit__graph.png" border="0" usemap="#Search__base_inherit__map" alt="Inheritance graph"/></div>
 <map name="Search__base_inherit__map" id="Search__base_inherit__map">
-<area shape="rect" id="node2" href="classsearch.html" title="{search\&lt; Policy \&gt;\n||+ search()\l+ localSearch()\l}" alt="" coords="17,190,137,282"/></map>
+<area shape="rect" id="node2" href="classSearch.html" title="{Search\&lt; Policy \&gt;\n||+ Search()\l+ local_search()\l}" alt="" coords="16,190,139,282"/></map>
 </div>
 <div class="dynheader">
 Collaboration diagram for Search_base:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSearch__base__coll__graph.png" border="0" usemap="#Search__base_coll__map" alt="Collaboration graph"/></div>
 <map name="Search__base_coll__map" id="Search__base_coll__map">
-<area shape="rect" id="node2" href="classBatch.html" title="{Batch\n||+ Batch()\l+ calculate_nu()\l+ initialize()\l+ fixInitialSolution()\l+ writeResults()\l+ show_session_app_id()\l+ show_bounds()\l+ show_solution()\l}" alt="" coords="5,147,176,327"/></map>
+<area shape="rect" id="node2" href="classBatch.html" title="{Batch\n||+ Batch()\l+ calculate_nu()\l+ initialize()\l+ fix_initial_solution()\l+ write_results()\l+ show_session_app_id()\l+ show_bounds()\l+ show_solution()\l+ get_begin()\l+ get_cbegin()\l+ get_end()\l+ get_cend()\l+ get_empty()\l}" alt="" coords="5,147,176,400"/></map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a222697de87f38891f9018defe1988dc4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearch__base.html#a222697de87f38891f9018defe1988dc4">Search_base</a> (<a class="el" href="classBatch.html">Batch</a> app_m)</td></tr>
 <tr class="separator:a222697de87f38891f9018defe1988dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8817b112abf47a39909017933c92cbf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearch__base.html#aa8817b112abf47a39909017933c92cbf">localSearch</a> (<a class="el" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;configuration, MYSQL *conn, <a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)=0</td></tr>
-<tr class="separator:aa8817b112abf47a39909017933c92cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6ff26051c64a540002219b5753b7177"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearch__base.html#af6ff26051c64a540002219b5753b7177">writeResults</a> (MYSQL *conn, char *dbName, <a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
-<tr class="separator:af6ff26051c64a540002219b5753b7177"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3730b1118efbe97065f1ea9715a90dc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearch__base.html#ab3730b1118efbe97065f1ea9715a90dc">local_search</a> (<a class="el" href="classConfiguration.html">Configuration</a> &amp;configuration, MYSQL *conn, <a class="el" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;par)=0</td></tr>
+<tr class="separator:ab3730b1118efbe97065f1ea9715a90dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43c7b22f332c3be3ed2f6da9e2d6d3a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearch__base.html#a43c7b22f332c3be3ed2f6da9e2d6d3a5">write_results</a> (MYSQL *conn, char *dbName, <a class="el" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;par)</td></tr>
+<tr class="separator:a43c7b22f332c3be3ed2f6da9e2d6d3a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6380bc5489f95cf722fa7cc329dc9f9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearch__base.html#a6380bc5489f95cf722fa7cc329dc9f9d">print_solution</a> ()</td></tr>
 <tr class="separator:a6380bc5489f95cf722fa7cc329dc9f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10a67e4278d8281e4db740924a2bd658"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBatch.html">Batch</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearch__base.html#a10a67e4278d8281e4db740924a2bd658">get_app_manager</a> ()</td></tr>
@@ -154,9 +154,6 @@ Protected Attributes</h2></td></tr>
 <a class="anchor" id="a10a67e4278d8281e4db740924a2bd658"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classBatch.html">Batch</a> Search_base::get_app_manager </td>
@@ -165,16 +162,11 @@ Protected Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="aa8817b112abf47a39909017933c92cbf"></a>
+<a class="anchor" id="ab3730b1118efbe97065f1ea9715a90dc"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -182,9 +174,9 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void Search_base::localSearch </td>
+          <td class="memname">virtual void Search_base::local_search </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classConfiguration.html">Configuration</a> &amp;&#160;</td>
           <td class="paramname"><em>configuration</em>, </td>
         </tr>
         <tr>
@@ -196,7 +188,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;&#160;</td>
           <td class="paramname"><em>par</em>&#160;</td>
         </tr>
         <tr>
@@ -212,16 +204,13 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classsearch.html#a43081dcb0553c48414c0e358323fecb2">search&lt; Policy &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classSearch.html#a32d434fae76c18149f8b15aedadc5f75">Search&lt; Policy &gt;</a>.</p>
 
 </div>
 </div>
 <a class="anchor" id="a6380bc5489f95cf722fa7cc329dc9f9d"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Search_base::print_solution </td>
@@ -230,11 +219,6 @@ Protected Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p>It prints the output of App_manager.show_solution </p>
 
@@ -249,15 +233,12 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="af6ff26051c64a540002219b5753b7177"></a>
+<a class="anchor" id="a43c7b22f332c3be3ed2f6da9e2d6d3a5"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Search_base::writeResults </td>
+          <td class="memname">void Search_base::write_results </td>
           <td>(</td>
           <td class="paramtype">MYSQL *&#160;</td>
           <td class="paramname"><em>conn</em>, </td>
@@ -271,7 +252,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;&#160;</td>
           <td class="paramname"><em>par</em>&#160;</td>
         </tr>
         <tr>
@@ -280,20 +261,15 @@ Here is the call graph for this function:</div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<p>It calls writeResults member function of App_manager private member </p>
+<p>It calls write_results member function of App_manager private member </p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classSearch__base_af6ff26051c64a540002219b5753b7177_cgraph.png" border="0" usemap="#classSearch__base_af6ff26051c64a540002219b5753b7177_cgraph" alt=""/></div>
-<map name="classSearch__base_af6ff26051c64a540002219b5753b7177_cgraph" id="classSearch__base_af6ff26051c64a540002219b5753b7177_cgraph">
-<area shape="rect" id="node2" href="classBatch.html#a4c6c23dd95eccc220115af294d481219" title="Batch::writeResults" alt="" coords="233,5,370,32"/><area shape="rect" id="node3" href="debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="419,5,530,32"/></map>
+<div class="center"><img src="classSearch__base_a43c7b22f332c3be3ed2f6da9e2d6d3a5_cgraph.png" border="0" usemap="#classSearch__base_a43c7b22f332c3be3ed2f6da9e2d6d3a5_cgraph" alt=""/></div>
+<map name="classSearch__base_a43c7b22f332c3be3ed2f6da9e2d6d3a5_cgraph" id="classSearch__base_a43c7b22f332c3be3ed2f6da9e2d6d3a5_cgraph">
+<area shape="rect" id="node2" href="classBatch.html#a5e45cac0fbad47fde645547351fe3c75" title="Batch::write_results" alt="" coords="189,12,328,39"/><area shape="rect" id="node3" href="classOpt__jr__parameters.html#a860bf209221b6c5e1c4394d1ae4a058f" title="Opt_jr_parameters::\ldebug_message" alt="" coords="377,5,514,46"/></map>
 </div>
 </p>
 
@@ -321,8 +297,9 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/vagrant/PROJECT_SPARK/PACS_PROJECT/opt_jr/src/<a class="el" href="search__base_8hh_source.html">search_base.hh</a></li>
+<li>/vagrant/PROJECT_SPARK/PACS_PROJECT/opt_jr/src/<a class="el" href="search__base_8cpp.html">search_base.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

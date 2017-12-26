@@ -9,7 +9,7 @@
 
 
 /*
-	-Here are defined functions to invoke a predictor
+	-Here is defined the function to invoke the predictor
  */
 
 

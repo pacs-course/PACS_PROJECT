@@ -7,7 +7,8 @@
 
 
 
-Collaboration diagram for Bounds\-:\nopagebreak
+Collaboration diagram for Bounds\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -19,16 +20,16 @@ Collaboration diagram for Bounds\-:\nopagebreak
 \item 
 \hyperlink{classBounds_a57a9894ee450eb885a83e884b5fb79e7}{Bounds} (\hyperlink{classBatch}{Batch} app\-\_\-m)
 \item 
-void \hyperlink{classBounds_aefc7e0bd2cd1c5850a903aabe0351dbe}{calculate\-Bounds} (\hyperlink{readConfigurationFile_8hh_ab8f35b1da3261263c5e9c0e7c8921f5c}{s\-Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
+void \hyperlink{classBounds_a525c2a8bf52889857306bf77d698ecd1}{calculate\-\_\-bounds} (\hyperlink{classConfiguration}{Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, \hyperlink{classOpt__jr__parameters}{Opt\-\_\-jr\-\_\-parameters} \&par)
 \item 
 \hyperlink{classBatch}{Batch} \hyperlink{classBounds_aefebbfe17ca3a7d6a0f6cbf4a0bf2782}{get\-\_\-app\-\_\-manager} ()
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classBounds_a6bc038892059a8181984daff0003065f}{Bound} (\hyperlink{readConfigurationFile_8hh_ab8f35b1da3261263c5e9c0e7c8921f5c}{s\-Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, \hyperlink{classApplication}{Application} \&app, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par, int flag\-Dagsim)
+void \hyperlink{classBounds_ae6633e291f145a0933f801541843cc1b}{bound} (\hyperlink{classConfiguration}{Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, \hyperlink{classApplication}{Application} \&app, \hyperlink{classOpt__jr__parameters}{Opt\-\_\-jr\-\_\-parameters} \&par, int flag\-Dagsim)
 \item 
-void \hyperlink{classBounds_ade8356aa22e675868ba98226e4216cf3}{find\-Bound} (\hyperlink{readConfigurationFile_8hh_ab8f35b1da3261263c5e9c0e7c8921f5c}{s\-Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, char $\ast$db, \hyperlink{classApplication}{Application} \&app, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
+void \hyperlink{classBounds_a600b0f815df6e0142de1b44f1aa795d7}{find\-\_\-bound} (\hyperlink{classConfiguration}{Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, char $\ast$db, \hyperlink{classApplication}{Application} \&app, \hyperlink{classOpt__jr__parameters}{Opt\-\_\-jr\-\_\-parameters} \&par)
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -51,66 +52,69 @@ void \hyperlink{classBounds_ade8356aa22e675868ba98226e4216cf3}{find\-Bound} (\hy
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classBounds_a6bc038892059a8181984daff0003065f}{\index{Bounds@{Bounds}!Bound@{Bound}}
-\index{Bound@{Bound}!Bounds@{Bounds}}
-\subsubsection[{Bound}]{\setlength{\rightskip}{0pt plus 5cm}void Bounds\-::\-Bound (
+\hypertarget{classBounds_ae6633e291f145a0933f801541843cc1b}{\index{Bounds@{Bounds}!bound@{bound}}
+\index{bound@{bound}!Bounds@{Bounds}}
+\subsubsection[{bound}]{\setlength{\rightskip}{0pt plus 5cm}void Bounds\-::bound (
 \begin{DoxyParamCaption}
-\item[{{\bf s\-Configuration} \&}]{configuration, }
+\item[{{\bf Configuration} \&}]{configuration, }
 \item[{M\-Y\-S\-Q\-L $\ast$}]{conn, }
 \item[{{\bf Application} \&}]{app, }
-\item[{{\bf opt\-Jr\-Parameters} \&}]{par, }
+\item[{{\bf Opt\-\_\-jr\-\_\-parameters} \&}]{par, }
 \item[{int}]{flag\-Dagsim}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classBounds_a6bc038892059a8181984daff0003065f}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classBounds_ae6633e291f145a0933f801541843cc1b}
 This function calculates the bound given a certain deadline and number of cores. Predictor method is invoked until an upper bound, consisting of the number of nodes, is found (once that the time calculated by the predictor, a rollback is performed to return the last \char`\"{}safe\char`\"{} number of core and time. 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classBounds_a6bc038892059a8181984daff0003065f_icgraph}
+\includegraphics[width=350pt]{classBounds_ae6633e291f145a0933f801541843cc1b_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{classBounds_aefc7e0bd2cd1c5850a903aabe0351dbe}{\index{Bounds@{Bounds}!calculate\-Bounds@{calculate\-Bounds}}
-\index{calculate\-Bounds@{calculate\-Bounds}!Bounds@{Bounds}}
-\subsubsection[{calculate\-Bounds}]{\setlength{\rightskip}{0pt plus 5cm}void Bounds\-::calculate\-Bounds (
+\hypertarget{classBounds_a525c2a8bf52889857306bf77d698ecd1}{\index{Bounds@{Bounds}!calculate\-\_\-bounds@{calculate\-\_\-bounds}}
+\index{calculate\-\_\-bounds@{calculate\-\_\-bounds}!Bounds@{Bounds}}
+\subsubsection[{calculate\-\_\-bounds}]{\setlength{\rightskip}{0pt plus 5cm}void Bounds\-::calculate\-\_\-bounds (
 \begin{DoxyParamCaption}
-\item[{{\bf s\-Configuration} \&}]{configuration, }
+\item[{{\bf Configuration} \&}]{configuration, }
 \item[{M\-Y\-S\-Q\-L $\ast$}]{conn, }
-\item[{{\bf opt\-Jr\-Parameters} \&}]{par}
+\item[{{\bf Opt\-\_\-jr\-\_\-parameters} \&}]{par}
 \end{DoxyParamCaption}
-)}}\label{classBounds_aefc7e0bd2cd1c5850a903aabe0351dbe}
-calculate\-Bounds evaluates the bound for the applications in B\-A\-T\-C\-H i.\-e. the minimal number of cores necessary to finish the execution before the deadline. The function looks before if the result is already stored in the database, otherwise it invokes the predictor doing a \char`\"{}\-H\-I\-L\-L C\-L\-I\-M\-B\-I\-N\-G\char`\"{}. If the number of threads in the configuration file is greater than 0, it does the computations in parallel (using open\-M\-P). 
+)}}\label{classBounds_a525c2a8bf52889857306bf77d698ecd1}
+calculate\-\_\-bounds evaluates the bound for the applications in B\-A\-T\-C\-H i.\-e. the minimal number of cores necessary to finish the execution before the deadline. The function looks before if the result is already stored in the database, otherwise it invokes the predictor doing a \char`\"{}\-H\-I\-L\-L C\-L\-I\-M\-B\-I\-N\-G\char`\"{}. If the number of threads in the configuration file is greater than 0, it does the computations in parallel (using open\-M\-P). 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=282pt]{classBounds_aefc7e0bd2cd1c5850a903aabe0351dbe_icgraph}
+\includegraphics[width=286pt]{classBounds_a525c2a8bf52889857306bf77d698ecd1_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{classBounds_ade8356aa22e675868ba98226e4216cf3}{\index{Bounds@{Bounds}!find\-Bound@{find\-Bound}}
-\index{find\-Bound@{find\-Bound}!Bounds@{Bounds}}
-\subsubsection[{find\-Bound}]{\setlength{\rightskip}{0pt plus 5cm}void Bounds\-::find\-Bound (
+\hypertarget{classBounds_a600b0f815df6e0142de1b44f1aa795d7}{\index{Bounds@{Bounds}!find\-\_\-bound@{find\-\_\-bound}}
+\index{find\-\_\-bound@{find\-\_\-bound}!Bounds@{Bounds}}
+\subsubsection[{find\-\_\-bound}]{\setlength{\rightskip}{0pt plus 5cm}void Bounds\-::find\-\_\-bound (
 \begin{DoxyParamCaption}
-\item[{{\bf s\-Configuration} \&}]{configuration, }
+\item[{{\bf Configuration} \&}]{configuration, }
 \item[{M\-Y\-S\-Q\-L $\ast$}]{conn, }
 \item[{char $\ast$}]{db, }
 \item[{{\bf Application} \&}]{app, }
-\item[{{\bf opt\-Jr\-Parameters} \&}]{par}
+\item[{{\bf Opt\-\_\-jr\-\_\-parameters} \&}]{par}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classBounds_ade8356aa22e675868ba98226e4216cf3}
-Initially, this function queries the lookup table to find the number of cores, calculated by O\-P\-T\-\_\-\-I\-C earlier, given a deadline, an application id and a dataset size. Secondly, it invokes the Bound function. 
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classBounds_a600b0f815df6e0142de1b44f1aa795d7}
+Initially, this function queries the lookup table to find the number of cores, calculated by O\-P\-T\-\_\-\-I\-C earlier, given a deadline, an application id and a dataset size. Secondly, it invokes the bound function. 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classBounds_ade8356aa22e675868ba98226e4216cf3_icgraph}
+\includegraphics[width=350pt]{classBounds_a600b0f815df6e0142de1b44f1aa795d7_icgraph}
 \end{center}
 \end{figure}
 

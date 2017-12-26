@@ -7,7 +7,8 @@
 
 
 
-Inheritance diagram for Search\-\_\-base\-:\nopagebreak
+Inheritance diagram for Search\-\_\-base\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,7 +17,8 @@ Inheritance diagram for Search\-\_\-base\-:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Search\-\_\-base\-:\nopagebreak
+Collaboration diagram for Search\-\_\-base\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -28,9 +30,9 @@ Collaboration diagram for Search\-\_\-base\-:\nopagebreak
 \item 
 \hyperlink{classSearch__base_a222697de87f38891f9018defe1988dc4}{Search\-\_\-base} (\hyperlink{classBatch}{Batch} app\-\_\-m)
 \item 
-virtual void \hyperlink{classSearch__base_aa8817b112abf47a39909017933c92cbf}{local\-Search} (\hyperlink{readConfigurationFile_8hh_ab8f35b1da3261263c5e9c0e7c8921f5c}{s\-Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)=0
+virtual void \hyperlink{classSearch__base_ab3730b1118efbe97065f1ea9715a90dc}{local\-\_\-search} (\hyperlink{classConfiguration}{Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, \hyperlink{classOpt__jr__parameters}{Opt\-\_\-jr\-\_\-parameters} \&par)=0
 \item 
-void \hyperlink{classSearch__base_af6ff26051c64a540002219b5753b7177}{write\-Results} (M\-Y\-S\-Q\-L $\ast$conn, char $\ast$db\-Name, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
+void \hyperlink{classSearch__base_a43c7b22f332c3be3ed2f6da9e2d6d3a5}{write\-\_\-results} (M\-Y\-S\-Q\-L $\ast$conn, char $\ast$db\-Name, \hyperlink{classOpt__jr__parameters}{Opt\-\_\-jr\-\_\-parameters} \&par)
 \item 
 void \hyperlink{classSearch__base_a6380bc5489f95cf722fa7cc329dc9f9d}{print\-\_\-solution} ()
 \item 
@@ -60,19 +62,19 @@ void \hyperlink{classSearch__base_a6380bc5489f95cf722fa7cc329dc9f9d}{print\-\_\-
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classSearch__base_a10a67e4278d8281e4db740924a2bd658}
-\hypertarget{classSearch__base_aa8817b112abf47a39909017933c92cbf}{\index{Search\-\_\-base@{Search\-\_\-base}!local\-Search@{local\-Search}}
-\index{local\-Search@{local\-Search}!Search_base@{Search\-\_\-base}}
-\subsubsection[{local\-Search}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Search\-\_\-base\-::local\-Search (
+)}}\label{classSearch__base_a10a67e4278d8281e4db740924a2bd658}
+\hypertarget{classSearch__base_ab3730b1118efbe97065f1ea9715a90dc}{\index{Search\-\_\-base@{Search\-\_\-base}!local\-\_\-search@{local\-\_\-search}}
+\index{local\-\_\-search@{local\-\_\-search}!Search_base@{Search\-\_\-base}}
+\subsubsection[{local\-\_\-search}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Search\-\_\-base\-::local\-\_\-search (
 \begin{DoxyParamCaption}
-\item[{{\bf s\-Configuration} \&}]{configuration, }
+\item[{{\bf Configuration} \&}]{configuration, }
 \item[{M\-Y\-S\-Q\-L $\ast$}]{conn, }
-\item[{{\bf opt\-Jr\-Parameters} \&}]{par}
+\item[{{\bf Opt\-\_\-jr\-\_\-parameters} \&}]{par}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classSearch__base_aa8817b112abf47a39909017933c92cbf}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classSearch__base_ab3730b1118efbe97065f1ea9715a90dc}
 
 
-Implemented in \hyperlink{classsearch_a43081dcb0553c48414c0e358323fecb2}{search$<$ Policy $>$}.
+Implemented in \hyperlink{classSearch_a32d434fae76c18149f8b15aedadc5f75}{Search$<$ Policy $>$}.
 
 \hypertarget{classSearch__base_a6380bc5489f95cf722fa7cc329dc9f9d}{\index{Search\-\_\-base@{Search\-\_\-base}!print\-\_\-solution@{print\-\_\-solution}}
 \index{print\-\_\-solution@{print\-\_\-solution}!Search_base@{Search\-\_\-base}}
@@ -80,7 +82,7 @@ Implemented in \hyperlink{classsearch_a43081dcb0553c48414c0e358323fecb2}{search$
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classSearch__base_a6380bc5489f95cf722fa7cc329dc9f9d}
+)}}\label{classSearch__base_a6380bc5489f95cf722fa7cc329dc9f9d}
 It prints the output of App\-\_\-manager.\-show\-\_\-solution 
 
 Here is the call graph for this function\-:\nopagebreak
@@ -92,22 +94,23 @@ Here is the call graph for this function\-:\nopagebreak
 \end{figure}
 
 
-\hypertarget{classSearch__base_af6ff26051c64a540002219b5753b7177}{\index{Search\-\_\-base@{Search\-\_\-base}!write\-Results@{write\-Results}}
-\index{write\-Results@{write\-Results}!Search_base@{Search\-\_\-base}}
-\subsubsection[{write\-Results}]{\setlength{\rightskip}{0pt plus 5cm}void Search\-\_\-base\-::write\-Results (
+\hypertarget{classSearch__base_a43c7b22f332c3be3ed2f6da9e2d6d3a5}{\index{Search\-\_\-base@{Search\-\_\-base}!write\-\_\-results@{write\-\_\-results}}
+\index{write\-\_\-results@{write\-\_\-results}!Search_base@{Search\-\_\-base}}
+\subsubsection[{write\-\_\-results}]{\setlength{\rightskip}{0pt plus 5cm}void Search\-\_\-base\-::write\-\_\-results (
 \begin{DoxyParamCaption}
 \item[{M\-Y\-S\-Q\-L $\ast$}]{conn, }
 \item[{char $\ast$}]{db\-Name, }
-\item[{{\bf opt\-Jr\-Parameters} \&}]{par}
+\item[{{\bf Opt\-\_\-jr\-\_\-parameters} \&}]{par}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classSearch__base_af6ff26051c64a540002219b5753b7177}
-It calls write\-Results member function of App\-\_\-manager private member 
+)}}\label{classSearch__base_a43c7b22f332c3be3ed2f6da9e2d6d3a5}
+It calls write\-\_\-results member function of App\-\_\-manager private member 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classSearch__base_af6ff26051c64a540002219b5753b7177_cgraph}
+\includegraphics[width=350pt]{classSearch__base_a43c7b22f332c3be3ed2f6da9e2d6d3a5_cgraph}
 \end{center}
 \end{figure}
 
@@ -120,6 +123,7 @@ Here is the call graph for this function\-:\nopagebreak
 \subsubsection[{App\-\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Batch} Search\-\_\-base\-::\-App\-\_\-manager\hspace{0.3cm}{\ttfamily [protected]}}}\label{classSearch__base_ad4cadf0273cce78e1ae9920bd9100e7a}
 \hyperlink{classBatch}{Batch} object as described in \hyperlink{classBatch}{Batch} class 
 
-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/\hyperlink{search__base_8hh}{search\-\_\-base.\-hh}\end{DoxyCompactItemize}
+/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/\hyperlink{search__base_8hh}{search\-\_\-base.\-hh}\item 
+/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/\hyperlink{search__base_8cpp}{search\-\_\-base.\-cpp}\end{DoxyCompactItemize}

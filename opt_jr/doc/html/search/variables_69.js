@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['iteration',['iteration',['../classStatistic.html#a1c1a722f5e4b883fb2d24b99a9c1b554',1,'Statistic']]]
+  ['iteration',['iteration',['../classStatistic__iter.html#a28282ee3b64c4c27509c164ccfec98a0',1,'Statistic_iter']]]
 ];

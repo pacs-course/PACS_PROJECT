@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -101,18 +101,18 @@ Include dependency graph for utility.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:affb98702b6d646743be567444260ac1f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utility_8cpp.html#affb98702b6d646743be567444260ac1f">elapsedTime</a> (struct timeval tv1, struct timeval tv2)</td></tr>
-<tr class="separator:affb98702b6d646743be567444260ac1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d47b6f031f040e12b256b8aaca54671"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utility_8cpp.html#a9d47b6f031f040e12b256b8aaca54671">doubleCompare</a> (double a, double b)</td></tr>
-<tr class="separator:a9d47b6f031f040e12b256b8aaca54671"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a6076c4dfa852d66ca966a95fe00601"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utility_8cpp.html#a8a6076c4dfa852d66ca966a95fe00601">elapsed_time</a> (struct timeval tv1, struct timeval tv2)</td></tr>
+<tr class="separator:a8a6076c4dfa852d66ca966a95fe00601"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4db1a76cd28125bf2cbe22b82d65f8c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utility_8cpp.html#af4db1a76cd28125bf2cbe22b82d65f8c">double_compare</a> (double a, double b)</td></tr>
+<tr class="separator:af4db1a76cd28125bf2cbe22b82d65f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a9d47b6f031f040e12b256b8aaca54671"></a>
+<a class="anchor" id="af4db1a76cd28125bf2cbe22b82d65f8c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int doubleCompare </td>
+          <td class="memname">int double_compare </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -130,16 +130,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>"doubleCompare" compare two doubles according to a certain precision (epsilon) </p>
+<p>"double_compare" compare two doubles according to a certain precision (epsilon) </p>
 
 </div>
 </div>
-<a class="anchor" id="affb98702b6d646743be567444260ac1f"></a>
+<a class="anchor" id="a8a6076c4dfa852d66ca966a95fe00601"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double elapsedTime </td>
+          <td class="memname">double elapsed_time </td>
           <td>(</td>
           <td class="paramtype">struct timeval&#160;</td>
           <td class="paramname"><em>tv1</em>, </td>
@@ -162,9 +162,9 @@ Functions</h2></td></tr>
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="utility_8cpp_affb98702b6d646743be567444260ac1f_icgraph.png" border="0" usemap="#utility_8cpp_affb98702b6d646743be567444260ac1f_icgraph" alt=""/></div>
-<map name="utility_8cpp_affb98702b6d646743be567444260ac1f_icgraph" id="utility_8cpp_affb98702b6d646743be567444260ac1f_icgraph">
-<area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="149,5,200,32"/></map>
+<div class="center"><img src="utility_8cpp_a8a6076c4dfa852d66ca966a95fe00601_icgraph.png" border="0" usemap="#utility_8cpp_a8a6076c4dfa852d66ca966a95fe00601_icgraph" alt=""/></div>
+<map name="utility_8cpp_a8a6076c4dfa852d66ca966a95fe00601_icgraph" id="utility_8cpp_a8a6076c4dfa852d66ca966a95fe00601_icgraph">
+<area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="152,5,203,32"/></map>
 </div>
 </p>
 

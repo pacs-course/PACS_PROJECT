@@ -1,19 +1,21 @@
 var searchData=
 [
-  ['search',['search',['../classsearch.html#a68606af5b4adbb5d9f7df88f8ed06e2c',1,'search']]],
+  ['search',['Search',['../classSearch.html#a59b826749138fdaa93c41b1e0697da58',1,'Search']]],
   ['search_5fbase',['Search_base',['../classSearch__base.html#a222697de87f38891f9018defe1988dc4',1,'Search_base']]],
-  ['search_5fbuilder',['search_builder',['../classSearch__factory.html#a47fca32f216bd67232f9ea82416a32d4',1,'Search_factory']]],
+  ['search_5fbuilder',['search_builder',['../classSearch__factory.html#ae7e40d4a3f4b496d2b35bad43fce44a5',1,'Search_factory']]],
   ['set_5fbasefo',['set_baseFO',['../classApplication.html#a4931a778639958beec06c7efa6343602',1,'Application']]],
   ['set_5fbound',['set_bound',['../classApplication.html#aa5bda390f99dea85e95f8d43b45c01a6',1,'Application']]],
   ['set_5fcurrentcores_5fd',['set_currentCores_d',['../classApplication.html#a54b218ca87366e0897571416da763ba2',1,'Application']]],
   ['set_5fncores_5fdb_5fd',['set_nCores_DB_d',['../classApplication.html#a3d116c903ecb0d92d5dc66f1210f227a',1,'Application']]],
   ['set_5fnu_5fd',['set_nu_d',['../classApplication.html#a158448d570c0e25f7d7884af4fca0b8c',1,'Application']]],
-  ['set_5fnumberofthreads',['set_numberOfThreads',['../classoptJrParameters.html#a3747d78e5dd35b8b1aa1c037e9d91cf7',1,'optJrParameters']]],
+  ['set_5fnumber_5fof_5fthreads',['set_number_of_threads',['../classOpt__jr__parameters.html#a19769e398ca6969a851cc6584cfa4dd0',1,'Opt_jr_parameters']]],
   ['set_5fr_5fd',['set_R_d',['../classApplication.html#a74d83f1191a1ab311c055da4d0d8d8d9',1,'Application']]],
+  ['set_5freal_5fi',['set_real_i',['../classCandidate__pair.html#aee6e0ca68882feefe44c6f095961a8d7',1,'Candidate_pair']]],
+  ['set_5freal_5fj',['set_real_j',['../classCandidate__pair.html#a9277d72b649e1cdd857fcb42d6926da1',1,'Candidate_pair']]],
   ['set_5fterm_5fi',['set_term_i',['../classApplication.html#a5a4a2ea2cb6d85978d9eee95d02c6689',1,'Application']]],
   ['set_5fvm',['set_vm',['../classApplication.html#a26df38cf838de9baf1ed5e5923b32124',1,'Application']]],
   ['show_5fbounds',['show_bounds',['../classBatch.html#a6e3c7278556780b9fb1e530c740b41de',1,'Batch']]],
   ['show_5fsession_5fapp_5fid',['show_session_app_id',['../classBatch.html#a7bb052d7d9fd3cfe1a00ebd60f977afb',1,'Batch']]],
   ['show_5fsolution',['show_solution',['../classBatch.html#a54f580f3d93657bdf72420d338551087',1,'Batch']]],
-  ['statistic',['Statistic',['../classStatistic.html#a26751917fec693e54f53ddd82bdcfeb6',1,'Statistic']]]
+  ['statistic_5fiter',['Statistic_iter',['../classStatistic__iter.html#a73b50c3786507016143ab5d438405ac6',1,'Statistic_iter']]]
 ];

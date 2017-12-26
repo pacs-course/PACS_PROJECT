@@ -19,41 +19,44 @@ Collaboration diagram for Batch\-:
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classBatch_aea459d16c99c2f02af53b3ad5b0ff12d}{Batch} (std\-::vector$<$ \hyperlink{classApplication}{Application} $>$ apps)
-\begin{DoxyCompactList}\small\item\em Constructor expects a vector of application which should be given by the \char`\"{}read\-App\-File\char`\"{} function declared in \char`\"{}read\-\_\-app\-\_\-file.\-hh\char`\"{}. \end{DoxyCompactList}\item 
-void \hyperlink{classBatch_a14f132321413b45d6446200807451414}{calculate\-\_\-nu} (\hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
+\begin{DoxyCompactList}\small\item\em Constructor expects a vector of application. \end{DoxyCompactList}\item 
+void \hyperlink{classBatch_a5174213a71d9f45cc10fee6bacd04b09}{calculate\-\_\-nu} (\hyperlink{classOpt__jr__parameters}{Opt\-\_\-jr\-\_\-parameters} \&par)
 \begin{DoxyCompactList}\small\item\em It calculates nu indices for each application and stores it in each \char`\"{}\-Application\char`\"{} object. It also initializes the number of cores. \end{DoxyCompactList}\item 
-void \hyperlink{classBatch_ae212d22fa812b51160f57507242152c1}{initialize} (\hyperlink{readConfigurationFile_8hh_ab8f35b1da3261263c5e9c0e7c8921f5c}{s\-Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
+void \hyperlink{classBatch_a025d1f919a65cda556c99db8b6cdff42}{initialize} (\hyperlink{classConfiguration}{Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, \hyperlink{classOpt__jr__parameters}{Opt\-\_\-jr\-\_\-parameters} \&par)
 \begin{DoxyCompactList}\small\item\em For each application, a base value for the objective function is calculated. \end{DoxyCompactList}\item 
-void \hyperlink{classBatch_ac50dad870490ca7c60e0e15d86c02614}{fix\-Initial\-Solution} (\hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
+void \hyperlink{classBatch_a2af18c30d72b6598eba353e8daef0b80}{fix\-\_\-initial\-\_\-solution} (\hyperlink{classOpt__jr__parameters}{Opt\-\_\-jr\-\_\-parameters} \&par)
 \begin{DoxyCompactList}\small\item\em It fixes the initial solution by reallocating the residual cores to the applications that may need more resources. \end{DoxyCompactList}\item 
-void \hyperlink{classBatch_a4c6c23dd95eccc220115af294d481219}{write\-Results} (M\-Y\-S\-Q\-L $\ast$conn, char $\ast$db\-Name, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} \&par)
+void \hyperlink{classBatch_a5e45cac0fbad47fde645547351fe3c75}{write\-\_\-results} (M\-Y\-S\-Q\-L $\ast$conn, char $\ast$db\-Name, \hyperlink{classOpt__jr__parameters}{Opt\-\_\-jr\-\_\-parameters} \&par)
 \item 
 std\-::string \hyperlink{classBatch_a7bb052d7d9fd3cfe1a00ebd60f977afb}{show\-\_\-session\-\_\-app\-\_\-id} ()
 \item 
 std\-::string \hyperlink{classBatch_a6e3c7278556780b9fb1e530c740b41de}{show\-\_\-bounds} ()
 \item 
 std\-::string \hyperlink{classBatch_a54f580f3d93657bdf72420d338551087}{show\-\_\-solution} ()
+\item 
+std\-::vector$<$ \hyperlink{classApplication}{Application} $>$\\*
+\-::iterator \hyperlink{classBatch_a2e6d4bba1cc89e2ecb55e3aca7228046}{get\-\_\-begin} ()
+\item 
+std\-::vector$<$ \hyperlink{classApplication}{Application} $>$\\*
+\-::const\-\_\-iterator \hyperlink{classBatch_af6cccfc68c9a29acc008b5f316dc3abc}{get\-\_\-cbegin} ()
+\item 
+std\-::vector$<$ \hyperlink{classApplication}{Application} $>$\\*
+\-::iterator \hyperlink{classBatch_a5585c86c7f6545178d0b0e0a82d93fa3}{get\-\_\-end} ()
+\item 
+std\-::vector$<$ \hyperlink{classApplication}{Application} $>$\\*
+\-::const\-\_\-iterator \hyperlink{classBatch_a69e1aff3a876d8e96989b94ad5f2e311}{get\-\_\-cend} ()
+\item 
+bool \hyperlink{classBatch_a8bbd81b72e695e1fc2c1a1687d72e71a}{get\-\_\-empty} ()
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\-::vector$<$ \hyperlink{classApplication}{Application} $>$ \hyperlink{classBatch_a757bf1a36fee46b1b47263ab4a59c560}{A\-P\-Ps}
 \begin{DoxyCompactList}\small\item\em The vector stores application data. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Friends}
-\begin{DoxyCompactItemize}
-\item 
-class \hyperlink{classBatch_ac174a08cdaebb01dfd90673034f10fab}{Bounds}
-\item 
-class \hyperlink{classBatch_ab332b708060d79472caf1a215fe8b6a9}{Obj\-Fun}
-\item 
-class \hyperlink{classBatch_a03f712db503340b39afba2ca88462f1d}{Search\-\_\-methods}
-\item 
-class \hyperlink{classBatch_a48cd94dfe9e88346e3aaf70313022182}{Search\-\_\-separing}
-\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-This class manages the applications; it stores applications data in a vector and it provides methods useful to apply before executing the local\-Search 
+This class manages the applications; it stores applications data in a vector and it provides methods useful to apply before executing the \hyperlink{classBounds}{Bounds} and the local\-Search 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classBatch_aea459d16c99c2f02af53b3ad5b0ff12d}{\index{Batch@{Batch}!Batch@{Batch}}
@@ -65,108 +68,161 @@ This class manages the applications; it stores applications data in a vector and
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classBatch_aea459d16c99c2f02af53b3ad5b0ff12d}
 
 
-Constructor expects a vector of application which should be given by the \char`\"{}read\-App\-File\char`\"{} function declared in \char`\"{}read\-\_\-app\-\_\-file.\-hh\char`\"{}. 
+Constructor expects a vector of application. 
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classBatch_a14f132321413b45d6446200807451414}{\index{Batch@{Batch}!calculate\-\_\-nu@{calculate\-\_\-nu}}
+\hypertarget{classBatch_a5174213a71d9f45cc10fee6bacd04b09}{\index{Batch@{Batch}!calculate\-\_\-nu@{calculate\-\_\-nu}}
 \index{calculate\-\_\-nu@{calculate\-\_\-nu}!Batch@{Batch}}
 \subsubsection[{calculate\-\_\-nu}]{\setlength{\rightskip}{0pt plus 5cm}void Batch\-::calculate\-\_\-nu (
 \begin{DoxyParamCaption}
-\item[{{\bf opt\-Jr\-Parameters} \&}]{par}
+\item[{{\bf Opt\-\_\-jr\-\_\-parameters} \&}]{par}
 \end{DoxyParamCaption}
-)}}\label{classBatch_a14f132321413b45d6446200807451414}
+)}}\label{classBatch_a5174213a71d9f45cc10fee6bacd04b09}
 
 
 It calculates nu indices for each application and stores it in each \char`\"{}\-Application\char`\"{} object. It also initializes the number of cores. 
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=328pt]{classBatch_a14f132321413b45d6446200807451414_cgraph}
+\includegraphics[width=324pt]{classBatch_a5174213a71d9f45cc10fee6bacd04b09_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=258pt]{classBatch_a14f132321413b45d6446200807451414_icgraph}
+\includegraphics[width=258pt]{classBatch_a5174213a71d9f45cc10fee6bacd04b09_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{classBatch_ac50dad870490ca7c60e0e15d86c02614}{\index{Batch@{Batch}!fix\-Initial\-Solution@{fix\-Initial\-Solution}}
-\index{fix\-Initial\-Solution@{fix\-Initial\-Solution}!Batch@{Batch}}
-\subsubsection[{fix\-Initial\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}void Batch\-::fix\-Initial\-Solution (
+\hypertarget{classBatch_a2af18c30d72b6598eba353e8daef0b80}{\index{Batch@{Batch}!fix\-\_\-initial\-\_\-solution@{fix\-\_\-initial\-\_\-solution}}
+\index{fix\-\_\-initial\-\_\-solution@{fix\-\_\-initial\-\_\-solution}!Batch@{Batch}}
+\subsubsection[{fix\-\_\-initial\-\_\-solution}]{\setlength{\rightskip}{0pt plus 5cm}void Batch\-::fix\-\_\-initial\-\_\-solution (
 \begin{DoxyParamCaption}
-\item[{{\bf opt\-Jr\-Parameters} \&}]{par}
+\item[{{\bf Opt\-\_\-jr\-\_\-parameters} \&}]{par}
 \end{DoxyParamCaption}
-)}}\label{classBatch_ac50dad870490ca7c60e0e15d86c02614}
+)}}\label{classBatch_a2af18c30d72b6598eba353e8daef0b80}
 
 
 It fixes the initial solution by reallocating the residual cores to the applications that may need more resources. 
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=342pt]{classBatch_ac50dad870490ca7c60e0e15d86c02614_cgraph}
+\includegraphics[width=306pt]{classBatch_a2af18c30d72b6598eba353e8daef0b80_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=272pt]{classBatch_ac50dad870490ca7c60e0e15d86c02614_icgraph}
+\includegraphics[width=240pt]{classBatch_a2af18c30d72b6598eba353e8daef0b80_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{classBatch_ae212d22fa812b51160f57507242152c1}{\index{Batch@{Batch}!initialize@{initialize}}
+\hypertarget{classBatch_a2e6d4bba1cc89e2ecb55e3aca7228046}{\index{Batch@{Batch}!get\-\_\-begin@{get\-\_\-begin}}
+\index{get\-\_\-begin@{get\-\_\-begin}!Batch@{Batch}}
+\subsubsection[{get\-\_\-begin}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Application}$>$\-::iterator Batch\-::get\-\_\-begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classBatch_a2e6d4bba1cc89e2ecb55e3aca7228046}
+\hypertarget{classBatch_af6cccfc68c9a29acc008b5f316dc3abc}{\index{Batch@{Batch}!get\-\_\-cbegin@{get\-\_\-cbegin}}
+\index{get\-\_\-cbegin@{get\-\_\-cbegin}!Batch@{Batch}}
+\subsubsection[{get\-\_\-cbegin}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Application}$>$\-::const\-\_\-iterator Batch\-::get\-\_\-cbegin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classBatch_af6cccfc68c9a29acc008b5f316dc3abc}
+\hypertarget{classBatch_a69e1aff3a876d8e96989b94ad5f2e311}{\index{Batch@{Batch}!get\-\_\-cend@{get\-\_\-cend}}
+\index{get\-\_\-cend@{get\-\_\-cend}!Batch@{Batch}}
+\subsubsection[{get\-\_\-cend}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Application}$>$\-::const\-\_\-iterator Batch\-::get\-\_\-cend (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classBatch_a69e1aff3a876d8e96989b94ad5f2e311}
+\hypertarget{classBatch_a8bbd81b72e695e1fc2c1a1687d72e71a}{\index{Batch@{Batch}!get\-\_\-empty@{get\-\_\-empty}}
+\index{get\-\_\-empty@{get\-\_\-empty}!Batch@{Batch}}
+\subsubsection[{get\-\_\-empty}]{\setlength{\rightskip}{0pt plus 5cm}bool Batch\-::get\-\_\-empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classBatch_a8bbd81b72e695e1fc2c1a1687d72e71a}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBatch_a8bbd81b72e695e1fc2c1a1687d72e71a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classBatch_a5585c86c7f6545178d0b0e0a82d93fa3}{\index{Batch@{Batch}!get\-\_\-end@{get\-\_\-end}}
+\index{get\-\_\-end@{get\-\_\-end}!Batch@{Batch}}
+\subsubsection[{get\-\_\-end}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Application}$>$\-::iterator Batch\-::get\-\_\-end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classBatch_a5585c86c7f6545178d0b0e0a82d93fa3}
+\hypertarget{classBatch_a025d1f919a65cda556c99db8b6cdff42}{\index{Batch@{Batch}!initialize@{initialize}}
 \index{initialize@{initialize}!Batch@{Batch}}
 \subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void Batch\-::initialize (
 \begin{DoxyParamCaption}
-\item[{{\bf s\-Configuration} \&}]{configuration, }
+\item[{{\bf Configuration} \&}]{configuration, }
 \item[{M\-Y\-S\-Q\-L $\ast$}]{conn, }
-\item[{{\bf opt\-Jr\-Parameters} \&}]{par}
+\item[{{\bf Opt\-\_\-jr\-\_\-parameters} \&}]{par}
 \end{DoxyParamCaption}
-)}}\label{classBatch_ae212d22fa812b51160f57507242152c1}
+)}}\label{classBatch_a025d1f919a65cda556c99db8b6cdff42}
 
 
 For each application, a base value for the objective function is calculated. 
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classBatch_ae212d22fa812b51160f57507242152c1_cgraph}
+\includegraphics[width=350pt]{classBatch_a025d1f919a65cda556c99db8b6cdff42_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=346pt]{classBatch_ae212d22fa812b51160f57507242152c1_icgraph}
+\includegraphics[width=316pt]{classBatch_a025d1f919a65cda556c99db8b6cdff42_icgraph}
 \end{center}
 \end{figure}
 
@@ -225,41 +281,27 @@ Here is the caller graph for this function\-:\nopagebreak
 \end{figure}
 
 
-\hypertarget{classBatch_a4c6c23dd95eccc220115af294d481219}{\index{Batch@{Batch}!write\-Results@{write\-Results}}
-\index{write\-Results@{write\-Results}!Batch@{Batch}}
-\subsubsection[{write\-Results}]{\setlength{\rightskip}{0pt plus 5cm}void Batch\-::write\-Results (
+\hypertarget{classBatch_a5e45cac0fbad47fde645547351fe3c75}{\index{Batch@{Batch}!write\-\_\-results@{write\-\_\-results}}
+\index{write\-\_\-results@{write\-\_\-results}!Batch@{Batch}}
+\subsubsection[{write\-\_\-results}]{\setlength{\rightskip}{0pt plus 5cm}void Batch\-::write\-\_\-results (
 \begin{DoxyParamCaption}
 \item[{M\-Y\-S\-Q\-L $\ast$}]{conn, }
 \item[{char $\ast$}]{db\-Name, }
-\item[{{\bf opt\-Jr\-Parameters} \&}]{par}
+\item[{{\bf Opt\-\_\-jr\-\_\-parameters} \&}]{par}
 \end{DoxyParamCaption}
-)}}\label{classBatch_a4c6c23dd95eccc220115af294d481219}
-write\-Results prints the results of the local\-Search application (number of cores and V\-M) in a D\-B table. If a result for a (session\-\_\-id, application\-\_\-id) already exists, then it is replaced. 
+)}}\label{classBatch_a5e45cac0fbad47fde645547351fe3c75}
+write\-\_\-results prints the results of the local\-Search application (number of cores and V\-M) in a D\-B table. If a result for a (session\-\_\-id, application\-\_\-id) already exists, then it is replaced. 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classBatch_a4c6c23dd95eccc220115af294d481219_icgraph}
+\includegraphics[width=322pt]{classBatch_a5e45cac0fbad47fde645547351fe3c75_icgraph}
 \end{center}
 \end{figure}
 
 
-
-
-\subsection{Friends And Related Function Documentation}
-\hypertarget{classBatch_ac174a08cdaebb01dfd90673034f10fab}{\index{Batch@{Batch}!Bounds@{Bounds}}
-\index{Bounds@{Bounds}!Batch@{Batch}}
-\subsubsection[{Bounds}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Bounds}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classBatch_ac174a08cdaebb01dfd90673034f10fab}
-\hypertarget{classBatch_ab332b708060d79472caf1a215fe8b6a9}{\index{Batch@{Batch}!Obj\-Fun@{Obj\-Fun}}
-\index{Obj\-Fun@{Obj\-Fun}!Batch@{Batch}}
-\subsubsection[{Obj\-Fun}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Obj\-Fun}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classBatch_ab332b708060d79472caf1a215fe8b6a9}
-\hypertarget{classBatch_a03f712db503340b39afba2ca88462f1d}{\index{Batch@{Batch}!Search\-\_\-methods@{Search\-\_\-methods}}
-\index{Search\-\_\-methods@{Search\-\_\-methods}!Batch@{Batch}}
-\subsubsection[{Search\-\_\-methods}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Search\-\_\-methods}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classBatch_a03f712db503340b39afba2ca88462f1d}
-\hypertarget{classBatch_a48cd94dfe9e88346e3aaf70313022182}{\index{Batch@{Batch}!Search\-\_\-separing@{Search\-\_\-separing}}
-\index{Search\-\_\-separing@{Search\-\_\-separing}!Batch@{Batch}}
-\subsubsection[{Search\-\_\-separing}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Search\-\_\-separing}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classBatch_a48cd94dfe9e88346e3aaf70313022182}
 
 
 \subsection{Member Data Documentation}

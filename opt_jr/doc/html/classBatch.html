@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -85,7 +85,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="#friends">Friends</a> &#124;
 <a href="classBatch-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Batch Class Reference</div>  </div>
@@ -98,51 +97,54 @@ Collaboration diagram for Batch:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBatch__coll__graph.png" border="0" usemap="#Batch_coll__map" alt="Collaboration graph"/></div>
 <map name="Batch_coll__map" id="Batch_coll__map">
-<area shape="rect" id="node3" href="classApplication.html" title="{Application\n|&#45; nCores_old\l&#45; R_old\l&#45; chi_C\l&#45; m\l&#45; M\l&#45; Deadline_d\l&#45; csi\l&#45; alpha\l&#45; beta\l|+ Application()\l+ computeAlphaBeta()\l+ get_session_app_id()\l+ get_app_id()\l+ get_w()\l+ get_term_i()\l+ get_chi_0()\l+ get_chi_C()\l+ get_m()\l+ get_M()\land 24 more...\l}" alt="" coords="12,5,169,347"/></map>
+<area shape="rect" id="node3" href="classApplication.html" title="{Application\n|&#45; ncores_new\l&#45; R_old\l&#45; chi_C\l&#45; m\l&#45; M\l&#45; Deadline_d\l&#45; csi\l&#45; alpha\l&#45; beta\l|+ Application()\l+ compute_alpha_beta()\l+ get_session_app_id()\l+ get_app_id()\l+ get_w()\l+ get_term_i()\l+ get_chi_0()\l+ get_chi_C()\l+ get_m()\l+ get_M()\land 23 more...\l}" alt="" coords="9,5,172,347"/></map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aea459d16c99c2f02af53b3ad5b0ff12d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#aea459d16c99c2f02af53b3ad5b0ff12d">Batch</a> (std::vector&lt; <a class="el" href="classApplication.html">Application</a> &gt; apps)</td></tr>
-<tr class="memdesc:aea459d16c99c2f02af53b3ad5b0ff12d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor expects a vector of application which should be given by the "readAppFile" function declared in "read_app_file.hh".  <a href="#aea459d16c99c2f02af53b3ad5b0ff12d">More...</a><br/></td></tr>
+<tr class="memdesc:aea459d16c99c2f02af53b3ad5b0ff12d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor expects a vector of application.  <a href="#aea459d16c99c2f02af53b3ad5b0ff12d">More...</a><br/></td></tr>
 <tr class="separator:aea459d16c99c2f02af53b3ad5b0ff12d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14f132321413b45d6446200807451414"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a14f132321413b45d6446200807451414">calculate_nu</a> (<a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
-<tr class="memdesc:a14f132321413b45d6446200807451414"><td class="mdescLeft">&#160;</td><td class="mdescRight">It calculates nu indices for each application and stores it in each "Application" object. It also initializes the number of cores.  <a href="#a14f132321413b45d6446200807451414">More...</a><br/></td></tr>
-<tr class="separator:a14f132321413b45d6446200807451414"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae212d22fa812b51160f57507242152c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#ae212d22fa812b51160f57507242152c1">initialize</a> (<a class="el" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;configuration, MYSQL *conn, <a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
-<tr class="memdesc:ae212d22fa812b51160f57507242152c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">For each application, a base value for the objective function is calculated.  <a href="#ae212d22fa812b51160f57507242152c1">More...</a><br/></td></tr>
-<tr class="separator:ae212d22fa812b51160f57507242152c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac50dad870490ca7c60e0e15d86c02614"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#ac50dad870490ca7c60e0e15d86c02614">fixInitialSolution</a> (<a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
-<tr class="memdesc:ac50dad870490ca7c60e0e15d86c02614"><td class="mdescLeft">&#160;</td><td class="mdescRight">It fixes the initial solution by reallocating the residual cores to the applications that may need more resources.  <a href="#ac50dad870490ca7c60e0e15d86c02614">More...</a><br/></td></tr>
-<tr class="separator:ac50dad870490ca7c60e0e15d86c02614"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c6c23dd95eccc220115af294d481219"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a4c6c23dd95eccc220115af294d481219">writeResults</a> (MYSQL *conn, char *dbName, <a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
-<tr class="separator:a4c6c23dd95eccc220115af294d481219"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5174213a71d9f45cc10fee6bacd04b09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a5174213a71d9f45cc10fee6bacd04b09">calculate_nu</a> (<a class="el" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;par)</td></tr>
+<tr class="memdesc:a5174213a71d9f45cc10fee6bacd04b09"><td class="mdescLeft">&#160;</td><td class="mdescRight">It calculates nu indices for each application and stores it in each "Application" object. It also initializes the number of cores.  <a href="#a5174213a71d9f45cc10fee6bacd04b09">More...</a><br/></td></tr>
+<tr class="separator:a5174213a71d9f45cc10fee6bacd04b09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a025d1f919a65cda556c99db8b6cdff42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a025d1f919a65cda556c99db8b6cdff42">initialize</a> (<a class="el" href="classConfiguration.html">Configuration</a> &amp;configuration, MYSQL *conn, <a class="el" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;par)</td></tr>
+<tr class="memdesc:a025d1f919a65cda556c99db8b6cdff42"><td class="mdescLeft">&#160;</td><td class="mdescRight">For each application, a base value for the objective function is calculated.  <a href="#a025d1f919a65cda556c99db8b6cdff42">More...</a><br/></td></tr>
+<tr class="separator:a025d1f919a65cda556c99db8b6cdff42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2af18c30d72b6598eba353e8daef0b80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a2af18c30d72b6598eba353e8daef0b80">fix_initial_solution</a> (<a class="el" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;par)</td></tr>
+<tr class="memdesc:a2af18c30d72b6598eba353e8daef0b80"><td class="mdescLeft">&#160;</td><td class="mdescRight">It fixes the initial solution by reallocating the residual cores to the applications that may need more resources.  <a href="#a2af18c30d72b6598eba353e8daef0b80">More...</a><br/></td></tr>
+<tr class="separator:a2af18c30d72b6598eba353e8daef0b80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e45cac0fbad47fde645547351fe3c75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a5e45cac0fbad47fde645547351fe3c75">write_results</a> (MYSQL *conn, char *dbName, <a class="el" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;par)</td></tr>
+<tr class="separator:a5e45cac0fbad47fde645547351fe3c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bb052d7d9fd3cfe1a00ebd60f977afb"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a7bb052d7d9fd3cfe1a00ebd60f977afb">show_session_app_id</a> ()</td></tr>
 <tr class="separator:a7bb052d7d9fd3cfe1a00ebd60f977afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e3c7278556780b9fb1e530c740b41de"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a6e3c7278556780b9fb1e530c740b41de">show_bounds</a> ()</td></tr>
 <tr class="separator:a6e3c7278556780b9fb1e530c740b41de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54f580f3d93657bdf72420d338551087"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a54f580f3d93657bdf72420d338551087">show_solution</a> ()</td></tr>
 <tr class="separator:a54f580f3d93657bdf72420d338551087"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e6d4bba1cc89e2ecb55e3aca7228046"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classApplication.html">Application</a> &gt;<br class="typebreak"/>
+::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a2e6d4bba1cc89e2ecb55e3aca7228046">get_begin</a> ()</td></tr>
+<tr class="separator:a2e6d4bba1cc89e2ecb55e3aca7228046"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6cccfc68c9a29acc008b5f316dc3abc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classApplication.html">Application</a> &gt;<br class="typebreak"/>
+::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#af6cccfc68c9a29acc008b5f316dc3abc">get_cbegin</a> ()</td></tr>
+<tr class="separator:af6cccfc68c9a29acc008b5f316dc3abc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5585c86c7f6545178d0b0e0a82d93fa3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classApplication.html">Application</a> &gt;<br class="typebreak"/>
+::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a5585c86c7f6545178d0b0e0a82d93fa3">get_end</a> ()</td></tr>
+<tr class="separator:a5585c86c7f6545178d0b0e0a82d93fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69e1aff3a876d8e96989b94ad5f2e311"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classApplication.html">Application</a> &gt;<br class="typebreak"/>
+::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a69e1aff3a876d8e96989b94ad5f2e311">get_cend</a> ()</td></tr>
+<tr class="separator:a69e1aff3a876d8e96989b94ad5f2e311"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bbd81b72e695e1fc2c1a1687d72e71a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a8bbd81b72e695e1fc2c1a1687d72e71a">get_empty</a> ()</td></tr>
+<tr class="separator:a8bbd81b72e695e1fc2c1a1687d72e71a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a757bf1a36fee46b1b47263ab4a59c560"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classApplication.html">Application</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a757bf1a36fee46b1b47263ab4a59c560">APPs</a></td></tr>
 <tr class="memdesc:a757bf1a36fee46b1b47263ab4a59c560"><td class="mdescLeft">&#160;</td><td class="mdescRight">The vector stores application data.  <a href="#a757bf1a36fee46b1b47263ab4a59c560">More...</a><br/></td></tr>
 <tr class="separator:a757bf1a36fee46b1b47263ab4a59c560"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:ac174a08cdaebb01dfd90673034f10fab"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#ac174a08cdaebb01dfd90673034f10fab">Bounds</a></td></tr>
-<tr class="separator:ac174a08cdaebb01dfd90673034f10fab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab332b708060d79472caf1a215fe8b6a9"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#ab332b708060d79472caf1a215fe8b6a9">ObjFun</a></td></tr>
-<tr class="separator:ab332b708060d79472caf1a215fe8b6a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03f712db503340b39afba2ca88462f1d"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a03f712db503340b39afba2ca88462f1d">Search_methods</a></td></tr>
-<tr class="separator:a03f712db503340b39afba2ca88462f1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48cd94dfe9e88346e3aaf70313022182"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBatch.html#a48cd94dfe9e88346e3aaf70313022182">Search_separing</a></td></tr>
-<tr class="separator:a48cd94dfe9e88346e3aaf70313022182"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class manages the applications; it stores applications data in a vector and it provides methods useful to apply before executing the localSearch </p>
+<div class="textblock"><p>This class manages the applications; it stores applications data in a vector and it provides methods useful to apply before executing the <a class="el" href="classBounds.html">Bounds</a> and the localSearch </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aea459d16c99c2f02af53b3ad5b0ff12d"></a>
 <div class="memitem">
@@ -166,19 +168,19 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Constructor expects a vector of application which should be given by the "readAppFile" function declared in "read_app_file.hh". </p>
+<p>Constructor expects a vector of application. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a14f132321413b45d6446200807451414"></a>
+<a class="anchor" id="a5174213a71d9f45cc10fee6bacd04b09"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Batch::calculate_nu </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;&#160;</td>
           <td class="paramname"><em>par</em></td><td>)</td>
           <td></td>
         </tr>
@@ -190,31 +192,31 @@ Friends</h2></td></tr>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classBatch_a14f132321413b45d6446200807451414_cgraph.png" border="0" usemap="#classBatch_a14f132321413b45d6446200807451414_cgraph" alt=""/></div>
-<map name="classBatch_a14f132321413b45d6446200807451414_cgraph" id="classBatch_a14f132321413b45d6446200807451414_cgraph">
-<area shape="rect" id="node2" href="classoptJrParameters.html#a9bb0e783bd6bf555e86cea874f13cb4f" title="optJrParameters::get\l_number" alt="" coords="192,5,336,46"/><area shape="rect" id="node3" href="debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="209,71,319,97"/></map>
+<div class="center"><img src="classBatch_a5174213a71d9f45cc10fee6bacd04b09_cgraph.png" border="0" usemap="#classBatch_a5174213a71d9f45cc10fee6bacd04b09_cgraph" alt=""/></div>
+<map name="classBatch_a5174213a71d9f45cc10fee6bacd04b09_cgraph" id="classBatch_a5174213a71d9f45cc10fee6bacd04b09_cgraph">
+<area shape="rect" id="node2" href="classOpt__jr__parameters.html#a8bafd6844417b1f64ddefcf84fb726cb" title="Opt_jr_parameters::\lget_number" alt="" coords="193,5,330,46"/><area shape="rect" id="node3" href="classOpt__jr__parameters.html#a860bf209221b6c5e1c4394d1ae4a058f" title="Opt_jr_parameters::\ldebug_message" alt="" coords="193,70,330,111"/></map>
 </div>
 </p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classBatch_a14f132321413b45d6446200807451414_icgraph.png" border="0" usemap="#classBatch_a14f132321413b45d6446200807451414_icgraph" alt=""/></div>
-<map name="classBatch_a14f132321413b45d6446200807451414_icgraph" id="classBatch_a14f132321413b45d6446200807451414_icgraph">
+<div class="center"><img src="classBatch_a5174213a71d9f45cc10fee6bacd04b09_icgraph.png" border="0" usemap="#classBatch_a5174213a71d9f45cc10fee6bacd04b09_icgraph" alt=""/></div>
+<map name="classBatch_a5174213a71d9f45cc10fee6bacd04b09_icgraph" id="classBatch_a5174213a71d9f45cc10fee6bacd04b09_icgraph">
 <area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="192,5,243,32"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="ac50dad870490ca7c60e0e15d86c02614"></a>
+<a class="anchor" id="a2af18c30d72b6598eba353e8daef0b80"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Batch::fixInitialSolution </td>
+          <td class="memname">void Batch::fix_initial_solution </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;&#160;</td>
           <td class="paramname"><em>par</em></td><td>)</td>
           <td></td>
         </tr>
@@ -226,31 +228,155 @@ Here is the caller graph for this function:</div>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classBatch_ac50dad870490ca7c60e0e15d86c02614_cgraph.png" border="0" usemap="#classBatch_ac50dad870490ca7c60e0e15d86c02614_cgraph" alt=""/></div>
-<map name="classBatch_ac50dad870490ca7c60e0e15d86c02614_cgraph" id="classBatch_ac50dad870490ca7c60e0e15d86c02614_cgraph">
-<area shape="rect" id="node2" href="classoptJrParameters.html#a9bb0e783bd6bf555e86cea874f13cb4f" title="optJrParameters::get\l_number" alt="" coords="211,5,355,46"/><area shape="rect" id="node3" href="debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="227,71,338,97"/></map>
+<div class="center"><img src="classBatch_a2af18c30d72b6598eba353e8daef0b80_cgraph.png" border="0" usemap="#classBatch_a2af18c30d72b6598eba353e8daef0b80_cgraph" alt=""/></div>
+<map name="classBatch_a2af18c30d72b6598eba353e8daef0b80_cgraph" id="classBatch_a2af18c30d72b6598eba353e8daef0b80_cgraph">
+<area shape="rect" id="node2" href="classOpt__jr__parameters.html#a8bafd6844417b1f64ddefcf84fb726cb" title="Opt_jr_parameters::\lget_number" alt="" coords="169,5,306,46"/><area shape="rect" id="node3" href="classOpt__jr__parameters.html#a860bf209221b6c5e1c4394d1ae4a058f" title="Opt_jr_parameters::\ldebug_message" alt="" coords="169,70,306,111"/></map>
 </div>
 </p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classBatch_ac50dad870490ca7c60e0e15d86c02614_icgraph.png" border="0" usemap="#classBatch_ac50dad870490ca7c60e0e15d86c02614_icgraph" alt=""/></div>
-<map name="classBatch_ac50dad870490ca7c60e0e15d86c02614_icgraph" id="classBatch_ac50dad870490ca7c60e0e15d86c02614_icgraph">
-<area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="211,5,261,32"/></map>
+<div class="center"><img src="classBatch_a2af18c30d72b6598eba353e8daef0b80_icgraph.png" border="0" usemap="#classBatch_a2af18c30d72b6598eba353e8daef0b80_icgraph" alt=""/></div>
+<map name="classBatch_a2af18c30d72b6598eba353e8daef0b80_icgraph" id="classBatch_a2af18c30d72b6598eba353e8daef0b80_icgraph">
+<area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="168,12,219,39"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="ae212d22fa812b51160f57507242152c1"></a>
+<a class="anchor" id="a2e6d4bba1cc89e2ecb55e3aca7228046"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classApplication.html">Application</a>&gt;::iterator Batch::get_begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af6cccfc68c9a29acc008b5f316dc3abc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classApplication.html">Application</a>&gt;::const_iterator Batch::get_cbegin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a69e1aff3a876d8e96989b94ad5f2e311"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classApplication.html">Application</a>&gt;::const_iterator Batch::get_cend </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8bbd81b72e695e1fc2c1a1687d72e71a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Batch::get_empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBatch_a8bbd81b72e695e1fc2c1a1687d72e71a_icgraph.png" border="0" usemap="#classBatch_a8bbd81b72e695e1fc2c1a1687d72e71a_icgraph" alt=""/></div>
+<map name="classBatch_a8bbd81b72e695e1fc2c1a1687d72e71a_icgraph" id="classBatch_a8bbd81b72e695e1fc2c1a1687d72e71a_icgraph">
+<area shape="rect" id="node2" href="classSearch__methods.html#aba1565526a0ce1b9e349918057f6f2c2" title="Search_methods::approximated_loop" alt="" coords="179,12,416,39"/><area shape="rect" id="node3" href="classSearch__alterning.html#a981af51221c3749c4c20e58b8a622cb1" title="Search_alterning::local\l_search" alt="" coords="464,5,619,46"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5585c86c7f6545178d0b0e0a82d93fa3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classApplication.html">Application</a>&gt;::iterator Batch::get_end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a025d1f919a65cda556c99db8b6cdff42"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Batch::initialize </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classConfiguration.html">Configuration</a> &amp;&#160;</td>
           <td class="paramname"><em>configuration</em>, </td>
         </tr>
         <tr>
@@ -262,7 +388,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;&#160;</td>
           <td class="paramname"><em>par</em>&#160;</td>
         </tr>
         <tr>
@@ -278,18 +404,18 @@ Here is the caller graph for this function:</div>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classBatch_ae212d22fa812b51160f57507242152c1_cgraph.png" border="0" usemap="#classBatch_ae212d22fa812b51160f57507242152c1_cgraph" alt=""/></div>
-<map name="classBatch_ae212d22fa812b51160f57507242152c1_cgraph" id="classBatch_ae212d22fa812b51160f57507242152c1_cgraph">
-<area shape="rect" id="node2" href="debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="425,5,535,32"/><area shape="rect" id="node3" href="classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7" title="ObjFun::ObjFunctionComponent" alt="" coords="166,31,375,57"/></map>
+<div class="center"><img src="classBatch_a025d1f919a65cda556c99db8b6cdff42_cgraph.png" border="0" usemap="#classBatch_a025d1f919a65cda556c99db8b6cdff42_cgraph" alt=""/></div>
+<map name="classBatch_a025d1f919a65cda556c99db8b6cdff42_cgraph" id="classBatch_a025d1f919a65cda556c99db8b6cdff42_cgraph">
+<area shape="rect" id="node2" href="classOpt__jr__parameters.html#a860bf209221b6c5e1c4394d1ae4a058f" title="Opt_jr_parameters::\ldebug_message" alt="" coords="390,5,527,46"/><area shape="rect" id="node3" href="classObjective__fun.html#a7d98b1f4e8a741fddc249e5134d5c3ef" title="Objective_fun::component" alt="" coords="166,37,341,64"/></map>
 </div>
 </p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classBatch_ae212d22fa812b51160f57507242152c1_icgraph.png" border="0" usemap="#classBatch_ae212d22fa812b51160f57507242152c1_icgraph" alt=""/></div>
-<map name="classBatch_ae212d22fa812b51160f57507242152c1_icgraph" id="classBatch_ae212d22fa812b51160f57507242152c1_icgraph">
-<area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="237,5,288,32"/><area shape="rect" id="node3" href="classSearch__separing.html#af512c83c2bfddf33a7b88a693d506a85" title="Search_separing::localSearch" alt="" coords="165,56,360,83"/></map>
+<div class="center"><img src="classBatch_a025d1f919a65cda556c99db8b6cdff42_icgraph.png" border="0" usemap="#classBatch_a025d1f919a65cda556c99db8b6cdff42_icgraph" alt=""/></div>
+<map name="classBatch_a025d1f919a65cda556c99db8b6cdff42_icgraph" id="classBatch_a025d1f919a65cda556c99db8b6cdff42_icgraph">
+<area shape="rect" id="node2" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="217,5,268,32"/><area shape="rect" id="node3" href="classSearch__separing.html#a5729213168347b0bb10889548dffad15" title="Search_separing::local\l_search" alt="" coords="165,57,320,98"/></map>
 </div>
 </p>
 
@@ -367,12 +493,12 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a4c6c23dd95eccc220115af294d481219"></a>
+<a class="anchor" id="a5e45cac0fbad47fde645547351fe3c75"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Batch::writeResults </td>
+          <td class="memname">void Batch::write_results </td>
           <td>(</td>
           <td class="paramtype">MYSQL *&#160;</td>
           <td class="paramname"><em>conn</em>, </td>
@@ -386,7 +512,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;&#160;</td>
           <td class="paramname"><em>par</em>&#160;</td>
         </tr>
         <tr>
@@ -396,97 +522,16 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>writeResults prints the results of the localSearch application (number of cores and VM) in a DB table. If a result for a (session_id, application_id) already exists, then it is replaced. </p>
+<p>write_results prints the results of the localSearch application (number of cores and VM) in a DB table. If a result for a (session_id, application_id) already exists, then it is replaced. </p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classBatch_a4c6c23dd95eccc220115af294d481219_icgraph.png" border="0" usemap="#classBatch_a4c6c23dd95eccc220115af294d481219_icgraph" alt=""/></div>
-<map name="classBatch_a4c6c23dd95eccc220115af294d481219_icgraph" id="classBatch_a4c6c23dd95eccc220115af294d481219_icgraph">
-<area shape="rect" id="node2" href="classSearch__base.html#af6ff26051c64a540002219b5753b7177" title="Search_base::writeResults" alt="" coords="192,5,371,32"/></map>
+<div class="center"><img src="classBatch_a5e45cac0fbad47fde645547351fe3c75_icgraph.png" border="0" usemap="#classBatch_a5e45cac0fbad47fde645547351fe3c75_icgraph" alt=""/></div>
+<map name="classBatch_a5e45cac0fbad47fde645547351fe3c75_icgraph" id="classBatch_a5e45cac0fbad47fde645547351fe3c75_icgraph">
+<area shape="rect" id="node2" href="classSearch__base.html#a43c7b22f332c3be3ed2f6da9e2d6d3a5" title="Search_base::write\l_results" alt="" coords="193,5,327,46"/></map>
 </div>
 </p>
-
-</div>
-</div>
-<h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a class="anchor" id="ac174a08cdaebb01dfd90673034f10fab"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">friend class <a class="el" href="classBounds.html">Bounds</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ab332b708060d79472caf1a215fe8b6a9"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">friend class <a class="el" href="classObjFun.html">ObjFun</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a03f712db503340b39afba2ca88462f1d"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">friend class <a class="el" href="classSearch__methods.html">Search_methods</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a48cd94dfe9e88346e3aaf70313022182"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">friend class <a class="el" href="classSearch__separing.html">Search_separing</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>

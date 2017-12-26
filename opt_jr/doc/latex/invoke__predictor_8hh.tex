@@ -1,0 +1,69 @@
+\hypertarget{invoke__predictor_8hh}{\section{/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/invoke\-\_\-predictor.hh File Reference}
+\label{invoke__predictor_8hh}\index{/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/invoke\-\_\-predictor.\-hh@{/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/invoke\-\_\-predictor.\-hh}}
+}
+{\ttfamily \#include \char`\"{}invoke\-\_\-predictor\-\_\-helper.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}configuration.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}opt\-\_\-jr\-\_\-parameters.\-hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}db.\-hh\char`\"{}}\\*
+{\ttfamily \#include $<$mysql.\-h$>$}\\*
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{invoke__predictor_8hh__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{invoke__predictor_8hh_a3806de5f70b6971cfe8be82520f4bf2a}{W\-H\-O\-L\-E\-\_\-\-D\-A\-G\-S\-I\-M}~0
+\item 
+\#define \hyperlink{invoke__predictor_8hh_a016c9fba38e790ceafd4d9843f2dc564}{R\-E\-S\-I\-D\-U\-A\-L\-\_\-\-D\-A\-G\-S\-I\-M}~1
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{invoke__predictor_8hh_a08c78503a3848b016487ab7d31fd9074}{invoke\-\_\-predictor} (\hyperlink{classConfiguration}{Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, int n\-Nodes, int current\-Cores, char $\ast$memory, int datasize, char $\ast$session\-Id, char $\ast$app\-Id, char $\ast$stage, \hyperlink{classOpt__jr__parameters}{Opt\-\_\-jr\-\_\-parameters} \&par, int flag\-Dagsim)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{invoke__predictor_8hh_a016c9fba38e790ceafd4d9843f2dc564}{\index{invoke\-\_\-predictor.\-hh@{invoke\-\_\-predictor.\-hh}!R\-E\-S\-I\-D\-U\-A\-L\-\_\-\-D\-A\-G\-S\-I\-M@{R\-E\-S\-I\-D\-U\-A\-L\-\_\-\-D\-A\-G\-S\-I\-M}}
+\index{R\-E\-S\-I\-D\-U\-A\-L\-\_\-\-D\-A\-G\-S\-I\-M@{R\-E\-S\-I\-D\-U\-A\-L\-\_\-\-D\-A\-G\-S\-I\-M}!invoke_predictor.hh@{invoke\-\_\-predictor.\-hh}}
+\subsubsection[{R\-E\-S\-I\-D\-U\-A\-L\-\_\-\-D\-A\-G\-S\-I\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-S\-I\-D\-U\-A\-L\-\_\-\-D\-A\-G\-S\-I\-M~1}}\label{invoke__predictor_8hh_a016c9fba38e790ceafd4d9843f2dc564}
+\hypertarget{invoke__predictor_8hh_a3806de5f70b6971cfe8be82520f4bf2a}{\index{invoke\-\_\-predictor.\-hh@{invoke\-\_\-predictor.\-hh}!W\-H\-O\-L\-E\-\_\-\-D\-A\-G\-S\-I\-M@{W\-H\-O\-L\-E\-\_\-\-D\-A\-G\-S\-I\-M}}
+\index{W\-H\-O\-L\-E\-\_\-\-D\-A\-G\-S\-I\-M@{W\-H\-O\-L\-E\-\_\-\-D\-A\-G\-S\-I\-M}!invoke_predictor.hh@{invoke\-\_\-predictor.\-hh}}
+\subsubsection[{W\-H\-O\-L\-E\-\_\-\-D\-A\-G\-S\-I\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-H\-O\-L\-E\-\_\-\-D\-A\-G\-S\-I\-M~0}}\label{invoke__predictor_8hh_a3806de5f70b6971cfe8be82520f4bf2a}
+
+
+\subsection{Function Documentation}
+\hypertarget{invoke__predictor_8hh_a08c78503a3848b016487ab7d31fd9074}{\index{invoke\-\_\-predictor.\-hh@{invoke\-\_\-predictor.\-hh}!invoke\-\_\-predictor@{invoke\-\_\-predictor}}
+\index{invoke\-\_\-predictor@{invoke\-\_\-predictor}!invoke_predictor.hh@{invoke\-\_\-predictor.\-hh}}
+\subsubsection[{invoke\-\_\-predictor}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ invoke\-\_\-predictor (
+\begin{DoxyParamCaption}
+\item[{{\bf Configuration} \&}]{configuration, }
+\item[{M\-Y\-S\-Q\-L $\ast$}]{conn, }
+\item[{int}]{n\-Nodes, }
+\item[{int}]{current\-Cores, }
+\item[{char $\ast$}]{memory, }
+\item[{int}]{datasize, }
+\item[{char $\ast$}]{session\-Id, }
+\item[{char $\ast$}]{app\-Id, }
+\item[{char $\ast$}]{stage, }
+\item[{{\bf Opt\-\_\-jr\-\_\-parameters} \&}]{par, }
+\item[{int}]{flag\-Dagsim}
+\end{DoxyParamCaption}
+)}}\label{invoke__predictor_8hh_a08c78503a3848b016487ab7d31fd9074}
+\char`\"{}invoke\-\_\-predictor\char`\"{} invokes a predictor (dag\-Sim/\-Lundstrom). First it checks if an estimate of the execution time is already stored in the D\-B; if not, it invokes the actual predictor and stores the result on D\-B cache table. 
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{invoke__predictor_8hh_a08c78503a3848b016487ab7d31fd9074_icgraph}
+\end{center}
+\end{figure}
+
+

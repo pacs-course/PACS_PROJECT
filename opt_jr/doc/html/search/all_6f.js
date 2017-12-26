@@ -1,14 +1,12 @@
 var searchData=
 [
-  ['objectivefunction_2ecpp',['objectiveFunction.cpp',['../objectiveFunction_8cpp.html',1,'']]],
-  ['objectivefunction_2ehh',['objectiveFunction.hh',['../objectiveFunction_8hh.html',1,'']]],
-  ['objfun',['ObjFun',['../classObjFun.html',1,'ObjFun'],['../classBatch.html#ab332b708060d79472caf1a215fe8b6a9',1,'Batch::ObjFun()']]],
-  ['objfunctioncomponent',['ObjFunctionComponent',['../classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7',1,'ObjFun']]],
-  ['objfunctioncomponentapprox',['ObjFunctionComponentApprox',['../classObjFun.html#abb89a994d34b44ec4cb6e0e2562c0107',1,'ObjFun']]],
-  ['objfunctionglobal',['ObjFunctionGlobal',['../classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b',1,'ObjFun']]],
-  ['optjrparam_5fhelper_2ecpp',['optjrParam_helper.cpp',['../optjrParam__helper_8cpp.html',1,'']]],
-  ['optjrparam_5fhelper_2ehh',['optjrParam_helper.hh',['../optjrParam__helper_8hh.html',1,'']]],
-  ['optjrparameters',['optJrParameters',['../classoptJrParameters.html',1,'optJrParameters'],['../classoptJrParameters.html#a76f806d48141b4b4c7a215c2645011de',1,'optJrParameters::optJrParameters()']]],
-  ['optjrparameters_2ecpp',['optjrparameters.cpp',['../optjrparameters_8cpp.html',1,'']]],
-  ['optjrparameters_2ehh',['optjrParameters.hh',['../optjrParameters_8hh.html',1,'']]]
+  ['objective_5ffun',['Objective_fun',['../classObjective__fun.html',1,'']]],
+  ['objective_5ffun_2ecpp',['objective_fun.cpp',['../objective__fun_8cpp.html',1,'']]],
+  ['objective_5ffun_2ehh',['objective_fun.hh',['../objective__fun_8hh.html',1,'']]],
+  ['operator_5b_5d',['operator[]',['../classConfiguration.html#ad01eea5b98871f1cc4dbf28b9fe92093',1,'Configuration']]],
+  ['opt_5fjr_5fparameters',['Opt_jr_parameters',['../classOpt__jr__parameters.html',1,'Opt_jr_parameters'],['../classOpt__jr__parameters.html#aae142f498b266523f275dba7a407326d',1,'Opt_jr_parameters::Opt_jr_parameters()']]],
+  ['opt_5fjr_5fparameters_2ecpp',['opt_jr_parameters.cpp',['../opt__jr__parameters_8cpp.html',1,'']]],
+  ['opt_5fjr_5fparameters_2ehh',['opt_jr_parameters.hh',['../opt__jr__parameters_8hh.html',1,'']]],
+  ['opt_5fjr_5fparameters_5fhelper_2ecpp',['opt_jr_parameters_helper.cpp',['../opt__jr__parameters__helper_8cpp.html',1,'']]],
+  ['opt_5fjr_5fparameters_5fhelper_2ehh',['opt_jr_parameters_helper.hh',['../opt__jr__parameters__helper_8hh.html',1,'']]]
 ];

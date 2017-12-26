@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['objectivefunction_2ecpp',['objectiveFunction.cpp',['../objectiveFunction_8cpp.html',1,'']]],
-  ['objectivefunction_2ehh',['objectiveFunction.hh',['../objectiveFunction_8hh.html',1,'']]],
-  ['optjrparam_5fhelper_2ecpp',['optjrParam_helper.cpp',['../optjrParam__helper_8cpp.html',1,'']]],
-  ['optjrparam_5fhelper_2ehh',['optjrParam_helper.hh',['../optjrParam__helper_8hh.html',1,'']]],
-  ['optjrparameters_2ecpp',['optjrparameters.cpp',['../optjrparameters_8cpp.html',1,'']]],
-  ['optjrparameters_2ehh',['optjrParameters.hh',['../optjrParameters_8hh.html',1,'']]]
+  ['objective_5ffun_2ecpp',['objective_fun.cpp',['../objective__fun_8cpp.html',1,'']]],
+  ['objective_5ffun_2ehh',['objective_fun.hh',['../objective__fun_8hh.html',1,'']]],
+  ['opt_5fjr_5fparameters_2ecpp',['opt_jr_parameters.cpp',['../opt__jr__parameters_8cpp.html',1,'']]],
+  ['opt_5fjr_5fparameters_2ehh',['opt_jr_parameters.hh',['../opt__jr__parameters_8hh.html',1,'']]],
+  ['opt_5fjr_5fparameters_5fhelper_2ecpp',['opt_jr_parameters_helper.cpp',['../opt__jr__parameters__helper_8cpp.html',1,'']]],
+  ['opt_5fjr_5fparameters_5fhelper_2ehh',['opt_jr_parameters_helper.hh',['../opt__jr__parameters__helper_8hh.html',1,'']]]
 ];

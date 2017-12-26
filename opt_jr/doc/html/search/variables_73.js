@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['search_5ftype',['search_type',['../classoptJrParameters.html#ace4df9a02106cc7c3f7e8e65cb94770f',1,'optJrParameters']]],
+  ['search_5ftype',['search_type',['../classOpt__jr__parameters.html#a0826424385c08cba6aff3c04e6eee423',1,'Opt_jr_parameters']]],
   ['session_5fapp_5fid',['session_app_id',['../classApplication.html#a6152c40564d526b9b60871c98f7a51c7',1,'Application']]],
-  ['simulator',['simulator',['../classoptJrParameters.html#a8bb0a0aa1f458ff3973fbe43552e1cd5',1,'optJrParameters']]],
-  ['size',['size',['../classStatistic.html#ad31dd663eb3557247d0871b523d73350',1,'Statistic']]],
-  ['stage',['stage',['../classApplication.html#a27731ed4d16f6e9583b52c4f09a69258',1,'Application']]]
+  ['simulator',['simulator',['../classOpt__jr__parameters.html#a032e1532dc68ecb39b2f2129c0d81449',1,'Opt_jr_parameters']]],
+  ['size',['size',['../classStatistic__iter.html#a01b8c51fe357cbba9412c20fcf9d59a5',1,'Statistic_iter']]],
+  ['stage',['stage',['../classApplication.html#a27731ed4d16f6e9583b52c4f09a69258',1,'Application']]],
+  ['stat',['stat',['../classStatistics.html#a7b3e8290fbe506b88f7421a2479d258f',1,'Statistics']]]
 ];

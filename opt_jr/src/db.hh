@@ -7,29 +7,28 @@
 
 
 /*
-	-Here are declared the functions to manage databases
- */
+-Here are declared the functions to manage databases
+*/
 
 
 /**
-  Standard error procedure for DB operations
+Standard error procedure for DB operations
 */
 void DBerror(MYSQL *conn, char * msg);
 
 /**
-  Execute SQL statement
+Execute SQL statement
 */
 MYSQL_ROW executeSQL(MYSQL *conn, char *statement, Opt_jr_parameters par);
 
 /**
-  Open a DB connection
- */
-
- MYSQL * DBopen(char * host, char * port, char * login, char * passw, char *dbName);
+Open a DB connection
+*/
+MYSQL * DBopen(char * host, char * port, char * login, char * passw, char *dbName);
 
 /**
-  Close DB connection
- */
+Close DB connection
+*/
 void DBclose(MYSQL *conn);
 
 

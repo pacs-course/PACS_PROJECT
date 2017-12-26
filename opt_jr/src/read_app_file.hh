@@ -27,17 +27,11 @@ const int _Dsz = 12;
 const int PARAMETERS = 12;
 
 
-/**
- * 		Name:					get_field
- * 		Input parameters:		char * source, int num
- * 		Output parameters:		A word
- * 		Description:			it extracts values from the csv file
- *
- */
+/// get_field extracts values from the csv file
 char * get_field(char* line, int num);
 
 /**
-  This function given a file* with data of application returns the vector of "Application" objects
+  read_app_file, given a file* with data of application, returns the vector of "Application" objects
 */
 std::vector<Application> read_app_file(FILE* stream);
 

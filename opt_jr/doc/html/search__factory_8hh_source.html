@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,31 +93,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//#include &quot;search.hh&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="search__base_8hh.html">search_base.hh</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="batch_8hh.html">batch.hh</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="optjrParameters_8hh.html">optjrParameters.hh</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="search__base_8hh.html">search_base.hh</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="batch_8hh.html">batch.hh</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="opt__jr__parameters_8hh.html">opt_jr_parameters.hh</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classSearch__factory.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSearch__factory.html">Search_factory</a>{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="comment">//Search select(optJrParameters par);</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keyword">static</span> std::unique_ptr&lt;Search_base&gt; <a class="code" href="classSearch__factory.html#a47fca32f216bd67232f9ea82416a32d4">search_builder</a>(<a class="code" href="classoptJrParameters.html">optJrParameters</a> &amp;par, <a class="code" href="classBatch.html">Batch</a> &amp;App_manager);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classSearch__factory.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSearch__factory.html">Search_factory</a>{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="comment">//Search select(Opt_jr_parameters par);</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">static</span> std::unique_ptr&lt;Search_base&gt; <a class="code" href="classSearch__factory.html#ae7e40d4a3f4b496d2b35bad43fce44a5">search_builder</a>(<a class="code" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;par, <a class="code" href="classBatch.html">Batch</a> &amp;App_manager);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="classBatch_html"><div class="ttname"><a href="classBatch.html">Batch</a></div><div class="ttdef"><b>Definition:</b> batch.hh:13</div></div>
-<div class="ttc" id="classoptJrParameters_html"><div class="ttname"><a href="classoptJrParameters.html">optJrParameters</a></div><div class="ttdef"><b>Definition:</b> optjrParameters.hh:17</div></div>
-<div class="ttc" id="classSearch__factory_html_a47fca32f216bd67232f9ea82416a32d4"><div class="ttname"><a href="classSearch__factory.html#a47fca32f216bd67232f9ea82416a32d4">Search_factory::search_builder</a></div><div class="ttdeci">static std::unique_ptr&lt; Search_base &gt; search_builder(optJrParameters &amp;par, Batch &amp;App_manager)</div><div class="ttdef"><b>Definition:</b> search_factory.cpp:8</div></div>
+<div class="ttc" id="classOpt__jr__parameters_html"><div class="ttname"><a href="classOpt__jr__parameters.html">Opt_jr_parameters</a></div><div class="ttdef"><b>Definition:</b> opt_jr_parameters.hh:17</div></div>
+<div class="ttc" id="classSearch__factory_html_ae7e40d4a3f4b496d2b35bad43fce44a5"><div class="ttname"><a href="classSearch__factory.html#ae7e40d4a3f4b496d2b35bad43fce44a5">Search_factory::search_builder</a></div><div class="ttdeci">static std::unique_ptr&lt; Search_base &gt; search_builder(Opt_jr_parameters &amp;par, Batch &amp;App_manager)</div><div class="ttdef"><b>Definition:</b> search_factory.cpp:8</div></div>
 <div class="ttc" id="search__base_8hh_html"><div class="ttname"><a href="search__base_8hh.html">search_base.hh</a></div></div>
-<div class="ttc" id="optjrParameters_8hh_html"><div class="ttname"><a href="optjrParameters_8hh.html">optjrParameters.hh</a></div></div>
+<div class="ttc" id="opt__jr__parameters_8hh_html"><div class="ttname"><a href="opt__jr__parameters_8hh.html">opt_jr_parameters.hh</a></div></div>
 <div class="ttc" id="batch_8hh_html"><div class="ttname"><a href="batch_8hh.html">batch.hh</a></div></div>
-<div class="ttc" id="classSearch__factory_html"><div class="ttname"><a href="classSearch__factory.html">Search_factory</a></div><div class="ttdef"><b>Definition:</b> search_factory.hh:13</div></div>
+<div class="ttc" id="classSearch__factory_html"><div class="ttname"><a href="classSearch__factory.html">Search_factory</a></div><div class="ttdef"><b>Definition:</b> search_factory.hh:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

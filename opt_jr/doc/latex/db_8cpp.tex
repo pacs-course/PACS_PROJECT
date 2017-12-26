@@ -5,13 +5,12 @@
 {\ttfamily \#include $<$string.\-h$>$}\\*
 {\ttfamily \#include $<$string$>$}\\*
 {\ttfamily \#include \char`\"{}db.\-hh\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}debugmessage.\-hh\char`\"{}}\\*
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{db_8cpp_ab33dd75bdc4f92249542a2bb81b343fd}{D\-Berror} (M\-Y\-S\-Q\-L $\ast$conn, char $\ast$msg)
 \item 
-M\-Y\-S\-Q\-L\-\_\-\-R\-O\-W \hyperlink{db_8cpp_a2491baf1bdfde4dc81303042399a6278}{execute\-S\-Q\-L} (M\-Y\-S\-Q\-L $\ast$conn, char $\ast$statement, \hyperlink{classoptJrParameters}{opt\-Jr\-Parameters} par)
+M\-Y\-S\-Q\-L\-\_\-\-R\-O\-W \hyperlink{db_8cpp_a7d5ba67ab50ce1ffc9817b97612e94c7}{execute\-S\-Q\-L} (M\-Y\-S\-Q\-L $\ast$conn, char $\ast$statement, \hyperlink{classOpt__jr__parameters}{Opt\-\_\-jr\-\_\-parameters} par)
 \item 
 M\-Y\-S\-Q\-L $\ast$ \hyperlink{db_8cpp_aced0f518cdbba35b17b3ce9f316131ce}{D\-Bopen} (char $\ast$host, char $\ast$port, char $\ast$login, char $\ast$passw, char $\ast$db\-Name)
 \item 
@@ -27,7 +26,7 @@ void \hyperlink{db_8cpp_a54af21d55b55bae7b63cb28d3cd05758}{D\-Bclose} (M\-Y\-S\-
 \item[{M\-Y\-S\-Q\-L $\ast$}]{conn}
 \end{DoxyParamCaption}
 )}}\label{db_8cpp_a54af21d55b55bae7b63cb28d3cd05758}
-Close D\-B connection (not substantially changed from original C version) \hypertarget{db_8cpp_ab33dd75bdc4f92249542a2bb81b343fd}{\index{db.\-cpp@{db.\-cpp}!D\-Berror@{D\-Berror}}
+Close D\-B connection \hypertarget{db_8cpp_ab33dd75bdc4f92249542a2bb81b343fd}{\index{db.\-cpp@{db.\-cpp}!D\-Berror@{D\-Berror}}
 \index{D\-Berror@{D\-Berror}!db.cpp@{db.\-cpp}}
 \subsubsection[{D\-Berror}]{\setlength{\rightskip}{0pt plus 5cm}void D\-Berror (
 \begin{DoxyParamCaption}
@@ -35,7 +34,7 @@ Close D\-B connection (not substantially changed from original C version) \hyper
 \item[{char $\ast$}]{msg}
 \end{DoxyParamCaption}
 )}}\label{db_8cpp_ab33dd75bdc4f92249542a2bb81b343fd}
-Standard error procedure for D\-B operations (not substantially changed from original C version) \hypertarget{db_8cpp_aced0f518cdbba35b17b3ce9f316131ce}{\index{db.\-cpp@{db.\-cpp}!D\-Bopen@{D\-Bopen}}
+Standard error procedure for D\-B operations \hypertarget{db_8cpp_aced0f518cdbba35b17b3ce9f316131ce}{\index{db.\-cpp@{db.\-cpp}!D\-Bopen@{D\-Bopen}}
 \index{D\-Bopen@{D\-Bopen}!db.cpp@{db.\-cpp}}
 \subsubsection[{D\-Bopen}]{\setlength{\rightskip}{0pt plus 5cm}M\-Y\-S\-Q\-L$\ast$ D\-Bopen (
 \begin{DoxyParamCaption}
@@ -46,7 +45,7 @@ Standard error procedure for D\-B operations (not substantially changed from ori
 \item[{char $\ast$}]{db\-Name}
 \end{DoxyParamCaption}
 )}}\label{db_8cpp_aced0f518cdbba35b17b3ce9f316131ce}
-Open a D\-B connection (not substantially changed from original C version) 
+Open a D\-B connection 
 
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
@@ -57,22 +56,23 @@ Here is the call graph for this function\-:\nopagebreak
 \end{figure}
 
 
-\hypertarget{db_8cpp_a2491baf1bdfde4dc81303042399a6278}{\index{db.\-cpp@{db.\-cpp}!execute\-S\-Q\-L@{execute\-S\-Q\-L}}
+\hypertarget{db_8cpp_a7d5ba67ab50ce1ffc9817b97612e94c7}{\index{db.\-cpp@{db.\-cpp}!execute\-S\-Q\-L@{execute\-S\-Q\-L}}
 \index{execute\-S\-Q\-L@{execute\-S\-Q\-L}!db.cpp@{db.\-cpp}}
 \subsubsection[{execute\-S\-Q\-L}]{\setlength{\rightskip}{0pt plus 5cm}M\-Y\-S\-Q\-L\-\_\-\-R\-O\-W execute\-S\-Q\-L (
 \begin{DoxyParamCaption}
 \item[{M\-Y\-S\-Q\-L $\ast$}]{conn, }
 \item[{char $\ast$}]{statement, }
-\item[{{\bf opt\-Jr\-Parameters}}]{par}
+\item[{{\bf Opt\-\_\-jr\-\_\-parameters}}]{par}
 \end{DoxyParamCaption}
-)}}\label{db_8cpp_a2491baf1bdfde4dc81303042399a6278}
-Execute S\-Q\-L statement (not substantially changed from original C version) 
+)}}\label{db_8cpp_a7d5ba67ab50ce1ffc9817b97612e94c7}
+Execute S\-Q\-L statement 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=272pt]{db_8cpp_a2491baf1bdfde4dc81303042399a6278_cgraph}
+\includegraphics[width=292pt]{db_8cpp_a7d5ba67ab50ce1ffc9817b97612e94c7_cgraph}
 \end{center}
 \end{figure}
 

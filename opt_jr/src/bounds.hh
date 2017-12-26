@@ -9,8 +9,8 @@
 
 
 /**
-  Bounds class provide a method to evaluate the bound for the applications in BATCH i.e.
-  the minimal number of cores necessary to finish the execution before the deadline
+  Bounds class provide a method to evaluate the bound for the applications stored in app_manager i.e.
+  the minimal number of cores necessary to finish the execution before the deadline.
 
 */
 class Bounds {
@@ -23,8 +23,7 @@ class Bounds {
   /**
   This function calculates the bound given a certain deadline and number of cores. Predictor method is invoked until an upper bound,
   consisting of the number of nodes, is found (once that the time calculated by the predictor, a rollback is performed to
-  return the last "safe" number of core and time.
-
+  return the last "safe" number of core and time).
   */
   void  bound(Configuration &configuration, MYSQL *conn, Application &app,
               Opt_jr_parameters &par, int flagDagsim);
@@ -40,11 +39,12 @@ public:
   Bounds(Batch app_m): app_manager(app_m){};
 
   /**
-  calculate_bounds evaluates the bound for the applications in BATCH
+  calculate_bounds evaluates the bounds for the applications in app_manager,
   i.e. the minimal number of cores necessary to finish the execution before the deadline.
   The function looks before if the result is already stored in the database, otherwise it
   invokes the predictor doing a "HILL CLIMBING". If the number of threads in the configuration file is
   greater than 0, it does the computations in parallel (using openMP).
+  It invokes findbound for each Application.
   */
   void calculate_bounds( Configuration &configuration,
                        MYSQL *conn,  Opt_jr_parameters &par);

@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['objfunctioncomponent',['ObjFunctionComponent',['../classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7',1,'ObjFun']]],
-  ['objfunctioncomponentapprox',['ObjFunctionComponentApprox',['../classObjFun.html#abb89a994d34b44ec4cb6e0e2562c0107',1,'ObjFun']]],
-  ['objfunctionglobal',['ObjFunctionGlobal',['../classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b',1,'ObjFun']]],
-  ['optjrparameters',['optJrParameters',['../classoptJrParameters.html#a76f806d48141b4b4c7a215c2645011de',1,'optJrParameters']]]
+  ['operator_5b_5d',['operator[]',['../classConfiguration.html#ad01eea5b98871f1cc4dbf28b9fe92093',1,'Configuration']]],
+  ['opt_5fjr_5fparameters',['Opt_jr_parameters',['../classOpt__jr__parameters.html#aae142f498b266523f275dba7a407326d',1,'Opt_jr_parameters']]]
 ];

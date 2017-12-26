@@ -331,6 +331,7 @@ std::string Batch::show_session_app_id()
   return Msg;
 }
 
+
 std::string Batch::show_bounds()
 {
   std::string Msg;

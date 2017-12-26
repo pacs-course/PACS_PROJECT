@@ -6,8 +6,6 @@
 GLOBAL VARIABLES USEFUL TO CREATE OBJECT OF CLASS OPTJRPARAMETER
 */
 
-
-
 #define ARGS 10 ///< number of arguments from command line
 
 /* COMMAND LINE OPTIONS */
@@ -30,20 +28,18 @@ GLOBAL VARIABLES USEFUL TO CREATE OBJECT OF CLASS OPTJRPARAMETER
 #define YES 1
 
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /*
     A FEW OPTJRPARAMETERS HELPER FUNCTION
 */
 
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 
 /**
-Explain usage of the OPT_JR_CPP program
-Invoked if the number of parameters send at command line is incorrect
+Usage explains the usage of the OPT_JR_CPP program.
 */
 void Usage(int argc);
 
@@ -52,5 +48,8 @@ Function to parse argument from command line;
 Invoked by Opt_jr_parameters constructor
 */
 char* parseArg(char * string, char * gap, int type, int argc);
+
+
+
 
 #endif

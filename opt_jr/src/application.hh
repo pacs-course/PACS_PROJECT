@@ -8,7 +8,7 @@
 
 
 /**
-	In the Application class all the data of one application are stored;
+	In the Application class all the data about a single application are stored;
 	it's provided also with a method to evaluate hyperbolic interpolation for alpha and beta, and several get and set funtions.
 */
 class Application{
@@ -55,7 +55,7 @@ public:
   Application(std::string session_app_id, std::string app_id, double w,
               double chi_0, double chi_C, double m, double M, double V,
               double v, double D, double csi, std::string St, int dataset_size);
-	/// This function evaluates the Hyperbolic interpolation for alpha and beta (from the second time it is invoked).
+	/// compute_alpha_beta evaluates the hyperbolic interpolation for alpha and beta (from the second time it is invoked).
 	void compute_alpha_beta(int nCores_n, double R_n);
 
 
@@ -92,7 +92,7 @@ public:
 	void set_term_i(double t_i){	term_i=t_i;}
 	void set_currentCores_d(int c_d){	currentCores_d=c_d;}
   void set_nu_d(double n){	nu_d=n;}
-	void  set_nCores_DB_d(int n){	nCores_DB_d=n;	}
+	void set_nCores_DB_d(int n){	nCores_DB_d=n;	}
 	void set_bound (int b){	bound= b;}
 	void set_R_d(double r){	R_d=r;}
 	void set_baseFO(double f){baseFO=f;}

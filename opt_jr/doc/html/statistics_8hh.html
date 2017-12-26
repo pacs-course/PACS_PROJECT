@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -85,16 +85,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
 <div class="title">statistics.hh File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br/>
 <code>#include &lt;vector&gt;</code><br/>
-<code>#include &quot;optJrParameters.hh&quot;</code><br/>
+<code>#include &quot;<a class="el" href="opt__jr__parameters_8hh_source.html">opt_jr_parameters.hh</a>&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
@@ -107,129 +105,11 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatistic.html">Statistic</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatistic__iter.html">Statistic_iter</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:abd0800e960b601bba1c0734f6f8e4949"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="statistics_8hh.html#abd0800e960b601bba1c0734f6f8e4949">sStatistics</a> = std::vector&lt; <a class="el" href="classStatistic.html">Statistic</a> &gt;</td></tr>
-<tr class="separator:abd0800e960b601bba1c0734f6f8e4949"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a3e40d76b988cd89aade3253394444b34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="statistics_8hh.html#a3e40d76b988cd89aade3253394444b34">addStatistics</a> (<a class="el" href="statistics_8hh.html#abd0800e960b601bba1c0734f6f8e4949">sStatistics</a> &amp;statistics, int iteration, int size, double FO_total)</td></tr>
-<tr class="separator:a3e40d76b988cd89aade3253394444b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a202f8e6d9896663ccc22e85450db0112"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="statistics_8hh.html#a202f8e6d9896663ccc22e85450db0112">readStatistics</a> (<a class="el" href="statistics_8hh.html#abd0800e960b601bba1c0734f6f8e4949">sStatistics</a> &amp;statistics, <a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</td></tr>
-<tr class="separator:a202f8e6d9896663ccc22e85450db0112"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatistics.html">Statistics</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="abd0800e960b601bba1c0734f6f8e4949"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="statistics_8hh.html#abd0800e960b601bba1c0734f6f8e4949">sStatistics</a> =  std::vector&lt;<a class="el" href="classStatistic.html">Statistic</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>A vector of "Statistic" object is used to store statistical information about the local search. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a3e40d76b988cd89aade3253394444b34"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void addStatistics </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="statistics_8hh.html#abd0800e960b601bba1c0734f6f8e4949">sStatistics</a> &amp;&#160;</td>
-          <td class="paramname"><em>statistics</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>iteration</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>FO_total</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>"addStatistics" is used to add information about an iteration to the "sStatistics" object. </p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="statistics_8hh_a3e40d76b988cd89aade3253394444b34_icgraph.png" border="0" usemap="#statistics_8hh_a3e40d76b988cd89aade3253394444b34_icgraph" alt=""/></div>
-<map name="statistics_8hh_a3e40d76b988cd89aade3253394444b34_icgraph" id="statistics_8hh_a3e40d76b988cd89aade3253394444b34_icgraph">
-<area shape="rect" id="node2" href="classSearch__alterning.html#ad9d6e19f2cf4a8379d6aac498954bdde" title="Search_alterning::localSearch" alt="" coords="152,5,347,32"/><area shape="rect" id="node3" href="classSearch__separing.html#af512c83c2bfddf33a7b88a693d506a85" title="Search_separing::localSearch" alt="" coords="152,56,347,83"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a202f8e6d9896663ccc22e85450db0112"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void readStatistics </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="statistics_8hh.html#abd0800e960b601bba1c0734f6f8e4949">sStatistics</a> &amp;&#160;</td>
-          <td class="paramname"><em>statistics</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classoptJrParameters.html">optJrParameters</a> &amp;&#160;</td>
-          <td class="paramname"><em>par</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>"readStatistics" shows the statistics about localsearch iterations. </p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="statistics_8hh_a202f8e6d9896663ccc22e85450db0112_cgraph.png" border="0" usemap="#statistics_8hh_a202f8e6d9896663ccc22e85450db0112_cgraph" alt=""/></div>
-<map name="statistics_8hh_a202f8e6d9896663ccc22e85450db0112_cgraph" id="statistics_8hh_a202f8e6d9896663ccc22e85450db0112_cgraph">
-<area shape="rect" id="node2" href="classoptJrParameters.html#a6654c5bb36a825393e759b2824444bbb" title="optJrParameters::get\l_numberOfThreads" alt="" coords="157,5,301,46"/></map>
-</div>
-</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="statistics_8hh_a202f8e6d9896663ccc22e85450db0112_icgraph.png" border="0" usemap="#statistics_8hh_a202f8e6d9896663ccc22e85450db0112_icgraph" alt=""/></div>
-<map name="statistics_8hh_a202f8e6d9896663ccc22e85450db0112_icgraph" id="statistics_8hh_a202f8e6d9896663ccc22e85450db0112_icgraph">
-<area shape="rect" id="node2" href="classSearch__alterning.html#ad9d6e19f2cf4a8379d6aac498954bdde" title="Search_alterning::localSearch" alt="" coords="157,5,352,32"/><area shape="rect" id="node3" href="classSearch__separing.html#af512c83c2bfddf33a7b88a693d506a85" title="Search_separing::localSearch" alt="" coords="157,56,352,83"/></map>
-</div>
-</p>
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

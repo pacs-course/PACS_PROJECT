@@ -1,0 +1,221 @@
+\hypertarget{classCandidates}{\section{Candidates Class Reference}
+\label{classCandidates}\index{Candidates@{Candidates}}
+}
+
+
+{\ttfamily \#include $<$candidates.\-hh$>$}
+
+
+
+Collaboration diagram for Candidates\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classCandidates__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCandidates_ad76cf8f7ae979cc49afd67b5fc9c702b}{add\-\_\-candidate} (\hyperlink{classApplication}{Application} app\-\_\-i, \hyperlink{classApplication}{Application} app\-\_\-j, int contr1, int contr2, double delta, double delta\-\_\-i, double delta\-\_\-j)
+\item 
+void \hyperlink{classCandidates_a9cc75e29ad2d0f2eb29fae2801c8e58b}{invoke\-\_\-predictor\-\_\-open\-M\-P} (\hyperlink{classOpt__jr__parameters}{Opt\-\_\-jr\-\_\-parameters} \&par, \hyperlink{classConfiguration}{Configuration} \&configuration)
+\item 
+void \hyperlink{classCandidates_a0f5bfe459063108d80ed8dce02c6c07b}{invoke\-\_\-predictor\-\_\-seq} (M\-Y\-S\-Q\-L $\ast$conn, \hyperlink{classOpt__jr__parameters}{Opt\-\_\-jr\-\_\-parameters} \&par, \hyperlink{classConfiguration}{Configuration} \&configuration)
+\item 
+int \hyperlink{classCandidates_ac10d9fe35730800bacac1d89ab117a4c}{get\-\_\-size} ()
+\item 
+bool \hyperlink{classCandidates_aaba3941ba950a669776a1e53fb710691}{get\-\_\-empty} ()
+\item 
+std\-::list$<$ \hyperlink{classCandidate__pair}{Candidate\-\_\-pair} $>$\\*
+\-::iterator \hyperlink{classCandidates_a69a3001a09b54813959d2b44662f7f18}{get\-\_\-begin} ()
+\item 
+std\-::list$<$ \hyperlink{classCandidate__pair}{Candidate\-\_\-pair} $>$\\*
+\-::const\-\_\-iterator \hyperlink{classCandidates_a9fb1fe0a56d70f0f0f4243cd7e32448a}{get\-\_\-cbegin} ()
+\item 
+std\-::list$<$ \hyperlink{classCandidate__pair}{Candidate\-\_\-pair} $>$\\*
+\-::iterator \hyperlink{classCandidates_ad763ac469728621a81010ca7c14b4246}{get\-\_\-end} ()
+\item 
+std\-::list$<$ \hyperlink{classCandidate__pair}{Candidate\-\_\-pair} $>$\\*
+\-::const\-\_\-iterator \hyperlink{classCandidates_a4c865dc532a6ead85200c7b66434bf71}{get\-\_\-cend} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::list$<$ \hyperlink{classCandidate__pair}{Candidate\-\_\-pair} $>$ \hyperlink{classCandidates_a45b43ae5f71d2162f591e4019f1bc560}{cand}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Auxiliary class used by local\-\_\-search; it stores pairs of applications for which a cores exchange could be profitable and provide methods to add \hyperlink{classCandidate__pair}{Candidate\-\_\-pair} and evaluate in parallel the objective function 
+
+\subsection{Member Function Documentation}
+\hypertarget{classCandidates_ad76cf8f7ae979cc49afd67b5fc9c702b}{\index{Candidates@{Candidates}!add\-\_\-candidate@{add\-\_\-candidate}}
+\index{add\-\_\-candidate@{add\-\_\-candidate}!Candidates@{Candidates}}
+\subsubsection[{add\-\_\-candidate}]{\setlength{\rightskip}{0pt plus 5cm}void Candidates\-::add\-\_\-candidate (
+\begin{DoxyParamCaption}
+\item[{{\bf Application}}]{app\-\_\-i, }
+\item[{{\bf Application}}]{app\-\_\-j, }
+\item[{int}]{contr1, }
+\item[{int}]{contr2, }
+\item[{double}]{delta, }
+\item[{double}]{delta\-\_\-i, }
+\item[{double}]{delta\-\_\-j}
+\end{DoxyParamCaption}
+)}}\label{classCandidates_ad76cf8f7ae979cc49afd67b5fc9c702b}
+\char`\"{}add\-\_\-candidate\char`\"{} build a \char`\"{}\-Candidate\-\_\-pair\char`\"{} object and stores it in a \hyperlink{classCandidates}{Candidates} container ordered by increasing delta F\-O 
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCandidates_ad76cf8f7ae979cc49afd67b5fc9c702b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCandidates_a69a3001a09b54813959d2b44662f7f18}{\index{Candidates@{Candidates}!get\-\_\-begin@{get\-\_\-begin}}
+\index{get\-\_\-begin@{get\-\_\-begin}!Candidates@{Candidates}}
+\subsubsection[{get\-\_\-begin}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<${\bf Candidate\-\_\-pair}$>$\-::iterator Candidates\-::get\-\_\-begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCandidates_a69a3001a09b54813959d2b44662f7f18}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCandidates_a69a3001a09b54813959d2b44662f7f18_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCandidates_a9fb1fe0a56d70f0f0f4243cd7e32448a}{\index{Candidates@{Candidates}!get\-\_\-cbegin@{get\-\_\-cbegin}}
+\index{get\-\_\-cbegin@{get\-\_\-cbegin}!Candidates@{Candidates}}
+\subsubsection[{get\-\_\-cbegin}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<${\bf Candidate\-\_\-pair}$>$\-::const\-\_\-iterator Candidates\-::get\-\_\-cbegin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCandidates_a9fb1fe0a56d70f0f0f4243cd7e32448a}
+\hypertarget{classCandidates_a4c865dc532a6ead85200c7b66434bf71}{\index{Candidates@{Candidates}!get\-\_\-cend@{get\-\_\-cend}}
+\index{get\-\_\-cend@{get\-\_\-cend}!Candidates@{Candidates}}
+\subsubsection[{get\-\_\-cend}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<${\bf Candidate\-\_\-pair}$>$\-::const\-\_\-iterator Candidates\-::get\-\_\-cend (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCandidates_a4c865dc532a6ead85200c7b66434bf71}
+\hypertarget{classCandidates_aaba3941ba950a669776a1e53fb710691}{\index{Candidates@{Candidates}!get\-\_\-empty@{get\-\_\-empty}}
+\index{get\-\_\-empty@{get\-\_\-empty}!Candidates@{Candidates}}
+\subsubsection[{get\-\_\-empty}]{\setlength{\rightskip}{0pt plus 5cm}bool Candidates\-::get\-\_\-empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCandidates_aaba3941ba950a669776a1e53fb710691}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCandidates_aaba3941ba950a669776a1e53fb710691_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCandidates_ad763ac469728621a81010ca7c14b4246}{\index{Candidates@{Candidates}!get\-\_\-end@{get\-\_\-end}}
+\index{get\-\_\-end@{get\-\_\-end}!Candidates@{Candidates}}
+\subsubsection[{get\-\_\-end}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<${\bf Candidate\-\_\-pair}$>$\-::iterator Candidates\-::get\-\_\-end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCandidates_ad763ac469728621a81010ca7c14b4246}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCandidates_ad763ac469728621a81010ca7c14b4246_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCandidates_ac10d9fe35730800bacac1d89ab117a4c}{\index{Candidates@{Candidates}!get\-\_\-size@{get\-\_\-size}}
+\index{get\-\_\-size@{get\-\_\-size}!Candidates@{Candidates}}
+\subsubsection[{get\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int Candidates\-::get\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCandidates_ac10d9fe35730800bacac1d89ab117a4c}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{classCandidates_ac10d9fe35730800bacac1d89ab117a4c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCandidates_a9cc75e29ad2d0f2eb29fae2801c8e58b}{\index{Candidates@{Candidates}!invoke\-\_\-predictor\-\_\-open\-M\-P@{invoke\-\_\-predictor\-\_\-open\-M\-P}}
+\index{invoke\-\_\-predictor\-\_\-open\-M\-P@{invoke\-\_\-predictor\-\_\-open\-M\-P}!Candidates@{Candidates}}
+\subsubsection[{invoke\-\_\-predictor\-\_\-open\-M\-P}]{\setlength{\rightskip}{0pt plus 5cm}void Candidates\-::invoke\-\_\-predictor\-\_\-open\-M\-P (
+\begin{DoxyParamCaption}
+\item[{{\bf Opt\-\_\-jr\-\_\-parameters} \&}]{par, }
+\item[{{\bf Configuration} \&}]{configuration}
+\end{DoxyParamCaption}
+)}}\label{classCandidates_a9cc75e29ad2d0f2eb29fae2801c8e58b}
+\char`\"{}invoke\-\_\-predictor\-\_\-open\-M\-P\char`\"{} calls in parallel the component for each pair of application and it stores the results for each pair in real\-\_\-i, real\-\_\-j. 
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCandidates_a9cc75e29ad2d0f2eb29fae2801c8e58b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCandidates_a0f5bfe459063108d80ed8dce02c6c07b}{\index{Candidates@{Candidates}!invoke\-\_\-predictor\-\_\-seq@{invoke\-\_\-predictor\-\_\-seq}}
+\index{invoke\-\_\-predictor\-\_\-seq@{invoke\-\_\-predictor\-\_\-seq}!Candidates@{Candidates}}
+\subsubsection[{invoke\-\_\-predictor\-\_\-seq}]{\setlength{\rightskip}{0pt plus 5cm}void Candidates\-::invoke\-\_\-predictor\-\_\-seq (
+\begin{DoxyParamCaption}
+\item[{M\-Y\-S\-Q\-L $\ast$}]{conn, }
+\item[{{\bf Opt\-\_\-jr\-\_\-parameters} \&}]{par, }
+\item[{{\bf Configuration} \&}]{configuration}
+\end{DoxyParamCaption}
+)}}\label{classCandidates_a0f5bfe459063108d80ed8dce02c6c07b}
+\char`\"{}invoke\-\_\-predictor\-\_\-seq\char`\"{} calls sequencially the component for each pair of application and it stores the results for each pair in real\-\_\-i, real\-\_\-j. 
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCandidates_a0f5bfe459063108d80ed8dce02c6c07b_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classCandidates_a45b43ae5f71d2162f591e4019f1bc560}{\index{Candidates@{Candidates}!cand@{cand}}
+\index{cand@{cand}!Candidates@{Candidates}}
+\subsubsection[{cand}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<${\bf Candidate\-\_\-pair}$>$ Candidates\-::cand\hspace{0.3cm}{\ttfamily [private]}}}\label{classCandidates_a45b43ae5f71d2162f591e4019f1bc560}
+Container where applications candidates to change cores are stored in order of increasing delta\-F\-O 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/\hyperlink{candidates_8hh}{candidates.\-hh}\item 
+/vagrant/\-P\-R\-O\-J\-E\-C\-T\-\_\-\-S\-P\-A\-R\-K/\-P\-A\-C\-S\-\_\-\-P\-R\-O\-J\-E\-C\-T/opt\-\_\-jr/src/\hyperlink{candidates_8cpp}{candidates.\-cpp}\end{DoxyCompactItemize}

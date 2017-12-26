@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['localsearch',['localSearch',['../classsearch.html#a43081dcb0553c48414c0e358323fecb2',1,'search::localSearch()'],['../classSearch__alterning.html#ad9d6e19f2cf4a8379d6aac498954bdde',1,'Search_alterning::localSearch()'],['../classSearch__base.html#aa8817b112abf47a39909017933c92cbf',1,'Search_base::localSearch()'],['../classSearch__separing.html#af512c83c2bfddf33a7b88a693d506a85',1,'Search_separing::localSearch()']]],
-  ['ls',['ls',['../invokePredictor__helper_8cpp.html#ab01a14d4a3e7b93f83060c8664c3bc42',1,'ls(char *pattern, optJrParameters &amp;par):&#160;invokePredictor_helper.cpp'],['../invokePredictor__helper_8hh.html#ab01a14d4a3e7b93f83060c8664c3bc42',1,'ls(char *pattern, optJrParameters &amp;par):&#160;invokePredictor_helper.cpp']]]
+  ['local_5fsearch',['local_search',['../classSearch.html#a32d434fae76c18149f8b15aedadc5f75',1,'Search::local_search()'],['../classSearch__alterning.html#a981af51221c3749c4c20e58b8a622cb1',1,'Search_alterning::local_search()'],['../classSearch__base.html#ab3730b1118efbe97065f1ea9715a90dc',1,'Search_base::local_search()'],['../classSearch__separing.html#a5729213168347b0bb10889548dffad15',1,'Search_separing::local_search()']]],
+  ['ls',['ls',['../invoke__predictor__helper_8cpp.html#a80d09552b3ce875c810f74a5300dee30',1,'ls(char *pattern, Opt_jr_parameters &amp;par):&#160;invoke_predictor_helper.cpp'],['../invoke__predictor__helper_8hh.html#a80d09552b3ce875c810f74a5300dee30',1,'ls(char *pattern, Opt_jr_parameters &amp;par):&#160;invoke_predictor_helper.cpp']]]
 ];

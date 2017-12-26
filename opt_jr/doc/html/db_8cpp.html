@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -94,14 +94,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;string.h&gt;</code><br/>
 <code>#include &lt;string&gt;</code><br/>
 <code>#include &quot;<a class="el" href="db_8hh_source.html">db.hh</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="debugmessage_8hh_source.html">debugmessage.hh</a>&quot;</code><br/>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ab33dd75bdc4f92249542a2bb81b343fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="db_8cpp.html#ab33dd75bdc4f92249542a2bb81b343fd">DBerror</a> (MYSQL *conn, char *msg)</td></tr>
 <tr class="separator:ab33dd75bdc4f92249542a2bb81b343fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2491baf1bdfde4dc81303042399a6278"><td class="memItemLeft" align="right" valign="top">MYSQL_ROW&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="db_8cpp.html#a2491baf1bdfde4dc81303042399a6278">executeSQL</a> (MYSQL *conn, char *statement, <a class="el" href="classoptJrParameters.html">optJrParameters</a> par)</td></tr>
-<tr class="separator:a2491baf1bdfde4dc81303042399a6278"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d5ba67ab50ce1ffc9817b97612e94c7"><td class="memItemLeft" align="right" valign="top">MYSQL_ROW&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="db_8cpp.html#a7d5ba67ab50ce1ffc9817b97612e94c7">executeSQL</a> (MYSQL *conn, char *statement, <a class="el" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> par)</td></tr>
+<tr class="separator:a7d5ba67ab50ce1ffc9817b97612e94c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aced0f518cdbba35b17b3ce9f316131ce"><td class="memItemLeft" align="right" valign="top">MYSQL *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="db_8cpp.html#aced0f518cdbba35b17b3ce9f316131ce">DBopen</a> (char *host, char *port, char *login, char *passw, char *dbName)</td></tr>
 <tr class="separator:aced0f518cdbba35b17b3ce9f316131ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54af21d55b55bae7b63cb28d3cd05758"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="db_8cpp.html#a54af21d55b55bae7b63cb28d3cd05758">DBclose</a> (MYSQL *conn)</td></tr>
@@ -121,7 +120,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Close DB connection (not substantially changed from original C version) </p>
+<p>Close DB connection </p>
 
 </div>
 </div>
@@ -148,7 +147,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Standard error procedure for DB operations (not substantially changed from original C version) </p>
+<p>Standard error procedure for DB operations </p>
 
 </div>
 </div>
@@ -193,7 +192,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Open a DB connection (not substantially changed from original C version) </p>
+<p>Open a DB connection </p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -206,7 +205,7 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a2491baf1bdfde4dc81303042399a6278"></a>
+<a class="anchor" id="a7d5ba67ab50ce1ffc9817b97612e94c7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -225,7 +224,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classoptJrParameters.html">optJrParameters</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classOpt__jr__parameters.html">Opt_jr_parameters</a>&#160;</td>
           <td class="paramname"><em>par</em>&#160;</td>
         </tr>
         <tr>
@@ -235,14 +234,14 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Execute SQL statement (not substantially changed from original C version) </p>
+<p>Execute SQL statement </p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="db_8cpp_a2491baf1bdfde4dc81303042399a6278_cgraph.png" border="0" usemap="#db_8cpp_a2491baf1bdfde4dc81303042399a6278_cgraph" alt=""/></div>
-<map name="db_8cpp_a2491baf1bdfde4dc81303042399a6278_cgraph" id="db_8cpp_a2491baf1bdfde4dc81303042399a6278_cgraph">
-<area shape="rect" id="node2" href="db_8cpp.html#ab33dd75bdc4f92249542a2bb81b343fd" title="DBerror" alt="" coords="172,5,239,32"/><area shape="rect" id="node3" href="debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="150,56,261,83"/></map>
+<div class="center"><img src="db_8cpp_a7d5ba67ab50ce1ffc9817b97612e94c7_cgraph.png" border="0" usemap="#db_8cpp_a7d5ba67ab50ce1ffc9817b97612e94c7_cgraph" alt=""/></div>
+<map name="db_8cpp_a7d5ba67ab50ce1ffc9817b97612e94c7_cgraph" id="db_8cpp_a7d5ba67ab50ce1ffc9817b97612e94c7_cgraph">
+<area shape="rect" id="node2" href="db_8cpp.html#ab33dd75bdc4f92249542a2bb81b343fd" title="DBerror" alt="" coords="185,5,252,32"/><area shape="rect" id="node3" href="classOpt__jr__parameters.html#a860bf209221b6c5e1c4394d1ae4a058f" title="Opt_jr_parameters::\ldebug_message" alt="" coords="150,57,287,98"/></map>
 </div>
 </p>
 

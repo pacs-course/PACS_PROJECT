@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -92,9 +92,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SEARCH_HH</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="readConfigurationFile_8hh.html">readConfigurationFile.hh</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="configuration_8hh.html">configuration.hh</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="batch_8hh.html">batch.hh</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="optjrParameters_8hh.html">optjrParameters.hh</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="opt__jr__parameters_8hh.html">opt_jr_parameters.hh</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="candidates_8hh.html">candidates.hh</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;mysql.h&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="search__separing_8hh.html">search_separing.hh</a>&quot;</span></div>
@@ -102,19 +102,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="search__base_8hh.html">search_base.hh</a>&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Policy&gt;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classsearch.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classsearch.html">search</a> :<span class="keyword">public</span> <a class="code" href="classSearch__base.html">Search_base</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classSearch.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSearch.html">Search</a> :<span class="keyword">public</span> <a class="code" href="classSearch__base.html">Search_base</a> {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classsearch.html#a68606af5b4adbb5d9f7df88f8ed06e2c">   27</a></span>&#160;  <a class="code" href="classsearch.html#a68606af5b4adbb5d9f7df88f8ed06e2c">search</a>(<a class="code" href="classBatch.html">Batch</a> app_m): <a class="code" href="classSearch__base.html">Search_base</a>(app_m){};</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classSearch.html#a59b826749138fdaa93c41b1e0697da58">   27</a></span>&#160;  <a class="code" href="classSearch.html#a59b826749138fdaa93c41b1e0697da58">Search</a>(<a class="code" href="classBatch.html">Batch</a> app_m): <a class="code" href="classSearch__base.html">Search_base</a>(app_m){};</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classsearch.html#a43081dcb0553c48414c0e358323fecb2">   38</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classsearch.html#a43081dcb0553c48414c0e358323fecb2">localSearch</a>(<a class="code" href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a> &amp;configuration, MYSQL *conn,  <a class="code" href="classoptJrParameters.html">optJrParameters</a> &amp;par)</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classSearch.html#a32d434fae76c18149f8b15aedadc5f75">   38</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classSearch.html#a32d434fae76c18149f8b15aedadc5f75">local_search</a>(<a class="code" href="classConfiguration.html">Configuration</a> &amp;configuration, MYSQL *conn,  <a class="code" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;par)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::string debugMsg;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    Policy P;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    P.localSearch(<a class="code" href="classSearch__base.html#ad4cadf0273cce78e1ae9920bd9100e7a">App_manager</a>, configuration, conn, par);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    P.local_search(<a class="code" href="classSearch__base.html#ad4cadf0273cce78e1ae9920bd9100e7a">App_manager</a>, configuration, conn, par);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  }</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
@@ -125,20 +125,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="classsearch_html"><div class="ttname"><a href="classsearch.html">search</a></div><div class="ttdef"><b>Definition:</b> search.hh:23</div></div>
-<div class="ttc" id="readConfigurationFile_8hh_html"><div class="ttname"><a href="readConfigurationFile_8hh.html">readConfigurationFile.hh</a></div></div>
+<div class="ttc" id="classSearch_html_a32d434fae76c18149f8b15aedadc5f75"><div class="ttname"><a href="classSearch.html#a32d434fae76c18149f8b15aedadc5f75">Search::local_search</a></div><div class="ttdeci">void local_search(Configuration &amp;configuration, MYSQL *conn, Opt_jr_parameters &amp;par)</div><div class="ttdef"><b>Definition:</b> search.hh:38</div></div>
 <div class="ttc" id="candidates_8hh_html"><div class="ttname"><a href="candidates_8hh.html">candidates.hh</a></div></div>
-<div class="ttc" id="classSearch__base_html"><div class="ttname"><a href="classSearch__base.html">Search_base</a></div><div class="ttdef"><b>Definition:</b> search_base.hh:6</div></div>
-<div class="ttc" id="classSearch__base_html_ad4cadf0273cce78e1ae9920bd9100e7a"><div class="ttname"><a href="classSearch__base.html#ad4cadf0273cce78e1ae9920bd9100e7a">Search_base::App_manager</a></div><div class="ttdeci">Batch App_manager</div><div class="ttdef"><b>Definition:</b> search_base.hh:12</div></div>
-<div class="ttc" id="classsearch_html_a68606af5b4adbb5d9f7df88f8ed06e2c"><div class="ttname"><a href="classsearch.html#a68606af5b4adbb5d9f7df88f8ed06e2c">search::search</a></div><div class="ttdeci">search(Batch app_m)</div><div class="ttdef"><b>Definition:</b> search.hh:27</div></div>
-<div class="ttc" id="readConfigurationFile_8hh_html_ab8f35b1da3261263c5e9c0e7c8921f5c"><div class="ttname"><a href="readConfigurationFile_8hh.html#ab8f35b1da3261263c5e9c0e7c8921f5c">sConfiguration</a></div><div class="ttdeci">std::unordered_map&lt; std::string, std::string &gt; sConfiguration</div><div class="ttdef"><b>Definition:</b> readConfigurationFile.hh:12</div></div>
+<div class="ttc" id="classSearch__base_html"><div class="ttname"><a href="classSearch__base.html">Search_base</a></div><div class="ttdef"><b>Definition:</b> search_base.hh:8</div></div>
+<div class="ttc" id="classSearch__base_html_ad4cadf0273cce78e1ae9920bd9100e7a"><div class="ttname"><a href="classSearch__base.html#ad4cadf0273cce78e1ae9920bd9100e7a">Search_base::App_manager</a></div><div class="ttdeci">Batch App_manager</div><div class="ttdef"><b>Definition:</b> search_base.hh:14</div></div>
+<div class="ttc" id="configuration_8hh_html"><div class="ttname"><a href="configuration_8hh.html">configuration.hh</a></div></div>
 <div class="ttc" id="classBatch_html"><div class="ttname"><a href="classBatch.html">Batch</a></div><div class="ttdef"><b>Definition:</b> batch.hh:13</div></div>
-<div class="ttc" id="classsearch_html_a43081dcb0553c48414c0e358323fecb2"><div class="ttname"><a href="classsearch.html#a43081dcb0553c48414c0e358323fecb2">search::localSearch</a></div><div class="ttdeci">void localSearch(sConfiguration &amp;configuration, MYSQL *conn, optJrParameters &amp;par)</div><div class="ttdef"><b>Definition:</b> search.hh:38</div></div>
-<div class="ttc" id="classoptJrParameters_html"><div class="ttname"><a href="classoptJrParameters.html">optJrParameters</a></div><div class="ttdef"><b>Definition:</b> optjrParameters.hh:17</div></div>
+<div class="ttc" id="classOpt__jr__parameters_html"><div class="ttname"><a href="classOpt__jr__parameters.html">Opt_jr_parameters</a></div><div class="ttdef"><b>Definition:</b> opt_jr_parameters.hh:17</div></div>
+<div class="ttc" id="classSearch_html"><div class="ttname"><a href="classSearch.html">Search</a></div><div class="ttdef"><b>Definition:</b> search.hh:23</div></div>
 <div class="ttc" id="search__alterning_8hh_html"><div class="ttname"><a href="search__alterning_8hh.html">search_alterning.hh</a></div></div>
+<div class="ttc" id="classConfiguration_html"><div class="ttname"><a href="classConfiguration.html">Configuration</a></div><div class="ttdef"><b>Definition:</b> configuration.hh:10</div></div>
+<div class="ttc" id="classSearch_html_a59b826749138fdaa93c41b1e0697da58"><div class="ttname"><a href="classSearch.html#a59b826749138fdaa93c41b1e0697da58">Search::Search</a></div><div class="ttdeci">Search(Batch app_m)</div><div class="ttdef"><b>Definition:</b> search.hh:27</div></div>
 <div class="ttc" id="search__separing_8hh_html"><div class="ttname"><a href="search__separing_8hh.html">search_separing.hh</a></div></div>
 <div class="ttc" id="search__base_8hh_html"><div class="ttname"><a href="search__base_8hh.html">search_base.hh</a></div></div>
-<div class="ttc" id="optjrParameters_8hh_html"><div class="ttname"><a href="optjrParameters_8hh.html">optjrParameters.hh</a></div></div>
+<div class="ttc" id="opt__jr__parameters_8hh_html"><div class="ttname"><a href="opt__jr__parameters_8hh.html">opt_jr_parameters.hh</a></div></div>
 <div class="ttc" id="batch_8hh_html"><div class="ttname"><a href="batch_8hh.html">batch.hh</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

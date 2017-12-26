@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['globalfocalculation',['globalFOcalculation',['../classoptJrParameters.html#ad00a4d00bc8b65f4323a1bd1383c632b',1,'optJrParameters']]]
+  ['global_5ffo_5fcalculation',['global_FO_calculation',['../classOpt__jr__parameters.html#adf939a159428f604a0d524bee1234bf2',1,'Opt_jr_parameters']]]
 ];

@@ -9,12 +9,12 @@ const double epsilon = 0.001; ///< precision in double_compare
 
 
 /**
-Measures the elapsed time
+elapsed_time measures the elapsed time
 */
 double elapsed_time(struct timeval  tv1, struct timeval tv2);
 
 /**
-"double_compare" compare two doubles according to a certain precision (epsilon)
+double_compare compares two doubles according to a certain precision (epsilon)
 */
 int double_compare(double a, double b);
 

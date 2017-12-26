@@ -1,4 +1,4 @@
 <map id="Application::get_alpha" name="Application::get_alpha">
-<area shape="rect" id="node2" href="$classObjFun.html#abb89a994d34b44ec4cb6e0e2562c0107" title="ObjFun::ObjFunctionComponent\lApprox" alt="" coords="206,5,415,46"/>
-<area shape="rect" id="node3" href="$classSearch__methods.html#afde3e60f82e466ed1161bbeb99f6d424" title="Search_methods::approximated_loop" alt="" coords="464,12,701,39"/>
+<area shape="rect" id="node2" href="$classObjective__fun.html#a551109cf9927773062e9e3668c00eb59" title="Objective_fun::component\l_approx" alt="" coords="206,5,381,46"/>
+<area shape="rect" id="node3" href="$classSearch__methods.html#aba1565526a0ce1b9e349918057f6f2c2" title="Search_methods::approximated_loop" alt="" coords="429,12,667,39"/>
 </map>

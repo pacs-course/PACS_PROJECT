@@ -18,11 +18,11 @@
 * 		Description:			It checks that the total allocated nodes is still less or equal than the total number of cores available N
 */
 
-void Search_methods::check_total_nodes(int N, Batch &App_manager)
+void Search_methods::check_total_nodes(int N, Batch &app_manager)
 {
   int total = 0;
 
-  for (auto it= App_manager.get_begin(); it!=App_manager.get_end();++it)
+  for (auto it= app_manager.get_begin(); it!=app_manager.get_end();++it)
   {
     total+= it->get_currentCores_d();
     if (total > N)
@@ -40,14 +40,14 @@ void Search_methods::check_total_nodes(int N, Batch &App_manager)
 * Description: It estimates the objective function for each move. The candidate applications for which the move is profitable are stored in a sCandidate object
 */
 
-Candidates Search_methods::approximated_loop( Batch &App_manager, /*int &iteration,*/ Opt_jr_parameters &par )
+Candidates Search_methods::approximated_loop( Batch &app_manager, /*int &iteration,*/ Opt_jr_parameters &par )
 {
 
   std::string debugMsg;
   Objective_fun OF;
 
 
-  if (App_manager.get_empty())
+  if (app_manager.get_empty())
   {
     printf("Error: approximatedLoop: NO Applications\n");
     exit(-1);
@@ -61,14 +61,14 @@ Candidates Search_methods::approximated_loop( Batch &App_manager, /*int &iterati
 
 
   debugMsg= "Approximated iterated loop"; par.debug_message(debugMsg);
-  auto application_i=App_manager.get_begin();
+  auto application_i=app_manager.get_begin();
 
 
-  while (application_i!=App_manager.get_end())
+  while (application_i!=app_manager.get_end())
   {
 
-    auto application_j = App_manager.get_begin();
-    while (application_j != App_manager.get_end())
+    auto application_j = app_manager.get_begin();
+    while (application_j != app_manager.get_end())
     {
       if (application_i->get_session_app_id()!=application_j->get_session_app_id())
       {
@@ -144,11 +144,11 @@ Candidates Search_methods::approximated_loop( Batch &App_manager, /*int &iterati
 
   /*
   * 		Name:					exact_loop
-  * 		Description:  It evaluates the delta FO for all the candidates in app_pairs and it does the best change (if it exist) in App_manager
+  * 		Description:  It evaluates the delta FO for all the candidates in app_pairs and it does the best change (if it exist) in app_manager
   *
   */
 
-  void Search_methods::exact_loop(Candidates &app_pairs, Configuration &configuration,  MYSQL *conn,  Batch &App_manager, Opt_jr_parameters &par, int &index_pair)
+  void Search_methods::exact_loop(Candidates &app_pairs, Configuration &configuration,  MYSQL *conn,  Batch &app_manager, Opt_jr_parameters &par, int &index_pair)
   {
 
     std::string debugMsg;
@@ -232,7 +232,7 @@ Candidates Search_methods::approximated_loop( Batch &App_manager, /*int &iterati
       }
 
 
-      for (auto elem= App_manager.get_begin(); elem!=App_manager.get_end(); elem++)
+      for (auto elem= app_manager.get_begin(); elem!=app_manager.get_end(); elem++)
       {
         if (it->get_app_id_i()==elem->get_app_id() && it->get_session_app_id_i()==elem->get_session_app_id())
         {
