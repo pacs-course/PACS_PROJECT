@@ -25,7 +25,7 @@ void Statistics::add_statistics(int iteration, int size, double FO_total)
   statistics.push_back(tmp);
 }
 
-void Statistics::read_statistics(OPT_JR_parameters &par)
+void Statistics::read_statistics(Opt_jr_parameters &par)
 {
 
   std::cout << "\n\n*************************************************\n";

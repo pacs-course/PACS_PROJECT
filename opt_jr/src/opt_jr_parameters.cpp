@@ -1,6 +1,6 @@
 
-#include "optjrparameters.hh"
-#include "optjrParam_helper.hh"
+#include "opt_jr_parameters.hh"
+#include "opt_jr_parameters_helper.hh"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,7 +12,7 @@
  Constructor
  */
 
-OPT_JR_parameters::OPT_JR_parameters (char **args, int argc)
+Opt_jr_parameters::Opt_jr_parameters (char **args, int argc)
 {
 
 	if (argc != ARGS) Usage(argc);
@@ -57,13 +57,13 @@ OPT_JR_parameters::OPT_JR_parameters (char **args, int argc)
 }
 
 
-void OPT_JR_parameters::set_number_of_threads(Configuration &configuration)
+void Opt_jr_parameters::set_number_of_threads(Configuration &configuration)
 {
 	/* Read the threads number */
 	number_of_threads = stoi(configuration["THREADS_NUMBER"]);
 }
 
-void OPT_JR_parameters::debug_message(std::string &string)
+void Opt_jr_parameters::debug_message(std::string &string)
 {
 	if (debug == 1)
   {

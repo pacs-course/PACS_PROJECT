@@ -2,8 +2,8 @@
 #define BOUNDS_HH
 
 #include "batch.hh"
-#include "ConfigurationFile.hh"
-#include "optjrparameters.hh"
+#include "configuration.hh"
+#include "opt_jr_parameters.hh"
 #include <mysql.h>
 #include <string.h>
 
@@ -27,14 +27,14 @@ class Bounds {
 
   */
   void  bound(Configuration &configuration, MYSQL *conn, Application &app,
-              OPT_JR_parameters &par, int flagDagsim);
+              Opt_jr_parameters &par, int flagDagsim);
   /**
   Initially, this function queries the lookup table to find the number of cores, calculated by OPT_IC earlier,
   given a deadline, an application id and a dataset size.
   Secondly, it invokes the bound function.
   */
   void find_bound(Configuration &configuration, MYSQL *conn, char* db,  Application &app,
-                 OPT_JR_parameters &par);
+                 Opt_jr_parameters &par);
 public:
 
   Bounds(Batch app_m): app_manager(app_m){};
@@ -47,7 +47,7 @@ public:
   greater than 0, it does the computations in parallel (using openMP).
   */
   void calculate_bounds( Configuration &configuration,
-                       MYSQL *conn,  OPT_JR_parameters &par);
+                       MYSQL *conn,  Opt_jr_parameters &par);
 
   Batch get_app_manager(){  return app_manager;}
 

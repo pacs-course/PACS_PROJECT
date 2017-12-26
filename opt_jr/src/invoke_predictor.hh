@@ -2,9 +2,9 @@
 #define INVOKE_PREDICTOR_HH
 
 
-#include "invokePredictor_helper.hh"
-#include "ConfigurationFile.hh"
-#include "optjrParameters.hh"
+#include "invoke_predictor_helper.hh"
+#include "configuration.hh"
+#include "opt_jr_parameters.hh"
 
 #include "db.hh"
 
@@ -32,7 +32,7 @@
 
 char* invoke_predictor(Configuration  &configuration, MYSQL *conn, int nNodes, int currentCores,
 											char * memory, int datasize,  char *sessionId, char *appId, char *stage,
-											OPT_JR_parameters &par, int flagDagsim);
+											Opt_jr_parameters &par, int flagDagsim);
 
 
 

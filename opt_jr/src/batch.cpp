@@ -3,7 +3,8 @@
 
 
 
-#include "objectiveFunction.hh"
+#include "objective_fun.hh"
+#include "db.hh"
 
 #include <iostream>
 #include <string>
@@ -21,7 +22,7 @@
  */
 
 void
-Batch::calculate_nu(OPT_JR_parameters &par)
+Batch::calculate_nu(Opt_jr_parameters &par)
 {
 
   std::string debugMsg;
@@ -111,7 +112,7 @@ Batch::calculate_nu(OPT_JR_parameters &par)
  * Description			For each application, a base value for the objective function is calculated.
  */
 
-void Batch::initialize(Configuration  &configuration, MYSQL *conn, OPT_JR_parameters &par)
+void Batch::initialize(Configuration  &configuration, MYSQL *conn, Opt_jr_parameters &par)
 {
 	std::string debugMsg;
   Objective_fun OF;
@@ -138,7 +139,7 @@ void Batch::initialize(Configuration  &configuration, MYSQL *conn, OPT_JR_parame
  *              cores to the applications that may need more resources
  */
 
-void Batch::fix_initial_solution(OPT_JR_parameters &par)
+void Batch::fix_initial_solution(Opt_jr_parameters &par)
 {
 
 	int allocatedCores;
@@ -254,7 +255,7 @@ void Batch::fix_initial_solution(OPT_JR_parameters &par)
  */
 
 
-void Batch::write_results(MYSQL *conn, char * dbName, OPT_JR_parameters &par)
+void Batch::write_results(MYSQL *conn, char * dbName, Opt_jr_parameters &par)
 {
 	std::string debugMsg;
 

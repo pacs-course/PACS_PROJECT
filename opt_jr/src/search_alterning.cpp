@@ -1,9 +1,9 @@
 #include "search_alterning.hh"
 #include "statistics.hh"
-#include "objectiveFunction.hh"
+#include "objective_fun.hh"
 
 
-void Search_alterning::local_search(Batch &app_manager, Configuration &configuration, MYSQL *conn,  OPT_JR_parameters &par)
+void Search_alterning::local_search(Batch &app_manager, Configuration &configuration, MYSQL *conn,  Opt_jr_parameters &par)
 {
   std::string debugMsg;
   Candidates sCandidateApproximated ;

@@ -2,7 +2,7 @@
 #define SRC_DB_H_
 #include <my_global.h>
 #include <mysql.h>
-#include "optjrParameters.hh"
+#include "opt_jr_parameters.hh"
 
 
 
@@ -19,7 +19,7 @@ void DBerror(MYSQL *conn, char * msg);
 /**
   Execute SQL statement
 */
-MYSQL_ROW executeSQL(MYSQL *conn, char *statement, OPT_JR_parameters par);
+MYSQL_ROW executeSQL(MYSQL *conn, char *statement, Opt_jr_parameters par);
 
 /**
   Open a DB connection

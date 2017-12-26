@@ -2,9 +2,9 @@
 #define SEARCH_HH
 
 
-#include "ConfigurationFile.hh"
+#include "configuration.hh"
 #include "batch.hh"
-#include "optjrParameters.hh"
+#include "opt_jr_parameters.hh"
 #include "candidates.hh"
 #include <mysql.h>
 #include "search_separing.hh"
@@ -20,11 +20,11 @@
 
 
 template <class Policy>
-class search :public Search_base {
+class Search :public Search_base {
 
 public:
 
-  search(Batch app_m): Search_base(app_m){};
+  Search(Batch app_m): Search_base(app_m){};
 
 
   /**
@@ -35,7 +35,7 @@ public:
   for the potential best pairs it invokes the predictor.
   */
 
-  void local_search(Configuration &configuration, MYSQL *conn,  OPT_JR_parameters &par)
+  void local_search(Configuration &configuration, MYSQL *conn,  Opt_jr_parameters &par)
   {
 
     std::string debugMsg;

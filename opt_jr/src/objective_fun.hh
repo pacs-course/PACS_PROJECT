@@ -5,7 +5,7 @@
 
 
 #include "application.hh"
-#include "optjrParameters.hh"
+#include "opt_jr_parameters.hh"
 #include "batch.hh"
 
 
@@ -21,18 +21,18 @@ public:
    Currently, only one method is supported. Note that the algorithm's choice is stored in the "mode" field
    of the application structure.
    */
-  double component(Configuration &configuration, MYSQL *conn, Application  &app, OPT_JR_parameters &par);
+  double component(Configuration &configuration, MYSQL *conn, Application  &app, Opt_jr_parameters &par);
 
   /**
   component_approx computes an approximation of the objective function (and update R_d)
   */
-  double component_approx(Application &App, OPT_JR_parameters &par);
+  double component_approx(Application &App, Opt_jr_parameters &par);
 
 
   /**
   global computes the value of the total objective function
   */
-  double global(Configuration &configuration, MYSQL *conn, Batch &App_manager, OPT_JR_parameters &par);
+  double global(Configuration &configuration, MYSQL *conn, Batch &App_manager, Opt_jr_parameters &par);
 
 
 };

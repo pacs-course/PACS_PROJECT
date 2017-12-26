@@ -4,7 +4,7 @@
 #define BIG_LINE 4000
 #define BIG_TEXT 20000
 
-#include "optjrparameters.hh"
+#include "opt_jr_parameters.hh"
 #include "utility.hh"
 
 #include <string.h>
@@ -35,12 +35,12 @@ char * readFolder(char *  path);
 		Output parameters:		The output provided by the executed command
 		Description:			 This function executes a command ("cmd")
  */
-char * _run(char * cmd, OPT_JR_parameters &par);
+char * _run(char * cmd, Opt_jr_parameters &par);
 
 
 
 void writeFile(const char *filepath, const char *data);
-char * ls(char * pattern, OPT_JR_parameters &par);
+char * ls(char * pattern, Opt_jr_parameters &par);
 char * extractRowN(char *text, int row);
 char * replace(char * text, char *newLine);
 char * readFile(char * filename);

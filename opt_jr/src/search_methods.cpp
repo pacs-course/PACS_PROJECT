@@ -2,7 +2,7 @@
 
 
 #include "utility.hh"
-#include "objectiveFunction.hh"
+#include "objective_fun.hh"
 #include "statistics.hh"
 
 
@@ -40,7 +40,7 @@ void Search_methods::check_total_nodes(int N, Batch &App_manager)
 * Description: It estimates the objective function for each move. The candidate applications for which the move is profitable are stored in a sCandidate object
 */
 
-Candidates Search_methods::approximated_loop( Batch &App_manager, /*int &iteration,*/ OPT_JR_parameters &par )
+Candidates Search_methods::approximated_loop( Batch &App_manager, /*int &iteration,*/ Opt_jr_parameters &par )
 {
 
   std::string debugMsg;
@@ -148,7 +148,7 @@ Candidates Search_methods::approximated_loop( Batch &App_manager, /*int &iterati
   *
   */
 
-  void Search_methods::exact_loop(Candidates &app_pairs, Configuration &configuration,  MYSQL *conn,  Batch &App_manager, OPT_JR_parameters &par, int &index_pair)
+  void Search_methods::exact_loop(Candidates &app_pairs, Configuration &configuration,  MYSQL *conn,  Batch &App_manager, Opt_jr_parameters &par, int &index_pair)
   {
 
     std::string debugMsg;

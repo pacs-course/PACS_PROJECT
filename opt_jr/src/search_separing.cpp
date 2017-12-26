@@ -1,9 +1,9 @@
 #include "search_separing.hh"
 #include "statistics.hh"
-#include "objectiveFunction.hh"
+#include "objective_fun.hh"
 
 
-void Search_separing::local_search(Batch &app_manager, Configuration &configuration, MYSQL *conn,  OPT_JR_parameters &par)
+void Search_separing::local_search(Batch &app_manager, Configuration &configuration, MYSQL *conn,  Opt_jr_parameters &par)
 {
   std::string debugMsg;
   Candidates app_pairs ;

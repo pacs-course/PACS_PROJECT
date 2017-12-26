@@ -1,4 +1,4 @@
-#include "invokePredictor.hh"
+#include "invoke_predictor.hh"
 
 #include <iostream>
 
@@ -25,7 +25,7 @@
 
  char* invoke_predictor(Configuration  &configuration, MYSQL *conn, int nNodes, int currentCores,
 	 char * memory, int datasize,  char *sessionId, char *appId, char *stage,
-	 OPT_JR_parameters &par, int flagDagsim)
+	 Opt_jr_parameters &par, int flagDagsim)
 	 {
 
 

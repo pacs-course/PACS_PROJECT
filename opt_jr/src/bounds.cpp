@@ -2,7 +2,7 @@
 
 
 #include "db.hh"
-#include "invokePredictor.hh"
+#include "invoke_predictor.hh"
 #include <omp.h>
 #include <string>
 #include <math.h>
@@ -18,7 +18,7 @@
  *
  */
 
-void  Bounds::bound(Configuration &configuration, MYSQL *conn, Application &app, OPT_JR_parameters &par, int flagDagsim)
+void  Bounds::bound(Configuration &configuration, MYSQL *conn, Application &app, Opt_jr_parameters &par, int flagDagsim)
 {
 	double predictorOutput;
   std::string debugMsg;
@@ -142,7 +142,7 @@ void  Bounds::bound(Configuration &configuration, MYSQL *conn, Application &app,
  *
  */
 
-void Bounds::find_bound(Configuration &configuration, MYSQL *conn, char* db,  Application &app, OPT_JR_parameters &par)
+void Bounds::find_bound(Configuration &configuration, MYSQL *conn, char* db,  Application &app, Opt_jr_parameters &par)
 {
   std::string debugMsg;
   char statement[256];
@@ -182,7 +182,7 @@ void Bounds::find_bound(Configuration &configuration, MYSQL *conn, char* db,  Ap
  * CALL IN PARALLEL FINDBOUND (OPENMP)
  */
 void Bounds::calculate_bounds( Configuration &configuration, MYSQL *conn,
-                              OPT_JR_parameters &par)
+                              Opt_jr_parameters &par)
   {
 		int n_threads = par.get_number_of_threads();
     std::string debugMsg;

@@ -1,9 +1,9 @@
-#include "objectiveFunction.hh"
+#include "objective_fun.hh"
 
 
 #include <string>
 
-#include "invokePredictor.hh"
+#include "invoke_predictor.hh"
 
 /*
  * 		Name:						component
@@ -13,7 +13,7 @@
  *
  */
 
-double Objective_fun::component(Configuration &configuration, MYSQL *conn, Application  &app, OPT_JR_parameters &par)
+double Objective_fun::component(Configuration &configuration, MYSQL *conn, Application  &app, Opt_jr_parameters &par)
 {
 
 	std::string debugMsg;
@@ -64,7 +64,7 @@ double Objective_fun::component(Configuration &configuration, MYSQL *conn, Appli
   Description It computes an approximation of the objective function (and update R_d)
  */
 
-double Objective_fun::component_approx(Application &App, OPT_JR_parameters &par)//sApplication * pointer, struct OPT_JR_parameters par)
+double Objective_fun::component_approx(Application &App, Opt_jr_parameters &par)//sApplication * pointer, struct Opt_jr_parameters par)
 {
 
   std::string debugMsg;
@@ -92,7 +92,7 @@ double Objective_fun::component_approx(Application &App, OPT_JR_parameters &par)
  * Output parameters: double, the total value of objective function
  * Description:It calculates the value of the total objective function
  */
-double Objective_fun::global(Configuration &configuration, MYSQL *conn, Batch & App_manager, OPT_JR_parameters &par)
+double Objective_fun::global(Configuration &configuration, MYSQL *conn, Batch & App_manager, Opt_jr_parameters &par)
 {
 
 	double sum = 0;

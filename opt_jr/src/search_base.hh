@@ -17,7 +17,7 @@ public:
   Search_base(Batch app_m): App_manager(app_m){};
 
 
-  virtual void local_search(Configuration &configuration, MYSQL *conn,  OPT_JR_parameters &par)=0;
+  virtual void local_search(Configuration &configuration, MYSQL *conn,  Opt_jr_parameters &par)=0;
 
 
   /**
@@ -25,7 +25,7 @@ public:
 
   */
 
-  void write_results(MYSQL *conn, char * dbName,  OPT_JR_parameters &par);
+  void write_results(MYSQL *conn, char * dbName,  Opt_jr_parameters &par);
   /**
   It prints the output of App_manager.show_solution
   */

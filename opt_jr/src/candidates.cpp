@@ -2,7 +2,7 @@
 
 #include "utility.hh"
 #include "db.hh"
-#include "objectiveFunction.hh"
+#include "objective_fun.hh"
 
 #include <omp.h>
 
@@ -34,7 +34,7 @@ void Candidates::add_candidate(  Application app_i, Application app_j, int contr
 
 
 
-void Candidates::invoke_predictor_openMP(  OPT_JR_parameters &par, Configuration  &configuration )
+void Candidates::invoke_predictor_openMP(  Opt_jr_parameters &par, Configuration  &configuration )
 {
 
   std::string debugMsg;
@@ -178,7 +178,7 @@ void Candidates::invoke_predictor_openMP(  OPT_JR_parameters &par, Configuration
 }
 
 
-void Candidates::invoke_predictor_seq(MYSQL *conn, OPT_JR_parameters &par, Configuration  &configuration )
+void Candidates::invoke_predictor_seq(MYSQL *conn, Opt_jr_parameters &par, Configuration  &configuration )
 {
   std::string debugMsg;
   debugMsg= "Executing invoke_predictor_seq"; par.debug_message(debugMsg);

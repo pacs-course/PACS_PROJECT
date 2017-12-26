@@ -4,6 +4,7 @@
 #include <list>
 #include <vector>
 #include "application.hh"
+#include "opt_jr_parameters.hh"
 
 
 /**
@@ -95,13 +96,13 @@ public:
   "invoke_predictor_openMP" calls in parallel the component for each pair of application
   and it stores the results for each pair in real_i, real_j.
   */
-  void invoke_predictor_openMP( OPT_JR_parameters &par, Configuration  &configuration );
+  void invoke_predictor_openMP( Opt_jr_parameters &par, Configuration  &configuration );
 
   /**
   "invoke_predictor_seq" calls sequencially the component for each pair of application
   and it stores the results for each pair in real_i, real_j.
   */
-  void invoke_predictor_seq( MYSQL *conn, OPT_JR_parameters &par, Configuration  &configuration );
+  void invoke_predictor_seq( MYSQL *conn, Opt_jr_parameters &par, Configuration  &configuration );
 
 
   int get_size(){return cand.size(); }

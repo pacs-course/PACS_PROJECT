@@ -2,7 +2,7 @@
 #define BATCH_HH
 
 #include <vector>
-#include "optjrparameters.hh"
+#include "opt_jr_parameters.hh"
 #include "application.hh"
 
 
@@ -21,19 +21,19 @@ public:
   Batch(std::vector<Application> apps): APPs(apps){};
 
   /// It calculates nu indices for each application and stores it in each "Application" object. It also initializes the number of cores.
-  void calculate_nu(OPT_JR_parameters &par);
+  void calculate_nu(Opt_jr_parameters &par);
 
   /// For each application, a base value for the objective function is calculated.
-  void initialize(Configuration  &configuration, MYSQL *conn, OPT_JR_parameters &par);
+  void initialize(Configuration  &configuration, MYSQL *conn, Opt_jr_parameters &par);
 
   /// It fixes the initial solution by reallocating the residual cores to the applications that may need more resources.
-  void fix_initial_solution(OPT_JR_parameters &par);
+  void fix_initial_solution(Opt_jr_parameters &par);
 
   /**
    write_results prints the results of the localSearch application (number of cores and VM) in a DB table.
    If a result for a (session_id, application_id) already exists, then it is replaced.
    */
-  void write_results(MYSQL *conn, char * dbName,  OPT_JR_parameters &par);
+  void write_results(MYSQL *conn, char * dbName,  Opt_jr_parameters &par);
 
 
 

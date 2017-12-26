@@ -1,5 +1,5 @@
 
-#include "invokePredictor_helper.hh"
+#include "invoke_predictor_helper.hh"
 
 
 #include <string>
@@ -64,7 +64,7 @@ void writeFile(const char *filepath, const char *data)
 
 
 
-char * ls(char * pattern, OPT_JR_parameters &par)
+char * ls(char * pattern, Opt_jr_parameters &par)
 {
 
 	std::string debugMsg;
@@ -206,7 +206,7 @@ char * readFile(char * filename)
 *
 */
 
-char *_run(char * cmd, OPT_JR_parameters &par)
+char *_run(char * cmd, Opt_jr_parameters &par)
 
 {
 	int BUFSIZE = 10240;

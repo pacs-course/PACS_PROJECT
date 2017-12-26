@@ -1,4 +1,4 @@
-#include "optjrParam_helper.hh"
+#include "opt_jr_parameters_helper.hh"
 
 
 
@@ -29,7 +29,7 @@ void Usage(int argc)
 
 /*
 Function to parse argument from command line;
-Invoked by OPT_JR_parameters constructor
+Invoked by Opt_jr_parameters constructor
 */
 
 char* parseArg(char* string, char* gap, int type, int argc)

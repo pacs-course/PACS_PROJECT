@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <vector>
-#include "optjrparameters.hh"
+#include "opt_jr_parameters.hh"
 
 /**
   Statistic_iter includes relevant statistical information about a single iteration in local_search
@@ -39,7 +39,7 @@ void add_statistics(int iteration, int size, double FO_total);
 /**
 	"read_statistics" shows the statistics about localsearch iterations.
 */
-void read_statistics(OPT_JR_parameters &par);
+void read_statistics(Opt_jr_parameters &par);
 
 };
 

@@ -7,14 +7,14 @@
 #define LUNDSTROM 1
 
 #include <string>
-#include "ConfigurationFile.hh"
+#include "configuration.hh"
 
 /**
-    OPT_JR_parameters saves parameters received from command line; once they are saved
+    Opt_jr_parameters saves parameters received from command line; once they are saved
     they are visible with public get_*() functions
 */
 
-class OPT_JR_parameters
+class Opt_jr_parameters
 {
   std::string filename; ///< The csv file
 	int debug;				///< debug option: "y" prints every message, "n" only prints fatal errors
@@ -28,7 +28,7 @@ class OPT_JR_parameters
   std::string search_type; ///< type of localsearch to be used (alternating/separing)
 public:
   /// The constructor takes in input all the input from command line
-  OPT_JR_parameters(char **args, int argc);
+  Opt_jr_parameters(char **args, int argc);
   /// Set the number of threads: it looks in configuration file (0== "no parallelization")
   void set_number_of_threads(Configuration &configuration);
 

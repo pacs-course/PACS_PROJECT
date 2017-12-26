@@ -6,7 +6,7 @@
 class Search_alterning: public Search_methods{
 
 public:
-  void local_search(Batch &app_manager, Configuration &configuration, MYSQL *conn,  OPT_JR_parameters &par);
+  void local_search(Batch &app_manager, Configuration &configuration, MYSQL *conn,  Opt_jr_parameters &par);
 
 
 

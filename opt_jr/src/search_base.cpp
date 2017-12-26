@@ -10,7 +10,7 @@
 
   */
 
-  void Search_base::write_results(MYSQL *conn, char * dbName,  OPT_JR_parameters &par)
+  void Search_base::write_results(MYSQL *conn, char * dbName,  Opt_jr_parameters &par)
   {
     App_manager.write_results(conn, dbName, par);
   }

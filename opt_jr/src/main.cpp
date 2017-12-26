@@ -7,8 +7,8 @@
 #include <sys/time.h>
 #include <memory>
 
-#include "optjrparameters.hh"
-#include "ConfigurationFile.hh"
+#include "opt_jr_parameters.hh"
+#include "configuration.hh"
 
 #include "db.hh"
 #include "application.hh"
@@ -16,7 +16,7 @@
 #include "batch.hh"
 #include "bounds.hh"
 #include "search.hh"
-#include "objectiveFunction.hh"
+#include "objective_fun.hh"
 #include "candidates.hh"
 #include "utility.hh"
 #include "search_alterning.hh"
@@ -51,7 +51,7 @@ int main(int argc, char **argv)
 
 
   /**
-  2)  Read execution parameters from command line and configuration file and save them in an "OPT_JR_parameters" object
+  2)  Read execution parameters from command line and configuration file and save them in an "Opt_jr_parameters" object
   */
 
   std::cout<<"\n\n*******************************************************************\n";
@@ -59,7 +59,7 @@ int main(int argc, char **argv)
   std::cout<<"*******************************************************************\n";
 
 
-  OPT_JR_parameters par(argv,argc); // object "par" has execution parameters
+  Opt_jr_parameters par(argv,argc); // object "par" has execution parameters
   par.set_number_of_threads(configuration); // set the number of threads as specified in configuration file
 
 
