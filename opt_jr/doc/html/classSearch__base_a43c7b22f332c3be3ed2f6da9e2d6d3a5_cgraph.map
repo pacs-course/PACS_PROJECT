@@ -1,7 +1,0 @@
-<map id="Search_base::write_results" name="Search_base::write_results">
-<area shape="rect" id="node2" href="$classBatch.html#a5e45cac0fbad47fde645547351fe3c75" title="Batch::write_results" alt="" coords="189,63,328,89"/>
-<area shape="rect" id="node3" href="$classOpt__jr__parameters.html#a860bf209221b6c5e1c4394d1ae4a058f" title="If debug is activated the message in string is printed. " alt="" coords="563,10,701,51"/>
-<area shape="rect" id="node4" href="$classOpt__jr__parameters.html#a7cef75cfec6d554805e311d7b4c37ef2" title="Opt_jr_parameters::\lget_filename" alt="" coords="377,26,514,67"/>
-<area shape="rect" id="node5" href="$db_8cpp.html#a7d5ba67ab50ce1ffc9817b97612e94c7" title="executeSQL" alt="" coords="398,92,493,119"/>
-<area shape="rect" id="node6" href="$db_8cpp.html#ab33dd75bdc4f92249542a2bb81b343fd" title="DBerror" alt="" coords="599,117,665,144"/>
-</map>

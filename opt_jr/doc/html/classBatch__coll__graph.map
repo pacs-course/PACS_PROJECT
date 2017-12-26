@@ -1,5 +1,0 @@
-<map id="Batch" name="Batch">
-<area shape="rect" id="node3" href="$classApplication.html" title="{Application\n|&#45; ncores_new\l&#45; R_old\l&#45; chi_C\l&#45; m\l&#45; M\l&#45; Deadline_d\l&#45; csi\l&#45; alpha\l&#45; beta\l|+ Application()\l+ compute_alpha_beta()\l+ get_session_app_id()\l+ get_app_id()\l+ get_w()\l+ get_term_i()\l+ get_chi_0()\l+ get_chi_C()\l+ get_m()\l+ get_M()\land 23 more...\l}" alt="" coords="52,437,215,779"/>
-<area shape="rect" id="node6" title="STL class. " alt="" coords="224,149,304,227"/>
-<area shape="rect" id="node7" title="STL class. " alt="" coords="201,6,327,98"/>
-</map>

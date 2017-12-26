@@ -1,6 +1,0 @@
-<map id="Batch::write_results" name="Batch::write_results">
-<area shape="rect" id="node2" href="$classOpt__jr__parameters.html#a860bf209221b6c5e1c4394d1ae4a058f" title="If debug is activated the message in string is printed. " alt="" coords="379,10,517,51"/>
-<area shape="rect" id="node3" href="$classOpt__jr__parameters.html#a7cef75cfec6d554805e311d7b4c37ef2" title="Opt_jr_parameters::\lget_filename" alt="" coords="193,26,330,67"/>
-<area shape="rect" id="node4" href="$db_8cpp.html#a7d5ba67ab50ce1ffc9817b97612e94c7" title="executeSQL" alt="" coords="214,92,309,119"/>
-<area shape="rect" id="node5" href="$db_8cpp.html#ab33dd75bdc4f92249542a2bb81b343fd" title="DBerror" alt="" coords="415,117,481,144"/>
-</map>

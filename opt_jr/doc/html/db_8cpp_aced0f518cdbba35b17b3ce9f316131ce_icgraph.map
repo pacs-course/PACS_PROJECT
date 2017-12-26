@@ -1,8 +1,0 @@
-<map id="DBopen" name="DBopen">
-<area shape="rect" id="node2" href="$classBounds.html#a525c2a8bf52889857306bf77d698ecd1" title="Bounds::calculate_bounds" alt="" coords="123,5,298,32"/>
-<area shape="rect" id="node4" href="$classCandidates.html#a9cc75e29ad2d0f2eb29fae2801c8e58b" title="Candidates::invoke\l_predictor_openMP" alt="" coords="143,107,278,149"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="417,31,468,57"/>
-<area shape="rect" id="node5" href="$classSearch__methods.html#a602ea0f40834d2ea817dc5fcab83436b" title="Search_methods::exact_loop" alt="" coords="347,115,538,141"/>
-<area shape="rect" id="node6" href="$classSearch__alterning.html#a981af51221c3749c4c20e58b8a622cb1" title="Search_alterning::local\l_search" alt="" coords="587,74,741,115"/>
-<area shape="rect" id="node7" href="$classSearch__separing.html#a5729213168347b0bb10889548dffad15" title="Search_separing::local\l_search" alt="" coords="587,139,741,181"/>
-</map>

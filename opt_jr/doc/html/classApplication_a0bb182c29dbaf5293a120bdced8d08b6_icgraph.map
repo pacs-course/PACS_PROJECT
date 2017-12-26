@@ -1,6 +1,0 @@
-<map id="Application::get_alpha" name="Application::get_alpha">
-<area shape="rect" id="node2" href="$classObjective__fun.html#a551109cf9927773062e9e3668c00eb59" title="Objective_fun::component\l_approx" alt="" coords="206,38,381,79"/>
-<area shape="rect" id="node3" href="$classSearch__methods.html#aaa8b4d54602311fc4e69a60a792f1384" title="Search_methods::approximated_loop" alt="" coords="429,45,667,72"/>
-<area shape="rect" id="node4" href="$classSearch__alterning.html#a981af51221c3749c4c20e58b8a622cb1" title="Search_alterning::local\l_search" alt="" coords="715,5,869,46"/>
-<area shape="rect" id="node5" href="$classSearch__separing.html#a5729213168347b0bb10889548dffad15" title="Search_separing::local\l_search" alt="" coords="715,70,869,111"/>
-</map>

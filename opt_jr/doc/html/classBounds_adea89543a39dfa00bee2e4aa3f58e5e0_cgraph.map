@@ -1,8 +1,0 @@
-<map id="Bounds::calculateBounds" name="Bounds::calculateBounds">
-<area shape="rect" id="node2" href="$classoptJrParameters.html#a6654c5bb36a825393e759b2824444bbb" title="Returns the number of threads to use in parallelization; if it is 0 there is no parallelization. " alt="" coords="224,5,368,46"/>
-<area shape="rect" id="node3" href="$debugmessage_8cpp.html#a7216d8ca989b1eaea79109c2a1236024" title="debugMessage" alt="" coords="241,71,351,97"/>
-<area shape="rect" id="node5" href="$db_8cpp.html#aced0f518cdbba35b17b3ce9f316131ce" title="DBopen" alt="" coords="261,121,331,148"/>
-<area shape="rect" id="node7" href="$db_8cpp.html#a54af21d55b55bae7b63cb28d3cd05758" title="DBclose" alt="" coords="260,172,332,199"/>
-<area shape="rect" id="node4" href="$classoptJrParameters.html#a64016f274261a7a7d74d8460bb7e2ee4" title="Returns the debug option (1==YES, 0==NO) " alt="" coords="416,59,560,101"/>
-<area shape="rect" id="node6" href="$db_8cpp.html#ab33dd75bdc4f92249542a2bb81b343fd" title="DBerror" alt="" coords="455,125,521,152"/>
-</map>

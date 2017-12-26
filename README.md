@@ -78,6 +78,10 @@ NOTE: MySQL's validate_password plugin is installed by default. This will requir
 
 # BUILD THE PROGRAM:
 
+0) Download:
+ - OPTIMIZER_CONFIGURATION_TABLE.sql, PREDICTOR_CACHE_TABLE.sql and dagSim-master.zip from  https://github.com/eubr-bigsea/opt_jr 
+ - creationDB.sql from https://github.com/eubr-bigsea/wsi/tree/master/Database
+ - LogP8.tar.gz from https://github.com/eubr-bigsea/OPT_DATA_CONFIG
 
 1) Build the database:
 
@@ -91,7 +95,7 @@ NOTE: MySQL's validate_password plugin is installed by default. This will requir
  #use that database
  > USE database_name;
 
-2) Run creationDB.sql which creates the tables
+2) Run creationDB.sql which creates the tables  
  > source creationDB.sql;
 
 3) Launch the script which creates and populates two tables OPTIMIZER_CONFIGURATION_TABLE.sql, PREDICTOR_CACHE_TABLE.sql:

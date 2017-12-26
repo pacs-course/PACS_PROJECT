@@ -1,9 +1,0 @@
-<map id="Opt_jr_parameters::get_number_of_threads" name="Opt_jr_parameters::get_number_of_threads">
-<area shape="rect" id="node2" href="$classBounds.html#a525c2a8bf52889857306bf77d698ecd1" title="Bounds::calculate_bounds" alt="" coords="214,5,389,32"/>
-<area shape="rect" id="node4" href="$classCandidates.html#a9cc75e29ad2d0f2eb29fae2801c8e58b" title="Candidates::invoke\l_predictor_openMP" alt="" coords="234,158,369,199"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="508,31,559,57"/>
-<area shape="rect" id="node5" href="$classSearch__methods.html#a602ea0f40834d2ea817dc5fcab83436b" title="Search_methods::exact_loop" alt="" coords="438,168,629,195"/>
-<area shape="rect" id="node8" href="$classStatistics.html#a57df73491ae4c84a8c3b08d912d2ce8e" title="read_statistics shows the statistics about localsearch iterations. " alt="" coords="448,107,619,133"/>
-<area shape="rect" id="node6" href="$classSearch__alterning.html#a981af51221c3749c4c20e58b8a622cb1" title="Search_alterning::local\l_search" alt="" coords="677,97,832,138"/>
-<area shape="rect" id="node7" href="$classSearch__separing.html#a5729213168347b0bb10889548dffad15" title="Search_separing::local\l_search" alt="" coords="677,162,832,203"/>
-</map>
