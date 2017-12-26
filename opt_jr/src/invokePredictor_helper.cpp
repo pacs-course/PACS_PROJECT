@@ -73,7 +73,7 @@ char * ls(char * pattern, OPT_JR_parameters &par)
 	int outcome = glob(pattern, GLOB_ERR, NULL, &pglob);
 	if (pglob.gl_pathc == 1)
 	{
-		debugMsg="ls= "; debugMsg+=  pglob.gl_pathv[0]; par.debugMessage(debugMsg);
+		debugMsg="ls= "; debugMsg+=  pglob.gl_pathv[0]; par.debug_message(debugMsg);
 		strcpy(filename, pglob.gl_pathv[0]);
 		globfree(&pglob);
 		return filename;
@@ -233,7 +233,7 @@ char *_run(char * cmd, OPT_JR_parameters &par)
 		printf("Fatal error: Command %s not found or exited with error status\n", cmd);
 		exit(-1);
 	} else
-	debugMsg ="_run has returned";debugMsg+=outcome;debugMsg+=" status"; par.debugMessage(debugMsg);
+	debugMsg ="_run has returned";debugMsg+=outcome;debugMsg+=" status"; par.debug_message(debugMsg);
 	return buf;
 
 }

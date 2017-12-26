@@ -28,17 +28,17 @@ const int PARAMETERS = 12;
 
 
 /**
- * 		Name:					getfield
+ * 		Name:					get_field
  * 		Input parameters:		char * source, int num
  * 		Output parameters:		A word
  * 		Description:			it extracts values from the csv file
  *
  */
-char * getfield(char* line, int num);
+char * get_field(char* line, int num);
 
 /**
   This function given a file* with data of application returns the vector of "Application" objects
 */
-std::vector<Application> readAppFile(FILE* stream);
+std::vector<Application> read_app_file(FILE* stream);
 
 #endif

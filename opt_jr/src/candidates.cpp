@@ -10,7 +10,7 @@
 
 /*
  *       Name:               add_candidate
- *       Description:         This function adds all the information regarding the localSearch deltafo calculation in a candidate object and it stores the object in the list.
+ *       Description:         This function adds all the information regarding the local_search deltafo calculation in a candidate object and it stores the object in the list.
  *                            The list is sorted by deltafo value.
  */
 void Candidates::add_candidate(  Application app_i, Application app_j, int contr1, int contr2, double delta, double delta_i, double delta_j)
@@ -38,16 +38,16 @@ void Candidates::invoke_predictor_openMP(  OPT_JR_parameters &par, Configuration
 {
 
   std::string debugMsg;
-  int n_threads = par.get_numberOfThreads();
+  int n_threads = par.get_number_of_threads();
   int MAX_PROMISING_CONFIGURATIONS =par.get_K();
   MYSQL *conn2[n_threads]; //open a connection for each thread
 
-  debugMsg= "Executing invoke_predictor_openMP"; par.debugMessage(debugMsg);
+  debugMsg= "Executing invoke_predictor_openMP"; par.debug_message(debugMsg);
 
 
   if (cand.size()==0) return;
 
-  debugMsg="invokePredictorInAdvance"; par.debugMessage(debugMsg);
+  debugMsg="invokePredictorInAdvance"; par.debug_message(debugMsg);
   for (int i = 0; i< n_threads;++i)
   {
       conn2[i]=DBopen(
@@ -111,7 +111,7 @@ void Candidates::invoke_predictor_openMP(  OPT_JR_parameters &par, Configuration
     {
       if (index > 0 && index == 2*MAX_PROMISING_CONFIGURATIONS)
       {
-        debugMsg="invoke_predictor_seq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invoke_predictor_seq loop";par.debugMessage(debugMsg);
+        debugMsg="invoke_predictor_seq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invoke_predictor_seq loop";par.debug_message(debugMsg);
         break;
       }
 
@@ -147,7 +147,7 @@ void Candidates::invoke_predictor_openMP(  OPT_JR_parameters &par, Configuration
     {
       if (index > 0 && index == MAX_PROMISING_CONFIGURATIONS)
       {
-        debugMsg="invoke_predictor_seq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invoke_predictor_seq loop";par.debugMessage(debugMsg);
+        debugMsg="invoke_predictor_seq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invoke_predictor_seq loop";par.debug_message(debugMsg);
         break;
       }
 
@@ -181,7 +181,7 @@ void Candidates::invoke_predictor_openMP(  OPT_JR_parameters &par, Configuration
 void Candidates::invoke_predictor_seq(MYSQL *conn, OPT_JR_parameters &par, Configuration  &configuration )
 {
   std::string debugMsg;
-  debugMsg= "Executing invoke_predictor_seq"; par.debugMessage(debugMsg);
+  debugMsg= "Executing invoke_predictor_seq"; par.debug_message(debugMsg);
 
   int MAX_PROMISING_CONFIGURATIONS =par.get_K();
   int index=0;
@@ -192,7 +192,7 @@ void Candidates::invoke_predictor_seq(MYSQL *conn, OPT_JR_parameters &par, Confi
     // Consider only the first MAX_PROMISING_CONFIGURATIONS (0 value means browse the entire Application) Application members
     if (index > 0 && index == MAX_PROMISING_CONFIGURATIONS)
     {
-      debugMsg="invoke_predictor_seq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invoke_predictor_seq loop";par.debugMessage(debugMsg);
+      debugMsg="invoke_predictor_seq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invoke_predictor_seq loop";par.debug_message(debugMsg);
       break;
     }
 
@@ -200,10 +200,10 @@ void Candidates::invoke_predictor_seq(MYSQL *conn, OPT_JR_parameters &par, Confi
 
     if (it->get_currentCores_d_i() > 0 && it->get_currentCores_d_j() > 0)
     {
-      debugMsg= "Comparing " + it->get_session_app_id_i() + " with " + it->get_session_app_id_j(); par.debugMessage(debugMsg);
+      debugMsg= "Comparing " + it->get_session_app_id_i() + " with " + it->get_session_app_id_j(); par.debug_message(debugMsg);
       //it->app_i.mode= R_ALGORITHM; it->app_j.mode= R_ALGORITHM;
       // No openmp
-      debugMsg =  " CALLING OBJ_FUNCTION_COMPONENT \n\n"; par.debugMessage(debugMsg);
+      debugMsg =  " CALLING OBJ_FUNCTION_COMPONENT \n\n"; par.debug_message(debugMsg);
       it->set_real_i ( OF.component(configuration, conn, it->get_app_i_ref(), par));
       it->set_real_j ( OF.component(configuration, conn, it->get_app_j_ref(), par));
     }

@@ -33,9 +33,9 @@ OPT_JR_parameters::OPT_JR_parameters (char **args, int argc)
 															else simulator = LUNDSTROM;
 							}
 
-								else if (strstr(args[i], GLOBAL_FO_CALCULATION)) globalFOcalculation = atoi(parseArg(args[i], (char*)GLOBAL_FO_CALCULATION, YES_NO, argc));
+								else if (strstr(args[i], GLOBAL_FO_CALCULATION)) global_FO_calculation = atoi(parseArg(args[i], (char*)GLOBAL_FO_CALCULATION, YES_NO, argc));
 								else if (strstr(args[i], MAX_ITERATIONS))
-									maxIterations = atoi(parseArg(args[i], (char*)MAX_ITERATIONS, NUMBER, argc));
+									max_iterations = atoi(parseArg(args[i], (char*)MAX_ITERATIONS, NUMBER, argc));
 								else if (strstr(args[i], CACHE))
 									cache = atoi(parseArg(args[i], (char*)CACHE, YES_NO, argc));
 								else if (strstr(args[i], SEARCH_TYPE))
@@ -57,13 +57,13 @@ OPT_JR_parameters::OPT_JR_parameters (char **args, int argc)
 }
 
 
-void OPT_JR_parameters::set_numberOfThreads(Configuration &configuration)
+void OPT_JR_parameters::set_number_of_threads(Configuration &configuration)
 {
 	/* Read the threads number */
-	numberOfThreads = stoi(configuration["THREADS_NUMBER"]);
+	number_of_threads = stoi(configuration["THREADS_NUMBER"]);
 }
 
-void OPT_JR_parameters::debugMessage(std::string &string)
+void OPT_JR_parameters::debug_message(std::string &string)
 {
 	if (debug == 1)
   {

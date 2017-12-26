@@ -48,7 +48,7 @@
 			 exit(-1);
 		 }
 
-		 std::string debugMsg=" Invoking predictor "; par.debugMessage(debugMsg);
+		 std::string debugMsg=" Invoking predictor "; par.debug_message(debugMsg);
 
 
 
@@ -69,7 +69,7 @@
 			 MYSQL_ROW row=NULL;
 			 if (par.get_cache()==1)
 			 {
-				 debugMsg= "Chosen simulator: DAGSIM"; par.debugMessage(debugMsg);
+				 debugMsg= "Chosen simulator: DAGSIM"; par.debug_message(debugMsg);
 
 				 // Check if there is an output from dagSim already cached in the DB
 
@@ -91,7 +91,7 @@
 				 dbName,appId, dbName,datasize, dbName,currentCores);
 
 
-				 debugMsg= "From invoke_predictor executing SQL STATEMENT below "; par.debugMessage(debugMsg);
+				 debugMsg= "From invoke_predictor executing SQL STATEMENT below "; par.debug_message(debugMsg);
 				 row = executeSQL(conn, statement, par);
 			 }
 
@@ -100,7 +100,7 @@
 			 if (row == NULL || par.get_cache()==0)
 			 {
 				 if (par.get_cache()==1)
-				 debugMsg= "Last SQL statement returned 0 rows. Invoking predictor..."; par.debugMessage(debugMsg);
+				 debugMsg= "Last SQL statement returned 0 rows. Invoking predictor..."; par.debug_message(debugMsg);
 
 				 // Replaced FAKE variable with RESULTS_HOME
 				 sprintf(path, "%s/%s/%s/logs", const_cast<char*>(configuration["RESULTS_HOME"].c_str()), readFolder(path), appId);
@@ -124,7 +124,7 @@
 				 // Using /tmp/temp.lua instead of lua variable, so the original file is never overwritten
 
 				 sprintf(cmd, "cd %s;./dagsim.sh %s -s > /tmp/outputDagsim.txt", const_cast<char*>(configuration["DAGSIM_HOME"].c_str()), "/tmp/temp.lua");
-				 debugMsg="Executing predictor: "; debugMsg+= cmd; par.debugMessage(debugMsg);
+				 debugMsg="Executing predictor: "; debugMsg+= cmd; par.debug_message(debugMsg);
 
 				 _run(cmd, par);
 				 std::cout << "FLAGDAGSIM = "<<flagDagsim<<std::endl;
@@ -136,7 +136,7 @@
 					 stageTime = atof(extractWord(extractRowN(extractRowMatchingPattern(readFile((char*)"/tmp/outputDagsim.txt"), stage),1), 4));
 
 					 sprintf(output1, "%lf", (systemTime - stageTime));
-					 debugMsg="Residual time: "; debugMsg+=output1; par.debugMessage(debugMsg);
+					 debugMsg="Residual time: "; debugMsg+=output1; par.debug_message(debugMsg);
 					 break;
 					 case WHOLE_DAGSIM:
 					 strcpy(output1, extractWord(extractRowN(readFile((char*)"/tmp/outputDagsim.txt"),1),3));
@@ -148,7 +148,7 @@
 				 }
 
 
-				 if (doubleCompare(atof(output1), 0) == 0)
+				 if (double_compare(atof(output1), 0) == 0)
 				 {
 					 printf("Fatal Error: invoke_predictor: dagSim output was zero (%s)\n", lua);
 					 exit(-1);
@@ -182,7 +182,7 @@
 		 else
 		 {
 			 double out = atof(row[0]);
-			 debugMsg="Dagsim output retrieved from DB cash: "; debugMsg+=appId; debugMsg+=" ";debugMsg+= std::to_string(out); par.debugMessage(debugMsg);
+			 debugMsg="Dagsim output retrieved from DB cash: "; debugMsg+=appId; debugMsg+=" ";debugMsg+= std::to_string(out); par.debug_message(debugMsg);
 			 sprintf(output1, "%lf", out);
 		 }
 	 }

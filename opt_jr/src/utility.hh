@@ -4,19 +4,19 @@
 #include <sys/time.h>
 
 
-const double epsilon = 0.001; ///< precision in doubleCompare
+const double epsilon = 0.001; ///< precision in double_compare
 
 
 
 /**
 Measures the elapsed time
 */
-double elapsedTime(struct timeval  tv1, struct timeval tv2);
+double elapsed_time(struct timeval  tv1, struct timeval tv2);
 
 /**
-"doubleCompare" compare two doubles according to a certain precision (epsilon)
+"double_compare" compare two doubles according to a certain precision (epsilon)
 */
-int doubleCompare(double a, double b);
+int double_compare(double a, double b);
 
 
 #endif

@@ -3,43 +3,43 @@
 #include "objectiveFunction.hh"
 
 
-void Search_separing::localSearch(Batch &app_manager, Configuration &configuration, MYSQL *conn,  OPT_JR_parameters &par)
+void Search_separing::local_search(Batch &app_manager, Configuration &configuration, MYSQL *conn,  OPT_JR_parameters &par)
 {
   std::string debugMsg;
   Candidates app_pairs ;
   double TotalFO;
   int how_many;
-  sStatistics statistics;
+  Statistics statistics;
   Objective_fun OF;
 
-  debugMsg =  "\n     ***** Estimate the candidates for the predictor ******\n"; par.debugMessage(debugMsg);
+  debugMsg =  "\n     ***** Estimate the candidates for the predictor ******\n"; par.debug_message(debugMsg);
 
   //START THE ITERATION LOOP
-  for (int iteration = 1; iteration <= N_APPROX_LOOP*par.get_maxIteration(); iteration++)//to be changed!
+  for (int iteration = 1; iteration <= N_APPROX_LOOP*par.get_max_iterations(); iteration++)//to be changed!
   {
     std::cout<<"\n\n\n"<<iteration;
-    checkTotalNodes(par.get_number(), app_manager);
-    debugMsg= "ITERATION " + std::to_string(iteration); par.debugMessage(debugMsg);
+    check_total_nodes(par.get_number(), app_manager);
+    debugMsg= "ITERATION " + std::to_string(iteration); par.debug_message(debugMsg);
 
 
     /*
      *   Estimate the candidates for the predictor
      */
     app_pairs = approximated_loop( app_manager, par );
-    debugMsg= "\n\n\n\n       finished approximatedLoop   \n\n\n\n"; par.debugMessage(debugMsg);
+    debugMsg= "\n\n\n\n       finished approximatedLoop   \n\n\n\n"; par.debug_message(debugMsg);
 
     if (app_pairs.get_empty())
     {
       // The Candidate Application is empty. No further solution enhancements possible
-      debugMsg = "LocalSearch: empty Candidate Application : exit to Approximated loop"; par.debugMessage(debugMsg);
+      debugMsg = "LocalSearch: empty Candidate Application : exit to Approximated loop"; par.debug_message(debugMsg);
       break;
     }
 
-    debugMsg = " \n\n\n\n\n*****  Ex-iteration loop ******\n\n\n\n\n";par.debugMessage(debugMsg);
+    debugMsg = " \n\n\n\n\n*****  Ex-iteration loop ******\n\n\n\n\n";par.debug_message(debugMsg);
 
 
     how_many=app_pairs.get_size();
-    debugMsg = " There are " + std::to_string(how_many) +" promising configurations in iteration " + std::to_string(iteration) + "\n\n"; par.debugMessage(debugMsg);
+    debugMsg = " There are " + std::to_string(how_many) +" promising configurations in iteration " + std::to_string(iteration) + "\n\n"; par.debug_message(debugMsg);
 
 
 
@@ -113,7 +113,7 @@ void Search_separing::localSearch(Batch &app_manager, Configuration &configurati
   double DELTAVM_i;
   double DELTAVM_j;
   double DELTA_fo_App_i=0, DELTA_fo_App_j=0;//Those value are not really used
-  for (int iteration = 1; iteration <= par.get_maxIteration(); iteration++)
+  for (int iteration = 1; iteration <= par.get_max_iterations(); iteration++)
   {
     Candidates all_pairs;
     /*
@@ -129,8 +129,8 @@ void Search_separing::localSearch(Batch &app_manager, Configuration &configurati
         if (application_i->get_session_app_id()!=application_j->get_session_app_id())
         {
           nCoreMov = std::max(application_i->get_V(), application_j->get_V());
-          DELTAVM_i = nCoreMov/application_i->get_V(); debugMsg = "app " + application_i->get_session_app_id() + " DELTAVM_i " +  std::to_string(DELTAVM_i); par.debugMessage(debugMsg);
-          DELTAVM_j = nCoreMov/application_j->get_V(); debugMsg = "app " + application_j->get_session_app_id() + " DELTAVM_j " +  std::to_string(DELTAVM_j); par.debugMessage(debugMsg);
+          DELTAVM_i = nCoreMov/application_i->get_V(); debugMsg = "app " + application_i->get_session_app_id() + " DELTAVM_i " +  std::to_string(DELTAVM_i); par.debug_message(debugMsg);
+          DELTAVM_j = nCoreMov/application_j->get_V(); debugMsg = "app " + application_j->get_session_app_id() + " DELTAVM_j " +  std::to_string(DELTAVM_j); par.debug_message(debugMsg);
 
           // Change the currentCores, but rollback later
           int deltaNCores_i = DELTAVM_i * application_i->get_V();
@@ -161,10 +161,10 @@ void Search_separing::localSearch(Batch &app_manager, Configuration &configurati
       // exact_loop also updates app_manager
       exact_loop(all_pairs, configuration, conn, app_manager, par, indicator);
 
-      checkTotalNodes(par.get_number(), app_manager);
+      check_total_nodes(par.get_number(), app_manager);
       if (indicator==-1) //It means that there are not convenient exchanges
       {
-        debugMsg="No more convenient exchanges."; par.debugMessage(debugMsg);
+        debugMsg="No more convenient exchanges."; par.debug_message(debugMsg);
         break;
       }
 
@@ -173,14 +173,14 @@ void Search_separing::localSearch(Batch &app_manager, Configuration &configurati
       {
         TotalFO = OF.global(configuration, conn, app_manager, par);
         std::cout << "At iteration: "<< iteration << " GLOBAL OBJECTIVE FUNCTION = "<< TotalFO <<std::endl;
-        statistics.addStatistics( iteration, how_many, TotalFO); // Update Statistics
+        statistics.add_statistics( iteration, how_many, TotalFO); // Update Statistics
       }
     }
 
 
     if (par.get_global_FO_calculation())
     {
-      statistics.readStatistics( par);
+      statistics.read_statistics( par);
     }
 
   }

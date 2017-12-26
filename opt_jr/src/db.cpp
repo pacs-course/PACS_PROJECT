@@ -36,7 +36,7 @@ MYSQL_ROW executeSQL(MYSQL *conn, char *statement, OPT_JR_parameters par)
 	}
 
 	result = mysql_store_result(conn);
-	debugMsg="statement :"+ std::string(statement) + "\n"; par.debugMessage(debugMsg);
+	debugMsg="statement :"+ std::string(statement) + "\n"; par.debug_message(debugMsg);
 	if (result == NULL)
 	{
 		sprintf(error, "Failure: ExecuteSQL: statement was %s\n", statement);

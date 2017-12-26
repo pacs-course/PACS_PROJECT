@@ -28,19 +28,19 @@ public:
 
 
   /**
-  localSearch perform a local search of a solution minimizing the objective function;
+  local_search perform a local search of a solution minimizing the objective function;
   it performs cores exchanges between pairs of application and chooses the best pair. The
   search stops when no improvements are possible or the maximum number of iteration is reached.
   The function looks before at approximated values of objective function and then
   for the potential best pairs it invokes the predictor.
   */
 
-  void localSearch(Configuration &configuration, MYSQL *conn,  OPT_JR_parameters &par)
+  void local_search(Configuration &configuration, MYSQL *conn,  OPT_JR_parameters &par)
   {
 
     std::string debugMsg;
     Policy P;
-    P.localSearch(App_manager, configuration, conn, par);
+    P.local_search(App_manager, configuration, conn, par);
   }
 
 

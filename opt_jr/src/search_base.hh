@@ -17,7 +17,7 @@ public:
   Search_base(Batch app_m): App_manager(app_m){};
 
 
-  virtual void localSearch(Configuration &configuration, MYSQL *conn,  OPT_JR_parameters &par)=0;
+  virtual void local_search(Configuration &configuration, MYSQL *conn,  OPT_JR_parameters &par)=0;
 
 
   /**

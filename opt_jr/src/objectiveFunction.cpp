@@ -28,11 +28,11 @@ double Objective_fun::component(Configuration &configuration, MYSQL *conn, Appli
 	/*switch(app.get_mode())
 	{*
 		case R_ALGORITHM:*/
-				debugMsg = "component W " + std::to_string(app.get_w()) + "   R_d " + std::to_string(app.get_R_d()) + "  D " + std::to_string(app.get_Deadline_d()); par.debugMessage(debugMsg);
+				debugMsg = "component W " + std::to_string(app.get_w()) + "   R_d " + std::to_string(app.get_R_d()) + "  D " + std::to_string(app.get_Deadline_d()); par.debug_message(debugMsg);
 				if (app.get_R_d() > app.get_Deadline_d())
 					output = app.get_w() * (app.get_R_d() - app.get_Deadline_d());
 				else output = 0;
-				debugMsg = "Compute FO for app " + app.get_session_app_id() + " currentCores_d " + std::to_string((int)app.get_currentCores_d()) + "  R " + std::to_string(app.get_R_d()) + " FO = "+  std::to_string(output); par.debugMessage(debugMsg);
+				debugMsg = "Compute FO for app " + app.get_session_app_id() + " currentCores_d " + std::to_string((int)app.get_currentCores_d()) + "  R " + std::to_string(app.get_R_d()) + " FO = "+  std::to_string(output); par.debug_message(debugMsg);
 			//break;
 			/*
 		case CORES_ALGORITHM:
@@ -75,13 +75,13 @@ double Objective_fun::component_approx(Application &App, OPT_JR_parameters &par)
 
 	/* Determine how the obj function needs to be calculated */
 
-	debugMsg= "W " + std::to_string(App.get_w()) + " R_d " + std::to_string(App.get_R_d()) + " D " + std::to_string(App.get_Deadline_d()); par.debugMessage(debugMsg);
+	debugMsg= "W " + std::to_string(App.get_w()) + " R_d " + std::to_string(App.get_R_d()) + " D " + std::to_string(App.get_Deadline_d()); par.debug_message(debugMsg);
 	if (App.get_R_d() > App.get_Deadline_d())
 		output = App.get_w() * (App.get_R_d() - App.get_Deadline_d());//NB: is it correct? very high values
 	else output = 0;
 		debugMsg = "Compute FO for app " +  App.get_session_app_id() + " currentCores_d"
                 + std::to_string((int)App.get_currentCores_d()) + " R "+ std::to_string(App.get_R_d())
-                + " FO=" + std::to_string(output); par.debugMessage(debugMsg);
+                + " FO=" + std::to_string(output); par.debug_message(debugMsg);
 
 	return output;
 }
@@ -103,9 +103,9 @@ double Objective_fun::global(Configuration &configuration, MYSQL *conn, Batch & 
 		sum = sum + component(configuration, conn, *it, par);
 	}
 
-	if (doubleCompare(sum, 0) == 0)
+	if (double_compare(sum, 0) == 0)
 	{
-		std::string debugMsg="global: sum equal to zero"; par.debugMessage(debugMsg);
+		std::string debugMsg="global: sum equal to zero"; par.debug_message(debugMsg);
 		//exit(-1);
 	}
 

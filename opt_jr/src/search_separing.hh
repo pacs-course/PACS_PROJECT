@@ -10,7 +10,7 @@ class Search_separing : public Search_methods
 {
 
 public:
-  void localSearch(Batch &app_manager, Configuration &configuration, MYSQL *conn,  OPT_JR_parameters &par);
+  void local_search(Batch &app_manager, Configuration &configuration, MYSQL *conn,  OPT_JR_parameters &par);
 
 };
 

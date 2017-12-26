@@ -50,7 +50,7 @@ void  Bounds::bound(Configuration &configuration, MYSQL *conn, Application &app,
 					 " (app_ID: " + app.get_app_id() +  ") " +
 					 " predictorOutput = " + std::to_string(predictorOutput) +
 					 "(deadline is " +std::to_string(app.get_Deadline_d())+ ") cores "
-					 + std::to_string(nCores); par.debugMessage(debugMsg);
+					 + std::to_string(nCores); par.debug_message(debugMsg);
 
 
 		app.compute_alpha_beta(nCores, predictorOutput);
@@ -61,7 +61,7 @@ void  Bounds::bound(Configuration &configuration, MYSQL *conn, Application &app,
 		/*
 		 *   START THE HILL CLIMBING
 		 */
-		if (doubleCompare(predictorOutput, app.get_Deadline_d()) == 1)
+		if (double_compare(predictorOutput, app.get_Deadline_d()) == 1)
 			while (predictorOutput > app.get_Deadline_d())
 			{
 				if (nCores ==0)
@@ -79,7 +79,7 @@ void  Bounds::bound(Configuration &configuration, MYSQL *conn, Application &app,
 				debugMsg="Bound evaluation for " + app.get_session_app_id() +
 								 " predictorOutput = " + std::to_string(predictorOutput) +
 								 "(deadline is " +std::to_string(app.get_Deadline_d())+ ") cores "
-								 + std::to_string(nCores); par.debugMessage(debugMsg);
+								 + std::to_string(nCores); par.debug_message(debugMsg);
 
 				BCores = nCores;
 				BTime = predictorOutput;
@@ -89,7 +89,7 @@ void  Bounds::bound(Configuration &configuration, MYSQL *conn, Application &app,
 			}
 
 		else
-			while (doubleCompare(predictorOutput, app.get_Deadline_d()) == -1)
+			while (double_compare(predictorOutput, app.get_Deadline_d()) == -1)
 			{
 				BCores = nCores;
 				BTime = predictorOutput;
@@ -114,7 +114,7 @@ void  Bounds::bound(Configuration &configuration, MYSQL *conn, Application &app,
 				debugMsg="Bound evaluation for" + app.get_session_app_id() +
 								 " predictorOutput = " + std::to_string(predictorOutput) +
 								 "(deadline is " +std::to_string(app.get_Deadline_d())+ ") cores "
-								 + std::to_string(nCores); par.debugMessage(debugMsg);
+								 + std::to_string(nCores); par.debug_message(debugMsg);
 
 				app.compute_alpha_beta(nCores, predictorOutput);
 
@@ -127,7 +127,7 @@ void  Bounds::bound(Configuration &configuration, MYSQL *conn, Application &app,
 	app.set_bound( BCores);
 	debugMsg="\n\nSession_app_id : " + app.get_session_app_id() + " , APP_ID: " + app.get_app_id() +
 					 ", D = "+ std::to_string(app.get_Deadline_d()) + ", R =" + std::to_string(app.get_R_d())+
-					 ", bound = "+ std::to_string(app.get_bound()) + "\n\n"; par.debugMessage(debugMsg);
+					 ", bound = "+ std::to_string(app.get_bound()) + "\n\n"; par.debug_message(debugMsg);
 
 
 }
@@ -153,7 +153,7 @@ void Bounds::find_bound(Configuration &configuration, MYSQL *conn, char* db,  Ap
     sprintf(statement,
                         "select num_cores_opt, num_vm_opt from %s.OPTIMIZER_CONFIGURATION_TABLE where application_id='%s' and dataset_size=%d and deadline=%lf;"
                         , db, const_cast<char*>(app.get_app_id().c_str()), app.get_dataset_size(), app.get_Deadline_d());
-		debugMsg= "From findbound executing SQL STATEMENT below for app "+app.get_app_id(); par.debugMessage(debugMsg);
+		debugMsg= "From findbound executing SQL STATEMENT below for app "+app.get_app_id(); par.debug_message(debugMsg);
     MYSQL_ROW row = executeSQL(conn, statement, par);
 
     if (row == NULL)
@@ -165,12 +165,12 @@ void Bounds::find_bound(Configuration &configuration, MYSQL *conn, char* db,  Ap
     app.set_nCores_DB_d( atoi(row[0]));
     app.set_vm(atoi(row[1]));
 		debugMsg=" From findbound a first estimate on ncores:"+  std::to_string(app.get_nCores_DB_d())
-							+" and VM: "+ std::to_string(app.get_vm()) + " for application "+app.get_app_id() ;par.debugMessage(debugMsg);
+							+" and VM: "+ std::to_string(app.get_vm()) + " for application "+app.get_app_id() ;par.debug_message(debugMsg);
 
 
 
     bound(configuration, conn, app, par,WHOLE_DAGSIM);
-    debugMsg="A bound for " + app.get_session_app_id() + "  (app_id: " + app.get_app_id() + ") has been calculated";par.debugMessage(debugMsg);
+    debugMsg="A bound for " + app.get_session_app_id() + "  (app_id: " + app.get_app_id() + ") has been calculated";par.debug_message(debugMsg);
 
 
 }
@@ -184,11 +184,11 @@ void Bounds::find_bound(Configuration &configuration, MYSQL *conn, char* db,  Ap
 void Bounds::calculate_bounds( Configuration &configuration, MYSQL *conn,
                               OPT_JR_parameters &par)
   {
-		int n_threads = par.get_numberOfThreads();
+		int n_threads = par.get_number_of_threads();
     std::string debugMsg;
 		if (n_threads>0)
 		{
-    debugMsg=" Calculate bounds for each application in parallel with "+ std::to_string(n_threads)+" threads (using openMP) \n" ;par.debugMessage(debugMsg);
+    debugMsg=" Calculate bounds for each application in parallel with "+ std::to_string(n_threads)+" threads (using openMP) \n" ;par.debug_message(debugMsg);
 
     MYSQL *conn2[n_threads];
     for (int i =0; i< n_threads;++i)
@@ -214,7 +214,7 @@ void Bounds::calculate_bounds( Configuration &configuration, MYSQL *conn,
         if(pos==ID)
         {
           debugMsg= "Call find_bound of app " + it->get_app_id()
-                    + " from thread " + std::to_string(ID); par.debugMessage(debugMsg);
+                    + " from thread " + std::to_string(ID); par.debug_message(debugMsg);
 
           find_bound(configuration, conn2[ID], const_cast<char*>(configuration["OptDB_dbName"].c_str()), *it , par);
         }
@@ -229,7 +229,7 @@ void Bounds::calculate_bounds( Configuration &configuration, MYSQL *conn,
 	else
 	{
 
-		debugMsg=" Calculate bounds for each application (sequencial version) \n" ;par.debugMessage(debugMsg);
+		debugMsg=" Calculate bounds for each application (sequencial version) \n" ;par.debug_message(debugMsg);
 		for (auto it=app_manager.get_begin(); it !=app_manager.get_end(); it++)
 				find_bound(configuration, conn, const_cast<char*>(configuration["OptDB_dbName"].c_str()), *it, par);
 
@@ -237,7 +237,7 @@ void Bounds::calculate_bounds( Configuration &configuration, MYSQL *conn,
 
 
 
-    debugMsg= " End calculate bounds ";par.debugMessage(debugMsg);
+    debugMsg= " End calculate bounds ";par.debug_message(debugMsg);
 
 
   }

@@ -16,7 +16,7 @@
 class Search_methods{
 
 public:
-  void checkTotalNodes(int N, Batch &App_manager);
+  void check_total_nodes(int N, Batch &App_manager);
   /**
    It estimates the objective function for each move. The candidate applications for which the move is profitable are stored in a sCandidate object
   */

@@ -7,7 +7,7 @@
 
 
 /**
-   Candidate_pair class is an auxiliary class included in Candidates which is used by localSearch; it stores data
+   Candidate_pair class is an auxiliary class included in Candidates which is used by local_search; it stores data
    about pairs of application and the consequent changes on the objective function
    after cores exchange.
 */
@@ -69,7 +69,7 @@ class Candidate_pair{
 
 
 /**
-Auxiliary class used by localSearch; it stores pairs of applications for which a cores exchange
+Auxiliary class used by local_search; it stores pairs of applications for which a cores exchange
 could be profitable and provide methods to add Candidate_pair and evaluate in parallel the objective function
 
 */

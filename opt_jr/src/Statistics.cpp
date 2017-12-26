@@ -1,16 +1,16 @@
 #include "statistics.hh"
 
-int Statistic::get_iteration()
+int Statistic_iter::get_iteration()
 {
   return iteration;
 }
 
-int Statistic::get_size()
+int Statistic_iter::get_size()
 {
   return size;
 }
 
-double Statistic::get_FO_Total()
+double Statistic_iter::get_FO_Total()
 {
   return FO_Total;
 }
@@ -19,20 +19,20 @@ double Statistic::get_FO_Total()
 
 
 
-void sStatistics::addStatistics(int iteration, int size, double FO_total)
+void Statistics::add_statistics(int iteration, int size, double FO_total)
 {
-  Statistic tmp(iteration,size,FO_total);
+  Statistic_iter tmp(iteration,size,FO_total); // cambia
   statistics.push_back(tmp);
 }
 
-void sStatistics::readStatistics(OPT_JR_parameters &par)
+void Statistics::read_statistics(OPT_JR_parameters &par)
 {
 
   std::cout << "\n\n*************************************************\n";
 	std::cout << "***********  Statistics list content:  **********\n";
   std::cout << "*************************************************\n";
 
-	if (par.get_numberOfThreads() > 0) std::cout <<"(OpenMP: yes) Iteration   List Size  Total_FO\n";
+	if (par.get_number_of_threads() > 0) std::cout <<"(OpenMP: yes) Iteration   List Size  Total_FO\n";
 	else std::cout <<"(OpenMP: no) Iteration   List Size  Total_FO\n";
 	for (auto &el : statistics)
 	{
