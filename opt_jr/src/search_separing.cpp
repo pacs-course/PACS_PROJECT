@@ -3,7 +3,7 @@
 #include "objectiveFunction.hh"
 
 
-void Search_separing::localSearch(Batch &app_manager, Configuration &configuration, MYSQL *conn,  optJrParameters &par)
+void Search_separing::localSearch(Batch &app_manager, Configuration &configuration, MYSQL *conn,  OPT_JR_parameters &par)
 {
   std::string debugMsg;
   Candidates app_pairs ;
@@ -169,16 +169,16 @@ void Search_separing::localSearch(Batch &app_manager, Configuration &configurati
       }
 
 
-      if (par.get_globalFOcalculation())
+      if (par.get_global_FO_calculation())
       {
-        TotalFO = OF.ObjFunctionGlobal(configuration, conn, app_manager, par);
+        TotalFO = OF.global(configuration, conn, app_manager, par);
         std::cout << "At iteration: "<< iteration << " GLOBAL OBJECTIVE FUNCTION = "<< TotalFO <<std::endl;
         statistics.addStatistics( iteration, how_many, TotalFO); // Update Statistics
       }
     }
 
 
-    if (par.get_globalFOcalculation())
+    if (par.get_global_FO_calculation())
     {
       statistics.readStatistics( par);
     }

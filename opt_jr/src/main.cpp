@@ -51,7 +51,7 @@ int main(int argc, char **argv)
 
 
   /**
-  2)  Read execution parameters from command line and configuration file and save them in an "optJrParameters" object
+  2)  Read execution parameters from command line and configuration file and save them in an "OPT_JR_parameters" object
   */
 
   std::cout<<"\n\n*******************************************************************\n";
@@ -59,7 +59,7 @@ int main(int argc, char **argv)
   std::cout<<"*******************************************************************\n";
 
 
-  optJrParameters par(argv,argc); // object "par" has execution parameters
+  OPT_JR_parameters par(argv,argc); // object "par" has execution parameters
   par.set_numberOfThreads(configuration); // set the number of threads as specified in configuration file
 
 

@@ -6,14 +6,14 @@
 #include "invokePredictor.hh"
 
 /*
- * 		Name:						ObjFunctionComponent
+ * 		Name:						component
  * 		Output parameters:			double The contribution to the calculation of the objective function
  * 		Description:				Currently, only one method is supported. Note that the algorithm's choice is stored in the "mode" field
  * 									of the application structure.
  *
  */
 
-double Objective_fun::ObjFunctionComponent(Configuration &configuration, MYSQL *conn, Application  &app, optJrParameters &par)
+double Objective_fun::component(Configuration &configuration, MYSQL *conn, Application  &app, OPT_JR_parameters &par)
 {
 
 	std::string debugMsg;
@@ -28,7 +28,7 @@ double Objective_fun::ObjFunctionComponent(Configuration &configuration, MYSQL *
 	/*switch(app.get_mode())
 	{*
 		case R_ALGORITHM:*/
-				debugMsg = "ObjFunctionComponent W " + std::to_string(app.get_w()) + "   R_d " + std::to_string(app.get_R_d()) + "  D " + std::to_string(app.get_Deadline_d()); par.debugMessage(debugMsg);
+				debugMsg = "component W " + std::to_string(app.get_w()) + "   R_d " + std::to_string(app.get_R_d()) + "  D " + std::to_string(app.get_Deadline_d()); par.debugMessage(debugMsg);
 				if (app.get_R_d() > app.get_Deadline_d())
 					output = app.get_w() * (app.get_R_d() - app.get_Deadline_d());
 				else output = 0;
@@ -48,7 +48,7 @@ double Objective_fun::ObjFunctionComponent(Configuration &configuration, MYSQL *
 			break;
 			*
 		default:
-			printf("ObjFunctionComponent: unknown case within Switch statement: get_mode() %d\n", app.get_mode());
+			printf("component: unknown case within Switch statement: get_mode() %d\n", app.get_mode());
 			exit(-1);
 			break;*
 	}*/
@@ -59,12 +59,12 @@ double Objective_fun::ObjFunctionComponent(Configuration &configuration, MYSQL *
 
 
 /**
-  Name: ObjFunctionComponentApprox
+  Name: component_approx
   Output parameters: a double The value of the approximated objective function
   Description It computes an approximation of the objective function (and update R_d)
  */
 
-double Objective_fun::ObjFunctionComponentApprox(Application &App, optJrParameters &par)//sApplication * pointer, struct optJrParameters par)
+double Objective_fun::component_approx(Application &App, OPT_JR_parameters &par)//sApplication * pointer, struct OPT_JR_parameters par)
 {
 
   std::string debugMsg;
@@ -88,11 +88,11 @@ double Objective_fun::ObjFunctionComponentApprox(Application &App, optJrParamete
 
 
 /*
- * Name: ObjFunctionGlobal
+ * Name: global
  * Output parameters: double, the total value of objective function
  * Description:It calculates the value of the total objective function
  */
-double Objective_fun::ObjFunctionGlobal(Configuration &configuration, MYSQL *conn, Batch & App_manager, optJrParameters &par)
+double Objective_fun::global(Configuration &configuration, MYSQL *conn, Batch & App_manager, OPT_JR_parameters &par)
 {
 
 	double sum = 0;
@@ -100,12 +100,12 @@ double Objective_fun::ObjFunctionGlobal(Configuration &configuration, MYSQL *con
 
 	for (auto it = App_manager.get_begin(); it!=App_manager.get_end(); ++it)
 	{
-		sum = sum + ObjFunctionComponent(configuration, conn, *it, par);
+		sum = sum + component(configuration, conn, *it, par);
 	}
 
 	if (doubleCompare(sum, 0) == 0)
 	{
-		std::string debugMsg="ObjFunctionGlobal: sum equal to zero"; par.debugMessage(debugMsg);
+		std::string debugMsg="global: sum equal to zero"; par.debugMessage(debugMsg);
 		//exit(-1);
 	}
 

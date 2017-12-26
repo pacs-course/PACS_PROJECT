@@ -18,7 +18,7 @@
  *
  */
 
-void  Bounds::bound(Configuration &configuration, MYSQL *conn, Application &app, optJrParameters &par, int flagDagsim)
+void  Bounds::bound(Configuration &configuration, MYSQL *conn, Application &app, OPT_JR_parameters &par, int flagDagsim)
 {
 	double predictorOutput;
   std::string debugMsg;
@@ -142,7 +142,7 @@ void  Bounds::bound(Configuration &configuration, MYSQL *conn, Application &app,
  *
  */
 
-void Bounds::find_bound(Configuration &configuration, MYSQL *conn, char* db,  Application &app, optJrParameters &par)
+void Bounds::find_bound(Configuration &configuration, MYSQL *conn, char* db,  Application &app, OPT_JR_parameters &par)
 {
   std::string debugMsg;
   char statement[256];
@@ -182,7 +182,7 @@ void Bounds::find_bound(Configuration &configuration, MYSQL *conn, char* db,  Ap
  * CALL IN PARALLEL FINDBOUND (OPENMP)
  */
 void Bounds::calculate_bounds( Configuration &configuration, MYSQL *conn,
-                              optJrParameters &par)
+                              OPT_JR_parameters &par)
   {
 		int n_threads = par.get_numberOfThreads();
     std::string debugMsg;

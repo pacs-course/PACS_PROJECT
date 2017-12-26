@@ -3,7 +3,7 @@
 #include "objectiveFunction.hh"
 
 
-void Search_alterning::localSearch(Batch &app_manager, Configuration &configuration, MYSQL *conn,  optJrParameters &par)
+void Search_alterning::localSearch(Batch &app_manager, Configuration &configuration, MYSQL *conn,  OPT_JR_parameters &par)
 {
   std::string debugMsg;
   Candidates sCandidateApproximated ;
@@ -55,9 +55,9 @@ void Search_alterning::localSearch(Batch &app_manager, Configuration &configurat
     checkTotalNodes(par.get_number(), app_manager);
 
 
-    if (par.get_globalFOcalculation())
+    if (par.get_global_FO_calculation())
     {
-      TotalFO = OF.ObjFunctionGlobal(configuration, conn, app_manager, par);
+      TotalFO = OF.global(configuration, conn, app_manager, par);
       std::cout << "\n At iteration: "<< iteration << " GLOBAL OBJECTIVE FUNCTION = "<< TotalFO <<"\n"<<std::endl;
       statistics.addStatistics( iteration, how_many, TotalFO); // Update Statistics
     }
@@ -71,7 +71,7 @@ void Search_alterning::localSearch(Batch &app_manager, Configuration &configurat
 
 
 
-  if (par.get_globalFOcalculation())
+  if (par.get_global_FO_calculation())
   {
     statistics.readStatistics( par);
   }

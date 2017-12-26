@@ -34,7 +34,7 @@ void Candidates::add_candidate(  Application app_i, Application app_j, int contr
 
 
 
-void Candidates::invoke_predictor_openMP(  optJrParameters &par, Configuration  &configuration )
+void Candidates::invoke_predictor_openMP(  OPT_JR_parameters &par, Configuration  &configuration )
 {
 
   std::string debugMsg;
@@ -121,10 +121,10 @@ void Candidates::invoke_predictor_openMP(  optJrParameters &par, Configuration  
       {
         if (it->get_currentCores_d() > 0 )//it->app_i.get_currentCores_d() > 0 && it->app_j.get_currentCores_d() > 0)
         {
-          OF.ObjFunctionComponent(configuration, conn2[ID], *it, par); //caches the results
+          OF.component(configuration, conn2[ID], *it, par); //caches the results
           //it->nodes_i = it->app_i->get_currentCores_d();
 
-          //it->real_j = OF.ObjFunctionComponent(configuration, conn2[ID], (it->app_j), par);
+          //it->real_j = OF.component(configuration, conn2[ID], (it->app_j), par);
           //it->nodes_j = it->app_j->get_currentCores_d();
         }
 
@@ -158,10 +158,10 @@ void Candidates::invoke_predictor_openMP(  optJrParameters &par, Configuration  
         if (it->get_currentCores_d_i() > 0 && it->get_currentCores_d_j() > 0)
         {
 
-          it->set_real_i( OF.ObjFunctionComponent(configuration, conn2[ID], ( it->get_app_i_ref() ), par)); //Already cached
+          it->set_real_i( OF.component(configuration, conn2[ID], ( it->get_app_i_ref() ), par)); //Already cached
           //it->nodes_i = it->app_i->get_currentCores_d();
 
-          it->set_real_j( OF.ObjFunctionComponent(configuration, conn2[ID], (it->get_app_j_ref()), par)); //Already cached
+          it->set_real_j( OF.component(configuration, conn2[ID], (it->get_app_j_ref()), par)); //Already cached
           //it->nodes_j = it->app_j->get_currentCores_d();
         }
 
@@ -178,7 +178,7 @@ void Candidates::invoke_predictor_openMP(  optJrParameters &par, Configuration  
 }
 
 
-void Candidates::invoke_predictor_seq(MYSQL *conn, optJrParameters &par, Configuration  &configuration )
+void Candidates::invoke_predictor_seq(MYSQL *conn, OPT_JR_parameters &par, Configuration  &configuration )
 {
   std::string debugMsg;
   debugMsg= "Executing invoke_predictor_seq"; par.debugMessage(debugMsg);
@@ -204,8 +204,8 @@ void Candidates::invoke_predictor_seq(MYSQL *conn, optJrParameters &par, Configu
       //it->app_i.mode= R_ALGORITHM; it->app_j.mode= R_ALGORITHM;
       // No openmp
       debugMsg =  " CALLING OBJ_FUNCTION_COMPONENT \n\n"; par.debugMessage(debugMsg);
-      it->set_real_i ( OF.ObjFunctionComponent(configuration, conn, it->get_app_i_ref(), par));
-      it->set_real_j ( OF.ObjFunctionComponent(configuration, conn, it->get_app_j_ref(), par));
+      it->set_real_i ( OF.component(configuration, conn, it->get_app_i_ref(), par));
+      it->set_real_j ( OF.component(configuration, conn, it->get_app_j_ref(), par));
     }
     index++;
   }

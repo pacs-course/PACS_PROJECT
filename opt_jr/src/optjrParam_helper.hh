@@ -49,7 +49,7 @@ void Usage(int argc);
 
 /**
 Function to parse argument from command line;
-Invoked by optJrParameters constructor
+Invoked by OPT_JR_parameters constructor
 */
 char* parseArg(char * string, char * gap, int type, int argc);
 

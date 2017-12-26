@@ -17,22 +17,22 @@ class Objective_fun {
 
 public:
   /**
-   ObjFunctionComponent evaluates the contribution to the calculation of the objective function of one application.
+   component evaluates the contribution to the calculation of the objective function of one application.
    Currently, only one method is supported. Note that the algorithm's choice is stored in the "mode" field
    of the application structure.
    */
-  double ObjFunctionComponent(Configuration &configuration, MYSQL *conn, Application  &app, optJrParameters &par);
+  double component(Configuration &configuration, MYSQL *conn, Application  &app, OPT_JR_parameters &par);
 
   /**
-  ObjFunctionComponentApprox computes an approximation of the objective function (and update R_d)
+  component_approx computes an approximation of the objective function (and update R_d)
   */
-  double ObjFunctionComponentApprox(Application &App, optJrParameters &par);
+  double component_approx(Application &App, OPT_JR_parameters &par);
 
 
   /**
-  ObjFunctionGlobal computes the value of the total objective function
+  global computes the value of the total objective function
   */
-  double ObjFunctionGlobal(Configuration &configuration, MYSQL *conn, Batch &App_manager, optJrParameters &par);
+  double global(Configuration &configuration, MYSQL *conn, Batch &App_manager, OPT_JR_parameters &par);
 
 
 };

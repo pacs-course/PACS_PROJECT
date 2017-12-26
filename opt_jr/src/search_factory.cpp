@@ -5,7 +5,7 @@
 #include "search.hh"
 
 
-std::unique_ptr<Search_base> Search_factory::search_builder(optJrParameters &par, Batch &App_manager)
+std::unique_ptr<Search_base> Search_factory::search_builder(OPT_JR_parameters &par, Batch &App_manager)
 {
   if (par.get_search_type()=="a"|| par.get_search_type()=="A")
   return std::unique_ptr<Search_base>(new search<Search_alterning>(App_manager));

@@ -92,16 +92,16 @@ public:
 
 
   /**
-  "invoke_predictor_openMP" calls in parallel the ObjFunctionComponent for each pair of application
+  "invoke_predictor_openMP" calls in parallel the component for each pair of application
   and it stores the results for each pair in real_i, real_j.
   */
-  void invoke_predictor_openMP( optJrParameters &par, Configuration  &configuration );
+  void invoke_predictor_openMP( OPT_JR_parameters &par, Configuration  &configuration );
 
   /**
-  "invoke_predictor_seq" calls sequencially the ObjFunctionComponent for each pair of application
+  "invoke_predictor_seq" calls sequencially the component for each pair of application
   and it stores the results for each pair in real_i, real_j.
   */
-  void invoke_predictor_seq( MYSQL *conn, optJrParameters &par, Configuration  &configuration );
+  void invoke_predictor_seq( MYSQL *conn, OPT_JR_parameters &par, Configuration  &configuration );
 
 
   int get_size(){return cand.size(); }

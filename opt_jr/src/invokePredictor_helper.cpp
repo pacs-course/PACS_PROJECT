@@ -64,7 +64,7 @@ void writeFile(const char *filepath, const char *data)
 
 
 
-char * ls(char * pattern, optJrParameters &par)
+char * ls(char * pattern, OPT_JR_parameters &par)
 {
 
 	std::string debugMsg;
@@ -206,7 +206,7 @@ char * readFile(char * filename)
 *
 */
 
-char *_run(char * cmd, optJrParameters &par)
+char *_run(char * cmd, OPT_JR_parameters &par)
 
 {
 	int BUFSIZE = 10240;

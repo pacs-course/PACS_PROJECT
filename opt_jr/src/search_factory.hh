@@ -14,8 +14,8 @@
 class Search_factory{
 public:
 
-  //Search select(optJrParameters par);
-  static std::unique_ptr<Search_base> search_builder(optJrParameters &par, Batch &App_manager);
+  //Search select(OPT_JR_parameters par);
+  static std::unique_ptr<Search_base> search_builder(OPT_JR_parameters &par, Batch &App_manager);
 
 
 };

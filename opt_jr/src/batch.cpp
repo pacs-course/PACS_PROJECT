@@ -21,7 +21,7 @@
  */
 
 void
-Batch::calculate_nu(optJrParameters &par)
+Batch::calculate_nu(OPT_JR_parameters &par)
 {
 
   std::string debugMsg;
@@ -111,7 +111,7 @@ Batch::calculate_nu(optJrParameters &par)
  * Description			For each application, a base value for the objective function is calculated.
  */
 
-void Batch::initialize(Configuration  &configuration, MYSQL *conn, optJrParameters &par)
+void Batch::initialize(Configuration  &configuration, MYSQL *conn, OPT_JR_parameters &par)
 {
 	std::string debugMsg;
   Objective_fun OF;
@@ -121,7 +121,7 @@ void Batch::initialize(Configuration  &configuration, MYSQL *conn, optJrParamete
 	{
 			//it->mode = R_ALGORITHM; //currently only this method is supported
 
-			it->set_baseFO( OF.ObjFunctionComponent(configuration, conn, *it, par));
+			it->set_baseFO( OF.component(configuration, conn, *it, par));
 			//it->initialBaseFO = it->get_baseFO();
 			debugMsg = "INITIALIZE BASE FO for APP "+ it->get_session_app_id()
                 + " baseFO = " + std::to_string(it->get_baseFO())+"\n"; par.debugMessage(debugMsg);
@@ -138,7 +138,7 @@ void Batch::initialize(Configuration  &configuration, MYSQL *conn, optJrParamete
  *              cores to the applications that may need more resources
  */
 
-void Batch::fix_initial_solution(optJrParameters &par)
+void Batch::fix_initial_solution(OPT_JR_parameters &par)
 {
 
 	int allocatedCores;
@@ -254,7 +254,7 @@ void Batch::fix_initial_solution(optJrParameters &par)
  */
 
 
-void Batch::write_results(MYSQL *conn, char * dbName, optJrParameters &par)
+void Batch::write_results(MYSQL *conn, char * dbName, OPT_JR_parameters &par)
 {
 	std::string debugMsg;
 

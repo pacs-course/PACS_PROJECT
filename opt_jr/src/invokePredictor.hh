@@ -32,7 +32,7 @@
 
 char* invoke_predictor(Configuration  &configuration, MYSQL *conn, int nNodes, int currentCores,
 											char * memory, int datasize,  char *sessionId, char *appId, char *stage,
-											optJrParameters &par, int flagDagsim);
+											OPT_JR_parameters &par, int flagDagsim);
 
 
 

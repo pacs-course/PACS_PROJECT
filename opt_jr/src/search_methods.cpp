@@ -40,7 +40,7 @@ void Search_methods::checkTotalNodes(int N, Batch &App_manager)
 * Description: It estimates the objective function for each move. The candidate applications for which the move is profitable are stored in a sCandidate object
 */
 
-Candidates Search_methods::approximated_loop( Batch &App_manager, /*int &iteration,*/ optJrParameters &par )
+Candidates Search_methods::approximated_loop( Batch &App_manager, /*int &iteration,*/ OPT_JR_parameters &par )
 {
 
   std::string debugMsg;
@@ -92,10 +92,10 @@ Candidates Search_methods::approximated_loop( Batch &App_manager, /*int &iterati
 
         if (application_i->get_currentCores_d() > 0 && application_j->get_currentCores_d() > 0)
         {
-          DELTA_fo_App_i = OF.ObjFunctionComponentApprox(*application_i, par) - application_i->get_baseFO();
+          DELTA_fo_App_i = OF.component_approx(*application_i, par) - application_i->get_baseFO();
           debugMsg = "app " + application_i->get_session_app_id() + "DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i);par.debugMessage(debugMsg);
 
-          DELTA_fo_App_j = OF.ObjFunctionComponentApprox(*application_j, par) - application_j->get_baseFO();
+          DELTA_fo_App_j = OF.component_approx(*application_j, par) - application_j->get_baseFO();
           debugMsg = "app " + application_j->get_session_app_id() + "DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j);par.debugMessage(debugMsg);
 
 
@@ -148,7 +148,7 @@ Candidates Search_methods::approximated_loop( Batch &App_manager, /*int &iterati
   *
   */
 
-  void Search_methods::exact_loop(Candidates &app_pairs, Configuration &configuration,  MYSQL *conn,  Batch &App_manager, optJrParameters &par, int &index_pair)
+  void Search_methods::exact_loop(Candidates &app_pairs, Configuration &configuration,  MYSQL *conn,  Batch &App_manager, OPT_JR_parameters &par, int &index_pair)
   {
 
     std::string debugMsg;

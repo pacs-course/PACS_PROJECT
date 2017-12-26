@@ -12,7 +12,7 @@
  Constructor
  */
 
-optJrParameters::optJrParameters (char **args, int argc)
+OPT_JR_parameters::OPT_JR_parameters (char **args, int argc)
 {
 
 	if (argc != ARGS) Usage(argc);
@@ -57,13 +57,13 @@ optJrParameters::optJrParameters (char **args, int argc)
 }
 
 
-void optJrParameters::set_numberOfThreads(Configuration &configuration)
+void OPT_JR_parameters::set_numberOfThreads(Configuration &configuration)
 {
 	/* Read the threads number */
 	numberOfThreads = stoi(configuration["THREADS_NUMBER"]);
 }
 
-void optJrParameters::debugMessage(std::string &string)
+void OPT_JR_parameters::debugMessage(std::string &string)
 {
 	if (debug == 1)
   {

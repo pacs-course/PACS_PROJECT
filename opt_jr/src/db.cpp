@@ -23,7 +23,7 @@ void DBerror(MYSQL *conn, char * msg)
 }
 
 
-MYSQL_ROW executeSQL(MYSQL *conn, char *statement, optJrParameters par)
+MYSQL_ROW executeSQL(MYSQL *conn, char *statement, OPT_JR_parameters par)
 {
 	MYSQL_RES *result;
 	char error[256];
