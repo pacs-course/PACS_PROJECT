@@ -7,12 +7,11 @@
 
 
 
-Inheritance diagram for Search$<$ Policy $>$\-:
-\nopagebreak
+Inheritance diagram for Search$<$ Policy $>$\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=188pt]{classSearch__inherit__graph}
+\includegraphics[width=172pt]{classSearch__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -22,14 +21,14 @@ Collaboration diagram for Search$<$ Policy $>$\-:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=213pt]{classSearch__coll__graph}
+\includegraphics[height=550pt]{classSearch__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classSearch_a59b826749138fdaa93c41b1e0697da58}{Search} (\hyperlink{classBatch}{Batch} app\-\_\-m)
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classSearch}{Search} class uses the base class constructor. \end{DoxyCompactList}\item 
 void \hyperlink{classSearch_a32d434fae76c18149f8b15aedadc5f75}{local\-\_\-search} (\hyperlink{classConfiguration}{Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, \hyperlink{classOpt__jr__parameters}{Opt\-\_\-jr\-\_\-parameters} \&par)
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
@@ -38,7 +37,7 @@ void \hyperlink{classSearch_a32d434fae76c18149f8b15aedadc5f75}{local\-\_\-search
 \subsection{Detailed Description}
 \subsubsection*{template$<$class Policy$>$class Search$<$ Policy $>$}
 
-T\-O\-D\-O\-: modify descript. \char`\"{}\-Search\char`\"{} class provides methods to find a solution minimizing the objective function. Actually only one method is supported. 
+\hyperlink{classSearch}{Search} template class provides methods to find a solution minimizing the objective function. It's derived from \hyperlink{classSearch__base}{Search\-\_\-base} class in order to allow dynamic polymorphism. It expects as template argument a Policy class which implements a local\-\_\-search method. 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classSearch_a59b826749138fdaa93c41b1e0697da58}{\index{Search@{Search}!Search@{Search}}
@@ -48,6 +47,10 @@ T\-O\-D\-O\-: modify descript. \char`\"{}\-Search\char`\"{} class provides metho
 \item[{{\bf Batch}}]{app\-\_\-m}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classSearch_a59b826749138fdaa93c41b1e0697da58}
+
+
+\hyperlink{classSearch}{Search} class uses the base class constructor. 
+
 
 
 \subsection{Member Function Documentation}
@@ -60,7 +63,7 @@ T\-O\-D\-O\-: modify descript. \char`\"{}\-Search\char`\"{} class provides metho
 \item[{{\bf Opt\-\_\-jr\-\_\-parameters} \&}]{par}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classSearch_a32d434fae76c18149f8b15aedadc5f75}
-local\-\_\-search perform a local search of a solution minimizing the objective function; it performs cores exchanges between pairs of application and chooses the best pair. The search stops when no improvements are possible or the maximum number of iteration is reached. The function looks before at approximated values of objective function and then for the potential best pairs it invokes the predictor. 
+local\-\_\-search calls the local\-\_\-search method defined in the Policy class 
 
 Implements \hyperlink{classSearch__base_ab3730b1118efbe97065f1ea9715a90dc}{Search\-\_\-base}.
 

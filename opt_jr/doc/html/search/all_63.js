@@ -9,7 +9,7 @@ var searchData=
   ['candidates',['Candidates',['../classCandidates.html',1,'']]],
   ['candidates_2ecpp',['candidates.cpp',['../candidates_8cpp.html',1,'']]],
   ['candidates_2ehh',['candidates.hh',['../candidates_8hh.html',1,'']]],
-  ['check_5ftotal_5fnodes',['check_total_nodes',['../classSearch__methods.html#a0f0cb65795013122dde9a18f586b1a1c',1,'Search_methods']]],
+  ['check_5ftotal_5fnodes',['check_total_nodes',['../classSearch__methods.html#adfd0c4197217dcf34a06353c3ba4f253',1,'Search_methods']]],
   ['chi_5f0',['chi_0',['../classApplication.html#a6066fad4c229a6035652efd712d0d78c',1,'Application']]],
   ['chi_5fc',['chi_C',['../classApplication.html#a73d8a1604a2b2c99b14db1c8bd9c2798',1,'Application']]],
   ['component',['component',['../classObjective__fun.html#a7d98b1f4e8a741fddc249e5134d5c3ef',1,'Objective_fun']]],

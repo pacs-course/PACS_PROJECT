@@ -1,0 +1,14 @@
+<map id="Search_alterning::local_search" name="Search_alterning::local_search">
+<area shape="rect" id="node2" href="$classOpt__jr__parameters.html#a860bf209221b6c5e1c4394d1ae4a058f" title="If debug is activated the message in string is printed. " alt="" coords="494,326,631,368"/>
+<area shape="rect" id="node3" href="$classOpt__jr__parameters.html#a4666611fbf651a76876a0356ad204df1" title="Opt_jr_parameters::\lget_max_iterations" alt="" coords="258,61,395,102"/>
+<area shape="rect" id="node4" href="$classSearch__methods.html#adfd0c4197217dcf34a06353c3ba4f253" title="It checks that the total allocated nodes is still less or equal than the total number of cores availa..." alt="" coords="245,126,408,168"/>
+<area shape="rect" id="node5" href="$classOpt__jr__parameters.html#a8bafd6844417b1f64ddefcf84fb726cb" title="Opt_jr_parameters::\lget_number" alt="" coords="258,192,395,233"/>
+<area shape="rect" id="node6" href="$classSearch__methods.html#aaa8b4d54602311fc4e69a60a792f1384" title="Search_methods::approximated_loop" alt="" coords="208,258,445,284"/>
+<area shape="rect" id="node7" href="$classCandidates.html#aaba3941ba950a669776a1e53fb710691" title="Candidates::get_empty" alt="" coords="248,308,405,335"/>
+<area shape="rect" id="node8" href="$classCandidates.html#ac10d9fe35730800bacac1d89ab117a4c" title="Candidates::get_size" alt="" coords="254,359,399,386"/>
+<area shape="rect" id="node9" href="$classSearch__methods.html#a602ea0f40834d2ea817dc5fcab83436b" title="Search_methods::exact_loop" alt="" coords="231,410,422,436"/>
+<area shape="rect" id="node10" href="$classOpt__jr__parameters.html#a5437ef881f921ae81f5e3d93fbac7e2a" title="Opt_jr_parameters::\lget_global_FO_calculation" alt="" coords="239,461,414,502"/>
+<area shape="rect" id="node11" href="$classObjective__fun.html#ae11b3facab75a7b7dc197d0a1a194d29" title="Objective_fun::global" alt="" coords="255,527,399,554"/>
+<area shape="rect" id="node12" href="$classStatistics.html#addca8205d4c1946fe5af6a1385419c79" title="add_statistics is used to add information about an iteration to the Statistics object. " alt="" coords="243,578,410,604"/>
+<area shape="rect" id="node13" href="$classStatistics.html#a57df73491ae4c84a8c3b08d912d2ce8e" title="read_statistics shows the statistics about localsearch iterations. " alt="" coords="241,628,412,655"/>
+</map>

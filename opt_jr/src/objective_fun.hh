@@ -18,18 +18,18 @@ public:
   /**
   component evaluates the contribution to the calculation of the objective function of one application.
   */
-  double component(Configuration &configuration, MYSQL *conn, Application  &app, Opt_jr_parameters &par);
+  static double component(Configuration &configuration, MYSQL *conn, Application  &app, Opt_jr_parameters &par);
 
   /**
   component_approx computes an approximation of the objective function (and update R_d).
   */
-  double component_approx(Application &App, Opt_jr_parameters &par);
+  static double component_approx(Application &App, Opt_jr_parameters &par);
 
 
   /**
   global computes the value of the total objective function.
   */
-  double global(Configuration &configuration, MYSQL *conn, Batch &App_manager, Opt_jr_parameters &par);
+  static double global(Configuration &configuration, MYSQL *conn, Batch &App_manager, Opt_jr_parameters &par);
 
 
 };

@@ -12,22 +12,25 @@ Collaboration diagram for Statistics\-:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=188pt]{classStatistics__coll__graph}
+\includegraphics[width=197pt]{classStatistics__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classStatistics_addca8205d4c1946fe5af6a1385419c79}{add\-\_\-statistics} (int iteration, int size, double F\-O\-\_\-total)
-\item 
+\begin{DoxyCompactList}\small\item\em add\-\_\-statistics is used to add information about an iteration to the \hyperlink{classStatistics}{Statistics} object. \end{DoxyCompactList}\item 
 void \hyperlink{classStatistics_a57df73491ae4c84a8c3b08d912d2ce8e}{read\-\_\-statistics} (\hyperlink{classOpt__jr__parameters}{Opt\-\_\-jr\-\_\-parameters} \&par)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em read\-\_\-statistics shows the statistics about localsearch iterations. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\-::vector$<$ \hyperlink{classStatistic__iter}{Statistic\-\_\-iter} $>$ \hyperlink{classStatistics_a7b3e8290fbe506b88f7421a2479d258f}{stat}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A vector of \char`\"{}\-Statistic\-\_\-iter\char`\"{} object is used to store statistical information about the local search. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+\hyperlink{classStatistics}{Statistics} class stores statistical information about the local search iterations. 
 
 \subsection{Member Function Documentation}
 \hypertarget{classStatistics_addca8205d4c1946fe5af6a1385419c79}{\index{Statistics@{Statistics}!add\-\_\-statistics@{add\-\_\-statistics}}
@@ -39,10 +42,13 @@ std\-::vector$<$ \hyperlink{classStatistic__iter}{Statistic\-\_\-iter} $>$ \hype
 \item[{double}]{F\-O\-\_\-total}
 \end{DoxyParamCaption}
 )}}\label{classStatistics_addca8205d4c1946fe5af6a1385419c79}
-\char`\"{}add\-\_\-statistics\char`\"{} is used to add information about an iteration to the \char`\"{}\-Statistics\char`\"{} object. 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+
+add\-\_\-statistics is used to add information about an iteration to the \hyperlink{classStatistics}{Statistics} object. 
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -58,10 +64,13 @@ Here is the caller graph for this function\-:
 \item[{{\bf Opt\-\_\-jr\-\_\-parameters} \&}]{par}
 \end{DoxyParamCaption}
 )}}\label{classStatistics_a57df73491ae4c84a8c3b08d912d2ce8e}
-\char`\"{}read\-\_\-statistics\char`\"{} shows the statistics about localsearch iterations. 
 
-Here is the call graph for this function\-:
-\nopagebreak
+
+read\-\_\-statistics shows the statistics about localsearch iterations. 
+
+
+
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -72,8 +81,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -88,7 +96,11 @@ Here is the caller graph for this function\-:
 \hypertarget{classStatistics_a7b3e8290fbe506b88f7421a2479d258f}{\index{Statistics@{Statistics}!stat@{stat}}
 \index{stat@{stat}!Statistics@{Statistics}}
 \subsubsection[{stat}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Statistic\-\_\-iter}$>$ Statistics\-::stat\hspace{0.3cm}{\ttfamily [private]}}}\label{classStatistics_a7b3e8290fbe506b88f7421a2479d258f}
+
+
 A vector of \char`\"{}\-Statistic\-\_\-iter\char`\"{} object is used to store statistical information about the local search. 
+
+
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 

@@ -35,6 +35,9 @@ $<$ std\-::string, std\-::string $>$ \hyperlink{classConfiguration_ab79bfcdc7339
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+\hyperlink{classConfiguration}{Configuration} is a class which stores data from the configuration file. 
+
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classConfiguration_a779947337bf652f0e773cb29f37f14ba}{\index{Configuration@{Configuration}!Configuration@{Configuration}}
 \index{Configuration@{Configuration}!Configuration@{Configuration}}
@@ -45,8 +48,7 @@ $<$ std\-::string, std\-::string $>$ \hyperlink{classConfiguration_ab79bfcdc7339
 )}}\label{classConfiguration_a779947337bf652f0e773cb29f37f14ba}
 The constructor inizializes the configuration container; it reads the file defined in the environmental variable W\-S\-I\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -67,10 +69,9 @@ Here is the call graph for this function\-:
 \item[{const char $\ast$const}]{right}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classConfiguration_ac2ca184b014af7f7caa3ac487909a8f3}
-This is an helper function used by Configuration\-File; it's used to parse input from configuration file. 
+extract\-\_\-item parses input from configuration file. 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -86,13 +87,13 @@ Here is the caller graph for this function\-:
 \item[{std\-::string}]{s}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classConfiguration_ad01eea5b98871f1cc4dbf28b9fe92093}
-
+Overloading of operator \mbox{[}\mbox{]} allows easy access to configuration data. 
 
 \subsection{Member Data Documentation}
 \hypertarget{classConfiguration_ab79bfcdc7339715a56a5a2f4a069bdda}{\index{Configuration@{Configuration}!configuration@{configuration}}
 \index{configuration@{configuration}!Configuration@{Configuration}}
 \subsubsection[{configuration}]{\setlength{\rightskip}{0pt plus 5cm}std\-::unordered\-\_\-map$<$std\-::string,std\-::string$>$ Configuration\-::configuration\hspace{0.3cm}{\ttfamily [private]}}}\label{classConfiguration_ab79bfcdc7339715a56a5a2f4a069bdda}
-\hyperlink{classConfiguration}{Configuration} is a container which memorize data from the configuration file; it's an unordered map 
+configuration is a container which memorize data from the configuration file; it's an unordered map 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 

@@ -1,0 +1,14 @@
+<map id="Application::get_session_app_id" name="Application::get_session_app_id">
+<area shape="rect" id="node2" href="$classBounds.html#ae6633e291f145a0933f801541843cc1b" title="Bounds::bound" alt="" coords="252,5,361,32"/>
+<area shape="rect" id="node3" href="$classBounds.html#a600b0f815df6e0142de1b44f1aa795d7" title="Bounds::find_bound" alt="" coords="493,31,630,57"/>
+<area shape="rect" id="node5" href="$classCandidate__pair.html#a3d7cb54ffabff340b583925427424085" title="Candidate_pair::get\l_session_app_id_i" alt="" coords="239,107,374,149"/>
+<area shape="rect" id="node6" href="$classCandidate__pair.html#a8e2faa0c4a09de7667d760a7de0b9596" title="Candidate_pair::get\l_session_app_id_j" alt="" coords="239,173,374,214"/>
+<area shape="rect" id="node7" href="$classObjective__fun.html#a7d98b1f4e8a741fddc249e5134d5c3ef" title="Objective_fun::component" alt="" coords="219,239,394,265"/>
+<area shape="rect" id="node12" href="$classObjective__fun.html#a551109cf9927773062e9e3668c00eb59" title="Objective_fun::component\l_approx" alt="" coords="219,315,394,357"/>
+<area shape="rect" id="node4" href="$classBounds.html#a525c2a8bf52889857306bf77d698ecd1" title="Bounds::calculate_bounds" alt="" coords="729,31,903,57"/>
+<area shape="rect" id="node8" href="$classBatch.html#a025d1f919a65cda556c99db8b6cdff42" title="For each application, a base value for the objective function is calculated. " alt="" coords="506,115,617,141"/>
+<area shape="rect" id="node9" href="$classCandidates.html#a9cc75e29ad2d0f2eb29fae2801c8e58b" title="Candidates::invoke\l_predictor_openMP" alt="" coords="494,166,629,207"/>
+<area shape="rect" id="node10" href="$classCandidates.html#a0f5bfe459063108d80ed8dce02c6c07b" title="Candidates::invoke\l_predictor_seq" alt="" coords="494,231,629,273"/>
+<area shape="rect" id="node11" href="$classObjective__fun.html#ae11b3facab75a7b7dc197d0a1a194d29" title="Objective_fun::global" alt="" coords="489,297,633,324"/>
+<area shape="rect" id="node13" href="$classSearch__methods.html#aaa8b4d54602311fc4e69a60a792f1384" title="Search_methods::approximated_loop" alt="" coords="443,348,680,375"/>
+</map>

@@ -44,11 +44,11 @@ std\-::list$<$ \hyperlink{classCandidate__pair}{Candidate\-\_\-pair} $>$\\*
 \begin{DoxyCompactItemize}
 \item 
 std\-::list$<$ \hyperlink{classCandidate__pair}{Candidate\-\_\-pair} $>$ \hyperlink{classCandidates_a45b43ae5f71d2162f591e4019f1bc560}{cand}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em cand stores objects of type \hyperlink{classCandidate__pair}{Candidate\-\_\-pair} ordered by increasing delta\-F\-O \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Auxiliary class used by local\-\_\-search; it stores pairs of applications for which a cores exchange could be profitable and provide methods to add \hyperlink{classCandidate__pair}{Candidate\-\_\-pair} and evaluate in parallel the objective function 
+Auxiliary class used by local\-\_\-search; it stores pairs of applications for which a cores exchange could be profitable and it provides methods to add \hyperlink{classCandidate__pair}{Candidate\-\_\-pair} and evaluate in parallel or sequencially the objective function 
 
 \subsection{Member Function Documentation}
 \hypertarget{classCandidates_ad76cf8f7ae979cc49afd67b5fc9c702b}{\index{Candidates@{Candidates}!add\-\_\-candidate@{add\-\_\-candidate}}
@@ -64,7 +64,7 @@ Auxiliary class used by local\-\_\-search; it stores pairs of applications for w
 \item[{double}]{delta\-\_\-j}
 \end{DoxyParamCaption}
 )}}\label{classCandidates_ad76cf8f7ae979cc49afd67b5fc9c702b}
-\char`\"{}add\-\_\-candidate\char`\"{} build a \char`\"{}\-Candidate\-\_\-pair\char`\"{} object and stores it in a \hyperlink{classCandidates}{Candidates} container ordered by increasing delta F\-O 
+add\-\_\-candidate build a \hyperlink{classCandidate__pair}{Candidate\-\_\-pair} object and stores it in a \hyperlink{classCandidates}{Candidates} container ordered by increasing delta F\-O 
 
 Here is the caller graph for this function\-:
 \nopagebreak
@@ -118,8 +118,7 @@ Here is the caller graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCandidates_aaba3941ba950a669776a1e53fb710691}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -156,8 +155,7 @@ Here is the caller graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCandidates_ac10d9fe35730800bacac1d89ab117a4c}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -174,7 +172,19 @@ Here is the caller graph for this function\-:
 \item[{{\bf Configuration} \&}]{configuration}
 \end{DoxyParamCaption}
 )}}\label{classCandidates_a9cc75e29ad2d0f2eb29fae2801c8e58b}
-\char`\"{}invoke\-\_\-predictor\-\_\-open\-M\-P\char`\"{} calls in parallel the component for each pair of application and it stores the results for each pair in real\-\_\-i, real\-\_\-j. 
+invoke\-\_\-predictor\-\_\-open\-M\-P calls in parallel the evaluation of the objective function for each pair of applications and it stores the results in real\-\_\-i, real\-\_\-j (members of \hyperlink{classCandidate__pair}{Candidate\-\_\-pair}). 
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCandidates_a9cc75e29ad2d0f2eb29fae2801c8e58b_cgraph}
+\end{center}
+\end{figure}
+
+
+
 
 Here is the caller graph for this function\-:
 \nopagebreak
@@ -195,7 +205,19 @@ Here is the caller graph for this function\-:
 \item[{{\bf Configuration} \&}]{configuration}
 \end{DoxyParamCaption}
 )}}\label{classCandidates_a0f5bfe459063108d80ed8dce02c6c07b}
-\char`\"{}invoke\-\_\-predictor\-\_\-seq\char`\"{} calls sequencially the component for each pair of application and it stores the results for each pair in real\-\_\-i, real\-\_\-j. 
+invoke\-\_\-predictor\-\_\-seq calls sequencially the evaluation of the objective function for each pair of application and it stores the results in real\-\_\-i, real\-\_\-j (members of \hyperlink{classCandidate__pair}{Candidate\-\_\-pair}). 
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCandidates_a0f5bfe459063108d80ed8dce02c6c07b_cgraph}
+\end{center}
+\end{figure}
+
+
+
 
 Here is the caller graph for this function\-:
 \nopagebreak
@@ -213,7 +235,11 @@ Here is the caller graph for this function\-:
 \hypertarget{classCandidates_a45b43ae5f71d2162f591e4019f1bc560}{\index{Candidates@{Candidates}!cand@{cand}}
 \index{cand@{cand}!Candidates@{Candidates}}
 \subsubsection[{cand}]{\setlength{\rightskip}{0pt plus 5cm}std\-::list$<${\bf Candidate\-\_\-pair}$>$ Candidates\-::cand\hspace{0.3cm}{\ttfamily [private]}}}\label{classCandidates_a45b43ae5f71d2162f591e4019f1bc560}
-Container where applications candidates to change cores are stored in order of increasing delta\-F\-O 
+
+
+cand stores objects of type \hyperlink{classCandidate__pair}{Candidate\-\_\-pair} ordered by increasing delta\-F\-O 
+
+
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 

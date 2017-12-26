@@ -12,7 +12,7 @@ Collaboration diagram for Opt\-\_\-jr\-\_\-parameters\-:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=272pt]{classOpt__jr__parameters__coll__graph}
+\includegraphics[height=550pt]{classOpt__jr__parameters__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -21,9 +21,9 @@ Collaboration diagram for Opt\-\_\-jr\-\_\-parameters\-:
 \hyperlink{classOpt__jr__parameters_aae142f498b266523f275dba7a407326d}{Opt\-\_\-jr\-\_\-parameters} (char $\ast$$\ast$args, int argc)
 \begin{DoxyCompactList}\small\item\em The constructor takes in input all the input from command line. \end{DoxyCompactList}\item 
 void \hyperlink{classOpt__jr__parameters_a19769e398ca6969a851cc6584cfa4dd0}{set\-\_\-number\-\_\-of\-\_\-threads} (\hyperlink{classConfiguration}{Configuration} \&configuration)
-\begin{DoxyCompactList}\small\item\em Set the number of threads\-: it looks in configuration file (0== \char`\"{}no parallelization\char`\"{}) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em set\-\_\-number\-\_\-of\-\_\-threads sets the number\-\_\-of\-\_\-threads\-: it looks in configuration file (0== \char`\"{}no parallelization\char`\"{}) \end{DoxyCompactList}\item 
 void \hyperlink{classOpt__jr__parameters_a860bf209221b6c5e1c4394d1ae4a058f}{debug\-\_\-message} (std\-::string \&string)
-\item 
+\begin{DoxyCompactList}\small\item\em If debug is activated the message in string is printed. \end{DoxyCompactList}\item 
 const std\-::string \hyperlink{classOpt__jr__parameters_a7cef75cfec6d554805e311d7b4c37ef2}{get\-\_\-filename} ()
 \item 
 const int \hyperlink{classOpt__jr__parameters_ae22fb9f311cca37788ea5cf054e83aa7}{get\-\_\-debug} ()
@@ -70,7 +70,7 @@ std\-::string \hyperlink{classOpt__jr__parameters_a0826424385c08cba6aff3c04e6eee
 
 
 \subsection{Detailed Description}
-\hyperlink{classOpt__jr__parameters}{Opt\-\_\-jr\-\_\-parameters} saves parameters received from command line; once they are saved they are visible with public get\-\_\-$\ast$() functions 
+\hyperlink{classOpt__jr__parameters}{Opt\-\_\-jr\-\_\-parameters} saves parameters received from command line; once they are saved they are visible with public get functions 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classOpt__jr__parameters_aae142f498b266523f275dba7a407326d}{\index{Opt\-\_\-jr\-\_\-parameters@{Opt\-\_\-jr\-\_\-parameters}!Opt\-\_\-jr\-\_\-parameters@{Opt\-\_\-jr\-\_\-parameters}}
@@ -87,8 +87,7 @@ The constructor takes in input all the input from command line.
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -107,6 +106,10 @@ Here is the call graph for this function\-:
 \item[{std\-::string \&}]{string}
 \end{DoxyParamCaption}
 )}}\label{classOpt__jr__parameters_a860bf209221b6c5e1c4394d1ae4a058f}
+
+
+If debug is activated the message in string is printed. 
+
 \hypertarget{classOpt__jr__parameters_a38b9495684e078740fc009c7a25ef643}{\index{Opt\-\_\-jr\-\_\-parameters@{Opt\-\_\-jr\-\_\-parameters}!get\-\_\-cache@{get\-\_\-cache}}
 \index{get\-\_\-cache@{get\-\_\-cache}!Opt_jr_parameters@{Opt\-\_\-jr\-\_\-parameters}}
 \subsubsection[{get\-\_\-cache}]{\setlength{\rightskip}{0pt plus 5cm}const int Opt\-\_\-jr\-\_\-parameters\-::get\-\_\-cache (
@@ -121,7 +124,7 @@ Here is the caller graph for this function\-:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=308pt]{classOpt__jr__parameters_a38b9495684e078740fc009c7a25ef643_icgraph}
+\includegraphics[width=350pt]{classOpt__jr__parameters_a38b9495684e078740fc009c7a25ef643_icgraph}
 \end{center}
 \end{figure}
 
@@ -135,8 +138,7 @@ Here is the caller graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOpt__jr__parameters_ae22fb9f311cca37788ea5cf054e83aa7}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -159,7 +161,7 @@ Here is the caller graph for this function\-:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=324pt]{classOpt__jr__parameters_a7cef75cfec6d554805e311d7b4c37ef2_icgraph}
+\includegraphics[width=350pt]{classOpt__jr__parameters_a7cef75cfec6d554805e311d7b4c37ef2_icgraph}
 \end{center}
 \end{figure}
 
@@ -171,6 +173,18 @@ Here is the caller graph for this function\-:
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOpt__jr__parameters_a5437ef881f921ae81f5e3d93fbac7e2a}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOpt__jr__parameters_a5437ef881f921ae81f5e3d93fbac7e2a_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{classOpt__jr__parameters_a8b6c548de42e286a8848b198280aa2dc}{\index{Opt\-\_\-jr\-\_\-parameters@{Opt\-\_\-jr\-\_\-parameters}!get\-\_\-\-K@{get\-\_\-\-K}}
 \index{get\-\_\-\-K@{get\-\_\-\-K}!Opt_jr_parameters@{Opt\-\_\-jr\-\_\-parameters}}
 \subsubsection[{get\-\_\-\-K}]{\setlength{\rightskip}{0pt plus 5cm}const int Opt\-\_\-jr\-\_\-parameters\-::get\-\_\-\-K (
@@ -178,6 +192,18 @@ Here is the caller graph for this function\-:
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOpt__jr__parameters_a8b6c548de42e286a8848b198280aa2dc}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOpt__jr__parameters_a8b6c548de42e286a8848b198280aa2dc_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{classOpt__jr__parameters_a4666611fbf651a76876a0356ad204df1}{\index{Opt\-\_\-jr\-\_\-parameters@{Opt\-\_\-jr\-\_\-parameters}!get\-\_\-max\-\_\-iterations@{get\-\_\-max\-\_\-iterations}}
 \index{get\-\_\-max\-\_\-iterations@{get\-\_\-max\-\_\-iterations}!Opt_jr_parameters@{Opt\-\_\-jr\-\_\-parameters}}
 \subsubsection[{get\-\_\-max\-\_\-iterations}]{\setlength{\rightskip}{0pt plus 5cm}const int Opt\-\_\-jr\-\_\-parameters\-::get\-\_\-max\-\_\-iterations (
@@ -185,6 +211,18 @@ Here is the caller graph for this function\-:
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOpt__jr__parameters_a4666611fbf651a76876a0356ad204df1}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classOpt__jr__parameters_a4666611fbf651a76876a0356ad204df1_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{classOpt__jr__parameters_a8bafd6844417b1f64ddefcf84fb726cb}{\index{Opt\-\_\-jr\-\_\-parameters@{Opt\-\_\-jr\-\_\-parameters}!get\-\_\-number@{get\-\_\-number}}
 \index{get\-\_\-number@{get\-\_\-number}!Opt_jr_parameters@{Opt\-\_\-jr\-\_\-parameters}}
 \subsubsection[{get\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}const int Opt\-\_\-jr\-\_\-parameters\-::get\-\_\-number (
@@ -192,6 +230,18 @@ Here is the caller graph for this function\-:
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOpt__jr__parameters_a8bafd6844417b1f64ddefcf84fb726cb}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOpt__jr__parameters_a8bafd6844417b1f64ddefcf84fb726cb_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{classOpt__jr__parameters_a186166286122c263aac7bb8fe56d6751}{\index{Opt\-\_\-jr\-\_\-parameters@{Opt\-\_\-jr\-\_\-parameters}!get\-\_\-number\-\_\-of\-\_\-threads@{get\-\_\-number\-\_\-of\-\_\-threads}}
 \index{get\-\_\-number\-\_\-of\-\_\-threads@{get\-\_\-number\-\_\-of\-\_\-threads}!Opt_jr_parameters@{Opt\-\_\-jr\-\_\-parameters}}
 \subsubsection[{get\-\_\-number\-\_\-of\-\_\-threads}]{\setlength{\rightskip}{0pt plus 5cm}const int Opt\-\_\-jr\-\_\-parameters\-::get\-\_\-number\-\_\-of\-\_\-threads (
@@ -199,6 +249,18 @@ Here is the caller graph for this function\-:
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOpt__jr__parameters_a186166286122c263aac7bb8fe56d6751}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOpt__jr__parameters_a186166286122c263aac7bb8fe56d6751_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{classOpt__jr__parameters_a77f9d51e7183e9af98e6211f444ed6b4}{\index{Opt\-\_\-jr\-\_\-parameters@{Opt\-\_\-jr\-\_\-parameters}!get\-\_\-search\-\_\-type@{get\-\_\-search\-\_\-type}}
 \index{get\-\_\-search\-\_\-type@{get\-\_\-search\-\_\-type}!Opt_jr_parameters@{Opt\-\_\-jr\-\_\-parameters}}
 \subsubsection[{get\-\_\-search\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string Opt\-\_\-jr\-\_\-parameters\-::get\-\_\-search\-\_\-type (
@@ -208,8 +270,7 @@ Here is the caller graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classOpt__jr__parameters_a77f9d51e7183e9af98e6211f444ed6b4}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -232,7 +293,7 @@ Here is the caller graph for this function\-:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=308pt]{classOpt__jr__parameters_a198ee52d6e6bd479255e57f3fe12af0b_icgraph}
+\includegraphics[width=350pt]{classOpt__jr__parameters_a198ee52d6e6bd479255e57f3fe12af0b_icgraph}
 \end{center}
 \end{figure}
 
@@ -246,12 +307,11 @@ Here is the caller graph for this function\-:
 )}}\label{classOpt__jr__parameters_a19769e398ca6969a851cc6584cfa4dd0}
 
 
-Set the number of threads\-: it looks in configuration file (0== \char`\"{}no parallelization\char`\"{}) 
+set\-\_\-number\-\_\-of\-\_\-threads sets the number\-\_\-of\-\_\-threads\-: it looks in configuration file (0== \char`\"{}no parallelization\char`\"{}) 
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

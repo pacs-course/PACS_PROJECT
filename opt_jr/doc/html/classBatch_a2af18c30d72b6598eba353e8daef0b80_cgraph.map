@@ -1,4 +1,4 @@
 <map id="Batch::fix_initial_solution" name="Batch::fix_initial_solution">
 <area shape="rect" id="node2" href="$classOpt__jr__parameters.html#a8bafd6844417b1f64ddefcf84fb726cb" title="Opt_jr_parameters::\lget_number" alt="" coords="169,5,306,46"/>
-<area shape="rect" id="node3" href="$classOpt__jr__parameters.html#a860bf209221b6c5e1c4394d1ae4a058f" title="Opt_jr_parameters::\ldebug_message" alt="" coords="169,70,306,111"/>
+<area shape="rect" id="node3" href="$classOpt__jr__parameters.html#a860bf209221b6c5e1c4394d1ae4a058f" title="If debug is activated the message in string is printed. " alt="" coords="169,70,306,111"/>
 </map>

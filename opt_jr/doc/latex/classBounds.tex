@@ -12,7 +12,7 @@ Collaboration diagram for Bounds\-:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=209pt]{classBounds__coll__graph}
+\includegraphics[height=550pt]{classBounds__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -39,7 +39,7 @@ void \hyperlink{classBounds_a600b0f815df6e0142de1b44f1aa795d7}{find\-\_\-bound} 
 
 
 \subsection{Detailed Description}
-\hyperlink{classBounds}{Bounds} class provide a method to evaluate the bound for the applications in B\-A\-T\-C\-H i.\-e. the minimal number of cores necessary to finish the execution before the deadline 
+\hyperlink{classBounds}{Bounds} class provide a method to evaluate the bound for the applications stored in app\-\_\-manager i.\-e. the minimal number of cores necessary to finish the execution before the deadline. 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classBounds_a57a9894ee450eb885a83e884b5fb79e7}{\index{Bounds@{Bounds}!Bounds@{Bounds}}
@@ -63,7 +63,7 @@ void \hyperlink{classBounds_a600b0f815df6e0142de1b44f1aa795d7}{find\-\_\-bound} 
 \item[{int}]{flag\-Dagsim}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classBounds_ae6633e291f145a0933f801541843cc1b}
-This function calculates the bound given a certain deadline and number of cores. Predictor method is invoked until an upper bound, consisting of the number of nodes, is found (once that the time calculated by the predictor, a rollback is performed to return the last \char`\"{}safe\char`\"{} number of core and time. 
+This function calculates the bound given a certain deadline and number of cores. Predictor method is invoked until an upper bound, consisting of the number of nodes, is found (once that the time calculated by the predictor, a rollback is performed to return the last \char`\"{}safe\char`\"{} number of core and time). 
 
 Here is the caller graph for this function\-:
 \nopagebreak
@@ -84,10 +84,21 @@ Here is the caller graph for this function\-:
 \item[{{\bf Opt\-\_\-jr\-\_\-parameters} \&}]{par}
 \end{DoxyParamCaption}
 )}}\label{classBounds_a525c2a8bf52889857306bf77d698ecd1}
-calculate\-\_\-bounds evaluates the bound for the applications in B\-A\-T\-C\-H i.\-e. the minimal number of cores necessary to finish the execution before the deadline. The function looks before if the result is already stored in the database, otherwise it invokes the predictor doing a \char`\"{}\-H\-I\-L\-L C\-L\-I\-M\-B\-I\-N\-G\char`\"{}. If the number of threads in the configuration file is greater than 0, it does the computations in parallel (using open\-M\-P). 
+calculate\-\_\-bounds evaluates the bounds for the applications in app\-\_\-manager, i.\-e. the minimal number of cores necessary to finish the execution before the deadline. The function looks before if the result is already stored in the database, otherwise it invokes the predictor doing a \char`\"{}\-H\-I\-L\-L C\-L\-I\-M\-B\-I\-N\-G\char`\"{}. If the number of threads in the configuration file is greater than 0, it does the computations in parallel (using open\-M\-P). It invokes findbound for each \hyperlink{classApplication}{Application}. 
 
-Here is the caller graph for this function\-:
+Here is the call graph for this function\-:
 \nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBounds_a525c2a8bf52889857306bf77d698ecd1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -109,8 +120,19 @@ Here is the caller graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classBounds_a600b0f815df6e0142de1b44f1aa795d7}
 Initially, this function queries the lookup table to find the number of cores, calculated by O\-P\-T\-\_\-\-I\-C earlier, given a deadline, an application id and a dataset size. Secondly, it invokes the bound function. 
 
-Here is the caller graph for this function\-:
+Here is the call graph for this function\-:
 \nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBounds_a600b0f815df6e0142de1b44f1aa795d7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

@@ -1,0 +1,11 @@
+<map id="Objective_fun::component_approx" name="Objective_fun::component_approx">
+<area shape="rect" id="node2" href="$classApplication.html#a74d83f1191a1ab311c055da4d0d8d8d9" title="Application::set_R_d" alt="" coords="250,5,393,32"/>
+<area shape="rect" id="node3" href="$classApplication.html#a0bb182c29dbaf5293a120bdced8d08b6" title="Application::get_alpha" alt="" coords="246,56,397,83"/>
+<area shape="rect" id="node4" href="$classApplication.html#a23f9b3373441f6b7449886a2460271ae" title="Application::get_current\lCores_d" alt="" coords="242,107,401,149"/>
+<area shape="rect" id="node5" href="$classApplication.html#abc8a0a0b78144145d8aeefba5b3e256c" title="Application::get_beta" alt="" coords="249,173,393,200"/>
+<area shape="rect" id="node6" href="$classApplication.html#a8fcbf0ab476dd0d53e7e20f37e3b0543" title="Application::get_w" alt="" coords="257,224,386,251"/>
+<area shape="rect" id="node7" href="$classApplication.html#ad0d83c496de2ca9268bb4d3f743dacac" title="Application::get_R_d" alt="" coords="250,275,393,301"/>
+<area shape="rect" id="node8" href="$classApplication.html#a5fccaf9e0138089067d19f31e0891234" title="Application::get_Deadline_d" alt="" coords="229,325,413,352"/>
+<area shape="rect" id="node9" href="$classOpt__jr__parameters.html#a860bf209221b6c5e1c4394d1ae4a058f" title="If debug is activated the message in string is printed. " alt="" coords="253,377,390,418"/>
+<area shape="rect" id="node10" href="$classApplication.html#a8c2e8eb2e76e8cb32ec7f6a41aba0758" title="Application::get_session\l_app_id" alt="" coords="239,442,403,483"/>
+</map>

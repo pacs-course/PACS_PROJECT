@@ -98,7 +98,7 @@ Collaboration diagram for Bounds:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBounds__coll__graph.png" border="0" usemap="#Bounds_coll__map" alt="Collaboration graph"/></div>
 <map name="Bounds_coll__map" id="Bounds_coll__map">
-<area shape="rect" id="node2" href="classBatch.html" title="{Batch\n||+ Batch()\l+ calculate_nu()\l+ initialize()\l+ fix_initial_solution()\l+ write_results()\l+ show_session_app_id()\l+ show_bounds()\l+ show_solution()\l+ get_begin()\l+ get_cbegin()\l+ get_end()\l+ get_cend()\l+ get_empty()\l}" alt="" coords="5,147,176,400"/></map>
+<area shape="rect" id="node2" href="classBatch.html" title="{Batch\n||+ Batch()\l+ calculate_nu()\l+ initialize()\l+ fix_initial_solution()\l+ write_results()\l+ show_session_app_id()\l+ show_bounds()\l+ show_solution()\l+ get_begin()\l+ get_cbegin()\l+ get_end()\l+ get_cend()\l+ get_empty()\l}" alt="" coords="48,984,219,1237"/><area shape="rect" id="node4" href="classApplication.html" title="{Application\n|&#45; ncores_new\l&#45; R_old\l&#45; chi_C\l&#45; m\l&#45; M\l&#45; Deadline_d\l&#45; csi\l&#45; alpha\l&#45; beta\l|+ Application()\l+ compute_alpha_beta()\l+ get_session_app_id()\l+ get_app_id()\l+ get_w()\l+ get_term_i()\l+ get_chi_0()\l+ get_chi_C()\l+ get_m()\l+ get_M()\land 23 more...\l}" alt="" coords="52,437,215,779"/><area shape="rect" id="node7" title="STL class. " alt="" coords="224,149,304,227"/><area shape="rect" id="node8" title="STL class. " alt="" coords="201,6,327,98"/></map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -123,7 +123,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a9b463c00e877b6bf67d9e1ff4f36950b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="classBounds.html">Bounds</a> class provide a method to evaluate the bound for the applications in BATCH i.e. the minimal number of cores necessary to finish the execution before the deadline </p>
+<div class="textblock"><p><a class="el" href="classBounds.html">Bounds</a> class provide a method to evaluate the bound for the applications stored in app_manager i.e. the minimal number of cores necessary to finish the execution before the deadline. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a57a9894ee450eb885a83e884b5fb79e7"></a>
 <div class="memitem">
@@ -199,14 +199,14 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This function calculates the bound given a certain deadline and number of cores. Predictor method is invoked until an upper bound, consisting of the number of nodes, is found (once that the time calculated by the predictor, a rollback is performed to return the last "safe" number of core and time. </p>
+<p>This function calculates the bound given a certain deadline and number of cores. Predictor method is invoked until an upper bound, consisting of the number of nodes, is found (once that the time calculated by the predictor, a rollback is performed to return the last "safe" number of core and time). </p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBounds_ae6633e291f145a0933f801541843cc1b_icgraph.png" border="0" usemap="#classBounds_ae6633e291f145a0933f801541843cc1b_icgraph" alt=""/></div>
 <map name="classBounds_ae6633e291f145a0933f801541843cc1b_icgraph" id="classBounds_ae6633e291f145a0933f801541843cc1b_icgraph">
-<area shape="rect" id="node2" href="classBounds.html#a600b0f815df6e0142de1b44f1aa795d7" title="Bounds::find_bound" alt="" coords="163,5,301,32"/><area shape="rect" id="node3" href="classBounds.html#a525c2a8bf52889857306bf77d698ecd1" title="Bounds::calculate_bounds" alt="" coords="350,5,525,32"/></map>
+<area shape="rect" id="node2" href="classBounds.html#a600b0f815df6e0142de1b44f1aa795d7" title="Bounds::find_bound" alt="" coords="163,5,301,32"/><area shape="rect" id="node3" href="classBounds.html#a525c2a8bf52889857306bf77d698ecd1" title="Bounds::calculate_bounds" alt="" coords="350,5,525,32"/><area shape="rect" id="node4" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="573,5,624,32"/></map>
 </div>
 </p>
 
@@ -241,7 +241,16 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>calculate_bounds evaluates the bound for the applications in BATCH i.e. the minimal number of cores necessary to finish the execution before the deadline. The function looks before if the result is already stored in the database, otherwise it invokes the predictor doing a "HILL CLIMBING". If the number of threads in the configuration file is greater than 0, it does the computations in parallel (using openMP). </p>
+<p>calculate_bounds evaluates the bounds for the applications in app_manager, i.e. the minimal number of cores necessary to finish the execution before the deadline. The function looks before if the result is already stored in the database, otherwise it invokes the predictor doing a "HILL CLIMBING". If the number of threads in the configuration file is greater than 0, it does the computations in parallel (using openMP). It invokes findbound for each <a class="el" href="classApplication.html">Application</a>. </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBounds_a525c2a8bf52889857306bf77d698ecd1_cgraph.png" border="0" usemap="#classBounds_a525c2a8bf52889857306bf77d698ecd1_cgraph" alt=""/></div>
+<map name="classBounds_a525c2a8bf52889857306bf77d698ecd1_cgraph" id="classBounds_a525c2a8bf52889857306bf77d698ecd1_cgraph">
+<area shape="rect" id="node2" href="classOpt__jr__parameters.html#a186166286122c263aac7bb8fe56d6751" title="Opt_jr_parameters::\lget_number_of_threads" alt="" coords="230,5,389,46"/><area shape="rect" id="node3" href="classOpt__jr__parameters.html#a860bf209221b6c5e1c4394d1ae4a058f" title="If debug is activated the message in string is printed. " alt="" coords="681,114,818,155"/><area shape="rect" id="node4" href="db_8cpp.html#aced0f518cdbba35b17b3ce9f316131ce" title="DBopen" alt="" coords="500,375,569,401"/><area shape="rect" id="node6" href="classBatch.html#a2e6d4bba1cc89e2ecb55e3aca7228046" title="Batch::get_begin" alt="" coords="249,299,369,325"/><area shape="rect" id="node7" href="classBatch.html#a5585c86c7f6545178d0b0e0a82d93fa3" title="Batch::get_end" alt="" coords="254,349,365,376"/><area shape="rect" id="node8" href="classBounds.html#a600b0f815df6e0142de1b44f1aa795d7" title="Bounds::find_bound" alt="" coords="241,197,378,224"/><area shape="rect" id="node13" href="db_8cpp.html#a54af21d55b55bae7b63cb28d3cd05758" title="DBclose" alt="" coords="273,400,345,427"/><area shape="rect" id="node5" href="db_8cpp.html#ab33dd75bdc4f92249542a2bb81b343fd" title="DBerror" alt="" coords="716,277,783,304"/><area shape="rect" id="node9" href="classApplication.html#a4de60db623cbf250ea53805cd86cab06" title="Application::get_app_id" alt="" coords="456,223,613,249"/><area shape="rect" id="node10" href="classApplication.html#af8fb87ff4a7f2ba111f2bc6978645f93" title="Application::get_dataset_size" alt="" coords="438,273,631,300"/><area shape="rect" id="node11" href="classApplication.html#a5fccaf9e0138089067d19f31e0891234" title="Application::get_Deadline_d" alt="" coords="443,324,627,351"/><area shape="rect" id="node12" href="db_8cpp.html#a7d5ba67ab50ce1ffc9817b97612e94c7" title="executeSQL" alt="" coords="487,172,582,199"/></map>
+</div>
+</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -304,6 +313,15 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <p>Initially, this function queries the lookup table to find the number of cores, calculated by OPT_IC earlier, given a deadline, an application id and a dataset size. Secondly, it invokes the bound function. </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBounds_a600b0f815df6e0142de1b44f1aa795d7_cgraph.png" border="0" usemap="#classBounds_a600b0f815df6e0142de1b44f1aa795d7_cgraph" alt=""/></div>
+<map name="classBounds_a600b0f815df6e0142de1b44f1aa795d7_cgraph" id="classBounds_a600b0f815df6e0142de1b44f1aa795d7_cgraph">
+<area shape="rect" id="node2" href="classApplication.html#a4de60db623cbf250ea53805cd86cab06" title="Application::get_app_id" alt="" coords="465,5,623,32"/><area shape="rect" id="node3" href="classApplication.html#af8fb87ff4a7f2ba111f2bc6978645f93" title="Application::get_dataset_size" alt="" coords="447,109,641,136"/><area shape="rect" id="node4" href="classApplication.html#a5fccaf9e0138089067d19f31e0891234" title="Application::get_Deadline_d" alt="" coords="452,236,636,263"/><area shape="rect" id="node5" href="classOpt__jr__parameters.html#a860bf209221b6c5e1c4394d1ae4a058f" title="If debug is activated the message in string is printed. " alt="" coords="475,301,613,342"/><area shape="rect" id="node6" href="db_8cpp.html#a7d5ba67ab50ce1ffc9817b97612e94c7" title="executeSQL" alt="" coords="246,359,341,385"/><area shape="rect" id="node8" href="classApplication.html#a3d116c903ecb0d92d5dc66f1210f227a" title="Application::set_nCores_DB_d" alt="" coords="193,409,394,436"/><area shape="rect" id="node9" href="classApplication.html#a26df38cf838de9baf1ed5e5923b32124" title="Application::set_vm" alt="" coords="225,460,362,487"/><area shape="rect" id="node10" href="classApplication.html#a97149e55a340940c15d56be4fb577767" title="Application::get_nCores_DB_d" alt="" coords="443,57,645,84"/><area shape="rect" id="node11" href="classApplication.html#a5d59e42d6f67c8f519d4c14df49e82a6" title="Application::get_vm" alt="" coords="225,511,362,537"/><area shape="rect" id="node12" href="classBounds.html#ae6633e291f145a0933f801541843cc1b" title="Bounds::bound" alt="" coords="239,156,348,183"/><area shape="rect" id="node13" href="classApplication.html#a8c2e8eb2e76e8cb32ec7f6a41aba0758" title="Application::get_session\l_app_id" alt="" coords="462,163,626,205"/><area shape="rect" id="node7" href="db_8cpp.html#ab33dd75bdc4f92249542a2bb81b343fd" title="DBerror" alt="" coords="511,367,577,393"/></map>
+</div>
+</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>

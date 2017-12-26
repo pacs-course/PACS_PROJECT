@@ -1,4 +1,5 @@
 <map id="Candidates::get_begin" name="Candidates::get_begin">
-<area shape="rect" id="node2" href="$classSearch__methods.html#a312ab1479b1b77c5c98f8b838b9c5461" title="Search_methods::exact_loop" alt="" coords="206,5,397,32"/>
-<area shape="rect" id="node3" href="$classSearch__separing.html#a5729213168347b0bb10889548dffad15" title="Search_separing::local\l_search" alt="" coords="445,23,600,65"/>
+<area shape="rect" id="node2" href="$classSearch__methods.html#a602ea0f40834d2ea817dc5fcab83436b" title="Search_methods::exact_loop" alt="" coords="206,27,397,53"/>
+<area shape="rect" id="node4" href="$classSearch__separing.html#a5729213168347b0bb10889548dffad15" title="Search_separing::local\l_search" alt="" coords="445,70,600,111"/>
+<area shape="rect" id="node3" href="$classSearch__alterning.html#a981af51221c3749c4c20e58b8a622cb1" title="Search_alterning::local\l_search" alt="" coords="445,5,600,46"/>
 </map>

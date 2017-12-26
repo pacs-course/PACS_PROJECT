@@ -97,7 +97,7 @@ Collaboration diagram for Candidates:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCandidates__coll__graph.png" border="0" usemap="#Candidates_coll__map" alt="Collaboration graph"/></div>
 <map name="Candidates_coll__map" id="Candidates_coll__map">
-<area shape="rect" id="node3" href="classCandidate__pair.html" title="{Candidate_pair\n||+ Candidate_pair()\l+ get_app_id_i()\l+ get_app_id_j()\l+ get_session_app_id_i()\l+ get_session_app_id_j()\l+ get_delta_fo()\l+ get_new_core_assignment_i()\l+ get_new_core_assignment_j()\l+ get_real_i()\l+ get_real_j()\land 10 more...\l}" alt="" coords="5,5,211,229"/></map>
+<area shape="rect" id="node3" href="classCandidate__pair.html" title="{Candidate_pair\n||+ Candidate_pair()\l+ get_app_id_i()\l+ get_app_id_j()\l+ get_session_app_id_i()\l+ get_session_app_id_j()\l+ get_delta_fo()\l+ get_new_core_assignment_i()\l+ get_new_core_assignment_j()\l+ get_real_i()\l+ get_real_j()\land 10 more...\l}" alt="" coords="81,856,287,1080"/><area shape="rect" id="node5" href="classApplication.html" title="{Application\n|&#45; ncores_new\l&#45; R_old\l&#45; chi_C\l&#45; m\l&#45; M\l&#45; Deadline_d\l&#45; csi\l&#45; alpha\l&#45; beta\l|+ Application()\l+ compute_alpha_beta()\l+ get_session_app_id()\l+ get_app_id()\l+ get_w()\l+ get_term_i()\l+ get_chi_0()\l+ get_chi_C()\l+ get_m()\l+ get_M()\land 23 more...\l}" alt="" coords="103,437,266,779"/><area shape="rect" id="node7" title="STL class. " alt="" coords="131,149,211,227"/><area shape="rect" id="node8" title="STL class. " alt="" coords="108,6,234,98"/></map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -128,10 +128,11 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a45b43ae5f71d2162f591e4019f1bc560"><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="classCandidate__pair.html">Candidate_pair</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCandidates.html#a45b43ae5f71d2162f591e4019f1bc560">cand</a></td></tr>
+<tr class="memdesc:a45b43ae5f71d2162f591e4019f1bc560"><td class="mdescLeft">&#160;</td><td class="mdescRight">cand stores objects of type <a class="el" href="classCandidate__pair.html">Candidate_pair</a> ordered by increasing deltaFO  <a href="#a45b43ae5f71d2162f591e4019f1bc560">More...</a><br/></td></tr>
 <tr class="separator:a45b43ae5f71d2162f591e4019f1bc560"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Auxiliary class used by local_search; it stores pairs of applications for which a cores exchange could be profitable and provide methods to add <a class="el" href="classCandidate__pair.html">Candidate_pair</a> and evaluate in parallel the objective function </p>
+<div class="textblock"><p>Auxiliary class used by local_search; it stores pairs of applications for which a cores exchange could be profitable and it provides methods to add <a class="el" href="classCandidate__pair.html">Candidate_pair</a> and evaluate in parallel or sequencially the objective function </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="ad76cf8f7ae979cc49afd67b5fc9c702b"></a>
 <div class="memitem">
@@ -186,14 +187,14 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>"add_candidate" build a "Candidate_pair" object and stores it in a <a class="el" href="classCandidates.html">Candidates</a> container ordered by increasing delta FO </p>
+<p>add_candidate build a <a class="el" href="classCandidate__pair.html">Candidate_pair</a> object and stores it in a <a class="el" href="classCandidates.html">Candidates</a> container ordered by increasing delta FO </p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCandidates_ad76cf8f7ae979cc49afd67b5fc9c702b_icgraph.png" border="0" usemap="#classCandidates_ad76cf8f7ae979cc49afd67b5fc9c702b_icgraph" alt=""/></div>
 <map name="classCandidates_ad76cf8f7ae979cc49afd67b5fc9c702b_icgraph" id="classCandidates_ad76cf8f7ae979cc49afd67b5fc9c702b_icgraph">
-<area shape="rect" id="node2" href="classSearch__methods.html#aba1565526a0ce1b9e349918057f6f2c2" title="Search_methods::approximated_loop" alt="" coords="235,5,472,32"/><area shape="rect" id="node3" href="classSearch__separing.html#a5729213168347b0bb10889548dffad15" title="Search_separing::local\l_search" alt="" coords="520,23,675,65"/></map>
+<area shape="rect" id="node2" href="classSearch__methods.html#aaa8b4d54602311fc4e69a60a792f1384" title="Search_methods::approximated_loop" alt="" coords="235,27,472,53"/><area shape="rect" id="node4" href="classSearch__separing.html#a5729213168347b0bb10889548dffad15" title="Search_separing::local\l_search" alt="" coords="520,70,675,111"/><area shape="rect" id="node3" href="classSearch__alterning.html#a981af51221c3749c4c20e58b8a622cb1" title="Search_alterning::local\l_search" alt="" coords="520,5,675,46"/></map>
 </div>
 </p>
 
@@ -225,7 +226,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCandidates_a69a3001a09b54813959d2b44662f7f18_icgraph.png" border="0" usemap="#classCandidates_a69a3001a09b54813959d2b44662f7f18_icgraph" alt=""/></div>
 <map name="classCandidates_a69a3001a09b54813959d2b44662f7f18_icgraph" id="classCandidates_a69a3001a09b54813959d2b44662f7f18_icgraph">
-<area shape="rect" id="node2" href="classSearch__methods.html#a312ab1479b1b77c5c98f8b838b9c5461" title="Search_methods::exact_loop" alt="" coords="206,5,397,32"/><area shape="rect" id="node3" href="classSearch__separing.html#a5729213168347b0bb10889548dffad15" title="Search_separing::local\l_search" alt="" coords="445,23,600,65"/></map>
+<area shape="rect" id="node2" href="classSearch__methods.html#a602ea0f40834d2ea817dc5fcab83436b" title="Search_methods::exact_loop" alt="" coords="206,27,397,53"/><area shape="rect" id="node4" href="classSearch__separing.html#a5729213168347b0bb10889548dffad15" title="Search_separing::local\l_search" alt="" coords="445,70,600,111"/><area shape="rect" id="node3" href="classSearch__alterning.html#a981af51221c3749c4c20e58b8a622cb1" title="Search_alterning::local\l_search" alt="" coords="445,5,600,46"/></map>
 </div>
 </p>
 
@@ -335,7 +336,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCandidates_ad763ac469728621a81010ca7c14b4246_icgraph.png" border="0" usemap="#classCandidates_ad763ac469728621a81010ca7c14b4246_icgraph" alt=""/></div>
 <map name="classCandidates_ad763ac469728621a81010ca7c14b4246_icgraph" id="classCandidates_ad763ac469728621a81010ca7c14b4246_icgraph">
-<area shape="rect" id="node2" href="classSearch__methods.html#a312ab1479b1b77c5c98f8b838b9c5461" title="Search_methods::exact_loop" alt="" coords="198,12,389,39"/><area shape="rect" id="node3" href="classSearch__alterning.html#a981af51221c3749c4c20e58b8a622cb1" title="Search_alterning::local\l_search" alt="" coords="437,5,592,46"/></map>
+<area shape="rect" id="node2" href="classSearch__methods.html#a602ea0f40834d2ea817dc5fcab83436b" title="Search_methods::exact_loop" alt="" coords="198,45,389,72"/><area shape="rect" id="node3" href="classSearch__alterning.html#a981af51221c3749c4c20e58b8a622cb1" title="Search_alterning::local\l_search" alt="" coords="437,5,592,46"/><area shape="rect" id="node4" href="classSearch__separing.html#a5729213168347b0bb10889548dffad15" title="Search_separing::local\l_search" alt="" coords="437,70,592,111"/></map>
 </div>
 </p>
 
@@ -396,14 +397,23 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>"invoke_predictor_openMP" calls in parallel the component for each pair of application and it stores the results for each pair in real_i, real_j. </p>
+<p>invoke_predictor_openMP calls in parallel the evaluation of the objective function for each pair of applications and it stores the results in real_i, real_j (members of <a class="el" href="classCandidate__pair.html">Candidate_pair</a>). </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCandidates_a9cc75e29ad2d0f2eb29fae2801c8e58b_cgraph.png" border="0" usemap="#classCandidates_a9cc75e29ad2d0f2eb29fae2801c8e58b_cgraph" alt=""/></div>
+<map name="classCandidates_a9cc75e29ad2d0f2eb29fae2801c8e58b_cgraph" id="classCandidates_a9cc75e29ad2d0f2eb29fae2801c8e58b_cgraph">
+<area shape="rect" id="node2" href="classOpt__jr__parameters.html#a186166286122c263aac7bb8fe56d6751" title="Opt_jr_parameters::\lget_number_of_threads" alt="" coords="198,5,357,46"/><area shape="rect" id="node3" href="classOpt__jr__parameters.html#a8b6c548de42e286a8848b198280aa2dc" title="Opt_jr_parameters::\lget_K" alt="" coords="209,70,346,111"/><area shape="rect" id="node4" href="classOpt__jr__parameters.html#a860bf209221b6c5e1c4394d1ae4a058f" title="If debug is activated the message in string is printed. " alt="" coords="657,179,794,221"/><area shape="rect" id="node5" href="db_8cpp.html#aced0f518cdbba35b17b3ce9f316131ce" title="DBopen" alt="" coords="243,325,312,352"/><area shape="rect" id="node7" href="classObjective__fun.html#a7d98b1f4e8a741fddc249e5134d5c3ef" title="Objective_fun::component" alt="" coords="190,275,365,301"/><area shape="rect" id="node13" href="db_8cpp.html#a54af21d55b55bae7b63cb28d3cd05758" title="DBclose" alt="" coords="241,376,313,403"/><area shape="rect" id="node6" href="db_8cpp.html#ab33dd75bdc4f92249542a2bb81b343fd" title="DBerror" alt="" coords="692,413,759,440"/><area shape="rect" id="node8" href="classApplication.html#a74d83f1191a1ab311c055da4d0d8d8d9" title="Application::set_R_d" alt="" coords="439,355,582,381"/><area shape="rect" id="node9" href="invoke__predictor_8cpp.html#a08c78503a3848b016487ab7d31fd9074" title="invoke_predictor" alt="" coords="452,304,569,331"/><area shape="rect" id="node10" href="classApplication.html#a23f9b3373441f6b7449886a2460271ae" title="Application::get_current\lCores_d" alt="" coords="431,406,590,447"/><area shape="rect" id="node11" href="classApplication.html#af8fb87ff4a7f2ba111f2bc6978645f93" title="Application::get_dataset_size" alt="" coords="414,472,607,499"/><area shape="rect" id="node12" href="classApplication.html#a8c2e8eb2e76e8cb32ec7f6a41aba0758" title="Application::get_session\l_app_id" alt="" coords="429,238,593,279"/></map>
+</div>
+</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCandidates_a9cc75e29ad2d0f2eb29fae2801c8e58b_icgraph.png" border="0" usemap="#classCandidates_a9cc75e29ad2d0f2eb29fae2801c8e58b_icgraph" alt=""/></div>
 <map name="classCandidates_a9cc75e29ad2d0f2eb29fae2801c8e58b_icgraph" id="classCandidates_a9cc75e29ad2d0f2eb29fae2801c8e58b_icgraph">
-<area shape="rect" id="node2" href="classSearch__methods.html#a312ab1479b1b77c5c98f8b838b9c5461" title="Search_methods::exact_loop" alt="" coords="190,12,381,39"/><area shape="rect" id="node3" href="classSearch__alterning.html#a981af51221c3749c4c20e58b8a622cb1" title="Search_alterning::local\l_search" alt="" coords="429,5,584,46"/></map>
+<area shape="rect" id="node2" href="classSearch__methods.html#a602ea0f40834d2ea817dc5fcab83436b" title="Search_methods::exact_loop" alt="" coords="190,45,381,72"/><area shape="rect" id="node3" href="classSearch__alterning.html#a981af51221c3749c4c20e58b8a622cb1" title="Search_alterning::local\l_search" alt="" coords="429,5,584,46"/><area shape="rect" id="node4" href="classSearch__separing.html#a5729213168347b0bb10889548dffad15" title="Search_separing::local\l_search" alt="" coords="429,70,584,111"/></map>
 </div>
 </p>
 
@@ -438,14 +448,23 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>"invoke_predictor_seq" calls sequencially the component for each pair of application and it stores the results for each pair in real_i, real_j. </p>
+<p>invoke_predictor_seq calls sequencially the evaluation of the objective function for each pair of application and it stores the results in real_i, real_j (members of <a class="el" href="classCandidate__pair.html">Candidate_pair</a>). </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCandidates_a0f5bfe459063108d80ed8dce02c6c07b_cgraph.png" border="0" usemap="#classCandidates_a0f5bfe459063108d80ed8dce02c6c07b_cgraph" alt=""/></div>
+<map name="classCandidates_a0f5bfe459063108d80ed8dce02c6c07b_cgraph" id="classCandidates_a0f5bfe459063108d80ed8dce02c6c07b_cgraph">
+<area shape="rect" id="node2" href="classOpt__jr__parameters.html#a860bf209221b6c5e1c4394d1ae4a058f" title="If debug is activated the message in string is printed. " alt="" coords="657,76,794,117"/><area shape="rect" id="node3" href="classOpt__jr__parameters.html#a8b6c548de42e286a8848b198280aa2dc" title="Opt_jr_parameters::\lget_K" alt="" coords="209,113,346,155"/><area shape="rect" id="node4" href="classObjective__fun.html#a7d98b1f4e8a741fddc249e5134d5c3ef" title="Objective_fun::component" alt="" coords="190,259,365,286"/><area shape="rect" id="node5" href="classApplication.html#a74d83f1191a1ab311c055da4d0d8d8d9" title="Application::set_R_d" alt="" coords="439,33,582,59"/><area shape="rect" id="node6" href="invoke__predictor_8cpp.html#a08c78503a3848b016487ab7d31fd9074" title="invoke_predictor" alt="" coords="452,83,569,110"/><area shape="rect" id="node7" href="classApplication.html#a23f9b3373441f6b7449886a2460271ae" title="Application::get_current\lCores_d" alt="" coords="431,135,590,176"/><area shape="rect" id="node8" href="classApplication.html#af8fb87ff4a7f2ba111f2bc6978645f93" title="Application::get_dataset_size" alt="" coords="414,201,607,227"/><area shape="rect" id="node9" href="classApplication.html#a8c2e8eb2e76e8cb32ec7f6a41aba0758" title="Application::get_session\l_app_id" alt="" coords="429,252,593,293"/><area shape="rect" id="node10" href="classApplication.html#a4de60db623cbf250ea53805cd86cab06" title="Application::get_app_id" alt="" coords="432,318,589,345"/><area shape="rect" id="node11" href="classApplication.html#aa3b7fa5dbc85e1f0518bd1f85fa7205f" title="Application::get_stage" alt="" coords="435,369,586,395"/><area shape="rect" id="node12" href="classApplication.html#a8fcbf0ab476dd0d53e7e20f37e3b0543" title="Application::get_w" alt="" coords="446,419,575,446"/><area shape="rect" id="node13" href="classApplication.html#ad0d83c496de2ca9268bb4d3f743dacac" title="Application::get_R_d" alt="" coords="439,470,582,497"/></map>
+</div>
+</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCandidates_a0f5bfe459063108d80ed8dce02c6c07b_icgraph.png" border="0" usemap="#classCandidates_a0f5bfe459063108d80ed8dce02c6c07b_icgraph" alt=""/></div>
 <map name="classCandidates_a0f5bfe459063108d80ed8dce02c6c07b_icgraph" id="classCandidates_a0f5bfe459063108d80ed8dce02c6c07b_icgraph">
-<area shape="rect" id="node2" href="classSearch__methods.html#a312ab1479b1b77c5c98f8b838b9c5461" title="Search_methods::exact_loop" alt="" coords="190,12,381,39"/><area shape="rect" id="node3" href="classSearch__alterning.html#a981af51221c3749c4c20e58b8a622cb1" title="Search_alterning::local\l_search" alt="" coords="429,5,584,46"/></map>
+<area shape="rect" id="node2" href="classSearch__methods.html#a602ea0f40834d2ea817dc5fcab83436b" title="Search_methods::exact_loop" alt="" coords="190,45,381,72"/><area shape="rect" id="node3" href="classSearch__alterning.html#a981af51221c3749c4c20e58b8a622cb1" title="Search_alterning::local\l_search" alt="" coords="429,5,584,46"/><area shape="rect" id="node4" href="classSearch__separing.html#a5729213168347b0bb10889548dffad15" title="Search_separing::local\l_search" alt="" coords="429,70,584,111"/></map>
 </div>
 </p>
 
@@ -469,7 +488,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Container where applications candidates to change cores are stored in order of increasing deltaFO </p>
+
+<p>cand stores objects of type <a class="el" href="classCandidate__pair.html">Candidate_pair</a> ordered by increasing deltaFO </p>
 
 </div>
 </div>

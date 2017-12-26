@@ -7,12 +7,11 @@
 
 
 
-Inheritance diagram for Search\-\_\-base\-:
-\nopagebreak
+Inheritance diagram for Search\-\_\-base\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=188pt]{classSearch__base__inherit__graph}
+\includegraphics[width=172pt]{classSearch__base__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -22,7 +21,7 @@ Collaboration diagram for Search\-\_\-base\-:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=213pt]{classSearch__base__coll__graph}
+\includegraphics[height=550pt]{classSearch__base__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -31,19 +30,20 @@ Collaboration diagram for Search\-\_\-base\-:
 \hyperlink{classSearch__base_a222697de87f38891f9018defe1988dc4}{Search\-\_\-base} (\hyperlink{classBatch}{Batch} app\-\_\-m)
 \item 
 virtual void \hyperlink{classSearch__base_ab3730b1118efbe97065f1ea9715a90dc}{local\-\_\-search} (\hyperlink{classConfiguration}{Configuration} \&configuration, M\-Y\-S\-Q\-L $\ast$conn, \hyperlink{classOpt__jr__parameters}{Opt\-\_\-jr\-\_\-parameters} \&par)=0
-\item 
+\begin{DoxyCompactList}\small\item\em local\-\_\-search is a pure virtual function\-: it's overloaded in search children class. \end{DoxyCompactList}\item 
 void \hyperlink{classSearch__base_a43c7b22f332c3be3ed2f6da9e2d6d3a5}{write\-\_\-results} (M\-Y\-S\-Q\-L $\ast$conn, char $\ast$db\-Name, \hyperlink{classOpt__jr__parameters}{Opt\-\_\-jr\-\_\-parameters} \&par)
 \item 
 void \hyperlink{classSearch__base_a6380bc5489f95cf722fa7cc329dc9f9d}{print\-\_\-solution} ()
-\item 
-\hyperlink{classBatch}{Batch} \hyperlink{classSearch__base_a10a67e4278d8281e4db740924a2bd658}{get\-\_\-app\-\_\-manager} ()
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classBatch}{Batch} \hyperlink{classSearch__base_ad4cadf0273cce78e1ae9920bd9100e7a}{App\-\_\-manager}
-\end{DoxyCompactItemize}
+\hyperlink{classBatch}{Batch} \hyperlink{classSearch__base_aee76f7ade36a2c78a486efa2715170ea}{app\-\_\-manager}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classBatch}{Batch} object as described in \hyperlink{classBatch}{Batch} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+\hyperlink{classSearch__base}{Search\-\_\-base} is an abstract class which is used to perform dynamic overloading of the local\-\_\-search method in the children \hyperlink{classSearch}{Search} class. It also provides methods to print results and save them in the database. 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classSearch__base_a222697de87f38891f9018defe1988dc4}{\index{Search\-\_\-base@{Search\-\_\-base}!Search\-\_\-base@{Search\-\_\-base}}
@@ -56,13 +56,6 @@ void \hyperlink{classSearch__base_a6380bc5489f95cf722fa7cc329dc9f9d}{print\-\_\-
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classSearch__base_a10a67e4278d8281e4db740924a2bd658}{\index{Search\-\_\-base@{Search\-\_\-base}!get\-\_\-app\-\_\-manager@{get\-\_\-app\-\_\-manager}}
-\index{get\-\_\-app\-\_\-manager@{get\-\_\-app\-\_\-manager}!Search_base@{Search\-\_\-base}}
-\subsubsection[{get\-\_\-app\-\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Batch} Search\-\_\-base\-::get\-\_\-app\-\_\-manager (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{classSearch__base_a10a67e4278d8281e4db740924a2bd658}
 \hypertarget{classSearch__base_ab3730b1118efbe97065f1ea9715a90dc}{\index{Search\-\_\-base@{Search\-\_\-base}!local\-\_\-search@{local\-\_\-search}}
 \index{local\-\_\-search@{local\-\_\-search}!Search_base@{Search\-\_\-base}}
 \subsubsection[{local\-\_\-search}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Search\-\_\-base\-::local\-\_\-search (
@@ -74,6 +67,10 @@ void \hyperlink{classSearch__base_a6380bc5489f95cf722fa7cc329dc9f9d}{print\-\_\-
 )\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classSearch__base_ab3730b1118efbe97065f1ea9715a90dc}
 
 
+local\-\_\-search is a pure virtual function\-: it's overloaded in search children class. 
+
+
+
 Implemented in \hyperlink{classSearch_a32d434fae76c18149f8b15aedadc5f75}{Search$<$ Policy $>$}.
 
 \hypertarget{classSearch__base_a6380bc5489f95cf722fa7cc329dc9f9d}{\index{Search\-\_\-base@{Search\-\_\-base}!print\-\_\-solution@{print\-\_\-solution}}
@@ -83,7 +80,9 @@ Implemented in \hyperlink{classSearch_a32d434fae76c18149f8b15aedadc5f75}{Search$
 {}
 \end{DoxyParamCaption}
 )}}\label{classSearch__base_a6380bc5489f95cf722fa7cc329dc9f9d}
-It prints the output of App\-\_\-manager.\-show\-\_\-solution 
+It prints the actual solution. (it calls show\-\_\-solution member function of app\-\_\-manager).
+
+It prints the output of app\-\_\-manager.\-show\-\_\-solution 
 
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
@@ -103,7 +102,9 @@ Here is the call graph for this function\-:\nopagebreak
 \item[{{\bf Opt\-\_\-jr\-\_\-parameters} \&}]{par}
 \end{DoxyParamCaption}
 )}}\label{classSearch__base_a43c7b22f332c3be3ed2f6da9e2d6d3a5}
-It calls write\-\_\-results member function of App\-\_\-manager private member 
+write\-\_\-results saves results in the database (it calls write\-\_\-results member function of app\-\_\-manager).
+
+It calls write\-\_\-results member function of app\-\_\-manager private member 
 
 Here is the call graph for this function\-:
 \nopagebreak
@@ -118,10 +119,14 @@ Here is the call graph for this function\-:
 
 
 \subsection{Member Data Documentation}
-\hypertarget{classSearch__base_ad4cadf0273cce78e1ae9920bd9100e7a}{\index{Search\-\_\-base@{Search\-\_\-base}!App\-\_\-manager@{App\-\_\-manager}}
-\index{App\-\_\-manager@{App\-\_\-manager}!Search_base@{Search\-\_\-base}}
-\subsubsection[{App\-\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Batch} Search\-\_\-base\-::\-App\-\_\-manager\hspace{0.3cm}{\ttfamily [protected]}}}\label{classSearch__base_ad4cadf0273cce78e1ae9920bd9100e7a}
-\hyperlink{classBatch}{Batch} object as described in \hyperlink{classBatch}{Batch} class 
+\hypertarget{classSearch__base_aee76f7ade36a2c78a486efa2715170ea}{\index{Search\-\_\-base@{Search\-\_\-base}!app\-\_\-manager@{app\-\_\-manager}}
+\index{app\-\_\-manager@{app\-\_\-manager}!Search_base@{Search\-\_\-base}}
+\subsubsection[{app\-\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Batch} Search\-\_\-base\-::app\-\_\-manager\hspace{0.3cm}{\ttfamily [protected]}}}\label{classSearch__base_aee76f7ade36a2c78a486efa2715170ea}
+
+
+\hyperlink{classBatch}{Batch} object as described in \hyperlink{classBatch}{Batch} class. 
+
+
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 

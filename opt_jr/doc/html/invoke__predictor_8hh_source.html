@@ -107,28 +107,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">    -Here are declared functions to invoke a predictor</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">-Here it is declared the function used to invoke the predictor</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">char</span>* <a class="code" href="invoke__predictor_8cpp.html#a08c78503a3848b016487ab7d31fd9074">invoke_predictor</a>(<a class="code" href="classConfiguration.html">Configuration</a>  &amp;configuration, MYSQL *conn, <span class="keywordtype">int</span> nNodes, <span class="keywordtype">int</span> currentCores,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                            <span class="keywordtype">char</span> * memory, <span class="keywordtype">int</span> datasize,  <span class="keywordtype">char</span> *sessionId, <span class="keywordtype">char</span> *appId, <span class="keywordtype">char</span> *stage,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                            <a class="code" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;par, <span class="keywordtype">int</span> flagDagsim);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">char</span>* <a class="code" href="invoke__predictor_8cpp.html#a08c78503a3848b016487ab7d31fd9074">invoke_predictor</a>(<a class="code" href="classConfiguration.html">Configuration</a>  &amp;configuration, MYSQL *conn, <span class="keywordtype">int</span> nNodes, <span class="keywordtype">int</span> currentCores,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">char</span> * memory, <span class="keywordtype">int</span> datasize,  <span class="keywordtype">char</span> *sessionId, <span class="keywordtype">char</span> *appId, <span class="keywordtype">char</span> *stage,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;par, <span class="keywordtype">int</span> flagDagsim);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="ttc" id="db_8hh_html"><div class="ttname"><a href="db_8hh.html">db.hh</a></div></div>
 <div class="ttc" id="configuration_8hh_html"><div class="ttname"><a href="configuration_8hh.html">configuration.hh</a></div></div>
 <div class="ttc" id="classOpt__jr__parameters_html"><div class="ttname"><a href="classOpt__jr__parameters.html">Opt_jr_parameters</a></div><div class="ttdef"><b>Definition:</b> opt_jr_parameters.hh:17</div></div>
-<div class="ttc" id="classConfiguration_html"><div class="ttname"><a href="classConfiguration.html">Configuration</a></div><div class="ttdef"><b>Definition:</b> configuration.hh:10</div></div>
+<div class="ttc" id="classConfiguration_html"><div class="ttname"><a href="classConfiguration.html">Configuration</a></div><div class="ttdef"><b>Definition:</b> configuration.hh:13</div></div>
 <div class="ttc" id="invoke__predictor__helper_8hh_html"><div class="ttname"><a href="invoke__predictor__helper_8hh.html">invoke_predictor_helper.hh</a></div></div>
 <div class="ttc" id="invoke__predictor_8cpp_html_a08c78503a3848b016487ab7d31fd9074"><div class="ttname"><a href="invoke__predictor_8cpp.html#a08c78503a3848b016487ab7d31fd9074">invoke_predictor</a></div><div class="ttdeci">char * invoke_predictor(Configuration &amp;configuration, MYSQL *conn, int nNodes, int currentCores, char *memory, int datasize, char *sessionId, char *appId, char *stage, Opt_jr_parameters &amp;par, int flagDagsim)</div><div class="ttdef"><b>Definition:</b> invoke_predictor.cpp:26</div></div>
 <div class="ttc" id="opt__jr__parameters_8hh_html"><div class="ttname"><a href="opt__jr__parameters_8hh.html">opt_jr_parameters.hh</a></div></div>

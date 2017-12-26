@@ -1,4 +1,9 @@
 <map id="/vagrant/PROJECT_SPARK/PACS_PROJECT/opt_jr/src/search_methods.hh" name="/vagrant/PROJECT_SPARK/PACS_PROJECT/opt_jr/src/search_methods.hh">
-<area shape="rect" id="node2" href="$search__separing_8hh.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/search_separing.hh" alt="" coords="5,109,195,165"/>
-<area shape="rect" id="node3" href="$search__alterning_8hh.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/search_alterning.hh" alt="" coords="219,109,409,165"/>
+<area shape="rect" id="node2" href="$search__separing_8hh.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/search_separing.hh" alt="" coords="255,109,445,165"/>
+<area shape="rect" id="node7" href="$search__alterning_8hh.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/search_alterning.hh" alt="" coords="470,109,660,165"/>
+<area shape="rect" id="node3" href="$search_8hh.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/search.hh" alt="" coords="271,213,461,269"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/main.cpp" alt="" coords="230,317,420,373"/>
+<area shape="rect" id="node5" href="$search__factory_8cpp.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/search_factory.cpp" alt="" coords="445,317,635,373"/>
+<area shape="rect" id="node6" href="$search__separing_8cpp.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/search_separing.cpp" alt="" coords="5,213,195,269"/>
+<area shape="rect" id="node8" href="$search__alterning_8cpp.html" title="/vagrant/PROJECT_SPARK\l/PACS_PROJECT/opt_jr/src\l/search_alterning.cpp" alt="" coords="589,213,779,269"/>
 </map>

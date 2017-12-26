@@ -8,7 +8,7 @@ var searchData=
   ['get_5fapp_5fid_5fj',['get_app_id_j',['../classCandidate__pair.html#aaee11e17681cfe95daed61e23b3bd6dc',1,'Candidate_pair']]],
   ['get_5fapp_5fj',['get_app_j',['../classCandidate__pair.html#a68d1dec30fcbfd265355a980c0d01d63',1,'Candidate_pair']]],
   ['get_5fapp_5fj_5fref',['get_app_j_ref',['../classCandidate__pair.html#ae322ed41aa4660ba68d272a4c1d7f9f9',1,'Candidate_pair']]],
-  ['get_5fapp_5fmanager',['get_app_manager',['../classBounds.html#aefebbfe17ca3a7d6a0f6cbf4a0bf2782',1,'Bounds::get_app_manager()'],['../classSearch__base.html#a10a67e4278d8281e4db740924a2bd658',1,'Search_base::get_app_manager()']]],
+  ['get_5fapp_5fmanager',['get_app_manager',['../classBounds.html#aefebbfe17ca3a7d6a0f6cbf4a0bf2782',1,'Bounds']]],
   ['get_5fbase_5ffo_5fi',['get_base_fo_i',['../classCandidate__pair.html#a82a48babd2f32c73e1f167d54e8c6ebd',1,'Candidate_pair']]],
   ['get_5fbase_5ffo_5fj',['get_base_fo_j',['../classCandidate__pair.html#a3f36cbb93291e8a72a6b3e88737d2a85',1,'Candidate_pair']]],
   ['get_5fbasefo',['get_baseFO',['../classApplication.html#affaab47de2a18e0dc08c7a6bcd272c5a',1,'Application']]],

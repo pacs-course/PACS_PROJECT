@@ -115,15 +115,12 @@ Batch::calculate_nu(Opt_jr_parameters &par)
 void Batch::initialize(Configuration  &configuration, MYSQL *conn, Opt_jr_parameters &par)
 {
 	std::string debugMsg;
-  Objective_fun OF;
 
   debugMsg =  "Information: INITIALIZE baseFo for all the applications" ;par.debug_message(debugMsg);
 	for (auto it =APPs.begin(); it!= APPs.end(); it++)
 	{
-			//it->mode = R_ALGORITHM; //currently only this method is supported
 
-			it->set_baseFO( OF.component(configuration, conn, *it, par));
-			//it->initialBaseFO = it->get_baseFO();
+			it->set_baseFO( Objective_fun::component(configuration, conn, *it, par));
 			debugMsg = "INITIALIZE BASE FO for APP "+ it->get_session_app_id()
                 + " baseFO = " + std::to_string(it->get_baseFO())+"\n"; par.debug_message(debugMsg);
 	}

@@ -97,31 +97,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="candidates_8hh.html">candidates.hh</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include  &lt;mysql.h&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classSearch__methods.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSearch__methods.html">Search_methods</a>{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classSearch__methods.html#a0f0cb65795013122dde9a18f586b1a1c">check_total_nodes</a>(<span class="keywordtype">int</span> N, <a class="code" href="classBatch.html">Batch</a> &amp;App_manager);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="classCandidates.html">Candidates</a> <a class="code" href="classSearch__methods.html#aba1565526a0ce1b9e349918057f6f2c2">approximated_loop</a>( <a class="code" href="classBatch.html">Batch</a> &amp;App_manager,<span class="comment">/* int &amp;iteration,*/</span> <a class="code" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;par);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classSearch__methods.html#a312ab1479b1b77c5c98f8b838b9c5461">exact_loop</a>(<a class="code" href="classCandidates.html">Candidates</a> &amp;app_pairs, <a class="code" href="classConfiguration.html">Configuration</a> &amp;configuration,  MYSQL *conn,  <a class="code" href="classBatch.html">Batch</a> &amp;App_manager, <a class="code" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;par, <span class="keywordtype">int</span> &amp;index_pair);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classSearch__methods.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSearch__methods.html">Search_methods</a>{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classSearch__methods.html#adfd0c4197217dcf34a06353c3ba4f253">check_total_nodes</a>(<span class="keywordtype">int</span> N, <a class="code" href="classBatch.html">Batch</a> &amp;app_manager);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="classCandidates.html">Candidates</a> <a class="code" href="classSearch__methods.html#aaa8b4d54602311fc4e69a60a792f1384">approximated_loop</a>( <a class="code" href="classBatch.html">Batch</a> &amp;app_manager, <a class="code" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;par);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classSearch__methods.html#a602ea0f40834d2ea817dc5fcab83436b">exact_loop</a>(<a class="code" href="classCandidates.html">Candidates</a> &amp;app_pairs, <a class="code" href="classConfiguration.html">Configuration</a> &amp;configuration,  MYSQL *conn,  <a class="code" href="classBatch.html">Batch</a> &amp;app_manager, <a class="code" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;par, <span class="keywordtype">int</span> &amp;index_pair);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="candidates_8hh_html"><div class="ttname"><a href="candidates_8hh.html">candidates.hh</a></div></div>
 <div class="ttc" id="classCandidates_html"><div class="ttname"><a href="classCandidates.html">Candidates</a></div><div class="ttdef"><b>Definition:</b> candidates.hh:18</div></div>
+<div class="ttc" id="classSearch__methods_html_aaa8b4d54602311fc4e69a60a792f1384"><div class="ttname"><a href="classSearch__methods.html#aaa8b4d54602311fc4e69a60a792f1384">Search_methods::approximated_loop</a></div><div class="ttdeci">Candidates approximated_loop(Batch &amp;app_manager, Opt_jr_parameters &amp;par)</div><div class="ttdef"><b>Definition:</b> search_methods.cpp:43</div></div>
+<div class="ttc" id="classSearch__methods_html_adfd0c4197217dcf34a06353c3ba4f253"><div class="ttname"><a href="classSearch__methods.html#adfd0c4197217dcf34a06353c3ba4f253">Search_methods::check_total_nodes</a></div><div class="ttdeci">void check_total_nodes(int N, Batch &amp;app_manager)</div><div class="ttdoc">It checks that the total allocated nodes is still less or equal than the total number of cores availa...</div><div class="ttdef"><b>Definition:</b> search_methods.cpp:21</div></div>
 <div class="ttc" id="configuration_8hh_html"><div class="ttname"><a href="configuration_8hh.html">configuration.hh</a></div></div>
 <div class="ttc" id="classBatch_html"><div class="ttname"><a href="classBatch.html">Batch</a></div><div class="ttdef"><b>Definition:</b> batch.hh:13</div></div>
 <div class="ttc" id="classOpt__jr__parameters_html"><div class="ttname"><a href="classOpt__jr__parameters.html">Opt_jr_parameters</a></div><div class="ttdef"><b>Definition:</b> opt_jr_parameters.hh:17</div></div>
-<div class="ttc" id="classConfiguration_html"><div class="ttname"><a href="classConfiguration.html">Configuration</a></div><div class="ttdef"><b>Definition:</b> configuration.hh:10</div></div>
-<div class="ttc" id="classSearch__methods_html_aba1565526a0ce1b9e349918057f6f2c2"><div class="ttname"><a href="classSearch__methods.html#aba1565526a0ce1b9e349918057f6f2c2">Search_methods::approximated_loop</a></div><div class="ttdeci">Candidates approximated_loop(Batch &amp;App_manager, Opt_jr_parameters &amp;par)</div><div class="ttdef"><b>Definition:</b> search_methods.cpp:43</div></div>
-<div class="ttc" id="classSearch__methods_html"><div class="ttname"><a href="classSearch__methods.html">Search_methods</a></div><div class="ttdef"><b>Definition:</b> search_methods.hh:16</div></div>
-<div class="ttc" id="classSearch__methods_html_a0f0cb65795013122dde9a18f586b1a1c"><div class="ttname"><a href="classSearch__methods.html#a0f0cb65795013122dde9a18f586b1a1c">Search_methods::check_total_nodes</a></div><div class="ttdeci">void check_total_nodes(int N, Batch &amp;App_manager)</div><div class="ttdef"><b>Definition:</b> search_methods.cpp:21</div></div>
+<div class="ttc" id="classConfiguration_html"><div class="ttname"><a href="classConfiguration.html">Configuration</a></div><div class="ttdef"><b>Definition:</b> configuration.hh:13</div></div>
+<div class="ttc" id="classSearch__methods_html"><div class="ttname"><a href="classSearch__methods.html">Search_methods</a></div><div class="ttdef"><b>Definition:</b> search_methods.hh:15</div></div>
+<div class="ttc" id="classSearch__methods_html_a602ea0f40834d2ea817dc5fcab83436b"><div class="ttname"><a href="classSearch__methods.html#a602ea0f40834d2ea817dc5fcab83436b">Search_methods::exact_loop</a></div><div class="ttdeci">void exact_loop(Candidates &amp;app_pairs, Configuration &amp;configuration, MYSQL *conn, Batch &amp;app_manager, Opt_jr_parameters &amp;par, int &amp;index_pair)</div><div class="ttdef"><b>Definition:</b> search_methods.cpp:151</div></div>
 <div class="ttc" id="opt__jr__parameters_8hh_html"><div class="ttname"><a href="opt__jr__parameters_8hh.html">opt_jr_parameters.hh</a></div></div>
 <div class="ttc" id="batch_8hh_html"><div class="ttname"><a href="batch_8hh.html">batch.hh</a></div></div>
-<div class="ttc" id="classSearch__methods_html_a312ab1479b1b77c5c98f8b838b9c5461"><div class="ttname"><a href="classSearch__methods.html#a312ab1479b1b77c5c98f8b838b9c5461">Search_methods::exact_loop</a></div><div class="ttdeci">void exact_loop(Candidates &amp;app_pairs, Configuration &amp;configuration, MYSQL *conn, Batch &amp;App_manager, Opt_jr_parameters &amp;par, int &amp;index_pair)</div><div class="ttdef"><b>Definition:</b> search_methods.cpp:151</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

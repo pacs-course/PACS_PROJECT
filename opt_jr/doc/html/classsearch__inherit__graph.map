@@ -1,3 +1,3 @@
 <map id="Search&lt; Policy &gt;" name="Search&lt; Policy &gt;">
-<area shape="rect" id="node2" href="$classSearch__base.html" title="{Search_base\n|# App_manager\l|+ Search_base()\l+ local_search()\l+ write_results()\l+ print_solution()\l+ get_app_manager()\l}" alt="" coords="5,5,149,141"/>
+<area shape="rect" id="node2" href="$classSearch__base.html" title="{Search_base\n|# app_manager\l|+ Search_base()\l+ local_search()\l+ write_results()\l+ print_solution()\l}" alt="" coords="7,6,125,127"/>
 </map>

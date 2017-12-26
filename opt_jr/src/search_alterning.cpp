@@ -10,7 +10,6 @@ void Search_alterning::local_search(Batch &app_manager, Configuration &configura
   double TotalFO;
   int how_many;
   Statistics statistics;
-  Objective_fun OF;
 
   debugMsg =  "\n     ***** Estimate the candidates for the predictor ******\n"; par.debug_message(debugMsg);
 
@@ -57,7 +56,7 @@ void Search_alterning::local_search(Batch &app_manager, Configuration &configura
 
     if (par.get_global_FO_calculation())
     {
-      TotalFO = OF.global(configuration, conn, app_manager, par);
+      TotalFO = Objective_fun::global(configuration, conn, app_manager, par);
       std::cout << "\n At iteration: "<< iteration << " GLOBAL OBJECTIVE FUNCTION = "<< TotalFO <<"\n"<<std::endl;
       statistics.add_statistics( iteration, how_many, TotalFO); // Update Statistics
     }

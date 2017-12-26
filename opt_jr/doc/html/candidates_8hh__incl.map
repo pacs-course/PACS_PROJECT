@@ -1,10 +1,6 @@
 <map id="/vagrant/PROJECT_SPARK/PACS_PROJECT/opt_jr/src/candidates.hh" name="/vagrant/PROJECT_SPARK/PACS_PROJECT/opt_jr/src/candidates.hh">
-<area shape="rect" id="node4" href="$application_8hh.html" title="application.hh" alt="" coords="223,109,325,136"/>
-<area shape="rect" id="node7" href="$invokePredictor_8hh.html" title="invokePredictor.hh" alt="" coords="295,184,425,211"/>
-<area shape="rect" id="node8" href="$invokePredictor__helper_8hh.html" title="invokePredictor_helper.hh" alt="" coords="859,259,1031,285"/>
-<area shape="rect" id="node14" href="$readConfigurationFile_8hh.html" title="readConfigurationFile.hh" alt="" coords="368,408,531,435"/>
-<area shape="rect" id="node17" href="$optjrParameters_8hh.html" title="optjrParameters.hh" alt="" coords="398,333,529,360"/>
-<area shape="rect" id="node18" href="$debugmessage_8hh.html" title="debugmessage.hh" alt="" coords="555,259,683,285"/>
-<area shape="rect" id="node20" href="$db_8hh.html" title="db.hh" alt="" coords="265,259,319,285"/>
-<area shape="rect" id="node10" href="$utility_8hh.html" title="utility.hh" alt="" coords="1089,333,1159,360"/>
+<area shape="rect" id="node3" href="$candidate__pair_8hh.html" title="candidate_pair.hh" alt="" coords="67,109,191,136"/>
+<area shape="rect" id="node7" href="$opt__jr__parameters_8hh.html" title="opt_jr_parameters.hh" alt="" coords="216,109,360,136"/>
+<area shape="rect" id="node4" href="$application_8hh.html" title="application.hh" alt="" coords="78,184,180,211"/>
+<area shape="rect" id="node8" href="$configuration_8hh.html" title="configuration.hh" alt="" coords="256,184,371,211"/>
 </map>

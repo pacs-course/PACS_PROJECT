@@ -97,22 +97,27 @@ Collaboration diagram for Statistics:</div>
 <div class="dyncontent">
 <div class="center"><img src="classStatistics__coll__graph.png" border="0" usemap="#Statistics_coll__map" alt="Collaboration graph"/></div>
 <map name="Statistics_coll__map" id="Statistics_coll__map">
-<area shape="rect" id="node3" href="classStatistic__iter.html" title="{Statistic_iter\n||+ Statistic_iter()\l+ get_iteration()\l+ get_size()\l+ get_FO_Total()\l}" alt="" coords="17,6,137,127"/></map>
+<area shape="rect" id="node3" href="classStatistic__iter.html" title="{Statistic_iter\n||+ Statistic_iter()\l+ get_iteration()\l+ get_size()\l+ get_FO_Total()\l}" alt="" coords="21,161,141,282"/></map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:addca8205d4c1946fe5af6a1385419c79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatistics.html#addca8205d4c1946fe5af6a1385419c79">add_statistics</a> (int iteration, int size, double FO_total)</td></tr>
+<tr class="memdesc:addca8205d4c1946fe5af6a1385419c79"><td class="mdescLeft">&#160;</td><td class="mdescRight">add_statistics is used to add information about an iteration to the <a class="el" href="classStatistics.html">Statistics</a> object.  <a href="#addca8205d4c1946fe5af6a1385419c79">More...</a><br/></td></tr>
 <tr class="separator:addca8205d4c1946fe5af6a1385419c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57df73491ae4c84a8c3b08d912d2ce8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatistics.html#a57df73491ae4c84a8c3b08d912d2ce8e">read_statistics</a> (<a class="el" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;par)</td></tr>
+<tr class="memdesc:a57df73491ae4c84a8c3b08d912d2ce8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">read_statistics shows the statistics about localsearch iterations.  <a href="#a57df73491ae4c84a8c3b08d912d2ce8e">More...</a><br/></td></tr>
 <tr class="separator:a57df73491ae4c84a8c3b08d912d2ce8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a7b3e8290fbe506b88f7421a2479d258f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classStatistic__iter.html">Statistic_iter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatistics.html#a7b3e8290fbe506b88f7421a2479d258f">stat</a></td></tr>
+<tr class="memdesc:a7b3e8290fbe506b88f7421a2479d258f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector of "Statistic_iter" object is used to store statistical information about the local search.  <a href="#a7b3e8290fbe506b88f7421a2479d258f">More...</a><br/></td></tr>
 <tr class="separator:a7b3e8290fbe506b88f7421a2479d258f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="classStatistics.html">Statistics</a> class stores statistical information about the local search iterations. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="addca8205d4c1946fe5af6a1385419c79"></a>
 <div class="memitem">
 <div class="memproto">
@@ -142,7 +147,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>"add_statistics" is used to add information about an iteration to the "Statistics" object. </p>
+
+<p>add_statistics is used to add information about an iteration to the <a class="el" href="classStatistics.html">Statistics</a> object. </p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -168,7 +174,8 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>"read_statistics" shows the statistics about localsearch iterations. </p>
+
+<p>read_statistics shows the statistics about localsearch iterations. </p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -208,6 +215,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
 <p>A vector of "Statistic_iter" object is used to store statistical information about the local search. </p>
 
 </div>

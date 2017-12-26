@@ -1,14 +1,14 @@
 <map id="Application::get_R_d" name="Application::get_R_d">
-<area shape="rect" id="node2" href="$classBounds.html#a6bc038892059a8181984daff0003065f" title="Bounds::Bound" alt="" coords="247,35,358,61"/>
-<area shape="rect" id="node6" href="$classObjFun.html#a7c9ecaa07ca776eb64f6e73f84513bc7" title="ObjFun::ObjFunctionComponent" alt="" coords="198,144,407,171"/>
-<area shape="rect" id="node12" href="$classObjFun.html#abb89a994d34b44ec4cb6e0e2562c0107" title="ObjFun::ObjFunctionComponent\lApprox" alt="" coords="198,217,407,258"/>
-<area shape="rect" id="node3" href="$classBounds.html#ade8356aa22e675868ba98226e4216cf3" title="Bounds::findBound" alt="" coords="498,5,630,32"/>
-<area shape="rect" id="node4" href="$classBounds.html#aefc7e0bd2cd1c5850a903aabe0351dbe" title="Bounds::calculateBounds" alt="" coords="720,5,891,32"/>
-<area shape="rect" id="node5" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="939,56,989,83"/>
-<area shape="rect" id="node7" href="$classBatch.html#ae212d22fa812b51160f57507242152c1" title="For each application, a base value for the objective function is calculated. " alt="" coords="750,56,861,83"/>
-<area shape="rect" id="node8" href="$classsCandidates.html#ac5ff86e5acf736ef57a3eb25c0d724ab" title="sCandidates::invokePredictor\lOpenMP" alt="" coords="467,107,661,149"/>
-<area shape="rect" id="node10" href="$classsCandidates.html#a79ab5675418a37532bf447cfa8baf975" title="sCandidates::invokePredictorSeq" alt="" coords="456,173,672,200"/>
-<area shape="rect" id="node11" href="$classObjFun.html#ab36af3a1d85dbcaa79dc9b582b00928b" title="ObjFun::ObjFunctionGlobal" alt="" coords="475,224,653,251"/>
-<area shape="rect" id="node9" href="$classSearch.html#ae5937c445a63dfa24786b5fce04d2b27" title="Search::localSearch" alt="" coords="736,173,875,200"/>
-<area shape="rect" id="node13" href="$classSearch.html#aa7c0b0385cd0bcb4ec4239e339f7a301" title="Search::approximatedLoop" alt="" coords="475,275,653,301"/>
+<area shape="rect" id="node2" href="$classBounds.html#ae6633e291f145a0933f801541843cc1b" title="Bounds::bound" alt="" coords="231,37,340,64"/>
+<area shape="rect" id="node6" href="$classObjective__fun.html#a7d98b1f4e8a741fddc249e5134d5c3ef" title="Objective_fun::component" alt="" coords="198,149,373,176"/>
+<area shape="rect" id="node12" href="$classObjective__fun.html#a551109cf9927773062e9e3668c00eb59" title="Objective_fun::component\l_approx" alt="" coords="198,226,373,267"/>
+<area shape="rect" id="node3" href="$classBounds.html#a600b0f815df6e0142de1b44f1aa795d7" title="Bounds::find_bound" alt="" coords="471,5,609,32"/>
+<area shape="rect" id="node4" href="$classBounds.html#a525c2a8bf52889857306bf77d698ecd1" title="Bounds::calculate_bounds" alt="" coords="707,5,882,32"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="931,31,981,57"/>
+<area shape="rect" id="node7" href="$classBatch.html#a025d1f919a65cda556c99db8b6cdff42" title="For each application, a base value for the objective function is calculated. " alt="" coords="485,56,595,83"/>
+<area shape="rect" id="node9" href="$classCandidates.html#a9cc75e29ad2d0f2eb29fae2801c8e58b" title="Candidates::invoke\l_predictor_openMP" alt="" coords="473,107,607,149"/>
+<area shape="rect" id="node10" href="$classCandidates.html#a0f5bfe459063108d80ed8dce02c6c07b" title="Candidates::invoke\l_predictor_seq" alt="" coords="473,173,607,214"/>
+<area shape="rect" id="node11" href="$classObjective__fun.html#ae11b3facab75a7b7dc197d0a1a194d29" title="Objective_fun::global" alt="" coords="468,239,612,265"/>
+<area shape="rect" id="node8" href="$classSearch__separing.html#a5729213168347b0bb10889548dffad15" title="Search_separing::local\l_search" alt="" coords="717,231,872,273"/>
+<area shape="rect" id="node13" href="$classSearch__methods.html#aaa8b4d54602311fc4e69a60a792f1384" title="Search_methods::approximated_loop" alt="" coords="421,289,659,316"/>
 </map>

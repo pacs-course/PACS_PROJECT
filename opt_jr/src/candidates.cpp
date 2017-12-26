@@ -102,10 +102,8 @@ void Candidates::invoke_predictor_openMP(  Opt_jr_parameters &par, Configuration
     int ID=omp_get_thread_num();
     int index=0;
     int j=0;
-    Objective_fun OF;
-    //double tmp;
 
-    // assign each app to a thread
+
 
     for (auto it=aux.begin(); it!=aux.end(); ++it ) // assign each app to a thread
     {
@@ -119,13 +117,10 @@ void Candidates::invoke_predictor_openMP(  Opt_jr_parameters &par, Configuration
 
       if(pos==ID)
       {
-        if (it->get_currentCores_d() > 0 )//it->app_i.get_currentCores_d() > 0 && it->app_j.get_currentCores_d() > 0)
+        if (it->get_currentCores_d() > 0 )
         {
-          OF.component(configuration, conn2[ID], *it, par); //caches the results
-          //it->nodes_i = it->app_i->get_currentCores_d();
+          Objective_fun::component(configuration, conn2[ID], *it, par); //caches the results
 
-          //it->real_j = OF.component(configuration, conn2[ID], (it->app_j), par);
-          //it->nodes_j = it->app_j->get_currentCores_d();
         }
 
       }
@@ -140,7 +135,6 @@ void Candidates::invoke_predictor_openMP(  Opt_jr_parameters &par, Configuration
     int ID=omp_get_thread_num();
     int index=0;
     int j=0;
-    Objective_fun OF;
 
     // assign each app-pairs to a thread
     for (auto it=cand.begin(); it!=cand.end(); ++it )
@@ -158,11 +152,9 @@ void Candidates::invoke_predictor_openMP(  Opt_jr_parameters &par, Configuration
         if (it->get_currentCores_d_i() > 0 && it->get_currentCores_d_j() > 0)
         {
 
-          it->set_real_i( OF.component(configuration, conn2[ID], ( it->get_app_i_ref() ), par)); //Already cached
-          //it->nodes_i = it->app_i->get_currentCores_d();
+          it->set_real_i( Objective_fun::component(configuration, conn2[ID], ( it->get_app_i_ref() ), par)); //Already cached
 
-          it->set_real_j( OF.component(configuration, conn2[ID], (it->get_app_j_ref()), par)); //Already cached
-          //it->nodes_j = it->app_j->get_currentCores_d();
+          it->set_real_j( Objective_fun::component(configuration, conn2[ID], (it->get_app_j_ref()), par)); //Already cached
         }
 
       }
@@ -185,7 +177,6 @@ void Candidates::invoke_predictor_seq(MYSQL *conn, Opt_jr_parameters &par, Confi
 
   int MAX_PROMISING_CONFIGURATIONS =par.get_K();
   int index=0;
-  Objective_fun OF;
 
   for (auto it = cand.begin(); it != cand.end(); it++)
   {
@@ -201,11 +192,9 @@ void Candidates::invoke_predictor_seq(MYSQL *conn, Opt_jr_parameters &par, Confi
     if (it->get_currentCores_d_i() > 0 && it->get_currentCores_d_j() > 0)
     {
       debugMsg= "Comparing " + it->get_session_app_id_i() + " with " + it->get_session_app_id_j(); par.debug_message(debugMsg);
-      //it->app_i.mode= R_ALGORITHM; it->app_j.mode= R_ALGORITHM;
-      // No openmp
       debugMsg =  " CALLING OBJ_FUNCTION_COMPONENT \n\n"; par.debug_message(debugMsg);
-      it->set_real_i ( OF.component(configuration, conn, it->get_app_i_ref(), par));
-      it->set_real_j ( OF.component(configuration, conn, it->get_app_j_ref(), par));
+      it->set_real_i ( Objective_fun::component(configuration, conn, it->get_app_i_ref(), par));
+      it->set_real_j ( Objective_fun::component(configuration, conn, it->get_app_j_ref(), par));
     }
     index++;
   }

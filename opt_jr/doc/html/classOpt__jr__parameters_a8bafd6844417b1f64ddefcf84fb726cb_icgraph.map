@@ -1,0 +1,7 @@
+<map id="Opt_jr_parameters::get_number" name="Opt_jr_parameters::get_number">
+<area shape="rect" id="node2" href="$classBatch.html#a5174213a71d9f45cc10fee6bacd04b09" title="It calculates nu indices for each application and stores it in each Application object. It also initializes the number of cores. " alt="" coords="201,5,338,32"/>
+<area shape="rect" id="node4" href="$classBatch.html#a2af18c30d72b6598eba353e8daef0b80" title="It fixes the initial solution by reallocating the residual cores to the applications that may need mo..." alt="" coords="212,57,327,98"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="395,64,445,91"/>
+<area shape="rect" id="node5" href="$classSearch__alterning.html#a981af51221c3749c4c20e58b8a622cb1" title="Search_alterning::local\l_search" alt="" coords="192,174,347,215"/>
+<area shape="rect" id="node6" href="$classSearch__separing.html#a5729213168347b0bb10889548dffad15" title="Search_separing::local\l_search" alt="" coords="192,239,347,281"/>
+</map>

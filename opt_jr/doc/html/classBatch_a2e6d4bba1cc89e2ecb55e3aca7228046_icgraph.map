@@ -1,0 +1,10 @@
+<map id="Batch::get_begin" name="Batch::get_begin">
+<area shape="rect" id="node2" href="$classBounds.html#a525c2a8bf52889857306bf77d698ecd1" title="Bounds::calculate_bounds" alt="" coords="205,5,379,32"/>
+<area shape="rect" id="node4" href="$classObjective__fun.html#ae11b3facab75a7b7dc197d0a1a194d29" title="Objective_fun::global" alt="" coords="220,56,364,83"/>
+<area shape="rect" id="node7" href="$classSearch__methods.html#adfd0c4197217dcf34a06353c3ba4f253" title="It checks that the total allocated nodes is still less or equal than the total number of cores availa..." alt="" coords="211,107,373,149"/>
+<area shape="rect" id="node8" href="$classSearch__methods.html#aaa8b4d54602311fc4e69a60a792f1384" title="Search_methods::approximated_loop" alt="" coords="173,173,411,200"/>
+<area shape="rect" id="node9" href="$classSearch__methods.html#a602ea0f40834d2ea817dc5fcab83436b" title="Search_methods::exact_loop" alt="" coords="197,224,387,251"/>
+<area shape="rect" id="node6" href="$classSearch__separing.html#a5729213168347b0bb10889548dffad15" title="Search_separing::local\l_search" alt="" coords="459,173,613,214"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="511,5,561,32"/>
+<area shape="rect" id="node5" href="$classSearch__alterning.html#a981af51221c3749c4c20e58b8a622cb1" title="Search_alterning::local\l_search" alt="" coords="459,107,613,149"/>
+</map>

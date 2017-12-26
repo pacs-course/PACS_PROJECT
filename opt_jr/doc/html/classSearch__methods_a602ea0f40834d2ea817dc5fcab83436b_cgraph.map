@@ -1,0 +1,14 @@
+<map id="Search_methods::exact_loop" name="Search_methods::exact_loop">
+<area shape="rect" id="node2" href="$classOpt__jr__parameters.html#a8b6c548de42e286a8848b198280aa2dc" title="Opt_jr_parameters::\lget_K" alt="" coords="465,122,602,164"/>
+<area shape="rect" id="node3" href="$classOpt__jr__parameters.html#a186166286122c263aac7bb8fe56d6751" title="Opt_jr_parameters::\lget_number_of_threads" alt="" coords="454,341,613,382"/>
+<area shape="rect" id="node4" href="$classCandidates.html#a0f5bfe459063108d80ed8dce02c6c07b" title="Candidates::invoke\l_predictor_seq" alt="" coords="254,64,389,105"/>
+<area shape="rect" id="node7" href="$classCandidates.html#a9cc75e29ad2d0f2eb29fae2801c8e58b" title="Candidates::invoke\l_predictor_openMP" alt="" coords="254,181,389,222"/>
+<area shape="rect" id="node10" href="$classCandidates.html#a69a3001a09b54813959d2b44662f7f18" title="Candidates::get_begin" alt="" coords="245,298,397,324"/>
+<area shape="rect" id="node11" href="$classCandidates.html#ad763ac469728621a81010ca7c14b4246" title="Candidates::get_end" alt="" coords="250,348,393,375"/>
+<area shape="rect" id="node5" href="$classOpt__jr__parameters.html#a860bf209221b6c5e1c4394d1ae4a058f" title="If debug is activated the message in string is printed. " alt="" coords="670,38,807,80"/>
+<area shape="rect" id="node12" href="$classBatch.html#a2e6d4bba1cc89e2ecb55e3aca7228046" title="Batch::get_begin" alt="" coords="261,399,381,426"/>
+<area shape="rect" id="node13" href="$classBatch.html#a5585c86c7f6545178d0b0e0a82d93fa3" title="Batch::get_end" alt="" coords="266,450,377,476"/>
+<area shape="rect" id="node6" href="$classObjective__fun.html#a7d98b1f4e8a741fddc249e5134d5c3ef" title="Objective_fun::component" alt="" coords="446,71,621,98"/>
+<area shape="rect" id="node8" href="$db_8cpp.html#aced0f518cdbba35b17b3ce9f316131ce" title="DBopen" alt="" coords="499,239,568,266"/>
+<area shape="rect" id="node9" href="$db_8cpp.html#a54af21d55b55bae7b63cb28d3cd05758" title="DBclose" alt="" coords="497,290,569,316"/>
+</map>

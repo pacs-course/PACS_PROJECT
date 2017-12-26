@@ -97,22 +97,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">    -Here are declared the functions to manage databases</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">-Here are declared the functions to manage databases</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordtype">void</span> <a class="code" href="db_8cpp.html#ab33dd75bdc4f92249542a2bb81b343fd">DBerror</a>(MYSQL *conn, <span class="keywordtype">char</span> * msg);</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;MYSQL_ROW <a class="code" href="db_8cpp.html#a7d5ba67ab50ce1ffc9817b97612e94c7">executeSQL</a>(MYSQL *conn, <span class="keywordtype">char</span> *statement, <a class="code" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> par);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; MYSQL * <a class="code" href="db_8cpp.html#aced0f518cdbba35b17b3ce9f316131ce">DBopen</a>(<span class="keywordtype">char</span> * host, <span class="keywordtype">char</span> * port, <span class="keywordtype">char</span> * login, <span class="keywordtype">char</span> * passw, <span class="keywordtype">char</span> *dbName);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">void</span> <a class="code" href="db_8cpp.html#a54af21d55b55bae7b63cb28d3cd05758">DBclose</a>(MYSQL *conn);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;MYSQL * <a class="code" href="db_8cpp.html#aced0f518cdbba35b17b3ce9f316131ce">DBopen</a>(<span class="keywordtype">char</span> * host, <span class="keywordtype">char</span> * port, <span class="keywordtype">char</span> * login, <span class="keywordtype">char</span> * passw, <span class="keywordtype">char</span> *dbName);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">void</span> <a class="code" href="db_8cpp.html#a54af21d55b55bae7b63cb28d3cd05758">DBclose</a>(MYSQL *conn);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SRC_DB_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SRC_DB_H_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="db_8cpp_html_ab33dd75bdc4f92249542a2bb81b343fd"><div class="ttname"><a href="db_8cpp.html#ab33dd75bdc4f92249542a2bb81b343fd">DBerror</a></div><div class="ttdeci">void DBerror(MYSQL *conn, char *msg)</div><div class="ttdef"><b>Definition:</b> db.cpp:18</div></div>
 <div class="ttc" id="db_8cpp_html_aced0f518cdbba35b17b3ce9f316131ce"><div class="ttname"><a href="db_8cpp.html#aced0f518cdbba35b17b3ce9f316131ce">DBopen</a></div><div class="ttdeci">MYSQL * DBopen(char *host, char *port, char *login, char *passw, char *dbName)</div><div class="ttdef"><b>Definition:</b> db.cpp:58</div></div>
 <div class="ttc" id="db_8cpp_html_a7d5ba67ab50ce1ffc9817b97612e94c7"><div class="ttname"><a href="db_8cpp.html#a7d5ba67ab50ce1ffc9817b97612e94c7">executeSQL</a></div><div class="ttdeci">MYSQL_ROW executeSQL(MYSQL *conn, char *statement, Opt_jr_parameters par)</div><div class="ttdef"><b>Definition:</b> db.cpp:26</div></div>

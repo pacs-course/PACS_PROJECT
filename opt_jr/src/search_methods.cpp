@@ -44,7 +44,6 @@ Candidates Search_methods::approximated_loop( Batch &app_manager, /*int &iterati
 {
 
   std::string debugMsg;
-  Objective_fun OF;
 
 
   if (app_manager.get_empty())
@@ -92,10 +91,10 @@ Candidates Search_methods::approximated_loop( Batch &app_manager, /*int &iterati
 
         if (application_i->get_currentCores_d() > 0 && application_j->get_currentCores_d() > 0)
         {
-          DELTA_fo_App_i = OF.component_approx(*application_i, par) - application_i->get_baseFO();
+          DELTA_fo_App_i = Objective_fun::component_approx(*application_i, par) - application_i->get_baseFO();
           debugMsg = "app " + application_i->get_session_app_id() + "DELTA_fo_App_i " + std::to_string(DELTA_fo_App_i);par.debug_message(debugMsg);
 
-          DELTA_fo_App_j = OF.component_approx(*application_j, par) - application_j->get_baseFO();
+          DELTA_fo_App_j = Objective_fun::component_approx(*application_j, par) - application_j->get_baseFO();
           debugMsg = "app " + application_j->get_session_app_id() + "DELTA_fo_App_j " + std::to_string(DELTA_fo_App_j);par.debug_message(debugMsg);
 
 

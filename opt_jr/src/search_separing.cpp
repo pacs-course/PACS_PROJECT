@@ -10,7 +10,6 @@ void Search_separing::local_search(Batch &app_manager, Configuration &configurat
   double TotalFO;
   int how_many;
   Statistics statistics;
-  Objective_fun OF;
 
   debugMsg =  "\n     ***** Estimate the candidates for the predictor ******\n"; par.debug_message(debugMsg);
 
@@ -171,7 +170,7 @@ void Search_separing::local_search(Batch &app_manager, Configuration &configurat
 
       if (par.get_global_FO_calculation())
       {
-        TotalFO = OF.global(configuration, conn, app_manager, par);
+        TotalFO = Objective_fun::global(configuration, conn, app_manager, par);
         std::cout << "At iteration: "<< iteration << " GLOBAL OBJECTIVE FUNCTION = "<< TotalFO <<std::endl;
         statistics.add_statistics( iteration, how_many, TotalFO); // Update Statistics
       }

@@ -96,29 +96,28 @@ Inheritance diagram for Search_methods:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSearch__methods__inherit__graph.png" border="0" usemap="#Search__methods_inherit__map" alt="Inheritance graph"/></div>
 <map name="Search__methods_inherit__map" id="Search__methods_inherit__map">
-<area shape="rect" id="node2" href="classSearch__alterning.html" title="{Search_alterning\n||+ local_search()\l}" alt="" coords="21,160,139,237"/></map>
+<area shape="rect" id="node2" href="classSearch__alterning.html" title="{Search_alterning\n||+ local_search()\l}" alt="" coords="5,160,123,237"/><area shape="rect" id="node3" href="classSearch__separing.html" title="{Search_separing\n||+ local_search()\l}" alt="" coords="147,160,265,237"/></map>
 </div>
 <div class="dynheader">
 Collaboration diagram for Search_methods:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSearch__methods__coll__graph.png" border="0" usemap="#Search__methods_coll__map" alt="Collaboration graph"/></div>
-<map name="Search__methods_coll__map" id="Search__methods_coll__map">
-</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0f0cb65795013122dde9a18f586b1a1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearch__methods.html#a0f0cb65795013122dde9a18f586b1a1c">check_total_nodes</a> (int N, <a class="el" href="classBatch.html">Batch</a> &amp;App_manager)</td></tr>
-<tr class="separator:a0f0cb65795013122dde9a18f586b1a1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba1565526a0ce1b9e349918057f6f2c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCandidates.html">Candidates</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearch__methods.html#aba1565526a0ce1b9e349918057f6f2c2">approximated_loop</a> (<a class="el" href="classBatch.html">Batch</a> &amp;App_manager, <a class="el" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;par)</td></tr>
-<tr class="separator:aba1565526a0ce1b9e349918057f6f2c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a312ab1479b1b77c5c98f8b838b9c5461"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearch__methods.html#a312ab1479b1b77c5c98f8b838b9c5461">exact_loop</a> (<a class="el" href="classCandidates.html">Candidates</a> &amp;app_pairs, <a class="el" href="classConfiguration.html">Configuration</a> &amp;configuration, MYSQL *conn, <a class="el" href="classBatch.html">Batch</a> &amp;App_manager, <a class="el" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;par, int &amp;index_pair)</td></tr>
-<tr class="separator:a312ab1479b1b77c5c98f8b838b9c5461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfd0c4197217dcf34a06353c3ba4f253"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearch__methods.html#adfd0c4197217dcf34a06353c3ba4f253">check_total_nodes</a> (int N, <a class="el" href="classBatch.html">Batch</a> &amp;app_manager)</td></tr>
+<tr class="memdesc:adfd0c4197217dcf34a06353c3ba4f253"><td class="mdescLeft">&#160;</td><td class="mdescRight">It checks that the total allocated nodes is still less or equal than the total number of cores available N.  <a href="#adfd0c4197217dcf34a06353c3ba4f253">More...</a><br/></td></tr>
+<tr class="separator:adfd0c4197217dcf34a06353c3ba4f253"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa8b4d54602311fc4e69a60a792f1384"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCandidates.html">Candidates</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearch__methods.html#aaa8b4d54602311fc4e69a60a792f1384">approximated_loop</a> (<a class="el" href="classBatch.html">Batch</a> &amp;app_manager, <a class="el" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;par)</td></tr>
+<tr class="separator:aaa8b4d54602311fc4e69a60a792f1384"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a602ea0f40834d2ea817dc5fcab83436b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSearch__methods.html#a602ea0f40834d2ea817dc5fcab83436b">exact_loop</a> (<a class="el" href="classCandidates.html">Candidates</a> &amp;app_pairs, <a class="el" href="classConfiguration.html">Configuration</a> &amp;configuration, MYSQL *conn, <a class="el" href="classBatch.html">Batch</a> &amp;app_manager, <a class="el" href="classOpt__jr__parameters.html">Opt_jr_parameters</a> &amp;par, int &amp;index_pair)</td></tr>
+<tr class="separator:a602ea0f40834d2ea817dc5fcab83436b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>"Search_methods" class provides methods to find a solution minimizing the objective function. </p>
+<div class="textblock"><p>"Search_methods" class provides methods to find a solution minimizing the objective function. Those methods are used by children classes. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aba1565526a0ce1b9e349918057f6f2c2"></a>
+<a class="anchor" id="aaa8b4d54602311fc4e69a60a792f1384"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -126,7 +125,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname"><a class="el" href="classCandidates.html">Candidates</a> Search_methods::approximated_loop </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classBatch.html">Batch</a> &amp;&#160;</td>
-          <td class="paramname"><em>App_manager</em>, </td>
+          <td class="paramname"><em>app_manager</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -141,20 +140,29 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>It estimates the objective function for each move. The candidate applications for which the move is profitable are stored in a sCandidate object </p>
+<p>It estimates the objective function for each move. The pairs of applications for which the move is profitable are stored in a <a class="el" href="classCandidates.html">Candidates</a> object (which is returned). </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSearch__methods_aaa8b4d54602311fc4e69a60a792f1384_cgraph.png" border="0" usemap="#classSearch__methods_aaa8b4d54602311fc4e69a60a792f1384_cgraph" alt=""/></div>
+<map name="classSearch__methods_aaa8b4d54602311fc4e69a60a792f1384_cgraph" id="classSearch__methods_aaa8b4d54602311fc4e69a60a792f1384_cgraph">
+<area shape="rect" id="node2" href="classBatch.html#a8bbd81b72e695e1fc2c1a1687d72e71a" title="Batch::get_empty" alt="" coords="319,5,444,32"/><area shape="rect" id="node3" href="classOpt__jr__parameters.html#a860bf209221b6c5e1c4394d1ae4a058f" title="If debug is activated the message in string is printed. " alt="" coords="531,45,669,86"/><area shape="rect" id="node4" href="classBatch.html#a2e6d4bba1cc89e2ecb55e3aca7228046" title="Batch::get_begin" alt="" coords="321,107,441,133"/><area shape="rect" id="node5" href="classBatch.html#a5585c86c7f6545178d0b0e0a82d93fa3" title="Batch::get_end" alt="" coords="326,157,437,184"/><area shape="rect" id="node6" href="classObjective__fun.html#a551109cf9927773062e9e3668c00eb59" title="Objective_fun::component\l_approx" alt="" coords="294,209,469,250"/><area shape="rect" id="node13" href="classCandidates.html#ad76cf8f7ae979cc49afd67b5fc9c702b" title="Candidates::add_candidate" alt="" coords="291,275,471,301"/><area shape="rect" id="node7" href="classApplication.html#a74d83f1191a1ab311c055da4d0d8d8d9" title="Application::set_R_d" alt="" coords="529,111,671,137"/><area shape="rect" id="node8" href="classApplication.html#a0bb182c29dbaf5293a120bdced8d08b6" title="Application::get_alpha" alt="" coords="525,161,675,188"/><area shape="rect" id="node9" href="classApplication.html#a23f9b3373441f6b7449886a2460271ae" title="Application::get_current\lCores_d" alt="" coords="521,213,679,254"/><area shape="rect" id="node10" href="classApplication.html#abc8a0a0b78144145d8aeefba5b3e256c" title="Application::get_beta" alt="" coords="528,279,672,305"/><area shape="rect" id="node11" href="classApplication.html#a8fcbf0ab476dd0d53e7e20f37e3b0543" title="Application::get_w" alt="" coords="535,329,665,356"/><area shape="rect" id="node12" href="classApplication.html#ad0d83c496de2ca9268bb4d3f743dacac" title="Application::get_R_d" alt="" coords="529,380,671,407"/></map>
+</div>
+</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classSearch__methods_aba1565526a0ce1b9e349918057f6f2c2_icgraph.png" border="0" usemap="#classSearch__methods_aba1565526a0ce1b9e349918057f6f2c2_icgraph" alt=""/></div>
-<map name="classSearch__methods_aba1565526a0ce1b9e349918057f6f2c2_icgraph" id="classSearch__methods_aba1565526a0ce1b9e349918057f6f2c2_icgraph">
+<div class="center"><img src="classSearch__methods_aaa8b4d54602311fc4e69a60a792f1384_icgraph.png" border="0" usemap="#classSearch__methods_aaa8b4d54602311fc4e69a60a792f1384_icgraph" alt=""/></div>
+<map name="classSearch__methods_aaa8b4d54602311fc4e69a60a792f1384_icgraph" id="classSearch__methods_aaa8b4d54602311fc4e69a60a792f1384_icgraph">
 <area shape="rect" id="node2" href="classSearch__alterning.html#a981af51221c3749c4c20e58b8a622cb1" title="Search_alterning::local\l_search" alt="" coords="291,5,445,46"/><area shape="rect" id="node3" href="classSearch__separing.html#a5729213168347b0bb10889548dffad15" title="Search_separing::local\l_search" alt="" coords="291,70,445,111"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a0f0cb65795013122dde9a18f586b1a1c"></a>
+<a class="anchor" id="adfd0c4197217dcf34a06353c3ba4f253"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -168,7 +176,7 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classBatch.html">Batch</a> &amp;&#160;</td>
-          <td class="paramname"><em>App_manager</em>&#160;</td>
+          <td class="paramname"><em>app_manager</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -178,11 +186,13 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>It checks that the total allocated nodes is still less or equal than the total number of cores available N. </p>
+
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classSearch__methods_a0f0cb65795013122dde9a18f586b1a1c_cgraph.png" border="0" usemap="#classSearch__methods_a0f0cb65795013122dde9a18f586b1a1c_cgraph" alt=""/></div>
-<map name="classSearch__methods_a0f0cb65795013122dde9a18f586b1a1c_cgraph" id="classSearch__methods_a0f0cb65795013122dde9a18f586b1a1c_cgraph">
+<div class="center"><img src="classSearch__methods_adfd0c4197217dcf34a06353c3ba4f253_cgraph.png" border="0" usemap="#classSearch__methods_adfd0c4197217dcf34a06353c3ba4f253_cgraph" alt=""/></div>
+<map name="classSearch__methods_adfd0c4197217dcf34a06353c3ba4f253_cgraph" id="classSearch__methods_adfd0c4197217dcf34a06353c3ba4f253_cgraph">
 <area shape="rect" id="node2" href="classBatch.html#a2e6d4bba1cc89e2ecb55e3aca7228046" title="Batch::get_begin" alt="" coords="216,5,336,32"/><area shape="rect" id="node3" href="classBatch.html#a5585c86c7f6545178d0b0e0a82d93fa3" title="Batch::get_end" alt="" coords="221,56,331,83"/></map>
 </div>
 </p>
@@ -190,15 +200,15 @@ Here is the call graph for this function:</div>
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classSearch__methods_a0f0cb65795013122dde9a18f586b1a1c_icgraph.png" border="0" usemap="#classSearch__methods_a0f0cb65795013122dde9a18f586b1a1c_icgraph" alt=""/></div>
-<map name="classSearch__methods_a0f0cb65795013122dde9a18f586b1a1c_icgraph" id="classSearch__methods_a0f0cb65795013122dde9a18f586b1a1c_icgraph">
+<div class="center"><img src="classSearch__methods_adfd0c4197217dcf34a06353c3ba4f253_icgraph.png" border="0" usemap="#classSearch__methods_adfd0c4197217dcf34a06353c3ba4f253_icgraph" alt=""/></div>
+<map name="classSearch__methods_adfd0c4197217dcf34a06353c3ba4f253_icgraph" id="classSearch__methods_adfd0c4197217dcf34a06353c3ba4f253_icgraph">
 <area shape="rect" id="node2" href="classSearch__alterning.html#a981af51221c3749c4c20e58b8a622cb1" title="Search_alterning::local\l_search" alt="" coords="216,5,371,46"/><area shape="rect" id="node3" href="classSearch__separing.html#a5729213168347b0bb10889548dffad15" title="Search_separing::local\l_search" alt="" coords="216,70,371,111"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a312ab1479b1b77c5c98f8b838b9c5461"></a>
+<a class="anchor" id="a602ea0f40834d2ea817dc5fcab83436b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -224,7 +234,7 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classBatch.html">Batch</a> &amp;&#160;</td>
-          <td class="paramname"><em>App_manager</em>, </td>
+          <td class="paramname"><em>app_manager</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -245,13 +255,22 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>It evaluates the delta FO for all the candidates in app_pairs and it does the best change (if it exist) in App_manager </p>
+<p>It evaluates the delta FO for all the candidates in app_pairs and it does the best change (if it exist) in app_manager </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSearch__methods_a602ea0f40834d2ea817dc5fcab83436b_cgraph.png" border="0" usemap="#classSearch__methods_a602ea0f40834d2ea817dc5fcab83436b_cgraph" alt=""/></div>
+<map name="classSearch__methods_a602ea0f40834d2ea817dc5fcab83436b_cgraph" id="classSearch__methods_a602ea0f40834d2ea817dc5fcab83436b_cgraph">
+<area shape="rect" id="node2" href="classOpt__jr__parameters.html#a8b6c548de42e286a8848b198280aa2dc" title="Opt_jr_parameters::\lget_K" alt="" coords="465,122,602,164"/><area shape="rect" id="node3" href="classOpt__jr__parameters.html#a186166286122c263aac7bb8fe56d6751" title="Opt_jr_parameters::\lget_number_of_threads" alt="" coords="454,341,613,382"/><area shape="rect" id="node4" href="classCandidates.html#a0f5bfe459063108d80ed8dce02c6c07b" title="Candidates::invoke\l_predictor_seq" alt="" coords="254,64,389,105"/><area shape="rect" id="node7" href="classCandidates.html#a9cc75e29ad2d0f2eb29fae2801c8e58b" title="Candidates::invoke\l_predictor_openMP" alt="" coords="254,181,389,222"/><area shape="rect" id="node10" href="classCandidates.html#a69a3001a09b54813959d2b44662f7f18" title="Candidates::get_begin" alt="" coords="245,298,397,324"/><area shape="rect" id="node11" href="classCandidates.html#ad763ac469728621a81010ca7c14b4246" title="Candidates::get_end" alt="" coords="250,348,393,375"/><area shape="rect" id="node5" href="classOpt__jr__parameters.html#a860bf209221b6c5e1c4394d1ae4a058f" title="If debug is activated the message in string is printed. " alt="" coords="670,38,807,80"/><area shape="rect" id="node12" href="classBatch.html#a2e6d4bba1cc89e2ecb55e3aca7228046" title="Batch::get_begin" alt="" coords="261,399,381,426"/><area shape="rect" id="node13" href="classBatch.html#a5585c86c7f6545178d0b0e0a82d93fa3" title="Batch::get_end" alt="" coords="266,450,377,476"/><area shape="rect" id="node6" href="classObjective__fun.html#a7d98b1f4e8a741fddc249e5134d5c3ef" title="Objective_fun::component" alt="" coords="446,71,621,98"/><area shape="rect" id="node8" href="db_8cpp.html#aced0f518cdbba35b17b3ce9f316131ce" title="DBopen" alt="" coords="499,239,568,266"/><area shape="rect" id="node9" href="db_8cpp.html#a54af21d55b55bae7b63cb28d3cd05758" title="DBclose" alt="" coords="497,290,569,316"/></map>
+</div>
+</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classSearch__methods_a312ab1479b1b77c5c98f8b838b9c5461_icgraph.png" border="0" usemap="#classSearch__methods_a312ab1479b1b77c5c98f8b838b9c5461_icgraph" alt=""/></div>
-<map name="classSearch__methods_a312ab1479b1b77c5c98f8b838b9c5461_icgraph" id="classSearch__methods_a312ab1479b1b77c5c98f8b838b9c5461_icgraph">
+<div class="center"><img src="classSearch__methods_a602ea0f40834d2ea817dc5fcab83436b_icgraph.png" border="0" usemap="#classSearch__methods_a602ea0f40834d2ea817dc5fcab83436b_icgraph" alt=""/></div>
+<map name="classSearch__methods_a602ea0f40834d2ea817dc5fcab83436b_icgraph" id="classSearch__methods_a602ea0f40834d2ea817dc5fcab83436b_icgraph">
 <area shape="rect" id="node2" href="classSearch__alterning.html#a981af51221c3749c4c20e58b8a622cb1" title="Search_alterning::local\l_search" alt="" coords="245,5,400,46"/><area shape="rect" id="node3" href="classSearch__separing.html#a5729213168347b0bb10889548dffad15" title="Search_separing::local\l_search" alt="" coords="245,70,400,111"/></map>
 </div>
 </p>

@@ -1,4 +1,6 @@
 <map id="Application::get_nCores_DB_d" name="Application::get_nCores_DB_d">
 <area shape="rect" id="node2" href="$classBounds.html#ae6633e291f145a0933f801541843cc1b" title="Bounds::bound" alt="" coords="256,5,365,32"/>
 <area shape="rect" id="node3" href="$classBounds.html#a600b0f815df6e0142de1b44f1aa795d7" title="Bounds::find_bound" alt="" coords="414,31,551,57"/>
+<area shape="rect" id="node4" href="$classBounds.html#a525c2a8bf52889857306bf77d698ecd1" title="Bounds::calculate_bounds" alt="" coords="601,31,775,57"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="824,31,875,57"/>
 </map>
