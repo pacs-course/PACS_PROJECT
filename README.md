@@ -9,7 +9,7 @@ This new version has been rewritten in C++ with some improvements and paralleliz
 
 # USAGE:
 
-`./OPT_JR:CPP -f <filename.csv> -n <N> -k <Limit> -d <Y/y|N/n> -c <Y/y|N/n> -g=<Y/y|N/n> -s <dagSim|lundstrom> -i <iterations>`
+`./OPT_JR_CPP -f <filename.csv> -n <N> -k <Limit> -d <Y/y|N/n> -c <Y/y|N/n> -g=<Y/y|N/n> -i <iterations> -st<a/A|s/S>`
 
 where:
 
@@ -27,17 +27,20 @@ where:
 
 `-i represents the maximum number of iterations`
 
+`-st represents the type of local search: a/A alternates approximate evaluation of objective function with dagsim evaluation, while s/S performs separately an approximate loop and a dagSim loop`
 
 
-#EXAMPLE
 
-`./OPT_JR -f="Test1.csv" -n=150  -i=10 -k=0 -d=y -c=y -s=dagSim -g=Y`
+
+# EXAMPLE:
+
+`./OPT_JR_CPP -f="Test1.csv" -n=150  -i=10 -k=0 -d=n -c=y -g=y -st=s`
        
-In this case, OPT_JR is executed on a file Test1.csv, the total number of cores is 150, all the candidates are considered, the predictor used is dagSim, the maximum number of iterations is 10, the value of global objective function for each iteration will be printed in output. 
+In this case, OPT_JR_CPP is executed on a file Test1.csv, the total number of cores is 150, all the candidates are considered, the maximum number of iterations is 10, the value of global objective function for each iteration will be printed in output, the type of local search is Separing. 
 
 
-#TEST:
-Some testing files are provided in tests directory. 
+# TEST:
+Some testing files are provided in the tests directory. 
 
 
 
@@ -136,9 +139,5 @@ Once doxygen and graphviz are installed, follow the instructions below to build 
 You will find two directory in doc named “html”, and “latex”. Open the index.html in the html directory to explore the structure of the program.
 If you want a pdf document you should compile the reman.tex file in the latex directory.
 
-
-
-# TESTS:
-Some test file are provided in the test directory
 
 

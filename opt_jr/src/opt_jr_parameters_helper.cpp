@@ -9,18 +9,20 @@ void Usage(int argc)
 {
 		printf("Arguments expected %d, actual arguments number was %d\n", ARGS, argc);
     	printf("Usage:\n");
-    	printf("./OPT_JR -f=<filename.csv> -n=<N> -k=<MaximumCandidates> -d=<Y/y|N/n> -c=<Y/y|N/n> -s=<dagSim|lundstrom> -i=<iterations> -g=<Y/y|N/n>\n");
+    	printf("./OPT_JR_CPP -f <filename.csv> -n <N> -k <Limit> -d <Y/y|N/n> -c <Y/y|N/n> -g=<Y/y|N/n> -i <iterations> -st<a/A|s/S>\n");
     	printf("where:\n");
     	printf("<filename.csv> is the csv file (including the input values) under $UPLOAD_HOME in wsi_config.xml;\n");
     	printf("<N> is the total number of cores;\n");
     	printf("<Limit> is the maximum number of considered candidates (if equal to 0, all the candidates are considered).\n");
     	printf("-d represents debug (on/off)\n");
     	printf("-c represents cache (on/off)\n");
-    	printf("-i represents the maximum number of iterations\n");
-    	printf("Example:\n");
-    	printf("./OPT_JR -f=\"Test3.csv\" -n=220 -k=0 -c=y -d=Y -s=dagSim -i=10 -g=y\n");
-    	printf("OPT_JR is executed on a file Test3.csv, the total number of cores is 220, all the candidates are considered, the predictor used is dagSim, "
-    			"the maximum number of iterations is 10, the cache is enabled, the calculation of the globabl objective function is enabled\n");
+			printf("-i represents the maximum number of iterations\n");
+    	printf("-st represents the type of local search (separing/alterning)\n");
+			printf("EXAMPLE:\n");
+    	printf("./OPT_JR_CPP -f=\"Test1.csv\" -n=150  -i=10 -k=0 -d=n -c=y -g=y -st=s\n");
+    	printf("OPT_JR is executed on a file Test1.csv, the total number of cores is 150, all the candidates are considered, "
+    			"the maximum number of iterations is 10, the cache is enabled, the calculation of the globabl objective function is enabled, "
+					"the type of local search is Separing\n");
     	exit(-1);
     }
 
