@@ -6,7 +6,7 @@
 GLOBAL VARIABLES USEFUL TO CREATE OBJECT OF CLASS OPTJRPARAMETER
 */
 
-#define ARGS 10 ///< number of arguments from command line
+#define ARGS 9 ///< number of arguments from command line
 
 /* COMMAND LINE OPTIONS */
 #define FILENAME "-f="
@@ -14,7 +14,6 @@ GLOBAL VARIABLES USEFUL TO CREATE OBJECT OF CLASS OPTJRPARAMETER
 #define LIST_LIMIT "-k="
 #define DEBUG "-d="
 #define MAX_ITERATIONS "-i="
-#define SIMULATOR "-s="
 #define GLOBAL_FO_CALCULATION "-g"
 #define CACHE "-c"
 #define SEARCH_TYPE "-st="

@@ -67,7 +67,6 @@ int main(int argc, char **argv)
   std::cout<<"cache: "<<par.get_cache()<<std::endl;
   std::cout<<"global_FO_calculation: "<<par.get_global_FO_calculation()<<std::endl;
   std::cout<<"K: "<<par.get_K()<<std::endl;
-  std::cout<<"simulator: "<<par.get_simulator()<<std::endl;
   std::cout<<"number: "<<par.get_number()<<std::endl;
   std::cout<<"max_iteration: "<<par.get_max_iterations()<<std::endl;
   std::cout<<"number_of_threads: "<<par.get_number_of_threads()<<std::endl;

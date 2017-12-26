@@ -21,7 +21,6 @@ class Opt_jr_parameters
 	int cache;				///< cache option: "y" makes use of the DB predictor cache table; "n" doesn't
 	int global_FO_calculation;///< global FO calculation: "y" calculates at each loop of localSearch function the global objective function value, "n" doesn't
 	int K;					///< Maximum depth: the search of candidates in the auxiliary list stops if this limit is exceeded
-	int simulator;			///< The simulator type: either dagSim or Lundstrom
 	int number;				///< Number of total cores available for the applications (N)
 	int max_iterations;		///< The maximum number of iterations in LocalSearch
 	int number_of_threads;	///< The number of MPI threads
@@ -45,7 +44,6 @@ public:
   const int get_cache(){	return cache;}
   const int get_global_FO_calculation(){	return global_FO_calculation;}
   const int get_K(){	return K;}
-  const int get_simulator(){return simulator;}
   const int get_number(){return number;}
   const int get_max_iterations(){ return max_iterations; }
   const int get_number_of_threads(){ return number_of_threads;}
