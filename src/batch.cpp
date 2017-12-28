@@ -7,8 +7,6 @@
 #include <string>
 #include <cmath>
 #include <list>
-#include <omp.h>
-
 
 
 
@@ -108,59 +106,19 @@ For each application, a base value for the objective function is calculated.
 */
 void Batch::initialize(Configuration  &configuration, MYSQL *conn, Opt_jr_parameters &par)
 {
-  std::string debugMsg;
+	std::string debugMsg;
 
   debugMsg =  "Information: INITIALIZE baseFo for all the applications" ;par.debug_message(debugMsg);
+	for (auto it =APPs.begin(); it!= APPs.end(); it++)
+	{
 
-  if(par.get_number_of_threads()==0)
-  {
-    for (auto it =APPs.begin(); it!= APPs.end(); it++)
-    {
+			it->set_baseFO( Objective_fun::component(configuration, conn, *it, par));
+			debugMsg = "INITIALIZE BASE FO for APP "+ it->get_session_app_id()
+                + " baseFO = " + std::to_string(it->get_baseFO())+"\n"; par.debug_message(debugMsg);
+	}
 
-      it->set_baseFO( Objective_fun::component(configuration, conn, *it, par));
-      debugMsg = "INITIALIZE BASE FO for APP "+ it->get_session_app_id()
-      + " baseFO = " + std::to_string(it->get_baseFO())+"\n"; par.debug_message(debugMsg);
-    }
-  }
-  else
-  {
-    int n_threads = par.get_number_of_threads();
-    debugMsg=" Initialize objective function for each application in parallel with "+ std::to_string(n_threads)+" threads (using openMP) \n" ;par.debug_message(debugMsg);
-    MYSQL *conn2[n_threads];
-    for (int i =0; i< n_threads;++i)
-    {
-      conn2[i]=DBopen(
-        const_cast<char*>(configuration["OptDB_IP"].c_str()),
-				const_cast<char*>(configuration["DB_port"].c_str()),
-        const_cast<char*>(configuration["OptDB_user"].c_str()),
-        const_cast<char*>(configuration["OptDB_pass"].c_str()),
-        const_cast<char*>(configuration["OptDB_dbName"].c_str())
-      );
-    }
 
-    #pragma omp parallel num_threads(n_threads)
-    {
-      int ID=omp_get_thread_num();
-      int j=0;
-      /* assign each app to a thread */
-      for (auto it=APPs.begin(); it !=APPs.end(); it++)
-      {
-        int pos=j%n_threads;
-        if(pos==ID)
-        {
-          debugMsg= "Initialize app " + it->get_app_id()
-          + " from thread " + std::to_string(ID); par.debug_message(debugMsg);
-
-          it->set_baseFO( Objective_fun::component(configuration, conn2[ID], *it, par));
-
-          debugMsg = "INITIALIZED BASE FO for APP "+ it->get_session_app_id()
-          + " baseFO = " + std::to_string(it->get_baseFO())+"\n"; par.debug_message(debugMsg);
-        }
-        ++j;
-      }
-    }
-  }
-}
+};
 
 
 

@@ -217,10 +217,9 @@ int main(int argc, char **argv)
 
   app_manager.initialize(configuration, conn, par);
 
-
   gettimeofday(&tv_final_init, NULL);
 
-  debugMsg ="\n************    END INITIALIZE BASE OBJECTIVE FUNCTION   *********\n\n\n"; par.debug_message(debugMsg);
+  debugMsg +="\n************    END INITIALIZE BASE OBJECTIVE FUNCTION   *********\n\n\n"; par.debug_message(debugMsg);
 
 
   Msg = "\n\n*******************************************************************\n";
@@ -231,6 +230,10 @@ int main(int argc, char **argv)
 
   std::cout<< "\n**************************************************\n\n\n";
 
+
+  //NB: check, to be removed!
+  for (auto it=app_manager.get_begin(); it!= app_manager.get_end();it++)
+  std::cout <<it->get_app_id()<<" "<<it->get_session_app_id()<<"    alpha: "<<it->get_alpha() << "    beta: "<<it->get_beta()<<std::endl;
 
 
 

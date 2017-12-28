@@ -20,6 +20,7 @@ void Policy_separing::local_search(Batch &app_manager, Configuration &configurat
   //START THE ITERATION LOOP
   for (int iteration = 1; iteration <= N_APPROX_LOOP*par.get_max_iterations(); iteration++)//to be changed!
   {
+    std::cout<<"\n\n\n"<<iteration;
     check_total_nodes(par.get_number(), app_manager);
     debugMsg= "ITERATION " + std::to_string(iteration); par.debug_message(debugMsg);
 
@@ -148,7 +149,7 @@ void Policy_separing::local_search(Batch &app_manager, Configuration &configurat
       if (par.get_global_FO_calculation())
       {
         TotalFO = Objective_fun::global(configuration, conn, app_manager, par);
-        debugMsg= "At iteration: "+ std::to_string(iteration) + " GLOBAL OBJECTIVE FUNCTION = "+ std::to_string(TotalFO);par.debug_message(debugMsg);
+        std::cout << "At iteration: "<< iteration << " GLOBAL OBJECTIVE FUNCTION = "<< TotalFO <<std::endl;
         statistics.add_statistics( iteration, how_many, TotalFO); // Update Statistics
       }
     }
