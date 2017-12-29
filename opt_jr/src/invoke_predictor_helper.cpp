@@ -7,6 +7,7 @@
 #include <sys/stat.h>
 #include <dirent.h>
 #include <glob.h>
+#include <iostream>
 
 
 
@@ -30,6 +31,11 @@ char * readFolder(char *  path)
 	}
 	while ((de = readdir(dr)) != NULL)
 	{
+		if(de->d_type ==DT_UNKNOWN)
+		{
+			std::cout<< "FATAL ERROR: fylesystem doesn't have full support for returning the file type in d_type\n";
+			exit(-1);
+		}
 		if (de->d_type == 4) // folder
 		{
 			if (

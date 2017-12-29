@@ -49,7 +49,6 @@ void Candidates::invoke_predictor_openMP(  Opt_jr_parameters &par, Configuration
   MYSQL *conn2[n_threads]; //open a connection for each thread
   std::vector<Application> aux;
   int indicator_i, indicator_j;
-  //std::unordered_map <std::string,double >  obj_fun_results ;
 
 
   debugMsg= "Executing invoke_predictor_openMP"; par.debug_message(debugMsg);
@@ -113,8 +112,6 @@ void Candidates::invoke_predictor_openMP(  Opt_jr_parameters &par, Configuration
     int index=0;
     int j=0;
 
-
-
     for (auto it=aux.begin(); it!=aux.end(); ++it ) // assign each app to a thread
     {
       if (index > 0 && index == 2*MAX_PROMISING_CONFIGURATIONS)
@@ -130,18 +127,15 @@ void Candidates::invoke_predictor_openMP(  Opt_jr_parameters &par, Configuration
         if (it->get_currentCores_d() > 0 )
         {
           it->set_R_d(Objective_fun::component(configuration, conn2[ID], *it, par)); //caches the results
-
         }
-
       }
       ++j;
     }
-
   }
 
 
 
-  for (auto it=cand.begin(); it!= cand.end();it++)
+  for (auto it=cand.begin(); it!= cand.end();it++) // store the results just computed
   {
     for (auto aux_it= aux.begin();aux_it!= aux.end();aux_it++)
     {
@@ -162,6 +156,10 @@ void Candidates::invoke_predictor_openMP(  Opt_jr_parameters &par, Configuration
     DBclose(conn2[i]);
 
 }
+
+
+
+
 
 
 void Candidates::invoke_predictor_seq(MYSQL *conn, Opt_jr_parameters &par, Configuration  &configuration )

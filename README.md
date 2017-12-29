@@ -45,12 +45,12 @@ Some testing files are provided in the tests directory.
 
 
 # REQUIREMENTS:
-
+The program requires a filesystems which returns real info in the d_type field (look at the readdir(3) man page at https://linux.die.net/man/3/readdir for more details)
 This program requires mysql server and connector.
 
 To install mysql server with yum (following the instructions at https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/#repo-qg-yum-fresh-install):
 
-1) Go to the download page for MySQL Yum repository at http://dev.mysql.com/downloads/repo/yum/.
+1) Go to the download page for MySQL Yum repository at http://dev.mysql.com/downloads/repo/yum/ .
 
 2) Select and download the release package for your platform.
 
@@ -71,8 +71,10 @@ To install mysql server with yum (following the instructions at https://dev.mysq
 
 NOTE: MySQL's validate_password plugin is installed by default. This will require that passwords contain at least one upper case letter, one lower case letter, one digit, and one special character, and that the total password length is at least 8 characters.
 
-8)Install the connector:
-  > yum install mysql-connector-odbc
+8)Exit and install the connector and the library:
+  > exit
+  > sudo yum install mysql-connector-odbc
+  > sudo yum install mysql-devel
 
 
 
@@ -81,7 +83,9 @@ NOTE: MySQL's validate_password plugin is installed by default. This will requir
 0) Download:
  - OPTIMIZER_CONFIGURATION_TABLE.sql, PREDICTOR_CACHE_TABLE.sql and dagSim-master.zip from  https://github.com/eubr-bigsea/opt_jr 
  - creationDB.sql from https://github.com/eubr-bigsea/wsi/tree/master/Database
+ - insertFakeProfile.sql from https://github.com/eubr-bigsea/wsi/tree/master/Database
  - LogP8.tar.gz from https://github.com/eubr-bigsea/OPT_DATA_CONFIG
+
 
 1) Build the database:
 
@@ -98,24 +102,36 @@ NOTE: MySQL's validate_password plugin is installed by default. This will requir
 2) Run creationDB.sql which creates the tables  
  > source creationDB.sql;
 
-3) Launch the script which creates and populates two tables OPTIMIZER_CONFIGURATION_TABLE.sql, PREDICTOR_CACHE_TABLE.sql:
+3) Launch the script which creates and populates three tables OPTIMIZER_CONFIGURATION_TABLE.sql, PREDICTOR_CACHE_TABLE.sql, insertFakeProfile.sql:
  > source OPTIMIZER_CONFIGURATION_TABLE.sql;
  > source PREDICTOR_CACHE_TABLE.sql;
+ > source insertFakeProfile.sql;
+ > exit
 
 
-4) set wsi_config.xml configuration file 
 
-5) Extract and move logp8 directory: 
+4) Extract and move LogP8 directory: 
  > sudo mkdir /home/work
- > sudo mv logP8 /home/work/logP8
+ > sudo mv LogP8 /home/work/LogP8
+
+5) Extract dagSim-master.zip, move in dagSim-master directory and type “make”
+
+6) set wsi_config.xml configuration file; change: 
+ - THREADS_NUMBER (set the desired number of threads)
+ - DAGSIM_HOME (set the path to the dagSim-master directory)
+ - AppsPropDB_dbName (set the name of the database)
+ - OptDB_dbName (set the name of the database)
+ - OptDB_pass (set the password for mysql)
+ - AppsPropDB_pass (set the password for mysql)
+ - UPLOAD_HOME (set the path to the Tests directory)
 
 
-5) set and run the environmental variables in the settingEV.sh file
+7) Set the environmental variables in the settingEV.sh file with the correct paths and run the script.
 
-6) Compile dagsim simulator: move in dagsim-master and type “make”
 
-7) move in opt_jr directory and type: 
-  > make
+
+8) move in opt_jr directory and type: 
+ > make
 
 
 
