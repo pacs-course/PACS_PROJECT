@@ -5,6 +5,9 @@
 #include "objective_fun.hh"
 
 #include <omp.h>
+#include <iostream>
+#include <unordered_map>
+#include <utility>
 
 
 
@@ -44,6 +47,10 @@ void Candidates::invoke_predictor_openMP(  Opt_jr_parameters &par, Configuration
   int n_threads = par.get_number_of_threads();
   int MAX_PROMISING_CONFIGURATIONS =par.get_K();
   MYSQL *conn2[n_threads]; //open a connection for each thread
+  std::vector<Application> aux;
+  int indicator_i, indicator_j;
+  //std::unordered_map <std::string,double >  obj_fun_results ;
+
 
   debugMsg= "Executing invoke_predictor_openMP"; par.debug_message(debugMsg);
 
@@ -68,8 +75,8 @@ void Candidates::invoke_predictor_openMP(  Opt_jr_parameters &par, Configuration
   avoid unnecessary calls (and avoid error);
   */
 
-  std::vector<Application> aux;
-  int indicator_i, indicator_j;
+
+
 
   for (auto it=cand.begin(); it!= cand.end();it++)
   {
@@ -122,7 +129,7 @@ void Candidates::invoke_predictor_openMP(  Opt_jr_parameters &par, Configuration
       {
         if (it->get_currentCores_d() > 0 )
         {
-          Objective_fun::component(configuration, conn2[ID], *it, par); //caches the results
+          it->set_R_d(Objective_fun::component(configuration, conn2[ID], *it, par)); //caches the results
 
         }
 
@@ -133,38 +140,22 @@ void Candidates::invoke_predictor_openMP(  Opt_jr_parameters &par, Configuration
   }
 
 
-  #pragma omp parallel num_threads(n_threads)
+
+  for (auto it=cand.begin(); it!= cand.end();it++)
   {
-    int ID=omp_get_thread_num();
-    int index=0;
-    int j=0;
-
-    // assign each app-pairs to a thread
-    for (auto it=cand.begin(); it!=cand.end(); ++it )
+    for (auto aux_it= aux.begin();aux_it!= aux.end();aux_it++)
     {
-      if (index > 0 && index == MAX_PROMISING_CONFIGURATIONS)
+      if ( aux_it->get_app_id()== it->get_app_id_i()  &&  aux_it->get_session_app_id()== it->get_session_app_id_i() && aux_it->get_currentCores_d()== it->get_currentCores_d_i() )
       {
-        debugMsg="invoke_predictor_seq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invoke_predictor_seq loop";par.debug_message(debugMsg);
-        break;
+        it->set_real_i( aux_it->get_R_d());
       }
-
-      int pos=j % n_threads;
-
-      if(pos==ID)
+      if ( aux_it->get_app_id()== it->get_app_id_j()  &&  aux_it->get_session_app_id()== it->get_session_app_id_j() && aux_it->get_currentCores_d()== it->get_currentCores_d_j() )
       {
-        if (it->get_currentCores_d_i() > 0 && it->get_currentCores_d_j() > 0)
-        {
-
-          it->set_real_i( Objective_fun::component(configuration, conn2[ID], ( it->get_app_i_ref() ), par)); //Already cached
-
-          it->set_real_j( Objective_fun::component(configuration, conn2[ID], (it->get_app_j_ref()), par)); //Already cached
-        }
-
+        it->set_real_j( aux_it->get_R_d());
       }
-      ++j;
     }
-
   }
+
 
 
   for (int i = 0; i < n_threads;++i)
