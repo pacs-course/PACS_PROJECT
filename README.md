@@ -119,10 +119,8 @@ NOTE: MySQL's validate_password plugin is installed by default. This will requir
 6) set wsi_config.xml configuration file; change: 
  - THREADS_NUMBER (set the desired number of threads)
  - DAGSIM_HOME (set the path to the dagSim-master directory)
- - AppsPropDB_dbName (set the name of the database)
  - OptDB_dbName (set the name of the database)
  - OptDB_pass (set the password for mysql)
- - AppsPropDB_pass (set the password for mysql)
  - UPLOAD_HOME (set the path to the Tests directory)
 
 
