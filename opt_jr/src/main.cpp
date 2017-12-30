@@ -81,6 +81,7 @@ int main(int argc, char **argv)
 
 
 
+
   /**
   3) Connect to the Database
   */
@@ -241,6 +242,7 @@ int main(int argc, char **argv)
   debugMsg = "\n\n*******************************************************************\n";
   debugMsg +="*******************    INVOKING  LOCAL SEARCH    ******************\n";
   debugMsg +="*******************************************************************\n\n"; par.debug_message(debugMsg);
+
 
 
   gettimeofday(&tv_initial_locals, NULL);

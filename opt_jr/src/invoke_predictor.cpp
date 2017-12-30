@@ -41,7 +41,6 @@ char* invoke_predictor(Configuration  &configuration, MYSQL *conn, int nNodes, i
       printf("Malloc failure: invokePredictor: output1\n");
       exit(-1);
     }
-    //debugBanner("invokePredictor", par);
 
     if (nNodes == 0)
     {

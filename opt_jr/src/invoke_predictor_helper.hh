@@ -41,11 +41,8 @@ char * extractWord(char * line, int pos);
 char * extractRowMatchingPattern(char *text, char *pattern);
 
 /**
- * Name 		extractItem
- * Input 		const char *const string, const char *const left, const char *const right
- * Output 		char * A wor
- * Description:	It returns a word delimited between two strings. If the second string is NULL, it just returns the last item in the string
- */
+extractItem returns a word delimited between two strings. If the second string is NULL, it just returns the last item in the string
+*/
 char * extractItem(const char *const string, const char *const left, const char *const right);
 
 

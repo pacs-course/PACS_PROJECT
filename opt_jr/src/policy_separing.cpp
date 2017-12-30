@@ -21,19 +21,18 @@ void Policy_separing::local_search(Batch &app_manager, Configuration &configurat
   for (int iteration = 1; iteration <= N_APPROX_LOOP*par.get_max_iterations(); iteration++)//to be changed!
   {
     check_total_nodes(par.get_number(), app_manager);
-    debugMsg= "ITERATION " + std::to_string(iteration); par.debug_message(debugMsg);
+    debugMsg= "ITERATION " + std::to_string(iteration) + " of APPROXIMATED LOOP "; par.debug_message(debugMsg);
 
 
     /*
     *   Estimate the candidates for the predictor
     */
     app_pairs = approximated_loop( app_manager, par );
-    debugMsg= "\n\n\n\n       finished approximatedLoop   \n\n\n\n"; par.debug_message(debugMsg);
 
     if (app_pairs.get_empty())
     {
       // The Candidate Application is empty. No further solution enhancements possible
-      debugMsg = "LocalSearch: empty Candidate Application : exit to Approximated loop"; par.debug_message(debugMsg);
+      debugMsg = "LocalSearch: empty Candidate Application : exit to Approximated loop\n\n\n"; par.debug_message(debugMsg);
       break;
     }
 
@@ -84,6 +83,8 @@ void Policy_separing::local_search(Batch &app_manager, Configuration &configurat
 
   app_manager.initialize(configuration, conn, par); //evaluate a base value for FO
 
+
+
   int indicator=0;
   int nCoreMov;
   double DELTAVM_i;
@@ -91,6 +92,8 @@ void Policy_separing::local_search(Batch &app_manager, Configuration &configurat
   double DELTA_fo_App_i=0, DELTA_fo_App_j=0;//Those value are not really used
   for (int iteration = 1; iteration <= par.get_max_iterations(); iteration++)
   {
+    debugMsg= "ITERATION " + std::to_string(iteration) + " of DAGSIM LOOP \n\n"; par.debug_message(debugMsg);
+
     Candidates all_pairs;
     /*
     save ALL the potential exchanges in a Candidates object
@@ -105,8 +108,8 @@ void Policy_separing::local_search(Batch &app_manager, Configuration &configurat
         if (application_i->get_session_app_id()!=application_j->get_session_app_id())
         {
           nCoreMov = std::max(application_i->get_V(), application_j->get_V());
-          DELTAVM_i = nCoreMov/application_i->get_V(); debugMsg = "app " + application_i->get_session_app_id() + " DELTAVM_i " +  std::to_string(DELTAVM_i); par.debug_message(debugMsg);
-          DELTAVM_j = nCoreMov/application_j->get_V(); debugMsg = "app " + application_j->get_session_app_id() + " DELTAVM_j " +  std::to_string(DELTAVM_j); par.debug_message(debugMsg);
+          DELTAVM_i = nCoreMov/application_i->get_V(); //debugMsg = "app " + application_i->get_session_app_id() + " DELTAVM_i " +  std::to_string(DELTAVM_i); par.debug_message(debugMsg);
+          DELTAVM_j = nCoreMov/application_j->get_V(); //debugMsg = "app " + application_j->get_session_app_id() + " DELTAVM_j " +  std::to_string(DELTAVM_j); par.debug_message(debugMsg);
 
           // Change the currentCores, but rollback later
           int deltaNCores_i = DELTAVM_i * application_i->get_V();

@@ -34,9 +34,9 @@ where:
 
 # EXAMPLE:
 
-`./OPT_JR_CPP -f="Test1.csv" -n=150  -i=10 -k=0 -d=n -c=y -g=y -st=s`
+`./OPT_JR_CPP -f="Test1.csv" -n=150  -i=10 -k=0 -d=n -c=y -g=y -st=a`
        
-In this case, OPT_JR_CPP is executed on a file Test1.csv, the total number of cores is 150, all the candidates are considered, the maximum number of iterations is 10, the value of global objective function for each iteration will be printed in output, the type of local search is Separing. 
+In this case, OPT_JR_CPP is executed on a file Test1.csv, the total number of cores is 150, all the candidates are considered, the maximum number of iterations is 10, the value of global objective function for each iteration will be printed in output, the type of local search is Alterning. 
 
 
 # TEST:

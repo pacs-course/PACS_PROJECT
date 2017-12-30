@@ -105,7 +105,23 @@ void Candidates::invoke_predictor_openMP(  Opt_jr_parameters &par, Configuration
 
   }
 
-  //call invokePredictorInAdvance in parallel
+  debugMsg= "Unique applications in candidates:\n";
+  for (auto aux_it= aux.begin();aux_it!= aux.end();aux_it++)
+  {
+    debugMsg += aux_it->get_session_app_id() + " " + aux_it->get_app_id() + " " + std::to_string(aux_it->get_currentCores_d())+"\n";
+  }
+  debugMsg+="\n\n"; par.debug_message(debugMsg);
+
+  debugMsg= "Complete candidates list:\n";
+  for (auto it=cand.begin(); it!= cand.end();it++)
+  {
+    debugMsg += it->get_session_app_id_i() + " " + it->get_app_id_i() + " " + std::to_string(it->get_currentCores_d_i()) + "\n";
+    debugMsg += it->get_session_app_id_j() + " " + it->get_app_id_j() + " " + std::to_string(it->get_currentCores_d_j()) + "\n\n";
+  }
+  debugMsg += "\n\n"; par.debug_message(debugMsg);
+
+
+
   #pragma omp parallel num_threads(n_threads)
   {
     int ID=omp_get_thread_num();
@@ -133,21 +149,7 @@ void Candidates::invoke_predictor_openMP(  Opt_jr_parameters &par, Configuration
     }
   }
 
-  std::cout<< "Unique applications in candidates:"<<std::endl;
-  for (auto aux_it= aux.begin();aux_it!= aux.end();aux_it++)
-  {
-    std::cout<< aux_it->get_session_app_id()<<" "<<aux_it->get_app_id()<<" "<<aux_it->get_currentCores_d()<<std::endl;
-  }
-  std::cout << "\n\n";
 
-  std::cout<< "Complete candidates list:"<<std::endl;
-  for (auto it=cand.begin(); it!= cand.end();it++)
-  {
-    std::cout<< it->get_session_app_id_i()<<" "<<it->get_app_id_i()<<" "<<it->get_currentCores_d_i()<<std::endl;
-    std::cout<< it->get_session_app_id_j()<<" "<<it->get_app_id_j()<<" "<<it->get_currentCores_d_j()<<std::endl;
-    std::cout<< "\n";
-  }
-std::cout << "\n\n\n\n";
 
   for (auto it=cand.begin(); it!= cand.end();it++) // store the results just computed
   {
@@ -182,7 +184,7 @@ void Candidates::invoke_predictor_seq(MYSQL *conn, Opt_jr_parameters &par, Confi
   debugMsg= "Executing invoke_predictor_seq"; par.debug_message(debugMsg);
 
   int MAX_PROMISING_CONFIGURATIONS =par.get_K();
-  //int index=0;
+  int index=0;
   std::vector<Application> aux;
   int indicator_i, indicator_j;
 
@@ -213,10 +215,26 @@ void Candidates::invoke_predictor_seq(MYSQL *conn, Opt_jr_parameters &par, Confi
     }
 
   }
-  int index=0;
 
 
-  for (auto it=aux.begin(); it!=aux.end(); ++it ) // assign each app to a thread
+  debugMsg= "Unique applications in candidates:\n";
+  for (auto aux_it= aux.begin();aux_it!= aux.end();aux_it++)
+  {
+    debugMsg += aux_it->get_session_app_id() + " " + aux_it->get_app_id() + " " + std::to_string(aux_it->get_currentCores_d())+"\n";
+  }
+  debugMsg+="\n\n"; par.debug_message(debugMsg);
+
+  debugMsg= "Complete candidates list:\n";
+  for (auto it=cand.begin(); it!= cand.end();it++)
+  {
+    debugMsg += it->get_session_app_id_i() + " " + it->get_app_id_i() + " " + std::to_string(it->get_currentCores_d_i()) + "\n";
+    debugMsg += it->get_session_app_id_j() + " " + it->get_app_id_j() + " " + std::to_string(it->get_currentCores_d_j()) + "\n\n";
+  }
+  debugMsg += "\n\n"; par.debug_message(debugMsg);
+
+
+
+  for (auto it=aux.begin(); it!=aux.end(); ++it )
   {
     if (index > 0 && index == 2*MAX_PROMISING_CONFIGURATIONS)
     {
@@ -232,21 +250,7 @@ void Candidates::invoke_predictor_seq(MYSQL *conn, Opt_jr_parameters &par, Confi
 
   }
 
-  std::cout<< "Unique applications in candidates:"<<std::endl;
-  for (auto aux_it= aux.begin();aux_it!= aux.end();aux_it++)
-  {
-    std::cout<< aux_it->get_session_app_id()<<" "<<aux_it->get_app_id()<<" "<<aux_it->get_currentCores_d()<<std::endl;
-  }
-  std::cout << "\n\n";
 
-  std::cout<< "Complete candidates list:"<<std::endl;
-  for (auto it=cand.begin(); it!= cand.end();it++)
-  {
-    std::cout<< it->get_session_app_id_i()<<" "<<it->get_app_id_i()<<" "<<it->get_currentCores_d_i()<<std::endl;
-    std::cout<< it->get_session_app_id_j()<<" "<<it->get_app_id_j()<<" "<<it->get_currentCores_d_j()<<std::endl;
-    std::cout<< "\n";
-  }
-std::cout << "\n\n\n\n";
 
   for (auto it=cand.begin(); it!= cand.end();it++) // store the results just computed
   {
@@ -262,28 +266,5 @@ std::cout << "\n\n\n\n";
       }
     }
   }
-  /*
-
-
-  for (auto it = cand.begin(); it != cand.end(); it++)
-  {
-    // Consider only the first MAX_PROMISING_CONFIGURATIONS (0 value means browse the entire Application) Application members
-    if (index > 0 && index == MAX_PROMISING_CONFIGURATIONS)
-    {
-      debugMsg="invoke_predictor_seq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invoke_predictor_seq loop";par.debug_message(debugMsg);
-      break;
-    }
-
-
-
-    if (it->get_currentCores_d_i() > 0 && it->get_currentCores_d_j() > 0)
-    {
-      debugMsg= "Comparing " + it->get_session_app_id_i() + " with " + it->get_session_app_id_j(); par.debug_message(debugMsg);
-      debugMsg =  " CALLING OBJ_FUNCTION_COMPONENT \n\n"; par.debug_message(debugMsg);
-      it->set_real_i ( Objective_fun::component(configuration, conn, it->get_app_i_ref(), par));
-      it->set_real_j ( Objective_fun::component(configuration, conn, it->get_app_j_ref(), par));
-    }
-    index++;
-  }
-  */
+  
 }
