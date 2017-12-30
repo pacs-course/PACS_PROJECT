@@ -126,14 +126,28 @@ void Candidates::invoke_predictor_openMP(  Opt_jr_parameters &par, Configuration
       {
         if (it->get_currentCores_d() > 0 )
         {
-          it->set_R_d(Objective_fun::component(configuration, conn2[ID], *it, par)); //caches the results
+          it->set_R_d(Objective_fun::component(configuration, conn2[ID], *it, par));
         }
       }
       ++j;
     }
   }
 
+  std::cout<< "Unique applications in candidates:"<<std::endl;
+  for (auto aux_it= aux.begin();aux_it!= aux.end();aux_it++)
+  {
+    std::cout<< aux_it->get_session_app_id()<<" "<<aux_it->get_app_id()<<" "<<aux_it->get_currentCores_d()<<std::endl;
+  }
+  std::cout << "\n\n";
 
+  std::cout<< "Complete candidates list:"<<std::endl;
+  for (auto it=cand.begin(); it!= cand.end();it++)
+  {
+    std::cout<< it->get_session_app_id_i()<<" "<<it->get_app_id_i()<<" "<<it->get_currentCores_d_i()<<std::endl;
+    std::cout<< it->get_session_app_id_j()<<" "<<it->get_app_id_j()<<" "<<it->get_currentCores_d_j()<<std::endl;
+    std::cout<< "\n";
+  }
+std::cout << "\n\n\n\n";
 
   for (auto it=cand.begin(); it!= cand.end();it++) // store the results just computed
   {
@@ -168,7 +182,88 @@ void Candidates::invoke_predictor_seq(MYSQL *conn, Opt_jr_parameters &par, Confi
   debugMsg= "Executing invoke_predictor_seq"; par.debug_message(debugMsg);
 
   int MAX_PROMISING_CONFIGURATIONS =par.get_K();
+  //int index=0;
+  std::vector<Application> aux;
+  int indicator_i, indicator_j;
+
+  for (auto it=cand.begin(); it!= cand.end();it++)
+  {
+
+    indicator_i =1;
+    indicator_j =1;
+    for (auto aux_it= aux.begin();aux_it!= aux.end();aux_it++)
+    {
+      if ( aux_it->get_app_id()== it->get_app_id_i()  &&  aux_it->get_session_app_id()== it->get_session_app_id_i() && aux_it->get_currentCores_d()== it->get_currentCores_d_i() )
+      {
+        indicator_i=-1;
+      }
+      if ( aux_it->get_app_id()== it->get_app_id_j()  &&  aux_it->get_session_app_id()== it->get_session_app_id_j() && aux_it->get_currentCores_d()== it->get_currentCores_d_j() )
+      {
+        indicator_j=-1;
+      }
+
+    }
+    if (indicator_i==1)
+    {
+      aux.push_back(it->get_app_i());
+    }
+    if (indicator_j==1)
+    {
+      aux.push_back(it->get_app_j());
+    }
+
+  }
   int index=0;
+
+
+  for (auto it=aux.begin(); it!=aux.end(); ++it ) // assign each app to a thread
+  {
+    if (index > 0 && index == 2*MAX_PROMISING_CONFIGURATIONS)
+    {
+      debugMsg="invoke_predictor_seq: MAX_PROMISING_CONFIGURATIONS was reached, leaving invoke_predictor_seq loop";par.debug_message(debugMsg);
+      break;
+    }
+
+
+    if (it->get_currentCores_d() > 0 )
+    {
+      it->set_R_d(Objective_fun::component(configuration, conn, *it, par));
+    }
+
+  }
+
+  std::cout<< "Unique applications in candidates:"<<std::endl;
+  for (auto aux_it= aux.begin();aux_it!= aux.end();aux_it++)
+  {
+    std::cout<< aux_it->get_session_app_id()<<" "<<aux_it->get_app_id()<<" "<<aux_it->get_currentCores_d()<<std::endl;
+  }
+  std::cout << "\n\n";
+
+  std::cout<< "Complete candidates list:"<<std::endl;
+  for (auto it=cand.begin(); it!= cand.end();it++)
+  {
+    std::cout<< it->get_session_app_id_i()<<" "<<it->get_app_id_i()<<" "<<it->get_currentCores_d_i()<<std::endl;
+    std::cout<< it->get_session_app_id_j()<<" "<<it->get_app_id_j()<<" "<<it->get_currentCores_d_j()<<std::endl;
+    std::cout<< "\n";
+  }
+std::cout << "\n\n\n\n";
+
+  for (auto it=cand.begin(); it!= cand.end();it++) // store the results just computed
+  {
+    for (auto aux_it= aux.begin();aux_it!= aux.end();aux_it++)
+    {
+      if ( aux_it->get_app_id()== it->get_app_id_i()  &&  aux_it->get_session_app_id()== it->get_session_app_id_i() && aux_it->get_currentCores_d()== it->get_currentCores_d_i() )
+      {
+        it->set_real_i( aux_it->get_R_d());
+      }
+      if ( aux_it->get_app_id()== it->get_app_id_j()  &&  aux_it->get_session_app_id()== it->get_session_app_id_j() && aux_it->get_currentCores_d()== it->get_currentCores_d_j() )
+      {
+        it->set_real_j( aux_it->get_R_d());
+      }
+    }
+  }
+  /*
+
 
   for (auto it = cand.begin(); it != cand.end(); it++)
   {
@@ -190,4 +285,5 @@ void Candidates::invoke_predictor_seq(MYSQL *conn, Opt_jr_parameters &par, Confi
     }
     index++;
   }
+  */
 }

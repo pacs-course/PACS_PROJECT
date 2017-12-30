@@ -2,7 +2,7 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 <comment/>
-<entry key="THREADS_NUMBER">4</entry>
+<entry key="THREADS_NUMBER">0</entry>
 <entry key="RESULTS_HOME">/home/work/LogP8</entry>
 <entry key="DB_port">3306</entry>
 <entry key="DAGSIM_HOME">/vagrant/PROJECT_SPARK/dagSim-master</entry>

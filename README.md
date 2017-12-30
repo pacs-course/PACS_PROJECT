@@ -27,7 +27,7 @@ where:
 
 `-i represents the maximum number of iterations`
 
-`-st represents the type of local search: a/A alternates approximate evaluation of objective function with dagsim evaluation, while s/S performs separately an approximate loop and a dagSim loop`
+`-st represents the type of local search: a/A alternates approximate evaluation of objective function with dagsim evaluation, while s/S performs separately an approximate loop and a dagSim loop. If -st=s/S -k should be set to 0.`
 
 
 

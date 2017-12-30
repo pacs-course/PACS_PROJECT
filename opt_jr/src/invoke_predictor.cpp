@@ -96,7 +96,6 @@ char* invoke_predictor(Configuration  &configuration, MYSQL *conn, int nNodes, i
               dbName,appId, dbName,datasize, dbName,TOTAL_NODES, dbName, stage);
 
     MYSQL_ROW row = executeSQL(conn, statementSearch, par);
-    //sprintf(debugMsg, "statement %s\n", statementSearch);debugMessage(debugMsg, par);
 
     if (row == NULL || par.get_cache() == 0)
     {
@@ -120,7 +119,7 @@ char* invoke_predictor(Configuration  &configuration, MYSQL *conn, int nNodes, i
       debugMsg= "Executing predictor: " +std::string(cmd); par.debug_message(debugMsg);
       _run(cmd, par);
 
-      /* Parse the time value (either total time or residula time) */
+      /* Parse the time value (either total time or residual time) */
       switch(flagDagsim)
       {
         case RESIDUAL_DAGSIM:

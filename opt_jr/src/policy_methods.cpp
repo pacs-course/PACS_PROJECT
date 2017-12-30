@@ -145,6 +145,7 @@ Candidates Policy_methods::approximated_loop( Batch &app_manager, /*int &iterati
     int index=0; //Those values are useful to detect the best pair
     double DELTA_pair=0, DELTA_tmp;
     index_pair=-1;
+    
 
 
     /*
