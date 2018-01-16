@@ -73,7 +73,9 @@ NOTE: MySQL's validate_password plugin is installed by default. This will requir
 
 8)Exit and install the connector and the library:
   > exit
+  
   > sudo yum install mysql-connector-odbc
+  
   > sudo yum install mysql-devel
 
 
