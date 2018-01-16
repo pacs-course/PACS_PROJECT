@@ -46,7 +46,7 @@ Some testing files are provided in the tests directory.
 
 # REQUIREMENTS:
 The program requires a filesystems which returns real info in the d_type field (look at the readdir(3) man page at https://linux.die.net/man/3/readdir for more details)
-This program requires mysql server and connector.
+This program requires mysql server, connector and C library.
 
 To install mysql server with yum (following the instructions at https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/#repo-qg-yum-fresh-install):
 
